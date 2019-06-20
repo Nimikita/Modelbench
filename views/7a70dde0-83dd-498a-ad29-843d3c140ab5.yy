@@ -1,0 +1,31 @@
+{
+    "id": "7a70dde0-83dd-498a-ad29-843d3c140ab5",
+    "modelName": "GMFolder",
+    "mvc": "1.1",
+    "name": "7a70dde0-83dd-498a-ad29-843d3c140ab5",
+    "children": [
+        "18772901-2911-4391-a484-719d65693e8d",
+        "94873cc3-e264-4302-bdda-d727e87e24f4",
+        "bb8ef9b6-73b2-47eb-8ff4-c92fbfa9f42f",
+        "99151508-83bc-4198-afbf-392da6c4948d",
+        "924cd97f-2d5e-47c8-9a5c-e1dc8bbce63a",
+        "c80ee744-27ab-4ca2-86d1-e96dbd8faabc",
+        "3a298b89-ff9d-4dd4-be69-29b6bdedf862",
+        "5a7dadcf-8314-4148-85ea-c4f301911640",
+        "8abb149c-4f48-4ea7-a53d-d752ff975a47",
+        "06acbb33-45c3-4923-846e-7b27f9d64e14",
+        "9671822c-8a80-4312-8df0-e0d76e54d67c",
+        "e07b5287-98be-4fa9-8c7a-8bde60e18021",
+        "bdbc41a9-c467-4230-8f13-812429b8d2aa",
+        "f8179f20-ddcb-4911-bd85-33c6b4307634",
+        "6fec4f8b-dc3f-4983-a98c-03a067f5dffd",
+        "bf1818c6-25eb-411c-b4da-b7d0e59eb31b",
+        "6ce96a96-afd2-40bc-a645-6a6568a04691",
+        "ce1ec3d5-47f8-4fcd-9066-fa2ba2cfb504",
+        "125aa3a4-5b3d-4105-8d2e-2ad435e57120"
+    ],
+    "filterType": "GMScript",
+    "folderName": "App",
+    "isDefaultView": false,
+    "localisedFolderName": ""
+}

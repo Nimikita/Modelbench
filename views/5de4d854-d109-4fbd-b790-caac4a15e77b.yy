@@ -1,0 +1,23 @@
+{
+    "id": "5de4d854-d109-4fbd-b790-caac4a15e77b",
+    "modelName": "GMFolder",
+    "mvc": "1.1",
+    "name": "5de4d854-d109-4fbd-b790-caac4a15e77b",
+    "children": [
+        "6fe6c21f-278a-49d5-a9b1-31e3f60cbcb4",
+        "fe9c7ba3-e3ea-45c6-ba63-d6f2928b3b3d",
+        "51bd28b6-0fe3-4230-a0e7-b21447ff014b",
+        "93875ff8-2887-4747-b3f8-fe4f7e00f639",
+        "09bb6427-3a2d-4dfb-b08d-29b0c7124af2",
+        "fc538a7a-c537-4f52-b9ae-f8fd6b8d6646",
+        "4ceb7b3c-2ecf-44bc-8de5-9996b9c6ef55",
+        "e910fd2c-c8ac-41c0-8c58-087357aff4d1",
+        "aa59e035-7895-4786-b387-42ab2f52c058",
+        "8a9318ca-a5d0-422a-aa2e-0d5ca56d9d64",
+        "8f5352c0-3978-4345-bf50-3e61abb39e69"
+    ],
+    "filterType": "GMSprite",
+    "folderName": "Interface",
+    "isDefaultView": false,
+    "localisedFolderName": ""
+}

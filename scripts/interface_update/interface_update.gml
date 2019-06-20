@@ -1,0 +1,42 @@
+/// interface_update()
+/// @desc Updates interface colors based on selected theme
+
+var theme = test(setting_dark_theme, theme_dark, theme_light);
+
+// Accent color(s)
+
+c_accent = theme.accent_list[setting_accent]
+
+a_accent10 = theme.accent_10a
+a_accent20 = theme.accent_20a
+a_accent30 = theme.accent_30a
+a_accent50 = theme.accent_50a
+a_accent80 = theme.accent_80a
+
+interface_update_accent()
+
+// Neutral colors
+c_neutral10 = theme.neutral_10
+a_neutral10 = theme.neutral_10a
+
+c_neutral20 = theme.neutral_20
+a_neutral20 = theme.neutral_20a
+
+c_neutral40 = theme.neutral_40
+a_neutral40 = theme.neutral_40a
+
+c_neutral50 = theme.neutral_50
+a_neutral50 = theme.neutral_50a
+
+c_neutral60 = theme.neutral_60
+a_neutral60 = theme.neutral_60a
+
+c_neutral100 = theme.neutral_100
+a_neutral100 = theme.neutral_100a
+
+c_background = theme.background
+c_error = theme.red_error
+c_axisred = theme.red
+c_axisgreen = theme.green
+c_axisblue = theme.blue
+c_origin = theme.origin

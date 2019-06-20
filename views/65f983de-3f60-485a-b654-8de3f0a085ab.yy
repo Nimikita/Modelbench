@@ -1,0 +1,33 @@
+{
+    "id": "65f983de-3f60-485a-b654-8de3f0a085ab",
+    "modelName": "GMFolder",
+    "mvc": "1.1",
+    "name": "65f983de-3f60-485a-b654-8de3f0a085ab",
+    "children": [
+        "0f3e4c01-e8c7-49a0-9a3b-e869dbef8018",
+        "5baf254c-a8b1-4baa-b6af-c98052bef0b3",
+        "7d082932-79b9-440c-abd6-64cabf422927",
+        "2712f285-24d6-4f93-a0fb-47ec70b49ee2",
+        "1ff4f5c5-229a-4df5-bb33-c90652d3ddc9",
+        "1e2589d4-f379-4d95-8327-c380a63271ac",
+        "43fa63f7-d9fc-4add-b685-d428bac3471e",
+        "9a218224-e6e8-45cc-b133-2281bae8236e",
+        "14d3b4f8-c109-4c80-bb8b-cd3f3934b585",
+        "9872bb63-e783-4302-9e84-01059e7c3daa",
+        "61235ae2-7508-4d77-8e10-4e7a274d25e1",
+        "1997fd6a-cf99-4452-bcad-a48b261ca665",
+        "424de149-5d07-4063-ab8a-20c52822ad8f",
+        "618d8d32-38e4-477f-8c64-4ce862c2bd76",
+        "f7fcc133-35ca-4dcf-a281-5de639916f1a",
+        "ccd46d4e-a87b-4c5b-9d8e-22066e238a5a",
+        "cd5a3127-b401-418e-baae-07f6b3fb981a",
+        "ee5bd9f2-730b-4684-8fb1-84a5c54a573f",
+        "a8231669-67d7-43c4-a00b-86796b64043e",
+        "8817561e-71ad-4a77-9bd2-1b977513e0e7",
+        "e99d4852-fa87-46d4-9975-f75b038c4032"
+    ],
+    "filterType": "GMScript",
+    "folderName": "Vector",
+    "isDefaultView": false,
+    "localisedFolderName": ""
+}

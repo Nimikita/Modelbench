@@ -1,0 +1,145 @@
+/// scrollbar_draw(scrollbar, direction, x, y, size, maxsize)
+/// @arg scrollbar
+/// @arg direction
+/// @arg x
+/// @arg y
+/// @arg size
+/// @arg maxsize
+/// @desc Draws a scrollbar.
+
+var sb, dir, xx, yy, size, maxsize;
+var margin, width, areasize, barsizeadj;
+var barsize, barpos, mouseinarea, mouseinbar, pressed;
+sb = argument[0]
+dir = argument[1]
+xx = argument[2]
+yy = argument[3] + 1
+size = argument[4]
+maxsize = argument[5]
+
+width = 6
+margin = 10
+barsizeadj = width
+areasize = width
+
+//xx -= width
+
+yy += 3
+size -= 6
+
+if (size >= maxsize || maxsize = 0)
+{
+	sb.needed = false
+	sb.value = 0
+	sb.value_goal = 0
+}
+else
+	sb.needed = true
+sb.atend = (sb.needed && sb.value >= maxsize - size)
+
+if (!sb.needed || size < 5)
+	return 0
+
+barsize = clamp(5, floor((size / maxsize) * size), size)
+barpos = min(size - barsize, floor(sb.value * (size / maxsize)))
+
+if (dir = e_scroll.HORIZONTAL)
+{
+	mouseinarea = (app_mouse_box(xx - margin, yy - margin, size + margin * 2, areasize) && content_mouseon)
+	mouseinbar = (app_mouse_box(xx - margin + barpos, yy - margin, barsize + margin * 2, areasize) && content_mouseon)
+}
+else
+{
+	mouseinarea = (app_mouse_box(xx, yy, width, size) && content_mouseon)
+	mouseinbar = (app_mouse_box(xx, yy + barpos, barsizeadj, barsize) && content_mouseon)
+}
+
+if (mouseinarea && window_busy = "")
+{
+	mouse_cursor = cr_handpoint
+	if (mouse_left_pressed) // Start dragging
+	{
+		window_focus = string(sb)
+		if (mouseinbar)
+			window_busy = "scrollbar"
+	}
+	
+	if (mouse_left && !mouseinbar) // Page jump
+	{
+		sb.press--
+		if (sb.press < 1)
+		{
+			if (dir)
+				sb.value_goal += test((mouse_x < xx + barpos), -size, size)
+			else
+				sb.value_goal += test((mouse_y < yy + barpos), -size, size)
+			
+            sb.value_goal = snap(sb.value_goal, sb.snap_value)
+				
+			sb.value = snap(sb.value, sb.snap_value)
+		}
+		
+		if (sb.press < 0)
+			sb.press = 10
+		else if (sb.press = 0)
+			sb.press = 2
+	}
+}
+if (!mouse_left)
+	sb.press = 0
+
+sb.value += (sb.value_goal - sb.value) / max(1, 4 / delta)
+
+// Mouse wheel and dragging
+if (window_focus = string(sb) || (window_focus = "" && content_mouseon))
+{
+	if (window_busy = "")
+	{
+		if (sb.snap_value = 0)
+			sb.value_goal += (mouse_wheel * 15) * 4
+		else
+			sb.value_goal += (mouse_wheel * sb.snap_value) * 4
+	}
+	
+	if (window_busy = "scrollbar")
+	{
+		mouse_cursor = cr_handpoint
+		if (!mouse_left)
+		{
+			window_busy = ""
+			sb.value = snap(sb.value, sb.snap_value)
+			sb.value_goal = sb.value
+			app_mouse_clear()
+		}
+		else
+		{
+			if (dir = e_scroll.HORIZONTAL)
+			{
+				sb.value += mouse_dx * (maxsize / size)
+				sb.value_goal = sb.value
+			}
+			else
+			{
+				sb.value += mouse_dy * (maxsize / size)
+				sb.value_goal = sb.value
+			}
+		}
+	}
+}
+
+sb.value = round(clamp(sb.value, 0, maxsize - size))
+sb.value_goal = round(clamp(sb.value_goal, 0, maxsize - size))
+
+barpos = min(size - barsize, floor(sb.value * (size / maxsize)))
+pressed = (window_busy = "scrollbar" && window_focus = string(sb))
+
+if (dir = e_scroll.HORIZONTAL)
+{
+	draw_box(xx, yy, size, barsizeadj, false, c_neutral10, a_neutral10)
+	draw_box(xx + barpos, yy, barsize, barsizeadj, false, c_accent, 1)
+}
+else
+{
+	draw_box(xx, yy, barsizeadj, size, false, c_neutral10, a_neutral10)
+	draw_box(xx, yy + barpos, barsizeadj, barsize, false, c_accent, 1)
+}

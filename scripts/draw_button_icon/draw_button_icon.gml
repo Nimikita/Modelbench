@@ -1,0 +1,105 @@
+/// draw_button_icon(name, x, y, width, height, value, icon, [script, [disabled, [tip]]])
+/// @arg name
+/// @arg x
+/// @arg y
+/// @arg width
+/// @arg height
+/// @arg value
+/// @arg icon
+/// @arg [script
+/// @arg [disabled
+/// @arg [tip]]]
+
+var name, xx, yy, wid, hei, value, icon, script, disabled, tip, animated;
+var small, mouseon;
+
+name = argument[0]
+xx = argument[1]
+yy = argument[2]
+wid = argument[3]
+hei = argument[4]
+value = argument[5]
+icon = argument[6]
+script = null
+disabled = false
+tip = ""
+
+if (argument_count > 7)
+	script = argument[7]
+	
+if (argument_count > 8)
+	disabled = argument[8]
+
+if (argument_count > 9)
+	tip = text_get(argument[9])
+
+animated = sprite_exists(icon)
+
+//if (xx + wid < content_x || xx > content_x + content_width || yy + hei < content_y || yy > content_y + content_height)
+//	return 0
+
+small = ((wid < 28) || (hei < 28))
+
+if (small)
+{
+	mouseon = app_mouse_box(xx, yy, wid, hei) && content_mouseon && !disabled
+	
+	if (mouseon)
+		tip_set(tip, xx, yy, wid, hei)
+}
+else
+{
+	mouseon = app_mouse_box(xx + 2, yy + 2, wid - 4, hei - 4) && content_mouseon && !disabled
+	
+	if (mouseon)
+		tip_set(tip, xx + 2, yy + 2, wid - 4, hei - 4)
+}
+
+if (mouseon)
+	mouse_cursor = cr_handpoint
+
+microani_set(name, script, mouseon, mouseon && mouse_left, value)
+
+// Hover outline
+draw_box_hover(xx, yy, wid, hei, mcroani_arr[e_mcroani.HOVER])
+
+// Background
+var backgroundcolor, backgroundalpha;
+backgroundcolor = merge_color(c_accent10, c_neutral10, mcroani_arr[e_mcroani.ACTIVE])
+backgroundalpha = lerp(0, a_neutral10, mcroani_arr[e_mcroani.ACTIVE])
+
+backgroundalpha = lerp(backgroundalpha, 0, mcroani_arr[e_mcroani.HOVER])
+
+backgroundcolor = merge_color(backgroundcolor, c_accent10, mcroani_arr[e_mcroani.PRESS])
+backgroundalpha = lerp(backgroundalpha, a_accent10, mcroani_arr[e_mcroani.PRESS])
+
+backgroundcolor = merge_color(backgroundcolor, c_accent10, mcroani_arr[e_mcroani.PRESS])
+backgroundalpha = lerp(backgroundalpha, a_accent10, mcroani_arr[e_mcroani.PRESS])
+
+var prevalpha = draw_get_alpha();
+draw_set_alpha(prevalpha * lerp(1, .5, mcroani_arr[e_mcroani.DISABLED]))
+
+//if (!animated)
+	draw_box(xx, yy, wid, hei, false, backgroundcolor, backgroundalpha)
+
+// Icon
+
+// Animated icon(if 'icon' is a sprite)
+if (sprite_exists(icon))
+{
+	var frame = floor((sprite_get_number(spr_arrow_ani) - 1) * mcroani_arr[e_mcroani.ACTIVE_LINEAR]);
+	draw_image(icon, frame, xx + wid/2, yy + wid/2, 1, 1, c_neutral60, a_neutral60)
+}
+else
+	draw_image(spr_icons, icon, xx + wid/2, yy + wid/2, 1, 1, merge_color(c_neutral60, c_accent, mcroani_arr[e_mcroani.ACTIVE]), lerp(a_neutral60, 1, mcroani_arr[e_mcroani.ACTIVE]))
+
+draw_set_alpha(prevalpha)
+
+microani_update(mouseon, mouseon && mouse_left, value, disabled)
+
+if (mouseon && mouse_left_released)
+{
+	if (script != null)
+		script_execute(script, !value)
+	return true
+}
