@@ -4,9 +4,12 @@
         "language": "English",
         "translator": "Nimi",
         "forversion": "1.0.0",
-        "lastchange": "2019.06.20"
+        "lastchange": "2019.06.21"
     },
 	"startup/": {
+		"recovermodelheader": "Unsaved model detected",
+		"recovermodeldesc": "An unsaved model was found from an interupted session of Modelbench. If you would like to continue editing the model, click '%1' to load the latest available backup.\nDon't forget to save after recovering!",
+		"recovermodel": "RECOVER...",
 		"browse": "BROWSE...",
 		"newmodel": "NEW MODEL",
 		"recentmodels": "Recent models"
@@ -36,6 +39,13 @@
 		"fileunreadable": "The file could not be read correctly. See the log for more details. Try loading a backup file(.mbbackup) if one is available.(Change the extention in the file browser.)",
         "fileunreadablecaption": "Unreadable file"
 	},
+	"question/": {
+        "confirmexit": "Save the changes made in %1 before quitting?",
+        "confirmnew": "Save the changes made in %1 before creating a new model?",
+        "confirmopen": "Save the changes made in %1 before opening another model?",
+		"confirmsaveexit": "The current model hasn't been saved yet. Save the current model before quitting?",
+        "replace": "A resource with this filename has already been added into the project. Do you want to replace it with the selected file?"
+    },
 	"filedialog/": {
 		"open/": {
 			"image": "Images",
@@ -43,6 +53,10 @@
 			"model": "Mine-imator model",
 			"modelbackup": "Modelbench model backups",
             "modelcaption": "Open Mine-imator model"
+		},
+		"save/": {
+			"model": "Mine-imator model",
+			"modelcaption": "Save Mine-imator model"
 		}
 	},
 	"snackbar/": {
@@ -126,9 +140,13 @@
 	"interface": "INTERFACE",
 	"graphics": "GRAPHICS",
 	"render": "RENDER",
-	"accessability": "ACCESSABILITY",
+	"accessibility": "ACCESSIBILITY",
 	"assets/": {
 		"modelname": "Model name",
+		"modellocation": "Model location",
+		"modelnotsaved": "Model not saved",
+		"openfolder": "Open folder",
+		"savemodel": "Save model",
 		"playerskin": "Allow Minecraft skins",
 		"playerskinhelp": "Allow skins to be downloaded for the model in Mine-imator.",
 		"modelscale": "Model scale",

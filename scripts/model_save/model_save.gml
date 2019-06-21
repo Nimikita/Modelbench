@@ -6,8 +6,22 @@ if (argument_count > 0)
 	fn = argument[0]
 else
 	fn = model_file
+
+if (model_temporary && !model_temporary_backup)
+{
+	fn = file_dialog_save_model()
 	
-log("Saving project", fn)
+	if (fn = "")
+		return 0
+	
+	model_file = fn
+	model_folder = filename_dir(fn)
+	model_temporary = false
+	
+	log("Updated model save location", model_file)
+}
+
+log("Saving model", fn)
 
 save_folder = model_folder
 load_folder = model_folder

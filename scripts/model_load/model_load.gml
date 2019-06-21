@@ -10,10 +10,8 @@ else
 	
 if (fn = "")
 	return 0
-	
-var name = filename_new_ext(filename_name(fn), "");
 
-if (!file_exists(fn))
+if (!file_exists_lib(fn))
 	return 0
 	
 // Start model loading
@@ -27,8 +25,6 @@ model_reset()
 
 model_file = filename_new_ext(fn, ".mimodel")
 model_folder = filename_dir(fn)
-
-window_set_caption(name + ".mimodel - Modelbench")
 
 save_folder = model_folder
 load_folder = filename_dir(fn)

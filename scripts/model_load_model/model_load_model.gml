@@ -14,7 +14,7 @@ if (!ds_map_valid(map))
 	assets.model_properties.tbx_model_name.text = model_name
 	
 	// Root texture
-	texture_name = value_get_string(map[?"texture"], "")
+	texture_name = value_get_string(map[?"texture"], null)
 	texture_inherit = id
 	res = model_load_texture(texture_name)
 	

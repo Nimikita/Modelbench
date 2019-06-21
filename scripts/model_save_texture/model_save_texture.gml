@@ -2,6 +2,13 @@
 
 var filename, texsize, scale;
 
+// No texture
+if (object_index = app && res = null)
+{
+	json_save_var_nullable("texture", null)
+	return 0
+}
+
 if (object_index = app || (res != null && instance_exists(res) && !value[e_value.INHERIT_TEXTURE]))
 {
 	filename = res.filename

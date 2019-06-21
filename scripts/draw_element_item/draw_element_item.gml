@@ -86,7 +86,7 @@ showbutton = (element.element_type = TYPE_PART)
 showbutton = showbutton && !(element.part_list = null && (setting_hide_shapes || element.shape_list = null))
 if (itemvisible && showbutton)
 {
-	if (draw_button_icon("assetspartshowchildren" + string(element), xx, itemy + 4, 20, 20, element.extend, spr_arrow_small_ani, null, null, test(element.extend, "tooltipcollapse", "tooltipexpand")))
+	if (draw_button_icon("assetspartshowchildren" + string(element), xx, itemy + 4, 20, 20, element.extend, null, null, null, test(element.extend, "tooltipcollapse", "tooltipexpand"), spr_arrow_small_ani))
 		element.extend = !element.extend
 }
 expandhover = app_mouse_box(xx, itemy + 4, 20, 20)

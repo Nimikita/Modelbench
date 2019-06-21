@@ -10,8 +10,9 @@ setting_element_editor_location = "right_secondary"
 
 setting_view_split = 0.5
 
-setting_backup_models = true
-setting_backup_minutes = 2
+backup_next = 0
+setting_backup = true
+setting_backup_time = 2
 setting_backup_amount = 3
 
 setting_key_open = ord("O")

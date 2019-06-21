@@ -1,4 +1,4 @@
-/// draw_button_icon(name, x, y, width, height, value, icon, [script, [disabled, [tip]]])
+/// draw_button_icon(name, x, y, width, height, value, icon, [script, [disabled, [tip, [sprite]]]])
 /// @arg name
 /// @arg x
 /// @arg y
@@ -8,9 +8,10 @@
 /// @arg icon
 /// @arg [script
 /// @arg [disabled
-/// @arg [tip]]]
+/// @arg [tip
+/// @arg [sprite]]]]
 
-var name, xx, yy, wid, hei, value, icon, script, disabled, tip, animated;
+var name, xx, yy, wid, hei, value, icon, script, disabled, tip, sprite, animated;
 var small, mouseon;
 
 name = argument[0]
@@ -23,6 +24,7 @@ icon = argument[6]
 script = null
 disabled = false
 tip = ""
+sprite = spr_icons
 
 if (argument_count > 7)
 	script = argument[7]
@@ -32,8 +34,11 @@ if (argument_count > 8)
 
 if (argument_count > 9)
 	tip = text_get(argument[9])
+	
+if (argument_count > 10)
+	sprite = argument[10]
 
-animated = sprite_exists(icon)
+animated = (sprite != spr_icons && sprite_get_number(sprite) > 1)
 
 //if (xx + wid < content_x || xx > content_x + content_width || yy + hei < content_y || yy > content_y + content_height)
 //	return 0
@@ -85,10 +90,10 @@ draw_set_alpha(prevalpha * lerp(1, .5, mcroani_arr[e_mcroani.DISABLED]))
 // Icon
 
 // Animated icon(if 'icon' is a sprite)
-if (sprite_exists(icon))
+if (sprite != spr_icons)
 {
-	var frame = floor((sprite_get_number(spr_arrow_ani) - 1) * mcroani_arr[e_mcroani.ACTIVE_LINEAR]);
-	draw_image(icon, frame, xx + wid/2, yy + wid/2, 1, 1, c_neutral60, a_neutral60)
+	var frame = floor((sprite_get_number(sprite) - 1) * mcroani_arr[e_mcroani.ACTIVE_LINEAR]);
+	draw_image(sprite, frame, xx + wid/2, yy + wid/2, 1, 1, c_neutral60, a_neutral60)
 }
 else
 	draw_image(spr_icons, icon, xx + wid/2, yy + wid/2, 1, 1, merge_color(c_neutral60, c_accent, mcroani_arr[e_mcroani.ACTIVE]), lerp(a_neutral60, 1, mcroani_arr[e_mcroani.ACTIVE]))

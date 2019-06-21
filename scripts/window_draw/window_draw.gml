@@ -15,7 +15,6 @@ if (window_state = "startup")
 	return 0
 }
 
-
 panel_area_draw()
 toolbar_draw()
 

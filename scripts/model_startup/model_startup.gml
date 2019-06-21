@@ -14,6 +14,10 @@ part_list = null
 shape_list = null
 res = null
 
+model_file = ""
+model_folder = ""
+model_create_wait = false
+
 model_name = ""
 player_skin = true
-root_scale = 1
+root_scale = vec3(1)

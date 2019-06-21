@@ -29,6 +29,7 @@
 #macro temp_image					file_directory + "tmp.png"
 #macro unzip_directory				file_directory + "unzip\\"
 #macro temp_model_directory			file_directory + "modeltemp\\"
+#macro temp_model_backup			temp_model_directory + "\\" + "temp.mbbackup1"
 
 // Minecraft color palette
 #macro c_minecraft_white			hex_to_color("E9ECEC")

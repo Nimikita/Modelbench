@@ -84,7 +84,7 @@ with (settings)
 	program = tab_add_category("program", tab_settings_program, false)
 	with (program)
 	{
-		tbx_backup_minutes = new_textbox_integer()
+		tbx_backup_time = new_textbox_integer()
 		tbx_backup_amount = new_textbox_integer()
 	}
 	
@@ -112,8 +112,8 @@ with (settings)
 		tbx_wind_strength = new_textbox_decimals()
 	}
 	
-	// Accessability
-	accessability = tab_add_category("accessability", null, false)
+	// Accessibility
+	accessibility = tab_add_category("accessibility", null, false)
 	
 	// Render
 	render = tab_add_category("render", tab_settings_render, false)

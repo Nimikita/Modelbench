@@ -2,22 +2,26 @@
 
 log("Resetting model")
 
+model_reset_backup()
 history_clear()
+
 res_edit = null
 el_edit = null
 el_edit_amount = 0
-app_update_el_edit()
 
 tex_preview.update = true
 
 model_file = ""
 model_folder = ""
 model_changed = false
+model_temporary = false
+model_temporary_backup = false
+
 model_name = ""
 res = null
 
 player_skin = false
-root_scale = 1
+root_scale = vec3(1)
 
 camera_work_reset()
 
@@ -34,6 +38,7 @@ if (part_list != null)
 	ds_list_destroy(part_list)
 	part_list = null
 }
+app_update_el_edit()
 
 for (var v = 0; v < e_value.amount; v++)
 	value_default[v] = element_value_default(v)

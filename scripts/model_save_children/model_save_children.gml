@@ -1,17 +1,22 @@
 /// model_save_children()
 
-if (part_list = null)
+// Don't write "parts" array if this is a part
+if (part_list = null && object_index = obj_model_element && element_type = TYPE_PART)
 	return 0
 
 json_save_array_start("parts")
 
-for (var i = 0; i < ds_list_size(part_list); i++)
+// Model root needs "parts" array, even if it's empty
+if (part_list != null)
 {
-	with (part_list[|i])
+	for (var i = 0; i < ds_list_size(part_list); i++)
 	{
-		json_save_object_start()
-		model_save_part()
-		json_save_object_done()
+		with (part_list[|i])
+		{
+			json_save_object_start()
+			model_save_part()
+			json_save_object_done()
+		}
 	}
 }
 
