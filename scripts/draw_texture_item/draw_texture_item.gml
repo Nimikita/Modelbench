@@ -49,10 +49,10 @@ scale = min(xsca, ysca)
 draw_image(tex.sprite, 0, xx + 8, yy + 8, scale, scale)
 
 // Texture name
-draw_label(tex.filename, xx + 44 + 8, yy + 8 + 16, fa_left, fa_bottom, c_neutral100, a_neutral100, font_value)
+draw_label(tex.filename, xx + 44 + 8, yy + 8 + 16, fa_left, fa_bottom, c_neutral60, a_neutral60, font_value)
 
 // Texture size
-draw_label(text_get("assetstexturesize", tex.size[X], tex.size[Y]), xx + 44 + 8, yy + 8 + 30, fa_left, fa_bottom, c_neutral60, a_neutral60, font_caption)
+draw_label(text_get("assetstexturesize", tex.size[X], tex.size[Y]), xx + 44 + 8, yy + 8 + 30, fa_left, fa_bottom, c_neutral50, a_neutral50, font_caption)
 
 // Main texture?
 if (tex = app.res)

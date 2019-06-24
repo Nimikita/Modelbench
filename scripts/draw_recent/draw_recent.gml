@@ -38,7 +38,7 @@ if (recent_list_amount = 0)
 	gpu_set_tex_filter(false)
 	
 	//draw_label(text_get("recentnone"), midx, midy - 4, fa_center, fa_bottom, c_accent, 1, font_heading)
-	//draw_label(text_get("recentnonesub", text_get("startupnewmodel")), midx, midy + 4, fa_center, fa_top, a_neutral60, a_neutral60, font_subheading)
+	//draw_label(text_get("recentnonesub", text_get("startupnewmodel")), midx, midy + 4, fa_center, fa_top, a_neutral50, a_neutral50, font_subheading)
 	return 0
 }
 
@@ -54,7 +54,7 @@ if (recent_display_mode = "list")
 	timex = xx + 12 + namewidth + 12
 	
 	// File name
-	draw_label(text_get("recentfilename"), namex, recenty + 14, fa_left, fa_middle, c_neutral60, a_neutral60, font_emphasis)
+	draw_label(text_get("recentfilename"), namex, recenty + 14, fa_left, fa_middle, c_neutral50, a_neutral50, font_emphasis)
 	
 	var filenamesort = (recent_sort_mode = e_recent_sort.filename_ascend || recent_sort_mode = e_recent_sort.filename_descend);
 	if (app_mouse_box(namex, recenty, namewidth, 28) || filenamesort)
@@ -64,7 +64,7 @@ if (recent_display_mode = "list")
 	}
 	
 	// Last opened
-	draw_label(text_get("recentlastopened"), timex, recenty + 14, fa_left, fa_middle, c_neutral60, a_neutral60, font_emphasis)
+	draw_label(text_get("recentlastopened"), timex, recenty + 14, fa_left, fa_middle, c_neutral50, a_neutral50, font_emphasis)
 	
 	var datesort = (recent_sort_mode = e_recent_sort.date_ascend || recent_sort_mode = e_recent_sort.date_descend);
 	if (app_mouse_box(timex, recenty, timewidth, 28) || datesort)
@@ -86,10 +86,10 @@ if (recent_display_mode = "list")
 		var item = recent_list_display[|i];
 		
 		// Name
-		draw_label(string_limit_font(item.name, namewidth, font_value), xx + 12, recenty + 22, fa_left, fa_middle, c_neutral100, a_neutral100, font_value)
+		draw_label(string_limit_font(item.name, namewidth, font_value), xx + 12, recenty + 22, fa_left, fa_middle, c_neutral60, a_neutral60, font_value)
 		
 		// Last opened
-		draw_label(string_limit_font(recent_time_string(item.last_opened), timewidth, font_value), timex, recenty + 22, fa_left, fa_middle, c_neutral60, a_neutral60, font_value)
+		draw_label(string_limit_font(recent_time_string(item.last_opened), timewidth, font_value), timex, recenty + 22, fa_left, fa_middle, c_neutral50, a_neutral50, font_value)
 		
 		// Icons
 		var iconx = xx + wid - 8;

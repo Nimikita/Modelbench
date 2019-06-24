@@ -22,6 +22,15 @@ color_brightness = value[e_value.BRIGHTNESS]
 color_mix = value[e_value.MIX_COLOR]
 color_mix_percent = value[e_value.MIX_PERCENT]
 
+if (other.object_index != app && color_inherit)
+{
+	color_blend = color_multiply(color_blend, other.color_blend)
+	color_alpha *= other.color_alpha
+	color_brightness = clamp(color_brightness + other.color_brightness, 0, 1)
+	color_mix = color_add(color_mix, other.color_mix)
+	color_mix_percent = clamp(color_mix_percent + other.color_mix_percent, 0, 1)
+}
+
 // Shape appearance
 texture_mirror = value[e_value.TEX_MIRROR]
 invert = value[e_value.INVERT]
@@ -46,7 +55,8 @@ to = point3D_mul(point3D_add(to_noscale, inflate), scale)
 bend_shape = value[e_value.BEND]
 bend_part = other.bend_part
 bend_axis = other.bend_axis
-bend_direction = other.bend_direction
+bend_direction_min = other.bend_direction_min
+bend_direction_max = other.bend_direction_max
 bend_default_angle = other.bend_default_angle
 bend_offset = other.bend_offset
 bend_size = other.bend_size

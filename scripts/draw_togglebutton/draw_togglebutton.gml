@@ -1,41 +1,27 @@
-/// draw_togglebutton(name, x, y, namelist, iconlist, setlist, scriptlist, comparevalue, [multitoggle])
+/// draw_togglebutton(name, x, y)
 /// @arg name
 /// @arg x
 /// @arg y
-/// @arg namelist
-/// @arg iconlist
-/// @arg valuelist
-/// @arg scriptlist
-/// @arg comparevalue
-/// @arg [multitoggle]
-/// @desc Draws a toggle button, by default it acts similar to a series of radio buttons, 'multitoggle' allows for multiple true/false values
+/// @desc Displays togglebutton options
 
-var name, xx, yy, namelist, iconlist, valuelist, scriptlist, comparevalue, multitoggle;
-var h, w, buttonx, buttoncount, buttonsize, mouseon, script, scriptvalue;
+var name, xx, yy;
+var h, w, buttonx, buttoncount, buttonsize, mouseon, script, scriptvalue, axis;
 name = argument[0]
 xx = argument[1]
 yy = argument[2]
-namelist = argument[3]
-iconlist = argument[4]
-valuelist = argument[5]
-scriptlist = argument[6]
-comparevalue = argument[7]
-multitoggle = false
-
-if (argument_count > 8)
-	multitoggle = argument[8]
 
 h = 28
 w = dw
 buttonx = xx
-buttoncount = array_length_1d(namelist)
+buttoncount = array_length_1d(togglebutton_name)
 buttonsize = round(w/buttoncount)
 mouseon = false
 script = null
 scriptvalue = null
+axis = X
 
-draw_label(text_get(name), xx, yy + 8, fa_left, fa_bottom, c_neutral60, a_neutral60, font_label)
-yy += 16
+draw_label(text_get(name), xx, yy + 16, fa_left, fa_bottom, c_neutral50, a_neutral50, font_label)
+yy += 24
 
 draw_outline(xx, yy, w, h, 1, c_neutral20, a_neutral20)
 
@@ -49,10 +35,7 @@ for (var i = 0; i < buttoncount; i++)
 	if (mouseon)
 		mouse_cursor = cr_handpoint
 	
-	if (multitoggle)
-		microani_set(name + namelist[i], null, mouseon, mouseon && mouse_left, valuelist[i] = true)
-	else
-		microani_set(name + namelist[i], null, mouseon, mouseon && mouse_left, valuelist[i] = comparevalue)
+	microani_set(name + togglebutton_name[i], null, mouseon, mouseon && mouse_left, togglebutton_active[i])
 	
 	// Draw base button
 	var backgroundcolor, backgroundalpha;
@@ -62,15 +45,13 @@ for (var i = 0; i < buttoncount; i++)
 	draw_box(buttonx, yy, buttonsize, h, false, backgroundcolor, backgroundalpha)
 	
 	var labelcolor, labelalpha;
-	labelcolor = merge_color(c_neutral60, c_accent, mcroani_arr[e_mcroani.ACTIVE])
-	labelalpha = lerp(a_neutral60, 1, mcroani_arr[e_mcroani.ACTIVE])
+	labelcolor = merge_color(c_neutral50, c_accent, mcroani_arr[e_mcroani.ACTIVE])
+	labelalpha = lerp(a_neutral50, 1, mcroani_arr[e_mcroani.ACTIVE])
 	
-	var icon = null;
-	if (iconlist != null)
-		icon = iconlist[i]
+	var icon = togglebutton_icon[i];
 	
 	var totalwidth, startx;
-	totalwidth = string_width_font(text_get(namelist[@ i]), font_button) + test(icon = null, 0, 24 + 8)
+	totalwidth = string_width_font(text_get(togglebutton_name[@ i]), font_button) + test(icon = null, 0, 24 + 8)
 	startx = snap(buttonx + (buttonsize/2) - (totalwidth/2), 2)
 	
 	// Icon
@@ -81,25 +62,21 @@ for (var i = 0; i < buttoncount; i++)
 	}
 	
 	// Text
-	draw_label(text_get(namelist[@ i]), startx, yy + (h/2), fa_left, fa_middle, labelcolor, labelalpha, font_button)
+	draw_label(text_get(togglebutton_name[@ i]), startx, yy + (h/2), fa_left, fa_middle, labelcolor, labelalpha, font_button)
 	
 	if (i > 0)
 		draw_box(buttonx, yy + 4, 1, h - 8, false, c_neutral20, a_neutral20)
 	
-	if (multitoggle || valuelist = null)
-		microani_update(mouseon, mouseon && mouse_left, valuelist[i] = true)
-	else
-		microani_update(mouseon, mouseon && mouse_left, valuelist[i] = comparevalue)
+	microani_update(mouseon, mouseon && mouse_left, togglebutton_active[i])
 	
 	// Execute script with value
 	if (mouseon && mouse_left_released)
 	{
-		if (scriptlist != null && scriptlist[i] != null)
+		if (togglebutton_script[i] != null)
 		{
-			script = scriptlist[i]
-			
-			if (valuelist != null)
-				scriptvalue = valuelist[@ i]
+			script = togglebutton_script[i]
+			scriptvalue = togglebutton_value[i]
+			axis = togglebutton_axis[i]
 		}
 	}
 	
@@ -118,20 +95,25 @@ for (var i = 0; i < buttoncount; i++)
 	if (mouseon)
 		mouse_cursor = cr_handpoint
 	
-	if (multitoggle)
-		microani_set(name + namelist[i], null, mouseon, mouseon && mouse_left, valuelist[i] = true)
-	else
-		microani_set(name + namelist[i], null, mouseon, mouseon && mouse_left, valuelist[i] = comparevalue)
+	microani_set(name + togglebutton_name[i], null, mouseon, mouseon && mouse_left, togglebutton_active[i])
 	
 	draw_box_hover(buttonx, yy, buttonsize, h, mcroani_arr[e_mcroani.HOVER])
 	buttonx += buttonsize
 }
 
+// Execute script
 if (script != null)
 {
+	axis_edit = axis
+	
 	if (scriptvalue != null)
 		script_execute(script, scriptvalue)
 	else
 		script_execute(script)
+	
+	axis_edit = X
 }
+
+// Clear togglebutton options
+togglebutton_reset()
 	

@@ -16,7 +16,7 @@ draw_image(spr_startup_right, setting_dark_theme, window_width, 0)
 draw_sprite(spr_logo, 0, window_width / 2, 96)
 
 // Version
-draw_label("v " + modelbench_version_full, (window_width / 2) + 245, 130, fa_left, fa_bottom, c_neutral60, a_neutral60, font_value)
+draw_label("v " + modelbench_version_full, (window_width / 2) + 245, 130, fa_left, fa_bottom, c_neutral50, a_neutral50, font_value)
 
 dx = (window_width / 2) + (996 / 2) - 24
 dy = 240
@@ -36,7 +36,7 @@ if (file_exists_lib(temp_model_backup))
 	draw_label(text_get("startuprecovermodelheader"), xx + 36, dy + 22, fa_left, fa_middle, c_error, 1, font_heading)
 	
 	draw_set_font(font_emphasis)
-	draw_label(string_wrap(text_get("startuprecovermodeldesc", text_get("startuprecovermodel")), dw - 16), xx + 8, dy + 40, fa_left, fa_top, c_neutral60, a_neutral60, font_emphasis)
+	draw_label(string_wrap(text_get("startuprecovermodeldesc", text_get("startuprecovermodel")), dw - 16), xx + 8, dy + 40, fa_left, fa_top, c_neutral50, a_neutral50, font_emphasis)
 	
 	draw_button_primary("startuprecovermodel", xx - 8, dy + 144 - 36 - 8, null, model_recover, e_icon.refresh, fa_right)
 	dw = 996

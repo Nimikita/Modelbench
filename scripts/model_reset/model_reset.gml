@@ -41,6 +41,10 @@ if (part_list != null)
 app_update_el_edit()
 
 for (var v = 0; v < e_value.amount; v++)
+{
 	value_default[v] = element_value_default(v)
+	value_inherit[v] = value_default[v]
+	value[v] = value_default[v]
+}
 
 log("Model resetted")

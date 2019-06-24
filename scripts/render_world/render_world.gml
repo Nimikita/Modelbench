@@ -10,6 +10,11 @@ with (render_shader_obj)
 // Enable mip-mapping
 shader_texture_filter_mipmap = true
 
+// Neutral depth (0)
+if (render_mode != e_render_mode.HIGH_LIGHT_SUN_DEPTH &&
+	render_mode != e_render_mode.SHAPE)
+	render_world_ground()
+
 // Render negative depth
 var i;
 for (i = 0; i < ds_list_size(render_list); i++)
@@ -20,11 +25,6 @@ for (i = 0; i < ds_list_size(render_list); i++)
 	with (part)
 		render_world_part()
 }
-
-// Neutral depth (0)
-if (render_mode != e_render_mode.HIGH_LIGHT_SUN_DEPTH &&
-	render_mode != e_render_mode.SHAPE)
-	render_world_ground()
 
 // Positive depth
 for (; i < ds_list_size(render_list); i++)

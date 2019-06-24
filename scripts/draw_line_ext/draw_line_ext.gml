@@ -18,7 +18,8 @@ alpha = draw_get_alpha()
 draw_set_color(argument4)
 draw_set_alpha(alpha * argument5)
 
-draw_rectangle(x1, y1, x2, y2, false)
+draw_line(x1, y1, x2, y2)
+//draw_rectangle(x1, y1, x2, y2, false)
 
 draw_set_color(color)
 draw_set_alpha(alpha)

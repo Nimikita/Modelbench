@@ -3,11 +3,12 @@
 if (!value[e_value.BEND] || (!value[e_value.BEND_AXIS_X] && !value[e_value.BEND_AXIS_Y] && !value[e_value.BEND_AXIS_Z]))
 	return 0
 
-var part, dir, axis, axisenablearray, axisarray, directionarray, invertarray, anglearray;
+var part, dirmin, dirmax, axis, axisenablearray, axisarray, axismin, axismax, invertarray, anglearray;
 axis = null
 axisenablearray = array(false, false, false)
 axisarray = array()
-directionarray = array()
+axismin = array()
+axismax = array()
 invertarray = array()
 anglearray = array()
 
@@ -67,19 +68,19 @@ if (array_length_1d(axis) > 1)
 				axisedit = Y
 		}
 		
-		var dirstring = "both";
-		if (value[e_value.BEND_DIR_X + axisedit] = e_bend.FORWARD)
-			dirstring = "forward"
-		else if (value[e_value.BEND_DIR_X + axisedit] = e_bend.BACKWARD)
-			dirstring = "backward"
-		
-		directionarray = array_add(directionarray, dirstring)
+		axismin = array_add(axismin, value[e_value.BEND_X_MIN + axisedit])
+		axismax = array_add(axismax, value[e_value.BEND_X_MAX + axisedit])
 		invertarray = array_add(invertarray, value[e_value.BEND_INVERT_X + axisedit])
 		anglearray = array_add(anglearray, value[e_value.BEND_ANGLE_X + axisedit])
 	}
 	
 	json_save_var("axis", axisarray)
-	json_save_var("direction", directionarray)
+	
+	if (!array_compare_value(axismin, vec3(-180)))
+		json_save_var("direction_min", axismin)
+	
+	if (!array_compare_value(axismax, vec3(180)))
+		json_save_var("direction_max", axismax)
 	
 	if (!array_compare_value(invertarray, false))
 		json_save_array_bool("invert", invertarray)
@@ -98,13 +99,13 @@ else
 		json_save_var("axis", "x")
 	
 	// Bend direction
-	switch (value[e_value.BEND_DIR_X + axis[0]])
-	{
-		case e_bend.FORWARD:	dir = "forward";	break;
-		case e_bend.BACKWARD:	dir = "backward";	break;
-		case e_bend.BOTH:		dir = "both";		break;
-	}
-	json_save_var("direction", dir)
+	var dirmin = value[e_value.BEND_X_MIN + axis[0]];
+	if (dirmin != -180)
+		json_save_var("direction_min", dirmin)
+	
+	var dirmax = value[e_value.BEND_X_MAX + axis[0]];
+	if (dirmax != 180)
+		json_save_var("direction_max", dirmax)
 	
 	// Invert
 	if (value[e_value.BEND_INVERT_X + axis[0]] = true)

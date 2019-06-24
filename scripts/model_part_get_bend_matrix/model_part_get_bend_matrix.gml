@@ -15,31 +15,22 @@ if (argument_count > 3)
 else
 	sca = vec3(1)
 
-//if (part.bend_part = null)
-//	return MAT_IDENTITY
-	
+if (part.bend_part = null && part.value[e_value.BEND])
+	return MAT_IDENTITY
+
 // Limit angle
 for (var i = X; i <= Z; i++)
 {
-	if (bend[i] = 0)
-		continue
-	
-	// Clamp to a valid angle
-	//bend[i] = bend[i]tl_value_clamp(e_value.BEND_ANGLE_X + i, bend[i])
-	
-	// Invert
-	if (part.bend_invert[i])
-		bend[i] *= -1
+	if (element_type != TYPE_SHAPE)
+	{
+		// Invert
+		bend[X + i] *= test(part.bend_invert[i], -1, 1)
+		bend[X + i] = clamp(bend[X + i], part.bend_direction_min[i], part.bend_direction_max[i])
+	}
 	
 	// Reset if not defined
 	if (!part.bend_axis[i])
 		bend[i] = 0
-		
-	// Limit by direction
-	else if (part.bend_direction[i] = e_bend.FORWARD)
-		bend[i] = min(0, -bend[i])
-	else if (part.bend_direction[i] = e_bend.BACKWARD)
-		bend[i] = max(0, bend[i])
 }
 
 // Get position

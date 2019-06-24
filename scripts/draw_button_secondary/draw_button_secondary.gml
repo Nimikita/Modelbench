@@ -66,10 +66,10 @@ var textx = xx;
 if (icon != null)
 	textx += 28
 
-draw_label(text_get(name), textx + textwidth/2, yy + height/2, fa_center, fa_middle, c_neutral60, a_neutral60)
+draw_label(text_get(name), textx + textwidth/2, yy + height/2, fa_center, fa_middle, c_neutral50, a_neutral50)
 
 if (icon != null)
-	draw_image(spr_icons, icon, xx + 18, yy + 18, 1, 1, c_neutral60, a_neutral60)
+	draw_image(spr_icons, icon, xx + 18, yy + 18, 1, 1, c_neutral50, a_neutral50)
 
 microani_update(mouseon, mouseclick, false)
 

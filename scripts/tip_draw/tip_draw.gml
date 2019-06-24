@@ -17,11 +17,11 @@ if (tip_alpha = 0)
 
 // Box
 draw_set_alpha(tip_alpha)
-draw_box(tip_x, tip_y, tip_w, tip_h, false, c_neutral100, a_neutral100)
+draw_box(tip_x, tip_y, tip_w, tip_h, false, c_neutral60, a_neutral60)
 
 // Arrow
 render_set_culling(false)
-draw_image(spr_tooltip_arrow, 0,  tip_arrow_x, tip_arrow_y, 1, tip_arrow_yscale, c_neutral100, a_neutral100)
+draw_image(spr_tooltip_arrow, 0,  tip_arrow_x, tip_arrow_y, 1, tip_arrow_yscale, c_neutral60, a_neutral60)
 render_set_culling(true)
 
 // Text

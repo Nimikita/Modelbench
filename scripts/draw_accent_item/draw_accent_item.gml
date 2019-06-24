@@ -34,7 +34,7 @@ if (accent != null)
 else
 {
 	draw_outline(xx + 1, yy + 1, width - 1, height - 1, 1, c_neutral20, a_neutral20)
-	draw_image(spr_icons, e_icon.eyedropper, xx + width/2, yy + height/2, 1, 1, c_neutral60, a_neutral60)
+	draw_image(spr_icons, e_icon.eyedropper, xx + width/2, yy + height/2, 1, 1, c_neutral50, a_neutral50)
 }
 
 if (mouseon && mouse_left_pressed && index < 9)

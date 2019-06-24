@@ -130,9 +130,12 @@ enum e_value
 	BEND_AXIS_X,
 	BEND_AXIS_Y,
 	BEND_AXIS_Z,
-	BEND_DIR_X,
-	BEND_DIR_Y,
-	BEND_DIR_Z,
+	BEND_X_MIN,
+	BEND_Y_MIN,
+	BEND_Z_MIN,
+	BEND_X_MAX,
+	BEND_Y_MAX,
+	BEND_Z_MAX,
 	BEND_INVERT_X,
 	BEND_INVERT_Y,
 	BEND_INVERT_Z,
@@ -171,6 +174,14 @@ enum e_value
 	INHERIT_TEXTURE,
 	TEXTURE_OBJ,
 	amount
+}
+
+// Menus
+enum e_menu
+{
+	LIST
+	//TIMELINE,
+	//TRANSITION_LIST
 }
 
 // Parts

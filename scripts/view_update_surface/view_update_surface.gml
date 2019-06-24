@@ -60,4 +60,33 @@ if (setting_outline_opacity > 0)
 	surface_reset_target()
 }
 
+// Controls
+
+if (el_edit_amount > 0)
+{
+	// Selection
+	//view.surface_select = render_select(view.surface_select)
+	
+	if (surface_exists(render_target))
+	{
+		surface_set_target(render_target)
+		{
+			if (el_edit != null)
+			{
+				if (!el_edit.hidden && !el_edit.tree_hidden)
+				{
+					// Bend
+					if (el_edit.element_type = TYPE_PART && el_edit.value[e_value.BEND])
+						view_control_bend(view)
+						
+					var origin = point3D_project(matrix_position(el_edit.matrix), view_proj_matrix, render_width, render_height);
+					if (!point3D_project_error)
+						draw_circle_ext(origin[X], origin[Y], 8, false, c_origin, 1)
+				}
+			}
+		}
+		surface_reset_target()
+	}
+}
+
 view.surface = render_done()

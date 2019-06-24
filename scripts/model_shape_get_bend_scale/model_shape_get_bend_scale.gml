@@ -1,4 +1,4 @@
-/// model_shape_blocky_bend_scale(bendstart, bendend, segmentpoint, start, [segmentposition], [bend])
+/// model_shape_get_bend_scale(bendstart, bendend, segmentpoint, start, [segmentposition], [bend])
 /// @arg bendstart
 /// @arg bendend
 /// @arg segmentpoint
@@ -37,17 +37,7 @@ if (segpos > bendstart && segpos < bendend)
 	else if (vec3_equals(bend_axis, vec3(false, true, false)))
 		bendaxis = Y
 	
-	// Invert
-	bendang = test(bend_invert[bendaxis], -bend[bendaxis], bend[bendaxis])
-	
-	// Clamp
-	if (bend_direction[bendaxis] = e_bend.FORWARD)
-		bendang = min(0, -bendang)
-	
-	if (bend_direction[bendaxis] = e_bend.BACKWARD)
-		bendang = max(0, bendang)
-	
-	bendang = abs(bendang)
+	bendang = abs(bend[bendaxis])
 	
 	if (bendang > 90)
 		bendang -= (bendang - 90) * 2
@@ -56,7 +46,7 @@ if (segpos > bendstart && segpos < bendend)
 	bendperc = clamp(bendperc, 0, 1)
 	bendscale = vec3_mul(bendscale, bendperc)
 	
-	for (var i = X; i < Z; i++)
+	for (var i = X; i <= Z; i++)
 		bendscale[i] = ease("easeincubic", bendscale[i])
 		
 	bendscale = vec3_div(bendscale, 2.5)

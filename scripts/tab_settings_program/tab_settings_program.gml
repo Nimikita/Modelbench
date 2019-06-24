@@ -2,7 +2,9 @@
 
 // FPS
 tab_control_togglebutton()
-draw_togglebutton("settingsfps", dx, dy, array("settingsfps30", "settingsfps60"), null, array(30, 60), array(action_setting_fps, action_setting_fps), room_speed)
+togglebutton_add("settingsfps30", null, 30, room_speed = 30, action_setting_fps)
+togglebutton_add("settingsfps60", null, 60, room_speed = 60, action_setting_fps)
+draw_togglebutton("settingsfps", dx, dy)
 tab_next()
 
 // Backup models

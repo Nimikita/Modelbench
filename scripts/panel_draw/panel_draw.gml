@@ -142,7 +142,7 @@ for (var t = 0; t < panel.tab_list_amount; t++)
 	//}
 	
 	// Label
-	draw_label(tabtitle[t], dx + 8, round(dy + (dh/2)), fa_left, fa_center, test(sel, c_accent, c_neutral60), test(sel, 1, a_neutral60), font_label)
+	draw_label(tabtitle[t], dx + 8, round(dy + (dh/2)), fa_left, fa_center, test(sel, c_accent, c_neutral50), test(sel, 1, a_neutral50), font_label)
 	
 	// Outline/border
 	if (sel)

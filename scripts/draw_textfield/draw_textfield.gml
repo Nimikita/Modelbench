@@ -38,8 +38,8 @@ update = draw_inputbox(name, xx + capwidth, yy, wid - capwidth, placeholder, tex
 
 // Use microanimation from inputbox to determine color
 var labelcolor, labelalpha;
-labelcolor = merge_color(c_neutral60, c_accent, mcroani_arr[e_mcroani.ACTIVE])
-labelalpha = lerp(a_neutral60, 1, mcroani_arr[e_mcroani.ACTIVE])
+labelcolor = merge_color(c_neutral50, c_accent, mcroani_arr[e_mcroani.ACTIVE])
+labelalpha = lerp(a_neutral50, 1, mcroani_arr[e_mcroani.ACTIVE])
 
 draw_box_hover(xx + capwidth, yy, wid - capwidth, 28, max(mcroani_arr[e_mcroani.HOVER], mcroani_arr[e_mcroani.ACTIVE]))
 

@@ -40,12 +40,12 @@ var checkboxx, checkboxy;
 checkboxx = (xx + dw - 18) + 9
 checkboxy = yy + (h/2)
 
-var checkboxcolor = merge_color(c_neutral60, c_accent, mcroani_arr[e_mcroani.PRESS]);
+var checkboxcolor = merge_color(c_neutral50, c_accent, mcroani_arr[e_mcroani.PRESS]);
 checkboxcolor = merge_color(checkboxcolor, c_accent, mcroani_arr[e_mcroani.ACTIVE])
 checkboxcolor = merge_color(checkboxcolor, c_accent50, mcroani_arr[e_mcroani.ACTIVE] * mcroani_arr[e_mcroani.HOVER])
 checkboxcolor = merge_color(checkboxcolor, c_accent80, mcroani_arr[e_mcroani.ACTIVE] * mcroani_arr[e_mcroani.PRESS])
 
-var checkboxalpha = lerp(a_neutral60, 1, mcroani_arr[e_mcroani.PRESS]);
+var checkboxalpha = lerp(a_neutral50, 1, mcroani_arr[e_mcroani.PRESS]);
 checkboxalpha = lerp(checkboxalpha, 1, mcroani_arr[e_mcroani.ACTIVE])
 checkboxalpha = lerp(checkboxalpha, a_accent50, mcroani_arr[e_mcroani.ACTIVE] * mcroani_arr[e_mcroani.HOVER])
 checkboxalpha = lerp(checkboxalpha, a_accent80, mcroani_arr[e_mcroani.ACTIVE] * mcroani_arr[e_mcroani.PRESS])
@@ -59,7 +59,7 @@ draw_image(spr_checkbox, 2, checkboxx, checkboxy, 1, 1, checkboxcolor, checkboxa
 draw_box_hover(checkboxx - 9, checkboxy - 9, 18, 18, mcroani_arr[e_mcroani.HOVER])
 
 // Label
-draw_label(name, xx, yy + (h/2), fa_left, fa_middle, c_neutral60, a_neutral60, font_emphasis)
+draw_label(name, xx, yy + (h/2), fa_left, fa_middle, c_neutral50, a_neutral50, font_emphasis)
 
 microani_update(mouseon, mouseclick, active)
 

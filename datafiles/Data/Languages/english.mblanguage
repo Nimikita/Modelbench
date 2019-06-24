@@ -158,7 +158,45 @@
 	"elementeditor/": {
 		"partname": "Part name",
 		"shapename": "Shape name",
-		"depth": "Depth"
+		"depth": "Depth",
+		"bend/": {
+			"lock": "Lock to bent half of parent",
+			"axis": "Enabled axes",
+			"axis/": {
+				"x": "Bend on X axis",
+				"y": "Bend on Y axis",
+				"z": "Bend on Z axis"
+			},
+			"invert": "Inverted axes",
+			"invert/": {
+				"x": "Invert",
+				"y": "Invert",
+				"z": "Invert"
+			},
+			"range/": {
+				"x": "Range",
+				"y": "Range",
+				"z": "Range"
+			},
+			"angle/": {
+				"x": "Default angle",
+				"y": "Default angle",
+				"z": "Default angle"
+			},
+			"offset": "Offset",
+			"customsize": "Custom bend size",
+			"customsizehelp": "Allows for a custom bend size. This part's bending will ignore program bend styles.",
+			"size": "Size",
+			"part": "Part",
+			"part/": {
+				"right": "Right",
+				"left": "Left",
+				"front": "Front",
+				"back": "Back",
+				"upper": "Upper",
+				"lower": "Lower"
+			}
+		}
 	},
 	"settings/": {
 		"fps": "Frames per second",

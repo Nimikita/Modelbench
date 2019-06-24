@@ -43,7 +43,7 @@ element_editor = new_tab(setting_element_editor_location, false, header_element_
 with (element_editor)
 {
 	tbx_name = new_textbox(true, 0, "")
-	tbx_depth = new_textbox_integer()
+	tbx_depth = new_textbox_ninteger()
 	
 	// Position
 	position = tab_add_category("position", null, false)
@@ -61,7 +61,32 @@ with (element_editor)
 	scale = tab_add_category("scale", null, false)
 	
 	// Bend
-	bend = tab_add_category("bend", null, false)
+	bend = tab_add_category("bend", tab_element_editor_bend, false)
+	with (bend)
+	{
+		tbx_offset = new_textbox_ndecimals()
+		tbx_size = new_textbox_decimals()
+		
+		tbx_min[0] = new_textbox_ndecimals()
+		tbx_min[0].suffix = "°"
+		tbx_max[0] = new_textbox_ndecimals()
+		tbx_max[0].suffix = "°"
+		tbx_min[1] = new_textbox_ndecimals()
+		tbx_min[1].suffix = "°"
+		tbx_max[1] = new_textbox_ndecimals()
+		tbx_max[1].suffix = "°"
+		tbx_min[2] = new_textbox_ndecimals()
+		tbx_min[2].suffix = "°"
+		tbx_max[2] = new_textbox_ndecimals()
+		tbx_max[2].suffix = "°"
+		
+		tbx_angle[0] = new_textbox_ndecimals()
+		tbx_angle[0].suffix = "°"
+		tbx_angle[1] = new_textbox_ndecimals()
+		tbx_angle[1].suffix = "°"
+		tbx_angle[2] = new_textbox_ndecimals()
+		tbx_angle[2].suffix = "°"
+	}
 	
 	// Material
 	material = tab_add_category("material", null, false)

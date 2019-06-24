@@ -1,6 +1,15 @@
 /// shape_update_vbuffer()
 /// @desc Updates a shape's vertex buffer
 
+var bend = bend_default_angle;
+
+// Invert/Limit angle
+for (var i = X; i <= Z; i++)
+{
+	bend[i] *= test(parent.bend_invert[i], -1, 1)
+	bend[i] = clamp(bend[i], parent.bend_direction_min[i], parent.bend_direction_max[i])
+}
+
 // Clear previous vertex buffer
 if (shape_vbuffer != null)
 {
@@ -10,7 +19,7 @@ if (shape_vbuffer != null)
 
 // Generate new
 if (type = "block")
-	shape_vbuffer = model_shape_generate_block(bend_default_angle)
+	shape_vbuffer = model_shape_generate_block(bend)
 	
 if (type = "plane")
 {
@@ -41,9 +50,9 @@ if (type = "plane")
 			alphamap = surface_get_alpha_array(surf)
 			surface_free(surf)
 			
-			shape_vbuffer = model_shape_generate_plane_3d(bend_default_angle, alphamap)
+			shape_vbuffer = model_shape_generate_plane_3d(bend, alphamap)
 		}
 	}
 	else
-		shape_vbuffer = model_shape_generate_plane(bend_default_angle)
+		shape_vbuffer = model_shape_generate_plane(bend)
 }

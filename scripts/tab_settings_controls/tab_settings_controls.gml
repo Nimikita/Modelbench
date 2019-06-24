@@ -2,7 +2,7 @@
 
 // Interface shortcuts
 dy += 20
-draw_label(text_get("settingsinterfaceshortcuts"), dx, dy, fa_left, fa_bottom, c_neutral60, a_neutral60, font_label)
+draw_label(text_get("settingsinterfaceshortcuts"), dx, dy, fa_left, fa_bottom, c_neutral50, a_neutral50, font_label)
 
 tab_control_keycontrol()
 draw_keycontrol("settingskeyopen", dx, dy, dw, setting_key_open, setting_key_open_control, ord("O"), action_setting_key_open)
@@ -22,7 +22,7 @@ tab_next(false)
 
 // Camera shortcuts
 dy += 20
-draw_label(text_get("settingscamerashortcuts"), dx, dy, fa_left, fa_bottom, c_neutral60, a_neutral60, font_label)
+draw_label(text_get("settingscamerashortcuts"), dx, dy, fa_left, fa_bottom, c_neutral50, a_neutral50, font_label)
 
 tab_control_keycontrol()
 draw_keycontrol("settingskeyforward", dx, dy, dw, setting_key_forward, null, ord("W"), action_setting_key_foward)

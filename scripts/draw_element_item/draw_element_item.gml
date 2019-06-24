@@ -52,7 +52,7 @@ if (itemvisible)
 		visiblehover = app_mouse_box(xx, itemy + 4, 20, 20)
 	}
 	else if (element.tree_hidden)
-		draw_image(spr_icons, e_icon.dot, xx + 10, itemy + 14, 1, 1, c_neutral60, a_neutral60)
+		draw_image(spr_icons, e_icon.dot, xx + 10, itemy + 14, 1, 1, c_neutral50, a_neutral50)
 }
 
 
@@ -71,7 +71,7 @@ if (itemvisible)
 		lockhover = app_mouse_box(xx, itemy + 4, 20, 20)
 	}
 	else if (element.tree_locked)
-		draw_image(spr_icons, e_icon.dot, xx + 10, itemy + 14, 1, 1, c_neutral60, a_neutral60)
+		draw_image(spr_icons, e_icon.dot, xx + 10, itemy + 14, 1, 1, c_neutral50, a_neutral50)
 }
 
 #endregion
@@ -112,7 +112,7 @@ if (itemvisible)
 		}
 	}
 
-	draw_image(spr_icons, icon, xx + 10, itemy + (itemh/2), 1, 1, c_neutral40, a_neutral40)
+	draw_image(spr_icons, icon, xx + 10, itemy + (itemh/2), 1, 1, c_neutral30, a_neutral30)
 }
 
 #endregion
@@ -136,13 +136,13 @@ if (itemvisible)
 	
 	if (element.name = "" || element.hidden || element.tree_hidden)
 	{
-		labelcolor = c_neutral50
-		labelalpha = a_neutral50
+		labelcolor = c_neutral40
+		labelalpha = a_neutral40
 	}
 	else
 	{
-		labelcolor = c_neutral100
-		labelalpha = a_neutral100
+		labelcolor = c_neutral60
+		labelalpha = a_neutral60
 	}
 	
 	labelshort = string_limit_font(labelname, itemw - (xx - itemx) - 52, font_value)

@@ -22,6 +22,9 @@ a_neutral10 = theme.neutral_10a
 c_neutral20 = theme.neutral_20
 a_neutral20 = theme.neutral_20a
 
+c_neutral30 = theme.neutral_30
+a_neutral30 = theme.neutral_30a
+
 c_neutral40 = theme.neutral_40
 a_neutral40 = theme.neutral_40a
 
@@ -31,12 +34,10 @@ a_neutral50 = theme.neutral_50a
 c_neutral60 = theme.neutral_60
 a_neutral60 = theme.neutral_60a
 
-c_neutral100 = theme.neutral_100
-a_neutral100 = theme.neutral_100a
-
 c_background = theme.background
 c_error = theme.red_error
 c_axisred = theme.red
 c_axisgreen = theme.green
 c_axisblue = theme.blue
 c_origin = theme.origin
+c_bend = theme.pink

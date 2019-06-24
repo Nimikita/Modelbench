@@ -16,6 +16,7 @@ app_update_work_camera()
 app_update_caption()
 
 app_update_animations()
+app_update_shape_vbuffer()
 
 if (model_create_wait)
 {

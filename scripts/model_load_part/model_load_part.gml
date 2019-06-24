@@ -175,8 +175,33 @@ with (new(obj_model_element))
 		value[e_value.BEND_AXIS_Y] = bend_axis[Y]
 		value[e_value.BEND_AXIS_Z] = bend_axis[Z]
 		
-		// Bend direction
+		// Bend range(Minimum)
+		bend_direction_min = vec3(-180)
+		if (is_real(bendmap[?"direction_min"]) && array_length_1d(axis) = 1) // Single
+		{
+			bend_direction_min[axis[0]] = bendmap[?"direction_min"]
+		}
+		else if (ds_list_valid(bendmap[?"direction_min"])) // Multi
+		{
+			for (var i = 0; i < ds_list_size(bendmap[?"direction_min"]); i++)
+				bend_direction_min[axis[i]] = ds_list_find_value(bendmap[?"direction_min"], i)
+		}
+		
+		// Bend range(Maximum)
+		bend_direction_max = vec3(180)
+		if (is_real(bendmap[?"direction_max"]) && array_length_1d(axis) = 1) // Single
+		{
+			bend_direction_max[axis[0]] = bendmap[?"direction_max"]
+		}
+		else if (ds_list_valid(bendmap[?"direction_max"])) // Multi
+		{
+			for (var i = 0; i < ds_list_size(bendmap[?"direction_max"]); i++)
+				bend_direction_max[axis[i]] = ds_list_find_value(bendmap[?"direction_max"], i)
+		}
+		
+		// Bend direction(Legacy)
 		bend_direction = array(0, 0, 0)
+		bend_direction_legacy = false
 		if (is_string(bendmap[?"direction"])) // Single
 		{
 			switch (bendmap[?"direction"])
@@ -188,6 +213,7 @@ with (new(obj_model_element))
 					log("Invalid parameter \"direction\"")
 					return null
 			}
+			bend_direction_legacy = true
 		}
 		else if (ds_list_valid(bendmap[?"direction"])) // Multi
 		{
@@ -202,38 +228,57 @@ with (new(obj_model_element))
 						log("Invalid parameter \"direction\"")
 						return null
 				}
+				bend_direction_legacy = true
 			}
 		}
-		else
-		{
-			log("Missing parameter \"direction\"")
-			return null
-		}
-		value[e_value.BEND_DIR_X] = bend_direction[X]
-		value[e_value.BEND_DIR_Y] = bend_direction[Y]
-		value[e_value.BEND_DIR_Z] = bend_direction[Z]
 		
 		// Invert bend angle
 		bend_invert = vec3(false)
 		if (is_real(bendmap[?"invert"]) && array_length_1d(axis) = 1) // Single
 		{
-			bend_invert = vec3(bendmap[?"invert"])
+			bend_invert[axis[0]] = bendmap[?"invert"]
 		}
 		else if (ds_list_valid(bendmap[?"invert"])) // Multi
 		{
 			for (var i = 0; i < ds_list_size(bendmap[?"invert"]); i++)
 				bend_invert[axis[i]] = ds_list_find_value(bendmap[?"invert"], i)
 		}		
-		
 		value[e_value.BEND_INVERT_X] = bend_invert[X]
 		value[e_value.BEND_INVERT_Y] = bend_invert[Y]
 		value[e_value.BEND_INVERT_Z] = bend_invert[Z]
+		
+		// Convert legacy direction to limits
+		if (bend_direction_legacy)
+		{
+			for (var i = X; i <= Z; i++)
+			{
+				if (bend_direction[i] = e_bend.BOTH)
+				{
+					value[e_value.BEND_X_MIN + i] = -180
+					value[e_value.BEND_X_MAX + i] = 180
+				}
+				else if (bend_direction[i] = e_bend.FORWARD)
+				{
+					value[e_value.BEND_X_MIN + i] = -180
+					value[e_value.BEND_X_MAX + i] = 0
+					value[e_value.BEND_INVERT_X + i] = !value[e_value.BEND_INVERT_X + i] // FORWARD previously inverted angle
+				}
+				else
+				{
+					value[e_value.BEND_X_MIN + i] = 0
+					value[e_value.BEND_X_MAX + i] = 180
+				}
+			
+				bend_direction_min[i] = value[e_value.BEND_X_MIN + i]
+				bend_direction_max[i] = value[e_value.BEND_X_MAX + i]
+			}
+		}
 		
 		// Bend angle
 		bend_default_angle = vec3(0)
 		if (is_real(bendmap[?"angle"]) && array_length_1d(axis) = 1) // Single
 		{
-			bend_default_angle = vec3(bendmap[?"angle"])
+			bend_default_angle[axis[0]] = bendmap[?"angle"]
 		}
 		else if (ds_list_valid(bendmap[?"angle"])) // Multi
 		{
@@ -243,6 +288,7 @@ with (new(obj_model_element))
 		value[e_value.BEND_ANGLE_X] = bend_default_angle[X]
 		value[e_value.BEND_ANGLE_Y] = bend_default_angle[Y]
 		value[e_value.BEND_ANGLE_Z] = bend_default_angle[Z]
+		
 	}
 	else
 	{
@@ -257,10 +303,6 @@ with (new(obj_model_element))
 		value[e_value.BEND_AXIS_X] = false
 		value[e_value.BEND_AXIS_Y] = false
 		value[e_value.BEND_AXIS_Z] = false
-		
-		value[e_value.BEND_DIR_X] = e_bend.BOTH
-		value[e_value.BEND_DIR_Y] = e_bend.BOTH
-		value[e_value.BEND_DIR_Z] = e_bend.BOTH
 		
 		value[e_value.BEND_INVERT_X] = false
 		value[e_value.BEND_INVERT_Y] = false

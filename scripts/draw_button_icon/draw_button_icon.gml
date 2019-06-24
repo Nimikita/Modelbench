@@ -93,10 +93,10 @@ draw_set_alpha(prevalpha * lerp(1, .5, mcroani_arr[e_mcroani.DISABLED]))
 if (sprite != spr_icons)
 {
 	var frame = floor((sprite_get_number(sprite) - 1) * mcroani_arr[e_mcroani.ACTIVE_LINEAR]);
-	draw_image(sprite, frame, xx + wid/2, yy + wid/2, 1, 1, c_neutral60, a_neutral60)
+	draw_image(sprite, frame, xx + wid/2, yy + wid/2, 1, 1, c_neutral50, a_neutral50)
 }
 else
-	draw_image(spr_icons, icon, xx + wid/2, yy + wid/2, 1, 1, merge_color(c_neutral60, c_accent, mcroani_arr[e_mcroani.ACTIVE]), lerp(a_neutral60, 1, mcroani_arr[e_mcroani.ACTIVE]))
+	draw_image(spr_icons, icon, xx + wid/2, yy + wid/2, 1, 1, merge_color(c_neutral50, c_accent, mcroani_arr[e_mcroani.ACTIVE]), lerp(a_neutral50, 1, mcroani_arr[e_mcroani.ACTIVE]))
 
 draw_set_alpha(prevalpha)
 

@@ -40,31 +40,31 @@ if (other.object_index != app && color_inherit)
 
 // Lock bend
 lock_bend = value[e_value.BEND_LOCK]
-if (other.object_index = obj_model_element && other.element_type = TYPE_PART && other.value[e_value.BEND])
-{	
-	if (lock_bend)
+
+if (lock_bend && other.object_index = obj_model_element && other.element_type = TYPE_PART && other.value[e_value.BEND])
+{
+	switch (other.bend_part)
 	{
-		switch (other.value[e_value.BEND_PART])
-		{
-			case e_part.LEFT:
-			case e_part.RIGHT:
-					position[X] -= other.bend_offset
-				break
+		case e_part.LEFT:
+		case e_part.RIGHT:
+				position[X] -= other.bend_offset
+			break
 					
-			case e_part.BACK:
-			case e_part.FRONT:
-					position[Y] -= other.bend_offset
-				break
+		case e_part.BACK:
+		case e_part.FRONT:
+				position[Y] -= other.bend_offset
+			break
 					
-			case e_part.LOWER:
-			case e_part.UPPER:
-					position[Z] -= other.bend_offset
-				break
-		}
+		case e_part.LOWER:
+		case e_part.UPPER:
+				position[Z] -= other.bend_offset
+			break
 	}
 }
 
 // Bend
+value[e_value.BEND] = (value[e_value.BEND_AXIS_X] || value[e_value.BEND_AXIS_Y] || value[e_value.BEND_AXIS_Z])
+
 bend_offset = value[e_value.BEND_OFFSET]
 
 if (value[e_value.BEND_SIZE_CUSTOM])
@@ -72,7 +72,10 @@ if (value[e_value.BEND_SIZE_CUSTOM])
 else
 	bend_size = null
 
-bend_part = value[e_value.BEND_PART]
+if (value[e_value.BEND])
+	bend_part = value[e_value.BEND_PART]
+else
+	bend_part = null
 
 switch (bend_part)
 {
@@ -85,18 +88,27 @@ switch (bend_part)
 }
 
 bend_axis = point3D(value[e_value.BEND_AXIS_X], value[e_value.BEND_AXIS_Y], value[e_value.BEND_AXIS_Z])
-bend_direction = point3D(value[e_value.BEND_DIR_X], value[e_value.BEND_DIR_Y], value[e_value.BEND_DIR_Z])
+
+bend_direction_min = vec3(-130)
+bend_direction_max = vec3(130)
+
+for (var i = 0; i <= Z; i++)
+{
+	bend_direction_min[i] = value[e_value.BEND_X_MIN + i]
+	bend_direction_max[i] = value[e_value.BEND_X_MAX + i]
+}
+
 bend_invert = point3D(value[e_value.BEND_INVERT_X], value[e_value.BEND_INVERT_Y], value[e_value.BEND_INVERT_Z])
 bend_default_angle = point3D(value[e_value.BEND_ANGLE_X], value[e_value.BEND_ANGLE_Y], value[e_value.BEND_ANGLE_Z])
 
-// Calcualte matrix
-if (other.object_index != app && element_type = TYPE_PART)
+// Calculate matrix
+if (other.object_index != app)
 {
 	matrix_parent = array_copy_1d(other.matrix)
-		
+	
 	// Parent is a body part and we're locked to bended half
-	if (lock_bend)
-		matrix_parent = matrix_multiply(model_part_get_bend_matrix(other.id, other.bend_default_angle, point3D(0, 0, 0)), matrix_parent)
+	if (lock_bend && other.bend_part != null)
+		matrix_parent = matrix_multiply(model_part_get_bend_matrix(parent, parent.bend_default_angle, point3D(0, 0, 0)), matrix_parent)
 }
 else
 	matrix_parent = MAT_IDENTITY

@@ -7,7 +7,7 @@ tab_next()
 
 // Model location
 tab_control(40)
-draw_label(text_get("assetsmodellocation") + ":", dx, dy + 20, fa_left, fa_bottom, c_neutral100, a_neutral100, font_value)
+draw_label(text_get("assetsmodellocation") + ":", dx, dy + 20, fa_left, fa_bottom, c_neutral60, a_neutral60, font_value)
 
 
 if (model_temporary)
@@ -20,7 +20,7 @@ else
 {
 	var directory = ".../" + filename_name(model_folder) + "/" + filename_name(model_file);
 	
-	draw_label(directory, dx, dy + 34, fa_left, fa_bottom, c_neutral60, a_neutral60, font_caption)
+	draw_label(directory, dx, dy + 34, fa_left, fa_bottom, c_neutral50, a_neutral50, font_caption)
 	if (draw_button_icon("assetsopenfolder", dx + dw - 24 + icon_button_offset, dy + 8, 24, 24, false, e_icon.open_file, null, null, "assetsopenfolder"))
 		open_url(model_folder)
 }

@@ -42,10 +42,10 @@ buttonx = (xx + dw - 10)
 buttony = (yy + (28/2))
 
 // Draw button
-var buttoncolor = merge_color(c_neutral60, c_accent, mcroani_arr[e_mcroani.PRESS]);
+var buttoncolor = merge_color(c_neutral50, c_accent, mcroani_arr[e_mcroani.PRESS]);
 buttoncolor = merge_color(buttoncolor, c_accent, mcroani_arr[e_mcroani.ACTIVE])
 
-var buttonalpha = lerp(a_neutral60, 1, mcroani_arr[e_mcroani.PRESS]);
+var buttonalpha = lerp(a_neutral50, 1, mcroani_arr[e_mcroani.PRESS]);
 buttonalpha = lerp(buttonalpha, 1, mcroani_arr[e_mcroani.ACTIVE])
 
 draw_image(spr_radiobutton, 0, buttonx, buttony, 1, 1, buttoncolor, buttonalpha * (1 - mcroani_arr[e_mcroani.ACTIVE]) * (1 - mcroani_arr[e_mcroani.HOVER]))
@@ -58,7 +58,7 @@ draw_image(spr_radiobutton, 2, buttonx, buttony, 1, 1, buttoncolor, buttonalpha 
 draw_image(spr_radiobutton_hover, 0, buttonx, buttony, 1, 1, c_accent30, a_accent30 * mcroani_arr[e_mcroani.HOVER])
 
 // Label
-draw_label(name, xx, yy + 14, fa_left, fa_middle, c_neutral60, a_neutral60, font_emphasis)
+draw_label(name, xx, yy + 14, fa_left, fa_middle, c_neutral50, a_neutral50, font_emphasis)
 
 microani_update(mouseon, mouseclick, active)
 radiobutton_group_update(mouseon && !active)

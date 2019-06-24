@@ -1,8 +1,8 @@
 /// app_startup_themes()
 
 globalvar c_accent, c_accent10, a_accent10, c_accent20, a_accent20, c_accent30, a_accent30, c_accent50, a_accent50, c_accent80, a_accent80;
-globalvar c_neutral10, a_neutral10, c_neutral20, a_neutral20, c_neutral40, a_neutral40, c_neutral50, a_neutral50, c_neutral60, a_neutral60, c_neutral100, a_neutral100;
-globalvar c_background, c_error, c_axisred, c_axisgreen, c_axisblue, c_origin;
+globalvar c_neutral10, a_neutral10, c_neutral20, a_neutral20, c_neutral30, a_neutral30, c_neutral40, a_neutral40, c_neutral50, a_neutral50, c_neutral60, a_neutral60;
+globalvar c_background, c_error, c_axisred, c_axisgreen, c_axisblue, c_origin, c_bend;
 globalvar theme_light, theme_dark;
 
 #region Light theme
@@ -39,20 +39,20 @@ theme_light.neutral_10a = .05
 theme_light.neutral_20 = theme_light.neutral
 theme_light.neutral_20a = .14
 
+theme_light.neutral_30 = theme_light.neutral
+theme_light.neutral_30a = .36
+
 theme_light.neutral_40 = theme_light.neutral
-theme_light.neutral_40a = .36
+theme_light.neutral_40a = .45
 
 theme_light.neutral_50 = theme_light.neutral
-theme_light.neutral_50a = .45
+theme_light.neutral_50a = .57
 
 theme_light.neutral_60 = theme_light.neutral
-theme_light.neutral_60a = .57
-
-theme_light.neutral_100 = theme_light.neutral
-theme_light.neutral_100a = .91
+theme_light.neutral_60a = .91
 
 // Other colors
-theme_light.red_error = hex_to_color("FF2020")
+theme_light.red_error = hex_to_color("FF1D0F")
 theme_light.red = hex_to_color("FF5656")
 theme_light.green = hex_to_color("23FF88")
 theme_light.blue = hex_to_color("1370FB")
@@ -95,20 +95,20 @@ theme_dark.neutral_10a = .05
 theme_dark.neutral_20 = theme_dark.neutral
 theme_dark.neutral_20a = .14
 
+theme_dark.neutral_30 = theme_dark.neutral
+theme_dark.neutral_30a = .36
+
 theme_dark.neutral_40 = theme_dark.neutral
-theme_dark.neutral_40a = .36
+theme_dark.neutral_40a = .45
 
 theme_dark.neutral_50 = theme_dark.neutral
-theme_dark.neutral_50a = .45
+theme_dark.neutral_50a = .57
 
 theme_dark.neutral_60 = theme_dark.neutral
-theme_dark.neutral_60a = .57
-
-theme_dark.neutral_100 = theme_dark.neutral
-theme_dark.neutral_100a = .91
+theme_dark.neutral_60a = .91
 
 // Other colors
-theme_dark.red_error = hex_to_color("FF2020")
+theme_dark.red_error = hex_to_color("FC453A")
 theme_dark.red = hex_to_color("FF5656")
 theme_dark.green = hex_to_color("23FF88")
 theme_dark.blue = hex_to_color("1370FB")

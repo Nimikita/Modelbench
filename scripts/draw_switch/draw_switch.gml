@@ -1,24 +1,27 @@
-/// draw_switch(name, x, y, active, script, [tip])
+/// draw_switch(name, x, y, active, script, [tip, [disabled]])
 /// @arg name
 /// @arg x
 /// @arg y
 /// @arg active
 /// @arg script
-/// @arg [tip]
+/// @arg [tip
+/// @arg [disabled]]
 
-var name, xx, yy, active, script, tip;
-var switchx, switchy, w, h, caption, mouseon, pressed;
+var name, xx, yy, active, script, tip, disabled;
+var switchx, switchy, w, h, mouseon, pressed;
 name = text_get(argument[0])
 xx = argument[1]
 yy = argument[2]
 active = argument[3]
 script = argument[4]
 tip = ""
+disabled = false
 
-if (argument_count > 5)
+if (argument_count > 5 && argument[5] != "")
 	tip = text_get(argument[5])
 
-caption = text_get(name)
+if (argument_count > 6)
+	disabled = argument[6]
 
 switchx = (xx + dw - 24)
 switchy = (yy + (28/2) - 8)
@@ -27,7 +30,7 @@ h = 28
 
 // Mouse
 var mouseon, mouseclick;
-mouseon = app_mouse_box(switchx, switchy, 24, 16) && content_mouseon && (window_busy = "")
+mouseon = app_mouse_box(switchx, switchy, 24, 16) && content_mouseon && (window_busy = "") && !disabled
 mouseclick = mouseon && mouse_left
 
 pressed = false
@@ -47,17 +50,19 @@ microani_set(argument[0], script, mouseon, mouseclick, active)
 var color, alpha;
 if (setting_dark_theme)
 {
-	color = c_neutral40
-	alpha = a_neutral40
+	color = c_neutral30
+	alpha = a_neutral30
 }
 else
 {
-	color = c_neutral60
-	alpha = a_neutral60
+	color = c_neutral50
+	alpha = a_neutral50
 }
 
 var backgroundcolor = merge_color(color, c_accent, mcroani_arr[e_mcroani.ACTIVE]);
+backgroundcolor = merge_color(backgroundcolor, c_neutral30, mcroani_arr[e_mcroani.DISABLED]);
 var backgroundalpha = lerp(alpha, 1, mcroani_arr[e_mcroani.ACTIVE]);
+backgroundalpha = lerp(backgroundalpha, a_neutral30, mcroani_arr[e_mcroani.DISABLED]);
 draw_box(switchx, switchy, 24, 16, false, backgroundcolor, backgroundalpha)
 
 // Draw button
@@ -70,19 +75,19 @@ draw_box(buttonx, buttony, 10, 12, false, buttoncolor, buttonalpha)
 draw_box_bevel(buttonx, buttony, 10, 12, 1, true)
 
 // Draw hover outline
-draw_box_hover(switchx, switchy, 24, 16, mcroani_arr[e_mcroani.HOVER])
+draw_box_hover(switchx, switchy, 24, 16, mcroani_arr[e_mcroani.HOVER] * (1 - mcroani_arr[e_mcroani.DISABLED]))
 
 // Label
-draw_label(name, xx, yy + 14, fa_left, fa_middle, c_neutral60, a_neutral60, font_emphasis)
+draw_label(name, xx, yy + 14, fa_left, fa_middle, lerp(c_neutral50, c_neutral30, mcroani_arr[e_mcroani.DISABLED]), lerp(a_neutral50, a_neutral30, mcroani_arr[e_mcroani.DISABLED]), font_emphasis)
 
-microani_update(mouseon, mouseclick, active)
+microani_update(mouseon, mouseclick, active, disabled)
 
 if (tip != "")
 {
 	mouseon = app_mouse_box(xx + string_width_font(name, font_emphasis) + 8, yy + 4, 20, 20) && content_mouseon
 	microani_set(argument[0] + "help", null, mouseon, false, false)
 	
-	draw_image(spr_icons, e_icon.help, xx + string_width_font(name, font_emphasis) + 10 + 8, yy + 14, 1, 1, merge_color(c_neutral40, c_neutral60, mcroani_arr[e_mcroani.HOVER]), lerp(a_neutral40, a_neutral60, mcroani_arr[e_mcroani.HOVER]))
+	draw_image(spr_icons, e_icon.help, xx + string_width_font(name, font_emphasis) + 10 + 8, yy + 14, 1, 1, merge_color(c_neutral30, c_neutral50, mcroani_arr[e_mcroani.HOVER]), lerp(a_neutral30, a_neutral50, mcroani_arr[e_mcroani.HOVER]))
 	tip_set(text_get(argument[0] + "help"), xx + string_width_font(name, font_emphasis) + 8, yy + 4, 20, 20)
 	
 	microani_update(mouseon, false, false)

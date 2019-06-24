@@ -72,5 +72,8 @@ setting_collapse_backup_models = true
 setting_collapse_wind = true
 setting_collapse_ssao = true
 setting_collapse_shadows = true
+setting_collapse_bend_axis[X] = true
+setting_collapse_bend_axis[Y] = true
+setting_collapse_bend_axis[Z] = true
 
 texture_set_mipmap_level(setting_texture_filtering_level)

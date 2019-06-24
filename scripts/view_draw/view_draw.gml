@@ -91,18 +91,18 @@ if (content_width > 0 && content_height > 0)
 	}
 	
 	var labely = 0;
-	draw_label("Parts: " + string(parts), content_x + 8, content_y + content_height - 8 - labely, fa_left, fa_bottom, c_neutral100, a_neutral100, font_emphasis)
+	draw_label("Parts: " + string(parts), content_x + 8, content_y + content_height - 8 - labely, fa_left, fa_bottom, c_neutral60, a_neutral60, font_emphasis)
 	labely += 16
-	draw_label("3D planes: " + string(planes3d), content_x + 16, content_y + content_height - 8 - labely, fa_left, fa_bottom, c_neutral60, a_neutral60, font_emphasis)
+	draw_label("3D planes: " + string(planes3d), content_x + 16, content_y + content_height - 8 - labely, fa_left, fa_bottom, c_neutral50, a_neutral50, font_emphasis)
 	labely += 16
-	draw_label("Planes: " + string(planes), content_x + 16, content_y + content_height - 8 - labely, fa_left, fa_bottom, c_neutral60, a_neutral60, font_emphasis)
+	draw_label("Planes: " + string(planes), content_x + 16, content_y + content_height - 8 - labely, fa_left, fa_bottom, c_neutral50, a_neutral50, font_emphasis)
 	labely += 16
-	draw_label("Blocks: " + string(blocks), content_x + 16, content_y + content_height - 8 - labely, fa_left, fa_bottom, c_neutral60, a_neutral60, font_emphasis)
+	draw_label("Blocks: " + string(blocks), content_x + 16, content_y + content_height - 8 - labely, fa_left, fa_bottom, c_neutral50, a_neutral50, font_emphasis)
 	labely += 16
-	draw_label("Shapes: " + string(shapes), content_x + 8, content_y + content_height - 8 - labely, fa_left, fa_bottom, c_neutral100, a_neutral100, font_emphasis)
+	draw_label("Shapes: " + string(shapes), content_x + 8, content_y + content_height - 8 - labely, fa_left, fa_bottom, c_neutral60, a_neutral60, font_emphasis)
 	
 	
-	draw_label("Render FPS: " + string(fps), content_x + 8, content_y + 8, fa_left, fa_top, c_neutral100, a_neutral100, font_heading)
+	draw_label("Render FPS: " + string(fps), content_x + 8, content_y + 8, fa_left, fa_top, c_neutral60, a_neutral60, font_heading)
 }
 
 // Mouse on

@@ -14,7 +14,8 @@
         "47382899-de28-4593-b5a9-9646be7b8e41",
         "5d5452d0-6517-48f4-af6f-ce73b360cfeb",
         "2b45ddfb-90de-4c26-a1cb-cbb9be4ea1cd",
-        "bc43c74a-e3ab-4620-96a3-0a0e4c7cca6c"
+        "bc43c74a-e3ab-4620-96a3-0a0e4c7cca6c",
+        "9b7ca8bf-3380-43ce-9ce8-f04e3bace2c9"
     ],
     "filterType": "GMScript",
     "folderName": "Model",

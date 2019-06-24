@@ -86,10 +86,10 @@ if (draw_button_icon(name + "editbutton", editx, edity, 24, 24, window_busy = na
 draw_set_alpha(1)
 
 // Label
-draw_label(text, xx, yy + 14, fa_left, fa_middle, c_neutral60, a_neutral60, font_emphasis)
+draw_label(text, xx, yy + 14, fa_left, fa_middle, c_neutral50, a_neutral50, font_emphasis)
 
 if (window_busy = name)
 	key = ""
 
 // Value
-draw_label(text_control_name(key, ctrl), xx + wid - ((24 + 8) * hover), yy + 14, fa_right, fa_middle, c_neutral100, a_neutral100, font_value)
+draw_label(text_control_name(key, ctrl), xx + wid - ((24 + 8) * hover), yy + 14, fa_right, fa_middle, c_neutral60, a_neutral60, font_value)

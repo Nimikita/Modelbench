@@ -12,19 +12,24 @@ switch (argument0)
 	case e_value.BLEND_COLOR: return c_white
 	case e_value.MIX_COLOR: return c_black
 	
-	/* Bend
+	// Bend
+	/*
 	case e_value.BEND_LOCK:
 	case e_value.BEND_OFFSET:
 	case e_value.BEND_SIZE:
 	case e_value.BEND_PART:
 	case e_value.BEND_AXIS_X:
 	case e_value.BEND_AXIS_Y:
-	case e_value.BEND_AXIS_Z:
-	case e_value.BEND_DIR_X:
-	case e_value.BEND_DIR_Y:
-	case e_value.BEND_DIR_Z:
+	case e_value.BEND_AXIS_Z:*/
+	case e_value.BEND_X_MIN:
+	case e_value.BEND_Y_MIN:
+	case e_value.BEND_Z_MIN: return -180
+	case e_value.BEND_X_MAX:
+	case e_value.BEND_Y_MAX:
+	case e_value.BEND_Z_MAX: return 180
 	
 	// Shape UV
+	/*
 	case e_value.UV_X:
 	case e_value.UV_Y:
 	case e_value.FROM_X:

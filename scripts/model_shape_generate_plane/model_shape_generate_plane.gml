@@ -20,6 +20,8 @@ if (isbent)
 {
 	if (bend_part = e_part.LEFT || bend_part = e_part.RIGHT)
 		segaxis = X
+	else if (bend_part = e_part.BACK || bend_part = e_part.FRONT)
+		segaxis = Z
 	else if (bend_part = e_part.LOWER || bend_part = e_part.UPPER)
 		segaxis = Z
 }
@@ -59,7 +61,7 @@ if (bendsize != null)
 	detail /= scale[segaxis]
 
 bendsegsize = bendsize / detail;
-invangle = (bend_part = e_part.LOWER || bend_part = e_part.LEFT)
+invangle = (bend_part = e_part.LOWER || bend_part = e_part.BACK || bend_part = e_part.LEFT)
 
 var p1, p2, p3, p4, n1, n2;
 var texp1;
@@ -72,7 +74,7 @@ if (segaxis = X)
 	p2 = point3D(x1, y1, z1)
 	texp1 = tex1[X]
 }
-else if (segaxis = Z)
+else if (segaxis = Z || segaxis = Y)
 {
 	bendstart = (bend_offset - (position[Z] + z1)) - bendsize / 2
 	bendend = (bend_offset - (position[Z] + z1)) + bendsize / 2
@@ -102,7 +104,7 @@ if (isbent) // Apply start bend
 	// Blocky bending
 	var startscale = vec3(0);
 	if (sharpbend)
-		startscale = model_shape_get_bend_scale(bendstart, bendend, startp, true, 0)
+		startscale = model_shape_get_bend_scale(bendstart, bendend, startp, true, 0, bend)
 	
 	mat = model_part_get_bend_matrix(id, bendvec, vec3(0), vec3_add(startscale, vec3(1 + (startp * 0))))
 }
@@ -183,7 +185,7 @@ while (segpos < size[segaxis])
 		// Blocky bending
 		var bendscale = vec3(0);
 		if (sharpbend)
-			startscale = model_shape_get_bend_scale(bendstart, bendend, segp, true, segpos)
+			startscale = model_shape_get_bend_scale(bendstart, bendend, segp, true, segpos, bend)
 		
 		mat = model_part_get_bend_matrix(id, bendvec, vec3(0), vec3_add(bendscale, vec3(1)))
 	}

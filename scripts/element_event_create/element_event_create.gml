@@ -18,6 +18,7 @@ tree_locked = false
 
 shape_vbuffer = null
 extend = false
+update_vbuffer = false
 
 for (var v = 0; v < e_value.amount; v++)
 {
