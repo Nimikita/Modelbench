@@ -76,10 +76,10 @@ if (array_length_1d(axis) > 1)
 	
 	json_save_var("axis", axisarray)
 	
-	if (!array_compare_value(axismin, vec3(-180)))
+	if (!array_compare_value(axismin, -180))
 		json_save_var("direction_min", axismin)
 	
-	if (!array_compare_value(axismax, vec3(180)))
+	if (!array_compare_value(axismax, 180))
 		json_save_var("direction_max", axismax)
 	
 	if (!array_compare_value(invertarray, false))

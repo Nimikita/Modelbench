@@ -272,6 +272,15 @@ with (new(obj_model_element))
 				bend_direction_max[i] = value[e_value.BEND_X_MAX + i]
 			}
 		}
+		else
+		{
+			// Copy into values
+			for (var i = 0; i < 3; i++)
+			{
+				value[e_value.BEND_X_MIN + i] = bend_direction_min[i]
+				value[e_value.BEND_X_MAX + i] = bend_direction_max[i]
+			}
+		}
 		
 		// Bend angle
 		bend_default_angle = vec3(0)

@@ -2,14 +2,12 @@
 
 var filename, texsize, scale;
 
-// No texture
-if (object_index = app && res = null)
-{
-	json_save_var_nullable("texture", null)
+// Inherit texture
+if (object_index != app && value[e_value.TEXTURE_OBJ] = null)
 	return 0
-}
 
-if (object_index = app || (res != null && instance_exists(res) && !value[e_value.TEXTURE_OBJ]))
+// Define texture
+if (instance_exists(res))
 {
 	filename = res.filename
 	texsize = vec2_div(vec2(sprite_get_width(res.sprite), sprite_get_height(res.sprite)), res.scale)
