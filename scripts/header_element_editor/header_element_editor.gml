@@ -8,8 +8,6 @@ if (draw_textfield(text, dx, dy, dw, string_remove_newline(el_edit.name), elemen
 	el_edit.name = element_editor.tbx_name.text
 tab_next()
 
-
-
 // Lock to bent half
 if (el_edit.element_type = TYPE_PART)
 {
@@ -17,13 +15,6 @@ if (el_edit.element_type = TYPE_PART)
 	tab_control_switch()
 	draw_switch("elementeditorbendlock", dx, dy, el_edit.value[e_value.BEND_LOCK], action_el_bend_lock)
 	tab_next()
-	
-	/*
-	element_editor.tbx_depth.text = string(el_edit.depth)
-	tab_control(28)
-	draw_textfield_num("elementeditordepth", dx, dy, 86, el_edit.depth, 0.1, -no_limit, no_limit, 0, 1, element_editor.tbx_depth, action_el_depth)
-	tab_next()
-	*/
 }
 
 dy += 8

@@ -98,7 +98,7 @@ with (element_editor)
 	wind = tab_add_category("wind", null, false)
 	
 	// Mine-imator
-	mineimator = tab_add_category("mineimator", null, false)
+	mineimator = tab_add_category("mineimator", tab_element_editor_mineimator, false)
 }
 
 // Settings

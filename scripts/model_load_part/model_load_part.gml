@@ -65,8 +65,10 @@ with (new(obj_model_element))
 	else
 		position = point3D_mul(position_noscale, other.scale)
 	
-	// Position tab state for Mine-imator frame editor panel
-	value[e_value.SHOW_POSITION_TAB] = value_get_real(map[?"show_position"], false)
+	// Tab states for Mine-imator frame editor panel
+	value[e_value.OPEN_POSITION_TAB] = value_get_real(map[?"show_position"], false)
+	value[e_value.OPEN_ROTATION_TAB] = value_get_real(map[?"show_rotation"], false)
+	value[e_value.OPEN_SCALE_TAB] = value_get_real(map[?"show_scale"], false)
 	
 	// Rotation (optional)
 	rotation = value_get_point3D(map[?"rotation"], vec3(0))

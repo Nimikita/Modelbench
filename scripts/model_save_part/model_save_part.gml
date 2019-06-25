@@ -11,8 +11,14 @@ model_save_colors()
 
 json_save_var_point3D("position", point3D(value[e_value.POS_X], value[e_value.POS_Y], value[e_value.POS_Z]))
 
-if (value[e_value.SHOW_POSITION_TAB])
+if (value[e_value.OPEN_POSITION_TAB])
 	json_save_var("show_position", true)
+
+if (value[e_value.OPEN_ROTATION_TAB])
+	json_save_var("show_rotation", true)
+
+if (value[e_value.OPEN_SCALE_TAB])
+	json_save_var("show_scale", true)
 
 var rot, sca;
 rot = point3D(value[e_value.ROT_X], value[e_value.ROT_Y], value[e_value.ROT_Z])

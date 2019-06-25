@@ -158,7 +158,6 @@
 	"elementeditor/": {
 		"partname": "Part name",
 		"shapename": "Shape name",
-		"depth": "Depth",
 		"bend/": {
 			"lock": "Lock to bent half of parent",
 			"axis": "Enabled axes",
@@ -196,7 +195,14 @@
 				"upper": "Upper",
 				"lower": "Lower"
 			}
-		}
+		},
+		"depth": "Render depth",
+		"openpositiontab": "Open position tab",
+		"openpositiontabhelp": "Automatically opens this part's position tab in Mine-imator.",
+		"openrotationtab": "Open rotation tab",
+		"openrotationtabhelp": "Automatically opens this part's rotation tab in Mine-imator.",
+		"openscaletab": "Open scale tab",
+		"openscaletabhelp": "Automatically opens this part's scale tab in Mine-imator."
 	},
 	"settings/": {
 		"fps": "Frames per second",
