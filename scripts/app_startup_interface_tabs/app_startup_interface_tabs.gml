@@ -89,7 +89,16 @@ with (element_editor)
 	}
 	
 	// Material
-	material = tab_add_category("material", null, false)
+	material = tab_add_category("material", tab_element_editor_material, false)
+	with (material)
+	{
+		tbx_mix_amount = new_textbox_integer()
+		tbx_mix_amount.suffix = "%"
+		tbx_opacity = new_textbox_integer()
+		tbx_opacity.suffix = "%"
+		tbx_brightness = new_textbox_integer()
+		tbx_brightness.suffix = "%"
+	}
 	
 	// Appearance
 	appearance = tab_add_category("appearance", null, false)

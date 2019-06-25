@@ -58,7 +58,7 @@ switch (el_edit.value[e_value.BEND_PART])
 }
 
 // Bend part
-tab_control(48)
+tab_control_menu()
 draw_button_menu("elementeditorbendpart", e_menu.LIST, dx, dy, dw, 28, el_edit.value[e_value.BEND_PART], text_get(text), action_el_bend_part, !el_edit.value[e_value.BEND])
 tab_next()
 

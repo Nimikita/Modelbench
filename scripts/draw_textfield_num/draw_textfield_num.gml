@@ -14,7 +14,7 @@
 /// @arg [disabled]
 
 var name, xx, yy, wid, value, mul, minval, maxval, def, snapval, tbx, script, disabled;
-var update, capwidth;
+var update, capwidth, hei;
 name = argument[0]
 xx = argument[1]
 yy = argument[2]
@@ -32,7 +32,13 @@ disabled = false
 if (argument_count > 12)
 	disabled = argument[12]
 
-capwidth = string_width_font(text_get(name), font_emphasis) + 10
+hei = 28
+
+if (xx + wid < content_x || xx > content_x + content_width || yy + hei < content_y || yy > content_y + content_height)
+	return 0
+
+draw_set_font(font_emphasis)
+capwidth = string_width(text_get(name)) + 10
 
 if (draw_inputbox(name, xx + capwidth, yy, wid, string(def), tbx, null, disabled))
 	script_execute(script, clamp(snap(string_get_real(tbx.text, 0), snapval), minval, maxval), false)
@@ -45,12 +51,12 @@ labelcolor = merge_color(labelcolor, c_neutral30, mcroani_arr[e_mcroani.DISABLED
 labelalpha = lerp(a_neutral50, 1, mcroani_arr[e_mcroani.ACTIVE])
 labelalpha = lerp(labelalpha, a_neutral30, mcroani_arr[e_mcroani.DISABLED])
 
-draw_box_hover(xx + capwidth, yy, wid, 28, max(mcroani_arr[e_mcroani.HOVER], mcroani_arr[e_mcroani.ACTIVE]) * (1 - mcroani_arr[e_mcroani.DISABLED]))
+draw_box_hover(xx + capwidth, yy, wid, hei, max(mcroani_arr[e_mcroani.HOVER], mcroani_arr[e_mcroani.ACTIVE]) * (1 - mcroani_arr[e_mcroani.DISABLED]))
 
 draw_label(text_get(name), xx, yy + 21, fa_left, fa_bottom, labelcolor, labelalpha, font_emphasis)
 
 // Drag
-if (app_mouse_box(xx, yy, capwidth, 28) && content_mouseon && window_focus != string(tbx) && !disabled)
+if (app_mouse_box(xx, yy, capwidth, hei) && content_mouseon && window_focus != string(tbx) && !disabled)
 {
 	mouse_cursor = cr_size_we
 	
@@ -66,7 +72,7 @@ if (app_mouse_box(xx, yy, capwidth, 28) && content_mouseon && window_focus != st
 }
 
 // Textbox press
-if (app_mouse_box(xx + capwidth, yy, wid, 28) && content_mouseon && window_focus != string(tbx) && !disabled)
+if (app_mouse_box(xx + capwidth, yy, wid, hei) && content_mouseon && window_focus != string(tbx) && !disabled)
 {
 	if (mouse_left_pressed)
 	{

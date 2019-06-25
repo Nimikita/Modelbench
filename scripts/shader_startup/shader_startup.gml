@@ -56,6 +56,11 @@ if (err)
 	return false
 }
 
+with (shader_map[?shader_color])
+{
+	new_shader_uniform("uMixColor")
+}
+
 with (shader_map[?shader_sky])
 {
 	new_shader_uniform("uColorLight")

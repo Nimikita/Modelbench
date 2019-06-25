@@ -28,6 +28,9 @@ switchy = (yy + (28/2) - 8)
 w = dw
 h = 28
 
+if (xx + w < content_x || xx > content_x + content_width || yy + h < content_y || yy > content_y + content_height)
+	return 0
+
 // Mouse
 var mouseon, mouseclick;
 mouseon = app_mouse_box(switchx, switchy, 24, 16) && content_mouseon && (window_busy = "") && !disabled
@@ -78,17 +81,18 @@ draw_box_bevel(buttonx, buttony, 10, 12, 1, true)
 draw_box_hover(switchx, switchy, 24, 16, mcroani_arr[e_mcroani.HOVER] * (1 - mcroani_arr[e_mcroani.DISABLED]))
 
 // Label
-draw_label(name, xx, yy + 14, fa_left, fa_middle, lerp(c_neutral50, c_neutral30, mcroani_arr[e_mcroani.DISABLED]), lerp(a_neutral50, a_neutral30, mcroani_arr[e_mcroani.DISABLED]), font_emphasis)
+draw_set_font(font_emphasis)
+draw_label(name, xx, yy + 14, fa_left, fa_middle, lerp(c_neutral50, c_neutral30, mcroani_arr[e_mcroani.DISABLED]), lerp(a_neutral50, a_neutral30, mcroani_arr[e_mcroani.DISABLED]))
 
 microani_update(mouseon, mouseclick, active, disabled)
 
 if (tip != "")
 {
-	mouseon = app_mouse_box(xx + string_width_font(name, font_emphasis) + 8, yy + 4, 20, 20) && content_mouseon
+	mouseon = app_mouse_box(xx + string_width(name) + 8, yy + 4, 20, 20) && content_mouseon
 	microani_set(argument[0] + "help", null, mouseon, false, false)
 	
-	draw_image(spr_icons, e_icon.help, xx + string_width_font(name, font_emphasis) + 10 + 8, yy + 14, 1, 1, merge_color(c_neutral30, c_neutral50, mcroani_arr[e_mcroani.HOVER]), lerp(a_neutral30, a_neutral50, mcroani_arr[e_mcroani.HOVER]))
-	tip_set(text_get(argument[0] + "help"), xx + string_width_font(name, font_emphasis) + 8, yy + 4, 20, 20)
+	draw_image(spr_icons, e_icon.help, xx + string_width(name) + 10 + 8, yy + 14, 1, 1, merge_color(c_neutral30, c_neutral50, mcroani_arr[e_mcroani.HOVER]), lerp(a_neutral30, a_neutral50, mcroani_arr[e_mcroani.HOVER]))
+	tip_set(text_get(argument[0] + "help"), xx + string_width(name) + 8, yy + 4, 20, 20)
 	
 	microani_update(mouseon, false, false)
 }

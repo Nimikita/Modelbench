@@ -1,4 +1,4 @@
-/// draw_meter(name, x, y, width, value, valuewidth, min, max, default, snap, textbox, script, [tip])
+/// draw_meter(name, x, y, width, value, valuewidth, min, max, default, snap, textbox, script)
 /// @arg name
 /// @arg x
 /// @arg y
@@ -11,9 +11,8 @@
 /// @arg snap
 /// @arg textbox
 /// @arg script
-/// @arg [tip]
 
-var name, xx, yy, wid, value, valuewid, minval, maxval, def, snapval, tbx, script, tip;
+var name, xx, yy, wid, value, valuewid, minval, maxval, def, snapval, tbx, script;
 var hei, linewid, dragval, dragx, dragy, mouseon, locked;
 name = argument[0]
 xx = argument[1]
@@ -31,24 +30,14 @@ script = argument[11]
 valuewid = 48
 hei = 30
 locked = (minval = maxval)
-//if (xx + wid<content_x || xx > content_x + content_width || yy + hei<content_y || yy > content_y + content_height)
-//	return 0
+
+if (xx + wid < content_x || xx > content_x + content_width || yy + hei < content_y || yy > content_y + content_height)
+	return 0
 
 draw_label(text_get(name), xx, yy + 15, fa_left, fa_bottom, c_neutral50, a_neutral50, font_label)
 yy += 18
-
-//draw_box(xx, yy, wid, hei, false, c_red, 0.25)
-
-if (argument_count > 13)
-	tip = argument[13]
-else
-	tip = text_get(name + "tip")
-	
-//tip += "\n" + text_get("metertip")
 	
 linewid = wid - valuewid
-//if (window_focus != string(tbx))
-//	tip_set(tip, xx, yy, wid, hei)
 
 mouseon = app_mouse_box(xx - 8, yy, linewid + 16, hei) && content_mouseon
 
@@ -98,9 +87,6 @@ if (window_busy = "" && window_focus = name && mouse_wheel<>0)
 	else
 		script_execute(script, clamp(value - mouse_wheel * snapval * 5, minval, maxval) - value, true)
 }
-
-// Caption
-//draw_label(text_get(name) + ":", xx, yy + hei / 2, fa_left, fa_middle)
 
 microani_set(name, script, (window_busy = name) || mouseon, mouseon && mouse_left, false)
 

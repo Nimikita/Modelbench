@@ -4,7 +4,7 @@
         "language": "English",
         "translator": "Nimi",
         "forversion": "1.0.0",
-        "lastchange": "2019.06.21"
+        "lastchange": "2019.06.25"
     },
 	"startup/": {
 		"recovermodelheader": "Unsaved model detected",
@@ -196,6 +196,13 @@
 				"lower": "Lower"
 			}
 		},
+		"texture": "Texture",
+		"inherittexture": "Inherit texture",
+		"inheritcolor": "Inherit parent color",
+		"inheritcolorhelp": "Inherit color options including opacity and brightness.",
+		"mixamount": "Mix amount",
+		"opacity": "Opacity",
+		"brightness": "Brightness",
 		"depth": "Render depth",
 		"openpositiontab": "Open position tab",
 		"openpositiontabhelp": "Automatically opens this part's position tab in Mine-imator.",

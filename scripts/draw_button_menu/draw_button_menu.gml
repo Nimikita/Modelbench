@@ -73,7 +73,7 @@ draw_outline(xx, yy, wid, hei, 2, labelcolor, labelalpha)
 
 // Sprite
 if (tex != null)
-	draw_texture(tex, xx + 4, yy + 2 + pressed, imgsize / texture_width(tex), imgsize / texture_height(tex))
+	draw_texture(tex, xx + 8, yy + 2, imgsize / texture_width(tex), imgsize / texture_height(tex))
 
 // Text
 var textcolor, textalpha;
@@ -81,7 +81,7 @@ textcolor = merge_color(c_neutral60, c_neutral30, mcroani_arr[e_mcroani.DISABLED
 textalpha = lerp(a_neutral60, a_neutral30, mcroani_arr[e_mcroani.DISABLED])
 
 textoff = test(tex, (imgsize - 4), 0)
-draw_label(string_limit(string_remove_newline(text), wid - textoff - hei - 8), xx + 8, yy + hei / 2, fa_left, fa_middle, textcolor, textalpha, font_value)
+draw_label(string_limit(string_remove_newline(text), wid - textoff - hei - 8), xx + test(tex = null, 0, imgsize) + 8, yy + hei / 2, fa_left, fa_middle, textcolor, textalpha, font_value)
 
 // Arrow
 draw_image(spr_icons, test(test(menu_name = name, !flip, flip), e_icon.arrow_top_small, e_icon.arrow_down_small), xx + wid - hei / 2, yy + hei / 2, 1, 1, labelcolor, labelalpha)

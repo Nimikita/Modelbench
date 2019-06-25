@@ -15,5 +15,5 @@ if (value[e_value.BRIGHTNESS] > 0)
 if (value[e_value.MIX_COLOR] != c_black)
 	json_save_var("color_mix", value[e_value.MIX_COLOR])
 
-if (value[e_value.MIX_PERCENT] > 0)
-	json_save_var("color_mix_percent", value[e_value.MIX_PERCENT])
+if (value[e_value.MIX_AMOUNT] > 0)
+	json_save_var("color_mix_percent", value[e_value.MIX_AMOUNT])

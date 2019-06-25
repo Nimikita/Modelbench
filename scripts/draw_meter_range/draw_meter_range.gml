@@ -36,8 +36,8 @@ scriptmax = argument[14]
 valuewid = 48
 hei = 30
 
-//if (xx + wid<content_x || xx > content_x + content_width || yy + hei<content_y || yy > content_y + content_height)
-//	return 0
+if (xx + wid < content_x || xx > content_x + content_width || yy + hei < content_y || yy > content_y + content_height)
+	return 0
 
 // Caption
 draw_label(text_get(name), xx, yy + 15, fa_left, fa_bottom, c_neutral50, a_neutral50, font_label)
@@ -46,6 +46,7 @@ yy += 18
 linewid = wid - (valuewid * 2)
 linex = xx + valuewid
 mouseon = app_mouse_box(linex - 8, yy, linewid + 16, hei) && content_mouseon
+draw_set_font(font_value)
 
 // Type(Minimum)
 if (app_mouse_box(xx, yy, valuewid, hei) && content_mouseon && mouse_left_pressed)
@@ -90,7 +91,6 @@ if (window_busy = name + "min" || window_busy = name + "max")
 // Textbox(Minimum)
 if (window_focus = string(tbxmin))
 {
-	draw_set_font(font_value)
 	var textsize = string_width(tbxmin.text);
 	var suffixsize = string_width(tbxmin.suffix);
 	if (textbox_draw(tbxmin, xx, yy + hei / 2 - 8, textsize + suffixsize, 18))
@@ -104,12 +104,11 @@ if (window_focus = string(tbxmin))
 	}
 }
 else
-	draw_label(string(valuemin) + tbxmin.suffix, xx, yy + hei / 2, fa_left, fa_middle, c_neutral60, a_neutral60, font_value)
+	draw_label(string(valuemin) + tbxmin.suffix, xx, yy + hei / 2, fa_left, fa_middle, c_neutral60, a_neutral60)
 
 // Textbox(Maximum)
 if (window_focus = string(tbxmax))
 {
-	draw_set_font(font_value)
 	var textsize = string_width(tbxmax.text);
 	var suffixsize = string_width(tbxmax.suffix);
 	if (textbox_draw(tbxmax, xx + wid - textsize - suffixsize, yy + hei / 2 - 8, textsize + suffixsize, 18))
@@ -123,7 +122,7 @@ if (window_focus = string(tbxmax))
 	}
 }
 else
-	draw_label(string(valuemax) + tbxmax.suffix, xx + wid, yy + hei / 2, fa_right, fa_middle, c_neutral60, a_neutral60, font_value)
+	draw_label(string(valuemax) + tbxmax.suffix, xx + wid, yy + hei / 2, fa_right, fa_middle, c_neutral60, a_neutral60)
 
 dragxmin = test(window_busy = name + "min", meter_drag_value, valuemin)
 dragxmax = test(window_busy = name + "max", meter_drag_value, valuemax)

@@ -51,6 +51,7 @@ for (var s = 0; s < ds_list_size(shape_list); s++)
 			render_set_texture(spr_empty)
 		
 		render_set_uniform_color("uBlendColor", color_blend, color_alpha)
+		render_set_uniform_color("uMixColor", color_mix, color_mix_percent)
 		render_set_uniform_color("uShape", id, 1)
 		
 		vbuffer_render_matrix(shape_vbuffer, rendermatrix)

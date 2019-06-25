@@ -89,10 +89,10 @@ switch (menu_type)
 			
 			// Sprite
 			if (item.tex)
-				draw_texture(item.tex, menu_x + 4, dy + 2, imgsize / texture_width(item.tex), imgsize / texture_height(item.tex))
+				draw_texture(item.tex, menu_x + 8, dy + 2, imgsize / texture_width(item.tex), imgsize / texture_height(item.tex))
 			
 			// Caption
-			dx += test((item.icon || item.tex), (imgsize - 4), 0)
+			dx += test((item.icon || item.tex), imgsize + 8, 0)
 			text = string_limit(item.text, menu_w - 12 * menu_scroll.needed - 8-dx)
 			draw_label(text, menu_x + dx, dy + menu_item_h / 2, fa_left, fa_middle, c_neutral60, a_neutral60)
 			dy += menu_item_h

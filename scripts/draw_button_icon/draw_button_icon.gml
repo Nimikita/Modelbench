@@ -40,8 +40,8 @@ if (argument_count > 10)
 
 animated = (sprite != spr_icons && sprite_get_number(sprite) > 1)
 
-//if (xx + wid < content_x || xx > content_x + content_width || yy + hei < content_y || yy > content_y + content_height)
-//	return 0
+if (xx + wid < content_x || xx > content_x + content_width || yy + hei < content_y || yy > content_y + content_height)
+	return 0
 
 small = ((wid < 28) || (hei < 28))
 

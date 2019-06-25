@@ -14,13 +14,19 @@ rotation = point3D(value[e_value.ROT_X], value[e_value.ROT_Y], value[e_value.ROT
 scale = point3D(value[e_value.SCA_X], value[e_value.SCA_Y], value[e_value.SCA_Z])
 scale = vec3_mul(scale, other.scale)
 
+// Texture
+if (value[e_value.TEXTURE_OBJ] = null)
+	res = parent.res
+else
+	res = value[e_value.TEXTURE_OBJ]
+
 // Colors
 color_inherit = value[e_value.INHERIT_COLOR]
 color_blend = value[e_value.BLEND_COLOR]
 color_alpha = value[e_value.OPACITY]
 color_brightness = value[e_value.BRIGHTNESS]
 color_mix = value[e_value.MIX_COLOR]
-color_mix_percent = value[e_value.MIX_PERCENT]
+color_mix_percent = value[e_value.MIX_AMOUNT]
 
 if (other.object_index != app && color_inherit)
 {

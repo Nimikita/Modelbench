@@ -17,7 +17,9 @@ void main()
 		tex = mod(tex * uTexScale, uTexScale); // GM sprite bug workaround
 	vec4 baseColor = vColor * texture2D(uTexture, tex); // Get base
 	
-	gl_FragColor = mix(baseColor, uMixColor, uMixColor.a); // Mix
+	baseColor.rgb = mix(baseColor.rgb, uMixColor.rgb, uMixColor.a); // Mix
+	
+	gl_FragColor = baseColor;
 	
 	if (gl_FragColor.a == 0.0)
 		discard;

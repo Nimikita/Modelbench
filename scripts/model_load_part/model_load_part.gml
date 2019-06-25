@@ -26,10 +26,8 @@ with (new(obj_model_element))
 		// Texture size
 		texture_size = value_get_point2D(map[?"texture_size"], point2D(16, 16))
 		texture_size = vec2(max(texture_size[X], texture_size[Y])) // Make square
-		
 		res = model_load_texture(texture_name)
-		
-		value[e_value.INHERIT_TEXTURE] = false
+		value[e_value.TEXTURE_OBJ] = res
 	}
 	else
 	{
@@ -38,8 +36,7 @@ with (new(obj_model_element))
 		texture_inherit = other.texture_inherit
 		texture_size = texture_inherit.texture_size
 		res = other.res
-		
-		value[e_value.INHERIT_TEXTURE] = true
+		value[e_value.TEXTURE_OBJ] = null
 	}
 	
 	// Render depth
@@ -52,7 +49,7 @@ with (new(obj_model_element))
 	value[e_value.OPACITY] = value_get_real(map[?"color_alpha"], 1)
 	value[e_value.BRIGHTNESS] = value_get_real(map[?"color_brightness"], 0)
 	value[e_value.MIX_COLOR] = value_get_color(map[?"color_mix"], c_black)
-	value[e_value.MIX_PERCENT] = value_get_real(map[?"color_mix_percent"], 0)
+	value[e_value.MIX_AMOUNT] = value_get_real(map[?"color_mix_percent"], 0)
 	
 	// Position
 	position_noscale = value_get_point3D(map[?"position"])

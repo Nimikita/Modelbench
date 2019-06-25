@@ -9,7 +9,7 @@ if (object_index = app && res = null)
 	return 0
 }
 
-if (object_index = app || (res != null && instance_exists(res) && !value[e_value.INHERIT_TEXTURE]))
+if (object_index = app || (res != null && instance_exists(res) && !value[e_value.TEXTURE_OBJ]))
 {
 	filename = res.filename
 	texsize = vec2_div(vec2(sprite_get_width(res.sprite), sprite_get_height(res.sprite)), res.scale)
