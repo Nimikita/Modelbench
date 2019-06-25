@@ -72,6 +72,6 @@ bend_invert = other.bend_invert
 matrix = matrix_create(position, vec3(0), vec3(1))
 
 // UV
-wind_wave = value[e_value.WIND_WAVE]
+wind_wave = value[e_value.WIND_AXIS]
 wind_wave_zmin = test(value[e_value.WIND_ZMIN_ENABLE], value[e_value.WIND_ZMIN], null)
 wind_wave_zmax = test(value[e_value.WIND_ZMAX_ENABLE], value[e_value.WIND_ZMAX], null)

@@ -163,7 +163,7 @@ enum e_value
 	INFLATE,
 	
 	// Wind
-	WIND_WAVE,
+	WIND_AXIS,
 	WIND_ZMIN_ENABLE,
 	WIND_ZMIN,
 	WIND_ZMAX_ENABLE,

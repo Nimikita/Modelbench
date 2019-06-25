@@ -1,6 +1,6 @@
 /// model_save_wind()
 
-if (value[e_value.WIND_WAVE] = e_vertex_wave.NONE)
+if (value[e_value.WIND_AXIS] = e_vertex_wave.NONE)
 	return 0
 
 var axis, miny, maxy;
@@ -10,7 +10,7 @@ maxy = null
 
 json_save_object_start("wind")
 
-if (value[e_value.WIND_WAVE] = e_vertex_wave.Z_ONLY)
+if (value[e_value.WIND_AXIS] = e_vertex_wave.Z_ONLY)
 	axis = "y"
 
 json_save_var("axis", axis)

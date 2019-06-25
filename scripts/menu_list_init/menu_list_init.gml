@@ -23,5 +23,16 @@ switch (menu_name)
 		// Add all loaded textures in model
 		with (obj_texture)
 			menu_add_item(id, filename, sprite)
+			
+		break
+	}
+	
+	case "elementeditorwindaxis":
+	{
+		menu_add_item(e_vertex_wave.NONE, text_get("elementeditorwindaxisnone"))
+		menu_add_item(e_vertex_wave.ALL, text_get("elementeditorwindaxisall"))
+		menu_add_item(e_vertex_wave.Z_ONLY, text_get("elementeditorwindaxis" + test(setting_z_is_up, "z", "y")))
+		
+		break
 	}
 }

@@ -146,7 +146,7 @@ with (new(obj_model_element))
 	value[e_value.UV_Y] = uv[Y]
 	
 	// Wind
-	value[e_value.WIND_WAVE] = e_vertex_wave.NONE
+	value[e_value.WIND_AXIS] = e_vertex_wave.NONE
 	value[e_value.WIND_ZMIN_ENABLE] = false
 	value[e_value.WIND_ZMAX_ENABLE] = false
 	value[e_value.WIND_ZMIN] = 0
@@ -158,9 +158,9 @@ with (new(obj_model_element))
 		if (is_string(windmap[?"axis"]))
 		{
 			if (windmap[?"axis"] = "y")
-				value[e_value.WIND_WAVE] = e_vertex_wave.Z_ONLY
+				value[e_value.WIND_AXIS] = e_vertex_wave.Z_ONLY
 			else
-				value[e_value.WIND_WAVE] = e_vertex_wave.ALL
+				value[e_value.WIND_AXIS] = e_vertex_wave.ALL
 		}
 		
 		if (is_real(windmap[?"ymin"]))

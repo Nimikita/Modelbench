@@ -41,7 +41,7 @@ switch (argument0)
 	*/
 	
 	// Wind
-	case e_value.WIND_WAVE: return e_vertex_wave.NONE
+	case e_value.WIND_AXIS: return e_vertex_wave.NONE
 	
 	// Misc
 	case e_value.TEXTURE_OBJ: return null

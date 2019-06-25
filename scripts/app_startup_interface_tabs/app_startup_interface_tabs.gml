@@ -104,7 +104,12 @@ with (element_editor)
 	appearance = tab_add_category("appearance", null, false)
 	
 	// Wind
-	wind = tab_add_category("wind", null, false)
+	wind = tab_add_category("wind", tab_element_editor_wind, false)
+	with (wind)
+	{
+		tbx_zmin = new_textbox_ndecimals()
+		tbx_zmax = new_textbox_ndecimals()
+	}
 	
 	// Mine-imator
 	mineimator = tab_add_category("mineimator", tab_element_editor_mineimator, false)
