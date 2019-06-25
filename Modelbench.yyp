@@ -575,14 +575,6 @@
             }
         },
         {
-            "Key": "16e1eebb-a797-4dd7-ba27-2e07f87f1900",
-            "Value": {
-                "id": "a856b2e8-1760-44fc-9baf-b5f770681346",
-                "resourcePath": "datafiles_yy\\Data\\Fonts\\inter_regular.ttf.yy",
-                "resourceType": "GMIncludedFile"
-            }
-        },
-        {
             "Key": "174543b8-7dbc-4fce-b65a-3d70a6216f98",
             "Value": {
                 "id": "8b87266f-8aab-40df-9dc9-2ab05ee504eb",
@@ -1540,14 +1532,6 @@
                 "id": "4afa4e0b-35a9-42b3-8c2a-53d7da92cdde",
                 "resourcePath": "scripts\\el_value_set_start\\el_value_set_start.yy",
                 "resourceType": "GMScript"
-            }
-        },
-        {
-            "Key": "46d26e3f-bdcc-404d-aa3e-af27aed2b01b",
-            "Value": {
-                "id": "b3b935f8-10d9-470e-985c-6734247d437b",
-                "resourcePath": "datafiles_yy\\Data\\Fonts\\inter_bold.ttf.yy",
-                "resourceType": "GMIncludedFile"
             }
         },
         {
@@ -3092,14 +3076,6 @@
                 "id": "31951bcf-c372-4f32-9635-20bafeae3e9b",
                 "resourcePath": "scripts\\draw_button_collapse\\draw_button_collapse.yy",
                 "resourceType": "GMScript"
-            }
-        },
-        {
-            "Key": "887a47c4-ce33-4720-9cef-99e7693fbecc",
-            "Value": {
-                "id": "dc3c4689-35e1-4120-9bc5-cc8020b038a0",
-                "resourcePath": "datafiles_yy\\Data\\Fonts\\inter_semibold.ttf.yy",
-                "resourceType": "GMIncludedFile"
             }
         },
         {

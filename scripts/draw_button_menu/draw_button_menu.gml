@@ -61,7 +61,7 @@ if (menu_name = name)
 microani_set(name, null, false, false, false)
 
 var labelcolor, labelalpha;
-labelcolor = merge_color(a_neutral50, c_neutral30, mcroani_arr[e_mcroani.DISABLED])
+labelcolor = merge_color(c_neutral50, c_neutral30, mcroani_arr[e_mcroani.DISABLED])
 labelalpha = lerp(a_neutral50, a_neutral30, mcroani_arr[e_mcroani.DISABLED])
 
 // Label
@@ -77,7 +77,7 @@ if (tex != null)
 
 // Text
 var textcolor, textalpha;
-textcolor = merge_color(a_neutral60, c_neutral30, mcroani_arr[e_mcroani.DISABLED])
+textcolor = merge_color(c_neutral60, c_neutral30, mcroani_arr[e_mcroani.DISABLED])
 textalpha = lerp(a_neutral60, a_neutral30, mcroani_arr[e_mcroani.DISABLED])
 
 textoff = test(tex, (imgsize - 4), 0)

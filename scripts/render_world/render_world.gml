@@ -8,7 +8,7 @@ with (render_shader_obj)
 	shader_use()
 
 // Enable mip-mapping
-shader_texture_filter_mipmap = true
+//shader_texture_filter_mipmap = true
 
 // Neutral depth (0)
 if (render_mode != e_render_mode.HIGH_LIGHT_SUN_DEPTH &&

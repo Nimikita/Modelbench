@@ -6,9 +6,9 @@
 
 // Versions
 #macro modelbench_version			"1.0.0"
-#macro modelbench_version_full		modelbench_version + " Private Release 1"
+#macro modelbench_version_full		modelbench_version + "-a1"
 #macro modelbench_version_extra		""
-#macro modelbench_version_date		"2019.05.30"
+#macro modelbench_version_date		"2019.06.24"
 #macro gm_runtime					GM_runtime_version
 
 // Directories
