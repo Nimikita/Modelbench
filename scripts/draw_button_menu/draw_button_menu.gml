@@ -113,8 +113,12 @@ if (mouseon && mouse_left_released)
 	menu_y = yy
 	menu_w = wid
 	menu_button_h = hei
+	menu_item_padding = 2
 	menu_item_w = wid
-	menu_item_h = menu_button_h
+	menu_item_h = menu_button_h + (menu_item_padding * 2)
+	
+	if (!flip)
+		menu_top_y = yy - 2
 	
 	// Init
 	menu_clear()

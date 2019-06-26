@@ -39,6 +39,13 @@ if (h > 2)
 draw_box(menu_x, yy, menu_w, h, false, c_background, 1)
 draw_line_ext(menu_x, test(menu_flip, yy + h, yy), menu_x + menu_w, test(menu_flip, yy + h, yy), c_neutral10, a_neutral10)
 
+// Drop shadow
+var shadowy, shadowh, shadowani;
+shadowy = test(menu_flip, yy, yy - menu_button_h)
+shadowh = h + menu_button_h
+shadowani = ease(test((menu_ani_type = "show"), "easeoutexpo", "easeinexpo"), menu_ani)
+draw_dropshadow(menu_x - 2, shadowy - 2, menu_w + 4, shadowh + 4, c_black, shadowani)
+
 content_x = menu_x
 content_y = yy
 content_width = menu_w
@@ -66,13 +73,15 @@ switch (menu_type)
 		var dy = yy;
 		for (var m = round(menu_scroll.value / menu_item_h); m < menu_amount; m++)
 		{
-			var item, imgsize, dx, highlight, text;
+			var item, itemy, itemh, imgsize, dx, highlight, text;
 			
 			if (dy + menu_item_h > yy + h)
 				break
 			
 			item = menu_item[m]
-			imgsize = menu_item_h - 4
+			itemy = dy + menu_item_padding
+			itemh = menu_item_h - (menu_item_padding * 2)
+			imgsize = itemh - 4
 			dx = 8//menu_item_h / 2
 			
 			if (app_mouse_box(menu_x, dy, menu_w - 12 * menu_scroll.needed, menu_item_h))
@@ -80,6 +89,7 @@ switch (menu_type)
 				mouseitem = item
 				mouse_cursor = cr_handpoint
 				draw_box(menu_x, dy, menu_w - 12 * menu_scroll.needed, menu_item_h, false, c_neutral10, a_neutral10)
+				draw_box_hover(menu_x + 2, itemy, menu_w - (12 * menu_scroll.needed) - 4, itemh, 1)
 			}
 			
 			// Highlight box
@@ -89,12 +99,12 @@ switch (menu_type)
 			
 			// Sprite
 			if (item.tex)
-				draw_texture(item.tex, menu_x + 8, dy + 2, imgsize / texture_width(item.tex), imgsize / texture_height(item.tex))
+				draw_texture(item.tex, menu_x + 8, itemy + 2, imgsize / texture_width(item.tex), imgsize / texture_height(item.tex))
 			
 			// Caption
 			dx += test((item.icon || item.tex), imgsize + 8, 0)
 			text = string_limit(item.text, menu_w - 12 * menu_scroll.needed - 8-dx)
-			draw_label(text, menu_x + dx, dy + menu_item_h / 2, fa_left, fa_middle, c_neutral60, a_neutral60)
+			draw_label(text, menu_x + dx, itemy + itemh / 2, fa_left, fa_middle, c_neutral60, a_neutral60)
 			dy += menu_item_h
 		}
 		break

@@ -13,7 +13,8 @@
         "aba254ae-1041-4044-b6b8-4989d15300c5",
         "777ff19e-a224-4604-94c4-264dd02a91bf",
         "f5477276-97c8-46e0-960a-6ddf91b95028",
-        "63ab63b1-7cf8-472d-88aa-49b12c1c526f"
+        "63ab63b1-7cf8-472d-88aa-49b12c1c526f",
+        "d4ccbfe3-f351-46dc-bb6d-e6852b13355e"
     ],
     "filterType": "GMScript",
     "folderName": "Draw",

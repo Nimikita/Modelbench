@@ -3775,6 +3775,14 @@
             }
         },
         {
+            "Key": "a267596d-8df2-4408-8ae8-948f27074cf7",
+            "Value": {
+                "id": "23300805-d5a2-4f98-a8d7-6e3fd7de6c84",
+                "resourcePath": "sprites\\spr_dropshadow\\spr_dropshadow.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "a2841f37-b28f-41c1-ae42-949e6172922d",
             "Value": {
                 "id": "d8b17e89-f13c-477f-aade-b83555c1f37f",
@@ -4931,6 +4939,14 @@
             "Value": {
                 "id": "a9a7292e-0a06-4a83-b737-029dee387968",
                 "resourcePath": "scripts\\texture_relink\\texture_relink.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "d4ccbfe3-f351-46dc-bb6d-e6852b13355e",
+            "Value": {
+                "id": "9dd1f752-aa92-4f23-a465-b165da6582fe",
+                "resourcePath": "scripts\\draw_dropshadow\\draw_dropshadow.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -6195,6 +6211,7 @@
         "777ff19e-a224-4604-94c4-264dd02a91bf",
         "f5477276-97c8-46e0-960a-6ddf91b95028",
         "63ab63b1-7cf8-472d-88aa-49b12c1c526f",
+        "d4ccbfe3-f351-46dc-bb6d-e6852b13355e",
         "69023d50-57f8-4f96-b3cb-0b1110c23938",
         "9298f711-9d65-4531-80d2-61fe09d4a06a",
         "dc7ccbd0-cace-4b54-8047-8d96942082c4",
