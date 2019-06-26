@@ -18,6 +18,7 @@ if (window_state = "startup")
 panel_area_draw()
 toolbar_draw()
 
+popup_draw()
 menu_draw()
 tip_draw()
 

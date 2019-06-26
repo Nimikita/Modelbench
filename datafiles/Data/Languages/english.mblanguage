@@ -76,6 +76,13 @@
 		"ok": "OK",
 		"undo": "UNDO"
 	},
+	"colorpicker/": {
+		"close": "Close colorpicker",
+		"r": "R",
+		"g": "G",
+		"b": "B",
+		"hex": "Hex"
+	},
 	"tooltip/": {
 		"showoptions": "Show options",
 		"hideoptions": "Hide options",

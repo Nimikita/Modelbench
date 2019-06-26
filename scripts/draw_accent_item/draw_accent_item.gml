@@ -37,10 +37,16 @@ else
 	draw_image(spr_icons, e_icon.eyedropper, xx + width/2, yy + height/2, 1, 1, c_neutral50, a_neutral50)
 }
 
-if (mouseon && mouse_left_pressed && index < 9)
+if (mouseon && mouse_left_pressed)
 {
-	setting_accent = index
-	interface_update()
+	if (index < 9)
+	{
+		setting_accent_use_custom = false
+		setting_accent = index
+		interface_update()
+	}
+	
+	return true
 }
 
 microani_update(mouseon, mouseclick, setting_accent = index)

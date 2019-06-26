@@ -15,7 +15,13 @@ draw_label(text_get("settingsaccentcolor"), dx, accentboxy - 7, fa_left, fa_bott
 
 for (var i = 0; i < 10; i++)
 {
-	draw_accent_item(accentboxx, accentboxy, accentboxw, 48, i)
+	if (draw_accent_item(accentboxx, accentboxy, accentboxw, 48, i) && i = 9)
+	{
+		// Set to custom accent
+		popup_colorpicker_show("settingsaccentcolor", setting_accent_custom, setting_accent_custom, action_setting_accent_custom)
+		setting_accent_use_custom = true
+		interface_update()
+	}
 	
 	accentboxx += accentboxw + 7
 	

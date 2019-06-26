@@ -40,6 +40,8 @@ setting_slow_modifier = 0.25
 
 setting_dark_theme = false
 setting_accent = 6
+setting_accent_use_custom = false
+setting_accent_custom = hex_to_color("03A9F4")
 setting_tip_show = true
 setting_z_is_up = false
 setting_smooth_camera = true
