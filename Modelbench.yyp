@@ -791,6 +791,14 @@
             }
         },
         {
+            "Key": "1e637c7d-f88f-4ab5-963d-fb80c2481120",
+            "Value": {
+                "id": "e732962d-92f0-416a-a39b-e6ad93b1f91f",
+                "resourcePath": "scripts\\action_el_inherit_bend\\action_el_inherit_bend.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "1f1c7800-d5db-49a1-b027-fada773e7c6f",
             "Value": {
                 "id": "6af2a1e8-15cd-48f6-8767-e0d90305bf46",
@@ -5820,6 +5828,7 @@
         "b78736c5-d370-4304-a836-b5319f5a9082",
         "33455fe4-6a54-4696-a220-d2a52c6cdf6b",
         "534f5ec0-ead0-4538-917f-9bc7a7a0dffb",
+        "1e637c7d-f88f-4ab5-963d-fb80c2481120",
         "94e66a83-1ca4-4748-85ff-b1bcb7342c79",
         "a4f0517a-eb1c-4993-ac44-48c6b56da16e",
         "f7976771-d9d7-40ba-a1bd-4de0ad821825",

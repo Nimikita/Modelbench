@@ -121,6 +121,7 @@ enum e_value
 	MIX_AMOUNT,
 	
 	// Bend
+	BEND_SHAPE,
 	BEND,
 	BEND_LOCK,
 	BEND_OFFSET,
@@ -142,6 +143,7 @@ enum e_value
 	BEND_ANGLE_X,
 	BEND_ANGLE_Y,
 	BEND_ANGLE_Z,
+	INHERIT_BEND,
 	
 	// Shape properties
 	TEX_MIRROR,

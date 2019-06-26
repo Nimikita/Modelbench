@@ -182,6 +182,8 @@
 				"y": "Default angle",
 				"z": "Default angle"
 			},
+			"inheritangles": "Inherit bend angles",
+			"inheritangleshelp": "Enables 'Inherit bend' for this part in Mine-imator.",
 			"offset": "Offset",
 			"customsize": "Custom bend size",
 			"customsizehelp": "Allows for a custom bend size. This part's bending will ignore program bend styles.",

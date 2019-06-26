@@ -18,6 +18,9 @@ json_save_var("offset", value[e_value.BEND_OFFSET])
 
 if (value[e_value.BEND_SIZE_CUSTOM])
 	json_save_var("size", value[e_value.BEND_SIZE])
+	
+if (value[e_value.INHERIT_BEND])
+	json_save_var("inherit_bend", value[e_value.INHERIT_BEND])
 
 switch (value[e_value.BEND_PART])
 {

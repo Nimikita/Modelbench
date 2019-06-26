@@ -115,6 +115,9 @@ with (new(obj_model_element))
 			value[e_value.BEND_SIZE] = 0
 		}
 		
+		// Inherit bend angle(s)
+		value[e_value.INHERIT_BEND] = value_get_real(bendmap[?"inherit_bend"], false)
+		
 		// Directional part
 		if (!is_string(bendmap[?"part"]))
 		{
@@ -305,6 +308,7 @@ with (new(obj_model_element))
 		
 		value[e_value.BEND_SIZE_CUSTOM] = false
 		value[e_value.BEND_SIZE] = 0
+		value[e_value.INHERIT_BEND] = false
 
 		value[e_value.BEND_PART] = e_part.RIGHT
 		

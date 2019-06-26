@@ -44,6 +44,11 @@ for (var i = X; i <= Z; i++)
 	tab_next()
 }
 
+// Inherit bend angles
+tab_control_switch()
+draw_switch("elementeditorbendinheritangles", dx, dy, el_edit.value[e_value.INHERIT_BEND], action_el_inherit_bend, "elementeditorbendinheritangleshelp", !el_edit.value[e_value.BEND])
+tab_next()
+
 // Bend part
 var text;
 

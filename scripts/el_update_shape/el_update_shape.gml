@@ -63,10 +63,14 @@ bend_part = other.bend_part
 bend_axis = other.bend_axis
 bend_direction_min = other.bend_direction_min
 bend_direction_max = other.bend_direction_max
+bend_default_angle_prev = other.bend_default_angle_prev
 bend_default_angle = other.bend_default_angle
 bend_offset = other.bend_offset
 bend_size = other.bend_size
 bend_invert = other.bend_invert
+
+if (!vec3_equals(bend_default_angle, bend_default_angle_prev))
+	update_vbuffer = true
 
 // Create matrix
 matrix = matrix_create(position, vec3(0), vec3(1))

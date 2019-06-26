@@ -108,7 +108,17 @@ for (var i = 0; i <= Z; i++)
 }
 
 bend_invert = point3D(value[e_value.BEND_INVERT_X], value[e_value.BEND_INVERT_Y], value[e_value.BEND_INVERT_Z])
+
+if (other.object_index != app)
+	bend_default_angle_prev = bend_default_angle
+else
+	bend_default_angle_prev = vec3(0)
+
 bend_default_angle = point3D(value[e_value.BEND_ANGLE_X], value[e_value.BEND_ANGLE_Y], value[e_value.BEND_ANGLE_Z])
+
+// Add parent bend
+if (other.object_index != app && parent.value[e_value.BEND] && value[e_value.INHERIT_BEND])
+	bend_default_angle = vec3_add(bend_default_angle, parent.bend_default_angle)
 
 // Calculate matrix
 if (other.object_index != app)
