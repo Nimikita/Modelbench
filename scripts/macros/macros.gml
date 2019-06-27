@@ -11,6 +11,9 @@
 #macro modelbench_version_date		"2019.06.24"
 #macro gm_runtime					GM_runtime_version
 
+// File formats
+#macro settings_format				e_settings.FORMAT_100
+
 // Directories
 #macro file_directory				game_save_id
 #macro data_directory				working_directory + "Data\\"

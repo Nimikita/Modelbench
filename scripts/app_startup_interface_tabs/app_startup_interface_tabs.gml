@@ -116,7 +116,7 @@ with (element_editor)
 }
 
 // Settings
-settings = new_tab(setting_element_editor_location, true)
+settings = new_tab(setting_settings_location, true)
 with (settings)
 {
 	// Program

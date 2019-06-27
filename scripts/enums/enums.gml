@@ -1,6 +1,11 @@
 /// enums()
 /// @desc Defines enumerators used in the project.
 
+enum e_settings
+{
+	FORMAT_100 = 0
+}
+
 // Icons
 enum e_icon
 {

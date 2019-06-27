@@ -18,6 +18,7 @@ else
 			model_save()
 }
 
+settings_save()
 
 log("Closing...")
 

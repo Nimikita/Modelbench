@@ -7,17 +7,17 @@ tab_next()
 
 // Wind
 tab_control_switch()
-draw_button_collapse("settinggraphicswind", !setting_collapse_wind, action_collapse_wind, !setting_graphics_wind)
-draw_switch("settingsgraphicswind", dx, dy, setting_graphics_wind, action_setting_graphics_wind)
+draw_button_collapse("settinggraphicswind", !setting_collapse_wind, action_collapse_wind, !setting_wind)
+draw_switch("settingsgraphicswind", dx, dy, setting_wind, action_setting_wind)
 tab_next()
 
-if (setting_graphics_wind && !setting_collapse_wind)
+if (setting_wind && !setting_collapse_wind)
 {
 	tab_control_meter()
-	draw_meter("settingsgraphicswindspeed", dx, dy, dw, round(setting_graphics_wind_speed * 100), 48, 0, 200, 45, 1, tab.graphics.tbx_wind_speed, action_setting_graphics_wind_speed)
+	draw_meter("settingsgraphicswindspeed", dx, dy, dw, round(setting_wind_speed * 100), 48, 0, 200, 45, 1, tab.graphics.tbx_wind_speed, action_setting_wind_speed)
 	tab_next()
 	
 	tab_control_meter()
-	draw_meter("settingsgraphicswindstrength", dx, dy, dw, setting_graphics_wind_strength, 48, 0, 8, .5, 0.05, tab.graphics.tbx_wind_strength, action_setting_graphics_wind_strength)
+	draw_meter("settingsgraphicswindstrength", dx, dy, dw, setting_wind_strength, 48, 0, 8, .5, 0.05, tab.graphics.tbx_wind_strength, action_setting_wind_strength)
 	tab_next()
 }

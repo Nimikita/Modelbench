@@ -19,7 +19,6 @@ for (var i = 0; i < 10; i++)
 	{
 		// Set to custom accent
 		popup_colorpicker_show("settingsaccentcolor", setting_accent_custom, setting_accent_custom, action_setting_accent_custom)
-		setting_accent_use_custom = true
 		interface_update()
 	}
 	

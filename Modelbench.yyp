@@ -122,7 +122,7 @@
             "Key": "04fdedfe-488f-4a78-8e69-ea38262e9496",
             "Value": {
                 "id": "c801f2b6-4748-486b-a9d0-0550e80e8ea1",
-                "resourcePath": "scripts\\action_setting_graphics_wind_strength\\action_setting_graphics_wind_strength.yy",
+                "resourcePath": "scripts\\action_setting_wind_strength\\action_setting_wind_strength.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -2146,7 +2146,7 @@
             "Key": "5b372727-b4b0-4a3f-bb42-66472d557fb2",
             "Value": {
                 "id": "2fced5ee-7bad-4fc5-82ff-22f4c751063d",
-                "resourcePath": "scripts\\action_setting_graphics_wind_speed\\action_setting_graphics_wind_speed.yy",
+                "resourcePath": "scripts\\action_setting_wind_speed\\action_setting_wind_speed.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -3594,7 +3594,7 @@
             "Key": "953a7be3-8706-4ee7-b216-be5702db2135",
             "Value": {
                 "id": "95fbc9b1-3604-4434-9bb4-052be252ec57",
-                "resourcePath": "scripts\\action_setting_graphics_wind\\action_setting_graphics_wind.yy",
+                "resourcePath": "scripts\\action_setting_wind\\action_setting_wind.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -4375,6 +4375,14 @@
             }
         },
         {
+            "Key": "bb60c3ce-9b70-48cc-b963-d707eba66d67",
+            "Value": {
+                "id": "06b9c74b-3956-43c4-8b85-e22d00afa7d3",
+                "resourcePath": "scripts\\settings_load\\settings_load.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "bb8ef9b6-73b2-47eb-8ff4-c92fbfa9f42f",
             "Value": {
                 "id": "ed27bd33-e14e-4d1d-8352-09a7a2fe4da6",
@@ -4907,6 +4915,14 @@
             "Value": {
                 "id": "d284c70e-321a-4e77-a1dc-e19e25d10bce",
                 "resourcePath": "scripts\\camera_work_set_focus\\camera_work_set_focus.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "cdaadee7-19bc-4791-a58a-98dd89014818",
+            "Value": {
+                "id": "cdcd2a75-e3f3-449d-88e1-650dbfd4e67b",
+                "resourcePath": "scripts\\settings_save\\settings_save.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -6234,7 +6250,9 @@
         "6057810a-0b62-4c6d-a9c6-45da2abde16a",
         "68429980-404e-4eb8-a274-3d74e7e3f198",
         "193660ee-1edb-4d45-9d2c-412b0169a453",
+        "cdaadee7-19bc-4791-a58a-98dd89014818",
         "203c23d7-5462-4cd1-a31d-66e71f6d4544",
+        "bb60c3ce-9b70-48cc-b963-d707eba66d67",
         "89ff1a9a-1e56-4f9c-a2d2-408178efdf66",
         "dd3b7a85-0f5e-4e57-87aa-7a6fa24dc05d",
         "63be6b50-1dec-4356-8d92-81ecd16c63a9",

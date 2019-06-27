@@ -7,8 +7,7 @@ setting_panel_right_secondary_size = 300
 
 setting_assets_location = "right"
 setting_element_editor_location = "right_secondary"
-
-setting_view_split = 0.5
+setting_settings_location = "right_secondary"
 
 backup_next = 0
 setting_backup = true
@@ -40,7 +39,6 @@ setting_slow_modifier = 0.25
 
 setting_dark_theme = false
 setting_accent = 6
-setting_accent_use_custom = false
 setting_accent_custom = hex_to_color("03A9F4")
 setting_tip_show = true
 setting_z_is_up = false
@@ -49,9 +47,9 @@ setting_smooth_camera_amount = 2
 
 setting_blocky_bending = false
 setting_outline_opacity = .15
-setting_graphics_wind = true
-setting_graphics_wind_speed = .45
-setting_graphics_wind_strength = .5
+setting_wind = true
+setting_wind_speed = .45
+setting_wind_strength = .5
 
 setting_render_shadows = false
 setting_render_shadows_blur_quality = 64
@@ -64,9 +62,6 @@ setting_render_ssao_power = 1
 setting_render_ssao_color = c_black//hex_to_color("696EA1")
 setting_render_ssao_blur_passes = 2
 
-setting_texture_filtering = true
-setting_texture_filtering_level = 1
-
 // Misc settings
 setting_hide_shapes = false
 
@@ -78,4 +73,8 @@ setting_collapse_bend_axis[X] = true
 setting_collapse_bend_axis[Y] = true
 setting_collapse_bend_axis[Z] = true
 
+settings_load()
+
+//setting_texture_filtering = false
+setting_texture_filtering_level = 1
 texture_set_mipmap_level(setting_texture_filtering_level)

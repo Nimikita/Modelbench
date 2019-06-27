@@ -1,6 +1,6 @@
 /// model_startup()
 
-globalvar load_folder, save_folder, el_edit, el_edit_amount, res_edit,
+globalvar load_format, load_folder, save_folder, el_edit, el_edit_amount, res_edit,
 		  axis_edit, blank_texture;
 
 el_edit = null
@@ -21,3 +21,5 @@ model_create_wait = false
 model_name = ""
 player_skin = true
 root_scale = vec3(1)
+model_temporary = false
+model_changed = false

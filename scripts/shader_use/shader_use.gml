@@ -14,8 +14,8 @@ if (!is_undefined(uniform_map[?"uTime"]) && uniform_map[?"uTime"] > -1)
 	render_set_uniform("uTime", current_step)
 	render_set_uniform("uWindEnable", 0)
 	render_set_uniform("uWindTerrain", 1)
-	render_set_uniform("uWindSpeed", app.setting_graphics_wind * app.setting_graphics_wind_speed)
-	render_set_uniform("uWindStrength", app.setting_graphics_wind_strength) 
+	render_set_uniform("uWindSpeed", app.setting_wind * app.setting_wind_speed)
+	render_set_uniform("uWindStrength", app.setting_wind_strength) 
 }
 
 // Set camera position

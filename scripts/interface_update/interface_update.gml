@@ -5,7 +5,7 @@ var theme = test(setting_dark_theme, theme_dark, theme_light);
 
 // Accent color(s)
 
-if (setting_accent_use_custom)
+if (setting_accent = 9)
 	c_accent = setting_accent_custom
 else
 	c_accent = theme.accent_list[setting_accent]
