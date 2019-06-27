@@ -4,7 +4,7 @@
         "language": "English",
         "translator": "Nimi",
         "forversion": "1.0.0",
-        "lastchange": "2019.06.25"
+        "lastchange": "2019.06.27"
     },
 	"startup/": {
 		"recovermodelheader": "Unsaved model detected",
@@ -77,7 +77,6 @@
 		"undo": "UNDO"
 	},
 	"colorpicker/": {
-		"close": "Close colorpicker",
 		"r": "R",
 		"g": "G",
 		"b": "B",

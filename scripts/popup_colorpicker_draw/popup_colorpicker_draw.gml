@@ -6,7 +6,7 @@ dy += 8
 draw_label(text_get(popup.value_name), dx + 16, dy + 14, fa_left, fa_middle, c_accent, 1, font_heading)
 
 // Close
-if (draw_button_icon("colorpickerclose", dx + dw - 12 - 28, dy, 28, 28, false, e_icon.close, null, false, "colorpickerclose"))
+if (draw_button_icon("colorpickerclose", dx + dw - 12 - 28, dy, 28, 28, false, e_icon.close, null, false))
 	popup_close()
 
 dy += 28 + 8
