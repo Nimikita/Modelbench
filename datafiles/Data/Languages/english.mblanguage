@@ -3,7 +3,7 @@
     "file/": {
         "language": "English",
         "translator": "Nimi",
-        "forversion": "1.0.0",
+        "forversion": "Alpha 2",
         "lastchange": "2019.06.27"
     },
 	"startup/": {
@@ -208,6 +208,8 @@
 		"inherittexture": "Inherit texture",
 		"inheritcolor": "Inherit parent color",
 		"inheritcolorhelp": "Inherit color options including opacity and brightness.",
+		"blendcolor": "Blend color",
+		"mixcolor": "Mix color",
 		"mixamount": "Mix amount",
 		"opacity": "Opacity",
 		"brightness": "Brightness",

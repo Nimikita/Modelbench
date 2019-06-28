@@ -25,6 +25,16 @@ tab_control_switch()
 draw_switch("elementeditorinheritcolor", dx, dy, el_edit.value[e_value.INHERIT_COLOR], action_el_inherit_color, "elementeditorinheritcolorhelp")
 tab_next()
 
+// Blend color
+tab_control_color()
+draw_button_color("elementeditorblendcolor", dx, dy, el_edit.value[e_value.BLEND_COLOR], c_white, action_el_blend_color)
+tab_next()
+
+// Mix color
+tab_control_color()
+draw_button_color("elementeditormixcolor", dx, dy, el_edit.value[e_value.MIX_COLOR], c_black, action_el_mix_color)
+tab_next()
+
 // Mix amount
 tab_control_meter()
 draw_meter("elementeditormixamount", dx, dy, dw, round(el_edit.value[e_value.MIX_AMOUNT] * 100), 48, 0, 100, 0, 1, tab.material.tbx_mix_amount, action_el_mix_amount)
