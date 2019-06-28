@@ -2167,6 +2167,14 @@
             }
         },
         {
+            "Key": "5b540120-cf7a-44ce-b088-ce942b10cb79",
+            "Value": {
+                "id": "5066f1e7-b78a-41bd-8e6a-a9f543b61ece",
+                "resourcePath": "scripts\\el_value_update_vbuffer\\el_value_update_vbuffer.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "5b63005a-b6c2-44d9-ab2f-9ef3ba836238",
             "Value": {
                 "id": "649aa29e-6514-4ced-978c-10c9685bf8c9",
@@ -6333,6 +6341,7 @@
         "44f3bed2-9463-4c76-9fae-18c02168d217",
         "6ebcadc2-ebd1-43c2-9595-a0b1d2f408e5",
         "dab6ce44-b51f-433a-9483-63990eb5e775",
+        "5b540120-cf7a-44ce-b088-ce942b10cb79",
         "b2d83fff-8e7d-4090-b5b3-fc8c7b8c66b3",
         "b6a1b1ef-9bcc-4254-8cf7-0d8867742b56",
         "80a81310-07ce-4a6d-816b-a84f1e9de673",

@@ -14,17 +14,22 @@ if (history_undo)
 		with (element)
 		{
 			for (var v = 0; v < history_data.par_set_amount; v++)
-				value[history_data.value[v]] = history_data.set_old_value[e, v]
-			
-			if (element_type = TYPE_SHAPE)
 			{
-				update_vbuffer = true
-				break
-			}
+				value[history_data.value[v]] = history_data.set_old_value[e, v]
+				
+				if (el_value_update_vbuffer(v))
+				{
+					if (element_type = TYPE_SHAPE)
+					{
+						update_vbuffer = true
+						break
+					}
 		
-			if (shape_list != null)
-				for (var i = 0; i < ds_list_size(shape_list); i++)
-					shape_list[|i].update_vbuffer = true
+					if (shape_list != null)
+						for (var i = 0; i < ds_list_size(shape_list); i++)
+							shape_list[|i].update_vbuffer = true
+				}
+			}
 		}
 	}
 }
@@ -39,17 +44,22 @@ else if (history_redo)
 			with (element)
 			{
 				for (var v = 0; v < history_data.par_set_amount; v++)
+				{
 					value[history_data.value[v]] = history_data.set_new_value[e, v]
 			
-				if (element_type = TYPE_SHAPE)
-				{
-					update_vbuffer = true
-					break
-				}
+					if (el_value_update_vbuffer(v))
+					{
+						if (element_type = TYPE_SHAPE)
+						{
+							update_vbuffer = true
+							break
+						}
 		
-				if (shape_list != null)
-					for (var i = 0; i < ds_list_size(shape_list); i++)
-						shape_list[|i].update_vbuffer = true
+						if (shape_list != null)
+							for (var i = 0; i < ds_list_size(shape_list); i++)
+								shape_list[|i].update_vbuffer = true
+					}
+				}
 			}
 		}
 	}
@@ -61,20 +71,24 @@ else
 	val = argument1
 	add = argument2
 	
-	with (obj_model_element)
+	// Update vbuffer
+	if (el_value_update_vbuffer(vid))
 	{
-		if (!selected || update_vbuffer)
-			continue
-		
-		if (element_type = TYPE_SHAPE)
+		with (obj_model_element)
 		{
-			update_vbuffer = true
-			break
-		}
+			if (!selected || update_vbuffer)
+				continue
 		
-		if (shape_list != null)
-			for (var i = 0; i < ds_list_size(shape_list); i++)
-				shape_list[|i].update_vbuffer = true
+			if (element_type = TYPE_SHAPE)
+			{
+				update_vbuffer = true
+				break
+			}
+		
+			if (shape_list != null)
+				for (var i = 0; i < ds_list_size(shape_list); i++)
+					shape_list[|i].update_vbuffer = true
+		}
 	}
 	
 	// Save and modify element values
