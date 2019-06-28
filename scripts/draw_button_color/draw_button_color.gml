@@ -45,7 +45,7 @@ draw_image(spr_icons, e_icon.eyedropper, xx + 14, yy + 14, 1, 1, iconcolor, icon
 // Hover effect
 draw_box_hover(xx, yy, 28, 28, mcroani_arr[e_mcroani.HOVER])
 
-draw_label(text_get(name), xx + 28 + 12, yy + 14, fa_left, fa_middle, lerp(c_neutral50, c_neutral30, mcroani_arr[e_mcroani.DISABLED]), lerp(a_neutral50, a_neutral30, mcroani_arr[e_mcroani.DISABLED]))
+draw_label(text_get(name), xx + 28 + 12, yy + 14, fa_left, fa_middle, lerp(c_neutral50, c_neutral30, mcroani_arr[e_mcroani.DISABLED]), lerp(a_neutral50, a_neutral30, mcroani_arr[e_mcroani.DISABLED]), font_emphasis)
 
 microani_update(mouseon, mouseclick, popup = popup_colorpicker && popup_colorpicker.value_name = name)
 
