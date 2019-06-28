@@ -34,11 +34,20 @@ if (accent != null)
 else
 {
 	draw_outline(xx + 1, yy + 1, width - 2, height - 2, 1, c_neutral20, a_neutral20)
-	draw_box(xx, yy, width, height, false, c_accent, mcroani_arr[e_mcroani.ACTIVE])
+	draw_box(xx, yy, width, height, false, setting_accent_custom, mcroani_arr[e_mcroani.ACTIVE])
 	draw_image(spr_icons, e_icon.eyedropper, xx + width/2, yy + height/2, 1, 1, merge_color(c_neutral50, c_background, mcroani_arr[e_mcroani.ACTIVE]), lerp(a_neutral50, 1, mcroani_arr[e_mcroani.ACTIVE]))
 }
 
-if (mouseon && mouse_left_pressed)
+// Hover/press animation
+var buttoncolor, buttonalpha;
+buttoncolor = merge_color(c_white, c_black, mcroani_arr[e_mcroani.PRESS])
+buttonalpha = lerp(0, .17, mcroani_arr[e_mcroani.HOVER] * (1 - mcroani_arr[e_mcroani.PRESS]))
+buttonalpha = lerp(buttonalpha, .20, mcroani_arr[e_mcroani.PRESS])
+
+draw_box(xx, yy, width, height, false, buttoncolor, buttonalpha)
+draw_box_hover(xx, yy, width, height, mcroani_arr[e_mcroani.HOVER])
+
+if (mouseon && mouse_left_released)
 {
 	setting_accent = index
 	
