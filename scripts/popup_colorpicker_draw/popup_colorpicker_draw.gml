@@ -38,8 +38,8 @@ dy += 228 + 12
 
 // Hue picker
 draw_image(spr_colorpicker_hue, 0, dx + 16, dy)
-draw_box(dx + floor((1 - popup.hue / 255) * 196) + 10, dy + 4, 12, 12, false, make_color_hsv(popup.hue, 255, 255), 1)
-draw_image(spr_colorpicker_cursor, 1, dx + floor((1 - popup.hue / 255) * 196) + 16, dy + 10)
+draw_box(dx + floor((popup.hue / 255) * 196) + 10, dy + 4, 12, 12, false, make_color_hsv(popup.hue, 255, 255), 1)
+draw_image(spr_colorpicker_cursor, 1, dx + floor((popup.hue / 255) * 196) + 16, dy + 10)
 if (window_focus = "colorpickerhuepick" && mouse_wheel <> 0)
 {
 	popup.hue = clamp(popup.hue + (-mouse_wheel) * 10, 0, 255)
@@ -62,7 +62,7 @@ if (window_busy = "colorpickerhuepick")
 		app_mouse_clear()
 	}
 	mouse_cursor = cr_handpoint
-	popup.hue = floor(clamp(1 - (mouse_x - (dx + 16)) / 196, 0, 1) * 255)
+	popup.hue = floor(clamp((mouse_x - (dx + 16)) / 196, 0, 1) * 255)
 	popup_colorpicker_update(null, make_color_hsv(popup.hue, popup.saturation, popup.brightness), false)
 }
 dy += 20 + 12
