@@ -47,5 +47,5 @@ tab_next()
 
 // Brightness
 tab_control_meter()
-draw_meter("elementeditorbrightness", dx, dy, dw, round(el_edit.value[e_value.BRIGHTNESS] * 100), 48, 0, 100, 100, 1, tab.material.tbx_brightness, action_el_brightness)
+draw_meter("elementeditorbrightness", dx, dy, dw, round(el_edit.value[e_value.BRIGHTNESS] * 100), 48, 0, 100, 0, 1, tab.material.tbx_brightness, action_el_brightness)
 tab_next()
