@@ -55,7 +55,17 @@ with (element_editor)
 	rotation = tab_add_category("rotation", null, false)
 	
 	// Size
-	size = tab_add_category("size", null, false)
+	size = tab_add_category("size", tab_element_editor_size, false)
+	with (size)
+	{
+		tbx_width = new_textbox_ndecimals()
+		tbx_length = new_textbox_ndecimals()
+		tbx_height = new_textbox_ndecimals()
+		
+		tbx_width.next_tbx = tbx_length
+		tbx_length.next_tbx = tbx_height
+		tbx_height.next_tbx = tbx_width
+	}
 	
 	// Scale
 	scale = tab_add_category("scale", null, false)

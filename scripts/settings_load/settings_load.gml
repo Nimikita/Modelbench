@@ -1,6 +1,6 @@
 /// settings_load()
 /// @desc Formats:
-///			100 = Initial
+///			ALPHA_2 = Initial
 
 var fn = settings_file;
 

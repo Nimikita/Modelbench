@@ -5,14 +5,14 @@
 #macro dev_mode						true
 
 // Versions
-#macro modelbench_version			"1.0.0"
-#macro modelbench_version_full		modelbench_version + "-a1"
+#macro modelbench_version			"alpha 2"
+#macro modelbench_version_full		modelbench_version + ""
 #macro modelbench_version_extra		""
-#macro modelbench_version_date		"2019.06.24"
+#macro modelbench_version_date		"2019.06.28"
 #macro gm_runtime					GM_runtime_version
 
 // File formats
-#macro settings_format				e_settings.FORMAT_100
+#macro settings_format				e_settings.FORMAT_ALPHA_2
 
 // Directories
 #macro file_directory				game_save_id

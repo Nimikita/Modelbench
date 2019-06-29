@@ -10,6 +10,7 @@ app_startup_interface_tabs()
 app_startup_micro_animations()
 app_startup_radio_buttons()
 togglebutton_reset()
+textfield_group_reset()
 
 app_startup_interface_views()
 

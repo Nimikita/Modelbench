@@ -68,7 +68,10 @@ if (window_busy = "colorpickerhuepick")
 dy += 20 + 12
 
 // RGB
-if (draw_textfield_triple(array("colorpickerr", "colorpickerg", "colorpickerb"), dx + 16, dy, 192, array(popup.tbx_red, popup.tbx_green, popup.tbx_blue), vec3(null)))
+textfield_group_add("colorpickerr", color_get_red(popup.color), color_get_red(popup.def), null, X, popup.tbx_red)
+textfield_group_add("colorpickerg", color_get_green(popup.color), color_get_green(popup.def), null, X, popup.tbx_green)
+textfield_group_add("colorpickerb", color_get_blue(popup.color), color_get_blue(popup.def), null, X, popup.tbx_blue)
+if (draw_textfield_group("colorpickerrgb", dx + 16, dy, 192, 1, 0, 255))
 {
 	popup.red = min(255, string_get_real(popup.tbx_red.text, 0))
 	popup.green = min(255, string_get_real(popup.tbx_green.text, 0))

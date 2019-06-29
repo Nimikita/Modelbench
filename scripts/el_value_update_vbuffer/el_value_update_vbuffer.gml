@@ -39,6 +39,13 @@ switch (argument0)
 	case e_value.BEND_ANGLE_Z:
 	case e_value.INHERIT_BEND:
 	
+	case e_value.OFFSET_X:
+	case e_value.OFFSET_Y:
+	case e_value.OFFSET_Z:
+	case e_value.WIDTH:
+	case e_value.LENGTH:
+	case e_value.HEIGHT:
+	
 	case e_value.WIND_AXIS:
 	case e_value.WIND_ZMIN_ENABLE:
 	case e_value.WIND_ZMIN:

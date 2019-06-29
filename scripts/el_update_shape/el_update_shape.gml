@@ -44,6 +44,15 @@ hide_backface = value[e_value.HIDE_BACKFACE]
 face_camera = value[e_value.FACE_CAMERA]
 item_bounce = value[e_value.HOVER]
 
+// Update shape FROM/TO from offset and editor size
+value[e_value.FROM_X] = value[e_value.OFFSET_X]
+value[e_value.FROM_Y] = value[e_value.OFFSET_Y]
+value[e_value.FROM_Z] = value[e_value.OFFSET_Z]
+
+value[e_value.TO_X] = value[e_value.OFFSET_X] + value[e_value.WIDTH]
+value[e_value.TO_Y] = value[e_value.OFFSET_Y] + value[e_value.LENGTH]
+value[e_value.TO_Z] = value[e_value.OFFSET_Z] + value[e_value.HEIGHT]
+
 // Shape size
 from_noscale = point3D(value[e_value.FROM_X], value[e_value.FROM_Y], value[e_value.FROM_Z])
 to_noscale = point3D(value[e_value.TO_X], value[e_value.TO_Y], value[e_value.TO_Z])

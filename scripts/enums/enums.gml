@@ -3,7 +3,7 @@
 
 enum e_settings
 {
-	FORMAT_100 = 0
+	FORMAT_ALPHA_2 = 0
 }
 
 // Icons
@@ -167,6 +167,12 @@ enum e_value
 	TO_X,
 	TO_Y,
 	TO_Z,
+	OFFSET_X,
+	OFFSET_Y,
+	OFFSET_Z,
+	WIDTH,
+	LENGTH,
+	HEIGHT,
 	INFLATE,
 	
 	// Wind

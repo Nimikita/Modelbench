@@ -1,8 +1,8 @@
 {
-    "id": "e6dbc40c-c417-4d38-98c9-053276e1939e",
+    "id": "3cc7b172-b08b-463d-a4b2-a976c1da90fe",
     "modelName": "GMScript",
     "mvc": "1.0",
-    "name": "draw_textfield_triple",
+    "name": "textfield_group_add",
     "IsCompatibility": false,
     "IsDnD": false
 }

@@ -127,6 +127,13 @@ with (new(obj_model_element))
 	value[e_value.SCA_Y] = scale[Y]
 	value[e_value.SCA_Z] = scale[Z]
 	
+	value[e_value.OFFSET_X] = from_noscale[X]
+	value[e_value.OFFSET_Y] = from_noscale[Y]
+	value[e_value.OFFSET_Z] = from_noscale[Z]
+	value[e_value.WIDTH] = to_noscale[X] - from_noscale[X]
+	value[e_value.LENGTH] = to_noscale[Y] - from_noscale[Y]
+	value[e_value.HEIGHT] = to_noscale[Z] - from_noscale[Z]
+	
 	scale = vec3_mul(scale, other.scale)
 	from = point3D_mul(point3D_sub(from_noscale, inflate), scale)
 	to = point3D_mul(point3D_add(to_noscale, inflate), scale)
