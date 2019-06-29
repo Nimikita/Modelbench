@@ -62,7 +62,17 @@ with (element_editor)
 	pivot_offset = tab_add_category("pivotoffset", null, false)
 	
 	// Rotation
-	rotation = tab_add_category("rotation", null, false)
+	rotation = tab_add_category("rotation", tab_element_editor_rotation, false)
+	with (rotation)
+	{
+		tbx_x = new_textbox_ndecimals()
+		tbx_y = new_textbox_ndecimals()
+		tbx_z = new_textbox_ndecimals()
+		
+		tbx_x.next_tbx = tbx_y
+		tbx_y.next_tbx = tbx_z
+		tbx_z.next_tbx = tbx_x
+	}
 	
 	// Size
 	size = tab_add_category("size", tab_element_editor_size, false)
