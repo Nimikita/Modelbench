@@ -81,11 +81,11 @@ if (ds_map_valid(interfacemap))
 
 	setting_assets_location = value_get_string(interfacemap[?"assets_location"], setting_assets_location)
 	setting_element_editor_location = value_get_string(interfacemap[?"element_editor_location"], setting_element_editor_location)
-	setting_settings_location = value_get_string(interfacemap[?"element_editor_location"], setting_settings_location)
+	setting_settings_location = value_get_string(interfacemap[?"settings_location"], setting_settings_location)
 }
 
 // Graphics
-var graphicsmap = map[?"graphcs"];
+var graphicsmap = map[?"graphics"];
 if (ds_map_valid(graphicsmap))
 {
 	setting_blocky_bending = value_get_real(graphicsmap[?"blocky_bending"], setting_blocky_bending)
@@ -95,7 +95,7 @@ if (ds_map_valid(graphicsmap))
 }
 
 // Render
-var rendermap = map[?"graphcs"];
+var rendermap = map[?"render"];
 if (ds_map_valid(rendermap))
 {
 	setting_render_ssao = value_get_real(rendermap[?"render_ssao"], setting_render_ssao)
