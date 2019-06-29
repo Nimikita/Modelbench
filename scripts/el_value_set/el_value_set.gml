@@ -18,17 +18,7 @@ if (history_undo)
 				value[history_data.value[v]] = history_data.set_old_value[e, v]
 				
 				if (el_value_update_vbuffer(v))
-				{
-					if (element_type = TYPE_SHAPE)
-					{
-						update_vbuffer = true
-						break
-					}
-		
-					if (shape_list != null)
-						for (var i = 0; i < ds_list_size(shape_list); i++)
-							shape_list[|i].update_vbuffer = true
-				}
+					element_tree_update_vbuffer(id)
 			}
 		}
 	}
@@ -48,17 +38,7 @@ else if (history_redo)
 					value[history_data.value[v]] = history_data.set_new_value[e, v]
 			
 					if (el_value_update_vbuffer(v))
-					{
-						if (element_type = TYPE_SHAPE)
-						{
-							update_vbuffer = true
-							break
-						}
-		
-						if (shape_list != null)
-							for (var i = 0; i < ds_list_size(shape_list); i++)
-								shape_list[|i].update_vbuffer = true
-					}
+						element_tree_update_vbuffer(id)
 				}
 			}
 		}
@@ -79,15 +59,7 @@ else
 			if (!selected || update_vbuffer)
 				continue
 		
-			if (element_type = TYPE_SHAPE)
-			{
-				update_vbuffer = true
-				break
-			}
-		
-			if (shape_list != null)
-				for (var i = 0; i < ds_list_size(shape_list); i++)
-					shape_list[|i].update_vbuffer = true
+			element_tree_update_vbuffer(id)
 		}
 	}
 	

@@ -88,7 +88,17 @@ with (element_editor)
 	}
 	
 	// Scale
-	scale = tab_add_category("scale", null, false)
+	scale = tab_add_category("scale", tab_element_editor_scale, false)
+	with (scale)
+	{
+		tbx_x = new_textbox_ndecimals()
+		tbx_y = new_textbox_ndecimals()
+		tbx_z = new_textbox_ndecimals()
+		
+		tbx_x.next_tbx = tbx_y
+		tbx_y.next_tbx = tbx_z
+		tbx_z.next_tbx = tbx_x
+	}
 	
 	// Bend
 	bend = tab_add_category("bend", tab_element_editor_bend, false)

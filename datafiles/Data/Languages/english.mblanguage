@@ -164,12 +164,12 @@
 	"elementeditor/": {
 		"partname": "Part name",
 		"shapename": "Shape name",
-		"pos/": {
+		"position/": {
 			"x": "X",
 			"y": "Y",
 			"z": "Z"
 		},
-		"rot/": {
+		"rotation/": {
 			"x": "X",
 			"y": "Y",
 			"z": "Z"
@@ -178,6 +178,11 @@
 			"w": "W",
 			"l": "L",
 			"h": "H"
+		},
+		"scale/": {
+			"x": "X",
+			"y": "Y",
+			"z": "Z"
 		},
 		"bend/": {
 			"lock": "Lock to bent half of parent",
