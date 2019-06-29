@@ -46,7 +46,17 @@ with (element_editor)
 	tbx_depth = new_textbox_ninteger()
 	
 	// Position
-	position = tab_add_category("position", null, false)
+	position = tab_add_category("position", tab_element_editor_position, false)
+	with (position)
+	{
+		tbx_x = new_textbox_ndecimals()
+		tbx_y = new_textbox_ndecimals()
+		tbx_z = new_textbox_ndecimals()
+		
+		tbx_x.next_tbx = tbx_y
+		tbx_y.next_tbx = tbx_z
+		tbx_z.next_tbx = tbx_x
+	}
 	
 	// Pivot offset
 	pivot_offset = tab_add_category("pivotoffset", null, false)
