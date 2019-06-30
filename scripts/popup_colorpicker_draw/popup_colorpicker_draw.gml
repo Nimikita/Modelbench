@@ -80,6 +80,19 @@ if (draw_textfield_group("colorpickerrgb", dx + 16, dy, 192, 1, 0, 255))
 }
 dy += 28 + 12
 
+// HSL
+textfield_group_add("colorpickerh", color_get_hue(popup.color), color_get_hue(popup.def), null, X, popup.tbx_hue)
+textfield_group_add("colorpickers", color_get_saturation(popup.color), color_get_saturation(popup.def), null, X, popup.tbx_saturation)
+textfield_group_add("colorpickerv", color_get_value(popup.color), color_get_value(popup.def), null, X, popup.tbx_brightness)
+if (draw_textfield_group("colorpickerhsv", dx + 16, dy, 192, 1, 0, 255))
+{
+	popup.hue = min(255, string_get_real(popup.tbx_hue.text, 0))
+	popup.saturation = min(255, string_get_real(popup.tbx_saturation.text, 0))
+	popup.brightness = min(255, string_get_real(popup.tbx_brightness.text, 0))
+	popup_colorpicker_update(null, make_color_hsv(popup.hue, popup.saturation, popup.brightness), false)
+}
+dy += 28 + 12
+
 // Hex
 if (draw_textfield("colorpickerhex", dx + 16, dy, 196, null, popup.tbx_hexadecimal, null, "", "left"))
 	popup_colorpicker_update(popup.tbx_hexadecimal, hex_to_color(popup.tbx_hexadecimal.text), true)

@@ -4,7 +4,7 @@
         "language": "English",
         "translator": "Nimi",
         "forversion": "Alpha 2",
-        "lastchange": "2019.06.29"
+        "lastchange": "2019.06.30"
     },
 	"startup/": {
 		"recovermodelheader": "Unsaved model detected",
@@ -80,6 +80,9 @@
 		"r": "R",
 		"g": "G",
 		"b": "B",
+		"h": "H",
+		"s": "S",
+		"v": "V",
 		"hex": "Hex"
 	},
 	"tooltip/": {

@@ -40,6 +40,15 @@ if (control != popup_colorpicker.tbx_blue)
 	popup_colorpicker.blue = color_get_blue(color)
 	popup_colorpicker.tbx_blue.text = string(popup_colorpicker.blue)
 }
+
+if (control != popup_colorpicker.tbx_hue)
+	popup_colorpicker.tbx_hue.text = string(popup_colorpicker.hue)
+
+if (control != popup_colorpicker.tbx_saturation)
+	popup_colorpicker.tbx_saturation.text = string(popup_colorpicker.saturation)
+
+if (control != popup_colorpicker.tbx_brightness)
+	popup_colorpicker.tbx_brightness.text = string(popup_colorpicker.brightness)
 	
 if (control != popup_colorpicker.tbx_hexadecimal)
 	popup_colorpicker.tbx_hexadecimal.text = color_to_hex(popup_colorpicker.color)
