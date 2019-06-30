@@ -59,7 +59,17 @@ with (element_editor)
 	}
 	
 	// Pivot offset
-	pivot_offset = tab_add_category("pivotoffset", null, false)
+	pivot_offset = tab_add_category("pivotoffset", tab_element_editor_offset, false)
+	with (pivot_offset)
+	{
+		tbx_x = new_textbox_ndecimals()
+		tbx_y = new_textbox_ndecimals()
+		tbx_z = new_textbox_ndecimals()
+		
+		tbx_x.next_tbx = tbx_y
+		tbx_y.next_tbx = tbx_z
+		tbx_z.next_tbx = tbx_x
+	}
 	
 	// Rotation
 	rotation = tab_add_category("rotation", tab_element_editor_rotation, false)

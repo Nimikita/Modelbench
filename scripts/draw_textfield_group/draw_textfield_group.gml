@@ -129,7 +129,7 @@ for (var i = 0; i < textfield_amount; i++)
 	}
 	
 	// Idle update
-	if (textfield_value[i] != null && window_focus != string(textfield_textbox[i]) && !fieldupdate)
+	if (window_busy != textfield_name[i] + "drag" && window_busy != textfield_name[i] + "press" && window_focus != string(textfield_textbox[i]) && !fieldupdate)
 		textfield_textbox[i].text = string_decimals(textfield_value[i])
 	
 	fieldx += (fieldwid + 2)
