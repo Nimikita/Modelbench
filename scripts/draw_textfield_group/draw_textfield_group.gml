@@ -19,7 +19,7 @@ maxval = argument[6]
 
 fieldx = xx
 fieldwid = ((wid - 4) - (2 * (textfield_amount - 1)))/textfield_amount
-fieldupdate = false
+fieldupdate = null
 hei = 28
 
 // Draw field backgrounds
@@ -88,7 +88,7 @@ for (var i = 0; i < textfield_amount; i++)
 			else
 			{
 				textfield_textbox[i].text = string(textfield_default[i])
-				fieldupdate = true
+				fieldupdate = textfield_textbox[i]
 			}
 		}
 	}
@@ -118,7 +118,7 @@ for (var i = 0; i < textfield_amount; i++)
 		else
 		{
 			textfield_textbox[i].text = string(textfield_value[i] + d)
-			fieldupdate = true
+			fieldupdate = textfield_textbox[i]
 		}
 		
 		if (!mouse_left)
@@ -129,7 +129,7 @@ for (var i = 0; i < textfield_amount; i++)
 	}
 	
 	// Idle update
-	if (window_busy != textfield_name[i] + "drag" && window_busy != textfield_name[i] + "press" && window_focus != string(textfield_textbox[i]) && !fieldupdate)
+	if (window_busy != textfield_name[i] + "press" && window_focus != string(textfield_textbox[i]) && !fieldupdate)
 		textfield_textbox[i].text = string_decimals(textfield_value[i])
 	
 	fieldx += (fieldwid + 2)

@@ -84,12 +84,21 @@ dy += 28 + 12
 textfield_group_add("colorpickerh", color_get_hue(popup.color), color_get_hue(popup.def), null, X, popup.tbx_hue)
 textfield_group_add("colorpickers", color_get_saturation(popup.color), color_get_saturation(popup.def), null, X, popup.tbx_saturation)
 textfield_group_add("colorpickerv", color_get_value(popup.color), color_get_value(popup.def), null, X, popup.tbx_brightness)
-if (draw_textfield_group("colorpickerhsv", dx + 16, dy, 192, 1, 0, 255))
+var update = draw_textfield_group("colorpickerhsv", dx + 16, dy, 192, 1, 0, 255);
+if (update = popup.tbx_hue)
 {
 	popup.hue = min(255, string_get_real(popup.tbx_hue.text, 0))
+	popup_colorpicker_update(popup.tbx_hue, make_color_hsv(popup.hue, popup.saturation, popup.brightness), false)
+}
+if (update = popup.tbx_saturation)
+{
 	popup.saturation = min(255, string_get_real(popup.tbx_saturation.text, 0))
+	popup_colorpicker_update(popup.tbx_saturation, make_color_hsv(popup.hue, popup.saturation, popup.brightness), false)
+}
+if (update = popup.tbx_brightness)
+{
 	popup.brightness = min(255, string_get_real(popup.tbx_brightness.text, 0))
-	popup_colorpicker_update(null, make_color_hsv(popup.hue, popup.saturation, popup.brightness), false)
+	popup_colorpicker_update(popup.tbx_brightness, make_color_hsv(popup.hue, popup.saturation, popup.brightness), false)
 }
 dy += 28 + 12
 
