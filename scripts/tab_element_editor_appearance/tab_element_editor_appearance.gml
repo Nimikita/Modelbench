@@ -1,7 +1,5 @@
 /// tab_element_editor_appearance()
 
-tab.appearance.tbx_inflate.text = string(el_edit.value[e_value.INFLATE])
-
 tab_control(28)
 draw_textfield_num("elementeditorinflate", dx, dy, 86, el_edit.value[e_value.INFLATE], 0.1, -no_limit, no_limit, 0, 0.01, tab.appearance.tbx_inflate, action_el_inflate)
 tab_next()

@@ -102,7 +102,10 @@ if (window_busy = name + "drag")
 
 	var d = clamp(snap(dragger_drag_value, snapval), minval, maxval) - value;
 	if (d <> 0)
+	{
 		script_execute(script, d, true)
+		tbx.text = string_decimals(value + d)
+	}
 	
 	if (!mouse_left)
 	{
@@ -110,3 +113,7 @@ if (window_busy = name + "drag")
 		app_mouse_clear()
 	}
 }
+
+// Idle
+if (window_busy != name + "drag" && window_busy != name + "press" && window_focus != string(tbx))
+	tbx.text = string_decimals(value)

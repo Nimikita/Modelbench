@@ -68,7 +68,6 @@ draw_button_menu("elementeditorbendpart", e_menu.LIST, dx, dy, dw, 28, el_edit.v
 tab_next()
 
 // Bend offset
-element_editor.bend.tbx_offset.text = string(el_edit.value[e_value.BEND_OFFSET])
 tab_control(28)
 draw_textfield_num("elementeditorbendoffset", dx, dy, 86, el_edit.value[e_value.BEND_OFFSET], 0.1, -no_limit, no_limit, 0, .01, element_editor.bend.tbx_offset, action_el_bend_offset, !el_edit.value[e_value.BEND])
 tab_next()
@@ -80,7 +79,6 @@ tab_next()
 
 if (el_edit.value[e_value.BEND_SIZE_CUSTOM])
 {
-	element_editor.bend.tbx_size.text = string(el_edit.value[e_value.BEND_SIZE])
 	tab_control(28)
 	draw_textfield_num("elementeditorbendsize", dx, dy, 86, el_edit.value[e_value.BEND_SIZE], 0.1, -no_limit, no_limit, 0, .01, element_editor.bend.tbx_size, action_el_bend_size, !el_edit.value[e_value.BEND])
 	tab_next()

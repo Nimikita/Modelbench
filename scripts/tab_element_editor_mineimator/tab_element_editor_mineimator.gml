@@ -1,7 +1,6 @@
 /// tab_element_editor_mineimator()
 
 /// (Render) depth
-element_editor.tbx_depth.text = string(el_edit.depth)
 tab_control(28)
 draw_textfield_num("elementeditordepth", dx, dy, 86, el_edit.depth, 0.1, -no_limit, no_limit, 0, 1, element_editor.tbx_depth, action_el_depth)
 tab_next()

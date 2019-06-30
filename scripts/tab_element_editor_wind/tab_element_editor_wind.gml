@@ -25,8 +25,6 @@ tab_next()
 
 if (el_edit.value[e_value.WIND_ZMIN_ENABLE])
 {
-	tab.wind.tbx_zmin.text = string(el_edit.value[e_value.WIND_ZMIN])
-	
 	tab_control(28)
 	draw_textfield_num("elementeditorwindminimum", dx, dy, 86, el_edit.value[e_value.WIND_ZMIN], 0.1, -no_limit, no_limit, 0, 0.01, tab.wind.tbx_zmin, action_el_wind_zmin)
 	tab_next()
@@ -39,8 +37,6 @@ tab_next()
 
 if (el_edit.value[e_value.WIND_ZMAX_ENABLE])
 {
-	tab.wind.tbx_zmax.text = string(el_edit.value[e_value.WIND_ZMAX])
-	
 	tab_control(28)
 	draw_textfield_num("elementeditorwindmaximum", dx, dy, 86, el_edit.value[e_value.WIND_ZMAX], 0.1, -no_limit, no_limit, 0, 0.01, tab.wind.tbx_zmax, action_el_wind_zmax)
 	tab_next()
