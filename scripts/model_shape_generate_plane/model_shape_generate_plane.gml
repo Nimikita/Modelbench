@@ -9,7 +9,7 @@ var x1, x2, y1, z1, z2, size, scalef;
 x1 = from[X];	y1 = from[Y];	z1 = from[Z]
 x2 = to[X];						z2 = to[Z]
 size = point3D_sub(to, from)
-scalef = 0.01
+scalef = 0.005
 
 // Find whether the shape is bent
 var isbent = !vec3_equals(bend, vec3(0)) && bend_shape;

@@ -15,7 +15,7 @@ var x1, x2, y1, y2, z1, z2, size, scalef;
 x1 = from[X];	y1 = from[Y];			 z1 = from[Z]
 x2 = to[X];		y2 = from[Y] + scale[Y]; z2 = to[Z]
 size = point3D_sub(to, from)
-scalef = 0.01 // Used to combat Z-fighting
+scalef = 0.005 // Used to combat Z-fighting
 
 // Find whether the shape is bent
 var isbent = !vec3_equals(bend, vec3(0)) && bend_shape;
