@@ -153,10 +153,10 @@ enum e_value
 	// Shape properties
 	TEX_MIRROR,
 	INVERT,
-	HIDE_BACKFACE,
 	FACE_CAMERA,
 	HOVER,
 	PLANE_3D,
+	HIDE_BACKFACE,
 	
 	// Shape UV
 	UV_X,

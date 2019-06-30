@@ -241,6 +241,13 @@
 		"mixamount": "Mix amount",
 		"opacity": "Opacity",
 		"brightness": "Brightness",
+		"inflate": "Inflate",
+		"mirrortexture": "Mirror texture",
+		"invert": "Invert",
+		"facecamera": "Face camera",
+		"hover": "Hover",
+		"3d": "Extrude",
+		"hidebackface": "Hide backface",
 		"windaxis": "Wind axis",
 		"windaxis/": {
 			"none": "None",

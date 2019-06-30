@@ -151,7 +151,11 @@ with (element_editor)
 	}
 	
 	// Appearance
-	appearance = tab_add_category("appearance", null, false)
+	appearance = tab_add_category("appearance", tab_element_editor_appearance, false)
+	with (appearance)
+	{
+		tbx_inflate = new_textbox_ndecimals()
+	}
 	
 	// Wind
 	wind = tab_add_category("wind", tab_element_editor_wind, false)

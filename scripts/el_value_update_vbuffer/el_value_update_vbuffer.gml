@@ -46,6 +46,14 @@ switch (argument0)
 	case e_value.LENGTH:
 	case e_value.HEIGHT:
 	
+	case e_value.INFLATE:
+	case e_value.TEX_MIRROR:
+	case e_value.INVERT:
+	case e_value.FACE_CAMERA:
+	case e_value.HOVER:
+	case e_value.PLANE_3D:
+	case e_value.HIDE_BACKFACE:
+	
 	case e_value.WIND_AXIS:
 	case e_value.WIND_ZMIN_ENABLE:
 	case e_value.WIND_ZMIN:
