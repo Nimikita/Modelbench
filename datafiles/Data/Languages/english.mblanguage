@@ -90,6 +90,8 @@
 		"hideoptions": "Hide options",
 		"open": "Open",
 		"close": "Close",
+		"openmenu": "Open menu",
+		"closemenu": "Close menu",
 		"expand": "Expand",
 		"collapse": "Collapse",
 		"show": "Show",

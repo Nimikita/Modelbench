@@ -6,6 +6,7 @@ app_startup_interface_menus()
 app_startup_interface_popups()
 app_startup_interface_panels()
 app_startup_interface_tabs()
+app_startup_interface_toolbar()
 
 app_startup_micro_animations()
 app_startup_radio_buttons()

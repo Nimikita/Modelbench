@@ -719,6 +719,14 @@
             }
         },
         {
+            "Key": "1920707b-1c1e-42bd-ad15-f0513ba41bca",
+            "Value": {
+                "id": "fb545b5c-34b0-426e-bb42-cd15bed4ea21",
+                "resourcePath": "scripts\\app_startup_interface_toolbar\\app_startup_interface_toolbar.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "193660ee-1edb-4d45-9d2c-412b0169a453",
             "Value": {
                 "id": "58234592-09fc-4161-9110-e3b0b61ce33b",
@@ -1479,6 +1487,14 @@
             }
         },
         {
+            "Key": "3ca7996c-aaf8-4547-90ee-24496d05be3e",
+            "Value": {
+                "id": "58cdbe42-652d-4d2d-a25b-1b948dea8049",
+                "resourcePath": "sprites\\spr_menu_hover\\spr_menu_hover.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "3cc7b172-b08b-463d-a4b2-a976c1da90fe",
             "Value": {
                 "id": "15d7ee5a-4c67-453e-8f2c-2a31702e434e",
@@ -1732,6 +1748,14 @@
                 "id": "af0c8693-83de-46b7-aeeb-cc3d8ce2c983",
                 "resourcePath": "scripts\\buffer_read_color\\buffer_read_color.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "477c7e3d-8466-473f-8c4d-b293641e5987",
+            "Value": {
+                "id": "2ca601f5-42e7-44bf-b2ec-72dcfe01ff89",
+                "resourcePath": "sprites\\spr_menu_open\\spr_menu_open.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -2131,6 +2155,14 @@
             "Value": {
                 "id": "3e0cd5da-7756-43e6-a18a-467f54855e5a",
                 "resourcePath": "scripts\\vbuffer_create_cube\\vbuffer_create_cube.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "5535892d-89cd-47e6-aa21-43af4b8995aa",
+            "Value": {
+                "id": "759d9fa6-6385-4584-9e7a-afebb032da56",
+                "resourcePath": "scripts\\draw_menu_button\\draw_menu_button.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -6476,6 +6508,7 @@
         "9520b908-db17-4384-a241-eb5d98c5b892",
         "f4b6aafb-8b6c-4607-99bd-67d81940aab6",
         "53c0843b-f992-4be0-a8ca-5226d7d313dc",
+        "5535892d-89cd-47e6-aa21-43af4b8995aa",
         "7fb2b678-227f-471a-9afb-f4cb453259b8",
         "1da4c944-c9e9-40d1-9820-242cd2a50689",
         "f43cd13d-b9db-4200-82c6-af49ae0da8db",
@@ -6496,6 +6529,7 @@
         "97a67592-b34f-493d-b9ad-428e527a61fc",
         "29213827-31cb-4382-955d-1d60e0bfae04",
         "61fd9274-6ade-4f0e-ac54-dc70d07f4809",
+        "1920707b-1c1e-42bd-ad15-f0513ba41bca",
         "14639a37-c948-4ca8-8119-2b0e788d3a17",
         "741f4a0c-7803-4378-b3a4-e3638bf274c2",
         "6119879a-9090-4e99-8509-4f5f33a25910",
