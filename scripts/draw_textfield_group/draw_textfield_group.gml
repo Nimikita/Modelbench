@@ -128,9 +128,20 @@ for (var i = 0; i < textfield_amount; i++)
 		}
 	}
 	
-	// Idle update
-	if (window_busy != textfield_name[i] + "press" && window_focus != string(textfield_textbox[i]) && !fieldupdate)
-		textfield_textbox[i].text = string_decimals(textfield_value[i])
+	// Textbox input update
+	if (update)
+	{
+		if (textfield_script[i] != null)
+			script_execute(textfield_script[i], clamp(snap(string_get_real(textfield_textbox[i].text, 0), 1), minval, maxval), false)
+		else
+			fieldupdate = textfield_textbox[i]
+	}
+	else
+	{
+		// Idle update
+		if (window_busy != textfield_name[i] + "press" && window_focus != string(textfield_textbox[i]) && !fieldupdate)
+			textfield_textbox[i].text = string_decimals(textfield_value[i])
+	}
 	
 	fieldx += (fieldwid + 2)
 }
