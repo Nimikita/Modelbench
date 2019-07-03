@@ -6,7 +6,7 @@ json_save_start(settings_file)
 json_save_object_start()
 json_save_var("format", settings_format)
 
-json_save_object_start("program")
+json_save_object_start("general")
 
 	json_save_var("fps", room_speed)
 	json_save_var_bool("backup", setting_backup)
@@ -56,7 +56,6 @@ json_save_object_start("interface")
 	
 	json_save_var("assets_location", assets.panel.location)
 	json_save_var("element_editor_location", element_editor.panel.location)
-	json_save_var("settings_location", settings.panel.location)
 	
 json_save_object_done()
 

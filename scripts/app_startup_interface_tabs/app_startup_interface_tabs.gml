@@ -169,13 +169,16 @@ with (element_editor)
 	mineimator = tab_add_category("mineimator", tab_element_editor_mineimator, false)
 }
 
+// Open model
+open_model = new_tab(null, false, header_open_model)
+
 // Settings
-settings = new_tab(setting_settings_location, true)
+settings = new_tab(null, false, header_menu_panel)
 with (settings)
 {
-	// Program
-	program = tab_add_category("program", tab_settings_program, false)
-	with (program)
+	// General
+	general = tab_add_category("general", tab_settings_general, false)
+	with (general)
 	{
 		tbx_backup_time = new_textbox_integer()
 		tbx_backup_amount = new_textbox_integer()
@@ -222,3 +225,6 @@ with (settings)
 		tbx_shadows_blur_size.suffix = "%"
 	}
 }
+
+// About
+about = new_tab(null, false, header_about)

@@ -1,8 +1,8 @@
 {
-    "id": "f8cf6466-e704-4d16-b8fc-98cf98425fae",
+    "id": "5a24d436-34a2-4fad-8b2c-77f607dfd9b7",
     "modelName": "GMScript",
     "mvc": "1.0",
-    "name": "tab_settings_program",
+    "name": "header_about",
     "IsCompatibility": false,
     "IsDnD": false
 }

@@ -11,7 +11,7 @@ yy = argument1
 wid = argument2
 hei = argument3
 
-mouseon = app_mouse_box(xx, yy, wid, hei) && content_mouseon
+mouseon = app_mouse_box(xx, yy, wid, hei)
 
 if (mouseon)
 	mouse_cursor = cr_handpoint
@@ -34,4 +34,15 @@ else
 microani_update(mouseon, mouseon && mouse_left, menu_open, false)
 
 if (mouse_left_released && mouseon)
-	menu_open = !menu_open
+{
+	if (menu_open)
+	{
+		menu_open = false
+		menu_panel_ani_type = "hide"
+	}
+	else
+	{
+		menu_open = true
+		menu_panel_ani_type = "show"
+	}
+}

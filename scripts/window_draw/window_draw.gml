@@ -16,6 +16,7 @@ if (window_state = "startup")
 }
 
 panel_area_draw()
+menu_panel_draw()
 toolbar_draw()
 
 popup_draw()

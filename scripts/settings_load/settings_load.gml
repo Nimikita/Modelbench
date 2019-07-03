@@ -26,15 +26,15 @@ if (load_format > settings_format)
 	
 log("load_format", load_format)
 
-// Program
-var programmap = map[?"program"];
-if (ds_map_valid(programmap))
+// General
+var generalmap = map[?"general"];
+if (ds_map_valid(generalmap))
 {
-	room_speed = value_get_real(programmap[?"fps"], room_speed)
+	room_speed = value_get_real(generalmap[?"fps"], room_speed)
 	
-	setting_backup = value_get_real(programmap[?"backup"], setting_backup)
-	setting_backup_time = value_get_real(programmap[?"backup_time"], setting_backup_time)
-	setting_backup_amount = value_get_real(programmap[?"backup_amount"], setting_backup_amount)
+	setting_backup = value_get_real(generalmap[?"backup"], setting_backup)
+	setting_backup_time = value_get_real(generalmap[?"backup_time"], setting_backup_time)
+	setting_backup_amount = value_get_real(generalmap[?"backup_amount"], setting_backup_amount)
 }
 
 // Controls
@@ -81,7 +81,6 @@ if (ds_map_valid(interfacemap))
 
 	setting_assets_location = value_get_string(interfacemap[?"assets_location"], setting_assets_location)
 	setting_element_editor_location = value_get_string(interfacemap[?"element_editor_location"], setting_element_editor_location)
-	setting_settings_location = value_get_string(interfacemap[?"settings_location"], setting_settings_location)
 }
 
 // Graphics

@@ -1,5 +1,13 @@
 /// panel_area_draw()
 
+// Set busy if menu is open
+var busyprev = window_busy;
+if (menu_panel_ani > 0)
+{
+	busyprev = window_busy
+	window_busy = "menupanel"
+}
+
 // Calculate area
 panel_area_x = 0
 panel_area_y = 0
@@ -124,3 +132,7 @@ if (window_busy = "tabmove")
 		}
 	}
 }
+
+// Restore busy state
+if (window_busy = "menupanel")
+	window_busy = busyprev

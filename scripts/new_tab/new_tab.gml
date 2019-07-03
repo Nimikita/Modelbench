@@ -6,7 +6,11 @@
 
 var tab = new(obj_tab);
 
-tab.panel = panel_map[?argument[0]]
+if (argument[0] != null)
+	tab.panel = panel_map[?argument[0]]
+else
+	tab.panel = null
+
 tab.show = argument[1]
 tab.closeable = !tab.show
 tab.closeable = true

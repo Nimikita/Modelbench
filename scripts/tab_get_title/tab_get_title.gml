@@ -13,6 +13,11 @@ else if (tab = element_editor)
 	else
 		return el_edit.name
 }
+else if (tab = open_model)
+	return text_get("tabopenmodel")
 else if (tab = settings)
 	return text_get("tabsettings")
+else if (tab = about)
+	return text_get("tababout")
+
 return ""

@@ -2,7 +2,7 @@
 
 
 font_heading = font_add(fonts_directory + "noto_semibold.ttf", 12, false, false, 32, 1024)
-font_subheading = font_add(fonts_directory + "noto_semibold.ttf", 8, false, false, 32, 1024)
+font_subheading = font_add(fonts_directory + "noto_semibold.ttf", 9, false, false, 32, 1024)
 font_emphasis = font_add(fonts_directory + "noto_bold.ttf", 9, false, false, 32, 1024)
 font_label = font_emphasis//font_add(fonts_directory + "noto_bold.ttf", 8, false, false, 32, 1024)
 font_value = font_add(fonts_directory + "noto_regular.ttf", 9, false, false, 32, 1024)

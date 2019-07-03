@@ -1,4 +1,4 @@
-/// tab_settings_program()
+/// tab_settings_general()
 
 // FPS
 tab_control_togglebutton()
@@ -16,10 +16,10 @@ tab_next()
 if (setting_backup && !setting_collapse_backup_models)
 {
 	tab_control_meter()
-	draw_meter("settingsbackupmodelsminutes", dx, dy, dw, setting_backup_time, 48, 1, 10, 2, 1, tab.program.tbx_backup_time, action_setting_backup_time)
+	draw_meter("settingsbackupmodelsminutes", dx, dy, dw, setting_backup_time, 48, 1, 10, 2, 1, tab.general.tbx_backup_time, action_setting_backup_time)
 	tab_next()
 	
 	tab_control_meter()
-	draw_meter("settingsbackupmodelsamount", dx, dy, dw, setting_backup_amount, 48, 1, 10, 3, 1, tab.program.tbx_backup_amount, action_setting_backup_amount)
+	draw_meter("settingsbackupmodelsamount", dx, dy, dw, setting_backup_amount, 48, 1, 10, 3, 1, tab.general.tbx_backup_amount, action_setting_backup_amount)
 	tab_next()
 }

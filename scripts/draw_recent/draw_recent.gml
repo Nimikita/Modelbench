@@ -12,7 +12,7 @@ hei = argument3
 recenty = yy
 
 // No recent models to display
-if (recent_list_amount = 0)
+if (recent_list_amount = 0 && (wid > sprite_get_width(spr_splash)/2 && hei > sprite_get_height(spr_splash)/2))
 {
 	var midx, midy;
 	midx = snap(xx + (wid*.5), 2)

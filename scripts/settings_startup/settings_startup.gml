@@ -7,7 +7,6 @@ setting_panel_right_secondary_size = 300
 
 setting_assets_location = "right"
 setting_element_editor_location = "right_secondary"
-setting_settings_location = "right_secondary"
 
 backup_next = 0
 setting_backup = true

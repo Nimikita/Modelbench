@@ -3,8 +3,8 @@
     "file/": {
         "language": "English",
         "translator": "Nimi",
-        "forversion": "Alpha 2",
-        "lastchange": "2019.06.30"
+        "forversion": "Alpha 3",
+        "lastchange": "2019.07.03"
     },
 	"startup/": {
 		"recovermodelheader": "Unsaved model detected",
@@ -103,7 +103,19 @@
 	"tab/": {
 		"assets": "Assets",
 		"elementeditor": "Element editor",
-		"settings": "Settings"
+		"openmodel": "Open model",
+		"settings": "Settings",
+		"about": "About"
+	},
+	"menu/": {
+		"newmodel": "New model",
+		"newmodeltemplate": "New model from template...",
+		"openmodel": "Open model",
+		"importmodel": "Import model...",
+		"save": "Save model",
+		"saveas": "Save model as...",
+		"settings": "Settings",
+		"about": "About"
 	},
 	"key/": {
         "left": "Left",
@@ -146,7 +158,7 @@
 	"appearance": "APPEARANCE",
 	"wind": "WIND",
 	"mineimator": "MINE-IMATOR",
-	"program": "PROGRAM",
+	"general": "GENERAL",
 	"controls": "CONTROLS",
 	"interface": "INTERFACE",
 	"graphics": "GRAPHICS",
@@ -271,6 +283,9 @@
 		"openscaletab": "Open scale tab",
 		"openscaletabhelp": "Automatically opens this part's scale tab in Mine-imator."
 	},
+	"openmodel/": {
+		"browse": "BROWSE..."
+	},
 	"settings/": {
 		"fps": "Frames per second",
         "fps30": "30",
@@ -313,5 +328,12 @@
 		"rendershadows": "Shadows",
 		"rendershadowsblurquality": "Blur quality",
 		"rendershadowsblursize": "Blur size"
+	},
+	"about/": {
+		"credits": "CREDITS",
+		"forversion": "FOR %1",
+		"leaddeveloper": "Lead developer",
+		"leaduidesigner": "Lead UI designer",
+		"specialthanks": "Special thanks"
 	}
 }
