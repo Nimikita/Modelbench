@@ -11,7 +11,7 @@ app_update_keyboard()
 
 app_update_previews()
 app_update_backup()
-//app_update_recent()
+app_update_recent()
 app_update_work_camera()
 app_update_caption()
 

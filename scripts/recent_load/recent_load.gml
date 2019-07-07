@@ -22,10 +22,9 @@ for (var i = 0; i < ds_list_size(recentlist); i++)
 	if (ds_map_valid(modelmap))
 	{
 		var recentobj = new(obj_recent);
-		recentobj.name = value_get_string(modelmap[?"model_name"], "")
+		recentobj.filename = value_get_string(modelmap[?"filename"], "")
 		recentobj.last_opened = value_get_real(modelmap[?"last_opened"], -1)
 		recentobj.pinned = value_get_real(modelmap[?"pinned"], false)
-		recentobj.remove = false
 		
 		ds_list_add(recent_list, recentobj)
 	}

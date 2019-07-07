@@ -12,12 +12,13 @@ if (window_state = "test")
 if (window_state = "startup")
 {
 	window_draw_startup()
-	return 0
 }
-
-panel_area_draw()
-menu_panel_draw()
-toolbar_draw()
+else
+{
+	panel_area_draw()
+	menu_panel_draw()
+	toolbar_draw()
+}
 
 popup_draw()
 menu_draw()

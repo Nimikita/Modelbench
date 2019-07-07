@@ -1,14 +1,21 @@
-/// draw_recent(x, y, width, height)
+/// draw_recent(x, y, width, height, [mode])
 /// @arg x
 /// @arg y
 /// @arg width
 /// @arg height
+/// @arg [mode]
 
-var xx, yy, wid, hei, recenty;
-xx = argument0
-yy = argument1
-wid = argument2
-hei = argument3
+var xx, yy, wid, hei, mode, recenty;
+var mouseon;
+xx = argument[0]
+yy = argument[1]
+wid = argument[2]
+hei = argument[3]
+mode = recent_display_mode
+
+if (argument_count > 4)
+	mode = argument[4]
+
 recenty = yy
 
 // No recent models to display
@@ -42,8 +49,75 @@ if (recent_list_amount = 0 && (wid > sprite_get_width(spr_splash)/2 && hei > spr
 	return 0
 }
 
-if (recent_display_mode = "list")
+if (mode = "simple")
 {
+	for (var i = 0; i < recent_list_amount; i++)
+	{
+		var hover = app_mouse_box(xx, recenty, wid, 44);
+		var mouseon = hover;
+		var item = recent_list[|i];
+		
+		// Icons
+		var iconx = xx + wid - 8;
+		iconx -= 28
+		
+		// Remove
+		if (hover)
+		{
+			if (draw_button_icon("recentdelete", iconx, recenty + 8, 28, 28, false, e_icon.delete, null, false, "tooltipremove"))
+				action_recent_remove(item)
+			mouseon = mouseon && !app_mouse_box(iconx, recenty + 8, 28, 28)
+		}
+		iconx -= 28
+		
+		// Name
+		draw_label(string_limit_font(filename_name(item.filename), (iconx - xx) - 12, font_value), xx + 12, recenty + 22, fa_left, fa_middle, c_neutral60, a_neutral60, font_value)
+		
+		// Seperator
+		draw_box(xx + 4, recenty + 43, wid - 8, 1, false, c_neutral10, a_neutral10)
+		
+		// Animation
+		microani_set("recent" + string(item), null, mouseon, mouseon && mouse_left, false)
+		
+		draw_box(xx, recenty, wid, 44, false, c_neutral10, a_neutral10 * mcroani_arr[e_mcroani.HOVER])
+		draw_box_hover(xx, recenty, wid, 44, mcroani_arr[e_mcroani.HOVER])
+		
+		draw_box(xx, recenty, wid, 44, false, c_accent10, a_accent10 * mcroani_arr[e_mcroani.PRESS])
+		
+		microani_update(mouseon, mouseon && mouse_left, false)
+		
+		// Load model
+		if (mouseon)
+		{
+			mouse_cursor = cr_handpoint
+			
+			if (mouse_left_released)
+			{
+				model_load(item.filename)
+				return 0
+			}
+		}
+		
+		recenty += 44
+		
+		if (recenty + 44 > yy + hei)
+			break
+	}
+}
+
+if (mode = "list")
+{
+	// Set scrollbar
+	recent_scrollbar.snap_value = 44
+
+	var liststart = snap(recent_scrollbar.value / 44, 1);
+
+	if ((recent_list_amount * 44) > hei - 28)
+	{
+		scrollbar_draw(recent_scrollbar, e_scroll.VERTICAL, xx + wid - 9, yy + 28, hei - 28, recent_list_amount * 44)
+		wid -= 12
+	}
+	
 	if (hei < 28)
 		return 0
 	
@@ -76,17 +150,15 @@ if (recent_display_mode = "list")
 	recenty += 28
 	
 	// Draw list
-	for (var i = 0; i < recent_list_amount; i++)
+	for (var i = liststart; i < recent_list_amount; i++)
 	{
 		var hover = app_mouse_box(xx, recenty, wid, 44);
-		
-		if (hover)
-			draw_box(xx, recenty, wid, 44, false, c_accent10, a_accent10)
+		mouseon = hover
 		
 		var item = recent_list_display[|i];
 		
 		// Name
-		draw_label(string_limit_font(item.name, namewidth, font_value), xx + 12, recenty + 22, fa_left, fa_middle, c_neutral60, a_neutral60, font_value)
+		draw_label(string_limit_font(filename_name(item.filename), namewidth, font_value), xx + 12, recenty + 22, fa_left, fa_middle, c_neutral60, a_neutral60, font_value)
 		
 		// Last opened
 		draw_label(string_limit_font(recent_time_string(item.last_opened), timewidth, font_value), timex, recenty + 22, fa_left, fa_middle, c_neutral50, a_neutral50, font_value)
@@ -94,26 +166,52 @@ if (recent_display_mode = "list")
 		// Icons
 		var iconx = xx + wid - 8;
 		iconx -= 28
-			
+		
 		// Remove
 		if (hover)
 		{
-			if (draw_button_icon("recentdelete", iconx, recenty + 8, 28, 28, false, e_icon.delete))
+			if (draw_button_icon("recentdelete", iconx, recenty + 8, 28, 28, false, e_icon.delete, null, false, "tooltipremove"))
 				action_recent_remove(item)
+			mouseon = mouseon && !app_mouse_box(iconx, recenty + 8, 28, 28)
 		}
 		iconx -= 28
-			
+		
 		// Oh yeah. Pin it
 		if (hover || item.pinned)
 		{
-			if (draw_button_icon("recentpin" + item.name, iconx, recenty + 8, 28, 28, item.pinned, e_icon.pin))
+			if (draw_button_icon("recentpin" + item.filename, iconx, recenty + 8, 28, 28, item.pinned, e_icon.pin, null, false, "tooltippin"))
 				action_recent_pin(item)
+			mouseon = mouseon && !app_mouse_box(iconx, recenty + 8, 28, 28)
 		}
 		
+		// Seperator
 		draw_box(xx + 4, recenty + 43, wid - 8, 1, false, c_neutral10, a_neutral10)
+		
+		// Animation
+		microani_set("recent" + string(item), null, mouseon, mouseon && mouse_left, false)
+		
+		draw_box(xx, recenty, wid, 44, false, c_neutral10, a_neutral10 * mcroani_arr[e_mcroani.HOVER])
+		draw_box_hover(xx, recenty, wid, 44, mcroani_arr[e_mcroani.HOVER])
+		
+		draw_box(xx, recenty, wid, 44, false, c_accent10, a_accent10 * mcroani_arr[e_mcroani.PRESS])
+		
+		microani_update(mouseon, mouseon && mouse_left, false)
+		
+		// Load model
+		if (mouseon)
+		{
+			mouse_cursor = cr_handpoint
+			
+			if (mouse_left_released)
+			{
+				model_load(item.filename)
+				return 0
+			}
+		}
+		
 		recenty += 44
 		
-		if (yy - recenty > hei)
+		if (recenty + 44 > yy + hei)
 			break
 	}
 }

@@ -21,4 +21,8 @@ recent_splash_y = 0
 recent_splash_goal_x = recent_splash_x
 recent_splash_goal_y = recent_splash_y
 
+recent_scrollbar = new(obj_scrollbar)
+
+recent_add_wait = false
+
 recent_load()

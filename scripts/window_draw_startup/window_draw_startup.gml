@@ -77,6 +77,7 @@ dx = (window_width / 2) - (996 / 2)
 draw_label(text_get("startuprecentmodels"), dx, dy + 16, fa_left, fa_middle, c_accent, 1, font_heading)
 dy += 72
 
-tab_control(500)
-draw_recent(dx, dy, dw, 500)
+var listheight = 28 + (8 * 44);
+tab_control(listheight)
+draw_recent(dx, dy, dw, listheight)
 tab_next()

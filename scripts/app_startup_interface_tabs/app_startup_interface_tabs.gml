@@ -169,8 +169,8 @@ with (element_editor)
 	mineimator = tab_add_category("mineimator", tab_element_editor_mineimator, false)
 }
 
-// Open model
-open_model = new_tab(null, false, header_open_model)
+// Recent models
+recent_models = new_tab(null, false, header_recent_models)
 
 // Settings
 settings = new_tab(null, false, header_menu_panel)

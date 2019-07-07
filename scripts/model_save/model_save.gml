@@ -40,5 +40,7 @@ log("Model saved")
 if (!string_contains(filename_ext(fn), "backup"))
 {
 	model_changed = false
-	recent_add_wait = true
+	
+	if (!model_temporary && !model_create_wait)
+		recent_add_wait = true
 }

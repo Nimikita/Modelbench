@@ -59,7 +59,7 @@ content_mouseon = app_mouse_box(menu_x, yy, menu_w, h)
 if (menu_ani_type = "")
 {
 	menu_scroll.snap_value = menu_item_h
-	scrollbar_draw(menu_scroll, e_scroll.VERTICAL, menu_x + menu_w - 9, yy - 3, h + 6, (itemsy * menu_item_h))
+	scrollbar_draw(menu_scroll, e_scroll.VERTICAL, menu_x + menu_w - 9, yy, h, (itemsy * menu_item_h))
 }
 else
 	menu_scroll.needed = false

@@ -13,7 +13,7 @@ var barsize, barpos, mouseinarea, mouseinbar, pressed;
 sb = argument[0]
 dir = argument[1]
 xx = argument[2]
-yy = argument[3] + 1
+yy = argument[3]
 size = argument[4]
 maxsize = argument[5]
 
@@ -23,9 +23,6 @@ barsizeadj = width
 areasize = width
 
 //xx -= width
-
-yy += 3
-size -= 6
 
 if (size >= maxsize || maxsize = 0)
 {
@@ -39,6 +36,9 @@ sb.atend = (sb.needed && sb.value >= maxsize - size)
 
 if (!sb.needed || size < 5)
 	return 0
+
+yy += 3
+size -= 6
 
 barsize = clamp(5, floor((size / maxsize) * size), size)
 barpos = min(size - barsize, floor(sb.value * (size / maxsize)))

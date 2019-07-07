@@ -4,7 +4,7 @@
         "language": "English",
         "translator": "Nimi",
         "forversion": "Alpha 3",
-        "lastchange": "2019.07.03"
+        "lastchange": "2019.07.06"
     },
 	"startup/": {
 		"recovermodelheader": "Unsaved model detected",
@@ -33,7 +33,8 @@
 		"sortdescendingtip": "Sort descending",
 		"pintip": "Pin",
 		"removetip": "Remove",
-		"filename": "File name"
+		"filename": "File name",
+		"models": "Recent models"
 	},
 	"error/": {
 		"fileunreadable": "The file could not be read correctly. See the log for more details. Try loading a backup file(.mbbackup) if one is available.(Change the extention in the file browser.)",
@@ -98,19 +99,22 @@
 		"hide": "Hide",
 		"lock": "Lock",
 		"unlock": "Unlock",
-		"editshortcut": "Edit shortcut"
+		"editshortcut": "Edit shortcut",
+		"remove": "Remove",
+		"pin": "Pin"
 	},
 	"tab/": {
 		"assets": "Assets",
 		"elementeditor": "Element editor",
-		"openmodel": "Open model",
+		"recentmodels": "Recent models",
 		"settings": "Settings",
 		"about": "About"
 	},
 	"menu/": {
 		"newmodel": "New model",
 		"newmodeltemplate": "New model from template...",
-		"openmodel": "Open model",
+		"openmodel": "Open model...",
+		"recentmodels": "Recent models",
 		"importmodel": "Import model...",
 		"save": "Save model",
 		"saveas": "Save model as...",
@@ -284,6 +288,7 @@
 		"openscaletabhelp": "Automatically opens this part's scale tab in Mine-imator."
 	},
 	"openmodel/": {
+		"recentmodels": "Recent models",
 		"browse": "BROWSE..."
 	},
 	"settings/": {

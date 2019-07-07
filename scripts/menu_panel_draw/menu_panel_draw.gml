@@ -50,12 +50,13 @@ else if (menu_panel_ani_type = "show") //Show
 if (menu_panel_ani = 0)
 	return 0
 
-var panelease, panelextease, panelx, panely, panelw, panelh;
+var panelease, panelextease, panelx, panely, panelw, panelh, panelextwid;
 panelease = ease(test(menu_panel_ani_type = "show", "easeoutcirc", "easeincirc"), menu_panel_ani)
 panelextease = ease(test(menu_panel_ext_ani_type = "show", "easeoutcirc", "easeincirc"), menu_panel_ext_ani)
+panelextwid = 300//test(menu_panel_ext = recent_models, 440, 300)
 panely = 72
 panelh = window_height - 72
-panelw = 300 + (300 * panelextease)
+panelw = 300 + (panelextwid * panelextease)
 panelx = -panelw + (panelw * panelease)
 
 
@@ -66,11 +67,11 @@ draw_box(panelx, panely, panelw, panelh, false, c_background, 1)
 // Menu extention
 if (panelextease > 0)
 {
-	content_x = panelx + (300 * panelextease)
+	content_x = panelx + (300 - panelextwid) + (panelextwid * panelextease)
 	content_y = panely
-	content_width = 300
+	content_width = panelextwid
 	content_height = panelh
-	content_mouseon = app_mouse_box(panelx + 300, panely, 300 * panelextease, panelh)
+	content_mouseon = app_mouse_box(panelx + 300, panely, panelextwid * panelextease, panelh)
 	
 	dx = content_x
 	dy = content_y

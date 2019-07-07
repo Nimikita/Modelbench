@@ -65,7 +65,10 @@ if (!tab.script)
 	
 	// Content at top of categories
 	if (tab.header_script)
+	{
 		script_execute(tab.header_script)
+		maxh = max(dy - dy_start, maxh)
+	}
 	
 	for (var col = 0; col < columns; col++)
 	{
