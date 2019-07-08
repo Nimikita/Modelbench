@@ -102,8 +102,20 @@ if (content_width > 0 && content_height > 0)
 	draw_label("Shapes: " + string(shapes), content_x + 8, content_y + content_height - 8 - labely, fa_left, fa_bottom, c_neutral60, a_neutral60, font_emphasis)
 	
 	
-	draw_label("Render FPS: " + string(fps), content_x + 8, content_y + 8, fa_left, fa_top, c_neutral60, a_neutral60, font_heading)
+	//draw_label("Render FPS: " + string(fps), content_x + 8, content_y + 8, fa_left, fa_top, c_neutral60, a_neutral60, font_heading)
 }
 
 // Mouse on
 view.mouseon = app_mouse_box(boxx, boxy, boxw, boxh)
+
+// Viewport toolbar
+var toolbarx, toolbary, toolbarwid, toolbarhei;
+toolbarx = boxx + 16
+toolbary = boxy + 16
+toolbarwid = 36
+toolbarhei = 4 + (3 * (28 + 4)) + 1 + 4 + (4 * (28 + 4));
+
+if (app_mouse_box(toolbarx, toolbary, toolbarwid, toolbarhei))
+	view.mouseon = false
+
+view_toolbar_draw(toolbarx, toolbary, toolbarwid, toolbarhei)

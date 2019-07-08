@@ -18,8 +18,8 @@ tab_move_mouseon_panel = null
 tab_move_mouseon_position = 0
 
 // Adjust panel size for toolbar
-panel_area_y += 72
-panel_area_height -= 72
+panel_area_y += 36
+panel_area_height -= 36
 
 with (obj_panel)
 	size_real = size * (tab_list_amount > 0)

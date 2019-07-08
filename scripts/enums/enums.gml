@@ -75,7 +75,7 @@ enum e_icon
 	loop,
 	options,
 	toolset_position,
-	toolset_scale,
+	scale,
 	toolset_rotate,
 	uv_mirror,
 	uv_flip,
@@ -87,7 +87,11 @@ enum e_icon
 	collapse,
 	eyedropper,
 	bend,
-	dot
+	dot,
+	toolset_scale,
+	cursor,
+	recent_files,
+	import_model
 }
 
 // Render modes
