@@ -91,7 +91,7 @@ enum e_icon
 	toolset_scale,
 	cursor,
 	recent_files,
-	import_model
+	new_file_template
 }
 
 // Render modes

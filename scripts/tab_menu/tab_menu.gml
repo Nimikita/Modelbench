@@ -4,13 +4,13 @@
 draw_panel_buttton("menunewmodel", dx, dy, dw, 48, false, e_icon.new_file, false, model_create)
 dy += 48
 
-draw_panel_buttton("menunewmodeltemplate", dx, dy, dw, 48, false, e_icon.import, false, null, true)
+draw_panel_buttton("menunewmodeltemplate", dx, dy, dw, 48, false, e_icon.new_file_template, false, null, true)
 dy += 48
 
 draw_panel_buttton("menuopenmodel", dx, dy, dw, 48, false, e_icon.open_file, false, model_load)
 dy += 48
 
-if (draw_panel_buttton("menurecentmodels", dx, dy, dw, 48, menu_panel_ext = recent_models, e_icon.open_file, true))
+if (draw_panel_buttton("menurecentmodels", dx, dy, dw, 48, menu_panel_ext = recent_models, e_icon.recent_files, true))
 {
 	menu_panel_ext = recent_models
 	menu_panel_ext_ani_type = "show"
