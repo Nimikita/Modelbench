@@ -22,6 +22,7 @@ else
 
 popup_draw()
 menu_draw()
+button_menu_draw()
 tip_draw()
 
 /*

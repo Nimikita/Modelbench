@@ -48,7 +48,7 @@ for (var v = 0; v < e_value.amount; v++)
 }
 
 // Close menu
-menu_panel_ani_type = "hide"
-menu_open = false
+//menu_panel_ani_type = "hide"
+//menu_open = false
 
 log("Model resetted")

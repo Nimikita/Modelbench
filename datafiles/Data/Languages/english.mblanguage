@@ -4,7 +4,7 @@
         "language": "English",
         "translator": "Nimi",
         "forversion": "Alpha 3",
-        "lastchange": "2019.07.06"
+        "lastchange": "2019.07.08"
     },
 	"startup/": {
 		"recovermodelheader": "Unsaved model detected",
@@ -12,7 +12,9 @@
 		"recovermodel": "RECOVER...",
 		"browse": "BROWSE...",
 		"newmodel": "NEW MODEL",
-		"recentmodels": "Recent models"
+		"recentmodels": "Recent models",
+		"startfromscratch": "Start from scratch...",
+		"loadatemplate": "Load a template..."
 	},
 	"recent/": {
 		"lastopened": "Last opened",

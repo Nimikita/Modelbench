@@ -4,7 +4,7 @@
 draw_panel_buttton("menunewmodel", dx, dy, dw, 48, false, e_icon.new_file, false, model_create)
 dy += 48
 
-draw_panel_buttton("menunewmodeltemplate", dx, dy, dw, 48, false, e_icon.new_file_template, false, null, true)
+draw_panel_buttton("menunewmodeltemplate", dx, dy, dw, 48, false, e_icon.new_file_template, false, model_create_template)
 dy += 48
 
 draw_panel_buttton("menuopenmodel", dx, dy, dw, 48, false, e_icon.open_file, false, model_load)
