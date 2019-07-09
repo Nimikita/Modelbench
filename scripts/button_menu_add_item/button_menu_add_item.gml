@@ -4,7 +4,7 @@
 /// @arg icon
 /// @arg script
 
-var item = new(obj_menuitem);
+var item = new(obj_button_menuitem);
 item.value = argument0
 item.text = argument1
 item.icon = argument2
