@@ -54,3 +54,5 @@ render_mode_shader_map[?e_render_mode.HIGH_LIGHT_SUN] = shader_high_light_sun
 render_mode_shader_map[?e_render_mode.HIGH_SSAO_DEPTH_NORMAL] = shader_high_ssao_depth_normal
 render_mode_shader_map[?e_render_mode.SHAPE] = shader_shape
 render_mode_shader_map[?e_render_mode.NORMALS] = shader_normals
+render_mode_shader_map[?e_render_mode.CLICK] = shader_shape
+render_mode_shader_map[?e_render_mode.SELECT] = shader_shape

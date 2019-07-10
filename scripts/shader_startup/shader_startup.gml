@@ -33,6 +33,7 @@ if (!err)
 	new_shader("shader_shape_outline")
 	new_shader("shader_normals")
 	new_shader("shader_high_aa")
+	new_shader("shader_border")
 	
 	with (obj_shader)
 	{
@@ -152,6 +153,13 @@ with (shader_map[?shader_high_aa])
 {
 	new_shader_uniform("uScreenSize")
 	new_shader_uniform("uPower")
+}
+
+with (shader_map[?shader_border])
+{
+	new_shader_uniform("uTexSize")
+	new_shader_uniform("uColor")
+	new_shader_uniform("uSize")
 }
 
 return true

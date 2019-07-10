@@ -65,8 +65,8 @@ if (setting_outline_opacity > 0)
 if (el_edit_amount > 0)
 {
 	// Selection
-	//view.surface_select = render_select(view.surface_select)
-	
+	view.surface_select = render_select(view.surface_select);
+
 	if (surface_exists(render_target))
 	{
 		surface_set_target(render_target)

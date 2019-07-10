@@ -10,4 +10,4 @@ el_edit = id
 
 app_update_el_edit()
 
-//tl_update_parent_is_selected()
+el_update_parent_is_selected()

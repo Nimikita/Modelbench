@@ -46,14 +46,11 @@ if (window_focus = string(view))
 			window_busy = "viewrotatecamera"
 		}
 		
-		// TODO: Add object viewport selecting
-		/*
 		if (!mouse_left)
 		{
 			view_click(view, cam)
 			window_busy = ""
 		}
-		*/
 	}
 	
 	// Rotate camera

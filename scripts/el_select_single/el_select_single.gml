@@ -10,14 +10,14 @@ with (obj_model_element)
 	selected = false
 	//keyframe_select = null
 	//keyframe_select_amount = 0
-	//parent_is_selected = false
+	parent_is_selected = false
 }
 
 el_edit_amount = 1
 el_edit = id
 
 selected = true
-//tl_update_parent_is_selected()
+el_update_parent_is_selected()
 
 with (app)
 	app_update_el_edit()

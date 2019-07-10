@@ -6,7 +6,7 @@ with (obj_model_element)
 	if (selected)
 		selected = false
 	
-	//parent_is_selected = false
+	parent_is_selected = false
 }
 
 el_edit_amount = 0

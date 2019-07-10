@@ -105,7 +105,9 @@ enum e_render_mode
 	HIGH_SSAO_DEPTH_NORMAL,
 	SHAPE,
 	SHAPE_OUTLINE,
-	NORMALS
+	NORMALS,
+	CLICK,
+	SELECT
 }
 
 // Values

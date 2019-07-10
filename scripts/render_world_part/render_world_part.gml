@@ -17,6 +17,17 @@ for (var s = 0; s < ds_list_size(shape_list); s++)
 		if (hidden || tree_hidden || shape_vbuffer = null)
 			continue
 		
+		// Click mode
+		if (render_mode = e_render_mode.CLICK)
+		{
+			if (selected || locked || tree_locked) // Already selected when clicking?
+				continue
+		}
+
+		// Outlined?
+		else if (render_mode = e_render_mode.SELECT && !parent_is_selected && !selected && !parent.parent_is_selected)
+			continue
+		
 		rendermatrix = matrix_multiply(matrix, other.matrix_parent)
 		
 		// Shape bounce
