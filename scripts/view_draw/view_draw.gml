@@ -113,7 +113,7 @@ var toolbarx, toolbary, toolbarwid, toolbarhei;
 toolbarx = boxx + 16
 toolbary = boxy + 16
 toolbarwid = 36
-toolbarhei = 4 + (3 * (28 + 4)) + 1 + 4 + (4 * (28 + 4));
+toolbarhei = 4 + (4 * (28 + 4)) + 1 + 4 + (5 * (28 + 4));
 
 if (app_mouse_box(toolbarx, toolbary, toolbarwid, toolbarhei))
 	view.mouseon = false

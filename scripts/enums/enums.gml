@@ -6,6 +6,15 @@ enum e_settings
 	FORMAT_ALPHA_2 = 0
 }
 
+enum e_tool
+{
+	SELECT,
+	MOVE,
+	ROTATE,
+	SCALE,
+	TRANSFORM
+}
+
 // Icons
 enum e_icon
 {
@@ -91,7 +100,10 @@ enum e_icon
 	toolset_scale,
 	cursor,
 	recent_files,
-	new_file_template
+	new_file_template,
+	transform,
+	
+	placeholder = 11
 }
 
 // Render modes

@@ -4,7 +4,7 @@
         "language": "English",
         "translator": "Nimi",
         "forversion": "Alpha 3",
-        "lastchange": "2019.07.08"
+        "lastchange": "2019.07.11"
     },
 	"startup/": {
 		"recovermodelheader": "Unsaved model detected",
@@ -103,7 +103,23 @@
 		"unlock": "Unlock",
 		"editshortcut": "Edit shortcut",
 		"remove": "Remove",
-		"pin": "Pin"
+		"pin": "Pin",
+		"shortcut": "Shortcut: %1"
+	},
+	"toolset/": {
+		"add/": {
+			"part": "Add part",
+			"block": "Add block",
+			"plane": "Add plane",
+			"plane3d": "Add 3D plane"
+		},
+		"tool/": {
+			"select": "Select tool",
+			"move": "Move tool",
+			"rotate": "Rotate tool",
+			"scale": "Scale tool",
+			"transform": "Transform tool"
+		}
 	},
 	"tab/": {
 		"assets": "Assets",
@@ -307,6 +323,13 @@
 			"save": "Save model",
 			"undo": "Undo",
 			"redo": "Redo",
+			"tool/": {
+				"select": "Select tool",
+				"move": "Move tool",
+				"rotate": "Rotate tool",
+				"scale": "Scale tool",
+				"transform": "Transform tool"
+			},
 			"forward": "Forward",
             "back": "Back",
             "left": "Left",

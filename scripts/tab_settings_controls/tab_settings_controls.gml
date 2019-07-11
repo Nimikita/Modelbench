@@ -20,6 +20,26 @@ tab_control_keycontrol()
 draw_keycontrol("settingskeyredo", dx, dy, dw, setting_key_redo, setting_key_redo_control, ord("Y"), action_setting_key_redo)
 tab_next(false)
 
+tab_control_keycontrol()
+draw_keycontrol("settingskeytoolselect", dx, dy, dw, setting_key_tool_select, setting_key_tool_select_control, ord("W"), action_setting_key_tool_select)
+tab_next(false)
+
+tab_control_keycontrol()
+draw_keycontrol("settingskeytoolmove", dx, dy, dw, setting_key_tool_move, setting_key_tool_move_control, ord("M"), action_setting_key_tool_move)
+tab_next(false)
+
+tab_control_keycontrol()
+draw_keycontrol("settingskeytoolrotate", dx, dy, dw, setting_key_tool_rotate, setting_key_tool_rotate_control, ord("R"), action_setting_key_tool_rotate)
+tab_next(false)
+
+tab_control_keycontrol()
+draw_keycontrol("settingskeytoolscale", dx, dy, dw, setting_key_tool_scale, setting_key_tool_scale_control, ord("S"), action_setting_key_tool_scale)
+tab_next(false)
+
+tab_control_keycontrol()
+draw_keycontrol("settingskeytooltransform", dx, dy, dw, setting_key_tool_transform, setting_key_tool_transform_control, ord("T"), action_setting_key_tool_transform)
+tab_next(false)
+
 // Camera shortcuts
 dy += 20
 draw_label(text_get("settingscamerashortcuts"), dx, dy, fa_left, fa_bottom, c_neutral50, a_neutral50, font_label)

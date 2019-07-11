@@ -35,7 +35,23 @@ if (window_busy = "" && !textbox_isediting)
 	
 	if (keyboard_check_pressed(setting_key_redo) && app_check_control(setting_key_redo_control))
 		action_toolbar_redo()
-		
+	
+	// Switch tools
+	if (keyboard_check_pressed(setting_key_tool_select) && app_check_control(setting_key_tool_select_control))
+		tool_selected = e_tool.SELECT
+	
+	if (keyboard_check_pressed(setting_key_tool_move) && app_check_control(setting_key_tool_move_control))
+		tool_selected = e_tool.MOVE
+	
+	if (keyboard_check_pressed(setting_key_tool_rotate) && app_check_control(setting_key_tool_rotate_control))
+		tool_selected = e_tool.ROTATE
+	
+	if (keyboard_check_pressed(setting_key_tool_scale) && app_check_control(setting_key_tool_scale_control))
+		tool_selected = e_tool.SCALE
+	
+	if (keyboard_check_pressed(setting_key_tool_transform) && app_check_control(setting_key_tool_transform_control))
+		tool_selected = e_tool.TRANSFORM
+	
 	/*
 	if (keyboard_check_pressed(setting_key_select_timelines) && app_check_control(setting_key_select_timelines_control)) 
 	{

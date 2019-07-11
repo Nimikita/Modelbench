@@ -72,10 +72,15 @@ tip_location_y = 0
 tip_wrap = true
 tip_shortcut_key = -1
 tip_shortcut_control = false
+tip_shortcut_draw = false
 tip_arrow_x = 0
 tip_arrow_y = 0
 tip_arrow_yscale = 1
 tip_text_array = 0
+tip_force_right = false
+tip_right = false
+//tip_force_left = false
+//tip_left = false
 
 // Popups
 popup = null

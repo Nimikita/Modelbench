@@ -32,6 +32,14 @@ if (showtip)
 	{
 		tip_text = text
 		
+		if (tip_shortcut_key != -1)
+		{
+			tip_shortcut_draw = true
+			tip_text += "\n" + text_get("tooltipshortcut", text_control_name(tip_shortcut_key, tip_shortcut_control))
+		}
+		else
+			tip_shortcut_draw = false
+		
 		draw_set_font(font_caption)
 		
 		if (tip_wrap)
@@ -54,36 +62,51 @@ if (showtip)
 		tip_x = xx + floor(tip_x - (tip_w / 2)) + (w/2)
 		tip_y = yy + floor(tip_y) + h + 6
 		
-		tip_arrow_x = xx + (w/2)
-		tip_arrow_y = tip_y
-		tip_arrow_yscale = 1
+		tip_right = false
 		
-		// Move to right
-		if (tip_x < 0)
-			tip_x += (tip_w/2) - 8
-		
-		// Move to left
-		if (tip_x + tip_w > window_width)
-			tip_x -= (tip_w/2) - 8
-		
-		// Move to top right
-		if (tip_y + tip_h > window_height)
+		if (tip_force_right)
 		{
-			tip_y = yy - (6 + tip_h)
-			tip_arrow_y = yy - 6
-			tip_arrow_yscale = -1
-		}
-		
-		// Offset away from cursor
-		if (tip_arrow_yscale)
-		{
-			tip_y += 8
-			tip_arrow_y += 8
+			tip_right = true
+			tip_arrow_x = xx + w + 14
+			tip_arrow_y = yy + floor(h/2)
+			tip_arrow_yscale = 1
+			
+			tip_x = xx + w + 14
+			tip_y = yy + floor(h/2 - tip_h/2)
 		}
 		else
 		{
-			tip_y -= 8
-			tip_arrow_y -= 8
+			tip_arrow_x = xx + (w/2)
+			tip_arrow_y = tip_y
+			tip_arrow_yscale = 1
+		
+			// Move to right
+			if (tip_x < 0)
+				tip_x += (tip_w/2) - 8
+		
+			// Move to left
+			if (tip_x + tip_w > window_width)
+				tip_x -= (tip_w/2) - 8
+		
+			// Move to top right
+			if (tip_y + tip_h > window_height)
+			{
+				tip_y = yy - (6 + tip_h)
+				tip_arrow_y = yy - 6
+				tip_arrow_yscale = -1
+			}
+		
+			// Offset away from cursor
+			if (tip_arrow_yscale)
+			{
+				tip_y += 8
+				tip_arrow_y += 8
+			}
+			else
+			{
+				tip_y -= 8
+				tip_arrow_y -= 8
+			}
 		}
 		
 		tip_location_x = false
