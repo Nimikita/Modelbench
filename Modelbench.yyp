@@ -3506,7 +3506,7 @@
             "Key": "859aa200-840f-44a4-9092-e4c5832dde91",
             "Value": {
                 "id": "ef710583-0492-4bac-b68e-e44a5a1d3a85",
-                "resourcePath": "sprites\\spr_button_arrow\\spr_button_arrow.yy",
+                "resourcePath": "sprites\\spr_tooltip_arrow\\spr_tooltip_arrow.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -3604,14 +3604,6 @@
                 "id": "2da4a100-4da7-441a-8dbc-22d8e9d8733e",
                 "resourcePath": "scripts\\ds_map_valid\\ds_map_valid.yy",
                 "resourceType": "GMScript"
-            }
-        },
-        {
-            "Key": "8a9318ca-a5d0-422a-aa2e-0d5ca56d9d64",
-            "Value": {
-                "id": "4d1277bd-3163-4dfa-b40f-0b1732d56ff7",
-                "resourcePath": "sprites\\spr_tooltip_arrow\\spr_tooltip_arrow.yy",
-                "resourceType": "GMSprite"
             }
         },
         {

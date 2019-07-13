@@ -38,7 +38,7 @@ if (window_busy = "buttonmenu")
 draw_set_alpha(buttonmenuease)
 
 draw_dropshadow(content_x, content_y, content_width, content_height, c_black, buttonmenuease)
-draw_outline(content_x, content_y, content_width, content_height, 1, c_neutral10, a_neutral10 * buttonmenuease)
+draw_outline(content_x, content_y, content_width, content_height, 1, c_neutral20, a_neutral20 * buttonmenuease)
 
 draw_box(content_x, content_y, content_width, content_height, false, c_background, 1)
 
@@ -70,18 +70,18 @@ for (var i = 0; i < button_menu_amount; i++)
 	itemy += 32
 }
 
-draw_image(spr_button_arrow, 0, button_menu_x, content_y, 1, 1, c_background, buttonmenuease)
+draw_image(spr_tooltip_arrow, 0, button_menu_x, content_y, 1, 1, c_background, buttonmenuease)
 
 // Highlight arrow with top item
 if (mouseitem = button_menu_item[0])
 {
 	if (mouse_left)
-		draw_image(spr_button_arrow, 0, button_menu_x, content_y, 1, 1, c_accent10, a_accent10 * buttonmenuease)
+		draw_image(spr_tooltip_arrow, 0, button_menu_x, content_y, 1, 1, c_accent10, a_accent10 * buttonmenuease)
 	else
-		draw_image(spr_button_arrow, 0, button_menu_x, content_y, 1, 1, c_neutral10, a_neutral10 * buttonmenuease)
+		draw_image(spr_tooltip_arrow, 0, button_menu_x, content_y, 1, 1, c_neutral10, a_neutral10 * buttonmenuease)
 }
 	
-draw_image(spr_button_arrow, 1, button_menu_x, content_y, 1, 1, c_neutral10, a_neutral10 * buttonmenuease)
+draw_image(spr_tooltip_arrow, 1, button_menu_x, content_y, 1, 1, c_neutral20, a_neutral20 * buttonmenuease)
 
 draw_set_alpha(1)
 
