@@ -850,7 +850,7 @@
             "Key": "1da4c944-c9e9-40d1-9820-242cd2a50689",
             "Value": {
                 "id": "cffb3d63-5fbb-4f6d-b740-f4453efb5813",
-                "resourcePath": "scripts\\micro_animation_even_create\\micro_animation_even_create.yy",
+                "resourcePath": "scripts\\micro_animation_event_create\\micro_animation_event_create.yy",
                 "resourceType": "GMScript"
             }
         },

@@ -1,10 +1,17 @@
-/// micro_animation_even_create()
+/// micro_animation_event_create()
+
+steps_alive = 0
 
 // Values
 hover = 0
 value = 0
 holding = 0
 disabled = 0
+
+hover_prev = 1
+value_prev = 1
+holding_prev = 1
+disabled_prev = 1
 
 // Animations
 hover_ani = 0
