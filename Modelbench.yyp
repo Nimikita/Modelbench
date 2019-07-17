@@ -2719,6 +2719,14 @@
             }
         },
         {
+            "Key": "66558d49-76c4-42c2-9d35-edd010da73e3",
+            "Value": {
+                "id": "bf79c158-33ae-4414-9217-1bbe03f3b0e0",
+                "resourcePath": "scripts\\view_control_rotate_axis\\view_control_rotate_axis.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "669774a4-d0c6-4bf9-b13a-aea518e5fad0",
             "Value": {
                 "id": "35614437-c7cb-46ce-ae8d-b6aad519db13",
@@ -5287,6 +5295,14 @@
             }
         },
         {
+            "Key": "c82804f1-5cf1-4bdb-bac2-fe6c4b7b345a",
+            "Value": {
+                "id": "2c7023b2-aa6c-4825-9f4e-566426b6553a",
+                "resourcePath": "scripts\\view_control_rotate\\view_control_rotate.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "c83030f2-182b-4c06-ac0c-c34a974c86b2",
             "Value": {
                 "id": "fce711e3-0731-47f9-a95e-050d6d09c6cd",
@@ -6832,6 +6848,8 @@
         "ad2d18fe-f5d1-413e-9442-eeae826912dc",
         "b2a8e7fd-245b-446a-96c1-750be958b03f",
         "0aeafbb8-41d9-453f-85f8-dae76ae47aea",
+        "c82804f1-5cf1-4bdb-bac2-fe6c4b7b345a",
+        "66558d49-76c4-42c2-9d35-edd010da73e3",
         "60ddd97a-e524-491e-b9a8-00abf3f7c77e",
         "4873b6ab-d936-4c9d-bd83-18e2c9a03da2",
         "d77da3b5-1dad-44f9-8ac7-4edb76ad13bf",

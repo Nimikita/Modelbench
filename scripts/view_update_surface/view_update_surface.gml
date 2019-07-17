@@ -78,6 +78,10 @@ if (el_edit_amount > 0)
 					// Position
 					if (tool_selected = e_tool.MOVE)
 						view_control_move(view)
+						
+					// Rotate
+					if (tool_selected = e_tool.ROTATE)
+						view_control_rotate(view)
 					
 					// Bend
 					//if (el_edit.element_type = TYPE_PART && el_edit.value[e_value.BEND])
@@ -99,6 +103,11 @@ if (el_edit_amount > 0)
 						{
 							draw_circle_ext(origin[X], origin[Y], 14, false, c_white, 1)
 							draw_image(spr_icons, e_icon.toolset_position, origin[X] + 1, origin[Y] + 1, 1, 1, c_neutral50, a_neutral50)
+						}
+						else if (tool_selected = e_tool.ROTATE)
+						{
+							draw_circle_ext(origin[X], origin[Y], 14, false, c_white, 1)
+							draw_image(spr_icons, e_icon.toolset_rotate, origin[X] + 1, origin[Y] + 1, 1, 1, c_neutral50, a_neutral50)
 						}
 						else
 							draw_circle_ext(origin[X], origin[Y], 8, false, c_origin, 1)
