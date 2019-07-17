@@ -83,6 +83,10 @@ if (!vec3_equals(bend_default_angle, bend_default_angle_prev))
 
 // Create matrix
 matrix = matrix_create(position, vec3(0), vec3(1))
+matrix_parent = matrix_multiply(matrix, other.matrix_parent)
+
+// Set world position
+world_pos = point3D(matrix_parent[MAT_X], matrix_parent[MAT_Y], matrix_parent[MAT_Z])
 
 // UV
 wind_wave = value[e_value.WIND_AXIS]

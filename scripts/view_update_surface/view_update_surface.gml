@@ -75,13 +75,37 @@ if (el_edit_amount > 0)
 			{
 				if (!el_edit.hidden && !el_edit.tree_hidden)
 				{
+					// Position
+					if (tool_selected = e_tool.MOVE)
+						view_control_move(view)
+					
 					// Bend
-					if (el_edit.element_type = TYPE_PART && el_edit.value[e_value.BEND])
-						view_control_bend(view)
-						
-					var origin = point3D_project(matrix_position(el_edit.matrix), view_proj_matrix, render_width, render_height);
+					//if (el_edit.element_type = TYPE_PART && el_edit.value[e_value.BEND])
+					//	view_control_bend(view)
+					
+					// Tool icon
+					var mat;
+					if (el_edit.element_type = TYPE_PART)
+						mat = array_copy_1d(el_edit.matrix_edit)
+					else
+						mat = array_copy_1d(el_edit.matrix_parent)
+	
+					matrix_remove_scale(mat)
+					
+					var origin = point3D_project(matrix_position(mat), view_proj_matrix, render_width, render_height);
 					if (!point3D_project_error)
-						draw_circle_ext(origin[X], origin[Y], 8, false, c_origin, 1)
+					{
+						if (tool_selected = e_tool.MOVE)
+						{
+							draw_circle_ext(origin[X], origin[Y], 14, false, c_white, 1)
+							draw_image(spr_icons, e_icon.toolset_position, origin[X] + 1, origin[Y] + 1, 1, 1, c_neutral50, a_neutral50)
+						}
+						else
+							draw_circle_ext(origin[X], origin[Y], 8, false, c_origin, 1)
+					}
+						
+					view.control_mouseon_last = view.control_mouseon
+					view.control_mouseon = null
 				}
 			}
 		}

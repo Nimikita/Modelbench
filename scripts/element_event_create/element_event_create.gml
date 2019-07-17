@@ -20,6 +20,7 @@ tree_locked = false
 shape_vbuffer = null
 extend = false
 update_vbuffer = false
+world_pos = point3D(0, 0, 0)
 
 for (var v = 0; v < e_value.amount; v++)
 {

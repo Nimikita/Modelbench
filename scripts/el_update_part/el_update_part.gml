@@ -132,8 +132,12 @@ if (other.object_index != app)
 else
 	matrix_parent = MAT_IDENTITY
 
+matrix_edit = matrix_multiply(matrix_create(position, vec3(0), vec3(1)), matrix_parent)
 matrix_parent = matrix_multiply(matrix_create(position, rotation, vec3(1)), matrix_parent)
 matrix = array_copy_1d(matrix_parent)
+
+// Set world position
+world_pos = point3D(matrix[MAT_X], matrix[MAT_Y], matrix[MAT_Z])
 
 if (shape_list != null)
 {
