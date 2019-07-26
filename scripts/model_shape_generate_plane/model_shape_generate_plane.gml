@@ -57,7 +57,7 @@ sharpbend = app.setting_blocky_bending && ((bend_axis[X] && !bend_axis[Y] && !be
 bendsize = test(bend_size = null, test(!app.setting_blocky_bending, 4, 1), bend_size)
 detail = test(sharpbend, 2, max(bendsize, 2))
 
-if (bendsize != null)
+if (bendsize != null && scale[segaxis] > .5)
 	detail /= scale[segaxis]
 
 bendsegsize = bendsize / detail;

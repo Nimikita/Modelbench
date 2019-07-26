@@ -41,10 +41,12 @@ if (window_busy = "rendercontrol" && view_control_edit_view = view && view_contr
 		view_control_value_add += rot
 		
 		// TODO: Snap
+		view_control_value = el_value_clamp(view_control_edit, view_control_value)
+		view_control_value_add = el_value_clamp(view_control_edit, view_control_value_add)
 		snapval = 0
 		
 		// Update
-		axis_edit = view_control_edit
+		axis_edit = e_value.ROT_X - view_control_edit
 		el_value_set_start(action_el_rot, true)
 		el_value_set(view_control_edit, snap(view_control_value, snapval) - el_edit.value[view_control_edit], true)
 		el_value_set_done()

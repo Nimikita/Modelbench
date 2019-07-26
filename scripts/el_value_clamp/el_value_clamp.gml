@@ -40,4 +40,30 @@ if (object != null)
 	}
 }
 
-return val
+switch (vid)
+{
+	case e_value.POS_X:
+	case e_value.POS_Y:
+	case e_value.POS_Z:
+	case e_value.OFFSET_X:
+	case e_value.OFFSET_Y:
+	case e_value.OFFSET_Z:
+	case e_value.WIDTH:
+	case e_value.LENGTH:
+	case e_value.HEIGHT: return clamp(val, -world_size, world_size)
+	
+	case e_value.SCA_X:
+	case e_value.SCA_Y:
+	case e_value.SCA_Z: return clamp(val, 0.001, world_size)
+	
+	case e_value.BEND_SIZE: return clamp(val, 0, no_limit)
+	
+	case e_value.MIX_AMOUNT:
+	case e_value.OPACITY:
+	case e_value.BRIGHTNESS: return clamp(val, 0, 1)
+	
+	case e_value.BLEND_COLOR:
+	case e_value.MIX_COLOR: return clamp(val, c_black, c_white)
+}
+
+return clamp(val, -no_limit, no_limit)
