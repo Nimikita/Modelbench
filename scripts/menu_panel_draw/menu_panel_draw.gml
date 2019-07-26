@@ -98,6 +98,7 @@ content_x = panelx
 content_y = panely
 content_width = 300
 content_height = panelh
+content_mouseon = app_mouse_box(content_x, content_y, content_width, content_height)
 
 dx = content_x
 dy = content_y + 8

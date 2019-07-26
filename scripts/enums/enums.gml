@@ -6,6 +6,12 @@ enum e_settings
 	FORMAT_ALPHA_2 = 0
 }
 
+enum e_mode
+{
+	MODELING,
+	PREVIEW
+}
+
 enum e_tool
 {
 	SELECT,

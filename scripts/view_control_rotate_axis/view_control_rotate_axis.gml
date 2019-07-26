@@ -45,6 +45,7 @@ else if (view.control_mouseon_last = vid)
 		view_control_edit = vid
 		view_control_edit_view = view
 		view_control_value = el_edit.value[vid]
+		view_control_value_add = 0
 		view_control_pos = pos2D
 	}
 	
@@ -60,9 +61,9 @@ else if (view.control_mouseon_last = vid)
 }
 else
 	draw_set_color(color)
-	
+
 // Circle
-detail = 32
+detail = test(view_control_edit = vid, 32, 64)
 for (var i = 0; i <= 1; i += 1/detail)
 {
 	var start3D, start2D, end3D, end2D;
@@ -73,11 +74,21 @@ for (var i = 0; i <= 1; i += 1/detail)
 	if (point3D_project_error)
 		return 0
 	
+	// Hide line
+	if (view_control_edit != vid)
+	{
+		var dis1, dis2;
+		dis1 = vec3_length(point3D_sub(start3D, cam_from))
+		dis2 = vec3_length(point3D_sub(el_edit.world_pos, cam_from))
+		if ((dis2 - dis1) < -1)
+			continue
+	}
+	
 	end3D = point3D_mul_matrix(point3D(cos(pi * 2 * i) * len, sin(pi * 2 * i) * len, 0), mat)
 	end2D = view_shape_project(end3D)
 	if (point3D_project_error)
 		return 0
-		
+	
 	// Line
 	view_shape_line_draw(start2D, end2D)
 	

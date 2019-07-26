@@ -3,8 +3,8 @@
     "file/": {
         "language": "English",
         "translator": "Nimi",
-        "forversion": "Alpha 3",
-        "lastchange": "2019.07.11"
+        "forversion": "Alpha 4",
+        "lastchange": "2019.07.23"
     },
 	"startup/": {
 		"recovermodelheader": "Unsaved model detected",
@@ -88,6 +88,10 @@
 		"v": "V",
 		"hex": "Hex"
 	},
+	"toolbar/": {
+		"modeling": "MODELING",
+		"preview": "PREVIEW"
+	},
 	"tooltip/": {
 		"showoptions": "Show options",
 		"hideoptions": "Hide options",
@@ -104,7 +108,27 @@
 		"editshortcut": "Edit shortcut",
 		"remove": "Remove",
 		"pin": "Pin",
-		"shortcut": "Shortcut: %1"
+		"shortcut": "Shortcut: %1",
+		"position/": {
+			"x": "X Position: %1 (%2)",
+			"y": "Y Position: %1 (%2)",
+			"z": "Z Position: %1 (%2)"
+		},
+		"rotation/": {
+			"x": "X Rotation: %1 (%2)",
+			"y": "Y Rotation: %1 (%2)",
+			"z": "Z Rotation: %1 (%2)"
+		},
+		"scale/": {
+			"x": "X Scale: %1 (%2)",
+			"y": "Y Scale: %1 (%2)",
+			"z": "Z Scale: %1 (%2)",
+			"xyz": "[ X: %1, Y: %2, Z: %3 ]"
+		},
+		"undo": "Undo",
+		"redo": "Redo",
+		"openassets": "Open assets",
+		"closeassets": "Close assets"
 	},
 	"toolset/": {
 		"add/": {

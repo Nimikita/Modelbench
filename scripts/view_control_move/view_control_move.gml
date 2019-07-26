@@ -1,11 +1,13 @@
 /// view_control_move(view)
 /// @arg view
 
-var view, len, mat;
+var view, lenstart, len, mat, center;
 view = argument0
 
 // Arrow length
-len = point3D_distance(cam_from, el_edit.world_pos) * view_3d_control_size
+len = point3D_distance(cam_from, el_edit.world_pos) * view_3d_control_size 
+lenstart = test(tool_selected = e_tool.TRANSFORM, len - len/8, 0)
+len *= test(tool_selected != e_tool.TRANSFORM, 1, 1.1)
 
 // Create matrix
 with (el_edit)
@@ -19,9 +21,10 @@ with (el_edit)
 }
 
 // Draw each axis
-view_control_move_axis(view, e_value.POS_X, c_axisred, point3D_mul_matrix(vec3(0, 0, 0), mat), point3D_mul_matrix(vec3(len, 0, 0), mat))
-view_control_move_axis(view, e_value.POS_Y, test(setting_z_is_up, c_axisblue, c_axisgreen), point3D_mul_matrix(vec3(0, 0, 0), mat), point3D_mul_matrix(vec3(0, len, 0), mat))
-view_control_move_axis(view, e_value.POS_Z, test(setting_z_is_up, c_axisgreen, c_axisblue), point3D_mul_matrix(vec3(0, 0, 0), mat), point3D_mul_matrix(vec3(0, 0, len), mat))
+center = point3D_mul_matrix(vec3(0), mat)
+view_control_move_axis(view, e_value.POS_X, c_axisred, center, point3D_mul_matrix(vec3(lenstart, 0, 0), mat), point3D_mul_matrix(vec3(len, 0, 0), mat))
+view_control_move_axis(view, e_value.POS_Y, test(setting_z_is_up, c_axisblue, c_axisgreen), center, point3D_mul_matrix(vec3(0, lenstart, 0), mat), point3D_mul_matrix(vec3(0, len, 0), mat))
+view_control_move_axis(view, e_value.POS_Z, test(setting_z_is_up, c_axisgreen, c_axisblue), center, point3D_mul_matrix(vec3(0, 0, lenstart), mat), point3D_mul_matrix(vec3(0, 0, len), mat))
 
 // Is dragging
 if (window_busy = "rendercontrol" && view_control_edit_view = view && view_control_edit < e_value.ROT_X)
@@ -40,6 +43,7 @@ if (window_busy = "rendercontrol" && view_control_edit_view = view && view_contr
 		move = (vec2_length(vecmouse) / veclen) * len * vecdot
 		move /= el_edit.value_inherit[e_value.SCA_X + view_control_edit]
 		view_control_value += move
+		view_control_value_add += move
 		
 		// TODO: Snap
 		snapval = 0
@@ -58,3 +62,4 @@ if (window_busy = "rendercontrol" && view_control_edit_view = view && view_contr
 		view_control_edit = null
 	}
 }
+

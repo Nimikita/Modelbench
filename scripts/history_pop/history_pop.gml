@@ -12,9 +12,9 @@ if (history_pos > 0)
 		{
 			with (history[h])
 			{
-				with (obj_history_save)
-					if (hobj = other.id)
-						instance_destroy()
+				//with (obj_history_save)
+				//	if (hobj = other.id)
+				//		instance_destroy()
 				instance_destroy()
 			}
 		}

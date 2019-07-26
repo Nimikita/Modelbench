@@ -3,7 +3,7 @@
 
 var view, len, xrot, yrot, zrot;
 view = argument0
-len = point3D_distance(cam_from, el_edit.world_pos) * view_3d_control_size * 0.8
+len = point3D_distance(cam_from, el_edit.world_pos) * view_3d_control_size * test(tool_selected != e_tool.TRANSFORM, 0.8, 0.7)
 
 // Create matrix
 with (el_edit)
@@ -38,6 +38,7 @@ if (window_busy = "rendercontrol" && view_control_edit_view = view && view_contr
 		prevang = point_direction(mouse_previous_x - content_x, mouse_previous_y - content_y, view_control_pos[X], view_control_pos[Y])
 		rot = angle_difference_fix(ang, prevang) * negate(view_control_flip)
 		view_control_value += rot
+		view_control_value_add += rot
 		
 		// TODO: Snap
 		snapval = 0

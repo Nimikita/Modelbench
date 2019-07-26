@@ -1,5 +1,11 @@
 /// settings_startup()
 
+program_mode = e_mode.MODELING
+toolbar_line_x = 0
+toolbar_line_width = 0
+toolbar_line_x_goal = 0
+toolbar_line_width_goal = 0
+
 setting_panel_left_size = 300
 setting_panel_right_size = 300
 setting_panel_left_secondary_size = 300

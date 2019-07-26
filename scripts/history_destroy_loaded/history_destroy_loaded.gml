@@ -1,6 +1,7 @@
 /// history_destroy_loaded()
 /// @desc Destroy the loaded objects.
 
+/*
 for (var i = 0; i < loaded_amount; i++)
 {
 	with (loaded_save_id[i])
@@ -10,3 +11,4 @@ for (var i = 0; i < loaded_amount; i++)
 		instance_destroy()
 	}
 }
+*/
