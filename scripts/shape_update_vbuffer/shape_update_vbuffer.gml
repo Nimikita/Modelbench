@@ -34,11 +34,11 @@ if (type = "plane")
 			texsize = point3D_sub(to_noscale, from_noscale)
 			texsizeuv = vec2_div(vec2(texsize[X], texsize[Z]), texture_size)
 			texuv = vec2_div(uv, texture_size)
-			samplepos = point2D(ceil(texuv[X] * tw), ceil(texuv[Y] * th))
+			samplepos = point2D(floor(texuv[X] * tw), floor(texuv[Y] * th))
 			samplesize = vec2(ceil(texsizeuv[X] * tw), ceil(texsizeuv[Y] * th))
 					
 			// Generate array with the alpha values of the texture
-			var surf = surface_create(samplesize[X], samplesize[Y])
+			var surf = surface_create(samplesize[X], samplesize[Y]);
 			draw_texture_start()
 			surface_set_target(surf)
 			{
