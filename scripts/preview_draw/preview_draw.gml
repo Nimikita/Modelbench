@@ -94,7 +94,7 @@ if (window_focus = string(preview))
 // Render
 with (preview)
 {
-	if (surface_get_width(surface) < 0 || last_select != select)
+	if (surface_get_width(surface) < 0 || last_select != select || (surface_get_width(surface) != width || surface_get_height(surface) != height))
 		update = true
 
 	surface = surface_require(surface, width, height)

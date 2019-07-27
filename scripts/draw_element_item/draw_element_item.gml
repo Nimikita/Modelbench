@@ -18,7 +18,8 @@ itemy = yy
 itemw = dw - (24 * increment)
 itemh = 28
 itemhover = app_mouse_box(dx, itemy, dw, itemh)
-
+expandhover = false
+lockhover = false
 itemvisible = (itemy < window_height) && (itemy + itemh > 0)
 
 //microani_set(string(element) + "listitem", null, itemhover, false, false, 0.25)

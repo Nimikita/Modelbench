@@ -72,6 +72,7 @@ if (panelextease > 0)
 	content_width = panelextwid
 	content_height = panelh
 	content_mouseon = app_mouse_box(panelx + 300, panely, panelextwid * panelextease, panelh)
+	content_direction = e_scroll.VERTICAL
 	
 	dx = content_x
 	dy = content_y
