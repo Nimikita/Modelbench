@@ -34,7 +34,7 @@ if (type = "plane")
 			texsize = point3D_sub(to_noscale, from_noscale)
 			texsizeuv = vec2_div(vec2(texsize[X], texsize[Z]), texture_size)
 			texuv = vec2_div(uv, texture_size)
-			samplepos = point2D(floor(texuv[X] * tw), floor(texuv[Y] * th))
+			samplepos = point2D(round(texuv[X] * tw), round(texuv[Y] * th))
 			samplesize = vec2(ceil(texsizeuv[X] * tw), ceil(texsizeuv[Y] * th))
 					
 			// Generate array with the alpha values of the texture
