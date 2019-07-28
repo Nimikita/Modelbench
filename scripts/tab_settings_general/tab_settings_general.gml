@@ -23,3 +23,8 @@ if (setting_backup && !setting_collapse_backup_models)
 	draw_meter("settingsbackupmodelsamount", dx, dy, dw, setting_backup_amount, 48, 1, 10, 3, 1, tab.general.tbx_backup_amount, action_setting_backup_amount)
 	tab_next()
 }
+
+// Slow shape generation
+tab_control_switch()
+draw_switch("settingsslowgeneration", dx, dy, setting_slow_generation, action_setting_slow_generation, "settingsslowgenerationhelp")
+tab_next()

@@ -3111,6 +3111,14 @@
             }
         },
         {
+            "Key": "71165777-b152-4a47-8910-ba1e1469d44d",
+            "Value": {
+                "id": "abfe77c9-b144-4aff-91f9-f6a815001214",
+                "resourcePath": "scripts\\action_setting_slow_generation\\action_setting_slow_generation.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "71c915a2-5158-4a37-a83b-04c38c3c560e",
             "Value": {
                 "id": "d59f79ac-d16d-47f9-97b6-18bf4e445a00",
@@ -6774,6 +6782,7 @@
         "e00bd977-c885-43c5-ac1b-c6a7eb7f640a",
         "c6127529-c88c-489c-8bcc-3a862cb73d22",
         "c83030f2-182b-4c06-ac0c-c34a974c86b2",
+        "71165777-b152-4a47-8910-ba1e1469d44d",
         "0a820639-060d-48c1-871b-62ab9fb0671f",
         "83ce01a9-d386-427b-b7a5-91c317d3ef9e",
         "d814096f-3570-4575-bbbe-5a716b01201c",

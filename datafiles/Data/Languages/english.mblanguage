@@ -4,7 +4,7 @@
         "language": "English",
         "translator": "Nimi",
         "forversion": "Alpha 4",
-        "lastchange": "2019.07.27"
+        "lastchange": "2019.07.28"
     },
 	"startup/": {
 		"recovermodelheader": "Unsaved model detected",
@@ -340,6 +340,8 @@
 		"backupmodels": "Backup models",
 		"backupmodelsminutes": "Minutes between backups",
 		"backupmodelsamount": "Maximum saved backups",
+		"slowgeneration": "Slow shape generation",
+		"slowgenerationhelp": "Updates shapes slower. Useful for better performance when editing complex models.",
 		"interfaceshortcuts": "Interface shortcuts",
 		"camerashortcuts": "Camera shortcuts",
 		"key/": {

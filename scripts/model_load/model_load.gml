@@ -44,7 +44,7 @@ with (obj_model_element)
 with (obj_model_element)
 {
 	if (element_type = TYPE_SHAPE)
-		shape_update_vbuffer()
+		update_vbuffer = true
 }
 
 res_edit = res
