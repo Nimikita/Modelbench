@@ -64,8 +64,8 @@ with (shader_map[?shader_color])
 
 with (shader_map[?shader_sky])
 {
-	new_shader_uniform("uColorLight")
-	new_shader_uniform("uColorDark")
+	new_shader_uniform("uColorTop")
+	new_shader_uniform("uColorBottom")
 	new_shader_uniform("uHorizonPow")
 	new_shader_uniform("uContrast")
 }

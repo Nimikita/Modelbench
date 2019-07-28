@@ -53,7 +53,7 @@ setting_look_sensitivity = .75
 setting_fast_modifier = 2.25
 setting_slow_modifier = 0.25
 
-setting_theme = theme_darker
+setting_theme = theme_light
 setting_accent = 6
 setting_accent_custom = hex_to_color("03A9F4")
 setting_tip_show = true

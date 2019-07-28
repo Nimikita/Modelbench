@@ -38,6 +38,8 @@ c_neutral60 = theme.neutral_60
 a_neutral60 = theme.neutral_60a
 
 c_background = theme.background
+c_viewport_top = theme.viewport_top
+c_viewport_bottom = theme.viewport_bottom
 c_error = theme.red_error
 c_axisred = theme.red
 c_axisgreen = theme.green

@@ -2,7 +2,7 @@
 
 globalvar c_accent, c_accent10, a_accent10, c_accent20, a_accent20, c_accent30, a_accent30, c_accent50, a_accent50, c_accent80, a_accent80;
 globalvar c_neutral10, a_neutral10, c_neutral20, a_neutral20, c_neutral30, a_neutral30, c_neutral40, a_neutral40, c_neutral50, a_neutral50, c_neutral60, a_neutral60;
-globalvar c_background, c_error, c_axisred, c_axisgreen, c_axisblue, c_origin, c_bend;
+globalvar c_background, c_viewport_top, c_viewport_bottom, c_error, c_axisred, c_axisgreen, c_axisblue, c_origin, c_bend;
 globalvar theme_light, theme_dark, theme_darker;
 
 var theme_edit;
@@ -25,6 +25,8 @@ array_add(theme_edit.accent_list, hex_to_color("982BCB"))
 array_add(theme_edit.accent_list, hex_to_color("E93983"))
 
 theme_edit.background = c_white
+theme_edit.viewport_top = hex_to_color("F0FFFF")
+theme_edit.viewport_bottom = hex_to_color("B5E8F2")
 
 // Accent alpha
 theme_edit.accent_10a = .11
@@ -82,6 +84,8 @@ array_add(theme_edit.accent_list, hex_to_color("BB5DE8"))
 array_add(theme_edit.accent_list, hex_to_color("FF6593"))
 
 theme_edit.background = hex_to_color("2B373D")
+theme_edit.viewport_top = hex_to_color("2B373D")
+theme_edit.viewport_bottom = hex_to_color("839096")
 
 // Accent alpha
 theme_edit.accent_10a = .11
@@ -139,6 +143,8 @@ array_add(theme_edit.accent_list, hex_to_color("BB5DE8"))
 array_add(theme_edit.accent_list, hex_to_color("FF6593"))
 
 theme_edit.background = hex_to_color("101010")
+theme_edit.viewport_top = hex_to_color("484848")
+theme_edit.viewport_bottom = hex_to_color("2B2B2B")
 
 // Accent alpha
 theme_edit.accent_10a = .11
