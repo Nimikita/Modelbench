@@ -21,7 +21,6 @@ textbox_startup()
 history_startup()
 
 app_startup_fonts()
-app_startup_themes()
 
 app_startup_recent()
 

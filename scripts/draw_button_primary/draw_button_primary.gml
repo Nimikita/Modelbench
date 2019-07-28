@@ -68,16 +68,10 @@ var textx = xx;
 if (icon != null)
 	textx += 28
 
-var color;
-if (setting_dark_theme)
-	color = c_black
-else
-	color = c_white
-
-draw_label(text_get(name), textx + textwidth/2, yy + height/2, fa_center, fa_middle, color, 1)
+draw_label(text_get(name), textx + textwidth/2, yy + height/2, fa_center, fa_middle, c_background, 1)
 
 if (icon != null)
-	draw_image(spr_icons, icon, xx + 18, yy + 18, 1, 1, color, 1)
+	draw_image(spr_icons, icon, xx + 18, yy + 18, 1, 1, c_background, 1)
 
 microani_update(mouseon, mouseclick, false)
 

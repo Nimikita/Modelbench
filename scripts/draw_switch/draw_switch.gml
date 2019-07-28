@@ -51,7 +51,7 @@ microani_set(argument[0], script, mouseon, mouseclick, active)
 
 // Draw background
 var color, alpha;
-if (setting_dark_theme)
+if (setting_theme != theme_light)
 {
 	color = c_neutral30
 	alpha = a_neutral30

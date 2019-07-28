@@ -79,7 +79,18 @@ if (ds_map_valid(controlsmap))
 var interfacemap = map[?"interface"];
 if (ds_map_valid(interfacemap))
 {
-	setting_dark_theme = value_get_real(interfacemap[?"dark_theme"], setting_dark_theme)
+	var themename;
+	themename = value_get_real(interfacemap[?"theme"], "light")
+	
+	with (obj_theme)
+	{
+		if (name = themename)
+		{
+			setting_theme = id
+			break
+		}
+	}
+	
 	setting_accent = value_get_real(interfacemap[?"accent_index"], setting_accent)
 	setting_accent_custom = value_get_color(interfacemap[?"accent_custom"], setting_accent_custom)
 	setting_z_is_up = value_get_real(interfacemap[?"z_is_up"], setting_z_is_up)

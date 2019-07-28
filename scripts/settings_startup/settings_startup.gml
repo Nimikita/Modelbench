@@ -53,7 +53,7 @@ setting_look_sensitivity = .75
 setting_fast_modifier = 2.25
 setting_slow_modifier = 0.25
 
-setting_dark_theme = false
+setting_theme = theme_darker
 setting_accent = 6
 setting_accent_custom = hex_to_color("03A9F4")
 setting_tip_show = true
@@ -90,6 +90,7 @@ setting_collapse_bend_axis[Y] = true
 setting_collapse_bend_axis[Z] = true
 
 settings_load()
+interface_update()
 
 //setting_texture_filtering = false
 setting_texture_filtering_level = 1

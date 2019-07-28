@@ -282,7 +282,7 @@
             "Key": "0a820639-060d-48c1-871b-62ab9fb0671f",
             "Value": {
                 "id": "59106f11-7595-4293-99f3-a4065ba0c553",
-                "resourcePath": "scripts\\action_setting_dark_theme\\action_setting_dark_theme.yy",
+                "resourcePath": "scripts\\action_setting_theme\\action_setting_theme.yy",
                 "resourceType": "GMScript"
             }
         },

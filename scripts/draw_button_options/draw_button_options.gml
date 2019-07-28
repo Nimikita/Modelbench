@@ -53,14 +53,8 @@ draw_box_hover(xx, yy, width, height, mcroani_arr[e_mcroani.HOVER])
 // Bevel shading
 draw_box_bevel(xx, yy, width, height, 1)
 
-var color;
-if (setting_dark_theme)
-	color = c_black
-else
-	color = c_white
-
 var menuactive = (window_busy = "buttonmenu" && button_menu_name = name);
 
-draw_image(spr_icons, test(menuactive, e_icon.arrow_top_small, e_icon.arrow_down_small), xx + width/2, yy + height/2, 1 , 1, color, 1)
+draw_image(spr_icons, test(menuactive, e_icon.arrow_top_small, e_icon.arrow_down_small), xx + width/2, yy + height/2, 1 , 1, c_background, 1)
 
 microani_update(mouseon || menuactive, mouseclick || menuactive, menuactive)

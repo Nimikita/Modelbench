@@ -4,7 +4,7 @@
         "language": "English",
         "translator": "Nimi",
         "forversion": "Alpha 4",
-        "lastchange": "2019.07.23"
+        "lastchange": "2019.07.27"
     },
 	"startup/": {
 		"recovermodelheader": "Unsaved model detected",
@@ -364,7 +364,12 @@
             "fast": "Faster",
             "slow": "Slower"
 		},
-		"darktheme": "Dark theme",
+		"theme": "Theme",
+		"theme/": {
+			"light": "LIGHT",
+			"dark": "DARK",
+			"darker": "DARKER"
+		},
 		"accentcolor": "Accent color",
 		"zisup": "Z is up",
 		"smoothcamera": "Smooth camera",

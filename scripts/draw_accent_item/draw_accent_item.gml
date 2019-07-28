@@ -17,7 +17,7 @@ mouseon = app_mouse_box(xx, yy, width, height) && content_mouseon
 mouseclick = mouseon && mouse_left
 
 if (index < 9)
-	accent = test(setting_dark_theme, theme_dark.accent_list[index], theme_light.accent_list[index])
+	accent = setting_theme.accent_list[index]
 else
 	accent = null
 

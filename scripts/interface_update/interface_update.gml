@@ -1,7 +1,7 @@
 /// interface_update()
 /// @desc Updates interface colors based on selected theme
 
-var theme = test(setting_dark_theme, theme_dark, theme_light);
+var theme = setting_theme;
 
 // Accent color(s)
 

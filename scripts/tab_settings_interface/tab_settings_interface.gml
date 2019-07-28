@@ -1,8 +1,11 @@
 /// tab_settings_interface()
 
-// Dark theme
-tab_control_switch()
-draw_switch("settingsdarktheme", dx, dy, setting_dark_theme, action_setting_dark_theme)
+// Theme
+tab_control_togglebutton()
+togglebutton_add("settingsthemelight", null, theme_light, setting_theme = theme_light, action_setting_theme)
+togglebutton_add("settingsthemedark", null, theme_dark, setting_theme = theme_dark, action_setting_theme)
+togglebutton_add("settingsthemedarker", null, theme_darker, setting_theme = theme_darker, action_setting_theme)
+draw_togglebutton("settingstheme", dx, dy)
 tab_next()
 
 var accentboxx, accentboxy, accentboxw;

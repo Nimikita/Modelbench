@@ -54,7 +54,7 @@ json_save_object_done()
 
 json_save_object_start("interface")
 
-	json_save_var_bool("dark_theme", setting_dark_theme)
+	json_save_var_bool("theme", setting_theme.name)
 	json_save_var("accent_index", setting_accent)
 	json_save_var_color("accent_custom", setting_accent_custom)
 	json_save_var_bool("z_is_up", setting_z_is_up)

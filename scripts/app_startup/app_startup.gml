@@ -21,6 +21,7 @@ if (!shader_startup())
 
 app_startup_lists()
 app_startup_window()
+app_startup_themes()
 
 //alert_startup()
 json_startup()

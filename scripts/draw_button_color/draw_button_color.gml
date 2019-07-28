@@ -34,7 +34,7 @@ buttonalpha = lerp(0, .17, mcroani_arr[e_mcroani.HOVER] * (1 - mcroani_arr[e_mcr
 buttonalpha = lerp(buttonalpha, .20, mcroani_arr[e_mcroani.PRESS])
 
 draw_box(xx, yy, 28, 28, false, buttoncolor, buttonalpha)
-draw_outline(xx + 2, yy + 2, 24, 24, 2, test(color_get_lum(color) > 150, theme_light.neutral_20, theme_dark.neutral_20), a_neutral20)
+draw_outline(xx + 2, yy + 2, 24, 24, 2, test(color_get_lum(color) > 150, c_white, c_black), a_neutral20)
 
 // Colorpicker icon
 var iconcolor, iconalpha;
