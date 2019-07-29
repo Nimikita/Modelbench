@@ -30,7 +30,7 @@ else
 	{
 		if (edit)
 		{
-			history_data.element_save_id[history_data.el_set_amount] = id
+			history_data.element_save_id[history_data.el_set_amount] = save_id_get(id)
 			history_data.el_set_amount++
 		}
 	}

@@ -34,10 +34,10 @@ with (obj_texture)
 	instance_destroy()
 
 if (part_list != null)
-{
-	ds_list_destroy(part_list)
-	part_list = null
-}
+	ds_list_empty(part_list)
+else
+	part_list = ds_list_create()
+
 app_update_el_edit()
 
 for (var v = 0; v < e_value.amount; v++)

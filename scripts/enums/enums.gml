@@ -6,6 +6,14 @@ enum e_settings
 	FORMAT_ALPHA_2 = 0
 }
 
+enum e_element
+{
+	PART,
+	BLOCK,
+	PLANE,
+	PLANE_3D
+}
+
 enum e_mode
 {
 	MODELING,

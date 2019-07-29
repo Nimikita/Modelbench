@@ -4,7 +4,7 @@ if (history_pos = history_amount)
 	return 0
 
 history_data = history[history_pos]
-el_edit = history_data.save_el_edit
+el_edit = save_id_find(history_data.save_el_edit)
 res_edit = history_data.save_res_edit
 axis_edit = history_data.save_axis_edit
 

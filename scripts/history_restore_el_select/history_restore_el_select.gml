@@ -5,6 +5,6 @@ el_deselect_all()
 
 for (var t = 0; t < element_sel_amount; t++)
 {
-	with (element_sel_save_id[t])
+	with (save_id_find(element_sel_save_id[t]))
 		el_select()
 }

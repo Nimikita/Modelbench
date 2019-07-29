@@ -9,7 +9,7 @@ if (history_undo)
 	// Restore values
 	for (var e = 0; e < history_data.el_set_amount; e++)
 	{
-		var element = history_data.element_save_id[e];
+		var element = save_id_find(history_data.element_save_id[e]);
 		
 		with (element)
 		{
@@ -28,7 +28,7 @@ else if (history_redo)
 	// Restore values
 	for (var e = 0; e < history_data.el_set_amount; e++)
 	{
-		var element = history_data.element_save_id[e];
+		var element = save_id_find(history_data.element_save_id[e]);
 		if (element != undefined)
 		{
 			with (element)
@@ -66,7 +66,7 @@ else
 	// Save and modify element values
 	for (var e = 0; e < history_data.el_set_amount; e++)
 	{
-		with (history_data.element_save_id[e])
+		with (save_id_find(history_data.element_save_id[e]))
 		{
 			if (history_data.par_set_n = history_data.par_set_amount)
 				history_data.set_old_value[e, history_data.par_set_n] = value[vid]

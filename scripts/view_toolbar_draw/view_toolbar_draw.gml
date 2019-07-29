@@ -25,7 +25,8 @@ yy += 4
 xx += 4
 
 // Add part
-draw_button_icon("toolsetaddpart", xx, yy, 28, 28, false, e_icon.part_add, null, true)
+if (draw_button_icon("toolsetaddpart", xx, yy, 28, 28, false, e_icon.part_add))
+	action_element_create(e_element.PART)
 yy += 28 + 4
 
 // Add block

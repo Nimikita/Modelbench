@@ -4,6 +4,12 @@
 if (element_type = TYPE_PART)
 	ds_list_delete_value(render_list, id)
 
+// Remove from parent
+if (element_type = TYPE_PART)
+	ds_list_delete_value(parent.part_list, id)
+else
+	ds_list_delete_value(parent.shape_list, id)
+
 // Clear part and shape lists
 if (shape_list != null)
 {

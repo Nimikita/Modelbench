@@ -1,9 +1,15 @@
 /// element_event_create()
 /// @desc Create event of an element.
 
+save_id = ""
+save_id = save_id_create()
+
 name = ""
 display_name = ""
+
+parent = null
 parent_is_selected = false
+
 selected = false
 color = make_color_hsv(random(255), 255, 255)
 res = null

@@ -1,7 +1,7 @@
 /// model_startup()
 
 globalvar load_format, load_folder, save_folder, el_edit, el_edit_amount, res_edit,
-		  axis_edit, blank_texture;
+		  axis_edit, blank_texture, save_id_seed;
 
 el_edit = null
 el_edit_amount = 0
@@ -10,7 +10,10 @@ axis_edit = null
 
 blank_texture = texture_sprite(spr_empty)
 
-part_list = null
+save_id = "root"
+save_id_seed = random_get_seed()
+
+part_list = ds_list_create()
 shape_list = null
 res = null
 

@@ -1,7 +1,17 @@
 /// app_startup_lists()
 
+globalvar el_type_name_list;
 globalvar language_english_map, language_map;
 globalvar accent_list;
+
+// Element names
+el_type_name_list = ds_list_create()
+ds_list_add(el_type_name_list,
+	"part",
+	"block",
+	"plane",
+	"plane (3D)"
+)
 
 // Language
 language_english_map = ds_map_create()

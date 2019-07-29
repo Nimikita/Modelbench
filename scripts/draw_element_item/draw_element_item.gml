@@ -147,7 +147,7 @@ if (itemvisible)
 	}
 	
 	labelshort = string_limit_font(labelname, itemw - (xx - itemx) - 52, font_value)
-	draw_label(labelshort, xx, itemy + (itemh/2), fa_left, fa_middle, labelcolor, labelalpha, font_value)
+	draw_label(labelshort + " (" + string(element) + ")", xx, itemy + (itemh/2), fa_left, fa_middle, labelcolor, labelalpha, font_value)
 	
 	// Preview name tooltip
 	if (string_width(labelname) > itemw - (xx - itemx) - 52)

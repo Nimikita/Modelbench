@@ -1,5 +1,5 @@
 /// el_select_single()
-/// @desc Deselects all but the given timeline.
+/// @desc Deselects all but the given element.
 
 // Deselect all other timelines
 with (obj_model_element)
@@ -8,8 +8,6 @@ with (obj_model_element)
 		continue
 		
 	selected = false
-	//keyframe_select = null
-	//keyframe_select_amount = 0
 	parent_is_selected = false
 }
 
