@@ -50,9 +50,9 @@ if (window_busy = "panelresize")
 	if (panel_resize = panel_map[?"left"] || panel_resize = panel_map[?"left_secondary"])
 	{
 		if (panel_resize = panel_map[?"left"])
-			resizex = panel_area_x
-		else
 			resizex = panel_area_x + panel_map[?"left"].size_real
+		else
+			resizex = panel_area_x + panel_map[?"left"].size_real + panel_resize.size_real
 		
 		mouse_cursor = cr_size_we
 		panel_resize.size = max(288, snap(panel_resize_size + (mouse_x - mouse_click_x), sizesnap))
