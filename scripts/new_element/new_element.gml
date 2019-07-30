@@ -13,9 +13,12 @@ with (new(obj_model_element))
 			type = el_type_name_list[|argument0]
 	}
 	else
+	{
 		element_type = TYPE_PART
-		
-	el_set_parent_root()
+		part_list = ds_list_create()
+		shape_list = ds_list_create()
+		el_set_parent_root()
+	}
 	
 	return id
 }

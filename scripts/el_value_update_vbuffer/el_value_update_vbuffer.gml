@@ -51,7 +51,7 @@ switch (argument0)
 	case e_value.INVERT:
 	case e_value.FACE_CAMERA:
 	case e_value.HOVER:
-	case e_value.PLANE_3D:
+	case e_value.EXTRUDE:
 	case e_value.HIDE_BACKFACE:
 	
 	case e_value.WIND_AXIS:

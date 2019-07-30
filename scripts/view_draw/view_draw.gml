@@ -80,7 +80,7 @@ if (content_width > 0 && content_height > 0)
 				blocks++
 			else if (type = "plane")
 			{
-				if (value[e_value.PLANE_3D])
+				if (value[e_value.EXTRUDE])
 					planes3d++
 				else
 					planes++

@@ -202,7 +202,7 @@
             "Key": "0712a972-04d5-4cb5-9efe-2f3dd9c15118",
             "Value": {
                 "id": "c1aaabca-093e-4586-8841-06532e37f7ec",
-                "resourcePath": "scripts\\action_el_plane3d\\action_el_plane3d.yy",
+                "resourcePath": "scripts\\action_el_extrude\\action_el_extrude.yy",
                 "resourceType": "GMScript"
             }
         },

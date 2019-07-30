@@ -44,7 +44,7 @@ if (!array_compare_value(rot, 0))
 if (!array_compare_value(sca, 1))
 	json_save_var_point3D("scale", sca)
 
-if (value[e_value.PLANE_3D])
+if (value[e_value.EXTRUDE])
 	json_save_var_bool("3d", true)
 
 if (!value[e_value.BEND])

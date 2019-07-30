@@ -4,7 +4,7 @@
         "language": "English",
         "translator": "Nimi",
         "forversion": "Alpha 4",
-        "lastchange": "2019.07.28"
+        "lastchange": "2019.07.29"
     },
 	"startup/": {
 		"recovermodelheader": "Unsaved model detected",
@@ -306,7 +306,7 @@
 		"invert": "Invert",
 		"facecamera": "Face camera",
 		"hover": "Hover",
-		"3d": "Extrude",
+		"extrude": "Extrude",
 		"hidebackface": "Hide backface",
 		"windaxis": "Wind axis",
 		"windaxis/": {

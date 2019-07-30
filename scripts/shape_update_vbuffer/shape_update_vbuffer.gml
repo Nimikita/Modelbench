@@ -23,7 +23,7 @@ if (type = "block")
 	
 if (type = "plane")
 {
-	if (value[e_value.PLANE_3D])
+	if (value[e_value.EXTRUDE])
 	{
 		if (res != null)
 		{

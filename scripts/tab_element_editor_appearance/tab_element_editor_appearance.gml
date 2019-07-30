@@ -23,11 +23,11 @@ tab_next()
 if (el_edit.element_type = TYPE_SHAPE && el_edit.type = "plane")
 {
 	tab_control_checkbox()
-	draw_checkbox("elementeditor3d", dx, dy, el_edit.value[e_value.PLANE_3D], action_el_plane3d)
+	draw_checkbox("elementeditorextrude", dx, dy, el_edit.value[e_value.EXTRUDE], action_el_extrude)
 	tab_next()
 }
 
-if (el_edit.element_type = TYPE_SHAPE && el_edit.type = "plane" && !el_edit.value[e_value.PLANE_3D])
+if (el_edit.element_type = TYPE_SHAPE && el_edit.type = "plane" && !el_edit.value[e_value.EXTRUDE])
 {
 	tab_control_checkbox()
 	draw_checkbox("elementeditorhidebackface", dx, dy, el_edit.value[e_value.HIDE_BACKFACE], action_el_hide_backface)

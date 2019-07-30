@@ -83,8 +83,8 @@ xx = min(dx + dw - minw, itemx + 4)
 
 // Expand/collapse children/shape list(s)
 var showbutton;
-showbutton = (element.element_type = TYPE_PART)
-showbutton = showbutton && !(element.part_list = null && (setting_hide_shapes || element.shape_list = null))
+showbutton = element.element_type = TYPE_PART
+showbutton = showbutton && ((element.part_list != null && ds_list_size(element.part_list) > 0) || (!setting_hide_shapes && (element.shape_list != null && ds_list_size(element.shape_list) > 0)))
 if (itemvisible && showbutton)
 {
 	if (draw_button_icon("assetspartshowchildren" + string(element), xx, itemy + 4, 20, 20, element.extend, null, null, null, test(element.extend, "tooltipcollapse", "tooltipexpand"), spr_arrow_small_ani))
@@ -106,7 +106,7 @@ if (itemvisible)
 			icon = e_icon.block
 		else if (element.type = "plane")
 		{
-			if (element.value[e_value.PLANE_3D])
+			if (element.value[e_value.EXTRUDE])
 				icon = e_icon.plane3d
 			else
 				icon = e_icon.plane

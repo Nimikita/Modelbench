@@ -22,6 +22,7 @@ hidden = false
 tree_hidden = false
 locked = false
 tree_locked = false
+bend_default_angle = vec3(0)
 
 shape_vbuffer = null
 extend = false

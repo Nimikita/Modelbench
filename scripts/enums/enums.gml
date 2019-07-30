@@ -187,7 +187,7 @@ enum e_value
 	INVERT,
 	FACE_CAMERA,
 	HOVER,
-	PLANE_3D,
+	EXTRUDE,
 	HIDE_BACKFACE,
 	
 	// Shape UV

@@ -139,7 +139,7 @@ with (new(obj_model_element))
 	to = point3D_mul(point3D_add(to_noscale, inflate), scale)
 	
 	// 3D plane (optional)
-	value[e_value.PLANE_3D] = value_get_real(map[?"3d"], false)
+	value[e_value.EXTRUDE] = value_get_real(map[?"3d"], false)
 	
 	// Bending
 	value[e_value.BEND] = value_get_real(map[?"bend"], true)
