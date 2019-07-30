@@ -64,14 +64,16 @@ draw_box_hover(xx, yy, width, height, mcroani_arr[e_mcroani.HOVER])
 // Bevel shading
 draw_box_bevel(xx, yy, width, height, 1)
 
-var textx = xx;
+var textx, color;
+textx = xx
+color = test(color_get_lum(c_accent) > 135 || setting_accent < 9, c_background, c_neutral60)
 if (icon != null)
 	textx += 28
 
-draw_label(text_get(name), textx + textwidth/2, yy + height/2, fa_center, fa_middle, c_background, 1)
+draw_label(text_get(name), textx + textwidth/2, yy + height/2, fa_center, fa_middle, color, 1)
 
 if (icon != null)
-	draw_image(spr_icons, icon, xx + 18, yy + 18, 1, 1, c_background, 1)
+	draw_image(spr_icons, icon, xx + 18, yy + 18, 1, 1, color, 1)
 
 microani_update(mouseon, mouseclick, false)
 

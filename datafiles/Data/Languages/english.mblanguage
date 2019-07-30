@@ -4,7 +4,7 @@
         "language": "English",
         "translator": "Nimi",
         "forversion": "Alpha 4",
-        "lastchange": "2019.07.29"
+        "lastchange": "2019.07.30"
     },
 	"startup/": {
 		"recovermodelheader": "Unsaved model detected",
@@ -220,6 +220,8 @@
 		"playerskinhelp": "Allow skins to be downloaded for the model in Mine-imator.",
 		"modelscale": "Model scale",
 		"hideshapes": "Hide shapes",
+		"newpart": "New part",
+		"newshape": "New shape",
 		"roottexture": "Root texture",
 		"addtexture": "ADD TEXTURE",
 		"texturesize": "%1x%2 pixels"
@@ -227,6 +229,8 @@
 	"elementeditor/": {
 		"partname": "Part name",
 		"shapename": "Shape name",
+		"newpart": "New part",
+		"newshape": "New shape",
 		"position/": {
 			"x": "X",
 			"y": "Y",
