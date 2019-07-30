@@ -25,22 +25,22 @@ yy += 4
 xx += 4
 
 // Add part
-if (draw_button_icon("toolsetaddpart", xx, yy, 28, 28, false, e_icon.part_add))
+if (draw_button_icon("toolsetaddpart", xx, yy, 28, 28, false, e_icon.part_add, null, false, "toolsetaddpart"))
 	action_element_create(e_element.PART)
 yy += 28 + 4
 
 // Add block
-if (draw_button_icon("toolsetaddblock", xx, yy, 28, 28, false, e_icon.block_add))
+if (draw_button_icon("toolsetaddblock", xx, yy, 28, 28, false, e_icon.block_add, null, false, "toolsetaddblock"))
 	action_element_create(e_element.BLOCK)
 yy += 28 + 4
 
 // Add plane
-if (draw_button_icon("toolsetaddplane", xx, yy, 28, 28, false, e_icon.plane_add))
+if (draw_button_icon("toolsetaddplane", xx, yy, 28, 28, false, e_icon.plane_add, null, false, "toolsetaddplane"))
 	action_element_create(e_element.PLANE)
 yy += 28 + 4
 
 // Add plane (3d)
-if (draw_button_icon("toolsetaddplane3d", xx, yy, 28, 28, false, e_icon.plane3d_add))
+if (draw_button_icon("toolsetaddplane3d", xx, yy, 28, 28, false, e_icon.plane3d_add, null, false, "toolsetaddplane3d"))
 	action_element_create(e_element.PLANE_3D)
 yy += 28 + 4
 
