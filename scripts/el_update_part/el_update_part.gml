@@ -22,7 +22,7 @@ else
 	scale = vec3_mul(scale, other.scale)
 
 // Texture
-if (other.object_index != app)
+if (object_index != app)
 {
 	if (value[e_value.TEXTURE_OBJ] = null)
 		res = parent.res

@@ -29,16 +29,14 @@ switch (argument0)
 	case e_value.BEND_Z_MAX: return 180
 	
 	// Shape UV
-	/*
 	case e_value.UV_X:
-	case e_value.UV_Y:
-	case e_value.FROM_X:
-	case e_value.FROM_Y:
-	case e_value.FROM_Z:
-	case e_value.TO_X:
-	case e_value.TO_Y:
-	case e_value.TO_Z:
-	*/
+	case e_value.UV_Y: return 16
+	case e_value.OFFSET_X: 
+	case e_value.OFFSET_Y: return -8
+	case e_value.WIDTH:
+	case e_value.HEIGHT:
+	case e_value.LENGTH: return 16
+	
 	
 	// Wind
 	case e_value.WIND_AXIS: return e_vertex_wave.NONE

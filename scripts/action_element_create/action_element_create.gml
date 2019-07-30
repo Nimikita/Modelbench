@@ -56,8 +56,14 @@ else
 				shape.value[e_value.EXTRUDE] = true
 			
 			with (shape)
+			{
 				el_set_parent(el)
+				parent.extend = true
+			}
+			
+			setting_hide_shapes = false
 		}
+		assets.elements.show = true
 		
 		if (!history_redo)
 			log("Created", el_type_name_list[|spawn_type])

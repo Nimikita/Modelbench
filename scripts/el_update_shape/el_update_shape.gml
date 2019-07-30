@@ -20,6 +20,11 @@ if (value[e_value.TEXTURE_OBJ] = null)
 else
 	res = value[e_value.TEXTURE_OBJ]
 
+if (res = null)
+	texture_size = vec2(sprite_get_width(spr_empty))
+else
+	texture_size = vec2(sprite_get_width(res.sprite))
+
 // Colors
 color_inherit = value[e_value.INHERIT_COLOR]
 color_blend = value[e_value.BLEND_COLOR]
@@ -65,6 +70,9 @@ if (type = "plane")
 
 from = point3D_mul(point3D_sub(from_noscale, inflate), scale)
 to = point3D_mul(point3D_add(to_noscale, inflate), scale)
+
+// UV
+uv = vec2(value[e_value.UV_X], value[e_value.UV_Y])
 
 // Bending
 bend_shape = value[e_value.BEND]
