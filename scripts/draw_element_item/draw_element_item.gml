@@ -17,23 +17,33 @@ itemx = dx + (24 * increment)
 itemy = yy
 itemw = dw - (24 * increment)
 itemh = 28
-itemhover = app_mouse_box(dx, itemy, dw, itemh)
+itemhover = app_mouse_box(dx, itemy, dw, itemh) && content_mouseon
 expandhover = false
 lockhover = false
 itemvisible = (itemy < window_height) && (itemy + itemh > 0)
 
-//microani_set(string(element) + "listitem", null, itemhover, false, false, 0.25)
-//microani_update(itemhover, false, false)
-
-//	current_mcroani.hover_ani = 1
+// Hover highlight
 if (itemhover && itemvisible)
 {
 	mouse_cursor = cr_handpoint
 	draw_box(dx, itemy, dw, itemh, false, c_neutral10, a_neutral10)
 }
 
+// Select highlight
 if (element.selected)
 	draw_box(dx, itemy, dw, itemh, false, c_accent10, a_accent10)
+
+// Add to select list
+if (window_busy = "elementselection" || window_busy = "elementselectiondone")
+{
+	var highlight = box_intersect(dx, itemy, dw, itemh, element_select_x, element_select_y, element_select_width, element_select_height);
+	
+	if (highlight)
+		draw_box(dx, itemy, dw, itemh, false, c_accent20, a_accent20)
+	
+	if (element_select_list != null && highlight)
+		ds_list_add(element_select_list, element)
+}
 
 xx = itemx + itemw - 24
 minw = 20 + 4 + 20 + 8 + string_width_font("...", font_value) + (8 + 20 + 4 + 20)
@@ -45,7 +55,7 @@ if (itemvisible)
 {
 	if (itemhover || element.hidden)
 	{
-		if (draw_button_icon("assetselementhidden" + string(element), xx, itemy + 4, 20, 20, element.hidden, e_icon.show + element.hidden, null, null, test(element.hidden, "tooltipshow", "tooltiphide")))
+		if (draw_button_icon("assetselementhidden" + string(element), xx, itemy + 4, 20, 20, element.hidden, e_icon.show + element.hidden, null, window_busy = "elementselection", test(element.hidden, "tooltipshow", "tooltiphide")))
 		{
 			element.hidden = !element.hidden
 			el_update_hidden_tree(false)
@@ -64,7 +74,7 @@ if (itemvisible)
 {
 	if (itemhover || element.locked)
 	{
-		if (draw_button_icon("assetselementlock" + string(element), xx, itemy + 4, 20, 20, element.locked, e_icon.unlock - element.locked, null, null, test(element.locked, "tooltipunlock", "tooltiplock")))
+		if (draw_button_icon("assetselementlock" + string(element), xx, itemy + 4, 20, 20, element.locked, e_icon.unlock - element.locked, null, window_busy = "elementselection", test(element.locked, "tooltipunlock", "tooltiplock")))
 		{
 			element.locked = !element.locked
 			el_update_lock_tree(false)
@@ -87,7 +97,7 @@ showbutton = element.element_type = TYPE_PART
 showbutton = showbutton && ((element.part_list != null && ds_list_size(element.part_list) > 0) || (!setting_hide_shapes && (element.shape_list != null && ds_list_size(element.shape_list) > 0)))
 if (itemvisible && showbutton)
 {
-	if (draw_button_icon("assetspartshowchildren" + string(element), xx, itemy + 4, 20, 20, element.extend, null, null, null, test(element.extend, "tooltipcollapse", "tooltipexpand"), spr_arrow_small_ani))
+	if (draw_button_icon("assetspartshowchildren" + string(element), xx, itemy + 4, 20, 20, element.extend, null, null, window_busy = "elementselection", test(element.extend, "tooltipcollapse", "tooltipexpand"), spr_arrow_small_ani))
 		element.extend = !element.extend
 }
 expandhover = app_mouse_box(xx, itemy + 4, 20, 20)
@@ -161,7 +171,15 @@ if (itemhover && !expandhover && !lockhover && !visiblehover)
 {
 	draw_box_hover(dx, itemy, dw, itemh, 1)
 	
-	if (mouse_left_pressed)
+	// Start box selection
+	if (mouse_move > 5)
+	{
+		window_busy = "elementselectionstart"
+		element_select_start_x = mouse_x
+		element_select_start_y = mouse_y + tab.scroll.value
+	}
+	
+	if (mouse_left_released && window_busy = "")
 		action_el_select(element)
 }	
 
