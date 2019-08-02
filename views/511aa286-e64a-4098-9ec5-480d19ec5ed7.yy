@@ -6,7 +6,8 @@
     "children": [
         "5c4ffcb6-e19e-461d-9168-6009ffc157f4",
         "71c915a2-5158-4a37-a83b-04c38c3c560e",
-        "655403fe-fdff-4551-bd06-4845eb146ef5"
+        "655403fe-fdff-4551-bd06-4845eb146ef5",
+        "6f89c2ad-6fde-4b73-907f-23eadb725249"
     ],
     "filterType": "GMObject",
     "folderName": "App",

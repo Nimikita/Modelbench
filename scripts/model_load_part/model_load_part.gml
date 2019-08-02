@@ -327,9 +327,9 @@ with (new(obj_model_element))
 	
 	// Add shapes (optional)
 	var shapelist = map[?"shapes"]
+	shape_list = ds_list_create()
 	if (ds_list_valid(shapelist))
 	{
-		shape_list = ds_list_create()
 		for (var p = 0; p < ds_list_size(shapelist); p++)
 		{
 			var shape = model_load_shape(shapelist[|p]);
@@ -339,14 +339,12 @@ with (new(obj_model_element))
 				ds_list_add(shape_list, shape)
 		}
 	}
-	else
-		shape_list = null
 	
 	// Recursively add parts (optional)
 	var partlist = map[?"parts"]
+	part_list = ds_list_create()
 	if (ds_list_valid(partlist))
 	{
-		part_list = ds_list_create()
 		for (var p = 0; p < ds_list_size(partlist); p++)
 		{
 			var part = model_load_part(partlist[|p], root)
@@ -356,8 +354,6 @@ with (new(obj_model_element))
 				ds_list_add(part_list, part)
 		}
 	}
-	else
-		part_list = null
 	
 	return id
 }

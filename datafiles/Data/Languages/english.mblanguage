@@ -4,7 +4,7 @@
         "language": "English",
         "translator": "Nimi",
         "forversion": "Alpha 4",
-        "lastchange": "2019.07.30"
+        "lastchange": "2019.08.01"
     },
 	"startup/": {
 		"recovermodelheader": "Unsaved model detected",
@@ -222,6 +222,9 @@
 		"hideshapes": "Hide shapes",
 		"newpart": "New part",
 		"newshape": "New shape",
+		"moveabove": "Move above %1",
+		"movebelow": "Move below %1",
+		"parentto": "Parent to %1",
 		"roottexture": "Root texture",
 		"addtexture": "ADD TEXTURE",
 		"texturesize": "%1x%2 pixels"

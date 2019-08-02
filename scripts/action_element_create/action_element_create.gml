@@ -71,4 +71,6 @@ else
 	
 }
 
+el_update_lock_tree(false)
+el_update_hidden_tree(false)
 el_update_part()

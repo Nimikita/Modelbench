@@ -1,5 +1,12 @@
 /// app_startup_interface_elements()
 
+element_move_obj = null
+element_move_width = 0
+element_move_parent = null
+element_move_index = null
+element_move_parts = 0
+element_move_shapes = 0
+
 element_select_start_x = 0
 element_select_start_y = 0
 element_select_x = 0
