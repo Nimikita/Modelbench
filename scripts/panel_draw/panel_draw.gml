@@ -93,12 +93,12 @@ for (var t = 0; t < panel.tab_list_amount; t++)
 	sel = (panel.tab_selected = t)
 	
 	tabtitle[t] = tab_get_title(tab)
-		
-	tabw[t] = string_width_font(tabtitle[t], font_label) + 16 + 24 + 2
-		
-	//if (panel.tab_selected = t && tab.closeable)
-	//	tabw[t] += 20
-		
+	
+	tabw[t] = string_width_font(tabtitle[t], font_label) + 16
+	
+	if (tab.closeable)
+		tabw[t] += 26
+	
 	tabw[t] = min(tabw[t], tabmaxw)
 	tabsw += tabw[t]
 }
@@ -120,8 +120,6 @@ for (var t = 0; t < panel.tab_list_amount; t++)
 	sel = (panel.tab_selected = t)
 	
 	tabx[t] = dx
-	//if (!sel)
-	//	tabw[t] -= max(0, tabsw - tabmaxw) / (panel.tab_list_amount - 1)
 		
 	dw = tabw[t]
 	dh = tabsh
@@ -129,17 +127,17 @@ for (var t = 0; t < panel.tab_list_amount; t++)
 	if (sel)
 		draw_box(dx, dy, dw, dh + 1, false, c_background, 1)
 	
-	tabtitle[t] = string_limit(tabtitle[t], dw - padding * 2-20 * (sel && tab.closeable))
+	tabtitle[t] = string_limit(tabtitle[t], dw - 26 * (sel && tab.closeable))
 	
 	// Close button
-	//if (tab.closeable)
-	//{
+	if (tab.closeable)
+	{
 		if (draw_button_icon("tabclose" + string(tab), dx + dw - 26, dy + 2, 24, 24, false, e_icon.close_small))
 		{
 			tab_close(tab)
 			return 0
 		}
-	//}
+	}
 	
 	// Label
 	draw_label(tabtitle[t], dx + 8, round(dy + (dh/2)), fa_left, fa_center, test(sel, c_accent, c_neutral50), test(sel, 1, a_neutral50), font_label)

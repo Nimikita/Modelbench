@@ -4,7 +4,7 @@
         "language": "English",
         "translator": "Nimi",
         "forversion": "Alpha 4",
-        "lastchange": "2019.08.01"
+        "lastchange": "2019.08.04"
     },
 	"startup/": {
 		"recovermodelheader": "Unsaved model detected",
@@ -126,9 +126,7 @@
 			"xyz": "[ X: %1, Y: %2, Z: %3 ]"
 		},
 		"undo": "Undo",
-		"redo": "Redo",
-		"openassets": "Open assets",
-		"closeassets": "Close assets"
+		"redo": "Redo"
 	},
 	"toolset/": {
 		"add/": {

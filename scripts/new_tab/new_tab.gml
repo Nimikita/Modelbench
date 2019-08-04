@@ -13,7 +13,6 @@ else
 
 tab.show = argument[1]
 tab.closeable = !tab.show
-tab.closeable = true
 tab.scroll = new(obj_scrollbar)
 
 tab.header_script = null

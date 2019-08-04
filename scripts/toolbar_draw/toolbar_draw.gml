@@ -44,7 +44,4 @@ toolbar_line_x += (toolbar_line_x_goal - toolbar_line_x) / max(1, 3 / delta)
 toolbar_line_width += (toolbar_line_width_goal - toolbar_line_width) / max(1, 3 / delta)
 
 dx = boxw - (28 + 4)
-draw_button_icon("toolbarassetspanel", dx, dy, 28, 28, assets.show, e_icon.assets, action_assets_panel, false, test(assets.show, "tooltipcloseassets", "tooltipopenassets"))
-dx -= (28 + 4)
-
 draw_button_icon("toolbaruveditor", dx, dy, 28, 28, false, e_icon.uveditor, null, true)
