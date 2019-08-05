@@ -2,7 +2,7 @@
 
 globalvar c_accent, c_accent10, a_accent10, c_accent20, a_accent20, c_accent30, a_accent30, c_accent50, a_accent50, c_accent80, a_accent80;
 globalvar c_neutral10, a_neutral10, c_neutral20, a_neutral20, c_neutral30, a_neutral30, c_neutral40, a_neutral40, c_neutral50, a_neutral50, c_neutral60, a_neutral60;
-globalvar c_background, c_viewport_top, c_viewport_bottom, c_error, c_axisred, c_axisgreen, c_axisblue, c_origin, c_bend;
+globalvar c_background, c_viewport_top, c_viewport_bottom, c_error, c_warning, c_success, c_axisred, c_axisgreen, c_axisblue, c_origin, c_bend;
 globalvar theme_light, theme_dark, theme_darker;
 
 var theme_edit;
@@ -58,6 +58,8 @@ theme_edit.neutral_60a = .91
 
 // Other colors
 theme_edit.red_error = hex_to_color("FF1D0F")
+theme_edit.yellow_warning = hex_to_color("FFC01E")
+theme_edit.green_success = hex_to_color("61C159")
 theme_edit.red = hex_to_color("FF5656")
 theme_edit.green = hex_to_color("23FF88")
 theme_edit.blue = hex_to_color("1370FB")
@@ -117,6 +119,8 @@ theme_edit.neutral_60a = .91
 
 // Other colors
 theme_edit.red_error = hex_to_color("FC453A")
+theme_edit.yellow_warning = hex_to_color("FFEB36")
+theme_edit.green_success = hex_to_color("64E879")
 theme_edit.red = hex_to_color("FF5656")
 theme_edit.green = hex_to_color("23FF88")
 theme_edit.blue = hex_to_color("1370FB")
@@ -176,6 +180,8 @@ theme_edit.neutral_60a = .91
 
 // Other colors
 theme_edit.red_error = hex_to_color("FC453A")
+theme_edit.yellow_warning = hex_to_color("FFEB36")
+theme_edit.green_success = hex_to_color("64E879")
 theme_edit.red = hex_to_color("FF5656")
 theme_edit.green = hex_to_color("23FF88")
 theme_edit.blue = hex_to_color("1370FB")

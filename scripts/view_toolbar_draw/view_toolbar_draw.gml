@@ -14,7 +14,7 @@ content_x = xx
 content_y = yy
 content_width = width
 content_height = height
-content_mouseon = app_mouse_box(content_x, content_y, content_width, content_height) && !popup_mouseon
+content_mouseon = app_mouse_box(content_x, content_y, content_width, content_height) && !popup_mouseon && !snackbar_mouseon
 tip_force_right = true
 
 // Background

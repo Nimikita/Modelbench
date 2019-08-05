@@ -121,7 +121,7 @@ else
 }
 
 // Scrollbar
-content_mouseon = !popup_mouseon
+content_mouseon = !popup_mouseon && !snackbar_mouseon
 if (content_direction = e_scroll.VERTICAL)
 	scrollbar_draw(tab.scroll, e_scroll.VERTICAL, content_x + dividew + 3, content_y, content_height, maxh + 15, c_accent, c_accent50, c_black)
 else

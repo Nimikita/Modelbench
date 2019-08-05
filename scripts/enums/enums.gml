@@ -14,6 +14,14 @@ enum e_element
 	PLANE_3D
 }
 
+enum e_snackbar
+{
+	DEFAULT,
+	ERROR,
+	WARNING,
+	SUCCESS
+}
+
 enum e_mode
 {
 	MODELING,

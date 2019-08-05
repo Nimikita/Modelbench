@@ -21,6 +21,7 @@ if (model_temporary && !model_temporary_backup)
 	log("Updated model save location", model_file)
 }
 
+//log("model_temporary", model_temporary)
 log("Saving model", fn)
 
 save_folder = model_folder
@@ -42,5 +43,8 @@ if (!string_contains(filename_ext(fn), "backup"))
 	model_changed = false
 	
 	if (!model_temporary && !model_create_wait)
+	{
 		recent_add_wait = true
+		snackbar_save_model()
+	}
 }

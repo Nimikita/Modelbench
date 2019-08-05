@@ -3,8 +3,8 @@
     "file/": {
         "language": "English",
         "translator": "Nimi",
-        "forversion": "Alpha 4",
-        "lastchange": "2019.08.04"
+        "forversion": "Alpha 5",
+        "lastchange": "2019.08.05"
     },
 	"startup/": {
 		"recovermodelheader": "Unsaved model detected",
@@ -63,21 +63,19 @@
 		}
 	},
 	"snackbar/": {
-		"warning/": {
-			"modelname": "The model name cannot be empty.",
-			"partname": "Part names must be unique.",
-			"partnameempty": "Part names cannot be empty."
-		},
-		"solution/": {
-			"modelname": "Give the model a name.",
-			"partname": "Check for parts with the same name, and change affected part names.",
-			"partnameempty": "Check for parts with no name, and give it a unique name."
-		},
 		"newupdate": "A new update is available!",
-		"modelsaveissue": "Model saved successfully, though there may be issues loading in Mine-imator.",
-		"modelsave": "Model successfully saved.",
-		"ok": "OK",
-		"undo": "UNDO"
+		"newupdatedesc": "%1 is available to download.",
+		"savemodel": "Model saved successfully!",
+		"warning/": {
+			"samepartname": "Some parts share the same name.",
+			"emptypartname": "Some parts don't have a name.",
+			"emptymodelname": "This model hasn't been given a name.",
+			"savemodel": "The model may not load correctly in Mine-imator."
+		},
+		"button/": {
+			"download": "DOWNLOAD NOW",
+			"remindmelater": "REMIND ME LATER"
+		}
 	},
 	"colorpicker/": {
 		"r": "R",

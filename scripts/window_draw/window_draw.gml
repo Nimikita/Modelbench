@@ -24,6 +24,7 @@ window_draw_element_move()
 popup_draw()
 menu_draw()
 button_menu_draw()
+window_draw_snackbar()
 tip_draw()
 
 /*

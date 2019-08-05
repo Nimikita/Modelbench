@@ -14,6 +14,7 @@ app_update_backup()
 app_update_recent()
 app_update_work_camera()
 app_update_caption()
+app_update_snackbar()
 
 app_update_animations()
 app_update_shape_vbuffer()

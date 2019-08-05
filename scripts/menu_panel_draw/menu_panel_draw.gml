@@ -109,7 +109,7 @@ dh = content_height - 16
 tab_menu()
 
 // Close if mouse clicked outside of area
-if (app_mouse_box(panelx + panelw, panely, window_width - panelw, panelh) && mouse_left_pressed && !popup_mouseon)
+if (app_mouse_box(panelx + panelw, panely, window_width - panelw, panelh) && mouse_left_pressed && !popup_mouseon && !snackbar_mouseon)
 {
 	menu_panel_ani_type = "hide"
 	menu_open = false

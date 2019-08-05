@@ -24,7 +24,7 @@ content_x = boxx
 content_y = boxy
 content_width = boxw
 content_height = boxh
-content_mouseon = (view.mouseon && !popup_mouseon)
+content_mouseon = (view.mouseon && !popup_mouseon && !snackbar_mouseon)
 
 draw_box(boxx, boxy, boxw, boxh, false, c_background, 1)
 
@@ -59,7 +59,7 @@ if (content_width > 0 && content_height > 0)
 	content_y = floor(content_y)
 	content_width = ceil(content_width)
 	content_height = ceil(content_height)
-	content_mouseon = (app_mouse_box(content_x, content_y, content_width, content_height) && view.mouseon && !popup_mouseon)
+	content_mouseon = (app_mouse_box(content_x, content_y, content_width, content_height) && view.mouseon && !popup_mouseon && !snackbar_mouseon)
 	
 	view_update(view, null)
 	draw_surface_size(view.surface, content_x, content_y, content_width, content_height)
