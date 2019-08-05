@@ -61,7 +61,7 @@ panelx = -panelw + (panelw * panelease)
 
 
 // Draw window block
-draw_box(0, panely, window_width, panelh, false, c_black, panelease * 0.35)
+draw_box(0, panely, window_width, panelh, false, c_background, panelease * 0.35)
 draw_box(panelx, panely, panelw, panelh, false, c_background, 1)
 
 // Menu extention
