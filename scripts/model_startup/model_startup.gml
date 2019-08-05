@@ -26,3 +26,6 @@ player_skin = true
 root_scale = vec3(1)
 model_temporary = false
 model_changed = false
+
+warning_empty_part_names = false
+warning_same_part_names = false

@@ -6,6 +6,8 @@ save_id = save_id_create()
 
 name = ""
 display_name = ""
+name_duplicate = false
+name_empty = true
 
 parent = null
 parent_is_selected = false

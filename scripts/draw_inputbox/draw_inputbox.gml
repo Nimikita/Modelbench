@@ -1,4 +1,4 @@
-/// draw_inputbox(name, x, y, width, placeholder, textbox, script, [disabled])
+/// draw_inputbox(name, x, y, width, placeholder, textbox, script, [disabled, [error]])
 /// @arg name
 /// @arg x
 /// @arg y
@@ -6,9 +6,10 @@
 /// @arg placeholder
 /// @arg textbox
 /// @arg script
-/// @arg [disabled]
+/// @arg [disabled
+/// @arg [error]]
 
-var inputname, xx, yy, w, placeholder, tbx, script, disabled, capwid, h, padding, font;
+var inputname, xx, yy, w, placeholder, tbx, script, disabled, err, capwid, h, padding, font;
 var update;
 
 inputname = argument[0]
@@ -19,9 +20,13 @@ placeholder = argument[4]
 tbx = argument[5]
 script = argument[6]
 disabled = false
+err = false
 
 if (argument_count > 7)
 	disabled = argument[7]
+
+if (argument_count > 8)
+	err = argument[8]
 
 capwid = string_width(text_get(inputname))
 h = 28
@@ -34,30 +39,6 @@ mouseclick = mouseon && mouse_left
 
 microani_set(string(tbx) + inputname, script, mouseon || window_focus = string(tbx), false, (mouseon && mouse_left) || (window_focus = string(tbx)))
 
-//if (mouseon)
-//	mouse_cursor = cr_handpoint
-
-//if (!mouseon && mouse_left && window_focus = string(tbx))
-//	input_lastfocus = string(tbx)
-
-// Defocus event
-/*
-if ((input_lastfocus != window_focus) && (input_lastfocus != null) && (input_lastfocus = string(tbx)))
-{
-	 Autofill fields if empty
-	if ((inputname = "startuptitlemodelname") || (inputname = "textboxpartname") || (inputname = "textboxshapename"))
-	{
-		if (script != null)
-		{
-			script_execute(script, tbx.text, true)
-			script = null
-		}
-	}
-	
-	input_lastfocus = null
-}
-*/
-
 // Field background
 var outlinecolor, outlinealpha, outlineoff;
 outlinecolor = merge_color(c_neutral50, c_accent, mcroani_arr[e_mcroani.ACTIVE])
@@ -66,9 +47,21 @@ outlinecolor = merge_color(outlinecolor, c_neutral30, mcroani_arr[e_mcroani.DISA
 outlinealpha = lerp(a_neutral50, 1, mcroani_arr[e_mcroani.ACTIVE])
 outlinealpha = lerp(outlinealpha, a_neutral30, mcroani_arr[e_mcroani.DISABLED])
 
+if (err)
+{
+	outlinecolor = c_error
+	outlinealpha = 1
+}
+
 outlineoff = lerp(0, 1, max(mcroani_arr[e_mcroani.ACTIVE], mcroani_arr[e_mcroani.HOVER])) * (1 - mcroani_arr[e_mcroani.DISABLED])
 
 draw_outline(xx + outlineoff + 2, yy + outlineoff + 2, w - 4 - outlineoff*2, h - 4 - outlineoff*2, 2 + outlineoff, outlinecolor, outlinealpha)
+
+if (err)
+{
+	draw_image(spr_icons, e_icon.alert, xx + w - 14, yy + h/2, 1, 1, c_error, 1)
+	w -= 28
+}
 
 // Textbox
 draw_set_font(font_value)

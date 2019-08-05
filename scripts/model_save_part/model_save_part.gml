@@ -35,7 +35,7 @@ if (!value[e_value.BEND_LOCK])
 
 model_save_bend()
 
-if (shape_list != null)
+if (!ds_list_empty(shape_list))
 {
 	json_save_array_start("shapes")
 	

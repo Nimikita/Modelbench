@@ -8,19 +8,21 @@ switch (argument0)
 	case e_value.SCA_Z: return 1
 	
 	// Color
+	case e_value.INHERIT_COLOR: return true
 	case e_value.OPACITY: return 1
 	case e_value.BLEND_COLOR: return c_white
 	case e_value.MIX_COLOR: return c_black
 	
 	// Bend
 	/*
-	case e_value.BEND_LOCK:
 	case e_value.BEND_OFFSET:
 	case e_value.BEND_SIZE:
 	case e_value.BEND_PART:
 	case e_value.BEND_AXIS_X:
 	case e_value.BEND_AXIS_Y:
 	case e_value.BEND_AXIS_Z:*/
+	case e_value.BEND:
+	case e_value.BEND_LOCK: return true
 	case e_value.BEND_X_MIN:
 	case e_value.BEND_Y_MIN:
 	case e_value.BEND_Z_MIN: return -180

@@ -1,9 +1,16 @@
 /// tab_assets_model_properties()
 
 tab_control(48)
-if (draw_textfield("assetsmodelname", dx, dy, dw, model_name, tab.model_properties.tbx_model_name, null, text_get("assetsmodelname")))
+if (draw_textfield("assetsmodelname", dx, dy, dw, model_name, tab.model_properties.tbx_model_name, action_model_name, text_get("assetsmodelname"), "top", model_name = ""))
 	model_name = tab.model_properties.tbx_model_name.text
 tab_next()
+
+if (model_name ="")
+{
+	tab_control(8)
+	draw_label(text_get("assetsemptymodelname"), dx, dy + 8, fa_left, fa_bottom, c_error, 1, font_caption)
+	tab_next()
+}
 
 // Model location
 tab_control(40)

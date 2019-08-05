@@ -124,6 +124,7 @@ enum e_icon
 	recent_files,
 	new_file_template,
 	transform,
+	alert,
 	
 	placeholder = 11
 }

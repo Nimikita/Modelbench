@@ -208,6 +208,7 @@
 	"accessibility": "ACCESSIBILITY",
 	"assets/": {
 		"modelname": "Model name",
+		"emptymodelname": "Model name cannot be empty.",
 		"modellocation": "Model location",
 		"modelnotsaved": "Model not saved",
 		"openfolder": "Open folder",
@@ -228,6 +229,8 @@
 	"elementeditor/": {
 		"partname": "Part name",
 		"shapename": "Shape name",
+		"emptypartname": "Part names cannot be empty.",
+		"samepartname": "Part names cannot be the same.",
 		"newpart": "New part",
 		"newshape": "New shape",
 		"position/": {

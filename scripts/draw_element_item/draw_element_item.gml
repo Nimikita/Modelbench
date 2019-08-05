@@ -176,6 +176,9 @@ if (itemvisible)
 		labelalpha = a_neutral60
 	}
 	
+	if (element.name_duplicate || element.name_empty)
+		labelcolor = c_error
+	
 	labelshort = string_limit_font(labelname, itemw - (xx - itemx) - 52, font_value)
 	draw_label(labelshort, xx, itemy + (itemh/2), fa_left, fa_middle, labelcolor, labelalpha)
 	
