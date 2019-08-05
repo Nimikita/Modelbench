@@ -84,9 +84,9 @@ textoff = test(tex, (imgsize - 4), 0)
 draw_label(string_limit(string_remove_newline(text), wid - textoff - hei - 8), xx + test(tex = null, 0, imgsize) + 8, yy + hei / 2, fa_left, fa_middle, textcolor, textalpha, font_value)
 
 // Arrow
-draw_image(spr_icons, test(test(menu_name = name, !flip, flip), e_icon.arrow_top_small, e_icon.arrow_down_small), xx + wid - hei / 2, yy + hei / 2, 1, 1, labelcolor, labelalpha)
+draw_image(spr_arrow_up_down_ani, (mcroani_arr[e_mcroani.ACTIVE] * 15), xx + wid - hei / 2, yy + hei / 2, 1, 1, labelcolor, labelalpha)
 
-microani_update(false, false, false, disabled)
+microani_update(false, false, test(menu_name = name, !flip, flip), disabled)
 
 // Update menu position
 if (menu_name = name)

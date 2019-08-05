@@ -671,6 +671,14 @@
             }
         },
         {
+            "Key": "1665ec45-707a-4398-a3f3-a5797878f66c",
+            "Value": {
+                "id": "6c7ebb14-d280-4f63-a75c-54f686162d96",
+                "resourcePath": "sprites\\spr_arrow_up_down_ani\\spr_arrow_up_down_ani.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "174543b8-7dbc-4fce-b65a-3d70a6216f98",
             "Value": {
                 "id": "8b87266f-8aab-40df-9dc9-2ab05ee504eb",
