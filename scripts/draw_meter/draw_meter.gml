@@ -34,7 +34,7 @@ locked = (minval = maxval)
 if (xx + wid < content_x || xx > content_x + content_width || yy + hei < content_y || yy > content_y + content_height)
 	return 0
 
-draw_label(text_get(name), xx, yy + 15, fa_left, fa_bottom, c_neutral50, a_neutral50, font_label)
+draw_label(text_get(name), xx, yy + 15, fa_left, fa_bottom, c_text_secondary, a_text_secondary, font_label)
 yy += 18
 	
 linewid = wid - valuewid
@@ -107,7 +107,7 @@ if (window_focus = string(tbx) && !locked)
 	}
 }
 else
-	draw_label(string(value) + tbx.suffix, xx + wid, yy + hei / 2, fa_right, fa_middle, merge_color(c_neutral60, c_neutral30, mcroani_arr[e_mcroani.DISABLED]), lerp(a_neutral60, a_neutral30, mcroani_arr[e_mcroani.DISABLED]), font_value)
+	draw_label(string(value) + tbx.suffix, xx + wid, yy + hei / 2, fa_right, fa_middle, merge_color(c_text_main, c_text_tertiary, mcroani_arr[e_mcroani.DISABLED]), lerp(a_text_main, a_text_tertiary, mcroani_arr[e_mcroani.DISABLED]), font_value)
 
 dragval = test(window_busy = name, meter_drag_value, value)
 
@@ -125,18 +125,18 @@ var markers = floor((maxval - minval) / snapval);
 if (markers <= 32 && !locked)
 {
 	for (var i = 0; i < markers + 1; i++)
-		draw_line_ext(xx + (linewid * (i / markers)), dragy - 6, xx + (linewid * (i / markers)), dragy + 6, c_neutral20, a_neutral20)
+		draw_line_ext(xx + (linewid * (i / markers)), dragy - 6, xx + (linewid * (i / markers)), dragy + 6, c_border, a_border)
 	
 	// Snap dragger X
 	dragx = snap(floor(percent(dragval, minval, maxval) * linewid), (linewid / markers))
 }
 
 // Line
-draw_box(xx, dragy - 1, linewid + 1, 2, false, merge_color(c_neutral50, c_neutral30, mcroani_arr[e_mcroani.DISABLED]), lerp(a_neutral50, a_neutral30, mcroani_arr[e_mcroani.DISABLED]))
+draw_box(xx, dragy - 1, linewid + 1, 2, false, merge_color(c_text_secondary, c_text_tertiary, mcroani_arr[e_mcroani.DISABLED]), lerp(a_text_secondary, a_text_tertiary, mcroani_arr[e_mcroani.DISABLED]))
 draw_box(xx, dragy - 1, dragx + 1, 2, false, c_accent, lerp(1, 0, mcroani_arr[e_mcroani.DISABLED]))
 
 // Dragger
 draw_box(xx + dragx - 6, dragy - 10, 12, 20, false, c_background, 1)
-draw_box(xx + dragx - 6, dragy - 10, 12, 20, false, merge_color(c_accent, c_neutral30, mcroani_arr[e_mcroani.DISABLED]), lerp(1, a_neutral30, mcroani_arr[e_mcroani.DISABLED]))
+draw_box(xx + dragx - 6, dragy - 10, 12, 20, false, merge_color(c_accent, c_text_tertiary, mcroani_arr[e_mcroani.DISABLED]), lerp(1, a_text_tertiary, mcroani_arr[e_mcroani.DISABLED]))
 draw_box_bevel(xx + dragx - 6, dragy - 10, 12, 20, 1)
 draw_box_hover(xx + dragx - 6, dragy - 10, 12, 20, mcroani_arr[e_mcroani.HOVER] * (1 - mcroani_arr[e_mcroani.DISABLED]))

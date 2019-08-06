@@ -13,7 +13,7 @@ dw = content_width - 16
 dh = content_height - 16
 
 // Draw background
-draw_clear(c_neutral10)
+draw_clear(c_overlay)
 draw_box(content_x, content_y, content_width, content_height, false, c_white, 1)
 
 // Set up values

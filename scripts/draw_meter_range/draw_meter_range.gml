@@ -40,7 +40,7 @@ if (xx + wid < content_x || xx > content_x + content_width || yy + hei < content
 	return 0
 
 // Caption
-draw_label(text_get(name), xx, yy + 15, fa_left, fa_bottom, c_neutral50, a_neutral50, font_label)
+draw_label(text_get(name), xx, yy + 15, fa_left, fa_bottom, c_text_secondary, a_text_secondary, font_label)
 yy += 18	
 
 linewid = wid - (valuewid * 2)
@@ -104,7 +104,7 @@ if (window_focus = string(tbxmin))
 	}
 }
 else
-	draw_label(string(valuemin) + tbxmin.suffix, xx, yy + hei / 2, fa_left, fa_middle, c_neutral60, a_neutral60)
+	draw_label(string(valuemin) + tbxmin.suffix, xx, yy + hei / 2, fa_left, fa_middle, c_text_main, a_text_main)
 
 // Textbox(Maximum)
 if (window_focus = string(tbxmax))
@@ -122,7 +122,7 @@ if (window_focus = string(tbxmax))
 	}
 }
 else
-	draw_label(string(valuemax) + tbxmax.suffix, xx + wid, yy + hei / 2, fa_right, fa_middle, c_neutral60, a_neutral60)
+	draw_label(string(valuemax) + tbxmax.suffix, xx + wid, yy + hei / 2, fa_right, fa_middle, c_text_main, a_text_main)
 
 dragxmin = test(window_busy = name + "min", meter_drag_value, valuemin)
 dragxmax = test(window_busy = name + "max", meter_drag_value, valuemax)
@@ -167,9 +167,9 @@ if (window_busy = name + "min")
 if (window_busy = name + "max")
 	dragxmax = max(dragxmin, dragxmax)
 
-draw_box(linex, dragy - 1, dragxmin + 1, 2, false, c_neutral50, a_neutral50)
+draw_box(linex, dragy - 1, dragxmin + 1, 2, false, c_text_secondary, a_text_secondary)
 draw_box(linex + dragxmin, dragy - 1, (dragxmax - dragxmin) + 1, 2, false, c_accent, 1)
-draw_box(linex + dragxmax, dragy - 1, (linewid - dragxmax) + 1, 2, false, c_neutral50, a_neutral50)
+draw_box(linex + dragxmax, dragy - 1, (linewid - dragxmax) + 1, 2, false, c_text_secondary, a_text_secondary)
 
 microani_set(name + "min", scriptmin, (window_busy = name + "min") || mouseonmin, mouseonmin && mouse_left, false)
 microani_update((window_busy = name + "min") || mouseonmin, mouseonmin && mouse_left, false)

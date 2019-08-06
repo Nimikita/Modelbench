@@ -18,7 +18,7 @@ h = argument4
 
 // Colors
 var textnormal, highlight, texthighlight;
-textnormal = c_neutral60
+textnormal = c_text_main
 highlight = c_accent
 texthighlight = c_white
 
@@ -1100,7 +1100,7 @@ if (window_focus = string(tbx) && !tbx.read_only)
 	
 	if (a >= 0 && a <= w && b >= 0 && b + lineheight <= h && (current_time - textbox_marker) mod 1000 < 500)
 	{
-		draw_set_color(c_neutral60)
+		draw_set_color(c_text_main)
 		draw_line(xx + a, yy + b, xx + a, yy + b+lineheight)
 	}
 }

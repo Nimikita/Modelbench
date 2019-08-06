@@ -10,32 +10,15 @@ if (setting_accent = 9)
 else
 	c_accent = theme.accent_list[setting_accent]
 
-a_accent10 = theme.accent_10a
-a_accent20 = theme.accent_20a
-a_accent30 = theme.accent_30a
-a_accent50 = theme.accent_50a
-a_accent80 = theme.accent_80a
-
 interface_update_accent()
 
-// Neutral colors
-c_neutral10 = theme.neutral_10
-a_neutral10 = theme.neutral_10a
-
-c_neutral20 = theme.neutral_20
-a_neutral20 = theme.neutral_20a
-
-c_neutral30 = theme.neutral_30
-a_neutral30 = theme.neutral_30a
-
-c_neutral40 = theme.neutral_40
-a_neutral40 = theme.neutral_40a
-
-c_neutral50 = theme.neutral_50
-a_neutral50 = theme.neutral_50a
-
-c_neutral60 = theme.neutral_60
-a_neutral60 = theme.neutral_60a
+c_text_main = theme.text_main
+c_text_secondary = theme.text_secondary
+c_text_tertiary = theme.text_tertiary
+c_border = theme.border
+c_overlay = theme.overlay
+c_button_text = theme.button_text
+a_button_text = theme.button_text_alpha
 
 c_background = theme.background
 c_viewport_top = theme.viewport_top

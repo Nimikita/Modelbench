@@ -8,7 +8,7 @@ content_mouseon = app_mouse_box(content_x, content_y, content_width, content_hei
 
 // Draw background
 draw_clear_alpha(c_background, 1)
-draw_box(0, 0, window_width, 192, false, c_neutral10, a_neutral10)
+draw_box(0, 0, window_width, 192, false, c_overlay, a_overlay)
 
 var pattern = test(setting_theme = theme_light, 0, 1);
 draw_image(spr_startup_left, pattern, 0, 0)
@@ -18,7 +18,7 @@ draw_image(spr_startup_right, pattern, window_width, 0)
 draw_sprite(spr_logo, 0, window_width / 2, 96)
 
 // Version
-draw_label("v " + modelbench_version_full, (window_width / 2) + 245, 130, fa_left, fa_bottom, c_neutral50, a_neutral50, font_value)
+draw_label("v " + modelbench_version_full, (window_width / 2) + 245, 130, fa_left, fa_bottom, c_text_secondary, a_text_secondary, font_value)
 
 dx = (window_width / 2) + (996 / 2) - 24
 dy = 240

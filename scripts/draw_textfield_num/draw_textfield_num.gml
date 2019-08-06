@@ -45,11 +45,11 @@ if (draw_inputbox(name, xx + capwidth, yy, wid, string(def), tbx, null, disabled
 
 // Use microanimation from inputbox to determine color
 var labelcolor, labelalpha;
-labelcolor = merge_color(c_neutral50, c_accent, mcroani_arr[e_mcroani.ACTIVE])
-labelcolor = merge_color(labelcolor, c_neutral30, mcroani_arr[e_mcroani.DISABLED])
+labelcolor = merge_color(c_text_secondary, c_accent, mcroani_arr[e_mcroani.ACTIVE])
+labelcolor = merge_color(labelcolor, c_text_tertiary, mcroani_arr[e_mcroani.DISABLED])
 
-labelalpha = lerp(a_neutral50, 1, mcroani_arr[e_mcroani.ACTIVE])
-labelalpha = lerp(labelalpha, a_neutral30, mcroani_arr[e_mcroani.DISABLED])
+labelalpha = lerp(a_text_secondary, 1, mcroani_arr[e_mcroani.ACTIVE])
+labelalpha = lerp(labelalpha, a_text_tertiary, mcroani_arr[e_mcroani.DISABLED])
 
 draw_box_hover(xx + capwidth, yy, wid, hei, max(mcroani_arr[e_mcroani.HOVER], mcroani_arr[e_mcroani.ACTIVE]) * (1 - mcroani_arr[e_mcroani.DISABLED]))
 

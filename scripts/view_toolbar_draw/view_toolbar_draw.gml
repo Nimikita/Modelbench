@@ -44,7 +44,7 @@ if (draw_button_icon("toolsetaddplane3d", xx, yy, 28, 28, false, e_icon.plane3d_
 	action_element_create(e_element.PLANE_3D)
 yy += 28 + 4
 
-draw_box(xx, yy, 28, 1, false, c_neutral10, a_neutral10)
+draw_box(xx, yy, 28, 1, false, c_overlay, a_overlay)
 yy += 4
 
 // Select-only tool

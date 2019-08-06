@@ -23,11 +23,11 @@ fieldupdate = null
 hei = 28
 
 // Draw field backgrounds
-draw_outline(xx + 2, yy + 2, wid - 4, hei - 4, 2, c_neutral50, a_neutral50)
+draw_outline(xx + 2, yy + 2, wid - 4, hei - 4, 2, c_text_secondary, a_text_secondary)
 for (var i = 0; i < textfield_amount; i++)
 {
 	if (i > 0)
-		draw_box(fieldx, yy + 2, 2, hei - 4, false, c_neutral50, a_neutral50)
+		draw_box(fieldx, yy + 2, 2, hei - 4, false, c_text_secondary, a_text_secondary)
 	fieldx += (fieldwid + 2)
 }
 fieldx = xx + 2
@@ -43,11 +43,11 @@ for (var i = 0; i < textfield_amount; i++)
 	
 	// Field label
 	var labelcolor, labelalpha;
-	labelcolor = merge_color(c_neutral50, c_accent, mcroani_arr[e_mcroani.ACTIVE])
-	labelcolor = merge_color(labelcolor, c_neutral30, mcroani_arr[e_mcroani.DISABLED])
+	labelcolor = merge_color(c_text_secondary, c_accent, mcroani_arr[e_mcroani.ACTIVE])
+	labelcolor = merge_color(labelcolor, c_text_tertiary, mcroani_arr[e_mcroani.DISABLED])
 
-	labelalpha = lerp(a_neutral50, 1, mcroani_arr[e_mcroani.ACTIVE])
-	labelalpha = lerp(labelalpha, a_neutral30, mcroani_arr[e_mcroani.DISABLED])
+	labelalpha = lerp(a_text_secondary, 1, mcroani_arr[e_mcroani.ACTIVE])
+	labelalpha = lerp(labelalpha, a_text_tertiary, mcroani_arr[e_mcroani.DISABLED])
 	
 	draw_label(text_get(textfield_name[i]), fieldx + 8, yy + (hei/2), fa_left, fa_middle, labelcolor, labelalpha, font_emphasis)
 	

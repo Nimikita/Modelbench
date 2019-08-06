@@ -1,9 +1,28 @@
 /// app_startup_themes()
 
-globalvar c_accent, c_accent10, a_accent10, c_accent20, a_accent20, c_accent30, a_accent30, c_accent50, a_accent50, c_accent80, a_accent80;
-globalvar c_neutral10, a_neutral10, c_neutral20, a_neutral20, c_neutral30, a_neutral30, c_neutral40, a_neutral40, c_neutral50, a_neutral50, c_neutral60, a_neutral60;
-globalvar c_background, c_viewport_top, c_viewport_bottom, c_error, c_warning, c_success, c_axisred, c_axisgreen, c_axisblue, c_origin, c_bend;
+// Themes
 globalvar theme_light, theme_dark, theme_darker;
+
+// Colors used in interface
+globalvar c_accent, a_accent, c_accent_hover, a_accent_hover, c_accent_pressed, a_accent_pressed, c_hover, a_hover, c_accent_overlay, a_accent_overlay;
+globalvar c_text_main, a_text_main, c_text_secondary, a_text_secondary, c_text_tertiary, a_text_tertiary;
+globalvar c_border, a_border, c_overlay, a_overlay;
+globalvar c_background, c_button_text, a_button_text;
+globalvar c_viewport_top, c_viewport_bottom, c_error, c_warning, c_success, c_axisred, c_axisgreen, c_axisblue, c_origin, c_bend;
+
+// Alphas
+a_accent = 1
+a_accent_hover = 1
+a_accent_pressed = 1
+a_hover = .47
+a_accent_overlay = .11
+
+a_text_main = .91
+a_text_secondary = .57
+a_text_tertiary = .36
+
+a_border = .14
+a_overlay = .05
 
 var theme_edit;
 
@@ -28,33 +47,13 @@ theme_edit.background = c_white
 theme_edit.viewport_top = hex_to_color("F0FFFF")
 theme_edit.viewport_bottom = hex_to_color("B5E8F2")
 
-// Accent alpha
-theme_edit.accent_10a = .11
-theme_edit.accent_20a = .28
-theme_edit.accent_30a = .47
-theme_edit.accent_50a = 1
-theme_edit.accent_80a = 1
-
-// Neutral colors
-theme_edit.neutral = hex_to_color("000000")
-
-theme_edit.neutral_10 = theme_edit.neutral
-theme_edit.neutral_10a = .05
-
-theme_edit.neutral_20 = theme_edit.neutral
-theme_edit.neutral_20a = .14
-
-theme_edit.neutral_30 = theme_edit.neutral
-theme_edit.neutral_30a = .36
-
-theme_edit.neutral_40 = theme_edit.neutral
-theme_edit.neutral_40a = .45
-
-theme_edit.neutral_50 = theme_edit.neutral
-theme_edit.neutral_50a = .57
-
-theme_edit.neutral_60 = theme_edit.neutral
-theme_edit.neutral_60a = .91
+theme_edit.text_main = hex_to_color("000000")
+theme_edit.text_secondary = theme_edit.text_main
+theme_edit.text_tertiary = theme_edit.text_main
+theme_edit.border = theme_edit.text_main
+theme_edit.overlay = theme_edit.text_main
+theme_edit.button_text = hex_to_color("FFFFFF")
+theme_edit.button_text_alpha = .91
 
 // Other colors
 theme_edit.red_error = hex_to_color("FF1D0F")
@@ -89,33 +88,13 @@ theme_edit.background = hex_to_color("2B373D")
 theme_edit.viewport_top = hex_to_color("2B373D")
 theme_edit.viewport_bottom = hex_to_color("839096")
 
-// Accent alpha
-theme_edit.accent_10a = .11
-theme_edit.accent_20a = .28
-theme_edit.accent_30a = .47
-theme_edit.accent_50a = 1
-theme_edit.accent_80a = 1
-
-// Neutral colors
-theme_edit.neutral = hex_to_color("FFFFFF")
-
-theme_edit.neutral_10 = theme_edit.neutral
-theme_edit.neutral_10a = .05
-
-theme_edit.neutral_20 = theme_edit.neutral
-theme_edit.neutral_20a = .14
-
-theme_edit.neutral_30 = theme_edit.neutral
-theme_edit.neutral_30a = .36
-
-theme_edit.neutral_40 = theme_edit.neutral
-theme_edit.neutral_40a = .45
-
-theme_edit.neutral_50 = theme_edit.neutral
-theme_edit.neutral_50a = .57
-
-theme_edit.neutral_60 = theme_edit.neutral
-theme_edit.neutral_60a = .91
+theme_edit.text_main = hex_to_color("FFFFFF")
+theme_edit.text_secondary = theme_edit.text_main
+theme_edit.text_tertiary = theme_edit.text_main
+theme_edit.border = theme_edit.text_main
+theme_edit.overlay = theme_edit.text_main
+theme_edit.button_text = hex_to_color("000000")
+theme_edit.button_text_alpha = .91
 
 // Other colors
 theme_edit.red_error = hex_to_color("FC453A")
@@ -150,33 +129,13 @@ theme_edit.background = hex_to_color("101010")
 theme_edit.viewport_top = hex_to_color("484848")
 theme_edit.viewport_bottom = hex_to_color("2B2B2B")
 
-// Accent alpha
-theme_edit.accent_10a = .11
-theme_edit.accent_20a = .28
-theme_edit.accent_30a = .47
-theme_edit.accent_50a = 1
-theme_edit.accent_80a = 1
-
-// Neutral colors
-theme_edit.neutral = hex_to_color("FFFFFF")
-
-theme_edit.neutral_10 = theme_edit.neutral
-theme_edit.neutral_10a = .05
-
-theme_edit.neutral_20 = theme_edit.neutral
-theme_edit.neutral_20a = .14
-
-theme_edit.neutral_30 = theme_edit.neutral
-theme_edit.neutral_30a = .36
-
-theme_edit.neutral_40 = theme_edit.neutral
-theme_edit.neutral_40a = .45
-
-theme_edit.neutral_50 = theme_edit.neutral
-theme_edit.neutral_50a = .57
-
-theme_edit.neutral_60 = theme_edit.neutral
-theme_edit.neutral_60a = .91
+theme_edit.text_main = hex_to_color("FFFFFF")
+theme_edit.text_secondary = theme_edit.text_main
+theme_edit.text_tertiary = theme_edit.text_main
+theme_edit.border = theme_edit.text_main
+theme_edit.overlay = theme_edit.text_main
+theme_edit.button_text = hex_to_color("000000")
+theme_edit.button_text_alpha = .91
 
 // Other colors
 theme_edit.red_error = hex_to_color("FC453A")

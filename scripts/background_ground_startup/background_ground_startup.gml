@@ -6,7 +6,7 @@ var size, maincolor, secondarycolor;
 log("Ground vbuffer init")
 
 size = 192
-maincolor = c_neutral60
+maincolor = c_text_main
 secondarycolor = c_background
 
 // Axis divide line

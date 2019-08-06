@@ -33,9 +33,9 @@ if (accent != null)
 }
 else
 {
-	draw_outline(xx + 1, yy + 1, width - 2, height - 2, 1, c_neutral20, a_neutral20)
+	draw_outline(xx + 1, yy + 1, width - 2, height - 2, 1, c_border, a_border)
 	draw_box(xx, yy, width, height, false, setting_accent_custom, mcroani_arr[e_mcroani.ACTIVE])
-	draw_image(spr_icons, e_icon.eyedropper, xx + width/2, yy + height/2, 1, 1, merge_color(c_neutral50, c_background, mcroani_arr[e_mcroani.ACTIVE]), lerp(a_neutral50, 1, mcroani_arr[e_mcroani.ACTIVE]))
+	draw_image(spr_icons, e_icon.eyedropper, xx + width/2, yy + height/2, 1, 1, merge_color(c_text_secondary, c_background, mcroani_arr[e_mcroani.ACTIVE]), lerp(a_text_secondary, 1, mcroani_arr[e_mcroani.ACTIVE]))
 }
 
 // Hover/press animation

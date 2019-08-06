@@ -38,10 +38,10 @@ if (mouseon)
 
 var ani, color, alpha;
 ani = mcroani_arr[e_mcroani.ACTIVE]
-color = merge_color(c_neutral50, c_accent, ani)
-alpha = lerp(a_neutral50, 1, ani)
+color = merge_color(c_text_secondary, c_accent, ani)
+alpha = lerp(a_text_secondary, 1, ani)
 
-draw_box(xx, yy, width, height, false, c_accent10, lerp(0, a_accent10, mcroani_arr[e_mcroani.HOVER]))
+draw_box(xx, yy, width, height, false, c_accent_overlay, lerp(0, a_accent_overlay, mcroani_arr[e_mcroani.HOVER]))
 
 draw_label(name, xx + width/2, yy + 27, fa_center, fa_bottom, color, alpha)
 

@@ -50,7 +50,7 @@ if (window_busy = "elementselection")
 		element_select_height = mouse_y - (element_select_start_y - tab.scroll.value)
 	}
 	
-	draw_box(element_select_x, element_select_y, element_select_width, element_select_height, false, c_accent20, a_accent20)
+	draw_box(element_select_x, element_select_y, element_select_width, element_select_height, false, c_accent_overlay, a_accent_overlay)
 	draw_outline(element_select_x, element_select_y, element_select_width, element_select_height, 2, c_accent, 1)
 }
 

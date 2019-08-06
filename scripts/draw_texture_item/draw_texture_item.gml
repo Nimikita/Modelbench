@@ -22,7 +22,7 @@ microani_set(string(tex) + "item", null, mouseon, false, tex = res_edit)
 microani_update(mouseon, false, tex = res_edit)
 draw_box_hover(xx, yy, wid, hei, mcroani_arr[e_mcroani.HOVER])
 
-draw_box(xx, yy, wid, hei, false, c_neutral10, a_neutral10 * mcroani_arr[e_mcroani.HOVER])
+draw_box(xx, yy, wid, hei, false, c_overlay, a_overlay * mcroani_arr[e_mcroani.HOVER])
 
 if (mouseon)
 {
@@ -37,10 +37,10 @@ if (mouseon)
 	}
 }
 
-draw_box(xx, yy, wid, hei, false, c_accent10, a_accent10 * mcroani_arr[e_mcroani.ACTIVE])
+draw_box(xx, yy, wid, hei, false, c_accent_overlay, a_accent_overlay * mcroani_arr[e_mcroani.ACTIVE])
 
 // Draw texture preview
-draw_box(xx + 8, yy + 8, 32, 32, false, c_neutral20, a_neutral20)
+draw_box(xx + 8, yy + 8, 32, 32, false, c_border, a_border)
 
 var xsca, ysca, scale;
 xsca = 32 / sprite_get_width(tex.sprite)
@@ -49,10 +49,10 @@ scale = min(xsca, ysca)
 draw_image(tex.sprite, 0, xx + 8, yy + 8, scale, scale)
 
 // Texture name
-draw_label(tex.filename, xx + 44 + 8, yy + 8 + 16, fa_left, fa_bottom, c_neutral60, a_neutral60, font_value)
+draw_label(tex.filename, xx + 44 + 8, yy + 8 + 16, fa_left, fa_bottom, c_text_main, a_text_main, font_value)
 
 // Texture size
-draw_label(text_get("assetstexturesize", tex.size[X], tex.size[Y]), xx + 44 + 8, yy + 8 + 30, fa_left, fa_bottom, c_neutral50, a_neutral50, font_caption)
+draw_label(text_get("assetstexturesize", tex.size[X], tex.size[Y]), xx + 44 + 8, yy + 8 + 30, fa_left, fa_bottom, c_text_secondary, a_text_secondary, font_caption)
 
 // Main texture?
 if (tex = app.res)

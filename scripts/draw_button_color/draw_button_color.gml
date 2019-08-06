@@ -34,7 +34,7 @@ buttonalpha = lerp(0, .17, mcroani_arr[e_mcroani.HOVER] * (1 - mcroani_arr[e_mcr
 buttonalpha = lerp(buttonalpha, .20, mcroani_arr[e_mcroani.PRESS])
 
 draw_box(xx, yy, 28, 28, false, buttoncolor, buttonalpha)
-draw_outline(xx + 2, yy + 2, 24, 24, 2, test(color_get_lum(color) > 150, c_black, c_white), a_neutral20)
+draw_outline(xx + 2, yy + 2, 24, 24, 2, test(color_get_lum(color) > 150, c_black, c_white), a_border)
 
 // Colorpicker icon
 var iconcolor, iconalpha;
@@ -45,7 +45,7 @@ draw_image(spr_icons, e_icon.eyedropper, xx + 14, yy + 14, 1, 1, iconcolor, icon
 // Hover effect
 draw_box_hover(xx, yy, 28, 28, mcroani_arr[e_mcroani.HOVER])
 
-draw_label(text_get(name), xx + 28 + 12, yy + 14, fa_left, fa_middle, lerp(c_neutral50, c_neutral30, mcroani_arr[e_mcroani.DISABLED]), lerp(a_neutral50, a_neutral30, mcroani_arr[e_mcroani.DISABLED]), font_emphasis)
+draw_label(text_get(name), xx + 28 + 12, yy + 14, fa_left, fa_middle, lerp(c_text_secondary, c_text_tertiary, mcroani_arr[e_mcroani.DISABLED]), lerp(a_text_secondary, a_text_tertiary, mcroani_arr[e_mcroani.DISABLED]), font_emphasis)
 
 microani_update(mouseon, mouseclick, popup = popup_colorpicker && popup_colorpicker.value_name = name)
 

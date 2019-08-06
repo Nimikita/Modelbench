@@ -57,7 +57,7 @@ labelx = xx - (labeltextw/2) + capwid
 labely = yy + 36
 
 // Background
-draw_image(sprite, 0, xx, yy, 1, 1, c_neutral50, a_neutral50)
+draw_image(sprite, 0, xx, yy, 1, 1, c_text_secondary, a_text_secondary)
 
 // Bar
 draw_image(spr_dial_dash, 0, xx, yy, 1, 1, color, 1, value)
@@ -119,7 +119,7 @@ if (window_busy = "" && window_focus = name && mouse_wheel<>0)
 }
 
 // Textbox
-draw_label(text_get(name) + ":", xx - (labeltextw/2), labely, fa_left, fa_middle, c_neutral50, a_neutral50, font_emphasis)
+draw_label(text_get(name) + ":", xx - (labeltextw/2), labely, fa_left, fa_middle, c_text_secondary, a_text_secondary, font_emphasis)
 draw_set_font(font_value)
 if (window_focus = string(tbx))
 {
@@ -127,4 +127,4 @@ if (window_focus = string(tbx))
 		script_execute(script, clamp(snap(string_get_real(tbx.text, 0), snapval), minval, maxval), false)
 }
 else
-	draw_label(text, labelx, labely, fa_left, fa_middle, c_neutral60, a_neutral60, font_value)
+	draw_label(text, labelx, labely, fa_left, fa_middle, c_text_main, a_text_main, font_value)

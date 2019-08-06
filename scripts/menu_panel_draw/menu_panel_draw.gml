@@ -91,7 +91,7 @@ if (panelextease > 0)
 	draw_box(panelx, panely, 300, panelh, false, c_background, 1)
 	
 	// Split line
-	draw_box(panelx + 300, panely, 1, panelh, false, c_neutral10, a_neutral10)
+	draw_box(panelx + 300, panely, 1, panelh, false, c_overlay, a_overlay)
 }
 
 // Draw menu

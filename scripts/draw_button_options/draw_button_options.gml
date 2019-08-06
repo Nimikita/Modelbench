@@ -40,10 +40,10 @@ if (mouseon && mouse_left_released)
 
 // Draw button background
 var buttoncolor, buttonalpha;
-buttoncolor = merge_color(c_accent, c_accent50, mcroani_arr[e_mcroani.HOVER] * (1 - mcroani_arr[e_mcroani.PRESS]))
-buttoncolor = merge_color(buttoncolor, c_accent80, mcroani_arr[e_mcroani.PRESS])
-buttonalpha = lerp(1, a_accent50, mcroani_arr[e_mcroani.HOVER] * (1 - mcroani_arr[e_mcroani.PRESS]))
-buttonalpha = lerp(buttonalpha, a_accent80, mcroani_arr[e_mcroani.PRESS])
+buttoncolor = merge_color(c_accent, c_accent_hover, mcroani_arr[e_mcroani.HOVER] * (1 - mcroani_arr[e_mcroani.PRESS]))
+buttoncolor = merge_color(buttoncolor, c_accent_pressed, mcroani_arr[e_mcroani.PRESS])
+buttonalpha = lerp(1, a_accent_hover, mcroani_arr[e_mcroani.HOVER] * (1 - mcroani_arr[e_mcroani.PRESS]))
+buttonalpha = lerp(buttonalpha, a_accent_pressed, mcroani_arr[e_mcroani.PRESS])
 
 draw_box(xx, yy, width, height, false, buttoncolor, buttonalpha)
 

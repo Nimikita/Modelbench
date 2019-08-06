@@ -109,9 +109,9 @@ content_mouseon = !popup_mouseon && !snackbar_mouseon
 
 // Tabs background
 draw_box(dx, dy, content_width, tabsh, false, c_background, 1)
-draw_box(dx, dy, content_width, tabsh, false, c_neutral10, a_neutral10)
+draw_box(dx, dy, content_width, tabsh, false, c_overlay, a_overlay)
 
-draw_box(dx, dy + tabsh, content_width, 1, false, c_neutral20, a_neutral20)
+draw_box(dx, dy + tabsh, content_width, 1, false, c_border, a_border)
 
 for (var t = 0; t < panel.tab_list_amount; t++)
 {
@@ -140,22 +140,22 @@ for (var t = 0; t < panel.tab_list_amount; t++)
 	}
 	
 	// Label
-	draw_label(tabtitle[t], dx + 8, round(dy + (dh/2)), fa_left, fa_center, test(sel, c_accent, c_neutral50), test(sel, 1, a_neutral50), font_label)
+	draw_label(tabtitle[t], dx + 8, round(dy + (dh/2)), fa_left, fa_center, test(sel, c_accent, c_text_secondary), test(sel, 1, a_text_secondary), font_label)
 	
 	// Outline/border
 	if (sel)
 	{
 		if (t != 0)
-			draw_box(dx - 1, dy, 1, dh, false, c_neutral10, a_neutral10)
+			draw_box(dx - 1, dy, 1, dh, false, c_overlay, a_overlay)
 			
-		draw_box(dx + dw, dy, 1, dh, false, c_neutral10, a_neutral10)
+		draw_box(dx + dw, dy, 1, dh, false, c_overlay, a_overlay)
 	}
 	else
 	{
 		if (t < panel.tab_list_amount)
 		{
 			if (panel.tab_selected != t + 1)
-				draw_box(dx + dw, dy + 2, 1, dh - 4, false, c_neutral10, a_neutral10)
+				draw_box(dx + dw, dy + 2, 1, dh - 4, false, c_overlay, a_overlay)
 		}
 	}
 	
@@ -191,7 +191,7 @@ for (var t = 0; t < panel.tab_list_amount; t++)
 	dx += tabw[t]
 }
 
-draw_box(boxx, boxy, 1, boxh, false, c_neutral10, a_neutral10)
+draw_box(boxx, boxy, 1, boxh, false, c_overlay, a_overlay)
 
 panel.list_glow = max(0, panel.list_glow - 0.05 * delta)
 if (tabmaxw > tabsw)

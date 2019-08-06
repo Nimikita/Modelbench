@@ -43,7 +43,7 @@ if (sb.icon_custom)
 else
 	draw_image(spr_icons, sb.icon, content_x + 22, dy, 1, 1, color, 1)
 
-draw_label(text_get(sb.label), dx, dy, fa_left, fa_center, c_neutral60, 1, font_label)
+draw_label(text_get(sb.label), dx, dy, fa_left, fa_center, c_text_main, 1, font_label)
 
 if (draw_button_icon("snackbarclose" + string(sb), content_x + content_width - 8 - 28, content_y + 8, 28, 28, false, e_icon.close, null, null))
 	sb.remove = true
@@ -64,7 +64,7 @@ dy += 22
 // Description line
 if (sb.description != "")
 {
-	draw_label(text_get(sb.description), dx, dy, fa_left, fa_center, c_neutral60, 1, font_value)
+	draw_label(text_get(sb.description), dx, dy, fa_left, fa_center, c_text_main, 1, font_value)
 	dy += 22
 }
 

@@ -20,10 +20,10 @@ script = null
 scriptvalue = null
 axis = X
 
-draw_label(text_get(name), xx, yy + 16, fa_left, fa_bottom, c_neutral50, a_neutral50, font_label)
+draw_label(text_get(name), xx, yy + 16, fa_left, fa_bottom, c_text_secondary, a_text_secondary, font_label)
 yy += 24
 
-draw_outline(xx, yy, w, h, 1, c_neutral20, a_neutral20)
+draw_outline(xx, yy, w, h, 1, c_border, a_border)
 
 for (var i = 0; i < buttoncount; i++)
 {	
@@ -39,14 +39,14 @@ for (var i = 0; i < buttoncount; i++)
 	
 	// Draw base button
 	var backgroundcolor, backgroundalpha;
-	backgroundcolor = merge_color(c_neutral10, c_neutral20, mcroani_arr[e_mcroani.PRESS])
-	backgroundalpha = lerp(0, a_neutral10, min(1.0, mcroani_arr[e_mcroani.HOVER] + mcroani_arr[e_mcroani.ACTIVE]))
-	backgroundalpha = lerp(backgroundalpha, a_neutral20, mcroani_arr[e_mcroani.PRESS])
+	backgroundcolor = merge_color(c_overlay, c_border, mcroani_arr[e_mcroani.PRESS])
+	backgroundalpha = lerp(0, a_overlay, min(1.0, mcroani_arr[e_mcroani.HOVER] + mcroani_arr[e_mcroani.ACTIVE]))
+	backgroundalpha = lerp(backgroundalpha, a_border, mcroani_arr[e_mcroani.PRESS])
 	draw_box(buttonx, yy, buttonsize, h, false, backgroundcolor, backgroundalpha)
 	
 	var labelcolor, labelalpha;
-	labelcolor = merge_color(c_neutral50, c_accent, mcroani_arr[e_mcroani.ACTIVE])
-	labelalpha = lerp(a_neutral50, 1, mcroani_arr[e_mcroani.ACTIVE])
+	labelcolor = merge_color(c_text_secondary, c_accent, mcroani_arr[e_mcroani.ACTIVE])
+	labelalpha = lerp(a_text_secondary, 1, mcroani_arr[e_mcroani.ACTIVE])
 	
 	var icon = togglebutton_icon[i];
 	
@@ -65,7 +65,7 @@ for (var i = 0; i < buttoncount; i++)
 	draw_label(text_get(togglebutton_name[@ i]), startx, yy + (h/2), fa_left, fa_middle, labelcolor, labelalpha, font_button)
 	
 	if (i > 0)
-		draw_box(buttonx, yy + 4, 1, h - 8, false, c_neutral20, a_neutral20)
+		draw_box(buttonx, yy + 4, 1, h - 8, false, c_border, a_border)
 	
 	microani_update(mouseon, mouseon && mouse_left, togglebutton_active[i])
 	

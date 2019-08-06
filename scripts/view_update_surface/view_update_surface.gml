@@ -125,7 +125,7 @@ if (el_edit_amount > 0)
 							icon = e_icon.transform
 						
 						if (icon != null)
-							draw_image(spr_icons, icon, origin[X] + 1, origin[Y] + 1, 1, 1, c_neutral50, a_neutral50)
+							draw_image(spr_icons, icon, origin[X] + 1, origin[Y] + 1, 1, 1, c_text_secondary, a_text_secondary)
 						else
 							draw_circle_ext(origin[X], origin[Y], 8, false, c_origin, 1)
 					}

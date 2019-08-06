@@ -27,10 +27,10 @@ if (mouseon)
 
 microani_set("snackbaraction" + string(snackbar), script, mouseon, mouseon && mouse_left, false)
 
-color = merge_color(c_neutral50, c_neutral60, mcroani_arr[e_mcroani.HOVER])
+color = merge_color(c_text_secondary, c_text_main, mcroani_arr[e_mcroani.HOVER])
 color = merge_color(color, c_accent, mcroani_arr[e_mcroani.PRESS])
 
-alpha = lerp(a_neutral50, a_neutral60, mcroani_arr[e_mcroani.HOVER])
+alpha = lerp(a_text_secondary, a_text_main, mcroani_arr[e_mcroani.HOVER])
 alpha = lerp(alpha, 1, mcroani_arr[e_mcroani.PRESS])
 
 draw_label(name, xx, yy + hei/2, fa_left, fa_center, color, alpha, font_button)

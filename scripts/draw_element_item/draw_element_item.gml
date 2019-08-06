@@ -32,12 +32,12 @@ if (itemvisible)
 	if (itemhover)
 	{
 		mouse_cursor = cr_handpoint
-		draw_box(dx, itemy, dw, itemh, false, c_neutral10, a_neutral10)
+		draw_box(dx, itemy, dw, itemh, false, c_overlay, a_overlay)
 	}
 
 	// Select highlight
 	if (element.selected)
-		draw_box(dx, itemy, dw, itemh, false, c_accent10, a_accent10)
+		draw_box(dx, itemy, dw, itemh, false, c_accent_overlay, a_accent_overlay)
 
 	// Add to select list
 	if ((window_busy = "elementselection" || window_busy = "elementselectiondone"))
@@ -45,7 +45,7 @@ if (itemvisible)
 		var highlight = box_intersect(dx, itemy, dw, itemh, element_select_x, element_select_y, element_select_width, element_select_height);
 	
 		if (highlight)
-			draw_box(dx, itemy, dw, itemh, false, c_accent20, a_accent20)
+			draw_box(dx, itemy, dw, itemh, false, c_accent_overlay, a_accent_overlay)
 	
 		if (element_select_list != null && highlight)
 			ds_list_add(element_select_list, element)
@@ -74,7 +74,7 @@ if (itemvisible)
 		visiblehover = app_mouse_box(xx, itemy + 4, 20, 20)
 	}
 	else if (element.tree_hidden)
-		draw_image(spr_icons, e_icon.dot, xx + 10, itemy + 14, 1, 1, c_neutral50, a_neutral50)
+		draw_image(spr_icons, e_icon.dot, xx + 10, itemy + 14, 1, 1, c_text_secondary, a_text_secondary)
 }
 
 
@@ -93,7 +93,7 @@ if (itemvisible)
 		lockhover = app_mouse_box(xx, itemy + 4, 20, 20)
 	}
 	else if (element.tree_locked)
-		draw_image(spr_icons, e_icon.dot, xx + 10, itemy + 14, 1, 1, c_neutral50, a_neutral50)
+		draw_image(spr_icons, e_icon.dot, xx + 10, itemy + 14, 1, 1, c_text_secondary, a_text_secondary)
 }
 
 #endregion
@@ -136,7 +136,7 @@ if (itemvisible)
 		}
 	}
 
-	draw_image(spr_icons, icon, xx + 10, itemy + (itemh/2), 1, 1, c_neutral30, a_neutral30)
+	draw_image(spr_icons, icon, xx + 10, itemy + (itemh/2), 1, 1, c_text_tertiary, a_text_tertiary)
 }
 
 #endregion
@@ -167,13 +167,13 @@ if (itemvisible)
 	
 	if (element.name = "" || element.hidden || element.tree_hidden)
 	{
-		labelcolor = c_neutral40
-		labelalpha = a_neutral40
+		labelcolor = c_text_secondary
+		labelalpha = a_text_secondary
 	}
 	else
 	{
-		labelcolor = c_neutral60
-		labelalpha = a_neutral60
+		labelcolor = c_text_main
+		labelalpha = a_text_main
 	}
 	
 	if (element.name_duplicate || element.name_empty)
@@ -228,7 +228,7 @@ if (itemvisible && movehover && window_busy = "elementmove")
 	
 	if (indexmove && mouse_y < (itemy + movesize)) // Parent to above this element's index
 	{
-		draw_box(xx, itemy - 3, ww, 6, false, c_accent30, a_accent30)
+		draw_box(xx, itemy - 3, ww, 6, false, c_accent_hover, a_accent_hover)
 		
 		if (index = 0)
 			tip_set(text_get("assetsmoveabove", element_name_get(element)), xx + ww/2, itemy, null, null, false)
@@ -240,14 +240,14 @@ if (itemvisible && movehover && window_busy = "elementmove")
 	}
 	else if (indexmove && mouse_y > (itemy + itemh - movesize)) // Parent below this element's index
 	{
-		draw_box(xx, itemy + itemh - 3, ww, 6, false, c_accent30, a_accent30)
+		draw_box(xx, itemy + itemh - 3, ww, 6, false, c_accent_hover, a_accent_hover)
 		tip_set(text_get("assetsmovebelow", element_name_get(element)), xx + ww/2, itemy + itemh, null, null, false)
 		element_move_parent = element.parent
 		element_move_index = index + 1
 	}
 	else if (element.element_type = TYPE_PART) // Parent to the end of this element
 	{
-		draw_box(xx, itemy, ww, itemh, false, c_accent30, a_accent30)
+		draw_box(xx, itemy, ww, itemh, false, c_accent_hover, a_accent_hover)
 		tip_set(text_get("assetsparentto", element_name_get(element)), xx + ww/2, itemy + itemh, null, null, false)
 		element_move_parent = element
 	}
@@ -263,12 +263,12 @@ if (element.element_type = TYPE_PART && element.extend)
 	if (element.shape_list != null && !hideshapes)
 	{
 		if (itemvisible)
-			draw_box(linex, itemy + itemh, 1, (28 * ds_list_size(element.shape_list)) - 13, false, c_neutral20, a_neutral20)
+			draw_box(linex, itemy + itemh, 1, (28 * ds_list_size(element.shape_list)) - 13, false, c_border, a_border)
 		
 		for(var i = 0; i < ds_list_size(element.shape_list); i++)
 		{
 			if (itemvisible)
-				draw_box(linex + 1, dy + (itemh/2), 9, 1, false, c_neutral20, a_neutral20)
+				draw_box(linex + 1, dy + (itemh/2), 9, 1, false, c_border, a_border)
 			
 			draw_element_item(element.shape_list[|i], dy, increment + 1)
 		}

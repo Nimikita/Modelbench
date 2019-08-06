@@ -45,7 +45,7 @@ if (recent_list_amount = 0 && (wid > sprite_get_width(spr_splash)/2 && hei > spr
 	gpu_set_tex_filter(false)
 	
 	//draw_label(text_get("recentnone"), midx, midy - 4, fa_center, fa_bottom, c_accent, 1, font_heading)
-	//draw_label(text_get("recentnonesub", text_get("startupnewmodel")), midx, midy + 4, fa_center, fa_top, a_neutral50, a_neutral50, font_subheading)
+	//draw_label(text_get("recentnonesub", text_get("startupnewmodel")), midx, midy + 4, fa_center, fa_top, a_text_secondary, a_text_secondary, font_subheading)
 	return 0
 }
 
@@ -71,18 +71,18 @@ if (mode = "simple")
 		iconx -= 28
 		
 		// Name
-		draw_label(string_limit_font(filename_name(item.filename), (iconx - xx) - 12, font_value), xx + 12, recenty + 22, fa_left, fa_middle, c_neutral60, a_neutral60, font_value)
+		draw_label(string_limit_font(filename_name(item.filename), (iconx - xx) - 12, font_value), xx + 12, recenty + 22, fa_left, fa_middle, c_text_main, a_text_main, font_value)
 		
 		// Seperator
-		draw_box(xx + 4, recenty + 43, wid - 8, 1, false, c_neutral10, a_neutral10)
+		draw_box(xx + 4, recenty + 43, wid - 8, 1, false, c_overlay, a_overlay)
 		
 		// Animation
 		microani_set("recent" + string(item), null, mouseon, mouseon && mouse_left, false)
 		
-		draw_box(xx, recenty, wid, 44, false, c_neutral10, a_neutral10 * mcroani_arr[e_mcroani.HOVER])
+		draw_box(xx, recenty, wid, 44, false, c_overlay, a_overlay * mcroani_arr[e_mcroani.HOVER])
 		draw_box_hover(xx, recenty, wid, 44, mcroani_arr[e_mcroani.HOVER])
 		
-		draw_box(xx, recenty, wid, 44, false, c_accent10, a_accent10 * mcroani_arr[e_mcroani.PRESS])
+		draw_box(xx, recenty, wid, 44, false, c_accent_overlay, a_accent_overlay * mcroani_arr[e_mcroani.PRESS])
 		
 		microani_update(mouseon, mouseon && mouse_left, false)
 		
@@ -128,7 +128,7 @@ if (mode = "list")
 	timex = xx + 12 + namewidth + 12
 	
 	// File name
-	draw_label(text_get("recentfilename"), namex, recenty + 14, fa_left, fa_middle, c_neutral50, a_neutral50, font_emphasis)
+	draw_label(text_get("recentfilename"), namex, recenty + 14, fa_left, fa_middle, c_text_secondary, a_text_secondary, font_emphasis)
 	
 	var filenamesort = (recent_sort_mode = e_recent_sort.filename_ascend || recent_sort_mode = e_recent_sort.filename_descend);
 	if (app_mouse_box(namex, recenty, namewidth, 28) || filenamesort)
@@ -138,7 +138,7 @@ if (mode = "list")
 	}
 	
 	// Last opened
-	draw_label(text_get("recentlastopened"), timex, recenty + 14, fa_left, fa_middle, c_neutral50, a_neutral50, font_emphasis)
+	draw_label(text_get("recentlastopened"), timex, recenty + 14, fa_left, fa_middle, c_text_secondary, a_text_secondary, font_emphasis)
 	
 	var datesort = (recent_sort_mode = e_recent_sort.date_ascend || recent_sort_mode = e_recent_sort.date_descend);
 	if (app_mouse_box(timex, recenty, timewidth, 28) || datesort)
@@ -158,10 +158,10 @@ if (mode = "list")
 		var item = recent_list_display[|i];
 		
 		// Name
-		draw_label(string_limit_font(filename_name(item.filename), namewidth, font_value), xx + 12, recenty + 22, fa_left, fa_middle, c_neutral60, a_neutral60, font_value)
+		draw_label(string_limit_font(filename_name(item.filename), namewidth, font_value), xx + 12, recenty + 22, fa_left, fa_middle, c_text_main, a_text_main, font_value)
 		
 		// Last opened
-		draw_label(string_limit_font(recent_time_string(item.last_opened), timewidth, font_value), timex, recenty + 22, fa_left, fa_middle, c_neutral50, a_neutral50, font_value)
+		draw_label(string_limit_font(recent_time_string(item.last_opened), timewidth, font_value), timex, recenty + 22, fa_left, fa_middle, c_text_secondary, a_text_secondary, font_value)
 		
 		// Icons
 		var iconx = xx + wid - 8;
@@ -185,15 +185,15 @@ if (mode = "list")
 		}
 		
 		// Seperator
-		draw_box(xx + 4, recenty + 43, wid - 8, 1, false, c_neutral10, a_neutral10)
+		draw_box(xx + 4, recenty + 43, wid - 8, 1, false, c_overlay, a_overlay)
 		
 		// Animation
 		microani_set("recent" + string(item), null, mouseon, mouseon && mouse_left, false)
 		
-		draw_box(xx, recenty, wid, 44, false, c_neutral10, a_neutral10 * mcroani_arr[e_mcroani.HOVER])
+		draw_box(xx, recenty, wid, 44, false, c_overlay, a_overlay * mcroani_arr[e_mcroani.HOVER])
 		draw_box_hover(xx, recenty, wid, 44, mcroani_arr[e_mcroani.HOVER])
 		
-		draw_box(xx, recenty, wid, 44, false, c_accent10, a_accent10 * mcroani_arr[e_mcroani.PRESS])
+		draw_box(xx, recenty, wid, 44, false, c_accent_overlay, a_accent_overlay * mcroani_arr[e_mcroani.PRESS])
 		
 		microani_update(mouseon, mouseon && mouse_left, false)
 		

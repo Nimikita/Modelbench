@@ -20,7 +20,7 @@ if (xx + width < content_x || xx > content_x + content_width || yy + height < co
 mouseon = app_mouse_box(xx, yy, width, height)
 
 // Background
-draw_box(xx, yy, width, height, false, c_neutral10, a_neutral10)
+draw_box(xx, yy, width, height, false, c_overlay, a_overlay)
 
 if (!instance_exists(preview.select))
 {

@@ -51,10 +51,10 @@ microani_set(name, script, mouseon, mouseclick, false)
 
 // Draw button background
 var buttoncolor, buttonalpha;
-buttoncolor = merge_color(c_accent, c_accent50, mcroani_arr[e_mcroani.HOVER] * (1 - mcroani_arr[e_mcroani.PRESS]))
-buttoncolor = merge_color(buttoncolor, c_accent80, mcroani_arr[e_mcroani.PRESS])
-buttonalpha = lerp(1, a_accent50, mcroani_arr[e_mcroani.HOVER] * (1 - mcroani_arr[e_mcroani.PRESS]))
-buttonalpha = lerp(buttonalpha, a_accent80, mcroani_arr[e_mcroani.PRESS])
+buttoncolor = merge_color(c_accent, c_accent_hover, mcroani_arr[e_mcroani.HOVER] * (1 - mcroani_arr[e_mcroani.PRESS]))
+buttoncolor = merge_color(buttoncolor, c_accent_pressed, mcroani_arr[e_mcroani.PRESS])
+buttonalpha = lerp(1, a_accent_hover, mcroani_arr[e_mcroani.HOVER] * (1 - mcroani_arr[e_mcroani.PRESS]))
+buttonalpha = lerp(buttonalpha, a_accent_pressed, mcroani_arr[e_mcroani.PRESS])
 
 draw_box(xx, yy, width, height, false, buttoncolor, buttonalpha)	
 
@@ -64,13 +64,14 @@ draw_box_hover(xx, yy, width, height, mcroani_arr[e_mcroani.HOVER])
 // Bevel shading
 draw_box_bevel(xx, yy, width, height, 1)
 
-var textx, color;
+var textx, color, alpha;
 textx = xx
-color = test(color_get_lum(c_accent) > 135 || setting_accent < 9, c_background, c_neutral60)
+color = test(color_get_lum(c_accent) > 135 || setting_accent < 9, c_button_text, c_text_main)
+alpha = test(color_get_lum(c_accent) > 135 || setting_accent < 9, a_button_text, a_text_main)
 if (icon != null)
 	textx += 28
 
-draw_label(text_get(name), textx + textwidth/2, yy + height/2, fa_center, fa_middle, color, 1)
+draw_label(text_get(name), textx + textwidth/2, yy + height/2, fa_center, fa_middle, color, alpha)
 
 if (icon != null)
 	draw_image(spr_icons, icon, xx + 18, yy + 18, 1, 1, color, 1)

@@ -35,9 +35,9 @@ h = ease(test((menu_ani_type = "show"), "easeoutexpo", "easeinexpo"), menu_ani) 
 yy = test(menu_flip, (menu_y - h), (menu_y + menu_button_h))
 
 if (h > 2)
-	draw_outline(menu_x, test(menu_flip, yy, yy + 4), menu_w, h - 4, 2, c_neutral50, a_neutral50)
+	draw_outline(menu_x, test(menu_flip, yy, yy + 4), menu_w, h - 4, 2, c_text_secondary, a_text_secondary)
 draw_box(menu_x, yy, menu_w, h, false, c_background, 1)
-draw_line_ext(menu_x, test(menu_flip, yy + h, yy), menu_x + menu_w, test(menu_flip, yy + h, yy), c_neutral10, a_neutral10)
+draw_line_ext(menu_x, test(menu_flip, yy + h, yy), menu_x + menu_w, test(menu_flip, yy + h, yy), c_overlay, a_overlay)
 
 // Drop shadow
 var shadowy, shadowh, shadowani;
@@ -88,14 +88,14 @@ switch (menu_type)
 			{
 				mouseitem = item
 				mouse_cursor = cr_handpoint
-				draw_box(menu_x, dy, menu_w - 12 * menu_scroll.needed, menu_item_h, false, c_neutral10, a_neutral10)
+				draw_box(menu_x, dy, menu_w - 12 * menu_scroll.needed, menu_item_h, false, c_overlay, a_overlay)
 				draw_box_hover(menu_x + 2, itemy, menu_w - (12 * menu_scroll.needed) - 4, itemh, 1)
 			}
 			
 			// Highlight box
 			highlight = (menu_value = item.value || (mouseitem = item && (mouse_left || mouse_left_released)))
 			if (highlight)
-				draw_box(menu_x, dy, menu_w - 12 * menu_scroll.needed, menu_item_h, false, c_accent10, a_accent10)
+				draw_box(menu_x, dy, menu_w - 12 * menu_scroll.needed, menu_item_h, false, c_accent_overlay, a_accent_overlay)
 			
 			// Sprite
 			if (item.tex)
@@ -104,7 +104,7 @@ switch (menu_type)
 			// Caption
 			dx += test((item.icon || item.tex), imgsize + 8, 0)
 			text = string_limit(item.text, menu_w - 12 * menu_scroll.needed - 8-dx)
-			draw_label(text, menu_x + dx, itemy + itemh / 2, fa_left, fa_middle, c_neutral60, a_neutral60)
+			draw_label(text, menu_x + dx, itemy + itemh / 2, fa_left, fa_middle, c_text_main, a_text_main)
 			dy += menu_item_h
 		}
 		break

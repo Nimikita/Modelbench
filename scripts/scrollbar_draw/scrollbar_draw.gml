@@ -135,11 +135,11 @@ pressed = (window_busy = "scrollbar" && window_focus = string(sb))
 
 if (dir = e_scroll.HORIZONTAL)
 {
-	draw_box(xx, yy, size, barsizeadj, false, c_neutral10, a_neutral10)
+	draw_box(xx, yy, size, barsizeadj, false, c_overlay, a_overlay)
 	draw_box(xx + barpos, yy, barsize, barsizeadj, false, c_accent, 1)
 }
 else
 {
-	draw_box(xx, yy, barsizeadj, size, false, c_neutral10, a_neutral10)
+	draw_box(xx, yy, barsizeadj, size, false, c_overlay, a_overlay)
 	draw_box(xx, yy + barpos, barsizeadj, barsize, false, c_accent, 1)
 }

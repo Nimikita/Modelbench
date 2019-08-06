@@ -8,7 +8,7 @@ var width = 4 + 20 + 4 + 8 + element_move_width + 8;
 dx = mouse_x
 dy = mouse_y
 
-draw_box(dx, dy, width, element_move_obj.elements * 28, false, c_accent20, a_accent20)
+draw_box(dx, dy, width, element_move_obj.elements * 28, false, c_accent_overlay, a_accent_overlay)
 draw_outline(dx, dy, width, element_move_obj.elements * 28, 2, c_accent, 1)
 
 for (var e = 0; e < element_move_obj.elements; e++)
@@ -31,8 +31,8 @@ for (var e = 0; e < element_move_obj.elements; e++)
 		}
 	}
 	
-	draw_image(spr_icons, icon, dx + 14, dy + 14, 1, 1, c_neutral30, a_neutral30)
+	draw_image(spr_icons, icon, dx + 14, dy + 14, 1, 1, c_text_tertiary, a_text_tertiary)
 	
-	draw_label(element_name_get(element), dx + 36, dy + 14, fa_left, fa_middle, c_neutral60, a_neutral60, font_value)
+	draw_label(element_name_get(element), dx + 36, dy + 14, fa_left, fa_middle, c_text_main, a_text_main, font_value)
 	dy += 28
 }

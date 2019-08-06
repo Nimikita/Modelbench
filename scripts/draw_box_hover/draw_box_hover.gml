@@ -13,8 +13,8 @@ yy = argument[1]
 width = argument[2]
 height = argument[3]
 size = 2
-color = c_accent30
-alpha = a_accent30 * argument[4]
+color = c_hover
+alpha = a_hover * argument[4]
 
 if (alpha = 0)
 	return 0

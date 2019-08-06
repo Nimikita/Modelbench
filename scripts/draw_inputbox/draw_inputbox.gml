@@ -41,11 +41,11 @@ microani_set(string(tbx) + inputname, script, mouseon || window_focus = string(t
 
 // Field background
 var outlinecolor, outlinealpha, outlineoff;
-outlinecolor = merge_color(c_neutral50, c_accent, mcroani_arr[e_mcroani.ACTIVE])
-outlinecolor = merge_color(outlinecolor, c_neutral30, mcroani_arr[e_mcroani.DISABLED])
+outlinecolor = merge_color(c_text_secondary, c_accent, mcroani_arr[e_mcroani.ACTIVE])
+outlinecolor = merge_color(outlinecolor, c_text_tertiary, mcroani_arr[e_mcroani.DISABLED])
 
-outlinealpha = lerp(a_neutral50, 1, mcroani_arr[e_mcroani.ACTIVE])
-outlinealpha = lerp(outlinealpha, a_neutral30, mcroani_arr[e_mcroani.DISABLED])
+outlinealpha = lerp(a_text_secondary, 1, mcroani_arr[e_mcroani.ACTIVE])
+outlinealpha = lerp(outlinealpha, a_text_tertiary, mcroani_arr[e_mcroani.DISABLED])
 
 if (err)
 {
@@ -68,7 +68,7 @@ draw_set_font(font_value)
 
 if (disabled)
 {
-	draw_label(string_limit(tbx.text, w - padding * 2), xx + padding + 7, yy + h - 6, fa_left, fa_bottom, c_neutral30, a_neutral30, font_value)
+	draw_label(string_limit(tbx.text, w - padding * 2), xx + padding + 7, yy + h - 6, fa_left, fa_bottom, c_text_tertiary, a_text_tertiary, font_value)
 	update = ""
 }
 else
@@ -77,7 +77,7 @@ else
 }
 
 if (tbx.text = "" && placeholder != "")
-    draw_label(string_limit(placeholder, w - padding * 2), xx + padding + 7, yy + h - 6, fa_left, fa_bottom, c_neutral30, a_neutral30, font_value)
+    draw_label(string_limit(placeholder, w - padding * 2), xx + padding + 7, yy + h - 6, fa_left, fa_bottom, c_text_tertiary, a_text_tertiary, font_value)
 
 if (update && (script != null))
     script_execute(script, tbx.text)

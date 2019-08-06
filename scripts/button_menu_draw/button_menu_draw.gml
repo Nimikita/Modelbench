@@ -38,7 +38,7 @@ if (window_busy = "buttonmenu")
 draw_set_alpha(buttonmenuease)
 
 draw_dropshadow(content_x, content_y, content_width, content_height, c_black, buttonmenuease)
-draw_outline(content_x, content_y, content_width, content_height, 1, c_neutral20, a_neutral20 * buttonmenuease)
+draw_outline(content_x, content_y, content_width, content_height, 1, c_border, a_border * buttonmenuease)
 
 draw_box(content_x, content_y, content_width, content_height, false, c_background, 1)
 
@@ -59,13 +59,13 @@ for (var i = 0; i < button_menu_amount; i++)
 		mouse_cursor = cr_handpoint
 		
 		if (!mouse_left)
-			draw_box(itemx, itemy, content_width, 32, false, c_neutral10, a_neutral10)
+			draw_box(itemx, itemy, content_width, 32, false, c_overlay, a_overlay)
 		else
-			draw_box(itemx, itemy, content_width, 32, false, c_accent10, a_accent10)
+			draw_box(itemx, itemy, content_width, 32, false, c_accent_overlay, a_accent_overlay)
 	}
 	
-	draw_image(spr_icons, item.icon, itemx + 16, itemy + 16, 1, 1, c_neutral50, a_neutral50)
-	draw_label(item.text, itemx + 32, itemy + 16, fa_left, fa_middle, c_neutral60, a_neutral60)
+	draw_image(spr_icons, item.icon, itemx + 16, itemy + 16, 1, 1, c_text_secondary, a_text_secondary)
+	draw_label(item.text, itemx + 32, itemy + 16, fa_left, fa_middle, c_text_main, a_text_main)
 	
 	itemy += 32
 }
@@ -76,12 +76,12 @@ draw_image(spr_tooltip_arrow, 0, button_menu_x, content_y, 1, 1, c_background, b
 if (mouseitem = button_menu_item[0])
 {
 	if (mouse_left)
-		draw_image(spr_tooltip_arrow, 0, button_menu_x, content_y, 1, 1, c_accent10, a_accent10 * buttonmenuease)
+		draw_image(spr_tooltip_arrow, 0, button_menu_x, content_y, 1, 1, c_accent_overlay, a_accent_overlay * buttonmenuease)
 	else
-		draw_image(spr_tooltip_arrow, 0, button_menu_x, content_y, 1, 1, c_neutral10, a_neutral10 * buttonmenuease)
+		draw_image(spr_tooltip_arrow, 0, button_menu_x, content_y, 1, 1, c_overlay, a_overlay * buttonmenuease)
 }
 	
-draw_image(spr_tooltip_arrow, 1, button_menu_x, content_y, 1, 1, c_neutral20, a_neutral20 * buttonmenuease)
+draw_image(spr_tooltip_arrow, 1, button_menu_x, content_y, 1, 1, c_border, a_border * buttonmenuease)
 
 draw_set_alpha(1)
 

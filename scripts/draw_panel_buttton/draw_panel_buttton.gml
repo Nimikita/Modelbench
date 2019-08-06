@@ -39,17 +39,17 @@ if (mouseon)
 
 microani_set(name, script, mouseon, mouseon && mouse_left, value || (mouseon && mouse_left) || (mouseon && mouse_left_released))
 
-draw_box(xx, yy, wid, hei, false, c_neutral10, mcroani_arr[e_mcroani.HOVER] * a_neutral10)
-draw_box(xx, yy, wid, hei, false, c_accent10, a_accent10 * mcroani_arr[e_mcroani.ACTIVE])
+draw_box(xx, yy, wid, hei, false, c_overlay, mcroani_arr[e_mcroani.HOVER] * a_overlay)
+draw_box(xx, yy, wid, hei, false, c_accent_overlay, a_accent_overlay * mcroani_arr[e_mcroani.ACTIVE])
 
 var labelcolor, labelalpha;
-labelcolor = merge_color(c_neutral60, c_neutral30, mcroani_arr[e_mcroani.DISABLED])
-labelalpha = lerp(a_neutral60, a_neutral30, mcroani_arr[e_mcroani.DISABLED])
+labelcolor = merge_color(c_text_main, c_text_tertiary, mcroani_arr[e_mcroani.DISABLED])
+labelalpha = lerp(a_text_main, a_text_tertiary, mcroani_arr[e_mcroani.DISABLED])
 draw_label(text_get(name), xx + 70, yy + hei/2, fa_left, fa_center, labelcolor, labelalpha, font_value)
 
 var iconcolor, iconalpha;
-iconcolor = merge_color(c_neutral30, c_neutral20, mcroani_arr[e_mcroani.DISABLED])
-iconalpha = lerp(a_neutral30, a_neutral20, mcroani_arr[e_mcroani.DISABLED])
+iconcolor = merge_color(c_text_tertiary, c_border, mcroani_arr[e_mcroani.DISABLED])
+iconalpha = lerp(a_text_tertiary, a_border, mcroani_arr[e_mcroani.DISABLED])
 draw_image(spr_icons, icon, xx + 38, yy + hei/2, 1, 1, iconcolor, iconalpha)
 
 if (arrow)

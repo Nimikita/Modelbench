@@ -88,7 +88,7 @@ if (!tab.script)
 			
 			// Hide button
 			tab_control(24)
-			draw_label(text_get(cat[c].name), dx, dy + 13, fa_left, fa_center, c_neutral30, a_neutral30, font_subheading)
+			draw_label(text_get(cat[c].name), dx, dy + 13, fa_left, fa_center, c_text_tertiary, a_text_tertiary, font_subheading)
 			if (draw_button_icon(cat[c].name + "close", dx + dw - 24 + icon_button_offset, dy, 24, 24, cat[c].show, null, null, null, test(cat[c].show, "tooltipclose", "tooltipopen"), spr_arrow_ani))
 				cat[c].show = !cat[c].show
 			tab_next()
@@ -103,7 +103,7 @@ if (!tab.script)
 			if (c < catamount - 1)
 			{
 				dy += 20
-				draw_line_ext(content_x, dy - 14, content_x + dividew - 1, dy - 14, c_neutral10, a_neutral10)
+				draw_line_ext(content_x, dy - 14, content_x + dividew - 1, dy - 14, c_overlay, a_overlay)
 			}
 			
 			maxh = max(dy - dy_start, maxh)
@@ -123,6 +123,6 @@ else
 // Scrollbar
 content_mouseon = !popup_mouseon && !snackbar_mouseon
 if (content_direction = e_scroll.VERTICAL)
-	scrollbar_draw(tab.scroll, e_scroll.VERTICAL, content_x + dividew + 3, content_y, content_height, maxh + 15, c_accent, c_accent50, c_black)
+	scrollbar_draw(tab.scroll, e_scroll.VERTICAL, content_x + dividew + 3, content_y, content_height, maxh + 15, c_accent, c_accent_hover, c_black)
 else
 	scrollbar_draw(tab.scroll, e_scroll.HORIZONTAL, content_x, content_y + content_height - 35, content_width, dx + dw - content_x + tab.scroll.value + 15)
