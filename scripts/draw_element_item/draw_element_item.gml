@@ -5,7 +5,7 @@
 /// @desc Draws an element item
 
 var element, yy, increment;
-var itemx, itemy, itemw, itemh, movehover, itemhover, expandhover, lockhover, visiblehover, itemvisible, xx, ww, linex, minw;
+var itemx, itemy, itemw, itemh, movehover, itemhover, expandhover, lockhover, visiblehover, itemvisible, xx, ww, linex, minw, mouseonlist;
 var hideshapes;
 element = argument[0]
 yy = argument[1]
@@ -30,15 +30,14 @@ if (itemvisible)
 {
 	// Hover highlight
 	if (itemhover)
-	{
 		mouse_cursor = cr_handpoint
-		draw_box(dx, itemy, dw, itemh, false, c_overlay, a_overlay)
-	}
-
+	
 	// Select highlight
 	if (element.selected)
+		draw_box(dx, itemy, dw, itemh, false, c_overlay, a_overlay)
+	else if (itemhover)
 		draw_box(dx, itemy, dw, itemh, false, c_accent_overlay, a_accent_overlay)
-
+	
 	// Add to select list
 	if ((window_busy = "elementselection" || window_busy = "elementselectiondone"))
 	{
@@ -114,13 +113,13 @@ if (itemvisible && haschildren)
 }
 expandhover = app_mouse_box(xx, itemy + 4, 20, 20)
 
-
 xx += 24
+mouseonlist = (itemvisible && itemhover && !expandhover && !lockhover && !visiblehover)
 
 // Element icon
 if (itemvisible)
 {
-	var icon;
+	var icon, iconcolor, iconalpha;
 	if (element.element_type = TYPE_PART)
 		icon = e_icon.part
 	else
@@ -135,8 +134,25 @@ if (itemvisible)
 				icon = e_icon.plane
 		}
 	}
-
-	draw_image(spr_icons, icon, xx + 10, itemy + (itemh/2), 1, 1, c_text_tertiary, a_text_tertiary)
+	
+	if (element.selected || (mouseonlist && (mouse_left || mouse_left_released)))
+	{
+		iconcolor = c_accent
+		iconalpha = 1
+	}
+	else
+	{
+		iconcolor = c_text_tertiary
+		iconalpha = a_text_tertiary
+	}
+	
+	if (element.name_duplicate || element.name_empty)
+	{
+		iconcolor = c_error
+		iconalpha = 1
+	}
+	
+	draw_image(spr_icons, icon, xx + 10, itemy + (itemh/2), 1, 1, iconcolor, iconalpha)
 }
 
 #endregion
@@ -176,8 +192,17 @@ if (itemvisible)
 		labelalpha = a_text_main
 	}
 	
+	if (element.selected || (mouseonlist && (mouse_left || mouse_left_released)))
+	{
+		labelcolor = c_accent
+		labelalpha = 1
+	}
+	
 	if (element.name_duplicate || element.name_empty)
+	{
 		labelcolor = c_error
+		labelalpha = 1
+	}
 	
 	labelshort = string_limit_font(labelname, itemw - (xx - itemx) - 52, font_value)
 	draw_label(labelshort, xx, itemy + (itemh/2), fa_left, fa_middle, labelcolor, labelalpha)
@@ -190,8 +215,6 @@ if (itemvisible)
 
 if (itemvisible && itemhover && !expandhover && !lockhover && !visiblehover)
 {
-	draw_box_hover(dx, itemy, dw, itemh, 1)
-	
 	if (mouse_move > 5)
 	{
 		// Start box selectionor moving
