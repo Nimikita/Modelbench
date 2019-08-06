@@ -29,3 +29,7 @@ model_changed = false
 
 warning_empty_part_names = false
 warning_same_part_names = false
+
+// Recover model from previous session
+if (file_exists_lib(temp_model_backup))
+	snackbar_recover_model()

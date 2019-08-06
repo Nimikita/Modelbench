@@ -43,56 +43,56 @@ if (sb.icon_custom)
 else
 	draw_image(spr_icons, sb.icon, content_x + 22, dy, 1, 1, color, 1)
 
-draw_label(sb.label, dx, dy, fa_left, fa_center, c_neutral60, 1, font_label)
+draw_label(text_get(sb.label), dx, dy, fa_left, fa_center, c_neutral60, 1, font_label)
 
 if (draw_button_icon("snackbarclose" + string(sb), content_x + content_width - 8 - 28, content_y + 8, 28, 28, false, e_icon.close, null, null))
 	sb.remove = true
+
+// Action 1
+if (sb.description = "" && (sb.snackbar_action1 && !sb.snackbar_action2))
+{
+	var actionx = content_x + content_width - 8 - 28 - 4 - string_width_font(text_get(sb.snackbar_action1_name), font_button);
+	if (draw_button_secondary(sb.snackbar_action1_name, actionx, dy, null, null, null, false))
+	{
+		snackbar_script = sb.snackbar_action1
+		snackbar_script_value = sb.snackbar_action1_value
+	}
+}
 
 dy += 22
 
 // Description line
 if (sb.description != "")
 {
-	draw_label(sb.description, dx, dy, fa_left, fa_center, c_neutral60, 1, font_value)
+	draw_label(text_get(sb.description), dx, dy, fa_left, fa_center, c_neutral60, 1, font_value)
 	dy += 22
 }
 
 // Action lines
-if (sb.snackbar_action1 || sb.snackbar_action2)
+if (sb.description != "" || (sb.snackbar_action1 && sb.snackbar_action2))
 {
-	dy -= 10
+	dx = content_x + 28
+	dy = content_y + content_height - 40
 	
-	draw_set_font(font_button)
-	if (sb.snackbar_action1 != null)
+	// Action 1
+	if (sb.snackbar_action1)
 	{
-		draw_label(sb.snackbar_action1_name, dx, dy + 9, fa_left, fa_center, c_neutral50, a_neutral50)
-		if (app_mouse_box(dx, dy, string_width(sb.snackbar_action1_name), 18))
+		if (draw_button_secondary(sb.snackbar_action1_name, dx, dy, null, null, null, false))
 		{
-			mouse_cursor = cr_handpoint
-			draw_box(dx, dy, string_width(sb.snackbar_action1_name), 18, false, c_neutral20, a_neutral20)
-			
-			if (mouse_left_pressed)
-			{
-				snackbar_script = sb.snackbar_action1
-				snackbar_script_value = sb.snackbar_action1_value
-			}
+			snackbar_script = sb.snackbar_action1
+			snackbar_script_value = sb.snackbar_action1_value
 		}
 	}
-	dx += string_width_font(sb.snackbar_action1_name, font_button) + 24
 	
-	if (sb.snackbar_action2 != null)
+	dx += string_width_font(text_get(sb.snackbar_action1_name), font_button) + 28 + 4
+	
+	// Action 2
+	if (sb.snackbar_action2)
 	{
-		draw_label(sb.snackbar_action2_name, dx, dy + 9, fa_left, fa_center, c_neutral50, a_neutral50)
-		if (app_mouse_box(dx, dy, string_width(sb.snackbar_action2_name), 18))
+		if (draw_button_secondary(sb.snackbar_action2_name, dx, dy, null, null, null, false))
 		{
-			mouse_cursor = cr_handpoint
-			draw_box(dx, dy, string_width(sb.snackbar_action1_name), 18, false, c_neutral20, a_neutral20)
-			
-			if (mouse_left_pressed)
-			{
-				snackbar_script = sb.snackbar_action2
-				snackbar_script_value = sb.snackbar_action2_value
-			}
+			snackbar_script = sb.snackbar_action2
+			snackbar_script_value = sb.snackbar_action2_value
 		}
 	}
 }

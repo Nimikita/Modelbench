@@ -14,7 +14,7 @@ description = ""
 variant = e_snackbar.DEFAULT
 color = c_white
 
-time_created = date_current_datetime()
+time_created = current_time
 dismiss_time = 2
 
 snackbar_action1 = null

@@ -1,6 +1,11 @@
 /// snackbar_save_model()
 
-new_snackbar(e_icon.checkmark, text_get("snackbarsavemodel"), "", e_snackbar.SUCCESS)
+snackbar_delete("snackbarsavemodel")
+snackbar_delete("snackbarwarningemptymodelname")
+snackbar_delete("snackbarwarningemptypartname")
+snackbar_delete("snackbarwarningsamepartname")
+
+new_snackbar(e_icon.checkmark, "snackbarsavemodel", "", e_snackbar.SUCCESS)
 
 if (model_name = "")
 	snackbar_empty_model_name()

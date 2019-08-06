@@ -7,8 +7,8 @@
         "lastchange": "2019.08.05"
     },
 	"startup/": {
-		"recovermodelheader": "Unsaved model detected",
-		"recovermodeldesc": "An unsaved model was found from an interupted session of Modelbench. If you would like to continue editing the model, click '%1' to load the latest available backup.\nDon't forget to save after recovering!",
+		"modeldetected": "Unsaved model detected",
+		"modeldetecteddesc": "An unsaved model was found from a previous Modelbench session.",
 		"recovermodel": "RECOVER...",
 		"browse": "BROWSE...",
 		"newmodel": "NEW MODEL",

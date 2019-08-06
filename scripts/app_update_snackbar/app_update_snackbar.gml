@@ -20,11 +20,19 @@ with (obj_snackbar)
 	
 	snackbar_height = 44
 	
+	// Calculate additional height
 	if (description != "")
+	{
 		snackbar_height += 22
-	
-	if (snackbar_action1 || snackbar_action2)
-		snackbar_height += 22
+		
+		if (snackbar_action1 || snackbar_action2)
+			snackbar_height += 34
+	}
+	else
+	{
+		if (snackbar_action1 && snackbar_action2)
+			snackbar_height += 34
+	}
 }
 
 snackbar_amount = ds_list_size(snackbar_list)
@@ -37,6 +45,10 @@ for (var i = 0; i < snackbar_amount; i++)
 	
 	with (snackbar)
 	{
+		// Delay just a tad so ensure smooth entry animation
+		if (current_time - time_created < 100)
+			continue
+		
 		snackbary -= (26 + snackbar_height)
 		snackbar_goal_y = snackbary
 		

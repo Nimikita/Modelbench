@@ -24,29 +24,6 @@ dx = (window_width / 2) + (996 / 2) - 24
 dy = 240
 dw = 996
 
-// Recover last session
-if (file_exists_lib(temp_model_backup))
-{
-	var xx;
-	xx = (window_width / 2) - (996 / 2)
-	
-	dy = 192 + 8
-	//dw /= 2
-	draw_outline(xx, dy, dw, 144, 1, c_neutral20, a_neutral20)
-	
-	draw_image(spr_icons, e_icon.warning, xx + 20, dy + 22, 1, 1, c_error, 1)
-	draw_label(text_get("startuprecovermodelheader"), xx + 36, dy + 22, fa_left, fa_middle, c_error, 1, font_heading)
-	
-	draw_set_font(font_emphasis)
-	draw_label(string_wrap(text_get("startuprecovermodeldesc", text_get("startuprecovermodel")), dw - 16), xx + 8, dy + 40, fa_left, fa_top, c_neutral50, a_neutral50, font_emphasis)
-	
-	draw_button_primary("startuprecovermodel", xx - 8, dy + 144 - 36 - 8, null, model_recover, e_icon.refresh, fa_right)
-	dw = 996
-	
-	//draw_box(xx, dy, dw, 144, false, c_accent10, a_accent10)
-	dy += 160
-}
-
 // Draw buttons
 var buttonwidth;
 buttonwidth = string_width_font(text_get("startupnewmodel"), font_button) + (28 * 2)

@@ -26,11 +26,11 @@ app_startup_themes()
 //alert_startup()
 json_startup()
 settings_startup()
-model_startup()
 render_startup()
 camera_startup()
 
 app_startup_interface()
+model_startup()
 
 startup_error = false
 

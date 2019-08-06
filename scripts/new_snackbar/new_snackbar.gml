@@ -6,6 +6,7 @@
 
 var sb = new(obj_snackbar);
 sb.icon = argument[0]
+sb.name = argument[1]
 sb.label = argument[1]
 
 if (argument_count > 2)
