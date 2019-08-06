@@ -42,17 +42,26 @@ microani_set(name, script, mouseon, mouseclick, false)
 draw_box_hover(xx, yy, width, height, mcroani_arr[e_mcroani.HOVER])
 
 // Box
+var bordercolor, borderalpha, labelcolor, labelalpha;
+bordercolor = merge_color(c_border, c_accent, mcroani_arr[e_mcroani.PRESS])
+borderalpha = lerp(a_border, 1, mcroani_arr[e_mcroani.PRESS])
+
+labelcolor = merge_color(c_accent, c_accent_hover, mcroani_arr[e_mcroani.HOVER])
+labelcolor = merge_color(labelcolor, c_accent_pressed, mcroani_arr[e_mcroani.PRESS])
+labelalpha = lerp(1, a_accent_hover, mcroani_arr[e_mcroani.HOVER])
+labelalpha = lerp(labelalpha, a_accent_pressed, mcroani_arr[e_mcroani.PRESS])
+
 draw_box(xx, yy, width, height, false, c_accent_overlay, a_accent_overlay * mcroani_arr[e_mcroani.PRESS])
-draw_outline(xx + 1, yy + 1, width - 2, height - 2, 1, c_border, a_border * (1.0 - (mcroani_arr[e_mcroani.HOVER] - mcroani_arr[e_mcroani.PRESS])))
+draw_outline(xx + 1, yy + 1, width - 2, height - 2, 1, bordercolor, borderalpha)
 
 var textx = xx;
 if (icon != null)
 	textx += 28
 
-draw_label(text_get(name), textx + textwidth/2, yy + height/2, fa_center, fa_middle, c_text_secondary, a_text_secondary)
+draw_label(text_get(name), textx + textwidth/2, yy + height/2, fa_center, fa_middle, labelcolor, labelalpha)
 
 if (icon != null)
-	draw_image(spr_icons, icon, xx + 18, yy + 18, 1, 1, c_text_secondary, a_text_secondary)
+	draw_image(spr_icons, icon, xx + 18, yy + 18, 1, 1, labelcolor, labelalpha)
 
 microani_update(mouseon, mouseclick, false)
 

@@ -39,14 +39,16 @@ for (var i = 0; i < buttoncount; i++)
 	
 	// Draw base button
 	var backgroundcolor, backgroundalpha;
-	backgroundcolor = merge_color(c_overlay, c_border, mcroani_arr[e_mcroani.PRESS])
+	backgroundcolor = merge_color(c_overlay, c_accent_overlay, mcroani_arr[e_mcroani.PRESS])
 	backgroundalpha = lerp(0, a_overlay, min(1.0, mcroani_arr[e_mcroani.HOVER] + mcroani_arr[e_mcroani.ACTIVE]))
-	backgroundalpha = lerp(backgroundalpha, a_border, mcroani_arr[e_mcroani.PRESS])
+	backgroundalpha = lerp(backgroundalpha, a_accent_overlay, mcroani_arr[e_mcroani.PRESS])
 	draw_box(buttonx, yy, buttonsize, h, false, backgroundcolor, backgroundalpha)
 	
 	var labelcolor, labelalpha;
-	labelcolor = merge_color(c_text_secondary, c_accent, mcroani_arr[e_mcroani.ACTIVE])
-	labelalpha = lerp(a_text_secondary, 1, mcroani_arr[e_mcroani.ACTIVE])
+	labelcolor = merge_color(c_accent, c_accent_hover, mcroani_arr[e_mcroani.HOVER])
+	labelcolor = merge_color(labelcolor, c_accent_pressed, min(1.0, mcroani_arr[e_mcroani.PRESS] + mcroani_arr[e_mcroani.ACTIVE]))
+	labelalpha = lerp(1, c_accent_hover, mcroani_arr[e_mcroani.HOVER])
+	labelalpha = lerp(labelalpha, c_accent_pressed, min(1.0, mcroani_arr[e_mcroani.PRESS] + mcroani_arr[e_mcroani.ACTIVE]))
 	
 	var icon = togglebutton_icon[i];
 	
