@@ -2807,6 +2807,14 @@
             }
         },
         {
+            "Key": "62d63209-549e-47cf-920e-7f44a3bd760c",
+            "Value": {
+                "id": "6dcade4b-0d68-4759-846a-eb0f9818a0ed",
+                "resourcePath": "scripts\\draw_button_borderless\\draw_button_borderless.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "63ab63b1-7cf8-472d-88aa-49b12c1c526f",
             "Value": {
                 "id": "31965075-0dce-456a-a275-a960dc6083ce",
@@ -7334,6 +7342,7 @@
         "f4b6aafb-8b6c-4607-99bd-67d81940aab6",
         "53c0843b-f992-4be0-a8ca-5226d7d313dc",
         "5535892d-89cd-47e6-aa21-43af4b8995aa",
+        "62d63209-549e-47cf-920e-7f44a3bd760c",
         "5a24d436-34a2-4fad-8b2c-77f607dfd9b7",
         "7fb2b678-227f-471a-9afb-f4cb453259b8",
         "44376d12-1375-464b-96aa-0b213f7a1c68",

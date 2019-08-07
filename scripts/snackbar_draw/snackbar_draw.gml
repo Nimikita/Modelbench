@@ -52,7 +52,7 @@ if (draw_button_icon("snackbarclose" + string(sb), content_x + content_width - 8
 if (sb.description = "" && (sb.snackbar_action1 && !sb.snackbar_action2))
 {
 	var actionx = content_x + content_width - 8 - 28 - 4 - string_width_font(text_get(sb.snackbar_action1_name), font_button);
-	if (draw_button_secondary(sb.snackbar_action1_name, actionx, dy, null, null, null, false))
+	if (draw_button_borderless(sb.snackbar_action1_name, actionx, dy, null, string(sb), null))
 	{
 		snackbar_script = sb.snackbar_action1
 		snackbar_script_value = sb.snackbar_action1_value
@@ -77,7 +77,7 @@ if (sb.description != "" || (sb.snackbar_action1 && sb.snackbar_action2))
 	// Action 1
 	if (sb.snackbar_action1)
 	{
-		if (draw_button_secondary(sb.snackbar_action1_name, dx, dy, null, null, null, false))
+		if (draw_button_borderless(sb.snackbar_action1_name, dx, dy, null, string(sb), null))
 		{
 			snackbar_script = sb.snackbar_action1
 			snackbar_script_value = sb.snackbar_action1_value
@@ -89,7 +89,7 @@ if (sb.description != "" || (sb.snackbar_action1 && sb.snackbar_action2))
 	// Action 2
 	if (sb.snackbar_action2)
 	{
-		if (draw_button_secondary(sb.snackbar_action2_name, dx, dy, null, null, null, false))
+		if (draw_button_borderless(sb.snackbar_action2_name, dx, dy, null, string(sb), null))
 		{
 			snackbar_script = sb.snackbar_action2
 			snackbar_script_value = sb.snackbar_action2_value
