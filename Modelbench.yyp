@@ -2575,6 +2575,14 @@
             }
         },
         {
+            "Key": "5bd1c24e-0957-430c-ae33-459009147280",
+            "Value": {
+                "id": "c85070a1-a723-4be4-b850-c0663f6e5cc1",
+                "resourcePath": "scripts\\draw_divide\\draw_divide.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "5c4ffcb6-e19e-461d-9168-6009ffc157f4",
             "Value": {
                 "id": "10d4b4e9-60db-41fe-b921-8d13a2081832",
@@ -7582,6 +7590,7 @@
         "835bd27f-dafe-4154-a63b-f0c9393063ad",
         "a11f6d2f-8007-4893-802c-3f4c02a6447a",
         "9d178a8e-33e5-410a-9eee-c8286e31e63d",
+        "5bd1c24e-0957-430c-ae33-459009147280",
         "cca08fc8-8eed-4232-939e-d01629bf764b",
         "aba254ae-1041-4044-b6b8-4989d15300c5",
         "777ff19e-a224-4604-94c4-264dd02a91bf",

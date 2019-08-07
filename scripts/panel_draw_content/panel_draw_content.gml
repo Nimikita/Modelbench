@@ -6,7 +6,7 @@ minh = 160
 maxh = 0
 
 dx = content_x + 12
-dy = content_y + 14//48
+dy = content_y + 14
 dw = content_width - 24
 dh = content_height
 tab = content_tab
@@ -79,13 +79,6 @@ if (!tab.script)
 		
 		repeat (cats)
 		{
-			/*
-			if ((c mod 2) = 0)
-				draw_box(dx, dy, dw, 24, false, c_red, 0.25)
-			else
-				draw_box(dx, dy, dw, 24, false, c_blue, 0.25)
-			*/
-			
 			// Hide button
 			tab_control(24)
 			draw_label(text_get(cat[c].name), dx, dy + 13, fa_left, fa_center, c_text_tertiary, a_text_tertiary, font_subheading)
@@ -95,22 +88,17 @@ if (!tab.script)
 			
 			// Draw contents
 			if (cat[c].show && cat[c].script)
-			{
 				script_execute(cat[c].script)
-				//dy += 10
-			}
 			
 			if (c < catamount - 1)
 			{
 				dy += 20
-				draw_line_ext(content_x, dy - 14, content_x + dividew - 1, dy - 14, c_overlay, a_overlay)
+				draw_divide(content_x, dy - 13, dividew - 1)
 			}
 			
 			maxh = max(dy - dy_start, maxh)
 			c++
 		}
-		//if (col < columns - 1)
-		//	dx += dw + 8
 	}
 	
 }
