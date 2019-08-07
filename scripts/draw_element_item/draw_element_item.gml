@@ -33,10 +33,10 @@ if (itemvisible)
 		mouse_cursor = cr_handpoint
 	
 	// Select highlight
-	if (element.selected)
-		draw_box(dx, itemy, dw, itemh, false, c_overlay, a_overlay)
-	else if (itemhover)
+	if (itemhover && mouse_left)
 		draw_box(dx, itemy, dw, itemh, false, c_accent_overlay, a_accent_overlay)
+	else if (element.selected || itemhover)
+		draw_box(dx, itemy, dw, itemh, false, c_overlay, a_overlay)
 	
 	// Add to select list
 	if ((window_busy = "elementselection" || window_busy = "elementselectiondone"))
