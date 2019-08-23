@@ -73,38 +73,61 @@ switch (menu_type)
 		var dy = yy;
 		for (var m = round(menu_scroll.value / menu_item_h); m < menu_amount; m++)
 		{
-			var item, itemy, itemh, imgsize, dx, highlight, text;
+			var item, itemy, itemh, imgsize, dx, highlight, text, hover, textcolor, textalpha, backgroundcolor, backgroundalpha;
 			
 			if (dy + menu_item_h > yy + h)
 				break
 			
 			item = menu_item[m]
-			itemy = dy + menu_item_padding
-			itemh = menu_item_h - (menu_item_padding * 2)
-			imgsize = itemh - 4
-			dx = 8//menu_item_h / 2
+			itemy = dy
+			itemh = menu_item_h
+			imgsize = 20//itemh - 4
+			dx = 12//menu_item_h / 2
+			hover = app_mouse_box(menu_x, dy, menu_w - 12 * menu_scroll.needed, menu_item_h)
+			textcolor = c_text_main
+			textalpha = a_text_main
+			backgroundcolor = c_overlay
+			backgroundalpha = 0
 			
-			if (app_mouse_box(menu_x, dy, menu_w - 12 * menu_scroll.needed, menu_item_h))
+			if (hover)
 			{
 				mouseitem = item
 				mouse_cursor = cr_handpoint
-				draw_box(menu_x, dy, menu_w - 12 * menu_scroll.needed, menu_item_h, false, c_overlay, a_overlay)
-				draw_box_hover(menu_x + 2, itemy, menu_w - (12 * menu_scroll.needed) - 4, itemh, 1)
+				
+				
+				backgroundcolor = c_overlay
+				backgroundalpha = a_overlay
 			}
 			
 			// Highlight box
 			highlight = (menu_value = item.value || (mouseitem = item && (mouse_left || mouse_left_released)))
 			if (highlight)
-				draw_box(menu_x, dy, menu_w - 12 * menu_scroll.needed, menu_item_h, false, c_accent_overlay, a_accent_overlay)
+			{
+				textcolor = c_accent
+				textalpha = 1
+				
+				if (hover && mouse_left)
+				{
+					backgroundcolor = c_accent_overlay
+					backgroundalpha = a_accent_overlay
+				}
+				else
+				{
+					backgroundcolor = c_overlay
+					backgroundalpha = a_overlay
+				}
+			}
+			
+			draw_box(menu_x, dy, menu_w - 12 * menu_scroll.needed, menu_item_h, false, backgroundcolor, backgroundalpha)
 			
 			// Sprite
 			if (item.tex)
-				draw_texture(item.tex, menu_x + 8, itemy + 2, imgsize / texture_width(item.tex), imgsize / texture_height(item.tex))
+				draw_texture(item.tex, menu_x + dx, itemy + menu_item_h/2 - (imgsize/2), imgsize / texture_width(item.tex), imgsize / texture_height(item.tex))
 			
 			// Caption
-			dx += test((item.icon || item.tex), imgsize + 8, 0)
-			text = string_limit(item.text, menu_w - 12 * menu_scroll.needed - 8-dx)
-			draw_label(text, menu_x + dx, itemy + itemh / 2, fa_left, fa_middle, c_text_main, a_text_main)
+			dx += test((item.icon || item.tex), 32, 0)
+			text = string_limit(item.text, menu_w - 12 * menu_scroll.needed - 8 - dx)
+			draw_label(text, menu_x + dx, itemy + itemh / 2, fa_left, fa_middle, textcolor, textalpha)
 			dy += menu_item_h
 		}
 		break
