@@ -25,6 +25,10 @@ draw_keycontrol("settingskeyremoveelements", dx, dy, dw, setting_key_remove_elem
 tab_next(false)
 
 tab_control_keycontrol()
+draw_keycontrol("settingskeyduplicateelements", dx, dy, dw, setting_key_duplicate_elements, setting_key_duplicate_elements_control, ord("D"), action_setting_key_duplicate_elements)
+tab_next(false)
+
+tab_control_keycontrol()
 draw_keycontrol("settingskeytoolselect", dx, dy, dw, setting_key_tool_select, setting_key_tool_select_control, ord("W"), action_setting_key_tool_select)
 tab_next(false)
 

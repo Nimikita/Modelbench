@@ -48,6 +48,9 @@ if (window_busy = "" && !textbox_isediting)
 	if (keyboard_check_pressed(setting_key_remove_elements) && app_check_control(setting_key_remove_elements_control))
 		action_el_remove()
 	
+	if (keyboard_check_pressed(setting_key_duplicate_elements) && app_check_control(setting_key_duplicate_elements_control))
+		action_el_duplicate()
+	
 	// Switch tools
 	if (keyboard_check_pressed(setting_key_tool_select) && app_check_control(setting_key_tool_select_control))
 		tool_selected = e_tool.SELECT
@@ -72,8 +75,7 @@ if (window_busy = "" && !textbox_isediting)
 		else
 			action_tl_select_all()
 	}
-	if (keyboard_check_pressed(setting_key_duplicate_timelines) && app_check_control(setting_key_duplicate_timelines_control))
-		action_tl_duplicate()
+	
 	*/
 	
 }
