@@ -4,7 +4,7 @@
         "language": "English",
         "translator": "Nimi",
         "forversion": "Alpha 5",
-        "lastchange": "2019.08.05"
+        "lastchange": "2019.08.24"
     },
 	"startup/": {
 		"modeldetected": "Unsaved model detected",
@@ -355,6 +355,7 @@
 			"save": "Save model",
 			"undo": "Undo",
 			"redo": "Redo",
+			"removeelements": "Remove elements",
 			"tool/": {
 				"select": "Select tool",
 				"move": "Move tool",

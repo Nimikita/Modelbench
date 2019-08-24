@@ -21,6 +21,10 @@ draw_keycontrol("settingskeyredo", dx, dy, dw, setting_key_redo, setting_key_red
 tab_next(false)
 
 tab_control_keycontrol()
+draw_keycontrol("settingskeyremoveelements", dx, dy, dw, setting_key_remove_elements, setting_key_remove_elements_control, ord("R"), action_setting_key_remove_elements)
+tab_next(false)
+
+tab_control_keycontrol()
 draw_keycontrol("settingskeytoolselect", dx, dy, dw, setting_key_tool_select, setting_key_tool_select_control, ord("W"), action_setting_key_tool_select)
 tab_next(false)
 

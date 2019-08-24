@@ -6,7 +6,10 @@
     "children": [
         "85bb0139-9a25-4e48-91ff-5915d0d6e7bd",
         "3944a3dc-b4fc-4fcd-a2ed-fe37094cee73",
-        "cb095ef1-a9e0-4c31-a6fb-c716370b86f1"
+        "cb095ef1-a9e0-4c31-a6fb-c716370b86f1",
+        "26bd232f-8553-4ab3-bbda-26a7ac6f8b1a",
+        "85774483-efbe-4f57-ac24-745fb4884a69",
+        "518f8d77-4fc5-41bc-ac31-d8e1bb13753f"
     ],
     "filterType": "GMScript",
     "folderName": "Restore",

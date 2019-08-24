@@ -28,6 +28,8 @@ setting_key_undo = ord("Z")
 setting_key_undo_control = true
 setting_key_redo = ord("Y")
 setting_key_redo_control = true
+setting_key_remove_elements = ord("R")
+setting_key_remove_elements_control = true
 
 setting_key_tool_select = ord("W")
 setting_key_tool_select_control = false

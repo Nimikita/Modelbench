@@ -25,6 +25,8 @@ json_save_object_start("controls")
 	json_save_var_bool("key_undo_control", setting_key_undo_control)
 	json_save_var("key_redo", setting_key_redo)
 	json_save_var_bool("key_redo_control", setting_key_redo_control)
+	json_save_var("key_remove_elements", setting_key_remove_elements)
+	json_save_var_bool("key_remove_elements_control", setting_key_remove_elements_control)
 	
 	json_save_var("key_tool_select", setting_key_tool_select)
 	json_save_var_bool("key_tool_select_control", setting_key_tool_select_control)

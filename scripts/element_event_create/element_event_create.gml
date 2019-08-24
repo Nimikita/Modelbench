@@ -9,6 +9,9 @@ display_name = ""
 name_duplicate = false
 name_empty = true
 
+element_type = TYPE_PART
+type = "block"
+
 parent = null
 parent_is_selected = false
 

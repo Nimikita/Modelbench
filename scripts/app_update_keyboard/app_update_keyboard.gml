@@ -1,6 +1,15 @@
 /// app_update_keyboard()
 /// @desc Handle keyboard shortcuts.
 
+if (keyboard_check_pressed(vk_f8))
+{
+	with (obj_model_element)
+	{
+		if (element_type = TYPE_SHAPE)
+			shape_update_vbuffer()
+	}
+}
+
 if (keyboard_check_pressed(vk_f9))
 	open_url(file_directory)
 
@@ -36,6 +45,9 @@ if (window_busy = "" && !textbox_isediting)
 	if (keyboard_check_pressed(setting_key_redo) && app_check_control(setting_key_redo_control))
 		action_toolbar_redo()
 	
+	if (keyboard_check_pressed(setting_key_remove_elements) && app_check_control(setting_key_remove_elements_control))
+		action_el_remove()
+	
 	// Switch tools
 	if (keyboard_check_pressed(setting_key_tool_select) && app_check_control(setting_key_tool_select_control))
 		tool_selected = e_tool.SELECT
@@ -62,9 +74,6 @@ if (window_busy = "" && !textbox_isediting)
 	}
 	if (keyboard_check_pressed(setting_key_duplicate_timelines) && app_check_control(setting_key_duplicate_timelines_control))
 		action_tl_duplicate()
-	
-	if (keyboard_check_pressed(setting_key_remove_timelines) && app_check_control(setting_key_remove_timelines_control))
-		action_tl_remove()
 	*/
 	
 }
