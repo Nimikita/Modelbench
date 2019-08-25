@@ -51,3 +51,4 @@ res_edit = res
 window_state = ""
 
 recent_add_wait = true
+app_update_name_warning()
