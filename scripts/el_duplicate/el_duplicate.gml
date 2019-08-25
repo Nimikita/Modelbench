@@ -9,9 +9,9 @@ with (copy)
 	root_copy = null
 	copy = null
 	
-	// Copy default values
+	// Copy values
 	for (var v = 0; v < e_value.amount; v++)
-		value_default[v] = el_value_find_save_id(v, null, other.value_default[v])
+		value[v] = el_value_find_save_id(v, null, other.value[v])
 	
 	if (other.element_type = TYPE_PART)
 	{
@@ -36,6 +36,8 @@ with (copy)
 		
 		part_update_depth()
 	}
+	else
+		update_vbuffer = true
 	
 	return id
 }
