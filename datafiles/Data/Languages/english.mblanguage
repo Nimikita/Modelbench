@@ -357,6 +357,7 @@
 			"redo": "Redo",
 			"removeelements": "Remove elements",
 			"duplicateelements": "Duplicate elements",
+			"selectelements": "Select elements",
 			"tool/": {
 				"select": "Select tool",
 				"move": "Move tool",

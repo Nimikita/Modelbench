@@ -1,17 +1,27 @@
 /// app_update_shape_vbuffer()
 /// @desc Updates shape vertex buffers if needed
 
-//if (setting_slow_generation && (floor(current_step) mod 2 != 0))
-//	return 0
-
+// Fill list
 with (obj_model_element)
 {
 	if (element_type = TYPE_SHAPE && update_vbuffer)
 	{
-		shape_update_vbuffer()
-		update_vbuffer = false
+		if (ds_list_find_index(app.update_vbuffer_list, id) = -1)
+			ds_list_add(app.update_vbuffer_list, id)
 		
-		if (app.setting_slow_generation)
-			break
+		update_vbuffer = false
 	}
 }
+
+for (var i = 0; i < ds_list_size(app.update_vbuffer_list); i++)
+{
+	with (app.update_vbuffer_list[|i])
+		shape_update_vbuffer()
+	
+	ds_list_delete(app.update_vbuffer_list, i)
+	i--
+	
+	if (app.setting_slow_generation)
+		break
+}
+

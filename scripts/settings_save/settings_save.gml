@@ -29,6 +29,8 @@ json_save_object_start("controls")
 	json_save_var_bool("key_remove_elements_control", setting_key_remove_elements_control)
 	json_save_var("key_duplicate_elements", setting_key_duplicate_elements)
 	json_save_var_bool("key_duplicate_elements_control", setting_key_duplicate_elements_control)
+	json_save_var("key_select_elements", setting_key_select_elements)
+	json_save_var_bool("key_select_elements_control", setting_key_select_elements_control)
 	
 	json_save_var("key_tool_select", setting_key_tool_select)
 	json_save_var_bool("key_tool_select_control", setting_key_tool_select_control)

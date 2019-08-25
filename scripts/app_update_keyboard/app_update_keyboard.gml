@@ -51,6 +51,14 @@ if (window_busy = "" && !textbox_isediting)
 	if (keyboard_check_pressed(setting_key_duplicate_elements) && app_check_control(setting_key_duplicate_elements_control))
 		action_el_duplicate()
 	
+	if (keyboard_check_pressed(setting_key_select_elements) && app_check_control(setting_key_select_elements_control)) 
+	{
+		if (el_edit)
+			action_el_deselect_all()
+		else
+			action_el_select_all()
+	}
+	
 	// Switch tools
 	if (keyboard_check_pressed(setting_key_tool_select) && app_check_control(setting_key_tool_select_control))
 		tool_selected = e_tool.SELECT
@@ -66,18 +74,6 @@ if (window_busy = "" && !textbox_isediting)
 	
 	if (keyboard_check_pressed(setting_key_tool_transform) && app_check_control(setting_key_tool_transform_control))
 		tool_selected = e_tool.TRANSFORM
-	
-	/*
-	if (keyboard_check_pressed(setting_key_select_timelines) && app_check_control(setting_key_select_timelines_control)) 
-	{
-		if (el_edit)
-			action_tl_deselect_all()
-		else
-			action_tl_select_all()
-	}
-	
-	*/
-	
 }
 else if (textbox_isediting && keyboard_check_pressed(vk_tab) && textbox_lastfocus.next_tbx)
 	window_focus = string(textbox_lastfocus.next_tbx)
