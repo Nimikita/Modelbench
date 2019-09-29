@@ -90,7 +90,7 @@ draw_set_alpha(prevalpha * lerp(1, .5, mcroani_arr[e_mcroani.DISABLED]))
 // Icon
 
 // Animated icon(if 'icon' is a sprite)
-if (sprite != spr_icons)
+if (sprite != spr_icons && sprite != null)
 {
 	var frame = floor((sprite_get_number(sprite) - 1) * mcroani_arr[e_mcroani.ACTIVE_LINEAR]);
 	draw_image(sprite, frame, xx + wid/2, yy + wid/2, 1, 1, c_text_secondary, a_text_secondary)

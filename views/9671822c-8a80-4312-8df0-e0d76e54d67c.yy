@@ -18,7 +18,8 @@
         "2cc498ee-374d-4fbd-b39a-e9501c0e7378",
         "13d6d947-6046-4c14-9c81-ed350fe3721c",
         "47c097f4-8ef5-4ab1-b42c-d49f7b5655b2",
-        "6b514f79-9969-4687-b1fe-7f5ec52ee422"
+        "6b514f79-9969-4687-b1fe-7f5ec52ee422",
+        "335fd65d-f89f-4111-8bb0-f6fc3ba45ede"
     ],
     "filterType": "GMScript",
     "folderName": "Update",

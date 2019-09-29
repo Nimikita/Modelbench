@@ -18,5 +18,5 @@ menu_item[0] = null
 menu_item_w = 0
 menu_item_h = 0
 menu_scroll = new(obj_scrollbar)
-menu_count = 0
 menu_top_y = 0
+menu_list = null

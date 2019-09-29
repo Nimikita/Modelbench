@@ -40,22 +40,23 @@ mouseclick = mouseon && mouse_left
 microani_set(string(tbx) + inputname, script, mouseon || window_focus = string(tbx), false, (mouseon && mouse_left) || (window_focus = string(tbx)))
 
 // Field background
-var outlinecolor, outlinealpha, outlineoff;
-outlinecolor = merge_color(c_text_secondary, c_accent, mcroani_arr[e_mcroani.ACTIVE])
-outlinecolor = merge_color(outlinecolor, c_text_tertiary, mcroani_arr[e_mcroani.DISABLED])
-
-outlinealpha = lerp(a_text_secondary, 1, mcroani_arr[e_mcroani.ACTIVE])
-outlinealpha = lerp(outlinealpha, a_text_tertiary, mcroani_arr[e_mcroani.DISABLED])
+var bordercolor, borderalpha;
+bordercolor = merge_color(c_border, c_text_secondary, mcroani_arr[e_mcroani.HOVER])
+borderalpha = lerp(a_border, a_text_secondary, mcroani_arr[e_mcroani.HOVER])
+bordercolor = merge_color(bordercolor, c_accent, max(mcroani_arr[e_mcroani.PRESS], mcroani_arr[e_mcroani.ACTIVE]))
+borderalpha = lerp(borderalpha, a_accent, max(mcroani_arr[e_mcroani.PRESS], mcroani_arr[e_mcroani.ACTIVE]))
+bordercolor = merge_color(bordercolor, c_border, mcroani_arr[e_mcroani.DISABLED])
+borderalpha = lerp(borderalpha, a_border, mcroani_arr[e_mcroani.DISABLED])
 
 if (err)
 {
-	outlinecolor = c_error
-	outlinealpha = 1
+	bordercolor = c_error
+	borderalpha = 1
 }
 
-outlineoff = lerp(0, 1, max(mcroani_arr[e_mcroani.ACTIVE], mcroani_arr[e_mcroani.HOVER])) * (1 - mcroani_arr[e_mcroani.DISABLED])
+//outlineoff = lerp(0, 1, max(mcroani_arr[e_mcroani.ACTIVE], mcroani_arr[e_mcroani.HOVER])) * (1 - mcroani_arr[e_mcroani.DISABLED])
 
-draw_outline(xx + outlineoff + 2, yy + outlineoff + 2, w - 4 - outlineoff*2, h - 4 - outlineoff*2, 2 + outlineoff, outlinecolor, outlinealpha)
+draw_outline(xx + 1, yy + 1, w - 2, h - 2, 1, bordercolor, borderalpha)
 
 if (err)
 {
@@ -69,7 +70,7 @@ draw_set_font(font_value)
 if (disabled)
 {
 	draw_label(string_limit(tbx.text, w - padding * 2), xx + padding + 7, yy + h - 6, fa_left, fa_bottom, c_text_tertiary, a_text_tertiary, font_value)
-	update = ""
+	update = false
 }
 else
 {
@@ -78,6 +79,9 @@ else
 
 if (tbx.text = "" && placeholder != "")
     draw_label(string_limit(placeholder, w - padding * 2), xx + padding + 7, yy + h - 6, fa_left, fa_bottom, c_text_tertiary, a_text_tertiary, font_value)
+
+// Disabled overlay
+draw_box(xx, yy, w, h, false, c_overlay, a_overlay * mcroani_arr[e_mcroani.DISABLED])
 
 if (update && (script != null))
     script_execute(script, tbx.text)

@@ -49,6 +49,8 @@ with (obj_model_element)
 
 res_edit = res
 window_state = ""
-
 recent_add_wait = true
+
+textures_list.update = true
+
 app_update_name_warning()

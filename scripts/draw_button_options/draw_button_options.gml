@@ -34,8 +34,9 @@ if (mouseon && mouse_left_released)
 	button_menu_y = yy + height
 	
 	// Init
-	button_menu_clear()
-	button_menu_list_init()
+	button_menu_list = list_init(button_menu_name)
+	button_menu_amount = ds_list_size(button_menu_list.item)
+	button_menu_w = button_menu_list.width
 }
 
 // Draw button background

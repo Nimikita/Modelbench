@@ -60,7 +60,12 @@ if (menu_name = name)
 
 microani_set(name, null, false, false, false)
 
-var labelcolor, labelalpha;
+var bordercolor, borderalpha, labelcolor, labelalpha;
+bordercolor = merge_color(c_border, c_text_secondary, mcroani_arr[e_mcroani.HOVER])
+borderalpha = lerp(a_border, a_text_secondary, mcroani_arr[e_mcroani.HOVER])
+bordercolor = merge_color(bordercolor, c_accent, mcroani_arr[e_mcroani.PRESS])
+borderalpha = lerp(borderalpha, a_accent, mcroani_arr[e_mcroani.PRESS])
+
 labelcolor = merge_color(c_text_secondary, c_text_tertiary, mcroani_arr[e_mcroani.DISABLED])
 labelalpha = lerp(a_text_secondary, a_text_tertiary, mcroani_arr[e_mcroani.DISABLED])
 
@@ -69,7 +74,8 @@ draw_label(text_get(name), xx, yy - 8, fa_left, fa_bottom, labelcolor, labelalph
 
 // Button
 draw_box(xx, yy, wid, hei, false, c_background, 1)
-draw_outline(xx, yy, wid, hei, 2, labelcolor, labelalpha)
+draw_outline(xx, yy, wid, hei, 1, bordercolor, borderalpha)
+draw_box_hover(xx - 1, yy - 1, wid + 2, hei + 2, mcroani_arr[e_mcroani.HOVER])
 
 // Sprite
 if (tex != null)
@@ -86,7 +92,10 @@ draw_label(string_limit(string_remove_newline(text), wid - textoff - hei - 8), x
 // Arrow
 draw_image(spr_arrow_up_down_ani, (mcroani_arr[e_mcroani.ACTIVE] * 15), xx + wid - hei / 2, yy + hei / 2, 1, 1, labelcolor, labelalpha)
 
-microani_update(false, false, test(menu_name = name, !flip, flip), disabled)
+// Disabled overlay
+draw_box(xx, yy, wid, hei, false, c_overlay, a_overlay * mcroani_arr[e_mcroani.DISABLED])
+
+microani_update(mouseon, mouseon && mouse_left, test(menu_name = name, !flip, flip), disabled)
 
 // Update menu position
 if (menu_name = name)
@@ -120,14 +129,10 @@ if (mouseon && mouse_left_released)
 		menu_top_y = yy - 2
 	
 	// Init
-	menu_clear()
 	if (type = e_menu.LIST)
-		menu_list_init()
-	//else if (type = e_menu.TIMELINE)
-	//	menu_timeline_init()
-	//else
-	//	menu_transition_init()
+		menu_list = list_init(menu_name)
 	
+	menu_amount = ds_list_size(menu_list.item)
 	menu_focus_selected()
 		
 	// Flip

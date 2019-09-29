@@ -23,6 +23,7 @@ textbox_startup()
 history_startup()
 
 app_startup_fonts()
+app_startup_interface_lists()
 
 app_startup_recent()
 

@@ -34,3 +34,4 @@ ds_list_add(accent_list,
 	hex_to_color("E539C7"), // Purple
 	hex_to_color("F21865")  // Pink
 )
+

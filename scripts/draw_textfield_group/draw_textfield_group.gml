@@ -23,21 +23,26 @@ fieldupdate = null
 hei = 28
 
 // Draw field backgrounds
-draw_outline(xx + 2, yy + 2, wid - 4, hei - 4, 2, c_text_secondary, a_text_secondary)
+draw_outline(xx + 1, yy + 1, wid - 2, hei - 2, 1, c_border, a_border)
 for (var i = 0; i < textfield_amount; i++)
 {
 	if (i > 0)
-		draw_box(fieldx, yy + 2, 2, hei - 4, false, c_text_secondary, a_text_secondary)
+		draw_box(fieldx, yy + 1, 1, hei - 2, false, c_border, a_border)
 	fieldx += (fieldwid + 2)
 }
 fieldx = xx + 2
 
 // Draw fields
-var mouseon, update, labelcolor, labelalpha;
+var mouseon, boxwid, update, labelcolor, labelalpha;
 for (var i = 0; i < textfield_amount; i++)
 {
 	axis_edit = textfield_axis[i]
 	mouseon = app_mouse_box(fieldx, yy + 2, fieldwid, hei - 4) && content_mouseon
+	boxwid = fieldwid
+	
+	// Adjust draw width to cover dividers
+	if (i <= textfield_amount - 1)
+		boxwid -= 1
 	
 	microani_set(string(textfield_textbox[i]) + textfield_name[i], textfield_script[i], mouseon || window_focus = string(textfield_textbox[i]), false, (mouseon && mouse_left) || (window_focus = string(textfield_textbox[i])))
 	
@@ -51,17 +56,17 @@ for (var i = 0; i < textfield_amount; i++)
 	
 	draw_label(text_get(textfield_name[i]), fieldx + 8, yy + (hei/2), fa_left, fa_middle, labelcolor, labelalpha, font_emphasis)
 	
-	draw_outline(fieldx, yy + 2, fieldwid, hei - 4, 2, c_accent, mcroani_arr[e_mcroani.ACTIVE])
+	draw_outline(fieldx - 1, yy + 1, boxwid + 2, hei - 2, 1, c_accent, mcroani_arr[e_mcroani.ACTIVE])
 	
-	draw_box_hover(fieldx - 2, yy, fieldwid + 4, hei, max(mcroani_arr[e_mcroani.HOVER], mcroani_arr[e_mcroani.ACTIVE]) * (1 - mcroani_arr[e_mcroani.DISABLED]))
+	draw_box_hover(fieldx - 2, yy, boxwid + 4, hei, max(mcroani_arr[e_mcroani.HOVER], mcroani_arr[e_mcroani.ACTIVE]) * (1 - mcroani_arr[e_mcroani.DISABLED]))
 	
 	microani_update(mouseon || window_focus = string(textfield_textbox[i]), false, window_focus = string(textfield_textbox[i]), false)
 	
 	// Textbox
-	var update = textbox_draw(textfield_textbox[i], fieldx + fieldwid - string_width_font(textfield_textbox[i].text, font_value) - 9, yy + (hei/2) - 8, string_width_font(textfield_textbox[i].text, font_value), 18);
+	var update = textbox_draw(textfield_textbox[i], fieldx + boxwid - string_width_font(textfield_textbox[i].text, font_value) - 9, yy + (hei/2) - 8, string_width_font(textfield_textbox[i].text, font_value), 18);
 	
 	// Textbox press
-	if (app_mouse_box(fieldx + 28, yy, fieldwid - 28, hei) && content_mouseon && window_focus != string(textfield_textbox[i]))
+	if (app_mouse_box(fieldx + 28, yy, boxwid - 28, hei) && content_mouseon && window_focus != string(textfield_textbox[i]))
 	{
 		if (mouse_left_pressed)
 		{

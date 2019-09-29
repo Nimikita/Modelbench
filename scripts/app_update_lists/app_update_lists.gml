@@ -1,0 +1,15 @@
+/// app_update_lists()
+
+if (textures_list.update)
+{
+	for (var i = 0; i < ds_list_size(textures_list.item); i++)
+		instance_destroy(textures_list.item[|i])
+	
+	ds_list_clear(textures_list.item)
+	list_edit = textures_list
+	
+	with (obj_texture)
+		list_add_item(filename, id, text_get("assetstexturesize", size[X], size[Y]), sprite, null, test(id = app.res, e_icon.star, null), action_texture_select)
+	
+	textures_list.update = false
+}

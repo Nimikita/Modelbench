@@ -251,7 +251,7 @@ if (itemvisible && movehover && window_busy = "elementmove")
 	
 	if (indexmove && mouse_y < (itemy + movesize)) // Parent to above this element's index
 	{
-		draw_box(xx, itemy - 3, ww, 6, false, c_accent_hover, a_accent_hover)
+		draw_box(xx, itemy - 3, ww, 6, false, c_hover, a_hover)
 		
 		if (index = 0)
 			tip_set(text_get("assetsmoveabove", element_name_get(element)), xx + ww/2, itemy, null, null, false)
@@ -263,14 +263,14 @@ if (itemvisible && movehover && window_busy = "elementmove")
 	}
 	else if (indexmove && mouse_y > (itemy + itemh - movesize)) // Parent below this element's index
 	{
-		draw_box(xx, itemy + itemh - 3, ww, 6, false, c_accent_hover, a_accent_hover)
+		draw_box(xx, itemy + itemh - 3, ww, 6, false, c_hover, a_hover)
 		tip_set(text_get("assetsmovebelow", element_name_get(element)), xx + ww/2, itemy + itemh, null, null, false)
 		element_move_parent = element.parent
 		element_move_index = index + 1
 	}
 	else if (element.element_type = TYPE_PART) // Parent to the end of this element
 	{
-		draw_box(xx, itemy, ww, itemh, false, c_accent_hover, a_accent_hover)
+		draw_box(xx, itemy, ww, itemh, false, c_hover, a_hover)
 		tip_set(text_get("assetsparentto", element_name_get(element)), xx + ww/2, itemy + itemh, null, null, false)
 		element_move_parent = element
 	}

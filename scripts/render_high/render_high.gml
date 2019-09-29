@@ -89,7 +89,7 @@ if (setting_render_shadows)
 {
 	var background_light_data, background_sunlight_range, background_sky_rotation, background_sky_time, background_sunlight_color_final;
 	background_sunlight_range = 1000
-	background_sky_rotation = current_step * 2
+	background_sky_rotation = 225//current_step * 2
 	background_sky_time = 45//current_step * .25
 	background_sunlight_color_final = c_white//hex_to_color("FEFFE9")
 
@@ -156,9 +156,9 @@ if (setting_render_shadows)
 
 // Render scene and shadows
 render_surface[3] = surface_require(render_surface[3], render_width, render_height)
-surf = render_surface[3]
+var finalsurf = render_surface[3]
 
-surface_set_target(surf)
+surface_set_target(finalsurf)
 {
 	draw_clear_alpha(c_black, 0)
 	
@@ -192,7 +192,7 @@ surface_reset_target()
 
 // AA
 render_target = surface_require(render_target, render_width, render_height)
-var prevsurf = surf;
+var prevsurf = finalsurf;
 surface_set_target(render_target)
 {
 	draw_clear_alpha(c_black, 0)

@@ -1,0 +1,143 @@
+/// draw_list_item(item, x, y, width, height, [toggled, [margin]])
+/// @arg item
+/// @arg x
+/// @arg y
+/// @arg width
+/// @arg height
+/// @arg [toggled
+/// @arg [margin]]
+/// @desc Draws a list item with icons/buttons
+
+var item, xx, yy, width, height, toggled, margin, components, name;
+var leftp, rightp, middley, mousehover, hover, textcolor, textalpha, iconcolor, iconalpha;
+item = argument[0]
+xx = argument[1]
+yy = argument[2]
+width = argument[3]
+height = argument[4]
+toggled = false
+margin = 12
+components = 0
+name = item.name
+
+if (argument_count > 5)
+	toggled = argument[5]
+
+if (argument_count > 6)
+	margin = argument[6]
+
+listitem_value = item.value
+
+if (item.divider)
+	draw_divide(xx, yy, width)
+
+if (item.disabled)
+{
+	textcolor = c_text_tertiary
+	textalpha = a_text_tertiary
+	iconcolor = c_text_tertiary
+	iconalpha = a_text_tertiary
+}
+else if (toggled || (item.hover && mouse_left) || (item.hover && mouse_left_released))
+{
+	textcolor = c_accent
+	textalpha = a_accent
+	iconcolor = c_accent
+	iconalpha = a_accent
+}
+else
+{
+	textcolor = c_text_main
+	textalpha = a_text_main
+	iconcolor = c_text_tertiary
+	iconalpha = a_text_tertiary
+}
+
+if (item.hover && mouse_left)
+	draw_box(xx, yy, width, height, false, c_accent_overlay, a_accent_overlay)
+else if (item.hover || toggled || (item.hover && mouse_left_released))
+	draw_box(xx, yy, width, height, false, c_overlay, a_overlay)
+
+leftp = margin
+rightp = margin
+middley = yy + height/2
+mousehover = app_mouse_box(xx, yy, width, height) && !item.disabled
+hover = mousehover
+
+// Thumbnail
+if (item.thumbnail)
+{
+	var thumbsize = height - 8;
+	draw_image(item.thumbnail, 0, xx + leftp, middley - thumbsize/2, thumbsize / texture_width(item.thumbnail), thumbsize / texture_height(item.thumbnail), c_white, 1)
+	leftp += thumbsize
+	components++
+}
+
+// Left actions
+if (item.actions_left != null)
+{
+	for (var i = 0; i < ds_list_size(item.actions_left); i += 7)
+	{
+		leftp += 4 * (components > 0)
+		
+		if (draw_button_icon(item.actions_left[|i], xx + leftp, middley - 10, 20, 20, item.actions_left[|i + 1], item.actions_left[|i + 3], null, false, item.actions_left[|i + 5], item.actions_left[|i + 6]))
+			script_execute(item.actions_left[|i + 4], item.actions_left[|i + 2])
+		
+		hover = (hover && !app_mouse_box(xx + leftp, middley - 10, 20, 20))
+		leftp += 20
+		components++
+	}
+}
+
+// Left icon
+if (item.icon_left)
+{
+	leftp += 4 * (components > 0)
+	draw_image(spr_icons, item.icon_left, xx + leftp + 10, middley, 1, 1, iconcolor, iconalpha)
+	leftp += 20
+}
+
+// Right actions
+if (item.actions_right != null)
+{
+	for (var i = 0; i < ds_list_size(item.actions_right); i += 7)
+	{
+		rightp += 4
+		
+		if (draw_button_icon(item.actions_right[|i], (xx + width - rightp) - 20, middley - 10, 20, 20, item.actions_right[|i + 1], item.actions_right[|i + 3], null, false, item.actions_right[|i + 5], item.actions_right[|i + 6]))
+			script_execute(item.actions_right[|i + 4], item.actions_right[|i + 2])
+		
+		hover = (hover && !app_mouse_box((xx + width - rightp) - 20, middley - 10, 20, 20))
+		rightp += 20
+	}
+}
+
+// Right icon
+if (item.icon_right)
+{
+	rightp += 4
+	draw_image(spr_icons, item.icon_right, (xx + width - rightp) - 10, middley, 1, 1, iconcolor, iconalpha)
+	rightp += 20
+}
+
+// Caption
+if (item.caption != "")
+{
+	rightp += 4
+	draw_label(item.caption, xx + width - rightp, middley, fa_right, fa_center, c_text_tertiary, a_text_tertiary, font_caption)
+	rightp += string_width_font(item.caption, font_caption)
+}
+
+if (leftp > margin)
+	leftp += 12
+
+// Text
+var textwidth = (xx + width) - (leftp + rightp);
+draw_label(string_limit_font(name, textwidth, font_value), xx + leftp, middley, fa_left, fa_middle, textcolor, textalpha, font_value)
+
+item.hover = hover
+if (hover)
+	mouse_cursor = cr_handpoint
+
+if (item.script && hover && mouse_left_released)
+	script_execute(item.script)

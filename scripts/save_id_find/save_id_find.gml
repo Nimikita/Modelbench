@@ -14,5 +14,9 @@ with (app)
 with (obj_model_element)
 	if (save_id = saveid)
 		return id
+		
+with (obj_texture)
+	if (save_id = saveid)
+		return id
 
 return null
