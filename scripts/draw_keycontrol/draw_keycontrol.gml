@@ -1,15 +1,15 @@
-/// draw_keycontrol(name, x, y, width, key, ctrl, default, script)
+/// draw_keycontrol(name, x, y, width, key, ctrl, keydefault, ctrldefault, script)
 /// @arg name
 /// @arg x
 /// @arg y
 /// @arg width
 /// @arg key
 /// @arg ctrl
-/// @arg default
+/// @arg keydefault
+/// @arg ctrldefault
 /// @arg script 
-/// @arg [captionwidth]
 
-var name, xx, yy, wid, key, ctrl, def, script;
+var name, xx, yy, wid, key, ctrl, keydef, ctrldef, script;
 var hei, text, mouseon;
 name = argument[0]
 xx = argument[1]
@@ -17,12 +17,15 @@ yy = argument[2]
 wid = argument[3]
 key = argument[4]
 ctrl = argument[5]
-def = argument[6]
-script = argument[7]
+keydef = argument[6]
+ctrldef = argument[7]
+script = argument[8]
 
 hei = 28
 text = text_get(name) + ":"
 mouseon = app_mouse_box(content_x, yy, content_width, hei) && content_mouseon
+
+context_menu_area(content_x, yy, content_width, hei, "contextmenukeycontrol", array(keydef, ctrldef), e_value_type.NONE, script, null)
 
 // Check key
 if (window_busy = name)
@@ -57,18 +60,6 @@ if (window_busy = name)
 	}
 }
 
-// Click
-/*
-if (app_mouse_box(xx + capwid, yy, wid - capwid, hei) && content_mouseon)
-{
-	mouse_cursor = cr_handpoint
-	if (mouse_left_pressed)
-		window_busy = name
-	if (mouse_right_pressed)
-		script_execute(script, def)
-}
-*/
-
 microani_set(name, script, mouseon || window_busy = name, mouseon && mouse_left, false)
 microani_update(mouseon || window_busy = name, mouseon && mouse_left, false)
 
@@ -76,7 +67,6 @@ var hover = mcroani_arr[e_mcroani.HOVER];
 
 // Edit button
 var editx, edity;
-//editx = xx + string_width_font(text, font_emphasis) + 8
 edity = yy + 2
 editx = xx + dw - 24 + icon_button_offset
 

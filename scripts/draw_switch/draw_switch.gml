@@ -1,27 +1,29 @@
-/// draw_switch(name, x, y, active, script, [tip, [disabled]])
+/// draw_switch(name, x, y, active, script, default, [tip, [disabled]])
 /// @arg name
 /// @arg x
 /// @arg y
 /// @arg active
 /// @arg script
+/// @arg default
 /// @arg [tip
 /// @arg [disabled]]
 
-var name, xx, yy, active, script, tip, disabled;
+var name, xx, yy, active, script, def, tip, disabled;
 var switchx, switchy, w, h, mouseon, pressed;
 name = text_get(argument[0])
 xx = argument[1]
 yy = argument[2]
 active = argument[3]
 script = argument[4]
+def = argument[5]
 tip = ""
 disabled = false
 
-if (argument_count > 5 && argument[5] != "")
-	tip = text_get(argument[5])
+if (argument_count > 6 && argument[6] != "")
+	tip = text_get(argument[6])
 
-if (argument_count > 6)
-	disabled = argument[6]
+if (argument_count > 7)
+	disabled = argument[7]
 
 switchx = (xx + dw - 24)
 switchy = (yy + (28/2) - 8)
@@ -37,6 +39,8 @@ mouseon = app_mouse_box(switchx, switchy, 24, 16) && content_mouseon && (window_
 mouseclick = mouseon && mouse_left
 
 pressed = false
+
+context_menu_area(xx, yy, w, h, "contextmenuvalue", active, e_value_type.BOOLEAN, script, def)
 
 if (mouseon)
 {

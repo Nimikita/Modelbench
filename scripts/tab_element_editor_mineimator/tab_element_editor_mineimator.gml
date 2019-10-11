@@ -7,15 +7,15 @@ tab_next()
 
 // Open position tab
 tab_control_switch()
-draw_switch("elementeditoropenpositiontab", dx, dy, el_edit.value[e_value.OPEN_POSITION_TAB], action_el_open_position_tab, "elementeditoropenpositiontabhelp")
+draw_switch("elementeditoropenpositiontab", dx, dy, el_edit.value[e_value.OPEN_POSITION_TAB], action_el_open_position_tab, false, "elementeditoropenpositiontabhelp")
 tab_next()
 
 // Open rotation tab
 tab_control_switch()
-draw_switch("elementeditoropenrotationtab", dx, dy, el_edit.value[e_value.OPEN_ROTATION_TAB], action_el_open_rotation_tab, "elementeditoropenrotationtabhelp")
+draw_switch("elementeditoropenrotationtab", dx, dy, el_edit.value[e_value.OPEN_ROTATION_TAB], action_el_open_rotation_tab, false, "elementeditoropenrotationtabhelp")
 tab_next()
 
 // Open scale tab
 tab_control_switch()
-draw_switch("elementeditoropenscaletab", dx, dy, el_edit.value[e_value.OPEN_SCALE_TAB], action_el_open_scale_tab, "elementeditoropenscaletabhelp")
+draw_switch("elementeditoropenscaletab", dx, dy, el_edit.value[e_value.OPEN_SCALE_TAB], action_el_open_scale_tab, false, "elementeditoropenscaletabhelp")
 tab_next()

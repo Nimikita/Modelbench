@@ -26,6 +26,7 @@ menu_draw()
 button_menu_draw()
 window_draw_snackbar()
 tip_draw()
+context_menu_draw()
 
 /*
 panel_area_draw()

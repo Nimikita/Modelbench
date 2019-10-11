@@ -2,16 +2,17 @@
 /// @arg list
 /// @desc Calculates width of list's components and text
 
-var list, maxwidth, width, item;
+var list, maxwidthleft, maxwidthright, width, item;
 list = argument0
-maxwidth = 0
+maxwidthleft = 0
+maxwidthright = 0
 width = 0
 item = null
 
 for (var i = 0; i < ds_list_size(list.item); i++)
 {
 	item = list.item[|i]
-	width = 24
+	width = 12
 
 	// Thumbnail(Assuming height of list is 36)
 	if (item.thumbnail)
@@ -28,6 +29,17 @@ for (var i = 0; i < ds_list_size(list.item); i++)
 	if (item.icon_left)
 		width += 24
 
+	// Text
+	width += string_width_font(item.name, font_value) + 8
+	
+	maxwidthleft = max(width, maxwidthleft)
+}
+
+for (var i = 0; i < ds_list_size(list.item); i++)
+{
+	item = list.item[|i]
+	width = 12
+
 	// Right actions
 	if (item.actions_right != null)
 	{
@@ -38,15 +50,12 @@ for (var i = 0; i < ds_list_size(list.item); i++)
 	// Right icon
 	if (item.icon_right)
 		width += 24
-
+	
 	// Caption
 	if (item.caption != "")
 		width += string_width_font(item.caption, font_caption) + 4
-
-	// Text
-	width += string_width_font(item.name, font_value) + 8
 	
-	maxwidth = max(width, maxwidth)
+	maxwidthright = max(width, maxwidthright)
 }
 
-list.width = maxwidth
+list.width = maxwidthleft + maxwidthright

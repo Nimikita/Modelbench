@@ -2,13 +2,13 @@
 
 // Blocky bending
 tab_control_switch()
-draw_switch("settingsgraphicsblockybending", dx, dy, setting_blocky_bending, action_setting_blocky_bending, "settingsgraphicsblockybendinghelp")
+draw_switch("settingsgraphicsblockybending", dx, dy, setting_blocky_bending, action_setting_blocky_bending, false, "settingsgraphicsblockybendinghelp")
 tab_next()
 
 // Wind
 tab_control_switch()
 draw_button_collapse("settinggraphicswind", !setting_collapse_wind, action_collapse_wind, !setting_wind)
-draw_switch("settingsgraphicswind", dx, dy, setting_wind, action_setting_wind)
+draw_switch("settingsgraphicswind", dx, dy, setting_wind, action_setting_wind, true)
 tab_next()
 
 if (setting_wind && !setting_collapse_wind)

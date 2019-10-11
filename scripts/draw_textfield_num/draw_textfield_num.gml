@@ -37,6 +37,8 @@ hei = 28
 if (xx + wid < content_x || xx > content_x + content_width || yy + hei < content_y || yy > content_y + content_height)
 	return 0
 
+context_menu_area(xx, yy, wid, hei, "contextmenuvalue", value, e_value_type.NUMBER, script, def)
+
 draw_set_font(font_emphasis)
 capwidth = string_width(text_get(name)) + 10
 
@@ -62,13 +64,6 @@ if (app_mouse_box(xx, yy, capwidth, hei) && content_mouseon && window_focus != s
 	
 	if (mouse_left_pressed)
 		window_busy = name + "press"
-	
-	// Reset to 0
-	if (mouse_right_pressed && def != no_limit)
-	{
-		window_focus = name
-		script_execute(script, clamp(snap(def, snapval), minval, maxval), 0)
-	}
 }
 
 // Textbox press

@@ -125,6 +125,8 @@ enum e_icon
 	new_file_template,
 	transform,
 	alert,
+	cut,
+	replace,
 	
 	placeholder = 11
 }
@@ -167,7 +169,6 @@ enum e_value
 	MIX_AMOUNT,
 	
 	// Bend
-	BEND_SHAPE,
 	BEND,
 	BEND_LOCK,
 	BEND_OFFSET,
@@ -192,6 +193,7 @@ enum e_value
 	INHERIT_BEND,
 	
 	// Shape properties
+	BEND_SHAPE,
 	TEX_MIRROR,
 	INVERT,
 	FACE_CAMERA,

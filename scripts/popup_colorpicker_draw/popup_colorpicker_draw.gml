@@ -42,7 +42,7 @@ draw_box(dx + floor((popup.hue / 255) * 196) + 10, dy + 4, 12, 12, false, make_c
 draw_image(spr_colorpicker_cursor, 1, dx + floor((popup.hue / 255) * 196) + 16, dy + 10)
 if (window_focus = "colorpickerhuepick" && mouse_wheel <> 0)
 {
-	popup.hue = clamp(popup.hue + (-mouse_wheel) * 10, 0, 255)
+	popup.hue = floor(clamp(popup.hue + (-mouse_wheel) * 10, 0, 255))
 	popup_colorpicker_update(null, make_color_hsv(popup.hue, popup.saturation, popup.brightness), false)
 }
 
@@ -81,9 +81,9 @@ if (draw_textfield_group("colorpickerrgb", dx + 16, dy, 196, 1, 0, 255))
 dy += 28 + 12
 
 // HSL
-textfield_group_add("colorpickerh", color_get_hue(popup.color), color_get_hue(popup.def), null, X, popup.tbx_hue)
-textfield_group_add("colorpickers", color_get_saturation(popup.color), color_get_saturation(popup.def), null, X, popup.tbx_saturation)
-textfield_group_add("colorpickerv", color_get_value(popup.color), color_get_value(popup.def), null, X, popup.tbx_brightness)
+textfield_group_add("colorpickerh", floor(color_get_hue(popup.color)), floor(color_get_hue(popup.def)), null, X, popup.tbx_hue)
+textfield_group_add("colorpickers", floor(color_get_saturation(popup.color)), floor(color_get_saturation(popup.def)), null, X, popup.tbx_saturation)
+textfield_group_add("colorpickerv", floor(color_get_value(popup.color)), floor(color_get_value(popup.def)), null, X, popup.tbx_brightness)
 var update = draw_textfield_group("colorpickerhsv", dx + 16, dy, 196, 1, 0, 255);
 if (update = popup.tbx_hue)
 {

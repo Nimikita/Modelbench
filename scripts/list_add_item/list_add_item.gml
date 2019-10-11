@@ -45,8 +45,20 @@ item.hover = false
 item.divider = divider
 item.disabled = false
 
+item.hovertime = 0
+item.context_menu_name = ""
+item.context_menu_active = false
+
+item.draw_x = 0
+item.draw_y = 0
+
 if (list_edit != null)
+{
 	ds_list_add(list_edit.item, item)
+	item.list = list_edit
+}
+else
+	item.list = null
 
 listitem_last = item
 

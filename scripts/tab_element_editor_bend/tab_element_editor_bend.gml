@@ -18,7 +18,7 @@ for (var i = X; i <= Z; i++)
 	
 	tab_control_switch()
 	draw_button_collapse("elementeditorbendaxis" + axisname[i], !setting_collapse_bend_axis[axis_edit], action_collapse_bend_axis, !el_edit.value[e_value.BEND_AXIS_X + axis_edit])
-	draw_switch("elementeditorbendaxis" + axisname[i], dx, dy, el_edit.value[e_value.BEND_AXIS_X + axis_edit], action_el_bend_axis)
+	draw_switch("elementeditorbendaxis" + axisname[i], dx, dy, el_edit.value[e_value.BEND_AXIS_X + axis_edit], action_el_bend_axis, false)
 	tab_next()
 	
 	if (setting_collapse_bend_axis[axis_edit] || !el_edit.value[e_value.BEND_AXIS_X + axis_edit])
@@ -26,7 +26,7 @@ for (var i = X; i <= Z; i++)
 	
 	// Invert
 	tab_control_switch()
-	draw_switch("elementeditorbendinvert" + axisname[i], dx, dy, el_edit.value[e_value.BEND_INVERT_X + axis_edit], action_el_bend_invert)
+	draw_switch("elementeditorbendinvert" + axisname[i], dx, dy, el_edit.value[e_value.BEND_INVERT_X + axis_edit], action_el_bend_invert, false)
 	tab_next()
 	
 	// Range
@@ -46,7 +46,7 @@ for (var i = X; i <= Z; i++)
 
 // Inherit bend angles
 tab_control_switch()
-draw_switch("elementeditorbendinheritangles", dx, dy, el_edit.value[e_value.INHERIT_BEND], action_el_inherit_bend, "elementeditorbendinheritangleshelp", !el_edit.value[e_value.BEND])
+draw_switch("elementeditorbendinheritangles", dx, dy, el_edit.value[e_value.INHERIT_BEND], action_el_inherit_bend, false, "elementeditorbendinheritangleshelp", !el_edit.value[e_value.BEND])
 tab_next()
 
 // Bend part
@@ -74,7 +74,7 @@ tab_next()
 
 // Bend size
 tab_control_switch()
-draw_switch("elementeditorbendcustomsize", dx, dy, el_edit.value[e_value.BEND_SIZE_CUSTOM], action_el_bend_size_custom, "elementeditorbendcustomsizehelp", !el_edit.value[e_value.BEND])
+draw_switch("elementeditorbendcustomsize", dx, dy, el_edit.value[e_value.BEND_SIZE_CUSTOM], action_el_bend_size_custom, false, "elementeditorbendcustomsizehelp", !el_edit.value[e_value.BEND])
 tab_next()
 
 if (el_edit.value[e_value.BEND_SIZE_CUSTOM])

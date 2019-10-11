@@ -9,7 +9,9 @@ res_edit = null
 el_edit = null
 el_edit_amount = 0
 
+textures_list.update = true
 tex_preview.update = true
+tex_preview.reset_view = true
 
 model_file = ""
 model_folder = ""
@@ -18,6 +20,7 @@ model_temporary = false
 model_temporary_backup = false
 
 model_name = ""
+assets.model_properties.tbx_model_name.text = ""
 res = null
 
 player_skin = false

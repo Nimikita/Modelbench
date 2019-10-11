@@ -1,8 +1,12 @@
 /// app_startup_window()
 
-globalvar current_step, delta;
+globalvar current_step, delta, step_event_time, step_event_time_start, draw_event_time, draw_event_time_start;
 current_step = 0
 delta = 1
+step_event_time = 0
+step_event_time_start = 0
+draw_event_time = 0
+draw_event_time_start = 0
 
 log("Windows startup")
 

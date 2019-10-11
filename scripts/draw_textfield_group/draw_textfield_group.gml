@@ -22,6 +22,9 @@ fieldwid = ((wid - 4) - (2 * (textfield_amount - 1)))/textfield_amount
 fieldupdate = null
 hei = 28
 
+if (context_menu_copy_category)
+	context_menu_area(xx, yy, wid, hei, "contextmenucategory")
+
 // Draw field backgrounds
 draw_outline(xx + 1, yy + 1, wid - 2, hei - 2, 1, c_border, a_border)
 for (var i = 0; i < textfield_amount; i++)
@@ -63,7 +66,8 @@ for (var i = 0; i < textfield_amount; i++)
 	microani_update(mouseon || window_focus = string(textfield_textbox[i]), false, window_focus = string(textfield_textbox[i]), false)
 	
 	// Textbox
-	var update = textbox_draw(textfield_textbox[i], fieldx + boxwid - string_width_font(textfield_textbox[i].text, font_value) - 9, yy + (hei/2) - 8, string_width_font(textfield_textbox[i].text, font_value), 18);
+	draw_set_font(font_value)
+	var update = textbox_draw(textfield_textbox[i], fieldx + boxwid - string_width(textfield_textbox[i].text) - 9, yy + (hei/2) - 8, string_width(textfield_textbox[i].text), 18);
 	
 	// Textbox press
 	if (app_mouse_box(fieldx + 28, yy, boxwid - 28, hei) && content_mouseon && window_focus != string(textfield_textbox[i]))
@@ -84,7 +88,7 @@ for (var i = 0; i < textfield_amount; i++)
 			window_busy = textfield_name[i] + "press"
 	
 		// Reset to 0
-		if (mouse_right_pressed && textfield_default[i] != no_limit)
+		if (context_menu_copy_category = null && mouse_right_pressed && textfield_default[i] != no_limit)
 		{
 			window_focus = textfield_name[i]
 			

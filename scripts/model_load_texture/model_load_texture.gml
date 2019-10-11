@@ -28,7 +28,7 @@ if (obj = null)
 	if (file_exists_lib(app.model_folder + "\\" + name))
 		obj.sprite = texture_create_square(app.model_folder + "\\" + name)
 	else
-		obj.sprite = spr_empty
+		obj.sprite = sprite_duplicate(spr_empty)
 	
 	obj.size = point2D(sprite_get_width(obj.sprite), sprite_get_height(obj.sprite))
 }

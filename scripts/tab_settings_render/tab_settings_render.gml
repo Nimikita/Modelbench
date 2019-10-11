@@ -3,7 +3,7 @@
 // SSAO
 tab_control_switch()
 draw_button_collapse("settingsrenderssao", !setting_collapse_ssao, action_collapse_ssao, !setting_render_ssao)
-draw_switch("settingsrenderssao", dx, dy, setting_render_ssao, action_setting_render_ssao)
+draw_switch("settingsrenderssao", dx, dy, setting_render_ssao, action_setting_render_ssao, true)
 tab_next()
 
 if (setting_render_ssao && !setting_collapse_ssao)
@@ -24,7 +24,7 @@ if (setting_render_ssao && !setting_collapse_ssao)
 // Shadows
 tab_control_switch()
 draw_button_collapse("settingsrendershadows", !setting_collapse_shadows, action_collapse_shadows, !setting_render_shadows)
-draw_switch("settingsrendershadows", dx, dy, setting_render_shadows, action_setting_render_shadows)
+draw_switch("settingsrendershadows", dx, dy, setting_render_shadows, action_setting_render_shadows, false)
 tab_next()
 
 if (setting_render_shadows && !setting_collapse_shadows)

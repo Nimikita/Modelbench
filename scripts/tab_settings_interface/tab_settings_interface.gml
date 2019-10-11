@@ -37,7 +37,7 @@ tab_next()
 
 // Z is up
 tab_control_switch()
-draw_switch("settingszisup", dx, dy, setting_z_is_up, action_setting_z_is_up)
+draw_switch("settingszisup", dx, dy, setting_z_is_up, action_setting_z_is_up, false)
 tab_next()
 
 // Shape outline opacity

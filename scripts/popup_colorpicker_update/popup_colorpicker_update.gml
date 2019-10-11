@@ -12,15 +12,15 @@ popup_colorpicker.color = color
 
 if (gethsb)
 {
-	popup_colorpicker.hue = color_get_hue(popup_colorpicker.color)
-	popup_colorpicker.saturation = color_get_saturation(popup_colorpicker.color)
-	popup_colorpicker.brightness = color_get_value(popup_colorpicker.color)
+	popup_colorpicker.hue = floor(color_get_hue(popup_colorpicker.color))
+	popup_colorpicker.saturation = floor(color_get_saturation(popup_colorpicker.color))
+	popup_colorpicker.brightness = floor(color_get_value(popup_colorpicker.color))
 }
 else
 {
-	popup_colorpicker.hue = min(255, popup_colorpicker.hue)
-	popup_colorpicker.saturation = min(255, popup_colorpicker.saturation)
-	popup_colorpicker.brightness = min(255, popup_colorpicker.brightness)
+	popup_colorpicker.hue = floor(min(255, popup_colorpicker.hue))
+	popup_colorpicker.saturation = floor(min(255, popup_colorpicker.saturation))
+	popup_colorpicker.brightness = floor(min(255, popup_colorpicker.brightness))
 }
 
 if (control != popup_colorpicker.tbx_red)

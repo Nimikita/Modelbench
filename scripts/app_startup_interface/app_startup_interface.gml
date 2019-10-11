@@ -11,6 +11,7 @@ app_startup_interface_toolbar()
 app_startup_interface_toolset()
 app_startup_interface_elements()
 app_startup_interface_snackbar()
+app_startup_interface_context_menu()
 
 app_startup_micro_animations()
 app_startup_radio_buttons()

@@ -23,6 +23,8 @@ mouseclick = mouseon && mouse_left
 if (mouseon)
 	mouse_cursor = cr_handpoint
 
+context_menu_area(xx, yy, 28, 28, "contextmenuvalue", color, e_value_type.COLOR, script, def)
+
 microani_set(name, script, mouseon, mouseclick, popup = popup_colorpicker && popup_colorpicker.value_name = "settingsaccentcolor")
 
 // Draw button background

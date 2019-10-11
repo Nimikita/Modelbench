@@ -34,6 +34,8 @@ extend = false
 update_vbuffer = false
 world_pos = point3D(0, 0, 0)
 
+list_mouseon = false
+
 for (var v = 0; v < e_value.amount; v++)
 {
 	value_default[v] = app.value_default[v]

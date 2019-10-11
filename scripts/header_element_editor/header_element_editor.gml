@@ -29,7 +29,7 @@ if (el_edit.element_type = TYPE_PART)
 {
 	// Lock to bent half
 	tab_control_switch()
-	draw_switch("elementeditorbendlock", dx, dy, el_edit.value[e_value.BEND_LOCK], action_el_bend_lock)
+	draw_switch("elementeditorbendlock", dx, dy, el_edit.value[e_value.BEND_LOCK], action_el_bend_lock, true)
 	tab_next()
 }
 

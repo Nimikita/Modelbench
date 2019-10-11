@@ -22,7 +22,7 @@ tab_next()
 
 // Inherit color
 tab_control_switch()
-draw_switch("elementeditorinheritcolor", dx, dy, el_edit.value[e_value.INHERIT_COLOR], action_el_inherit_color, "elementeditorinheritcolorhelp")
+draw_switch("elementeditorinheritcolor", dx, dy, el_edit.value[e_value.INHERIT_COLOR], action_el_inherit_color, true, "elementeditorinheritcolorhelp")
 tab_next()
 
 // Blend color

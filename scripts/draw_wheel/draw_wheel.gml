@@ -40,8 +40,10 @@ else
 	sprite = spr_control_dial
 }
 
-if (xx + rad < content_x || xx - rad > content_x + content_width || yy + rad < content_y || yy - rad > content_y + content_height)
+if (xx - rad < content_x || xx + rad > content_x + content_width || yy - rad < content_y || yy + rad > content_y + content_height)
 	return 0
+
+context_menu_area(xx - rad, yy - rad, xx + rad, yy + rad, "contextmenuvalue", value, e_value_type.NUMBER, script, def)
 
 modval = mod_fix(value, 360)
 capwid = string_width_font(text_get(name) + ":", font_emphasis) + 5
@@ -102,8 +104,6 @@ if (app_mouse_box(xx - rad - 10, yy - rad - 10, rad * 2+20, rad * 2+20) && conte
 		window_busy = name
 		wheel_drag_value = newval
 	}
-	if (mouse_right_pressed)
-		script_execute(script, def, false)
 }
 
 // Mouse wheel

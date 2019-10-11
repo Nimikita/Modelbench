@@ -35,7 +35,7 @@ else
 tab_next(false)
 
 tab_control_switch()
-draw_switch("assetsplayerskin", dx, dy, player_skin, action_player_skin, "assetsplayerskinhelp")
+draw_switch("assetsplayerskin", dx, dy, player_skin, action_player_skin, false, "assetsplayerskinhelp")
 tab_next()
 
 //tab_control_meter()

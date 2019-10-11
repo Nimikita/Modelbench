@@ -14,7 +14,7 @@ content_x = xx
 content_y = yy
 content_width = width
 content_height = height
-content_mouseon = app_mouse_box(content_x, content_y, content_width, content_height) && !popup_mouseon && !snackbar_mouseon
+content_mouseon = app_mouse_box(content_x, content_y, content_width, content_height) && !popup_mouseon && !snackbar_mouseon && !context_menu_mouseon
 tip_force_right = true
 
 // Background
@@ -79,3 +79,51 @@ yy += 28 + 4
 
 tip_set_shortcut(-1, false)
 tip_force_right = false
+
+// Debug
+var shapes = 0;
+var parts = 0;
+var blocks = 0;
+var planes = 0;
+var planes3d = 0;
+	
+with (obj_model_element)
+{
+	if (element_type = TYPE_SHAPE)
+	{
+		shapes++
+			
+		if (type = "block")
+			blocks++
+		else if (type = "plane")
+		{
+			if (value[e_value.EXTRUDE])
+				planes3d++
+			else
+				planes++
+		}
+	}
+	else
+		parts++
+}
+	
+var labely = 0;
+draw_label("FPS: " + string(fps), content_x + content_width + 8, content_y + 8 + labely, fa_left, fa_top, c_text_main, a_text_main, font_emphasis)
+labely += 16
+draw_label("FPS real: " + string(fps_real), content_x + content_width + 8, content_y + 8 + labely, fa_left, fa_top, c_text_main, a_text_main, font_emphasis)
+labely += 16
+draw_label("Step event: " + string(step_event_time) + "ms", content_x + content_width + 8, content_y + 8 + labely, fa_left, fa_top, c_text_main, a_text_main, font_emphasis)
+labely += 16
+draw_label("Draw event: " + string(draw_event_time) + "ms", content_x + content_width + 8, content_y + 8 + labely, fa_left, fa_top, c_text_main, a_text_main, font_emphasis)
+labely += 32
+
+draw_label("Parts: " + string(parts), content_x + content_width + 8, content_y + 8 + labely, fa_left, fa_top, c_text_main, a_text_main, font_emphasis)
+labely += 16
+draw_label("Shapes: " + string(shapes), content_x + content_width + 8, content_y + 8 + labely, fa_left, fa_top, c_text_main, a_text_main, font_emphasis)
+labely += 16
+draw_label("3D planes: " + string(planes3d), content_x + content_width + 16, content_y + 8 + labely, fa_left, fa_top, c_text_secondary, a_text_secondary, font_emphasis)
+labely += 16
+draw_label("Planes: " + string(planes), content_x + content_width + 16, content_y + 8 + labely, fa_left, fa_top, c_text_secondary, a_text_secondary, font_emphasis)
+labely += 16
+draw_label("Blocks: " + string(blocks), content_x + content_width + 16, content_y + 8 + labely, fa_left, fa_top, c_text_secondary, a_text_secondary, font_emphasis)
+labely += 16

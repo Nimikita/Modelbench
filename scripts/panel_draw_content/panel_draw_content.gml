@@ -86,6 +86,9 @@ if (!tab.script)
 				cat[c].show = !cat[c].show
 			tab_next()
 			
+			// Set copy name
+			context_menu_copy_category = cat[c]
+			
 			// Draw contents
 			if (cat[c].show && cat[c].script)
 				script_execute(cat[c].script)
@@ -95,6 +98,9 @@ if (!tab.script)
 				dy += 20
 				draw_divide(content_x, dy - 13, dividew - 1)
 			}
+			
+			// Reset copy name
+			context_menu_copy_category = null
 			
 			maxh = max(dy - dy_start, maxh)
 			c++
@@ -109,7 +115,7 @@ else
 }
 
 // Scrollbar
-content_mouseon = !popup_mouseon && !snackbar_mouseon
+content_mouseon = !popup_mouseon && !snackbar_mouseon && !context_menu_mouseon
 if (content_direction = e_scroll.VERTICAL)
 	scrollbar_draw(tab.scroll, e_scroll.VERTICAL, content_x + dividew + 3, content_y, content_height, maxh + 15, c_accent, c_accent_hover, c_black)
 else

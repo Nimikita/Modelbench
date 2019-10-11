@@ -10,7 +10,7 @@ tab_next()
 // Backup models
 tab_control_switch()
 draw_button_collapse("settingsbackupmodels", !setting_collapse_backup_models, action_collapse_backup_models, !setting_backup)
-draw_switch("settingsbackupmodels", dx, dy, setting_backup, action_setting_backup)
+draw_switch("settingsbackupmodels", dx, dy, setting_backup, action_setting_backup, true)
 tab_next()
 
 if (setting_backup && !setting_collapse_backup_models)
@@ -26,5 +26,5 @@ if (setting_backup && !setting_collapse_backup_models)
 
 // Slow shape generation
 tab_control_switch()
-draw_switch("settingsslowgeneration", dx, dy, setting_slow_generation, action_setting_slow_generation, "settingsslowgenerationhelp")
+draw_switch("settingsslowgeneration", dx, dy, setting_slow_generation, action_setting_slow_generation, false, "settingsslowgenerationhelp")
 tab_next()

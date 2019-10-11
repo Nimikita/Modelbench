@@ -33,9 +33,9 @@ if (itemvisible)
 		mouse_cursor = cr_handpoint
 	
 	// Select highlight
-	if (itemhover && mouse_left)
+	if (itemhover && mouse_left && element.list_mouseon)
 		draw_box(dx, itemy, dw, itemh, false, c_accent_overlay, a_accent_overlay)
-	else if (element.selected || itemhover)
+	else if (element.selected || itemhover || element = context_menu_value)
 		draw_box(dx, itemy, dw, itemh, false, c_overlay, a_overlay)
 	
 	// Add to select list
@@ -215,9 +215,12 @@ if (itemvisible)
 
 if (itemvisible && itemhover && !expandhover && !lockhover && !visiblehover)
 {
+	element.list_mouseon = true
+	context_menu_area(itemx, itemy, itemw, itemh, "contextmenuelement", element, e_value_type.NONE, null, null)
+	
 	if (mouse_move > 5)
 	{
-		// Start box selectionor moving
+		// Start box selection or moving
 		if (element.selected)
 		{
 			window_busy = "elementmovestart"
@@ -233,6 +236,8 @@ if (itemvisible && itemhover && !expandhover && !lockhover && !visiblehover)
 	if (mouse_left_released && window_busy = "")
 		action_el_select(element)
 }
+else
+	element.list_mouseon = false
 
 // Move elements
 if (itemvisible && movehover && window_busy = "elementmove")

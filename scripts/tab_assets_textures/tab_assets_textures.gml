@@ -11,6 +11,8 @@ for (var i = 0; i < ds_list_size(textures_list.item); i++)
 	var tex = textures_list.item[|i];
 	
 	draw_list_item(tex, dx, dy + i * 32, dw, 32, tex.value = res_edit, 4)
+	
+	context_menu_area(dx, dy + i * 32, dw, 32, "contextmenutexture", tex.value, null, null, null)
 }
 tab_next()
 

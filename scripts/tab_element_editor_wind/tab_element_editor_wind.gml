@@ -20,7 +20,7 @@ if (el_edit.value[e_value.WIND_AXIS] = e_vertex_wave.NONE)
 	
 // Minimum Z
 tab_control_switch()
-draw_switch("elementeditorwindminimum" + axistext, dx, dy, el_edit.value[e_value.WIND_ZMIN_ENABLE], action_el_wind_zmin_enable)
+draw_switch("elementeditorwindminimum" + axistext, dx, dy, el_edit.value[e_value.WIND_ZMIN_ENABLE], action_el_wind_zmin_enable, false)
 tab_next()
 
 if (el_edit.value[e_value.WIND_ZMIN_ENABLE])
@@ -32,7 +32,7 @@ if (el_edit.value[e_value.WIND_ZMIN_ENABLE])
 
 // Maximum Z
 tab_control_switch()
-draw_switch("elementeditorwindmaximum" + axistext, dx, dy, el_edit.value[e_value.WIND_ZMAX_ENABLE], action_el_wind_zmax_enable)
+draw_switch("elementeditorwindmaximum" + axistext, dx, dy, el_edit.value[e_value.WIND_ZMAX_ENABLE], action_el_wind_zmax_enable, false)
 tab_next()
 
 if (el_edit.value[e_value.WIND_ZMAX_ENABLE])

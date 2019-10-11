@@ -31,9 +31,7 @@ with (assets)
 	// Textures
 	textures = tab_add_category("textures", tab_assets_textures, false)
 	with (textures)
-	{
 		preview = new(obj_preview)
-	}
 }
 
 tex_preview = assets.textures.preview
@@ -56,6 +54,8 @@ with (element_editor)
 		tbx_x.next_tbx = tbx_y
 		tbx_y.next_tbx = tbx_z
 		tbx_z.next_tbx = tbx_x
+		
+		copy = array(0, 0, 0)
 	}
 	
 	// Pivot offset
@@ -69,6 +69,8 @@ with (element_editor)
 		tbx_x.next_tbx = tbx_y
 		tbx_y.next_tbx = tbx_z
 		tbx_z.next_tbx = tbx_x
+		
+		copy = array(0, 0, 0)
 	}
 	
 	// Rotation
@@ -82,6 +84,8 @@ with (element_editor)
 		tbx_x.next_tbx = tbx_y
 		tbx_y.next_tbx = tbx_z
 		tbx_z.next_tbx = tbx_x
+		
+		copy = array(0, 0, 0)
 	}
 	
 	// Size
@@ -95,6 +99,8 @@ with (element_editor)
 		tbx_width.next_tbx = tbx_length
 		tbx_length.next_tbx = tbx_height
 		tbx_height.next_tbx = tbx_width
+		
+		copy = array(8, 8, 8)
 	}
 	
 	// Scale
@@ -108,6 +114,8 @@ with (element_editor)
 		tbx_x.next_tbx = tbx_y
 		tbx_y.next_tbx = tbx_z
 		tbx_z.next_tbx = tbx_x
+		
+		copy = array(1, 1, 1)
 	}
 	
 	// Bend
@@ -187,9 +195,7 @@ with (settings)
 	// Controls
 	controls = tab_add_category("controls", tab_settings_controls, false)
 	with (controls)
-	{
 		tbx_smooth_camera_amount = new_textbox_integer()
-	}
 	
 	// Interface
 	interface = tab_add_category("interface", tab_settings_interface, false)

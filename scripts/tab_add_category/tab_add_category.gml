@@ -14,6 +14,7 @@ with (cat)
 	script = argument1
 	show = argument2
 	enabled = true
-
+	copy = null
+	
 	return id
 }

@@ -25,11 +25,11 @@ if (current_step < 10)
 
 // Switches
 tab_control_switch()
-if (draw_switch("testscreenswitchone", dx, dy, switchvalue, null))
+if (draw_switch("testscreenswitchone", dx, dy, switchvalue, null, false))
 	switchvalue = !switchvalue
 tab_next()
 
 tab_control_switch()
-if (draw_switch("testscreenswitchtwo", dx, dy, switchvaluetwo, null))
+if (draw_switch("testscreenswitchtwo", dx, dy, switchvaluetwo, null, false))
 	switchvaluetwo = !switchvaluetwo
 tab_next()

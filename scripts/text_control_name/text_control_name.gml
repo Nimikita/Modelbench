@@ -45,4 +45,7 @@ switch (argument0)
 	case vk_f12:			return ctrl + "F12"
 }
 
-return ctrl + chr(argument0)
+if (argument0 = "")
+	return ctrl
+else
+	return ctrl + chr(argument0)

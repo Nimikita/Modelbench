@@ -4,7 +4,14 @@
 if (history_undo)
 {
 	with (history_data)
-		history_destroy_loaded()
+	{
+		with (save_id_find(tex_save_id))
+		{
+			if (object_index = obj_texture && copied)
+				file_delete_lib(app.model_folder + "\\" + filename)
+			instance_destroy()
+		}
+	}
 }
 else
 {
@@ -26,14 +33,20 @@ else
 		tex_load()
 	}
 	
+	if (history_redo)
+		tex.save_id = history_data.tex_save_id
+	
 	if (!history_redo && !tex.replaced)
 	{
 		with (hobj)
 		{
 			filename = fn
-			history_save_loaded()
+			tex_save_id = tex.save_id
 		}
 	}
 }
 
+el_update_part()
 textures_list.update = true
+
+model_reset_loaded()

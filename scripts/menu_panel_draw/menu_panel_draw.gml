@@ -71,7 +71,7 @@ if (panelextease > 0)
 	content_y = panely
 	content_width = panelextwid
 	content_height = panelh
-	content_mouseon = app_mouse_box(panelx + 300, panely, panelextwid * panelextease, panelh)
+	content_mouseon = app_mouse_box(panelx + 300, panely, panelextwid * panelextease, panelh) && !popup_mouseon && !snackbar_mouseon && !context_menu_mouseon
 	content_direction = e_scroll.VERTICAL
 	
 	dx = content_x
@@ -99,7 +99,7 @@ content_x = panelx
 content_y = panely
 content_width = 300
 content_height = panelh
-content_mouseon = app_mouse_box(content_x, content_y, content_width, content_height)
+content_mouseon = app_mouse_box(content_x, content_y, content_width, content_height) && !popup_mouseon && !snackbar_mouseon && !context_menu_mouseon
 
 dx = content_x
 dy = content_y + 8
@@ -109,7 +109,7 @@ dh = content_height - 16
 tab_menu()
 
 // Close if mouse clicked outside of area
-if (app_mouse_box(panelx + panelw, panely, window_width - panelw, panelh) && mouse_left_pressed && !popup_mouseon && !snackbar_mouseon)
+if (app_mouse_box(panelx + panelw, panely, window_width - panelw, panelh) && mouse_left_pressed && !popup_mouseon && !snackbar_mouseon && !context_menu_mouseon)
 {
 	menu_panel_ani_type = "hide"
 	menu_open = false

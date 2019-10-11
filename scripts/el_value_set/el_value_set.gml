@@ -15,7 +15,7 @@ if (history_undo)
 		{
 			for (var v = 0; v < history_data.par_set_amount; v++)
 			{
-				value[history_data.value[v]] = history_data.set_old_value[e, v]
+				value[history_data.value[v]] = el_value_find_save_id(history_data.value[v], history_data.set_new_value[e, v], history_data.set_old_value[e, v])
 				
 				if (el_value_update_vbuffer(v))
 					element_tree_update_vbuffer(id)
@@ -35,7 +35,7 @@ else if (history_redo)
 			{
 				for (var v = 0; v < history_data.par_set_amount; v++)
 				{
-					value[history_data.value[v]] = history_data.set_new_value[e, v]
+					value[history_data.value[v]] = el_value_find_save_id(history_data.value[v], history_data.set_old_value[e, v], history_data.set_new_value[e, v])
 			
 					if (el_value_update_vbuffer(v))
 						element_tree_update_vbuffer(id)
@@ -69,14 +69,14 @@ else
 		with (save_id_find(history_data.element_save_id[e]))
 		{
 			if (history_data.par_set_n = history_data.par_set_amount)
-				history_data.set_old_value[e, history_data.par_set_n] = value[vid]
+				history_data.set_old_value[e, history_data.par_set_n] = el_value_get_save_id(vid, value[vid])
 			
 			var nval;
 			
 			nval = value[vid] * add + val
 			value[vid] = el_value_clamp(vid, nval, id)
 			
-			history_data.set_new_value[e, history_data.par_set_n] = value[vid]
+			history_data.set_new_value[e, history_data.par_set_n] = el_value_get_save_id(vid, value[vid])
 		}
 	}
 	

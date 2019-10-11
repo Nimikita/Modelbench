@@ -22,9 +22,6 @@ if (keyboard_check_pressed(vk_f11))
 if (keyboard_check_pressed(vk_f12))
 	debug_info = !debug_info
 
-if (keyboard_check(vk_control) && keyboard_check_pressed(ord("T")))
-	texture_relink()
-
 if (window_busy = "" && !textbox_isediting)
 {
 	//if (keyboard_check_pressed(setting_key_new) && app_check_control(setting_key_new_control))

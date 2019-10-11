@@ -1,7 +1,7 @@
 /// tab_assets_elements()
 
 tab_control_switch()
-draw_switch("assetshideshapes", dx, dy, setting_hide_shapes, action_setting_hide_shapes)
+draw_switch("assetshideshapes", dx, dy, setting_hide_shapes, action_setting_hide_shapes, false)
 tab_next()
 
 // Check selection release

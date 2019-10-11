@@ -53,9 +53,11 @@ deletetext = 0
 inserttext = ""
 lineheight = string_height(" ")
 mouseover = (content_mouseon && app_mouse_box(xx, yy, w, h))
-	
+
 if (window_focus = string(tbx))
 {
+	context_menu_area(xx, yy, w, h, "contextmenutextbox", tbx, e_value_type.NONE, null, null)
+	
 	var keys, key_press, action;
 	textbox_isediting = true
 	textbox_isediting_respond = true
@@ -112,7 +114,7 @@ if (window_focus = string(tbx))
 	if (!mouse_left && window_busy = string(tbx) + "click")
 		window_busy = ""
 	
-	if (mouse_left_pressed && !keyboard_check(vk_shift))
+	if (mouse_left_pressed && !keyboard_check(vk_shift) && !context_menu_mouseon)
 		window_focus = ""
 	
 	if (!tbx.read_only && window_busy = "" && !keyboard_check(vk_control))
@@ -191,19 +193,25 @@ if (window_focus = string(tbx))
 	}
 		
 	action = -1
-	if (keyboard_check(vk_control) && window_busy = "") // Ctrl commands
+	if ((keyboard_check(vk_control) && window_busy = "") || context_menu_tbx_action) // Ctrl commands
 	{
-		if (!tbx.read_only && keyboard_check_pressed(ord("X")))
+		if ((!tbx.read_only && keyboard_check_pressed(ord("X"))) || context_menu_tbx_cut)
 			action = 0
 			
-		if (keyboard_check_pressed(ord("C")))
+		if (keyboard_check_pressed(ord("C")) || context_menu_tbx_copy)
 			action = 1
 			
-		if (!tbx.read_only && key_press[ord("V")])
+		if ((!tbx.read_only && key_press[ord("V")]) || context_menu_tbx_paste)
 			action = 2
 			
-		if (keyboard_check_pressed(ord("A")))
+		if (keyboard_check_pressed(ord("A")) || context_menu_tbx_select_all)
 			action = 4
+			
+		context_menu_tbx_action = false
+		context_menu_tbx_cut = false
+		context_menu_tbx_copy = false
+		context_menu_tbx_paste = false
+		context_menu_tbx_select_all = false
 	}
 	
 	switch (action)

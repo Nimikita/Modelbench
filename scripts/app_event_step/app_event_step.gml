@@ -2,6 +2,7 @@
 
 textbox_input = keyboard_string
 keyboard_string = ""
+step_event_time_start = current_time
 
 app_update_window()
 
@@ -30,3 +31,4 @@ if (model_create_wait)
 }
 
 current_step += 60 / room_speed
+step_event_time = current_time - step_event_time_start

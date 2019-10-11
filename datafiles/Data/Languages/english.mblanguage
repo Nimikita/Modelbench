@@ -4,7 +4,7 @@
         "language": "English",
         "translator": "Nimi",
         "forversion": "Alpha 5",
-        "lastchange": "2019.09.28"
+        "lastchange": "2019.10.10"
     },
 	"startup/": {
 		"modeldetected": "Unsaved model detected",
@@ -85,6 +85,48 @@
 		"s": "S",
 		"v": "V",
 		"hex": "Hex"
+	},
+	"contextmenu/": {
+		"keycontrolreset": "Reset shortcut",
+		"value/": {
+			"on": "On",
+			"off": "Off",
+			"cut": "Cut value",
+			"copy": "Copy value",
+			"paste": "Paste value",
+			"reset": "Reset value"
+		},
+		"category/": {
+			"position": "position",
+			"offset": "offset",
+			"rotation": "rotation",
+			"scale": "scale",
+			"size": "size",
+			"copy": "Copy %1 values",
+			"paste": "Paste %1 values",
+			"reset": "Reset %1 values"
+		},
+		"textbox/": {
+			"cut": "Cut",
+			"copy": "Copy",
+			"paste": "Paste",
+			"selectall": "Select all"
+		},
+		"texture/": {
+			"setmain": "Set as main texture",
+			"remove": "Remove texture from model",
+			"replace": "Replace texture"
+		},
+		"element/": {
+			"add": "Add element...",
+			"delete": "Delete element"
+		},
+		"addelement/": {
+			"part": "Part",
+			"block": "Block",
+			"plane": "Plane",
+			"3dplane": "3D plane"
+		}
 	},
 	"toolbar/": {
 		"modeling": "MODELING",

@@ -26,7 +26,12 @@ if (argument_count > 5)
 if (argument_count > 6)
 	margin = argument[6]
 
+if (item.list != null && item.list.update)
+	return 0
+
 listitem_value = item.value
+item.draw_x = xx
+item.draw_y = yy
 
 if (item.divider)
 	draw_divide(xx, yy, width)
@@ -55,13 +60,13 @@ else
 
 if (item.hover && mouse_left)
 	draw_box(xx, yy, width, height, false, c_accent_overlay, a_accent_overlay)
-else if (item.hover || toggled || (item.hover && mouse_left_released))
+else if (item.hover || toggled || (item.hover && mouse_left_released) || ((context_menu_value = listitem_value) && listitem_value != null))
 	draw_box(xx, yy, width, height, false, c_overlay, a_overlay)
 
 leftp = margin
 rightp = margin
 middley = yy + height/2
-mousehover = app_mouse_box(xx, yy, width, height) && !item.disabled
+mousehover = app_mouse_box(xx, yy, width, height) && !item.disabled && content_mouseon
 hover = mousehover
 
 // Thumbnail
@@ -97,27 +102,31 @@ if (item.icon_left)
 	leftp += 20
 }
 
+components = 0
+
 // Right actions
 if (item.actions_right != null)
 {
 	for (var i = 0; i < ds_list_size(item.actions_right); i += 7)
 	{
-		rightp += 4
+		rightp += 4 * (components > 0)
 		
 		if (draw_button_icon(item.actions_right[|i], (xx + width - rightp) - 20, middley - 10, 20, 20, item.actions_right[|i + 1], item.actions_right[|i + 3], null, false, item.actions_right[|i + 5], item.actions_right[|i + 6]))
 			script_execute(item.actions_right[|i + 4], item.actions_right[|i + 2])
 		
 		hover = (hover && !app_mouse_box((xx + width - rightp) - 20, middley - 10, 20, 20))
 		rightp += 20
+		components++
 	}
 }
 
 // Right icon
 if (item.icon_right)
 {
-	rightp += 4
+	rightp += 4 * (components > 0)
 	draw_image(spr_icons, item.icon_right, (xx + width - rightp) - 10, middley, 1, 1, iconcolor, iconalpha)
 	rightp += 20
+	components++
 }
 
 // Caption
@@ -140,4 +149,9 @@ if (hover)
 	mouse_cursor = cr_handpoint
 
 if (item.script && hover && mouse_left_released)
-	script_execute(item.script)
+{
+	if (item.value != null)
+		script_execute(item.script, item.value)
+	else
+		script_execute(item.script)
+}

@@ -44,6 +44,8 @@ mouseon = app_mouse_box(xx - 8, yy, linewid + 16, hei) && content_mouseon
 // Click on meter
 if (mouseon)
 {
+	context_menu_area(xx - 8, yy, linewid + 16, hei, "contextmenuvalue", value, e_value_type.NUMBER, script, def)
+	
 	mouse_cursor = cr_handpoint
 	if (mouse_left_pressed) // Start dragging
 	{
@@ -51,8 +53,8 @@ if (mouseon)
 		window_focus = name
 		meter_drag_value = value
 	}
-	if (mouse_right_pressed && def != no_limit)
-		script_execute(script, def, false)
+	//if (mouse_right_pressed && def != no_limit)
+	//	script_execute(script, def, false)
 }
 
 // Type
