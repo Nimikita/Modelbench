@@ -141,7 +141,7 @@ if (leftp > margin)
 	leftp += 12
 
 // Text
-var textwidth = (xx + width) - (leftp + rightp);
+var textwidth = width - (leftp + rightp) - 8;
 draw_label(string_limit_font(name, textwidth, font_value), xx + leftp, middley, fa_left, fa_middle, textcolor, textalpha, font_value)
 
 item.hover = hover

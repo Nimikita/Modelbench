@@ -29,7 +29,7 @@ draw_keycontrol("settingskeyduplicateelements", dx, dy, dw, setting_key_duplicat
 tab_next(false)
 
 tab_control_keycontrol()
-draw_keycontrol("settingskeyselectelements", dx, dy, dw, setting_key_select_elements, setting_key_select_elements_control, ord("A"), true, action_setting_key_duplicate_elements)
+draw_keycontrol("settingskeyselectelements", dx, dy, dw, setting_key_select_elements, setting_key_select_elements_control, ord("A"), true, action_setting_key_select_elements)
 tab_next(false)
 
 tab_control_keycontrol()

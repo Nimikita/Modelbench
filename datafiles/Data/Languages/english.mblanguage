@@ -4,7 +4,7 @@
         "language": "English",
         "translator": "Nimi",
         "forversion": "Alpha 5",
-        "lastchange": "2019.10.10"
+        "lastchange": "2019.10.11"
     },
 	"startup/": {
 		"modeldetected": "Unsaved model detected",
@@ -88,6 +88,7 @@
 	},
 	"contextmenu/": {
 		"keycontrolreset": "Reset shortcut",
+		"copylink": "Copy link",
 		"value/": {
 			"on": "On",
 			"off": "Off",
@@ -444,8 +445,14 @@
 	"about/": {
 		"credits": "CREDITS",
 		"forversion": "FOR %1",
-		"leaddeveloper": "Lead developer",
-		"leaduidesigner": "Lead UI designer",
-		"specialthanks": "Special thanks"
+		"development": "DEVELOPMENT",
+		"uibranding": "UI & BRANDING",
+		"specialthanks": "SPECIAL THANKS",
+		"betatesting": "BETA TESTING",
+		"gmruntime": "GM RUNTIME",
+		"gmruntimeprefix": "v%1",
+		"compileoutput": "COMPILE OUTPUT",
+		"compileoutputvm": "Virtual machine",
+		"compileoutputyyc": "YoYo Compiler"
 	}
 }

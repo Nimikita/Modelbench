@@ -127,7 +127,7 @@ for (var t = 0; t < panel.tab_list_amount; t++)
 	if (sel)
 		draw_box(dx, dy, dw, dh + 1, false, c_background, 1)
 	
-	tabtitle[t] = string_limit(tabtitle[t], dw - 26 * (sel && tab.closeable))
+	tabtitle[t] = string_limit(tabtitle[t], dw - (26 * tab.closeable))
 	
 	// Close button
 	if (tab.closeable)
@@ -160,7 +160,7 @@ for (var t = 0; t < panel.tab_list_amount; t++)
 	}
 	
 	// Click
-	if (app_mouse_box(dx, dy, dw, dh) && !app_mouse_box(dx + dw - 26, dy + 2, 24, 24))
+	if (app_mouse_box(dx, dy, dw, dh) && !app_mouse_box(dx + dw - (26 * tab.closeable), dy + 2, 24 * tab.closeable, 24))
 	{
 		if (!sel)
 		{

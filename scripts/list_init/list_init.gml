@@ -138,6 +138,12 @@ switch (name)
 		list_add_item(text_get("contextmenuaddelement3dplane"), e_element.PLANE_3D, "", null, e_icon.plane3d_add, null, action_element_create_menu, false)
 		break
 	}
+	
+	case "contextmenuurl":
+	{
+		list_add_item(text_get("contextmenucopylink"), context_menu_value, "", null, e_icon.link, null, action_copy_text, true)
+		break
+	}
 }
 
 list_update_width(list)

@@ -28,5 +28,3 @@ else
 	
 	element.extend = !element.extend
 }
-
-hierarchy_list.update = true

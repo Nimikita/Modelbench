@@ -30,4 +30,3 @@ else
 }
 
 el_update_hidden_tree(element.hidden, element)
-hierarchy_list.update = true

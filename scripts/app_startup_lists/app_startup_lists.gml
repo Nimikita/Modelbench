@@ -2,7 +2,7 @@
 
 globalvar el_type_name_list;
 globalvar language_english_map, language_map;
-globalvar accent_list;
+globalvar accent_list, beta_testers_list;
 
 // Element names
 el_type_name_list = ds_list_create()
@@ -35,3 +35,24 @@ ds_list_add(accent_list,
 	hex_to_color("F21865")  // Pink
 )
 
+// Beta testers
+beta_testers_list = ds_list_create()
+ds_list_add(beta_testers_list,
+	"AnxiousCynic",
+	"Aronan",
+	"BloxTheRigger",
+	"Emunator",
+	"Espresso",
+	"Ezcha",
+	"Hozq",
+	"KeepOnChucking",
+	"Marvin",
+	"Mike",
+	"Mr.Banders",
+	"Rollo",
+	"Royn",
+	"SKIBBZ",
+	"TheTanJames",
+	"UpgradedMoon",
+	"Vash"
+)

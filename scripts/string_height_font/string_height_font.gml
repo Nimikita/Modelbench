@@ -1,4 +1,4 @@
-/// string_width_font(string, font)
+/// string_height_font(string, font)
 /// @arg string
 /// @arg font
 
@@ -11,10 +11,10 @@ width = 0
 if (font != prevfont)
 {
 	draw_set_font(font)
-	width = string_width(str)
+	width = string_height(str)
 	draw_set_font(prevfont)
 }
 else
-	width = string_width(str)
+	width = string_height(str)
 	
 return width

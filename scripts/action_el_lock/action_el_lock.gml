@@ -30,4 +30,3 @@ else
 }
 
 el_update_lock_tree(element.locked, element)
-hierarchy_list.update = true

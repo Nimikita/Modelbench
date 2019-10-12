@@ -1,4 +1,4 @@
-/// action_setting_key_ascend(key)
+/// action_setting_key_descend(key)
 /// @arg key
 
-setting_key_ascend = argument0
+setting_key_descend = argument0

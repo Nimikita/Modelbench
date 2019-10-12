@@ -50,6 +50,16 @@ for (var v = 0; v < e_value.amount; v++)
 	value[v] = value_default[v]
 }
 
+// Clear 'recover model' snackbar
+with (obj_snackbar)
+{
+	if (snackbar_action1_name = "startuprecovermodel")
+	{
+		snackbar_close(id)
+		break
+	}
+}
+
 // Close menu
 //menu_panel_ani_type = "hide"
 //menu_open = false

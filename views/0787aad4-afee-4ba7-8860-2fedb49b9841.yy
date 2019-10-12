@@ -41,7 +41,8 @@
         "f4b6aafb-8b6c-4607-99bd-67d81940aab6",
         "53c0843b-f992-4be0-a8ca-5226d7d313dc",
         "5535892d-89cd-47e6-aa21-43af4b8995aa",
-        "62d63209-549e-47cf-920e-7f44a3bd760c"
+        "62d63209-549e-47cf-920e-7f44a3bd760c",
+        "cfbde4f8-afd5-4ac0-8184-e08308ebc081"
     ],
     "filterType": "GMScript",
     "folderName": "Components",

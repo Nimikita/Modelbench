@@ -95,9 +95,9 @@ else
 {
 	// Bend axis
 	if (axis[0] = Y)
-		json_save_var("axis", "y")
-	else if (axis[0] = Z)
 		json_save_var("axis", "z")
+	else if (axis[0] = Z)
+		json_save_var("axis", "y")
 	else
 		json_save_var("axis", "x")
 	
