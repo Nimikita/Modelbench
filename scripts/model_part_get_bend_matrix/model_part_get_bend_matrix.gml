@@ -21,13 +21,12 @@ if (part.bend_part = null && part.value[e_value.BEND])
 // Limit angle
 for (var i = X; i <= Z; i++)
 {
-	if (element_type != TYPE_SHAPE)
-	{
-		// Invert
-		bend[X + i] *= test(part.bend_invert[i], -1, 1)
-		bend[X + i] = clamp(bend[X + i], part.bend_direction_min[i], part.bend_direction_max[i])
-	}
-	
+	// Clamp
+	bend[X + i] = clamp(bend[X + i], part.bend_direction_min[i], part.bend_direction_max[i])
+		
+	// Invert
+	bend[X + i] *= test(part.bend_invert[i], -1, 1)
+
 	// Reset if not defined
 	if (!part.bend_axis[i])
 		bend[i] = 0

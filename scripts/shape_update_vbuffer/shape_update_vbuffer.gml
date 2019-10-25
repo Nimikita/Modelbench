@@ -3,13 +3,6 @@
 
 var bend = bend_default_angle;
 
-// Invert/Limit angle
-for (var i = X; i <= Z; i++)
-{
-	bend[i] *= test(parent.bend_invert[i], -1, 1)
-	bend[i] = clamp(bend[i], parent.bend_direction_min[i], parent.bend_direction_max[i])
-}
-
 // Clear previous vertex buffer
 if (shape_vbuffer != null)
 {

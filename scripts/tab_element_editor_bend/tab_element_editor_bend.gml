@@ -34,13 +34,9 @@ for (var i = X; i <= Z; i++)
 	draw_meter_range("elementeditorbendrange" + axisname[i], dx, dy, dw, -180, 180, 1, el_edit.value[e_value.BEND_X_MIN + axis_edit], el_edit.value[e_value.BEND_X_MAX + axis_edit], -180, 180, element_editor.bend.tbx_min[axis_edit], element_editor.bend.tbx_max[axis_edit], action_el_bend_min, action_el_bend_max)
 	tab_next()
 	
-	var anglemin, anglemax;
-	anglemin = test(el_edit.value[e_value.BEND_INVERT_X + axis_edit], -el_edit.value[e_value.BEND_X_MAX + axis_edit], el_edit.value[e_value.BEND_X_MIN + axis_edit])
-	anglemax = test(el_edit.value[e_value.BEND_INVERT_X + axis_edit], -el_edit.value[e_value.BEND_X_MIN + axis_edit], el_edit.value[e_value.BEND_X_MAX + axis_edit])
-	
 	// Angle
 	tab_control_meter()
-	draw_meter("elementeditorbendangle" + axisname[i], dx, dy, dw, el_edit.value[e_value.BEND_ANGLE_X + axis_edit], 48, anglemin, anglemax, 0, 0.01, element_editor.bend.tbx_angle[axis_edit], action_el_bend_angle)
+	draw_meter("elementeditorbendangle" + axisname[i], dx, dy, dw, el_edit.value[e_value.BEND_ANGLE_X + axis_edit], 48, el_edit.value[e_value.BEND_X_MIN + axis_edit], el_edit.value[e_value.BEND_X_MAX + axis_edit], 0, 0.01, element_editor.bend.tbx_angle[axis_edit], action_el_bend_angle)
 	tab_next()
 }
 

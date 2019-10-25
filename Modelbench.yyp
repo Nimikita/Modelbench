@@ -4607,6 +4607,14 @@
             }
         },
         {
+            "Key": "919ca4e1-c845-43dc-88b1-ec00495223d7",
+            "Value": {
+                "id": "c5106f1f-73ca-488a-8fb4-53e8d4ddd80d",
+                "resourcePath": "scripts\\model_shape_get_bend\\model_shape_get_bend.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "91f5d9f2-eaf6-45d3-ab9e-00079e21d909",
             "Value": {
                 "id": "1e155c7f-035a-43cf-9435-f99945b7e34b",
@@ -8226,6 +8234,7 @@
         "c0bfc572-52f8-4401-a51f-bd06c48a53d0",
         "e1b4b16b-0892-43e5-b305-1514d115c953",
         "47382899-de28-4593-b5a9-9646be7b8e41",
+        "919ca4e1-c845-43dc-88b1-ec00495223d7",
         "5d5452d0-6517-48f4-af6f-ce73b360cfeb",
         "2b45ddfb-90de-4c26-a1cb-cbb9be4ea1cd",
         "bc43c74a-e3ab-4620-96a3-0a0e4c7cca6c",

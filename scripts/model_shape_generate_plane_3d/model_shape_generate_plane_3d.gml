@@ -98,7 +98,7 @@ for (var outer = 0; outer <= samplesize[arrouteraxis]; outer++)
 		var mat;
 		if (isbent) // Apply segment bending
 		{
-			var segp;
+			var segp, bendvec;
 			if (seginnerpos < bendstart) // No/below bend, no angle
 				segp = 0
 			else if (seginnerpos >= bendend) // Above bend, apply full angle
@@ -109,7 +109,7 @@ for (var outer = 0; outer <= samplesize[arrouteraxis]; outer++)
 			if (invangle)
 				segp = 1 - segp
 			
-			var bendvec = vec3(bend[X] * ease("easeinoutquint", segp), bend[Y] * ease("easeinoutquint", segp), bend[Z] * segp);
+			bendvec = model_shape_get_bend(bend, segp)
 			
 			// Blocky bending
 			var bendscale = vec3(0);

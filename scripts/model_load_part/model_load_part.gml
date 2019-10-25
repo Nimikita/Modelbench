@@ -261,8 +261,8 @@ with (new(obj_model_element))
 				}
 				else if (bend_direction[i] = e_bend.FORWARD)
 				{
-					value[e_value.BEND_X_MIN + i] = -180
-					value[e_value.BEND_X_MAX + i] = 0
+					value[e_value.BEND_X_MIN + i] = 0
+					value[e_value.BEND_X_MAX + i] = 180
 					value[e_value.BEND_INVERT_X + i] = !value[e_value.BEND_INVERT_X + i] // FORWARD previously inverted angle
 				}
 				else

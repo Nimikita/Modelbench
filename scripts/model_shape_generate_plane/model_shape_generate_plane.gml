@@ -57,13 +57,13 @@ sharpbend = app.setting_blocky_bending && ((bend_axis[X] && !bend_axis[Y] && !be
 bendsize = test(bend_size = null, test(!app.setting_blocky_bending, 4, 1), bend_size)
 detail = test(sharpbend, 2, max(bendsize, 2))
 
-if (bendsize != null && scale[segaxis] > .5)
+if (bendsize != null && scale[segaxis] > .5 && bendsize >= 1)
 	detail /= scale[segaxis]
 
 bendsegsize = bendsize / detail;
 invangle = (bend_part = e_part.LOWER || bend_part = e_part.BACK || bend_part = e_part.LEFT)
 
-var p1, p2, p3, p4, n1, n2;
+var p1, p2, n1, n2;
 var texp1;
 
 if (segaxis = X)
@@ -88,7 +88,7 @@ var mat;
 if (isbent) // Apply start bend
 {
 	// Angle
-	var startp;
+	var startp, bendvec;
 	if (bendstart > 0) // Below bend, no angle
 		startp = 0
 	else if (bendend < 0) // Above bend, apply full angle
@@ -99,7 +99,7 @@ if (isbent) // Apply start bend
 	if (invangle)
 		startp = 1 - startp
 	
-	var bendvec = vec3(bend[X] * ease("easeinoutquint", startp), bend[Y] * ease("easeinoutquint", startp), bend[Z] * startp);
+	bendvec = bendvec = model_shape_get_bend(bend, startp)
 	
 	// Blocky bending
 	var startscale = vec3(0);
@@ -130,7 +130,7 @@ while (segpos < size[segaxis])
 	var segsize;
 	var np1, np2;
 	var nn1, nn2;
-	var ntexp1, ntexp2, ntexp3;
+	var ntexp1;
 	
 	// Find segment size
 	if (!isbent || segpos >= bendend) // No/Above bend
@@ -169,7 +169,7 @@ while (segpos < size[segaxis])
 	// Apply transform
 	if (isbent)  // Apply segment bend
 	{
-		var segp;
+		var segp, bendvec;
 		if (segpos < bendstart) // Below bend, no angle
 			segp = 0
 		else if (segpos >= bendend) // Above bend, apply full angle
@@ -180,7 +180,7 @@ while (segpos < size[segaxis])
 		if (invangle)
 			segp = 1 - segp
 			
-		var bendvec = vec3(bend[X] * ease("easeinoutquint", segp), bend[Y] * ease("easeinoutquint", segp), bend[Z] * segp);
+		bendvec = bendvec = model_shape_get_bend(bend, segp)
 	
 		// Blocky bending
 		var bendscale = vec3(0);
