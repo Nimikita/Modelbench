@@ -40,10 +40,9 @@ if (window_busy = "rendercontrol" && view_control_edit_view = view && view_contr
 		view_control_value += rot
 		view_control_value_add += rot
 		
-		// TODO: Snap
 		view_control_value = el_value_clamp(view_control_edit, view_control_value)
 		view_control_value_add = el_value_clamp(view_control_edit, view_control_value_add)
-		snapval = 0
+		snapval = snap_value
 		
 		// Update
 		axis_edit = e_value.ROT_X - view_control_edit

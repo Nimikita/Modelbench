@@ -71,6 +71,10 @@ if (window_busy = "" && !textbox_isediting)
 	
 	if (keyboard_check_pressed(setting_key_tool_transform) && app_check_control(setting_key_tool_transform_control))
 		tool_selected = e_tool.TRANSFORM
+	
+	// Toggle snapping
+	if (keyboard_check_pressed(setting_key_snap) && app_check_control(setting_key_snap_control))
+		action_setting_snap(!setting_snap)
 }
 else if (textbox_isediting && keyboard_check_pressed(vk_tab) && textbox_lastfocus.next_tbx)
 	window_focus = string(textbox_lastfocus.next_tbx)

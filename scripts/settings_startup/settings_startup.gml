@@ -45,6 +45,8 @@ setting_key_tool_scale = ord("S")
 setting_key_tool_scale_control = false
 setting_key_tool_transform = ord("T")
 setting_key_tool_transform_control = false
+setting_key_snap = ord("F")
+setting_key_snap_control = false
 
 setting_key_forward = ord("W")
 setting_key_back = ord("S")
@@ -96,9 +98,19 @@ setting_collapse_bend_axis[X] = true
 setting_collapse_bend_axis[Y] = true
 setting_collapse_bend_axis[Z] = true
 
+// Snap
+setting_snap = false
+setting_snap_size = 1
+snap_value = 0.0001
+
 settings_load()
 interface_update()
 
 //setting_texture_filtering = false
 setting_texture_filtering_level = 1
 texture_set_mipmap_level(setting_texture_filtering_level)
+
+if (setting_snap)
+	snap_value = setting_snap_size
+else
+	snap_value = snap_min

@@ -60,6 +60,7 @@
 #macro view_3d_control_width		20
 #macro view_3d_box_size				12
 #macro icon_button_offset			4
+#macro snap_min						0.0001
 
 // Values
 #macro null							noone

@@ -5,6 +5,9 @@ constantspeed = 0.095
 inease = "easeoutcirc"
 outease = "easeoutcirc"
 
+toolset_alpha += (toolset_alpha_goal - toolset_alpha) / max(1, 4 / delta)
+toolset_snap_alpha += (toolset_snap_alpha_goal - toolset_snap_alpha) / max(1, 4 / delta)
+
 // Component animations
 with (obj_micro_animation)
 {	

@@ -1,4 +1,4 @@
-/// draw_textfield_group(name, x, y, width, multiplier, min, max)
+/// draw_textfield_group(name, x, y, width, multiplier, min, max, snap)
 /// @arg name
 /// @arg x
 /// @arg y
@@ -6,8 +6,9 @@
 /// @arg multiplier
 /// @arg min
 /// @arg max
+/// @arg snap
 
-var name, xx, yy, wid, mul, minval, maxval;
+var name, xx, yy, wid, mul, minval, maxval, snapval;
 var fieldx, fieldwid, fieldupdate, hei;
 name = argument[0]
 xx = argument[1]
@@ -16,6 +17,7 @@ wid = argument[3]
 mul = argument[4]
 minval = argument[5]
 maxval = argument[6]
+snapval = argument[7]
 
 fieldx = xx
 fieldwid = ((wid - 4) - (2 * (textfield_amount - 1)))/textfield_amount
@@ -93,7 +95,7 @@ for (var i = 0; i < textfield_amount; i++)
 			window_focus = textfield_name[i]
 			
 			if (textfield_script[i] != null)
-				script_execute(textfield_script[i], clamp(snap(textfield_default[i], 1), minval, maxval), 0) // TODO: Put proper snapping here
+				script_execute(textfield_script[i], clamp(snap(textfield_default[i], snapval), minval, maxval), 0)
 			else
 			{
 				textfield_textbox[i].text = string(textfield_default[i])
@@ -120,7 +122,7 @@ for (var i = 0; i < textfield_amount; i++)
 		mouse_cursor = cr_size_we
 		dragger_drag_value += mouse_dx * mul
 
-		var d = clamp(snap(dragger_drag_value, 1), minval, maxval) - textfield_value[i];
+		var d = clamp(snap(dragger_drag_value, snapval), minval, maxval) - textfield_value[i];
 		
 		if (d <> 0 && textfield_script[i] != null)
 			script_execute(textfield_script[i], d, true)
@@ -141,7 +143,7 @@ for (var i = 0; i < textfield_amount; i++)
 	if (update)
 	{
 		if (textfield_script[i] != null)
-			script_execute(textfield_script[i], clamp(snap(string_get_real(textfield_textbox[i].text, 0), 1), minval, maxval), false)
+			script_execute(textfield_script[i], clamp(snap(string_get_real(textfield_textbox[i].text, 0), snapval), minval, maxval), false)
 		else
 			fieldupdate = textfield_textbox[i]
 	}

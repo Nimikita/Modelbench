@@ -46,9 +46,8 @@ if (window_busy = "rendercontrol" && view_control_edit_view = view && view_contr
 		view_control_value += move
 		view_control_value_add += move
 		
-		// TODO: Snap
 		view_control_value = el_value_clamp(view_control_edit, view_control_value)
-		snapval = 0
+		snapval = snap_value
 		
 		// Update
 		axis_edit = e_value.SCA_X - view_control_edit
@@ -75,10 +74,9 @@ if (window_busy = "rendercontrolscalexyz" && view_control_edit_view = view && vi
 	{
 		var snapval;
 		
-		// TODO: Snap
 		view_control_value = el_value_clamp(e_value.SCA_X, view_control_value)
 		view_control_value_add = el_value_clamp(e_value.SCA_X, view_control_value_add)
-		snapval = 0
+		snapval = snap_value
 		
 		// Update
 		axis_edit = X

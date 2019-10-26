@@ -10,5 +10,5 @@ textfield_group_add("elementeditoroffsety", el_edit.value[e_value.OFFSET_X + axi
 axis_edit = test(setting_z_is_up, Z, Y)
 textfield_group_add("elementeditoroffsetz", el_edit.value[e_value.OFFSET_X + axis_edit], 0, action_el_offset, axis_edit, tab.pivot_offset.tbx_z)
 
-draw_textfield_group("elementeditoroffset", dx, dy, dw, 0.1, -no_limit, no_limit)
+draw_textfield_group("elementeditoroffset", dx, dy, dw, 0.1, -no_limit, no_limit, snap_min)
 tab_next()

@@ -73,6 +73,9 @@ if (ds_map_valid(controlsmap))
 	
 	setting_smooth_camera = value_get_real(controlsmap[?"smooth_camera"], setting_smooth_camera)
 	setting_smooth_camera_amount = value_get_real(controlsmap[?"smooth_camera_amount"], setting_smooth_camera_amount)
+	
+	setting_snap = value_get_real(controlsmap[?"snap"], setting_snap)
+	setting_snap_size = value_get_real(controlsmap[?"snap_size"], setting_snap_size)
 }
 
 // Interface

@@ -73,9 +73,20 @@ var toolbarx, toolbary, toolbarwid, toolbarhei;
 toolbarx = boxx + 16
 toolbary = boxy + 16
 toolbarwid = 36
-toolbarhei = 4 + (4 * (28 + 4)) + 1 + 4 + (5 * (28 + 4));
+toolbarhei = 4 + (4 * (28 + 4)) + 1 + 4 + (5 * (28 + 4))
 
 if (app_mouse_box(toolbarx, toolbary, toolbarwid, toolbarhei))
 	view.mouseon = false
 
 view_toolbar_draw(toolbarx, toolbary, toolbarwid, toolbarhei)
+
+// Snap toolbar
+toolbarwid = 4 + 28 + 4 + 6 + string_width_font(text_get("toolsetsnapsize"), font_emphasis) + 10 + 64 + 4
+toolbarhei = 36
+toolbarx = boxx + boxw/2 - toolbarwid/2
+toolbary = boxy + 16
+
+if (app_mouse_box(toolbarx, toolbary, toolbarwid, toolbarhei))
+	view.mouseon = false
+
+view_toolbar_snap_draw(toolbarx, toolbary, toolbarwid, toolbarhei)

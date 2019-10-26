@@ -73,7 +73,7 @@ enum e_icon
 	copy,
 	paste,
 	reset,
-	snap,
+	magnet,
 	show,
 	hide,
 	link,

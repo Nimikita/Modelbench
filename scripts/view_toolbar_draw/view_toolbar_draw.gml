@@ -17,6 +17,18 @@ content_height = height
 content_mouseon = app_mouse_box(content_x, content_y, content_width, content_height) && !popup_mouseon && !snackbar_mouseon && !context_menu_mouseon
 tip_force_right = true
 
+var busy = window_busy;
+window_busy = ""
+
+if (app_mouse_box(content_x - 80, content_y - 80, content_width + 160, content_height + 160) && !popup_mouseon && !snackbar_mouseon && !context_menu_mouseon)
+	toolset_alpha_goal = 1
+else
+	toolset_alpha_goal = .25
+
+window_busy = busy
+
+draw_set_alpha(toolset_alpha)
+
 // Background
 draw_box(xx, yy, width, height, false, c_background, 1)
 draw_dropshadow(xx, yy, width, height, c_black, 1)
@@ -77,6 +89,7 @@ if (draw_button_icon("toolsettooltransform", xx, yy, 28, 28, tool_selected = e_t
 	tool_selected = e_tool.TRANSFORM
 yy += 28 + 4
 
+draw_set_alpha(1)
 tip_set_shortcut(-1, false)
 tip_force_right = false
 
