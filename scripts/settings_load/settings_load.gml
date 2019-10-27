@@ -130,5 +130,7 @@ if (ds_map_valid(rendermap))
 	setting_render_shadows = value_get_real(rendermap[?"render_shadows"], setting_render_shadows)
 	setting_render_shadows_blur_quality = value_get_real(rendermap[?"render_shadows_blur_quality"], setting_render_shadows_blur_quality)
 	setting_render_shadows_blur_size = value_get_real(rendermap[?"render_shadows_blur_size"], setting_render_shadows_blur_size)
+	
+	setting_render_aa = value_get_real(rendermap[?"render_aa"], setting_render_aa)
 }
 ds_map_destroy(map)

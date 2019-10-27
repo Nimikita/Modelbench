@@ -98,6 +98,8 @@ json_save_object_start("render")
 	json_save_var_bool("render_shadows", setting_render_shadows)
 	json_save_var("render_shadows_blur_quality", setting_render_shadows_blur_quality)
 	json_save_var("render_shadows_blur_size", setting_render_shadows_blur_size)
+	
+	json_save_var_bool("render_aa", setting_render_aa)
 
 json_save_object_done()
 

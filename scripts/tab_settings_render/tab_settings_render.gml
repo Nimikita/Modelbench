@@ -37,3 +37,8 @@ if (setting_render_shadows && !setting_collapse_shadows)
 	draw_meter("settingsrendershadowsblursize", dx, dy, dw, round(setting_render_shadows_blur_size * 100), 48, 0, 400, 20, 1, tab.render.tbx_shadows_blur_size, action_setting_render_shadows_blur_size)
 	tab_next()
 }
+
+// AA
+tab_control_switch()
+draw_switch("settingsrenderaa", dx, dy, setting_render_aa, action_setting_render_aa, false)
+tab_next()

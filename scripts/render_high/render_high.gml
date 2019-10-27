@@ -155,8 +155,17 @@ if (setting_render_shadows)
 }
 
 // Render scene and shadows
-render_surface[3] = surface_require(render_surface[3], render_width, render_height)
-var finalsurf = render_surface[3]
+var finalsurf;
+if (setting_render_aa)
+{
+	render_surface[3] = surface_require(render_surface[3], render_width, render_height)
+	finalsurf = render_surface[3]
+}	
+else
+{
+	render_target = surface_require(render_target, render_width, render_height)
+	finalsurf = render_target
+}
 
 surface_set_target(finalsurf)
 {
@@ -191,23 +200,26 @@ surface_set_target(finalsurf)
 surface_reset_target()
 
 // AA
-render_target = surface_require(render_target, render_width, render_height)
-var prevsurf = finalsurf;
-surface_set_target(render_target)
+if (setting_render_aa)
 {
-	draw_clear_alpha(c_black, 0)
+	render_target = surface_require(render_target, render_width, render_height)
+	var prevsurf = finalsurf;
+	surface_set_target(render_target)
+	{
+		draw_clear_alpha(c_black, 0)
 		
-	render_shader_obj = shader_map[?shader_high_aa]
-	with (render_shader_obj)
-		shader_use()
-	draw_surface_exists(prevsurf, 0, 0)
-	with (render_shader_obj)
-		shader_clear()
+		render_shader_obj = shader_map[?shader_high_aa]
+		with (render_shader_obj)
+			shader_use()
+		draw_surface_exists(prevsurf, 0, 0)
+		with (render_shader_obj)
+			shader_clear()
 		
-	// Alpha fix
-	gpu_set_blendmode_ext(bm_src_color, bm_one) 
-	draw_box(0, 0, render_width, render_height, false, c_black, 1)
-	gpu_set_blendmode(bm_normal)
+		// Alpha fix
+		gpu_set_blendmode_ext(bm_src_color, bm_one) 
+		draw_box(0, 0, render_width, render_height, false, c_black, 1)
+		gpu_set_blendmode(bm_normal)
 		
+	}
+	surface_reset_target()
 }
-surface_reset_target()

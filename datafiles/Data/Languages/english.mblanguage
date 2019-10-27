@@ -4,7 +4,7 @@
         "language": "English",
         "translator": "Nimi",
         "forversion": "Alpha 5",
-        "lastchange": "2019.10.26"
+        "lastchange": "2019.10.27"
     },
 	"startup/": {
 		"modeldetected": "Unsaved model detected",
@@ -444,7 +444,8 @@
 		"renderssaoblurpasses": "Blur passes",
 		"rendershadows": "Shadows",
 		"rendershadowsblurquality": "Blur quality",
-		"rendershadowsblursize": "Blur size"
+		"rendershadowsblursize": "Blur size",
+		"renderaa": "AA"
 	},
 	"about/": {
 		"credits": "CREDITS",

@@ -87,6 +87,8 @@ setting_render_ssao_power = 1
 setting_render_ssao_color = c_black//hex_to_color("696EA1")
 setting_render_ssao_blur_passes = 2
 
+setting_render_aa = true
+
 // Misc settings
 setting_hide_shapes = false
 
