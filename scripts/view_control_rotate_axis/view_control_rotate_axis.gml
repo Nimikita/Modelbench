@@ -5,13 +5,14 @@
 /// @arg matrix
 /// @arg length
 
-var view, vid, color, mat, len, detail;
+var view, vid, color, mat, len, detail, pointarray;
 var pos3D, pos2D;
 view = argument0
 vid = argument1
 color = argument2
 mat = argument3
 len = argument4
+detail = test(view_control_edit = vid, 24, 32)
 
 // Get middle
 pos3D = point3D_mul_matrix(point3D(0, 0, 0), mat)
@@ -62,32 +63,53 @@ else if (view.control_mouseon_last = vid)
 else
 	draw_set_color(color)
 
-// Circle
-detail = test(view_control_edit = vid, 32, 64)
-for (var i = 0; i <= 1; i += 1/detail)
+// Update circle points for wheels(too slow for realtime)
+if (view_control_update_rot)
 {
-	var start3D, start2D, end3D, end2D;
+	view_control_rot_points[vid - e_value.ROT_X] = 0
+	view_control_rot_points[vid - e_value.ROT_X] = array()
 	
-	// Convert to screen
-	start3D = point3D_mul_matrix(point3D(cos(pi * 2 * (i - 1 / detail)) * len, sin(pi * 2 * (i - 1 / detail)) * len, 0), mat)
-	start2D = view_shape_project(start3D)
-	if (point3D_project_error)
-		return 0
 	
-	// Hide line
-	if (view_control_edit != vid)
+	for (var i = 0; i <= 1; i += 1/detail)
 	{
-		var dis1, dis2;
-		dis1 = vec3_length(point3D_sub(start3D, cam_from))
-		dis2 = vec3_length(point3D_sub(el_edit.world_pos, cam_from))
-		if ((dis2 - dis1) < -1)
-			continue
-	}
+		var start3D, start2D, end3D, end2D;
 	
-	end3D = point3D_mul_matrix(point3D(cos(pi * 2 * i) * len, sin(pi * 2 * i) * len, 0), mat)
-	end2D = view_shape_project(end3D)
-	if (point3D_project_error)
-		return 0
+		// Convert to screen
+		start3D = point3D_mul_matrix(point3D(cos(pi * 2 * (i - 1 / detail)) * len, sin(pi * 2 * (i - 1 / detail)) * len, 0), mat)
+		start2D = view_shape_project(start3D)
+		if (point3D_project_error)
+			continue
+		
+		// Hide line
+		if (view_control_edit != vid)
+		{
+			var dis1, dis2;
+			dis1 = vec3_length(point3D_sub(start3D, cam_from))
+			dis2 = vec3_length(point3D_sub(el_edit.world_pos, cam_from))
+			if ((dis2 - dis1) < -1)
+				continue
+		}
+		
+		end3D = point3D_mul_matrix(point3D(cos(pi * 2 * i) * len, sin(pi * 2 * i) * len, 0), mat)
+		end2D = view_shape_project(end3D)
+		if (point3D_project_error)
+			continue
+		
+		array_add(view_control_rot_points[vid - e_value.ROT_X], start2D[X])
+		array_add(view_control_rot_points[vid - e_value.ROT_X], start2D[Y])
+		array_add(view_control_rot_points[vid - e_value.ROT_X], end2D[X])
+		array_add(view_control_rot_points[vid - e_value.ROT_X], end2D[Y])
+	}
+}
+
+// Get array after updating to combat delay otherwise
+pointarray = view_control_rot_points[vid - e_value.ROT_X]
+
+for (var i = 0; i < array_length_1d(pointarray); i += 4)
+{
+	var start2D, end2D;
+	start2D = point2D(pointarray[i], pointarray[i + 1])
+	end2D = point2D(pointarray[i + 2], pointarray[i + 3])
 	
 	// Line
 	view_shape_line_draw(start2D, end2D)

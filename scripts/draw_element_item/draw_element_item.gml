@@ -22,7 +22,7 @@ movehover = app_mouse_box_busy(dx, itemy, dw, itemh, "elementmove")
 itemhover = app_mouse_box(dx, itemy, dw, itemh) && content_mouseon
 expandhover = false
 lockhover = false
-itemvisible = (itemy < window_height) && (itemy + itemh > 0)
+itemvisible = (itemy + itemh > content_y) && (itemy < content_y + content_height)
 
 hideshapes = setting_hide_shapes || (element_move_parts > 0 && window_busy = "elementmove")
 
@@ -52,8 +52,6 @@ if (itemvisible)
 	
 	draw_set_font(font_value)
 }
-
-
 
 xx = itemx + itemw - 24
 minw = 4 + 20 + 4 + 20 + 8 + string_width("...") + (8 + 20 + 4 + 20)
@@ -290,12 +288,12 @@ if (element.element_type = TYPE_PART && element.extend)
 	// Draw shapes
 	if (element.shape_list != null && !hideshapes)
 	{
-		if (itemvisible)
+		//if (itemvisible)
 			draw_box(linex, itemy + itemh, 1, (28 * ds_list_size(element.shape_list)) - 13, false, c_border, a_border)
 		
 		for(var i = 0; i < ds_list_size(element.shape_list); i++)
 		{
-			if (itemvisible)
+			if ((itemy + itemh + (28 * i) > content_y) && (itemy + (28 * i) < content_y + content_height))
 				draw_box(linex + 1, dy + (itemh/2), 9, 1, false, c_border, a_border)
 			
 			draw_element_item(element.shape_list[|i], dy, increment + 1)

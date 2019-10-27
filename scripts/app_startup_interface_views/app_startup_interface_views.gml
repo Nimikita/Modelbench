@@ -10,6 +10,8 @@ view_click_y = 0
 
 view_main = new(obj_view)
 
+view_control_update_rot = true
+
 view_control_edit = null
 view_control_edit_view = null
 view_control_vec = vec2(0, 0)
@@ -20,3 +22,7 @@ view_control_value_add = 0
 view_control_scale_coords = vec2(0)
 view_control_scale_amount = 1
 view_control_value_scale = vec3(1)
+
+view_control_rot_points[X] = array()
+view_control_rot_points[Y] = array()
+view_control_rot_points[Z] = array()

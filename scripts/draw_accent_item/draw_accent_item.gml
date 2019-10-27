@@ -13,6 +13,9 @@ width = floor(argument2)
 height = floor(argument3)
 index = argument4
 
+if (xx + width < content_x || xx > content_x + content_width || yy + height < content_y || yy > content_y + content_height)
+	return 0
+
 mouseon = app_mouse_box(xx, yy, width, height) && content_mouseon
 mouseclick = mouseon && mouse_left
 

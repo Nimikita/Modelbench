@@ -6,3 +6,5 @@ cam_work_zoom = point3D_distance(cam_work_focus, cam_work_from)
 cam_work_zoom_goal = cam_work_zoom
 cam_work_angle_off_xy = 0
 cam_work_angle_off_z = 0
+
+view_control_update_rot = true

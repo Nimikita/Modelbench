@@ -39,6 +39,9 @@ if (labelpos = "top")
 else
 	capwidth = string_width_font(text_get(name), font_emphasis) + 10
 
+if (xx + wid < content_x || xx > content_x + content_width || yy + 28 < content_y || yy > content_y + content_height)
+	return 0
+
 update = draw_inputbox(name, xx + capwidth, yy, wid - capwidth, placeholder, textbox, script, false, err)
 
 // Use microanimation from inputbox to determine color

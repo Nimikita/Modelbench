@@ -7,7 +7,7 @@
 /// @arg script
 
 var name, xx, yy, color, def, script;
-var wid, hei, mouseon, mouseclick;
+var w, h, mouseon, mouseclick;
 name = argument0
 xx = argument1
 yy = argument2
@@ -15,10 +15,13 @@ color = argument3
 def = argument4
 script = argument5
 
-wid = dw
-hei = 28
+w = dw
+h = 28
 mouseon = app_mouse_box(xx, yy, 28, 28) && content_mouseon
 mouseclick = mouseon && mouse_left
+
+if (xx + w < content_x || xx > content_x + content_width || yy + h < content_y || yy > content_y + content_height)
+	return 0
 
 if (mouseon)
 	mouse_cursor = cr_handpoint

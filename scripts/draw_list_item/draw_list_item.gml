@@ -26,6 +26,9 @@ if (argument_count > 5)
 if (argument_count > 6)
 	margin = argument[6]
 
+if (xx + width < content_x || xx > content_x + content_width || yy + height < content_y || yy > content_y + content_height)
+	return 0
+
 if (item.list != null && item.list.update)
 	return 0
 

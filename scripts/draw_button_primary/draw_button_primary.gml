@@ -23,6 +23,9 @@ if (argument_count > 5)
 if (argument_count > 6)
 	anchor = argument[6]
 
+if (yy > content_y + content_height || yy + height < content_y)
+	return 0
+
 draw_set_font(font_button)
 
 var textwidth = string_width(text_get(name)) + 28;

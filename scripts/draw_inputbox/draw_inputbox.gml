@@ -33,6 +33,9 @@ h = 28
 padding = 3
 font = null
 
+if (xx + w < content_x || xx > content_x + content_width || yy + h < content_y || yy > content_y + content_height)
+	return 0
+
 var mouseon, mouseclick;
 mouseon = app_mouse_box(xx, yy, w, h) && content_mouseon && (window_busy = "" || window_busy = string(tbx) + "click") && !disabled
 mouseclick = mouseon && mouse_left

@@ -16,11 +16,11 @@ str = string_hash_to_newline(argument[0])
 xx = argument[1]
 yy = argument[2]
 
-if (xx + string_width(str) < 0 || 
-	xx > window_width || 
-	yy + string_height(str) < 0 || 
-	yy > window_height)
-	return 0
+if (argument_count <= 7)
+{
+	if (xx + string_width(str) < 0 || xx > content_x + content_width || yy + string_height(str) < 0 || yy > content_y + content_height)
+		return 0
+}
 
 seperation = -1
 width = 99999999
@@ -57,6 +57,22 @@ if (argument_count > 7)
 {
     font = argument[7]
     draw_set_font(font)
+	
+	if (xx + string_width(str) < 0 || xx > content_x + content_width || yy + string_height(str) < 0 || yy > content_y + content_height)
+	{
+		draw_set_halign(fa_left)
+		draw_set_valign(fa_top)
+		
+		if (color != null)
+			if (color != oldcolor)
+				draw_set_color(oldcolor)
+		
+		if (alpha < 1)
+			if (alpha != oldalpha)
+				draw_set_alpha(oldalpha)
+		
+		return 0
+	}
 	
 	if (string_height(str) mod 2 && valign = fa_center)
 		yy -= frac(string_height(str) / 2)

@@ -12,6 +12,13 @@ yy = argument[2]
 
 h = 28
 w = dw
+
+if (xx + w < content_x || xx > content_x + content_width || yy + h < content_y || yy > content_y + content_height)
+{
+	togglebutton_reset()
+	return 0
+}
+
 buttonx = xx
 buttoncount = array_length_1d(togglebutton_name)
 buttonsize = round(w/buttoncount)

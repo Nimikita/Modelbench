@@ -58,3 +58,6 @@ if (window_busy = "rendercontrol" && view_control_edit_view = view && view_contr
 		view_control_edit = null
 	}
 }
+
+if (view_control_update_rot)
+	view_control_update_rot = false

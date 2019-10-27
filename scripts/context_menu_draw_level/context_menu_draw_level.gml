@@ -8,6 +8,11 @@ dx = level.level_x
 dy = level.level_y
 dw = level.level_width
 dh = level.level_height
+
+content_x = dx
+content_y = dy
+content_width = dw
+content_height = dh
 content_mouseon = app_mouse_box(dx, dy, dw, dh) && (i >= context_menu_mouseon_level)
 
 if (content_mouseon)

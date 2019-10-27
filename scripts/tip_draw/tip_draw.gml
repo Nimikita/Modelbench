@@ -15,6 +15,11 @@ if (tip_alpha = 0)
 	return 0
 }
 
+content_x = tip_x
+content_y = tip_y
+content_width = tip_w
+content_height = tip_h
+
 // Box
 draw_set_alpha(tip_alpha)
 draw_box(tip_x, tip_y, tip_w, tip_h, false, c_background, 1)
