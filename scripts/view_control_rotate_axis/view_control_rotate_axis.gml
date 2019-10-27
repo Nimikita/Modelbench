@@ -64,7 +64,7 @@ else
 	draw_set_color(color)
 
 // Update circle points for wheels(too slow for realtime)
-if (view_control_update_rot)
+if (view_control_update_rot[vid - e_value.ROT_X])
 {
 	view_control_rot_points[vid - e_value.ROT_X] = 0
 	view_control_rot_points[vid - e_value.ROT_X] = array()
@@ -101,6 +101,7 @@ if (view_control_update_rot)
 		array_add(view_control_rot_points[vid - e_value.ROT_X], end2D[Y])
 	}
 }
+view_control_update_rot[vid - e_value.ROT_X] = false
 
 // Get array after updating to combat delay otherwise
 pointarray = view_control_rot_points[vid - e_value.ROT_X]

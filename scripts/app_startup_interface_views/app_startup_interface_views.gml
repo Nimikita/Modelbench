@@ -10,7 +10,9 @@ view_click_y = 0
 
 view_main = new(obj_view)
 
-view_control_update_rot = true
+view_control_update_rot[X] = true
+view_control_update_rot[Y] = true
+view_control_update_rot[Z] = true
 
 view_control_edit = null
 view_control_edit_view = null

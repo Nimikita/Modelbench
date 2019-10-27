@@ -16,7 +16,7 @@ if (fps > 30 && setting_smooth_camera && setting_smooth_camera_amount > 0)
 {
 	cam_work_angle_off_xy += mx / ((setting_smooth_camera_amount + 2) / delta)
 	cam_work_angle_off_z += my / ((setting_smooth_camera_amount + 2) / delta)
-	view_control_update_rot = true
+	view_control_update_rotate()
 }
 else
 {
@@ -30,7 +30,7 @@ else
 	cam_work_angle_look_xy += mx
 	cam_work_angle_look_z -= my
 	cam_work_angle_look_z = clamp(cam_work_angle_look_z, -89.9, 89.9)
-	view_control_update_rot = true
+	view_control_update_rotate()
 	
 	camera_work_set_from()
 }

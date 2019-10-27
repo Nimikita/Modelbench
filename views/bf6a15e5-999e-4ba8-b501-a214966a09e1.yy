@@ -11,7 +11,8 @@
         "66558d49-76c4-42c2-9d35-edd010da73e3",
         "adaa038e-78a7-4ac7-ad7c-d34aaae5a683",
         "6de9eeaa-7dfe-469e-8bdb-e4b33a5bb670",
-        "537225c0-9a1f-4be4-8c76-4de737d3f4a1"
+        "537225c0-9a1f-4be4-8c76-4de737d3f4a1",
+        "672d4d87-a7ec-4481-a331-c8e8f4da617a"
     ],
     "filterType": "GMScript",
     "folderName": "Control",

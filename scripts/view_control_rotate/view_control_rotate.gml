@@ -49,6 +49,8 @@ if (window_busy = "rendercontrol" && view_control_edit_view = view && view_contr
 		el_value_set_start(action_el_rot, true)
 		el_value_set(view_control_edit, snap(view_control_value, snapval) - el_edit.value[view_control_edit], true)
 		el_value_set_done()
+		
+		view_control_update_rotate()
 	}
 	
 	// Release
@@ -58,6 +60,3 @@ if (window_busy = "rendercontrol" && view_control_edit_view = view && view_contr
 		view_control_edit = null
 	}
 }
-
-if (view_control_update_rot)
-	view_control_update_rot = false
