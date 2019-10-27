@@ -15,3 +15,5 @@ script_execute(history_data.script)
 history_undo = false
 
 history_pos++
+
+view_control_update_rotate()
