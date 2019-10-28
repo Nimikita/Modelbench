@@ -75,7 +75,7 @@ to = point3D_mul(point3D_add(to_noscale, inflate), scale)
 uv = vec2(value[e_value.UV_X], value[e_value.UV_Y])
 
 // Bending
-bend_shape = value[e_value.BEND]
+bend_shape = value[e_value.BEND_SHAPE]
 bend_part = other.bend_part
 bend_axis = other.bend_axis
 bend_direction_min = other.bend_direction_min

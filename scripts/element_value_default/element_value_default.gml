@@ -22,6 +22,7 @@ switch (argument0)
 	case e_value.BEND_AXIS_Y:
 	case e_value.BEND_AXIS_Z:*/
 	case e_value.BEND:
+	case e_value.BEND_SHAPE:
 	case e_value.BEND_LOCK: return true
 	case e_value.BEND_X_MIN:
 	case e_value.BEND_Y_MIN:

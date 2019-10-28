@@ -356,6 +356,7 @@
 		"opacity": "Opacity",
 		"brightness": "Brightness",
 		"inflate": "Inflate",
+		"bend": "Bend",
 		"mirrortexture": "Mirror texture",
 		"invert": "Invert",
 		"facecamera": "Face camera",

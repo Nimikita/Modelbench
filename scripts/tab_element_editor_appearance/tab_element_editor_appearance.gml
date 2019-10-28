@@ -5,6 +5,10 @@ draw_textfield_num("elementeditorinflate", dx, dy, 86, el_edit.value[e_value.INF
 tab_next()
 
 tab_control_checkbox()
+draw_checkbox("elementeditorbend", dx, dy, el_edit.value[e_value.BEND_SHAPE], action_el_bend)
+tab_next()
+
+tab_control_checkbox()
 draw_checkbox("elementeditormirrortexture", dx, dy, el_edit.value[e_value.TEX_MIRROR], action_el_mirror_texture)
 tab_next()
 
