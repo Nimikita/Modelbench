@@ -10,9 +10,14 @@ if (history_undo)
 	with (history_data)
 	{
 		for (var s = 0; s < spawn_amount; s++)
+		{
+			var parent = save_id_find(spawn_save_id[s]).parent;
+			parent.extend = spawn_parent_extend
+			
 			with (save_id_find(spawn_save_id[s]))
 				instance_destroy()
-	
+		}
+		
 		history_restore_el_select()
 	}
 }
@@ -26,7 +31,15 @@ else
 		history_restore_element()
 		
 		with (history_data)
+		{
+			for (var s = 0; s < spawn_amount; s++)
+			{
+				var parent = save_id_find(spawn_save_id[s]).parent;
+				parent.extend = true	
+			}
+			
 			history_restore_el_select_new()
+		}
 	}
 	else
 	{
@@ -45,6 +58,8 @@ else
 			spawn_save_type[spawn_amount] = spawn_type
 			spawn_save_par[spawn_amount] = save_id_get(app.context_menu_value)
 			spawn_save_extend[spawn_amount] = false
+			spawn_parent_extend = save_id_find(spawn_save_par[spawn_amount]).extend
+				
 			spawn_amount++
 		}
 			
@@ -55,7 +70,7 @@ else
 		with (element)
 		{
 			el_set_parent(app.context_menu_value)
-			parent.extend = true
+			hobj.spawn_parent_extend = parent.extend
 		}
 			
 		select = element
@@ -64,6 +79,7 @@ else
 			setting_hide_shapes = false
 
 		assets.elements.show = true
+		select.parent.extend = true
 		
 		// Select created element
 		with (select)

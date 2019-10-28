@@ -10,6 +10,7 @@ axis_edit = null
 
 save_id = "root"
 save_id_seed = random_get_seed()
+extend = false
 
 part_list = ds_list_create()
 shape_list = null

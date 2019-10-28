@@ -1,5 +1,8 @@
 /// action_el_move_start()
 
+element_move_extend = 0
+element_move_extend_amount = 0
+
 element_move_parts = 0
 element_move_shapes = 0
 

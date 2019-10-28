@@ -127,6 +127,8 @@ enum e_icon
 	alert,
 	cut,
 	replace,
+	collapse_all,
+	expand_all,
 	
 	placeholder = 11
 }

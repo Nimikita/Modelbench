@@ -20,17 +20,36 @@ if (history_undo)
 			el.parent = save_id_find(element_old_par_save_id[i])
 			ds_list_insert(element_get_list(el.parent, el), element_old_index[i], el)
 		}
+		
+		// Undo parent extend
+		var newparent = save_id_find(parent_new_save_id);
+		newparent.extend = parent_new_extend
+		
+		// Undo object extend
+		for (var i = 0; i < element_extend_amount; i++)
+		{
+			var element = save_id_find(element_extend[i]);
+			element.extend = false
+		}
 	}
 }
 else
 {
-	var elementlist, parentlist, indexlist, amount, hobj;
+	var elementlist, parentlist, indexlist, amount, hobj, newparent;
 	if (history_redo)
 	{
 		elementlist = history_data.element_save_id
 		parentlist = history_data.element_new_par_save_id
 		indexlist = history_data.element_new_index
 		amount = history_data.element_amount
+		
+		for (var i = 0; i < history_data.element_extend_amount; i++)
+		{
+			var element = save_id_find(history_data.element_extend[i]);
+			element.extend = true
+		}
+		
+		newparent = save_id_find(history_data.parent_new_save_id)
 	}
 	else
 	{
@@ -44,14 +63,20 @@ else
 				element_old_par_save_id[i] = app.element_move_obj.save_id_list[|i]
 				element_old_index[i] = app.element_move_obj.index_list[|i]
 			}
+			
+			element_extend = array_copy_1d(app.element_move_extend)
+			element_extend_amount = app.element_move_extend_amount
+			
+			parent_new_save_id = app.element_move_parent.save_id
+			parent_new_extend = app.element_move_parent.extend
 		}
-		
 		
 		var partindex, shapeindex;
 		partindex = 0
 		shapeindex = 0
 		amount = hobj.element_amount
 		elementlist = hobj.element_save_id
+		newparent = save_id_find(hobj.parent_new_save_id)
 		
 		if (element_move_index = null)
 		{
@@ -119,6 +144,9 @@ else
 		var list = element_get_list(el.parent, el);
 		ds_list_insert(list, indexlist[i], el)
 	}
+	
+	// Extend new parent
+	newparent.extend = true
 }
 
 el_update_lock_tree(false)

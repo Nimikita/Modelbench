@@ -127,6 +127,9 @@ switch (name)
 		listitem_last.disabled = context_menu_value.element_type = TYPE_SHAPE
 		
 		list_add_item(text_get("contextmenuelementdelete"), null, "", null, e_icon.delete, null, action_el_remove_single, false)
+		
+		list_add_item(text_get("contextmenuelementexpandall"), null, "", null, e_icon.expand_all, null, action_expand_all, true)
+		list_add_item(text_get("contextmenuelementcollapseall"), null, "", null, e_icon.collapse_all, null, action_collapse_all, false)
 		break
 	}
 	

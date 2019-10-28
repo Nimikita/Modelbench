@@ -107,7 +107,7 @@ haschildren = haschildren && ((element.part_list != null && ds_list_size(element
 if (itemvisible && haschildren)
 {
 	if (draw_button_icon("assetspartshowchildren" + string(element), xx, itemy + 4, 20, 20, element.extend, null, null, window_busy = "elementselection", test(element.extend, "tooltipcollapse", "tooltipexpand"), spr_arrow_small_ani))
-		element.extend = !element.extend
+		action_el_extend(element)
 }
 expandhover = app_mouse_box(xx, itemy + 4, 20, 20)
 
@@ -160,9 +160,13 @@ xx += 28
 
 #region Extend if moving elements
 
-if (movehover && (mouse_still > 15 * (60 / room_speed)) && window_busy = "elementmove" && haschildren)
+if (movehover && (mouse_still > 15 * (60 / room_speed)) && window_busy = "elementmove" && haschildren && !element.extend)
+{
 	element.extend = true
-	
+	element_move_extend[element_move_extend_amount] = save_id_get(element)
+	element_move_extend_amount++
+}
+
 #endregion
 
 #region Element name

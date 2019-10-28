@@ -1,5 +1,8 @@
 /// app_startup_interface_elements()
 
+element_move_extend = 0
+element_move_extend_amount = 0
+
 element_move_obj = null
 element_move_width = 0
 element_move_parent = null
