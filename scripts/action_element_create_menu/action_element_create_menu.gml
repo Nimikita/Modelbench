@@ -68,10 +68,8 @@ else
 			element.value[e_value.EXTRUDE] = true
 			
 		with (element)
-		{
 			el_set_parent(app.context_menu_value)
-			hobj.spawn_parent_extend = parent.extend
-		}
+		hobj.spawn_parent_extend = element.parent.extend
 			
 		select = element
 		

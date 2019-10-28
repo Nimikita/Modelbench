@@ -88,10 +88,8 @@ else
 				shape.value[e_value.EXTRUDE] = true
 			
 			with (shape)
-			{
 				el_set_parent(el)
-				hobj.spawn_parent_extend = parent.extend
-			}
+			hobj.spawn_parent_extend = shape.parent.extend
 			
 			select = shape
 			setting_hide_shapes = false
