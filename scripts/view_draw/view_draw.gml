@@ -26,7 +26,15 @@ content_width = boxw
 content_height = boxh
 content_mouseon = (view.mouseon && !popup_mouseon && !snackbar_mouseon && !context_menu_mouseon)
 
+draw_gradient(content_x, content_y + content_height, content_width, shadow_size, c_black, shadow_alpha, shadow_alpha, 0, 0)
 draw_box(boxx, boxy, boxw, boxh, false, c_background, 1)
+
+if (view.width != content_width || view.height != content_height)
+{
+	view_control_update_rotate()
+	view.width = content_width
+	view.height = content_height
+}
 
 if (content_width > 0 && content_height > 0)
 {
@@ -74,6 +82,12 @@ toolbarx = boxx + 16
 toolbary = boxy + 16
 toolbarwid = 36
 toolbarhei = 4 + (4 * (28 + 4)) + 1 + 4 + (5 * (28 + 4))
+
+if (toolbary + toolbarhei + 16 >= content_height)
+{
+	toolbarwid = toolbarhei
+	toolbarhei = 36
+}
 
 if (app_mouse_box(toolbarx, toolbary, toolbarwid, toolbarhei))
 	view.mouseon = false

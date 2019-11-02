@@ -111,6 +111,8 @@ if (showtip)
 		
 		tip_location_x = false
 		tip_location_y = false
+		tip_x = floor(tip_x)
+		tip_y = floor(tip_y)
 		tip_w = floor(tip_w)
 		tip_h = floor(tip_h)
 	}

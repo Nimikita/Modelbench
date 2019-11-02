@@ -1,5 +1,8 @@
 /// app_update_work_camera()
 
+if (cam_work_zoom != cam_work_zoom_goal)
+	view_control_update_rotate()
+
 cam_work_zoom += (cam_work_zoom_goal - cam_work_zoom) / max(1, 4 / delta)
 
 if (cam_work_focus_last[X] != cam_work_focus[X] || 

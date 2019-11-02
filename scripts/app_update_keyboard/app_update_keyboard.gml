@@ -56,6 +56,9 @@ if (window_busy = "" && !textbox_isediting)
 			action_el_select_all()
 	}
 	
+	if (keyboard_check_pressed(setting_key_uv_editor) && app_check_control(setting_key_uv_editor_control))
+		action_toolbar_show_uv_editor(!setting_show_uv_editor)
+	
 	// Switch tools
 	if (keyboard_check_pressed(setting_key_tool_select) && app_check_control(setting_key_tool_select_control))
 		tool_selected = e_tool.SELECT

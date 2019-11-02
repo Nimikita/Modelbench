@@ -31,6 +31,8 @@ json_save_object_start("controls")
 	json_save_var_bool("key_duplicate_elements_control", setting_key_duplicate_elements_control)
 	json_save_var("key_select_elements", setting_key_select_elements)
 	json_save_var_bool("key_select_elements_control", setting_key_select_elements_control)
+	json_save_var("key_uv_editor", setting_key_uv_editor)
+	json_save_var_bool("key_uv_editor_control", setting_key_uv_editor_control)
 	
 	json_save_var("key_tool_select", setting_key_tool_select)
 	json_save_var_bool("key_tool_select_control", setting_key_tool_select_control)
@@ -42,6 +44,8 @@ json_save_object_start("controls")
 	json_save_var_bool("key_tool_scale_control", setting_key_tool_scale_control)
 	json_save_var("key_tool_transform", setting_key_tool_transform)
 	json_save_var_bool("key_tool_transform_control", setting_key_tool_transform_control)
+	json_save_var("key_snap", setting_key_snap)
+	json_save_var_bool("key_snap_control",setting_key_snap_control)
 	
 	json_save_var("key_forward", setting_key_forward)
 	json_save_var("key_back", setting_key_back)
@@ -67,6 +71,7 @@ json_save_object_start("interface")
 	json_save_var("accent_index", setting_accent)
 	json_save_var_color("accent_custom", setting_accent_custom)
 	json_save_var_bool("z_is_up", setting_z_is_up)
+	json_save_var_bool("shared_texture_uvs", setting_shared_texture_uvs)
 	json_save_var("outline_opacity", setting_outline_opacity)
 	
 	json_save_var("panel_left_size", panel_map[?"left"].size)
@@ -76,6 +81,9 @@ json_save_object_start("interface")
 	
 	json_save_var("assets_location", assets.panel.location)
 	json_save_var("element_editor_location", element_editor.panel.location)
+	
+	json_save_var_bool("show_uv_editor", setting_show_uv_editor)
+	json_save_var("uv_editor_size", setting_uv_editor_size)
 	
 json_save_object_done()
 

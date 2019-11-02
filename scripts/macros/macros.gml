@@ -5,7 +5,7 @@
 #macro dev_mode						false
 
 // Versions
-#macro modelbench_version			"alpha 5.1"
+#macro modelbench_version			"alpha 6"
 #macro modelbench_version_full		modelbench_version + ""
 #macro modelbench_version_extra		""
 #macro modelbench_version_date		"2019.10.28"

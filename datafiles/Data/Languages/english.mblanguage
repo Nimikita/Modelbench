@@ -3,8 +3,8 @@
     "file/": {
         "language": "English",
         "translator": "Nimi",
-        "forversion": "Alpha 5",
-        "lastchange": "2019.10.27"
+        "forversion": "Alpha 6",
+        "lastchange": "2019.11.2"
     },
 	"startup/": {
 		"modeldetected": "Unsaved model detected",
@@ -61,6 +61,14 @@
 			"model": "Mine-imator model",
 			"modelcaption": "Save Mine-imator model"
 		}
+	},
+	"uveditor/": {
+		"front": "Front",
+		"back": "Back",
+		"left": "Left",
+		"right": "Right",
+		"top": "Top",
+		"bottom": "Bottom"
 	},
 	"snackbar/": {
 		"newupdate": "A new update is available!",
@@ -171,7 +179,15 @@
 		"undo": "Undo",
 		"redo": "Redo",
 		"snapenable": "Enable tool snapping",
-		"snapdisable": "Disable tool snapping"
+		"snapdisable": "Disable tool snapping",
+		"uveditor/": {
+			"editxy": "Edit X/Y",
+			"editwidthheight": "Edit width/height",
+			"editlength": "Edit length",
+			"box": "Set box UV\n(Hold and drag mouse)",
+			"hide": "Hide UV editor",
+			"show": "Show UV editor"
+		}
 	},
 	"toolset/": {
 		"add/": {
@@ -407,6 +423,7 @@
 			"removeelements": "Remove elements",
 			"duplicateelements": "Duplicate elements",
 			"selectelements": "Select elements",
+			"uveditor": "Toggle UV editor",
 			"tool/": {
 				"select": "Select tool",
 				"move": "Move tool",
@@ -433,6 +450,8 @@
 		},
 		"accentcolor": "Accent color",
 		"zisup": "Z is up",
+		"sharedtextureuvs": "Display shared texture UVs",
+		"sharedtextureuvshelp": "Displays shapes that share a texture in the UV editor.",
 		"smoothcamera": "Smooth camera",
 		"smoothcameraamount": "Amount",
 		"graphicsblockybending": "Blocky bending",

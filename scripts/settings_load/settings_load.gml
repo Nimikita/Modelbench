@@ -52,6 +52,10 @@ if (ds_map_valid(controlsmap))
 	
 	setting_key_tool_select = value_get_real(controlsmap[?"key_tool_select"], setting_key_tool_select)
 	setting_key_tool_select_control = value_get_real(controlsmap[?"key_tool_select_control"], setting_key_tool_select_control)
+	
+	setting_key_uv_editor = value_get_real(controlsmap[?"key_uv_editor"], setting_key_uv_editor)
+	setting_key_uv_editor_control = value_get_real(controlsmap[?"key_uv_editor_control"], setting_key_uv_editor_control)
+	
 	setting_key_tool_move = value_get_real(controlsmap[?"key_tool_move"], setting_key_tool_move)
 	setting_key_tool_move_control = value_get_real(controlsmap[?"key_tool_move_control"], setting_key_tool_move_control)
 	setting_key_tool_rotate = value_get_real(controlsmap[?"key_tool_rotate"], setting_key_tool_rotate)
@@ -60,6 +64,9 @@ if (ds_map_valid(controlsmap))
 	setting_key_tool_scale_control = value_get_real(controlsmap[?"key_tool_scale_control"], setting_key_tool_scale_control)
 	setting_key_tool_transform = value_get_real(controlsmap[?"key_tool_transform"], setting_key_tool_transform)
 	setting_key_tool_transform_control = value_get_real(controlsmap[?"key_tool_transform_control"], setting_key_tool_transform_control)
+	
+	setting_key_snap = value_get_real(controlsmap[?"key_snap"], setting_key_snap)
+	setting_key_snap_control = value_get_real(controlsmap[?"key_snap_control"], setting_key_snap_control)
 	
 	setting_key_forward = value_get_real(controlsmap[?"key_forward"], setting_key_forward)
 	setting_key_back = value_get_real(controlsmap[?"key_back"], setting_key_back)
@@ -97,6 +104,7 @@ if (ds_map_valid(interfacemap))
 	setting_accent = value_get_real(interfacemap[?"accent_index"], setting_accent)
 	setting_accent_custom = value_get_color(interfacemap[?"accent_custom"], setting_accent_custom)
 	setting_z_is_up = value_get_real(interfacemap[?"z_is_up"], setting_z_is_up)
+	setting_shared_texture_uvs = value_get_real(interfacemap[?"shared_texture_uvs"], setting_shared_texture_uvs)
 	setting_outline_opacity = value_get_real(interfacemap[?"outline_opacity"], setting_outline_opacity)
 
 	setting_panel_left_size = value_get_real(interfacemap[?"panel_left_size"], setting_panel_left_size)
@@ -106,6 +114,9 @@ if (ds_map_valid(interfacemap))
 
 	setting_assets_location = value_get_string(interfacemap[?"assets_location"], setting_assets_location)
 	setting_element_editor_location = value_get_string(interfacemap[?"element_editor_location"], setting_element_editor_location)
+
+	setting_show_uv_editor = value_get_real(interfacemap[?"show_uv_editor"], setting_show_uv_editor)
+	setting_uv_editor_size = value_get_real(interfacemap[?"uv_editor_size"], setting_uv_editor_size)
 }
 
 // Graphics

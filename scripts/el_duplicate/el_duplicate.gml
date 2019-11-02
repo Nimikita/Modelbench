@@ -11,7 +11,7 @@ with (copy)
 	
 	// Copy values
 	for (var v = 0; v < e_value.amount; v++)
-		value[v] = el_value_find_save_id(v, null, other.value[v])
+		value[v] = other.value[v]
 	
 	if (other.element_type = TYPE_PART)
 	{

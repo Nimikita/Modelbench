@@ -11,6 +11,10 @@ newval = argument2
 if (vid = e_value.TEXTURE_OBJ && newval = "none")
 	newval = 0
 else if (vid = e_value.TEXTURE_OBJ)
+{
+	//log(string(newval))
 	newval = save_id_find(newval)
-	
+	//log(string(newval))
+}
+
 return newval

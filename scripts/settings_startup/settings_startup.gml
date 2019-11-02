@@ -13,6 +13,7 @@ setting_panel_right_secondary_size = 300
 
 setting_assets_location = "right"
 setting_element_editor_location = "right_secondary"
+setting_uv_editor_size = 0.5
 
 backup_next = 0
 setting_backup = true
@@ -34,6 +35,8 @@ setting_key_duplicate_elements = ord("D")
 setting_key_duplicate_elements_control = true
 setting_key_select_elements = ord("A")
 setting_key_select_elements_control = true
+setting_key_uv_editor = ord("U")
+setting_key_uv_editor_control = true
 
 setting_key_tool_select = ord("W")
 setting_key_tool_select_control = false
@@ -67,6 +70,7 @@ setting_accent = 6
 setting_accent_custom = hex_to_color("03A9F4")
 setting_tip_show = true
 setting_z_is_up = false
+setting_shared_texture_uvs = true
 setting_smooth_camera = true
 setting_smooth_camera_amount = 2
 
@@ -99,6 +103,10 @@ setting_collapse_shadows = true
 setting_collapse_bend_axis[X] = true
 setting_collapse_bend_axis[Y] = true
 setting_collapse_bend_axis[Z] = true
+
+// UV editor
+setting_show_uv_editor = false
+setting_uv_editor_size = 0.5
 
 // Snap
 setting_snap = false

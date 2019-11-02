@@ -9,7 +9,7 @@ if (history_undo)
 {
 	with (history_data)
 	{
-		for (var s = 0; s < spawn_amount; s++)
+		for (var s = spawn_amount - 1; s >= 0; s--)
 		{
 			var parent = save_id_find(spawn_save_id[s]).parent;
 			parent.extend = spawn_parent_extend

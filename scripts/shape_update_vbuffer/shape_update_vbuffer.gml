@@ -29,7 +29,10 @@ if (type = "plane")
 			texuv = vec2_div(uv, texture_size)
 			samplepos = point2D(round(texuv[X] * tw), round(texuv[Y] * th))
 			samplesize = vec2(ceil(texsizeuv[X] * tw), ceil(texsizeuv[Y] * th))
-					
+			
+			if (samplesize[X] <= 0 || samplesize[Y] <= 0)
+				return 0
+			
 			// Generate array with the alpha values of the texture
 			var surf = surface_create(samplesize[X], samplesize[Y]);
 			draw_texture_start()

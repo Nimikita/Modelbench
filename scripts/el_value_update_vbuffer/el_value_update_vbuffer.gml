@@ -46,6 +46,9 @@ switch (argument0)
 	case e_value.LENGTH:
 	case e_value.HEIGHT:
 	
+	case e_value.UV_X:
+	case e_value.UV_Y:
+	
 	case e_value.INFLATE:
 	case e_value.TEX_MIRROR:
 	case e_value.INVERT:

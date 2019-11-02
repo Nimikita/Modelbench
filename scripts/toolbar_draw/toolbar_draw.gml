@@ -44,4 +44,7 @@ toolbar_line_x += (toolbar_line_x_goal - toolbar_line_x) / max(1, 3 / delta)
 toolbar_line_width += (toolbar_line_width_goal - toolbar_line_width) / max(1, 3 / delta)
 
 dx = boxw - (28 + 4)
-draw_button_icon("toolbaruveditor", dx, dy, 28, 28, false, e_icon.uveditor, null, true)
+
+tip_set_shortcut(setting_key_uv_editor, setting_key_uv_editor_control)
+draw_button_icon("toolbaruveditor", dx, dy, 28, 28, setting_show_uv_editor, e_icon.uveditor, action_toolbar_show_uv_editor, false, test(setting_show_uv_editor, "tooltipuveditorhide", "tooltipuveditorshow"))
+tip_set_shortcut(-1, false)
