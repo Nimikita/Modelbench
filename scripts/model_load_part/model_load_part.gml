@@ -27,6 +27,8 @@ with (new(obj_model_element))
 		texture_size = value_get_point2D(map[?"texture_size"], point2D(16, 16))
 		texture_size = vec2(max(texture_size[X], texture_size[Y])) // Make square
 		res = model_load_texture(texture_name)
+		res.scale = value_get_real(map[?"texture_scale"], 1)
+		
 		value[e_value.TEXTURE_OBJ] = res
 	}
 	else

@@ -88,21 +88,29 @@ for (var i = 0; i < ceil(boxw/192); i++)
 		draw_image(spr_uv_editor_pattern, 0, boxx + (i * 192), boxy + (j * 192), 1, 1, c_text_main, .05)
 
 // Texture
-var tex = null;
+var tex, texscale;
+tex = null
+texscale = 1
 
 if (el_edit = null)
 {
 	if (app.res = null)
 		tex = spr_empty
 	else
+	{
 		tex = app.res.sprite
+		texscale = app.res.scale
+	}
 }
 else
 {
 	if (el_edit.res = null)
 		tex = spr_empty
 	else
-		tex = el_edit.res.sprite
+	{
+		tex = app.res.sprite
+		texscale = app.res.scale
+	}
 }
 
 if (tex != null)
@@ -133,18 +141,18 @@ draw_line_ext(texx + texw - 1, boxy, texx + texw - 1, boxy + boxh, c_border, a_b
 draw_line_ext(boxx, texy, boxx + boxw, texy, c_border, a_border)
 draw_line_ext(boxx, texy + texh - 1, boxx + boxw, texy + texh - 1, c_border, a_border)
 
-// Pixel outline
-if (uv_editor_zoom > 5)
+// Pixel outline(zoom required multiplied by texscale for bigger textures)
+if (uv_editor_zoom * texscale > 5)
 {
-	var alpha = percent(uv_editor_zoom, 5, 7);
+	var alpha = percent(uv_editor_zoom * texscale, 5, 7);
 	
-	for (var i = 1; i < texture_width(uv_editor_tex); i++)
+	for (var i = texscale; i < texture_width(uv_editor_tex); i += texscale)
 	{
 		if (texx + floor(i * uv_editor_zoom) > boxx && texx + floor(i * uv_editor_zoom) < boxx + boxw)
 			draw_line_ext(texx + floor(i * uv_editor_zoom), texy, texx + floor(i * uv_editor_zoom), texy + texh, c_border, 0.075 * alpha)
 	}
 	
-	for (var i = 1; i < texture_height(uv_editor_tex); i++)
+	for (var i = texscale; i < texture_height(uv_editor_tex); i += texscale)
 	{
 		if (texy + floor(i * uv_editor_zoom) > boxy && texy + floor(i * uv_editor_zoom) < boxy + boxh)
 			draw_line_ext(texx, texy + floor(i * uv_editor_zoom), texx + texw, texy + floor(i * uv_editor_zoom), c_border, 0.075 * alpha)
@@ -157,7 +165,7 @@ draw_label("[ " + string(texture_width(uv_editor_tex)) + ", 0 ]", texx + texw + 
 draw_label("[ 0, " + string(texture_height(uv_editor_tex)) + " ]", texx - 8, texy + texh + 8, fa_right, fa_top, c_text_main, a_text_main, font_emphasis)
 draw_label("[ " + string(texture_width(uv_editor_tex)) + ", " + string(texture_height(uv_editor_tex)) + " ]", texx + texw + 8, texy + texh + 8, fa_left, fa_top, c_text_main, a_text_main, font_emphasis)
 
-var shapeuv, shapesize, shapeuvnozoom, shapesizenozoom;
+var texscale, shapeuv, shapesize, shapeuvnozoom, shapesizenozoom;
 
 render_set_culling(false)
 
@@ -172,9 +180,10 @@ with (obj_model_element)
 	if (!app.setting_shared_texture_uvs)
 		if (!selected)
 			continue
-		
-	shapeuv = vec2_mul(uv, other.uv_editor_zoom)
-	shapesize = vec3_mul(point3D_sub(to_noscale, from_noscale), other.uv_editor_zoom)
+	
+	texscale = res.scale
+	shapeuv = vec2_mul(vec2_mul(uv, texscale), other.uv_editor_zoom)
+	shapesize = vec3_mul(vec3_mul(point3D_sub(to_noscale, from_noscale), texscale), other.uv_editor_zoom)
 
 	if (type = "block")
 	{
@@ -198,8 +207,9 @@ if (el_edit = null || el_edit.element_type = TYPE_PART)
 	return 0
 }
 
-shapeuv = vec2_mul(el_edit.uv, uv_editor_zoom)
-shapesize = vec3_mul(point3D_sub(el_edit.to_noscale, el_edit.from_noscale), uv_editor_zoom)
+texscale = test(el_edit.res = null, 1, el_edit.res.scale)
+shapeuv = vec2_mul(vec2_mul(el_edit.uv, texscale), uv_editor_zoom)
+shapesize = vec3_mul(vec3_mul(point3D_sub(el_edit.to_noscale, el_edit.from_noscale), texscale), uv_editor_zoom)
 shapeuvnozoom = el_edit.uv
 shapesizenozoom = point3D_sub(el_edit.to_noscale, el_edit.from_noscale)
 
@@ -323,8 +333,8 @@ if (el_edit.type = "block")
 }
 
 var mouseuvx, mouseuvy;
-mouseuvx = snap((mouse_x - texx) / uv_editor_zoom, 1)
-mouseuvy = snap((mouse_y - texy) / uv_editor_zoom, 1)
+mouseuvx = snap((mouse_x - texx) / uv_editor_zoom / texscale, 1)
+mouseuvy = snap((mouse_y - texy) / uv_editor_zoom / texscale, 1)
 //draw_label(string(mouseuvx) + ", " + string(mouseuvy), boxx + 32, boxy + 32, fa_left, fa_bottom, c_accent, 1)
 
 // Box UV controls
@@ -332,10 +342,10 @@ if (keyboard_check(vk_control))
 {
 	if (window_busy != "uveditorcontrolbox" && content_mouseon)
 	{
-		draw_box(texx + (mouseuvx * uv_editor_zoom) - 7, texy + (mouseuvy * uv_editor_zoom) - 7, 12, 12, false, c_accent_hover, 1)
-		draw_box(texx + (mouseuvx * uv_editor_zoom) - 5, texy + (mouseuvy * uv_editor_zoom) - 5, 8, 8, false, c_accent_pressed, 1)
+		draw_box(texx + (mouseuvx * uv_editor_zoom * texscale) - 7, texy + (mouseuvy * uv_editor_zoom * texscale) - 7, 12, 12, false, c_accent_hover, 1)
+		draw_box(texx + (mouseuvx * uv_editor_zoom * texscale) - 5, texy + (mouseuvy * uv_editor_zoom * texscale) - 5, 8, 8, false, c_accent_pressed, 1)
 		
-		tip_set(text_get("tooltipuveditorbox"), floor(texx + (mouseuvx * uv_editor_zoom) - 7), floor(texy + (mouseuvy * uv_editor_zoom) - 7), 12, 12, false)
+		tip_set(text_get("tooltipuveditorbox"), floor(texx + (mouseuvx * uv_editor_zoom * texscale) - 7), floor(texy + (mouseuvy * uv_editor_zoom * texscale) - 7), 12, 12, false)
 	}
 	
 	mouse_cursor = cr_default

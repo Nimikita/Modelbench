@@ -23,7 +23,7 @@ else
 if (res = null)
 	texture_size = vec2(sprite_get_width(spr_empty))
 else
-	texture_size = vec2(sprite_get_width(res.sprite))
+	texture_size = vec2_div(vec2(sprite_get_width(res.sprite)), res.scale)
 
 // Colors
 color_inherit = value[e_value.INHERIT_COLOR]

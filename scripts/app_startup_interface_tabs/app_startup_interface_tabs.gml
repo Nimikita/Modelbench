@@ -31,7 +31,10 @@ with (assets)
 	// Textures
 	textures = tab_add_category("textures", tab_assets_textures, false)
 	with (textures)
+	{
 		preview = new(obj_preview)
+		tbx_texture_scale = new_textbox_integer()
+	}
 }
 
 tex_preview = assets.textures.preview

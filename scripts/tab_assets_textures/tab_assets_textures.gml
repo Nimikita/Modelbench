@@ -16,19 +16,12 @@ for (var i = 0; i < ds_list_size(textures_list.item); i++)
 }
 tab_next()
 
-/*
-var texturelist = ds_list_create();
-
-with (obj_texture)
-	ds_list_add(texturelist, id)
-
-tab_control(ds_list_size(texturelist) * 48)
-for (var i = 0; i < ds_list_size(texturelist); i++)
-	draw_texture_item(dx, dy + (i * 48), dw, 48, texturelist[|i])
-tab_next()
-
-ds_list_destroy(texturelist)
-*/
+if (res_edit != null)
+{
+	tab_control_meter()
+	draw_meter("assetstexturescale", dx, dy, dw, res_edit.scale, 16, 1, 32, 1, 1, tab.textures.tbx_texture_scale, action_texture_scale)
+	tab_next()
+}
 
 // Add texture
 tab_control(36)

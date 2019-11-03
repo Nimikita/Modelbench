@@ -288,7 +288,8 @@
 		"parentto": "Parent to %1",
 		"roottexture": "Root texture",
 		"addtexture": "ADD TEXTURE",
-		"texturesize": "%1x%2 pixels"
+		"texturesize": "%1x%2 pixels",
+		"texturescale": "Scale"
 	},
 	"elementeditor/": {
 		"partname": "Part name",
