@@ -13,4 +13,6 @@ model_temporary_backup = model_temporary
 model_save(fn + ".mbbackup1")
 model_reset_backup()
 
+model_temporary_backup = false
+
 log("Backup saved")

@@ -28,6 +28,9 @@ else
 	res = tex
 }
 
+with (app)
+	el_update_part()
+
 with (obj_model_element)
 {
 	if (element_type = TYPE_SHAPE && res = tex)
@@ -35,4 +38,4 @@ with (obj_model_element)
 }
 
 textures_list.update = true
-el_update_part()
+

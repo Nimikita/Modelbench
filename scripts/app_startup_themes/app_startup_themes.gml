@@ -7,7 +7,7 @@ globalvar theme_light, theme_dark, theme_darker;
 globalvar c_accent, a_accent, c_accent_hover, a_accent_hover, c_accent_pressed, a_accent_pressed, c_hover, a_hover, c_accent_overlay, a_accent_overlay;
 globalvar c_text_main, a_text_main, c_text_secondary, a_text_secondary, c_text_tertiary, a_text_tertiary;
 globalvar c_border, a_border, c_overlay, a_overlay;
-globalvar c_background, c_button_text, a_button_text;
+globalvar c_background, c_background_secondary, c_button_text, a_button_text;
 globalvar c_viewport_top, c_viewport_bottom, c_error, c_warning, c_success, c_axisred, c_axisgreen, c_axisblue, c_origin, c_bend;
 
 // Alphas
@@ -44,6 +44,7 @@ array_add(theme_edit.accent_list, hex_to_color("982BCB"))
 array_add(theme_edit.accent_list, hex_to_color("E93983"))
 
 theme_edit.background = c_white
+theme_edit.background_secondary = hex_to_color("E6E6E6")
 theme_edit.viewport_top = hex_to_color("F0FFFF")
 theme_edit.viewport_bottom = hex_to_color("B5E8F2")
 
@@ -85,6 +86,7 @@ array_add(theme_edit.accent_list, hex_to_color("BB5DE8"))
 array_add(theme_edit.accent_list, hex_to_color("FF6593"))
 
 theme_edit.background = hex_to_color("2B373D")
+theme_edit.background_secondary = hex_to_color("18242A")
 theme_edit.viewport_top = hex_to_color("2B373D")
 theme_edit.viewport_bottom = hex_to_color("839096")
 
@@ -126,6 +128,7 @@ array_add(theme_edit.accent_list, hex_to_color("BB5DE8"))
 array_add(theme_edit.accent_list, hex_to_color("FF6593"))
 
 theme_edit.background = hex_to_color("101010")
+theme_edit.background_secondary = hex_to_color("0A0A0A")
 theme_edit.viewport_top = hex_to_color("484848")
 theme_edit.viewport_bottom = hex_to_color("2B2B2B")
 

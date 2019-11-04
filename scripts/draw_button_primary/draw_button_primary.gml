@@ -67,10 +67,22 @@ draw_box_hover(xx, yy, width, height, mcroani_arr[e_mcroani.HOVER])
 // Bevel shading
 draw_box_bevel(xx, yy, width, height, 1)
 
-var textx, color, alpha;
+var textx, darkcolor, lightcolor, color, alpha;
 textx = xx
-color = test(color_get_lum(c_accent) > 135 || setting_accent < 9, c_button_text, c_text_main)
-alpha = test(color_get_lum(c_accent) > 135 || setting_accent < 9, a_button_text, a_text_main)
+
+if (color_get_lum(c_button_text) > color_get_lum(c_text_main))
+{
+	darkcolor = c_text_main
+	lightcolor = c_button_text
+}
+else
+{
+	darkcolor = c_button_text
+	lightcolor = c_text_main
+}
+
+color = test(setting_accent < 9, c_button_text, test(color_get_lum(c_accent) > 135, darkcolor, lightcolor))
+alpha = test(setting_accent < 9, a_button_text, test(color_get_lum(c_accent) > 135, a_button_text, a_text_main))
 if (icon != null)
 	textx += 28
 

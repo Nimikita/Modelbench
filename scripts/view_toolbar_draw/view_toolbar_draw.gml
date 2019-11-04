@@ -75,9 +75,9 @@ else
 	dy += buttonsize
 
 if (dw > dh)
-	draw_box(dx, dy, 1, 28, false, c_overlay, a_overlay)
+	draw_box(dx, dy, 1, 28, false, c_border, a_border)
 else
-	draw_box(dx, dy, 28, 1, false, c_overlay, a_overlay)
+	draw_box(dx, dy, 28, 1, false, c_border, a_border)
 	
 if (dw > dh)
 	dx += 4

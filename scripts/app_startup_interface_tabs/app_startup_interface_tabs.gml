@@ -217,9 +217,6 @@ with (settings)
 		tbx_wind_strength = new_textbox_decimals()
 	}
 	
-	// Accessibility
-	accessibility = tab_add_category("accessibility", null, false)
-	
 	// Render
 	render = tab_add_category("render", tab_settings_render, false)
 	with (render)

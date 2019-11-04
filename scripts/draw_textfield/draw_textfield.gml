@@ -55,8 +55,7 @@ if (err)
 	labelalpha = 1
 }
 
-if (!err)
-	draw_box_hover(xx + capwidth, yy, wid - capwidth, 28, max(mcroani_arr[e_mcroani.HOVER], mcroani_arr[e_mcroani.ACTIVE]))
+draw_box_hover(xx + capwidth, yy, wid - capwidth, 28, max(mcroani_arr[e_mcroani.HOVER], mcroani_arr[e_mcroani.ACTIVE]))
 
 if (labelpos = "top")
 	draw_label(text_get(name), xx, yy - 8, fa_left, fa_bottom, labelcolor, labelalpha, font_label)

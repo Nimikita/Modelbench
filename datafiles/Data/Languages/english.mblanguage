@@ -4,7 +4,7 @@
         "language": "English",
         "translator": "Nimi",
         "forversion": "Alpha 6",
-        "lastchange": "2019.11.2"
+        "lastchange": "2019.11.3"
     },
 	"startup/": {
 		"modeldetected": "Unsaved model detected",
@@ -269,7 +269,6 @@
 	"interface": "INTERFACE",
 	"graphics": "GRAPHICS",
 	"render": "RENDER",
-	"accessibility": "ACCESSIBILITY",
 	"assets/": {
 		"modelname": "Model name",
 		"emptymodelname": "Model name cannot be empty.",

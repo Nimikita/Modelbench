@@ -21,6 +21,7 @@ c_button_text = theme.button_text
 a_button_text = theme.button_text_alpha
 
 c_background = theme.background
+c_background_secondary = theme.background_secondary
 c_viewport_top = theme.viewport_top
 c_viewport_bottom = theme.viewport_bottom
 c_error = theme.red_error

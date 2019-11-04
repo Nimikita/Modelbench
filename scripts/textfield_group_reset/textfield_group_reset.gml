@@ -1,4 +1,5 @@
 /// textfield_group_reset()
+/// @desc Resets added textfields for groups
 
 textfield_name = null
 textfield_value = null

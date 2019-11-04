@@ -108,8 +108,7 @@ dy = boxy
 content_mouseon = !popup_mouseon && !snackbar_mouseon && !context_menu_mouseon
 
 // Tabs background
-draw_box(dx, dy, content_width, tabsh, false, c_background, 1)
-draw_box(dx, dy, content_width, tabsh, false, c_overlay, a_overlay)
+draw_box(dx, dy, content_width, tabsh, false, c_background_secondary, 1)
 
 draw_box(dx, dy + tabsh, content_width, 1, false, c_border, a_border)
 
@@ -146,16 +145,16 @@ for (var t = 0; t < panel.tab_list_amount; t++)
 	if (sel)
 	{
 		if (t != 0)
-			draw_box(dx - 1, dy, 1, dh, false, c_overlay, a_overlay)
-			
-		draw_box(dx + dw, dy, 1, dh, false, c_overlay, a_overlay)
+			draw_box(dx - 1, dy, 1, dh, false, c_border, a_border)
+		
+		draw_box(dx + dw - 1, dy, 1, dh + 1, false, c_border, a_border)
 	}
 	else
 	{
 		if (t < panel.tab_list_amount)
 		{
 			if (panel.tab_selected != t + 1)
-				draw_box(dx + dw, dy + 2, 1, dh - 4, false, c_overlay, a_overlay)
+				draw_box(dx + dw, dy + 2, 1, dh - 4, false, c_border, a_border)
 		}
 	}
 	
@@ -191,7 +190,7 @@ for (var t = 0; t < panel.tab_list_amount; t++)
 	dx += tabw[t]
 }
 
-draw_box(boxx, boxy, 1, boxh, false, c_overlay, a_overlay)
+draw_box(boxx, boxy, 1, boxh, false, c_border, a_border)
 
 panel.list_glow = max(0, panel.list_glow - 0.05 * delta)
 if (tabmaxw > tabsw)

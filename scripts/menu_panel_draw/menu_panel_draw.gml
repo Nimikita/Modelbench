@@ -90,8 +90,8 @@ if (panelextease > 0)
 	// Cover it up
 	draw_box(panelx, panely, 300, panelh, false, c_background, 1)
 	
-	// Split line
-	draw_box(panelx + 300, panely, 1, panelh, false, c_overlay, a_overlay)
+	// Menu border
+	draw_box(panelx + 300, panely, 1, panelh, false, c_border, a_border)
 }
 
 // Draw menu

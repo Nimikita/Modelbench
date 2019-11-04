@@ -117,6 +117,6 @@ else
 // Scrollbar
 content_mouseon = !popup_mouseon && !snackbar_mouseon && !context_menu_mouseon
 if (content_direction = e_scroll.VERTICAL)
-	scrollbar_draw(tab.scroll, e_scroll.VERTICAL, content_x + dividew + 3, content_y, content_height, maxh + 15, c_accent, c_accent_hover, c_black)
+	scrollbar_draw(tab.scroll, e_scroll.VERTICAL, content_x + (content_width - (9 + (3 * tab.scrollbar_margin))) + 3, content_y, content_height, maxh + 15, c_accent, c_accent_hover, c_black)
 else
 	scrollbar_draw(tab.scroll, e_scroll.HORIZONTAL, content_x, content_y + content_height - 35, content_width, dx + dw - content_x + tab.scroll.value + 15)

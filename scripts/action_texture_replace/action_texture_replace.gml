@@ -19,13 +19,15 @@ if (!history_undo && !history_redo)
 	}
 }
 
+with (app)
+	el_update_part()
+
 with (obj_model_element)
 {
 	if (element_type = TYPE_SHAPE && res = texobj)
 		update_vbuffer = true
 }
 
-el_update_part()
 textures_list.update = true
 
 if (texobj = res_edit)

@@ -108,8 +108,8 @@ else
 		tex = spr_empty
 	else
 	{
-		tex = app.res.sprite
-		texscale = app.res.scale
+		tex = el_edit.res.sprite
+		texscale = el_edit.res.scale
 	}
 }
 
@@ -165,7 +165,7 @@ draw_label("[ " + string(texture_width(uv_editor_tex)) + ", 0 ]", texx + texw + 
 draw_label("[ 0, " + string(texture_height(uv_editor_tex)) + " ]", texx - 8, texy + texh + 8, fa_right, fa_top, c_text_main, a_text_main, font_emphasis)
 draw_label("[ " + string(texture_width(uv_editor_tex)) + ", " + string(texture_height(uv_editor_tex)) + " ]", texx + texw + 8, texy + texh + 8, fa_left, fa_top, c_text_main, a_text_main, font_emphasis)
 
-var texscale, shapeuv, shapesize, shapeuvnozoom, shapesizenozoom;
+var overlaytexscale, shapeuv, shapesize, shapeuvnozoom, shapesizenozoom;
 
 render_set_culling(false)
 
@@ -181,9 +181,9 @@ with (obj_model_element)
 		if (!selected)
 			continue
 	
-	texscale = res.scale
-	shapeuv = vec2_mul(vec2_mul(uv, texscale), other.uv_editor_zoom)
-	shapesize = vec3_mul(vec3_mul(point3D_sub(to_noscale, from_noscale), texscale), other.uv_editor_zoom)
+	overlaytexscale = res.scale
+	shapeuv = vec2_mul(vec2_mul(uv, overlaytexscale), other.uv_editor_zoom)
+	shapesize = vec3_mul(vec3_mul(point3D_sub(to_noscale, from_noscale), overlaytexscale), other.uv_editor_zoom)
 
 	if (type = "block")
 	{
@@ -197,7 +197,7 @@ with (obj_model_element)
 // Stop drawing if we aren't editing any shapes
 if (el_edit = null || el_edit.element_type = TYPE_PART)
 {
-	uv_editor_mouseon = app_mouse_box(content_x, content_y, content_width, content_height)
+	uv_editor_mouseon = content_mouseon
 	
 	if (uv_editor_mouseon)
 		mouse_cursor = cr_size_all
@@ -207,7 +207,6 @@ if (el_edit = null || el_edit.element_type = TYPE_PART)
 	return 0
 }
 
-texscale = test(el_edit.res = null, 1, el_edit.res.scale)
 shapeuv = vec2_mul(vec2_mul(el_edit.uv, texscale), uv_editor_zoom)
 shapesize = vec3_mul(vec3_mul(point3D_sub(el_edit.to_noscale, el_edit.from_noscale), texscale), uv_editor_zoom)
 shapeuvnozoom = el_edit.uv
@@ -402,7 +401,7 @@ if (window_busy = "uveditorcontrolbox")
 		action_el_uv_size(point2D(uv_editor_edit_x, uv_editor_edit_y), point3D(mouseuvx - uv_editor_edit_x, mouseuvx - uv_editor_edit_x, mouseuvy - uv_editor_edit_y), false)
 }
 
-uv_editor_mouseon = app_mouse_box(content_x, content_y, content_width, content_height) && !(uv_editor_xy_mouseon || uv_editor_wh_mouseon || uv_editor_length_mouseon || keyboard_check(vk_control))
+uv_editor_mouseon = content_mouseon && !(uv_editor_xy_mouseon || uv_editor_wh_mouseon || uv_editor_length_mouseon || keyboard_check(vk_control))
 
 if (uv_editor_mouseon)
 	mouse_cursor = cr_size_all

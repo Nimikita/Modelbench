@@ -25,7 +25,10 @@ fieldupdate = null
 hei = 28
 
 if (xx + wid < content_x || xx > content_x + content_width || yy + hei < content_y || yy > content_y + content_height)
+{
+	textfield_group_reset()
 	return 0
+}
 
 if (context_menu_copy_category)
 	context_menu_area(xx, yy, wid, hei, "contextmenucategory")

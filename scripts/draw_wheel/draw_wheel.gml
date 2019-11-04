@@ -40,7 +40,7 @@ else
 	sprite = spr_control_dial
 }
 
-if (xx - rad < content_x || xx + rad > content_x + content_width || yy - rad < content_y || yy + rad > content_y + content_height)
+if (xx + rad < content_x || xx - rad > content_x + content_width || yy + rad < content_y || yy - rad > content_y + content_height)
 	return 0
 
 context_menu_area(xx - rad, yy - rad, xx + rad, yy + rad, "contextmenuvalue", value, e_value_type.NUMBER, script, def)

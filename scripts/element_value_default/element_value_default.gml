@@ -16,11 +16,10 @@ switch (argument0)
 	// Bend
 	/*
 	case e_value.BEND_OFFSET:
-	case e_value.BEND_SIZE:
-	case e_value.BEND_PART:
 	case e_value.BEND_AXIS_X:
 	case e_value.BEND_AXIS_Y:
 	case e_value.BEND_AXIS_Z:*/
+	
 	case e_value.BEND:
 	case e_value.BEND_SHAPE:
 	case e_value.BEND_LOCK: return true
@@ -30,6 +29,8 @@ switch (argument0)
 	case e_value.BEND_X_MAX:
 	case e_value.BEND_Y_MAX:
 	case e_value.BEND_Z_MAX: return 180
+	case e_value.BEND_PART: return e_part.UPPER
+	case e_value.BEND_SIZE: return 4
 	
 	// Shape UV
 	case e_value.UV_X:
