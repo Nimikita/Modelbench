@@ -4,7 +4,7 @@
         "language": "English",
         "translator": "Nimi",
         "forversion": "Alpha 6",
-        "lastchange": "2019.11.3"
+        "lastchange": "2019.11.4"
     },
 	"startup/": {
 		"modeldetected": "Unsaved model detected",
@@ -187,7 +187,8 @@
 			"box": "Set box UV\n(Hold and drag mouse)",
 			"hide": "Hide UV editor",
 			"show": "Show UV editor"
-		}
+		},
+		"customaccentcolor": "Custom accent color"
 	},
 	"toolset/": {
 		"add/": {
