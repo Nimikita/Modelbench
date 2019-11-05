@@ -22,7 +22,7 @@ with (assets)
 	{
 		tbx_model_name = new_textbox(true, 0, "")
 		tbx_model_scale = new_textbox_decimals()
-		tbx_model_scale.suffix = "%"
+		//tbx_model_scale.suffix = "%"
 	}
 	
 	// Elements

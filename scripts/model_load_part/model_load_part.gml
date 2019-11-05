@@ -60,7 +60,7 @@ with (new(obj_model_element))
 	value[e_value.POS_Z] = position_noscale[Z]
 	
 	if (other.object_index = app)
-		position = point3D_mul(position_noscale, other.root_scale)
+		position = point3D_mul(position_noscale, vec3(other.root_scale))
 	else
 		position = point3D_mul(position_noscale, other.scale)
 	

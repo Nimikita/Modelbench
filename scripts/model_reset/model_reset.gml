@@ -24,7 +24,7 @@ assets.model_properties.tbx_model_name.text = ""
 res = null
 
 player_skin = false
-root_scale = vec3(1)
+root_scale = 1
 
 camera_work_reset()
 

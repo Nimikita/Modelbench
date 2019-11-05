@@ -22,7 +22,7 @@ model_create_wait = false
 
 model_name = ""
 player_skin = true
-root_scale = vec3(1)
+root_scale = 1
 model_temporary = false
 model_changed = false
 

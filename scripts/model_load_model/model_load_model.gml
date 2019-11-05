@@ -39,7 +39,7 @@ if (!ds_map_valid(map))
 	
 	// Scale (optional)
 	root_scale = value_get_point3D(map[?"scale"], vec3(1))
-	//root_scale = max(root_scale[X], root_scale[Y], root_scale[Z])
+	root_scale = max(root_scale[X], root_scale[Y], root_scale[Z])
 	
 	if (part_list = null)
 		part_list = ds_list_create()

@@ -9,5 +9,5 @@ model_save_texture()
 if (player_skin)
 	json_save_var_bool("player_skin", true)
 
-if (!vec3_equals(root_scale, vec3(1)))
-	json_save_var_point3D("scale", root_scale)
+if (root_scale != 1)
+	json_save_var_point3D("scale", vec3(root_scale))

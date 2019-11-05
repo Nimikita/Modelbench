@@ -6,7 +6,7 @@ position_noscale = point3D(value[e_value.POS_X], value[e_value.POS_Y], value[e_v
 
 // Position
 if (other.object_index = app)
-	position = point3D_mul(position_noscale, other.root_scale)
+	position = point3D_mul(position_noscale, vec3(other.root_scale))
 else
 	position = point3D_mul(position_noscale, other.scale)
 
@@ -17,7 +17,7 @@ rotation = point3D(value[e_value.ROT_X], value[e_value.ROT_Y], value[e_value.ROT
 scale = point3D(value[e_value.SCA_X], value[e_value.SCA_Y], value[e_value.SCA_Z])
 
 if (other.object_index = app)
-	scale = vec3_mul(scale, other.root_scale)
+	scale = vec3_mul(scale, vec3(other.root_scale))
 else
 	scale = vec3_mul(scale, other.scale)
 
