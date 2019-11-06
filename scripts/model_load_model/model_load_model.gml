@@ -22,7 +22,6 @@ if (!ds_map_valid(map))
 	
 	if (texture_name != null)
 	{
-		texture_inherit = id
 		res = model_load_texture(texture_name)
 		res.scale = value_get_real(map[?"texture_scale"], 1)
 	}

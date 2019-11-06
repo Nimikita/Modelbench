@@ -5,10 +5,10 @@
 #macro dev_mode						false
 
 // Versions
-#macro modelbench_version			"alpha 6"
+#macro modelbench_version			"alpha 6.1"
 #macro modelbench_version_full		modelbench_version + ""
 #macro modelbench_version_extra		""
-#macro modelbench_version_date		"2019.11.5"
+#macro modelbench_version_date		"2019.11.6"
 #macro gm_runtime					GM_runtime_version
 
 // File formats

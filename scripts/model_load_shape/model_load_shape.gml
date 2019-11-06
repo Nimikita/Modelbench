@@ -48,7 +48,6 @@ with (new(obj_model_element))
 	if (is_string(map[?"texture"]))
 	{
 		texture_name = map[?"texture"]
-		texture_inherit = id
 		
 		// Texture size
 		texture_size = value_get_point2D(map[?"texture_size"], point2D(16, 16))
@@ -62,8 +61,7 @@ with (new(obj_model_element))
 	{
 		// Inherit
 		texture_name = ""
-		texture_inherit = other.texture_inherit
-		texture_size = texture_inherit.texture_size
+		texture_size = other.texture_size
 		value[e_value.TEXTURE_OBJ] = null
 		res = other.res
 	}

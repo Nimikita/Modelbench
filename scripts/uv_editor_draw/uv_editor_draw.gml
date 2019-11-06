@@ -132,6 +132,40 @@ if (tex != null)
 	texh = floor(th * uv_editor_zoom)
 	
 	draw_texture(uv_editor_tex, texx, texy, uv_editor_zoom, uv_editor_zoom)
+	
+	// Repeat texture
+	var maxrepeat = max(ceil(boxh/texh), ceil(boxw/texw));
+	if (maxrepeat < 15)
+	{
+		var yrepeat, xrepeatstart, xrepeat;
+		yrepeat = (texy - boxy) - (ceil((texy - boxy)/texh) * texh)
+		xrepeatstart = (texx - boxx) - (ceil((texx - boxx)/texw) * texw)
+		xrepeat = xrepeatstart
+	
+		for (var i = 0; i <= ceil(boxh/texh); i++)
+		{
+			xrepeat = xrepeatstart
+			
+			for (var j = 0; j <= ceil(boxw/texw); j++)
+			{
+				var alpha = 0.125
+				
+				if (xrepeat = texx || yrepeat = texy)
+					alpha = 0.25
+				
+				if (xrepeat = texx && yrepeat = texy)
+				{
+					xrepeat += texw
+					continue
+				}
+				
+				draw_texture(uv_editor_tex, boxx + xrepeat, boxy + yrepeat, uv_editor_zoom, uv_editor_zoom, c_white, alpha * percent(maxrepeat, 15, 10))
+				xrepeat += texw
+			}
+			
+			yrepeat += texh
+		}
+	}
 }
 
 // Texture outline

@@ -99,7 +99,7 @@ if (isbent) // Apply start bend
 	if (invangle)
 		startp = 1 - startp
 	
-	bendvec = bendvec = model_shape_get_bend(bend, startp)
+	bendvec = model_shape_get_bend(bend, startp)
 	
 	// Blocky bending
 	var startscale = vec3(0);

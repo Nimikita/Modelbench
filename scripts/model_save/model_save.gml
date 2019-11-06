@@ -21,7 +21,7 @@ if (model_temporary && !model_temporary_backup)
 	log("Updated model save location", model_file)
 }
 
-log("model_temporary", model_temporary)
+//log("model_temporary", model_temporary)
 log("Saving model", fn)
 
 save_folder = model_folder
