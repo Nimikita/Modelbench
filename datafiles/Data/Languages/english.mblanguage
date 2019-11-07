@@ -3,8 +3,8 @@
     "file/": {
         "language": "English",
         "translator": "Nimi",
-        "forversion": "Alpha 6",
-        "lastchange": "2019.11.4"
+        "forversion": "Alpha 7",
+        "lastchange": "2019.11.6"
     },
 	"startup/": {
 		"modeldetected": "Unsaved model detected",
@@ -209,6 +209,7 @@
 	"tab/": {
 		"assets": "Assets",
 		"elementeditor": "Element editor",
+		"preview": "Preview",
 		"recentmodels": "Recent models",
 		"settings": "Settings",
 		"about": "About"
@@ -265,6 +266,7 @@
 	"appearance": "APPEARANCE",
 	"wind": "WIND",
 	"mineimator": "MINE-IMATOR",
+	"background": "BACKGROUND",
 	"general": "GENERAL",
 	"controls": "CONTROLS",
 	"interface": "INTERFACE",
@@ -401,6 +403,17 @@
 		"openscaletab": "Open scale tab",
 		"openscaletabhelp": "Automatically opens this part's scale tab in Mine-imator."
 	},
+	"preview/": {
+		"scenery": "Scenery",
+		"ssao": "SSAO",
+		"ssaoradius": "Radius",
+		"ssaopower": "Strength",
+		"ssaoblurpasses": "Blur passes",
+		"shadows": "Shadows",
+		"shadowsblurquality": "Blur quality",
+		"shadowsblursize": "Blur size",
+		"aa": "AA"
+	},
 	"openmodel/": {
 		"recentmodels": "Recent models",
 		"browse": "BROWSE..."
@@ -460,15 +473,7 @@
 		"shapeoutlineopacity": "Shape outline opacity",
 		"graphicswind": "Wind",
 		"graphicswindspeed": "Speed",
-		"graphicswindstrength": "Strength",
-		"renderssao": "SSAO",
-		"renderssaoradius": "Radius",
-		"renderssaopower": "Strength",
-		"renderssaoblurpasses": "Blur passes",
-		"rendershadows": "Shadows",
-		"rendershadowsblurquality": "Blur quality",
-		"rendershadowsblursize": "Blur size",
-		"renderaa": "AA"
+		"graphicswindstrength": "Strength"
 	},
 	"about/": {
 		"credits": "CREDITS",

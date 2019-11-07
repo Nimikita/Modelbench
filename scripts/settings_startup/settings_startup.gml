@@ -13,6 +13,7 @@ setting_panel_right_secondary_size = 300
 
 setting_assets_location = "right"
 setting_element_editor_location = "right_secondary"
+setting_preview_location = "right"
 setting_uv_editor_size = 0.5
 
 backup_next = 0
@@ -80,9 +81,9 @@ setting_wind = true
 setting_wind_speed = .45
 setting_wind_strength = .5
 
-setting_render_shadows = false
+setting_render_shadows = true
 setting_render_shadows_blur_quality = 64
-setting_render_shadows_blur_size = .2
+setting_render_shadows_blur_size = .1
 setting_render_shadows_sun_buffer_size = 8192
 
 setting_render_ssao = true

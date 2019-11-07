@@ -5,6 +5,10 @@
 var view, cam, surf;
 view = argument0
 cam = argument1
+
+if (program_mode != e_mode.MODELING)
+	return 0
+
 surf = surface_create(content_width, content_height)
 
 render_camera = cam

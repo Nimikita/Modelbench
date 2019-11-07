@@ -13,7 +13,8 @@
         "a28a869f-fcc1-4404-8e8b-1c17c1a389ca",
         "6bd0bf60-6e90-4a7e-a426-50cd8acb8281",
         "19c2a715-57e9-452a-a3d0-c8cc2e76e6d0",
-        "9abfa16a-87f8-4943-931c-68dab3bc773b"
+        "9abfa16a-87f8-4943-931c-68dab3bc773b",
+        "22b201d2-1c8b-40ce-9d3c-33268fb3c9ec"
     ],
     "filterType": "GMScript",
     "folderName": "View",

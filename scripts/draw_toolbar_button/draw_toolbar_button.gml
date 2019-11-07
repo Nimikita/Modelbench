@@ -59,9 +59,7 @@ if ((value = buttonvalue) && mouseon)
 		toolbar_line_x_goal = xx + 8
 		toolbar_line_width_goal = width - 16
 	}
-	
 }
-
 
 if ((value = buttonvalue) && !mouseon)
 {
@@ -69,13 +67,11 @@ if ((value = buttonvalue) && !mouseon)
 	toolbar_line_width_goal = width - 16
 }
 
-
 // Press
-if (pressed && mouse_left_pressed)
+if (pressed && mouse_left_pressed && (program_mode != buttonvalue))
 {
-	//if (script != null)
-	//	script_execute(script, value)
 	program_mode = buttonvalue
+	app_update_program_mode()
 	
 	toolbar_line_x_goal = xx + 8
 	toolbar_line_width_goal = width - 16

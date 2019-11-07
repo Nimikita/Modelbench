@@ -180,6 +180,29 @@ with (element_editor)
 	mineimator = tab_add_category("mineimator", tab_element_editor_mineimator, false)
 }
 
+// Preview
+preview = new_tab(setting_preview_location, false, null)
+preview.closeable = false
+with (preview)
+{
+	// Background
+	background = tab_add_category("background", tab_preview_background, false) 
+	
+	// Render
+	render = tab_add_category("render", tab_settings_render, false)
+	with (render)
+	{
+		tbx_ssao_radius = new_textbox_integer()
+		tbx_ssao_power = new_textbox_integer()
+		tbx_ssao_power.suffix = "%"
+		tbx_ssao_blur_passes = new_textbox_integer()
+		
+		tbx_shadows_blur_quality = new_textbox_integer()
+		tbx_shadows_blur_size = new_textbox_integer()
+		tbx_shadows_blur_size.suffix = "%"
+	}
+}
+
 // Recent models
 recent_models = new_tab(null, false, header_recent_models)
 
@@ -215,20 +238,6 @@ with (settings)
 		tbx_wind_speed = new_textbox_integer()
 		tbx_wind_speed.suffix = "%"
 		tbx_wind_strength = new_textbox_decimals()
-	}
-	
-	// Render
-	render = tab_add_category("render", tab_settings_render, false)
-	with (render)
-	{
-		tbx_ssao_radius = new_textbox_integer()
-		tbx_ssao_power = new_textbox_integer()
-		tbx_ssao_power.suffix = "%"
-		tbx_ssao_blur_passes = new_textbox_integer()
-		
-		tbx_shadows_blur_quality = new_textbox_integer()
-		tbx_shadows_blur_size = new_textbox_integer()
-		tbx_shadows_blur_size.suffix = "%"
 	}
 }
 

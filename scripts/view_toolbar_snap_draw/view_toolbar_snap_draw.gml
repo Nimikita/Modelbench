@@ -9,6 +9,9 @@ dy = argument1
 dw = argument2
 dh = argument3
 
+if (program_mode != e_mode.MODELING)
+	return 0
+
 content_mouseon = app_mouse_box(dx, dy, dw, dh) && !popup_mouseon && !snackbar_mouseon && !context_menu_mouseon
 
 var busy = window_busy;
