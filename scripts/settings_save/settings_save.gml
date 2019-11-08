@@ -111,6 +111,15 @@ json_save_object_start("render")
 
 json_save_object_done()
 
+json_save_object_start("preview")
+
+	json_save_var("scenery", setting_preview_scenery.name)
+	json_save_var("time", setting_preview_time)
+	json_save_var("light_rotation", setting_preview_light_rotation)
+	json_save_var("light_range", setting_preview_light_range)
+
+json_save_object_done()
+
 json_save_object_done()
 json_save_done()
 

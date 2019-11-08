@@ -1,6 +1,10 @@
 /// app_update_keyboard()
 /// @desc Handle keyboard shortcuts.
 
+// Refresh scenery
+if (keyboard_check_pressed(vk_f7))
+	preview_scenery_load()
+
 if (keyboard_check_pressed(vk_f8))
 {
 	with (obj_model_element)

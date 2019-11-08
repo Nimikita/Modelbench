@@ -4,7 +4,7 @@
         "language": "English",
         "translator": "Nimi",
         "forversion": "Alpha 7",
-        "lastchange": "2019.11.6"
+        "lastchange": "2019.11.7"
     },
 	"startup/": {
 		"modeldetected": "Unsaved model detected",
@@ -188,7 +188,20 @@
 			"hide": "Hide UV editor",
 			"show": "Show UV editor"
 		},
-		"customaccentcolor": "Custom accent color"
+		"customaccentcolor": "Custom accent color",
+		"scenery/":
+		{
+			"overworld_day": "Overworld (Day)",
+			"overworld_dusk": "Overworld (Dusk)",
+			"overworld_night": "Overworld (Night)",
+			"desert": "Desert",
+			"snowy_plains": "Snowy plains",
+			"cave": "Cave",
+			"underwater": "Underwater",
+			"the_end": "The End",
+			"nether": "Nether",
+			"soulsand_valley": "Nether (Soulsand valley)"
+		}
 	},
 	"toolset/": {
 		"add/": {
@@ -405,6 +418,12 @@
 	},
 	"preview/": {
 		"scenery": "Scenery",
+		"timeday": "",
+		"timedusk": "",
+		"timenight": "",
+		"timeofday": "Time of day",
+		"lightrotation": "Light rotation",
+		"lightrange": "Light range",
 		"ssao": "SSAO",
 		"ssaoradius": "Radius",
 		"ssaopower": "Strength",

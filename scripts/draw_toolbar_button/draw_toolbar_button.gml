@@ -70,8 +70,7 @@ if ((value = buttonvalue) && !mouseon)
 // Press
 if (pressed && mouse_left_pressed && (program_mode != buttonvalue))
 {
-	program_mode = buttonvalue
-	app_update_program_mode()
+	action_toolbar_program_mode(buttonvalue)
 	
 	toolbar_line_x_goal = xx + 8
 	toolbar_line_width_goal = width - 16

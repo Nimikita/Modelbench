@@ -94,6 +94,16 @@ setting_render_ssao_blur_passes = 2
 
 setting_render_aa = true
 
+// Preview settings
+setting_preview_scenery = null
+setting_preview_background_top = c_white
+setting_preview_background_bottom = c_white
+setting_preview_light_color = c_white
+setting_preview_ambient_color = c_white
+setting_preview_time = 0
+setting_preview_light_rotation = 225
+setting_preview_light_range = 200
+
 // Misc settings
 setting_hide_shapes = false
 
@@ -116,6 +126,13 @@ snap_value = 0.0001
 
 settings_load()
 interface_update()
+
+// Choose first scenery option by default
+if (setting_preview_scenery = null && ds_list_size(scenery_list) > 0)
+	setting_preview_scenery = scenery_list[|0]
+
+// Update preview scenery colors
+action_preview_scenery(setting_preview_scenery)
 
 //setting_texture_filtering = false
 setting_texture_filtering_level = 1

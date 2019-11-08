@@ -87,53 +87,94 @@ if (setting_render_ssao)
 // Sun
 if (setting_render_shadows)
 {
-	var background_light_data, background_sunlight_range, background_sky_rotation, background_sky_time, background_sunlight_color_final;
-	background_sunlight_range = 1000
-	background_sky_rotation = 225//current_step * 2
-	background_sky_time = 45//current_step * .25
-	background_sunlight_color_final = c_white//hex_to_color("FEFFE9")
-
-	background_light_data[0] = lengthdir_x(background_sunlight_range, background_sky_rotation - 90) * lengthdir_x(1, background_sky_time + 90)
-	background_light_data[1] = lengthdir_y(background_sunlight_range, background_sky_rotation - 90) * lengthdir_x(1, background_sky_time + 90)
-	background_light_data[2] = lengthdir_z(background_sunlight_range, background_sky_time + 90)
-	if (background_sky_time = 0)
-		background_light_data[0] += 0.1
-	background_light_data[3] = background_sunlight_range / 2
-	background_light_data[4] = color_get_red(background_sunlight_color_final) / 255
-	background_light_data[5] = color_get_green(background_sunlight_color_final) / 255
-	background_light_data[6] = color_get_blue(background_sunlight_color_final) / 255
-	background_light_data[7] = background_sunlight_range * 2
-
-	// Depth
-	render_surface_sun_buffer = surface_require(render_surface_sun_buffer, setting_render_shadows_sun_buffer_size, setting_render_shadows_sun_buffer_size)
-	surface_set_target(render_surface_sun_buffer)
-	{	
-		draw_clear(c_white)
-		render_world_start_light(
-			point3D(background_light_data[0], background_light_data[1], background_light_data[2]), 
-			point3D(0, 0, 0), 
-			background_light_data[3], background_light_data[7], 
-			45, background_sunlight_color_final
-		)
-		render_world(e_render_mode.HIGH_LIGHT_SUN_DEPTH)
-		render_world_done()
-	}
-	surface_reset_target()
-
-	// Create initial shadow surface from sun
+	var shadowsurftemp;
+	
 	render_surface[1] = surface_require(render_surface[1], render_width, render_height)
 	shadowssurf = render_surface[1]
+	
 	surface_set_target(shadowssurf)
 	{
-		draw_clear(c_white)
-		render_world_start()
-		render_world(e_render_mode.HIGH_LIGHT_SUN)
-		render_world_done()
-	
-		//render_set_projection_ortho(0, 0, render_width, render_height, 0)
+		draw_clear_alpha(c_black, 1)
 	}
 	surface_reset_target()
-
+	
+	/*
+		Light one: Key light
+		Light two: Back light(Opposite of key light)
+		Light three: Bottom light
+	*/
+	
+	for (var i = 0; i < 3; i++)
+	{
+		var background_light_data, background_sunlight_range, background_sky_rotation, background_sky_time, background_sunlight_color_final;
+		background_sunlight_range = setting_preview_light_range
+		background_sky_rotation = setting_preview_light_rotation
+		background_sky_time = test(setting_preview_time = 0, 45, test(setting_preview_time = 1, 65, 180))
+		
+		// Rotate back light opposite to key light
+		if (i = 1)
+			background_sky_time += 180
+		
+		// Set light to bottom of scene
+		if (i = 2)
+			background_sky_time = 180
+		
+		background_sunlight_color_final = setting_preview_light_color[i]
+		
+		if (background_sunlight_color_final = c_black)
+			continue
+		
+		background_light_data[0] = lengthdir_x(background_sunlight_range, background_sky_rotation - 90) * lengthdir_x(1, background_sky_time + 90)
+		background_light_data[1] = lengthdir_y(background_sunlight_range, background_sky_rotation - 90) * lengthdir_x(1, background_sky_time + 90)
+		background_light_data[2] = lengthdir_z(background_sunlight_range, background_sky_time + 90)
+		if (background_sky_time = 0)
+			background_light_data[0] += 0.1
+		background_light_data[3] = background_sunlight_range / 2
+		background_light_data[4] = color_get_red(background_sunlight_color_final) / 255
+		background_light_data[5] = color_get_green(background_sunlight_color_final) / 255
+		background_light_data[6] = color_get_blue(background_sunlight_color_final) / 255
+		background_light_data[7] = background_sunlight_range * 2
+	
+		// Depth
+		render_surface_sun_buffer = surface_require(render_surface_sun_buffer, setting_render_shadows_sun_buffer_size, setting_render_shadows_sun_buffer_size)
+		surface_set_target(render_surface_sun_buffer)
+		{	
+			draw_clear(c_white)
+			
+			// Only key light casts shadows
+			render_world_start_light(
+				point3D(background_light_data[0], background_light_data[1], background_light_data[2]), 
+				point3D(0, 0, 0), 
+				background_light_data[3], background_light_data[7], 
+				45, background_sunlight_color_final
+			)
+			render_world(e_render_mode.HIGH_LIGHT_SUN_DEPTH)
+			render_world_done()
+		}
+		surface_reset_target()
+	
+		// Create initial shadow surface from sun
+		render_surface[2] = surface_require(render_surface[2], render_width, render_height)
+		shadowsurftemp = render_surface[2]
+		surface_set_target(shadowsurftemp)
+		{
+			draw_clear(c_white)
+			render_world_start()
+			render_world(e_render_mode.HIGH_LIGHT_SUN)
+			render_world_done()
+		}
+		surface_reset_target()
+		
+		// Add shadow
+		gpu_set_blendmode(bm_add)
+		surface_set_target(shadowssurf)
+		{
+			draw_surface(shadowsurftemp, 0, 0)
+		}
+		surface_reset_target()
+		gpu_set_blendmode(bm_normal)
+	}
+	
 	// Apply shadows to SSAO
 	gpu_set_blendmode(bm_add)
 	if (setting_render_ssao)
@@ -148,7 +189,7 @@ if (setting_render_shadows)
 	// Add ambient shadows
 	surface_set_target(shadowssurf)
 	{
-		draw_box(0, 0, render_width, render_height, false, merge_color(c_black, c_white, 0.5), 1)
+		draw_box(0, 0, render_width, render_height, false, setting_preview_ambient_color, 1)
 	}
 	surface_reset_target()
 	gpu_set_blendmode(bm_normal)

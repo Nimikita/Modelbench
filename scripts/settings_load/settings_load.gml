@@ -144,4 +144,15 @@ if (ds_map_valid(rendermap))
 	
 	setting_render_aa = value_get_real(rendermap[?"render_aa"], setting_render_aa)
 }
+
+// Preview
+var previewmap = map[?"preview"];
+if (ds_map_valid(previewmap))
+{
+	setting_preview_scenery = preview_scenery_find(value_get_string(rendermap[?"scenery"], ""))
+	setting_preview_time = value_get_real(rendermap[?"time"], setting_preview_time)
+	setting_preview_light_rotation = value_get_real(rendermap[?"light_rotation"], setting_preview_light_rotation)
+	setting_preview_light_range = value_get_real(rendermap[?"light_range"], setting_preview_light_range)
+}
+
 ds_map_destroy(map)

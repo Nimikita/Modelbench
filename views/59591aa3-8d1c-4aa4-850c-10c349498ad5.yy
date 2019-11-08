@@ -9,7 +9,8 @@
         "888c1899-78ff-46a9-904c-af6b588f1390",
         "424c79b7-8f36-42f7-876f-14bae04bb264",
         "01948deb-de69-44fd-b23f-839ce588aed5",
-        "e87e14fb-3450-4009-b2ea-7fbf94f64558"
+        "e87e14fb-3450-4009-b2ea-7fbf94f64558",
+        "ab2f2a08-7560-4f09-8b2a-3406e5f4ee49"
     ],
     "filterType": "GMScript",
     "folderName": "Toolbar",

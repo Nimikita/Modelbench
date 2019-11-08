@@ -187,9 +187,16 @@ with (preview)
 {
 	// Background
 	background = tab_add_category("background", tab_preview_background, false) 
+	with (background)
+	{
+		tbx_light_rotation = new_textbox_decimals()
+		tbx_light_rotation.suffix = "°"
+		
+		tbx_light_range = new_textbox_decimals()
+	}
 	
 	// Render
-	render = tab_add_category("render", tab_settings_render, false)
+	render = tab_add_category("render", tab_preview_render, false)
 	with (render)
 	{
 		tbx_ssao_radius = new_textbox_integer()

@@ -129,6 +129,9 @@ enum e_icon
 	replace,
 	collapse_all,
 	expand_all,
+	dusk,
+	day,
+	night,
 	
 	placeholder = 11
 }

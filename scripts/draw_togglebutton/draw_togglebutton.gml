@@ -54,16 +54,30 @@ for (var i = 0; i < buttoncount; i++)
 	draw_box(buttonx, yy, buttonsize, buttonh, false, backgroundcolor, backgroundalpha)
 	
 	var labelcolor, labelalpha;
-	labelcolor = merge_color(c_accent, c_accent_hover, mcroani_arr[e_mcroani.HOVER])
-	labelcolor = merge_color(labelcolor, c_accent_pressed, min(1.0, mcroani_arr[e_mcroani.PRESS] + mcroani_arr[e_mcroani.ACTIVE]))
-	labelalpha = lerp(1, c_accent_hover, mcroani_arr[e_mcroani.HOVER])
-	labelalpha = lerp(labelalpha, c_accent_pressed, min(1.0, mcroani_arr[e_mcroani.PRESS] + mcroani_arr[e_mcroani.ACTIVE]))
+	
 	
 	var icon = togglebutton_icon[i];
 	
-	var totalwidth, startx;
-	totalwidth = string_width_font(text_get(togglebutton_name[@ i]), font_button) + test(icon = null, 0, 24 + 8)
+	var buttonname, totalwidth, startx;
+	buttonname = text_get(togglebutton_name[i])
+	totalwidth = string_width_font(buttonname, font_button) + test(icon = null, 0, 24 + 8)
 	startx = snap(buttonx + (buttonsize/2) - (totalwidth/2), 2)
+	
+	if (buttonname = "")
+	{
+		totalwidth = 20
+		startx = snap(buttonx + (buttonsize/2) - (totalwidth/2), 2)
+		
+		labelcolor = merge_color(c_text_secondary, c_accent, mcroani_arr[e_mcroani.ACTIVE])
+		labelalpha = lerp(a_text_secondary, 1, mcroani_arr[e_mcroani.ACTIVE])
+	}
+	else
+	{
+		labelcolor = merge_color(c_accent, c_accent_hover, mcroani_arr[e_mcroani.HOVER])
+		labelcolor = merge_color(labelcolor, c_accent_pressed, min(1.0, mcroani_arr[e_mcroani.PRESS] + mcroani_arr[e_mcroani.ACTIVE]))
+		labelalpha = lerp(1, a_accent_hover, mcroani_arr[e_mcroani.HOVER])
+		labelalpha = lerp(labelalpha, a_accent_pressed, min(1.0, mcroani_arr[e_mcroani.PRESS] + mcroani_arr[e_mcroani.ACTIVE]))
+	}
 	
 	// Icon
 	if (icon != null)
@@ -73,7 +87,7 @@ for (var i = 0; i < buttoncount; i++)
 	}
 	
 	// Text
-	draw_label(text_get(togglebutton_name[@ i]), startx, yy + (buttonh/2), fa_left, fa_middle, labelcolor, labelalpha, font_button)
+	draw_label(buttonname, startx, yy + (buttonh/2), fa_left, fa_middle, labelcolor, labelalpha, font_button)
 	
 	if (i > 0)
 		draw_box(buttonx, yy + 4, 1, buttonh - 8, false, c_border, a_border)

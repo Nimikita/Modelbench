@@ -1,0 +1,76 @@
+{
+    "description": "Scenery options for Modelbench's preview mode",
+    "scenery": [
+        {
+            "name": "overworld_day",
+            "backgroundtop": "#89AFFD",
+            "backgroundbottom": "#B8CFFE",
+            "lightcolor": "#FFFFFF",
+            "ambientcolor": "#696EA1"
+        },
+        {
+            "name": "overworld_dusk",
+            "backgroundtop": "#6E8CCB",
+            "backgroundbottom": "#B2574D",
+            "lightcolor": "#FF4200",
+            "lightcolor2": "#512B44",
+            "ambientcolor": "#5945A1"
+        },
+        {
+            "name": "overworld_night",
+            "backgroundtop": "#030307",
+            "backgroundbottom": "#070915",
+            "lightcolor": "#33558E",
+            "ambientcolor": "#53287B"
+        },
+        {
+            "name": "desert",
+            "backgroundtop": "#FFE0C4",
+            "backgroundbottom": "#E8C09C",
+            "lightcolor": "#FFC89E",
+            "ambientcolor": "#BC6569"
+        },
+        {
+            "name": "snowy_plains",
+            "backgroundtop": "#FFFFFF",
+            "backgroundbottom": "#DCF9FF",
+            "lightcolor": "#FFFFFF",
+            "ambientcolor": "#DCF9FF"
+        },
+        {
+            "name": "cave",
+            "backgroundtop": "#3A3B40",
+            "backgroundbottom": "#1D222F",
+            "lightcolor": "#62728C",
+            "ambientcolor": "#4C487A"
+        },
+        {
+            "name": "underwater",
+            "backgroundtop": "#274CD3",
+            "backgroundbottom": "#0F136A",
+            "lightcolor": "#1A63D1",
+            "ambientcolor": "#175A92"
+        },
+        {
+            "name": "the_end",
+            "backgroundtop": "#251D22",
+            "backgroundbottom": "#FD54F6",
+            "lightcolor": "#DD91E2",
+            "ambientcolor": "#CB0BD2"
+        },
+        {
+            "name": "nether",
+            "backgroundtop": "#240505",
+            "backgroundbottom": "#D8460D",
+            "lightcolor": "#A7162B",
+            "ambientcolor": "#AA3511"
+        },
+        {
+            "name": "soulsand_valley",
+            "backgroundtop": "#231911",
+            "backgroundbottom": "#005454",
+            "lightcolor": "#954413",
+            "ambientcolor": "#156069"
+        }
+    ]
+}

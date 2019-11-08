@@ -25,6 +25,7 @@
 #macro language_file				languages_directory + "english.mblanguage"
 #macro settings_file				data_directory + "settings.mbdata"
 #macro recent_file					data_directory + "recent.mbdata"
+#macro scenery_file					data_directory + "scenery.mbdata"
 #macro key_file						data_directory + "key.mbdata"
 #macro log_previous_file			file_directory + "log_previous.txt"
 #macro log_file						file_directory + "log.txt"

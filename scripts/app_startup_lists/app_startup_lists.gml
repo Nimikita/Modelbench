@@ -2,7 +2,7 @@
 
 globalvar el_type_name_list;
 globalvar language_english_map, language_map;
-globalvar accent_list, beta_testers_list;
+globalvar scenery_list, accent_list, beta_testers_list;
 
 // Element names
 el_type_name_list = ds_list_create()
@@ -19,6 +19,10 @@ language_map = ds_map_create()
 
 language_load(language_file, language_english_map)
 ds_map_copy(language_map, language_english_map)
+
+// Background scenery
+scenery_list = ds_list_create()
+preview_scenery_load()
 
 // Accent colors
 accent_list = ds_list_create()
