@@ -11,4 +11,7 @@ camera_set_view_mat(cam_render, MAT_IDENTITY)
 camera_set_proj_mat(cam_render, MAT_IDENTITY)
 view_set_camera(0, cam_window)
 
-camera_work_reset()
+view_cam_viewport = new(obj_camera)
+view_cam_preview = new(obj_camera)
+
+view_cam = view_cam_viewport

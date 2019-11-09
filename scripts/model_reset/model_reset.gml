@@ -26,7 +26,7 @@ res = null
 player_skin = false
 root_scale = 1
 
-camera_work_reset()
+camera_reset()
 
 log("Destroying instances")
 

@@ -14,15 +14,9 @@ display_mouse_set(lockx, locky)
 
 var move, spd, spdm, xd, yd, zd;
 	
-cam_work_angle_look_xy += mx
-cam_work_angle_look_z += my
-cam_work_angle_look_z = clamp(cam_work_angle_look_z, -89.9, 89.9)
-	
-if (!cam_work_focus_tl)
-{
-	camera_work_set_focus()
-	camera_work_set_angle()
-}
+view_cam.angle_look_xy += mx
+view_cam.angle_look_z += my
+view_cam.angle_look_z = clamp(view_cam.angle_look_z, -89.9, 89.9)
 	
 // Move
 move = 4 * setting_move_speed
@@ -35,13 +29,13 @@ if (keyboard_check(setting_key_slow))
 	
 if (keyboard_check(setting_key_right))
 {
-	xd = -sin(degtorad(cam_work_angle_look_xy)) * move
-	yd = -cos(degtorad(cam_work_angle_look_xy)) * move
+	xd = -sin(degtorad(view_cam.angle_look_xy)) * move
+	yd = -cos(degtorad(view_cam.angle_look_xy)) * move
 }
 else if (keyboard_check(setting_key_left))
 {
-	xd = sin(degtorad(cam_work_angle_look_xy)) * move
-	yd = cos(degtorad(cam_work_angle_look_xy)) * move
+	xd = sin(degtorad(view_cam.angle_look_xy)) * move
+	yd = cos(degtorad(view_cam.angle_look_xy)) * move
 }
 else
 {
@@ -49,26 +43,19 @@ else
 	yd = 0
 }
 	
-xd += -lengthdir_x(spd, cam_work_angle_look_xy)
-yd += -lengthdir_y(spd, cam_work_angle_look_xy)
+xd += -lengthdir_x(spd, view_cam.angle_look_xy)
+yd += -lengthdir_y(spd, view_cam.angle_look_xy)
 zd = (keyboard_check(setting_key_ascend) - keyboard_check(setting_key_descend)) * move
-zd += (dsin(cam_work_angle_look_z)) * (keyboard_check(setting_key_forward) - keyboard_check(setting_key_back)) * move
+zd += (dsin(view_cam.angle_look_z)) * (keyboard_check(setting_key_forward) - keyboard_check(setting_key_back)) * move
 	
 	
-cam_work_from[X] += xd * spdm
-cam_work_from[Y] += yd * spdm
-cam_work_from[Z] += zd * spdm
-	
-if (!cam_work_focus_tl)
-{
-	cam_work_focus[X] += xd * spdm
-	cam_work_focus[Y] += yd * spdm
-	cam_work_focus[Z] += zd * spdm
-}
+view_cam.from[X] += xd * spdm
+view_cam.from[Y] += yd * spdm
+view_cam.from[Z] += zd * spdm
 	
 // Reset
 if (keyboard_check_pressed(setting_key_reset))
-	camera_work_reset()
+	camera_reset()
 		
-camera_work_set_angle()
+camera_set_angle()
 

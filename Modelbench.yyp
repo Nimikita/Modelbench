@@ -730,7 +730,7 @@
             "Key": "13f4644b-95bd-4f0d-b39b-2d501fbd46a3",
             "Value": {
                 "id": "f335a02c-564c-42c7-adca-5815802000aa",
-                "resourcePath": "scripts\\camera_work_set_angle\\camera_work_set_angle.yy",
+                "resourcePath": "scripts\\camera_set_angle\\camera_set_angle.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -1348,6 +1348,14 @@
                 "id": "1912d11b-aaa1-4da3-926b-161e8b175dcf",
                 "resourcePath": "scripts\\tab_get_title\\tab_get_title.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "28a81fa0-33d2-4258-a553-f1251278a6fd",
+            "Value": {
+                "id": "66f98370-eb27-4771-b4c9-71bb3f82c00c",
+                "resourcePath": "objects\\obj_camera\\obj_camera.yy",
+                "resourceType": "GMObject"
             }
         },
         {
@@ -2074,7 +2082,7 @@
             "Key": "41413b30-cba2-4f23-b363-a0fc4c20641b",
             "Value": {
                 "id": "917dce1b-abcc-4a34-8836-8ee983b7764b",
-                "resourcePath": "scripts\\camera_work_reset\\camera_work_reset.yy",
+                "resourcePath": "scripts\\camera_reset\\camera_reset.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -2306,7 +2314,7 @@
             "Key": "492806bf-bf48-4b46-a4ff-92fb7aec3206",
             "Value": {
                 "id": "17a6271f-3d7c-4e36-8f20-9ba28760fcea",
-                "resourcePath": "scripts\\camera_work_set_from\\camera_work_set_from.yy",
+                "resourcePath": "scripts\\camera_set_from\\camera_set_from.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -5047,6 +5055,14 @@
             }
         },
         {
+            "Key": "96caed19-a133-418a-b759-5d0649f51349",
+            "Value": {
+                "id": "d02010d0-27d7-45c1-ab77-9804329ffc29",
+                "resourcePath": "scripts\\camera_event_create\\camera_event_create.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "96e3727b-995b-4366-91d8-d778d7f17970",
             "Value": {
                 "id": "d24b4814-befc-47c5-ab35-00febf58d066",
@@ -6698,7 +6714,7 @@
             "Key": "cd781ae1-a5e0-4288-bc9e-afa731503f42",
             "Value": {
                 "id": "d284c70e-321a-4e77-a1dc-e19e25d10bce",
-                "resourcePath": "scripts\\camera_work_set_focus\\camera_work_set_focus.yy",
+                "resourcePath": "scripts\\camera_set_focus\\camera_set_focus.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -8229,6 +8245,7 @@
         "cd781ae1-a5e0-4288-bc9e-afa731503f42",
         "492806bf-bf48-4b46-a4ff-92fb7aec3206",
         "938ae180-2d9c-4706-87d5-f2db54319090",
+        "96caed19-a133-418a-b759-5d0649f51349",
         "a89964b2-a3f4-42fe-bc24-975737bb0736",
         "5a96530d-fa23-471a-a2d2-4dddd5b3e802",
         "f9ca24e4-7080-423c-9501-81cdc3593268",

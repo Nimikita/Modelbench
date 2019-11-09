@@ -32,7 +32,7 @@ if (window_focus = string(view))
 {
 	// Mousewheel
 	if ((window_busy = "" || window_busy = "viewrotatecamera") && mouse_wheel <> 0)
-		cam_work_zoom_goal = clamp(cam_work_zoom_goal * (1 + 0.25 * mouse_wheel), cam_near, cam_far)
+		view_cam.zoom_goal = clamp(view_cam.zoom_goal * (1 + 0.25 * mouse_wheel), cam_near, cam_far)
 	
 	// Select or move camera
 	if (window_busy = "viewclick")
@@ -73,26 +73,26 @@ if (window_focus = string(view))
 		
 		if (!mouse_right)
 		{
-			camera_work_set_focus()
+			camera_set_focus()
 			window_busy = ""
 		}
 	}
 	
 	// Smoothen angles
-	if ((cam_work_angle_off_xy != 0 || cam_work_angle_off_z != 0) && fps > 30 && setting_smooth_camera && setting_smooth_camera_amount > 0) // Doesn't like low FPS
+	if ((view_cam.angle_off_xy != 0 || view_cam.angle_off_z != 0) && fps > 30 && setting_smooth_camera && setting_smooth_camera_amount > 0) // Doesn't like low FPS
 	{
-		cam_work_angle_off_xy -= cam_work_angle_off_xy / ((setting_smooth_camera_amount + 2) / delta)
-		cam_work_angle_off_z -= cam_work_angle_off_z / ((setting_smooth_camera_amount + 2) / delta)
+		view_cam.angle_off_xy -= view_cam.angle_off_xy / ((setting_smooth_camera_amount + 2) / delta)
+		view_cam.angle_off_z -= view_cam.angle_off_z / ((setting_smooth_camera_amount + 2) / delta)
 		
-		cam_work_angle_xy += cam_work_angle_off_xy
-		cam_work_angle_z += cam_work_angle_off_z
-		cam_work_angle_z = clamp(cam_work_angle_z, -89.9, 89.9)
+		view_cam.angle_xy += view_cam.angle_off_xy
+		view_cam.angle_z += view_cam.angle_off_z
+		view_cam.angle_z = clamp(view_cam.angle_z, -89.9, 89.9)
 		
-		cam_work_angle_look_xy += cam_work_angle_off_xy
-		cam_work_angle_look_z -= cam_work_angle_off_z
-		cam_work_angle_look_z = clamp(cam_work_angle_look_z, -89.9, 89.9)
+		view_cam.angle_look_xy += view_cam.angle_off_xy
+		view_cam.angle_look_z -= view_cam.angle_off_z
+		view_cam.angle_look_z = clamp(view_cam.angle_look_z, -89.9, 89.9)
 		
-		camera_work_set_from()
+		camera_set_from()
 	}
 
 }

@@ -1,14 +1,17 @@
 /// app_update_work_camera()
 
-if (cam_work_zoom != cam_work_zoom_goal)
-	view_control_update_rotate()
+with (app.view_cam)
+{
+	if (zoom != zoom_goal)
+		view_control_update_rotate()
 
-cam_work_zoom += (cam_work_zoom_goal - cam_work_zoom) / max(1, 4 / delta)
+	zoom += (zoom_goal - zoom) / max(1, 4 / delta)
 
-if (cam_work_focus_last[X] != cam_work_focus[X] || 
-	cam_work_focus_last[Y] != cam_work_focus[Y] || 
-	cam_work_focus_last[Z] != cam_work_focus[Z])
-	camera_work_set_angle()
+	if (focus_last[X] != focus[X] || 
+		focus_last[Y] != focus[Y] || 
+		focus_last[Z] != focus[Z])
+		camera_set_angle()
 
-cam_work_focus_last = point3D_copy(cam_work_focus)
-camera_work_set_from()
+	focus_last = point3D_copy(focus)
+	camera_set_from()
+}
