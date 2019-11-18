@@ -149,7 +149,9 @@ enum e_render_mode
 	SHAPE_OUTLINE,
 	NORMALS,
 	CLICK,
-	SELECT
+	SELECT,
+	ALPHA_FIX,
+	ALPHA_TEST
 }
 
 // Values

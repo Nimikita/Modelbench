@@ -34,7 +34,14 @@ draw_gradient(xx, yy, width, height, scenery.background_bottom, 0, 0, 1, 1)
 
 draw_outline(xx, yy, width, height, 2, c_accent, mcroani_arr[e_mcroani.ACTIVE], true)
 
-tip_set(text_get("tooltipscenery" + scenery.name), xx, yy, width, height)
+// Use scenery name is available
+var name = "tooltipscenery" + scenery.name;
+if (text_exists(name))
+	name = text_get(name)
+else
+	name = string_format_snakecase(scenery.name)
+
+tip_set(name, xx, yy, width, height)
 
 // Hover/press animation
 var buttoncolor, buttonalpha;

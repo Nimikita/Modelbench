@@ -2,4 +2,4 @@
 /// @desc Sets up radio button groups for communication between components
 
 radiobutton_group = null
-radiobutton_group_startup = new_animation("radiobuttongroupstartup")
+radiobutton_group_export_size = new_animation("radiobuttongroupexportsize")

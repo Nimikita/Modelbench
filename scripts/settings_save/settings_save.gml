@@ -117,6 +117,9 @@ json_save_object_start("preview")
 	json_save_var("time", setting_preview_time)
 	json_save_var("light_rotation", setting_preview_light_rotation)
 	json_save_var("light_range", setting_preview_light_range)
+	
+	json_save_var("export_size", setting_preview_export_size)
+	json_save_var_bool("background", setting_preview_background)
 
 json_save_object_done()
 

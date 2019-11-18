@@ -9,6 +9,9 @@ if (program_mode = e_mode.MODELING)
 	app_update_el_edit_tabs()
 	
 	view_cam = view_cam_viewport
+	
+	// Free render surfaces from preview mode
+	render_free()
 }
 else if (program_mode = e_mode.PREVIEW)
 {

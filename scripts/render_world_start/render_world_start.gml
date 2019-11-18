@@ -1,25 +1,22 @@
 /// render_world_start([zfar])
 /// @arg [zfar]
 
-//if (!render_camera) // Use work camera
-//{
-	var xx, yy, zz, cx, cy;
-	cam_from = point3D_copy(view_cam.from)
-	cam_to[X] = view_cam.from[X] + lengthdir_x(1, view_cam.angle_look_xy + 180) * lengthdir_x(1, view_cam.angle_look_z)
-	cam_to[Y] = view_cam.from[Y] + lengthdir_y(1, view_cam.angle_look_xy + 180) * lengthdir_x(1, view_cam.angle_look_z)
-	cam_to[Z] = view_cam.from[Z] + lengthdir_z(1, view_cam.angle_look_z)
+var xx, yy, zz, cx, cy;
+cam_from = point3D_copy(view_cam.from)
+cam_to[X] = view_cam.from[X] + lengthdir_x(1, view_cam.angle_look_xy + 180) * lengthdir_x(1, view_cam.angle_look_z)
+cam_to[Y] = view_cam.from[Y] + lengthdir_y(1, view_cam.angle_look_xy + 180) * lengthdir_x(1, view_cam.angle_look_z)
+cam_to[Z] = view_cam.from[Z] + lengthdir_z(1, view_cam.angle_look_z)
 	
-	xx = cam_to[X] - cam_from[X];
-	yy = cam_to[Y] - cam_from[Y];
-	zz = cam_to[Z] - cam_from[Z];
-	cx = lengthdir_x(1, -view_cam.roll) / sqrt(xx * xx + yy * yy + zz * zz)
-	cy = lengthdir_y(1, -view_cam.roll)
-	cam_up[X] = -cx * xx * zz - cy * yy
-	cam_up[Y] = cy * xx - cx * yy * zz
-	cam_up[Z] = cx * (xx * xx + yy * yy)
+xx = cam_to[X] - cam_from[X];
+yy = cam_to[Y] - cam_from[Y];
+zz = cam_to[Z] - cam_from[Z];
+cx = lengthdir_x(1, -view_cam.roll) / sqrt(xx * xx + yy * yy + zz * zz)
+cy = lengthdir_y(1, -view_cam.roll)
+cam_up[X] = -cx * xx * zz - cy * yy
+cam_up[Y] = cy * xx - cx * yy * zz
+cam_up[Z] = cx * (xx * xx + yy * yy)
 	
-	cam_fov = 35
-//}
+cam_fov = 35
 
 cam_near = 1
 if (argument_count > 0)

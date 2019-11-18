@@ -3,6 +3,7 @@
 /// @arg x
 /// @arg y
 /// @arg active
+/// @arg value
 /// @arg script
 
 var name, xx, yy, active, value, script;
@@ -67,7 +68,7 @@ radiobutton_group_update(mouseon && !active)
 if (pressed && mouse_left_released)
 {
 	if (script != null)
-		script_execute(script, !active)
+		script_execute(script, value)
 	
 	return true
 }

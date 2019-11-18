@@ -4,7 +4,7 @@
         "language": "English",
         "translator": "Nimi",
         "forversion": "Alpha 7",
-        "lastchange": "2019.11.7"
+        "lastchange": "2019.11.14"
     },
 	"startup/": {
 		"modeldetected": "Unsaved model detected",
@@ -59,7 +59,9 @@
 		},
 		"save/": {
 			"model": "Mine-imator model",
-			"modelcaption": "Save Mine-imator model"
+			"modelcaption": "Save Mine-imator model",
+			"image": "Images",
+            "imagecaption": "Save image"
 		}
 	},
 	"uveditor/": {
@@ -74,6 +76,8 @@
 		"newupdate": "A new update is available!",
 		"newupdatedesc": "%1 is available to download.",
 		"savemodel": "Model saved successfully!",
+		"saveimage": "Image saved successfully!",
+		"openimage": "OPEN IMAGE",
 		"warning/": {
 			"samepartname": "Some parts share the same name.",
 			"emptypartname": "Some parts don't have a name.",
@@ -280,11 +284,12 @@
 	"wind": "WIND",
 	"mineimator": "MINE-IMATOR",
 	"background": "BACKGROUND",
+	"render": "RENDER",
+	"export": "EXPORT",
 	"general": "GENERAL",
 	"controls": "CONTROLS",
 	"interface": "INTERFACE",
 	"graphics": "GRAPHICS",
-	"render": "RENDER",
 	"assets/": {
 		"modelname": "Model name",
 		"emptymodelname": "Model name cannot be empty.",
@@ -431,7 +436,15 @@
 		"shadows": "Shadows",
 		"shadowsblurquality": "Blur quality",
 		"shadowsblursize": "Blur size",
-		"aa": "AA"
+		"aa": "AA",
+		"exportsize": "Export size",
+		"exportsize/": {
+			"256": "256px",
+			"512": "512px",
+			"1024": "1024px"
+		},
+		"includebackground": "Include background",
+		"exportimage": "EXPORT IMAGE"
 	},
 	"openmodel/": {
 		"recentmodels": "Recent models",

@@ -34,6 +34,8 @@ if (!err)
 	new_shader("shader_normals")
 	new_shader("shader_high_aa")
 	new_shader("shader_border")
+	new_shader("shader_alpha_fix")
+	new_shader("shader_alpha_test")
 	
 	with (obj_shader)
 	{

@@ -36,7 +36,7 @@ if (datesort)
 else
 {
 	for (var i = 0; i < listsize; i++)
-		ds_list_add(datalist, string_lower(list[|i].name))
+		ds_list_add(datalist, string_lower(filename_name(list[|i].filename)))
 	
 	ds_list_sort(datalist, !ascend)
 	ds_list_copy(prevlist, list)
@@ -46,7 +46,7 @@ else
 	{
 		for (var j = 0; j < ds_list_size(prevlist); j++)
 		{
-			if (datalist[|i] = string_lower(prevlist[|j].name))
+			if (datalist[|i] = string_lower(filename_name(list[|i].filename)))
 			{
 				ds_list_add(newlist, prevlist[|j])
 				ds_list_delete(prevlist, j)

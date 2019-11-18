@@ -112,7 +112,7 @@ with (new(obj_model_element))
 		else
 		{
 			value[e_value.BEND_SIZE_CUSTOM] = false
-			value[e_value.BEND_SIZE] = 0
+			value[e_value.BEND_SIZE] = 4
 		}
 		
 		// Inherit bend angle(s)
@@ -307,7 +307,7 @@ with (new(obj_model_element))
 		value[e_value.BEND_OFFSET] = 0
 		
 		value[e_value.BEND_SIZE_CUSTOM] = false
-		value[e_value.BEND_SIZE] = 0
+		value[e_value.BEND_SIZE] = 4
 		value[e_value.INHERIT_BEND] = false
 
 		value[e_value.BEND_PART] = e_part.RIGHT

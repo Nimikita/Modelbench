@@ -1,7 +1,7 @@
 /// render_startup()
 
 globalvar render_view_current, render_width, render_height, render_ratio, render_camera, render_target, proj_from, render_proj_from, proj_matrix,
-		  view_proj_matrix, render_prev_color, render_prev_alpha, render_list, render_surface_time;
+		  view_proj_matrix, render_prev_color, render_prev_alpha, render_list, render_surface_time, render_background;
 
 globalvar render_light_from, render_light_to, render_light_near, render_light_far, render_light_fov, render_light_color, render_light_fade_size,
 		  render_light_spot_sharpness, proj_depth_near, proj_depth_far, render_light_matrix, render_surface;
@@ -28,6 +28,7 @@ render_camera = null
 render_target = null
 render_list = ds_list_create()
 render_surface_time = 0
+render_background = true
 
 render_surface[0] = null
 render_surface[1] = null
@@ -56,3 +57,5 @@ render_mode_shader_map[?e_render_mode.SHAPE] = shader_shape
 render_mode_shader_map[?e_render_mode.NORMALS] = shader_normals
 render_mode_shader_map[?e_render_mode.CLICK] = shader_shape
 render_mode_shader_map[?e_render_mode.SELECT] = shader_shape
+render_mode_shader_map[?e_render_mode.ALPHA_FIX] = shader_alpha_fix
+render_mode_shader_map[?e_render_mode.ALPHA_TEST] = shader_alpha_test

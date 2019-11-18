@@ -69,8 +69,28 @@ if (content_width > 0 && content_height > 0)
 	content_height = ceil(content_height)
 	content_mouseon = (app_mouse_box(content_x, content_y, content_width, content_height) && view.mouseon && !popup_mouseon && !snackbar_mouseon && !context_menu_mouseon)
 	
+	// Preview transparency
+	if (program_mode = e_mode.PREVIEW)
+	{
+		draw_box(boxx, boxy, boxw, boxh, false, c_background, 1)
+		
+		for (var i = 0; i < ceil(boxw/192); i++)
+			for (var j = 0; j < ceil(boxh/192); j++)
+				draw_image(spr_uv_editor_pattern, 0, boxx + (i * 192), boxy + (j * 192), 1, 1, c_text_main, .05)
+	}
+	
 	view_update(view, null)
 	draw_surface_size(view.surface, content_x, content_y, content_width, content_height)
+}
+
+// Preview overlay bars
+if (program_mode = e_mode.PREVIEW && (content_width > content_height))
+{
+	var barsize;
+	barsize = abs(content_width - content_height)/2
+	
+	draw_box(content_x, content_y, barsize, content_height, false, c_black, .5)
+	draw_box(content_x + content_width - barsize, content_y, barsize, content_height, false, c_black, .5)
 }
 
 // Mouse on

@@ -53,11 +53,11 @@ if (texture_mirror)
 // Start position and bounds
 var detail = 2;
 var sharpbend, bendsize, bendstart, bendend, bendsegsize, invangle;
-sharpbend = app.setting_blocky_bending && ((bend_axis[X] && !bend_axis[Y] && !bend_axis[Z]) || (!bend_axis[X] && bend_axis[Y] && !bend_axis[Z]))
-bendsize = test(bend_size = null, test(!app.setting_blocky_bending, 4, 1), bend_size)
+sharpbend = app.setting_blocky_bending && ((bend_axis[X] && !bend_axis[Y] && !bend_axis[Z]) || (!bend_axis[X] && bend_axis[Y] && !bend_axis[Z])) && bend_size = null
+bendsize = test(bend_size = null, test(sharpbend, 1, 4), bend_size)
 detail = test(sharpbend, 2, max(bendsize, 2))
 
-if (bend_size != null && bend_size >= 1 && scale[segaxis] > .5)
+if ((bend_size != null && bend_size >= 1) && scale[segaxis] > .5)
 	detail /= scale[segaxis]
 
 bendsegsize = bendsize / detail;
@@ -180,7 +180,7 @@ while (segpos < size[segaxis])
 		if (invangle)
 			segp = 1 - segp
 			
-		bendvec = bendvec = model_shape_get_bend(bend, segp)
+		bendvec = model_shape_get_bend(bend, segp)
 	
 		// Blocky bending
 		var bendscale = vec3(0);

@@ -1,5 +1,8 @@
 /// render_world_background()
 
+if (!render_background)
+	return 0
+
 render_mode = e_render_mode.SKY
 render_shader_obj = shader_map[?render_mode_shader_map[?render_mode]]
 with (render_shader_obj)

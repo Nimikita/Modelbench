@@ -3,7 +3,12 @@
 
 // Refresh scenery
 if (keyboard_check_pressed(vk_f7))
+{
 	preview_scenery_load()
+	
+	if (ds_list_size(scenery_list) > 0)
+		setting_preview_scenery = scenery_list[|0]
+}
 
 if (keyboard_check_pressed(vk_f8))
 {

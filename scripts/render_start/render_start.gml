@@ -17,6 +17,7 @@ if (argument_count > 2)
 }
 
 render_ratio = render_width / render_height
+render_background = (program_mode = e_mode.MODELING || (program_mode = e_mode.PREVIEW && setting_preview_background))
 
 render_prev_color = draw_get_color()
 render_prev_alpha = draw_get_alpha()

@@ -186,7 +186,7 @@ preview.closeable = false
 with (preview)
 {
 	// Background
-	background = tab_add_category("background", tab_preview_background, false) 
+	background = tab_add_category("background", tab_preview_background, true) 
 	with (background)
 	{
 		tbx_light_rotation = new_textbox_decimals()
@@ -208,6 +208,9 @@ with (preview)
 		tbx_shadows_blur_size = new_textbox_integer()
 		tbx_shadows_blur_size.suffix = "%"
 	}
+	
+	// Export
+	export = tab_add_category("export", tab_preview_export, false) 
 }
 
 // Recent models

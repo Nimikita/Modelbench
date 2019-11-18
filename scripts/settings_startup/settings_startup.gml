@@ -104,6 +104,9 @@ setting_preview_time = 0
 setting_preview_light_rotation = 225
 setting_preview_light_range = 200
 
+setting_preview_export_size = 256
+setting_preview_background = true
+
 // Misc settings
 setting_hide_shapes = false
 

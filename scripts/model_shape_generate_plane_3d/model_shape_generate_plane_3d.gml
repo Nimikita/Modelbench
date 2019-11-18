@@ -57,8 +57,8 @@ ptexsize = vec2_div(vec2(1 - 1 / 256), texsizescale)
 
 // Start position and bounds
 var sharpbend, bendsize, bendstart, bendend, invangle;
-sharpbend = app.setting_blocky_bending && ((bend_axis[X] && !bend_axis[Y] && !bend_axis[Z]) || (!bend_axis[X] && bend_axis[Y] && !bend_axis[Z]));
-bendsize = test(bend_size = null, test(!app.setting_blocky_bending, 4, 1), bend_size)
+sharpbend = app.setting_blocky_bending && ((bend_axis[X] && !bend_axis[Y] && !bend_axis[Z]) || (!bend_axis[X] && bend_axis[Y] && !bend_axis[Z])) && bend_size = null
+bendsize = test(bend_size = null, test(sharpbend, 1, 4), bend_size)
 invangle = (bend_part = e_part.LOWER || bend_part = e_part.BACK || bend_part = e_part.LEFT)
 
 if (segouteraxis = Z)
