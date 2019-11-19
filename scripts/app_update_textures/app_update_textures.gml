@@ -1,0 +1,22 @@
+/// app_update_textures()
+/// @desc Refreshes all textures in the current model when the window is refocused
+
+if (!setting_refresh_textures)
+	return 0
+
+if (window_in_focus != window_has_focus())
+{
+	window_in_focus = window_has_focus()
+	
+	if (window_in_focus)
+	{
+		with (obj_texture)
+			tex_refresh(id)
+		
+		textures_list.update = true
+		tex_preview.update = true
+		
+		with (obj_model_shape)
+			update_vbuffer = true
+	}
+}

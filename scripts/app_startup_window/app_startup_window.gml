@@ -22,6 +22,7 @@ window_set_caption("Modelbench")
 window_state = "startup"
 window_busy = ""
 window_focus = ""
+window_in_focus = window_has_focus()
 
 window_cover = 1
 

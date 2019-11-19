@@ -4,7 +4,7 @@
         "language": "English",
         "translator": "Nimi",
         "forversion": "Alpha 7",
-        "lastchange": "2019.11.14"
+        "lastchange": "2019.11.19"
     },
 	"startup/": {
 		"modeldetected": "Unsaved model detected",
@@ -128,7 +128,8 @@
 		"texture/": {
 			"setmain": "Set as main texture",
 			"remove": "Remove texture from model",
-			"replace": "Replace texture"
+			"replace": "Replace texture",
+			"refresh": "Refresh texture"
 		},
 		"element/": {
 			"add": "Add element...",
@@ -459,6 +460,8 @@
 		"backupmodelsamount": "Maximum saved backups",
 		"slowgeneration": "Slow shape generation",
 		"slowgenerationhelp": "Updates shapes slower. Useful for better performance when editing complex models.",
+		"refreshtextures": "Refresh textures on focus",
+		"refreshtextureshelp": "Automatically refresh all model textures when the window is refocused.",
 		"interfaceshortcuts": "Interface shortcuts",
 		"camerashortcuts": "Camera shortcuts",
 		"key/": {

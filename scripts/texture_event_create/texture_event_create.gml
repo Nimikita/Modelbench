@@ -4,6 +4,7 @@ copied = false
 replaced = false
 loaded = false
 
+filepath = ""
 filename = ""
 sprite = null
 scale = 1

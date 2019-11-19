@@ -21,6 +21,7 @@ setting_backup = true
 setting_backup_time = 2
 setting_backup_amount = 3
 setting_slow_generation = false
+setting_refresh_textures = false
 
 setting_key_open = ord("O")
 setting_key_open_control = true

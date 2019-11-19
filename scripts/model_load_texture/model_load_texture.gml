@@ -26,7 +26,10 @@ if (obj = null)
 	obj.filename = name
 	
 	if (file_exists_lib(app.model_folder + "\\" + name))
+	{
 		obj.sprite = texture_create_square(app.model_folder + "\\" + name)
+		obj.filepath = app.model_folder + "\\" + name
+	}
 	else
 		obj.sprite = sprite_duplicate(spr_empty)
 	

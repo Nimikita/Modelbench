@@ -35,6 +35,9 @@ if (ds_map_valid(generalmap))
 	setting_backup = value_get_real(generalmap[?"backup"], setting_backup)
 	setting_backup_time = value_get_real(generalmap[?"backup_time"], setting_backup_time)
 	setting_backup_amount = value_get_real(generalmap[?"backup_amount"], setting_backup_amount)
+	
+	setting_slow_generation = value_get_real(generalmap[?"slow_generation"], setting_slow_generation)
+	setting_refresh_textures = value_get_real(generalmap[?"slow_refresh_textures"], setting_refresh_textures)
 }
 
 // Controls

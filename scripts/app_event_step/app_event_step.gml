@@ -19,6 +19,8 @@ app_update_snackbar()
 app_update_lists()
 
 app_update_animations()
+
+app_update_textures()
 app_update_shape_vbuffer()
 
 if (model_create_wait)

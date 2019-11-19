@@ -28,3 +28,8 @@ if (setting_backup && !setting_collapse_backup_models)
 tab_control_switch()
 draw_switch("settingsslowgeneration", dx, dy, setting_slow_generation, action_setting_slow_generation, false, "settingsslowgenerationhelp")
 tab_next()
+
+// Refresh textures on focus
+tab_control_switch()
+draw_switch("settingsrefreshtextures", dx, dy, setting_refresh_textures, action_setting_refresh_textures, false, "settingsrefreshtextureshelp")
+tab_next()
