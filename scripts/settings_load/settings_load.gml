@@ -93,13 +93,13 @@ var interfacemap = map[?"interface"];
 if (ds_map_valid(interfacemap))
 {
 	var themename;
-	themename = value_get_real(interfacemap[?"theme"], "light")
+	themename = value_get_string(interfacemap[?"theme"], "light")
 	
 	with (obj_theme)
 	{
 		if (name = themename)
 		{
-			setting_theme = id
+			app.setting_theme = id
 			break
 		}
 	}

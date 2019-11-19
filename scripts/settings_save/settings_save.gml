@@ -4,7 +4,7 @@ log("Saving settings", settings_file)
 
 json_save_start(settings_file)
 json_save_object_start()
-json_save_var("format", settings_format)
+json_save_var("format", real(settings_format))
 
 json_save_object_start("general")
 
