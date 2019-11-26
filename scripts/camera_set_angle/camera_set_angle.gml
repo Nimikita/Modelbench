@@ -9,5 +9,3 @@ with (app.view_cam)
 	angle_off_xy = 0
 	angle_off_z = 0
 }
-
-view_control_update_rotate()

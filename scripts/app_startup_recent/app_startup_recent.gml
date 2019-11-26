@@ -20,6 +20,7 @@ recent_splash_x = 0
 recent_splash_y = 0
 recent_splash_goal_x = recent_splash_x
 recent_splash_goal_y = recent_splash_y
+render_splash_center = true
 
 recent_scrollbar = new(obj_scrollbar)
 

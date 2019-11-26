@@ -37,6 +37,9 @@ if (mouseon && mouse_left_released)
 	button_menu_list = list_init(button_menu_name)
 	button_menu_amount = ds_list_size(button_menu_list.item)
 	button_menu_w = button_menu_list.width
+	
+	if ((button_menu_x + (button_menu_w/2)) > window_width)
+		button_menu_x += window_width - (button_menu_x + (button_menu_w/2))
 }
 
 // Draw button background

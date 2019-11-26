@@ -20,6 +20,7 @@ if (argument_count > 4)
 	draw_set_alpha(alpha * argument[5])
 }
 
+draw_set_circle_precision(64)
 draw_circle(xx, yy, radius, outline)
 
 draw_set_color(color)

@@ -4,7 +4,7 @@
         "language": "English",
         "translator": "Nimi",
         "forversion": "Alpha 7",
-        "lastchange": "2019.11.19"
+        "lastchange": "2019.11.25"
     },
 	"startup/": {
 		"modeldetected": "Unsaved model detected",
@@ -29,8 +29,7 @@
 			"never": "Never opened",
 			"future": "Last opened in the future"
 		},
-		"none": "Your recent models will appear here.",
-		"nonesub": "Click '%1' to get started!",
+		"none": "The models you've opened recently will appear here!",
 		"sortascendingtip": "Sort ascending",
 		"sortdescendingtip": "Sort descending",
 		"pintip": "Pin",

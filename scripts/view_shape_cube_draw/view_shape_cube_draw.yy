@@ -1,8 +1,8 @@
 {
-    "id": "672d4d87-a7ec-4481-a331-c8e8f4da617a",
+    "id": "05156066-4786-4d23-9fe4-6d83c3dcb713",
     "modelName": "GMScript",
     "mvc": "1.0",
-    "name": "view_control_update_rotate",
+    "name": "view_shape_cube_draw",
     "IsCompatibility": false,
     "IsDnD": false
 }

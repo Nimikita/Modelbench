@@ -15,6 +15,8 @@ with (el_edit)
 	else
 		mat = array_copy_1d(matrix_parent)
 	
+	mat = matrix_multiply(matrix_create(vec3(0), rotation, vec3(1)), mat)
+	
 	matrix_remove_scale(mat)
 }
 
@@ -23,9 +25,9 @@ if (tool_selected != e_tool.TRANSFORM)
 	view_control_scale_all(view, mat, 130)
 
 // Draw each axis
-view_control_scale_axis(view, e_value.SCA_X, c_axisred, point3D_mul_matrix(vec3(0, 0, 0), mat), point3D_mul_matrix(vec3(len, 0, 0), mat))
-view_control_scale_axis(view, e_value.SCA_Y, test(setting_z_is_up, c_axisblue, c_axisgreen), point3D_mul_matrix(vec3(0, 0, 0), mat), point3D_mul_matrix(vec3(0, len, 0), mat))
-view_control_scale_axis(view, e_value.SCA_Z, test(setting_z_is_up, c_axisgreen, c_axisblue), point3D_mul_matrix(vec3(0, 0, 0), mat), point3D_mul_matrix(vec3(0, 0, len), mat))
+view_control_scale_axis(view, e_value.SCA_X, c_axisred, len, mat, X)
+view_control_scale_axis(view, e_value.SCA_Y, test(setting_z_is_up, c_axisgreen, c_axisblue), len, mat, Y)
+view_control_scale_axis(view, e_value.SCA_Z, test(setting_z_is_up, c_axisblue, c_axisgreen), len, mat, Z)
 
 // Is dragging
 if (window_busy = "rendercontrol" && view_control_edit_view = view && view_control_edit > e_value.ROT_Z)

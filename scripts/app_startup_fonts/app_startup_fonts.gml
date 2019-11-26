@@ -8,7 +8,7 @@ font_label = font_emphasis//font_add(fonts_directory + "noto_bold.ttf", 8, false
 font_value = font_add(fonts_directory + "noto_regular.ttf", 9, false, false, 32, 1024)
 font_caption = font_add(fonts_directory + "noto_regular.ttf", 8, false, false, 32, 1024)
 font_button = font_add(fonts_directory + "noto_bold.ttf", 10, false, false, 32, 1024)
-
+font_startup = font_add(fonts_directory + "noto_regular.ttf", 12, false, false, 32, 1024)
 
 /*
 font_heading = font_add(fonts_directory + "inter_semibold.ttf", 12, false, false, 32, 1024)

@@ -33,5 +33,3 @@ with (obj_model_element)
 		app.element_editor.wind.enabled = true
 	}
 }
-
-view_control_update_rotate()

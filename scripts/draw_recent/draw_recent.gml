@@ -18,42 +18,11 @@ if (argument_count > 4)
 
 recenty = yy
 
-// No recent models to display
-if (recent_list_amount = 0 && (wid > sprite_get_width(spr_splash)/2 && hei > sprite_get_height(spr_splash)/2))
-{
-	var midx, midy;
-	midx = snap(xx + (wid*.5), 2)
-	midy = snap(yy + (hei*.5), 2)
-	
-	if (current_step < 5)
-	{
-		recent_splash_x = midx
-		recent_splash_y = midy
-		recent_splash_goal_x = recent_splash_x
-		recent_splash_goal_y = recent_splash_y
-	}
-	else
-	{
-		recent_splash_goal_x = midx - ((mouse_x - midx) / 50)
-		recent_splash_goal_y = midy - ((mouse_y - midy) / 50)
-		recent_splash_x += (recent_splash_goal_x - recent_splash_x) / max(1, 5 / delta)
-		recent_splash_y += (recent_splash_goal_y - recent_splash_y) / max(1, 5 / delta)
-	}
-	
-	gpu_set_tex_filter(true)
-	draw_image(spr_splash, 1, recent_splash_x, recent_splash_y, 0.5, 0.5)
-	gpu_set_tex_filter(false)
-	
-	//draw_label(text_get("recentnone"), midx, midy - 4, fa_center, fa_bottom, c_accent, 1, font_heading)
-	//draw_label(text_get("recentnonesub", text_get("startupnewmodel")), midx, midy + 4, fa_center, fa_top, a_text_secondary, a_text_secondary, font_subheading)
-	return 0
-}
-
 if (mode = "simple")
 {
 	for (var i = 0; i < recent_list_amount; i++)
 	{
-		var hover = app_mouse_box(xx, recenty, wid, 44);
+		var hover = app_mouse_box(xx, recenty, wid, 44) && !popup_mouseon && !snackbar_mouseon && !context_menu_mouseon;
 		var mouseon = hover;
 		var item = recent_list[|i];
 		
@@ -108,13 +77,13 @@ if (mode = "simple")
 if (mode = "list")
 {
 	// Set scrollbar
+	var liststart = 0;
 	recent_scrollbar.snap_value = 44
-
-	var liststart = snap(recent_scrollbar.value / 44, 1);
-
+	
 	if ((recent_list_amount * 44) > hei - 28)
 	{
 		scrollbar_draw(recent_scrollbar, e_scroll.VERTICAL, xx + wid - 9, yy + 28, hei - 28, recent_list_amount * 44)
+		liststart = snap(recent_scrollbar.value / 44, 1)
 		wid -= 12
 	}
 	
@@ -152,7 +121,7 @@ if (mode = "list")
 	// Draw list
 	for (var i = liststart; i < recent_list_amount; i++)
 	{
-		var hover = app_mouse_box(xx, recenty, wid, 44);
+		var hover = app_mouse_box(xx, recenty, wid, 44) && !popup_mouseon && !snackbar_mouseon && !context_menu_mouseon;
 		mouseon = hover
 		
 		var item = recent_list_display[|i];
@@ -221,4 +190,5 @@ if (recent_list_update)
 {
 	recent_update()
 	recent_list_update = false
+	render_splash_center = true
 }

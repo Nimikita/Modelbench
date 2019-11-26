@@ -1,7 +1,7 @@
 /// render_startup()
 
 globalvar render_view_current, render_width, render_height, render_ratio, render_camera, render_target, proj_from, render_proj_from, proj_matrix,
-		  view_proj_matrix, render_prev_color, render_prev_alpha, render_list, render_surface_time, render_background;
+		  view_proj_matrix, render_prev_color, render_prev_alpha, render_list, render_surface_time, render_background, render_overlay;
 
 globalvar render_light_from, render_light_to, render_light_near, render_light_far, render_light_fov, render_light_color, render_light_fade_size,
 		  render_light_spot_sharpness, proj_depth_near, proj_depth_far, render_light_matrix, render_surface;
@@ -26,6 +26,7 @@ render_height = 1
 render_ratio = 1
 render_camera = null
 render_target = null
+render_overlay = null
 render_list = ds_list_create()
 render_surface_time = 0
 render_background = true

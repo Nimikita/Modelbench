@@ -8,7 +8,7 @@ view = argument0
 mat = argument1
 radius = argument2
 
-coord = point3D_project(matrix_position(mat), view_proj_matrix, render_width, render_height)
+coord = point3D_project(matrix_position(mat), view_proj_matrix, content_width, content_height)
 
 if (point3D_project_error)
 	return 0
@@ -59,34 +59,43 @@ draw_set_color(c_background)
 
 // Draw circle
 if (view.control_mouseon_last = -1)
-	alpha = 1
+	alpha = .5
 else
-	alpha = 0.35
+	alpha = 0.25
+
+var drawcoord, mousecoord;
+drawcoord = vec2_mul(coord, 2)
+mousecoord = point2D(mouse_x - content_x, mouse_y - content_y)
 
 if (window_busy != "rendercontrolscalexyz")
 {
-	draw_circle_ext(coord[X], coord[Y], radius, true, c_background, alpha)
-	draw_circle_ext(coord[X], coord[Y], radius + .5, true, c_background, alpha)
-	draw_circle_ext(coord[X], coord[Y], radius + 1, true, c_background, alpha)
-	draw_circle_ext(coord[X], coord[Y], radius + 1.5, true, c_background, alpha)
-	draw_circle_ext(coord[X], coord[Y], radius + 2, true, c_background, alpha)
+	for (var i = 0; i < 10; i++)
+		draw_circle_ext(drawcoord[X], drawcoord[Y], (radius * 2) + (i * .5), true, c_black, alpha)
 }
 else
 {
-	draw_circle_ext(mouse_x - content_x, mouse_y - content_y, 10, false, c_background, .5)
-	draw_circle_ext(mouse_x - content_x, mouse_y - content_y, 6, false, c_background, 1)
+	draw_circle_ext(mousecoord[X] * 2, mousecoord[Y] * 2, 20, false, c_background, 1)
+	draw_circle_ext(mousecoord[X] * 2, mousecoord[Y] * 2, 12, false, c_background, 2)
 	
 	render_set_culling(false)
-	draw_line_width(coord[X], coord[Y], mouse_x - content_x, mouse_y - content_y, 2)
+	
+	draw_set_color(c_text_tertiary)
+	draw_set_alpha(a_text_tertiary)
+	draw_line_width(drawcoord[X], drawcoord[Y], mousecoord[X] * 2, mousecoord[Y] * 2, 8)
+	draw_set_color(c_background)
+	draw_set_alpha(1)
+	
+	draw_line_width(drawcoord[X], drawcoord[Y], mousecoord[X] * 2, mousecoord[Y] * 2, 4)
 	
 	// Draw notches
 	for (var i = 0; i < ceil(view_control_scale_amount * 5); i++)
 	{
 		var nx, ny, angle;
-		nx = lerp(mouse_x - content_x, coord[X], i/(view_control_scale_amount * 5))
-		ny = lerp(mouse_y - content_y, coord[Y], i/(view_control_scale_amount * 5))
-		angle = radtodeg(arctan2(mouse_y - content_y - coord[Y], mouse_x - content_x - coord[X]))
-		draw_image(spr_view_line, 0, nx, ny, 1, 1, test((i mod 5) = 0, c_accent, c_background), 1, -angle)
+		nx = lerp(mousecoord[X] * 2, drawcoord[X], i/(view_control_scale_amount * 5))
+		ny = lerp(mousecoord[Y] * 2, drawcoord[Y], i/(view_control_scale_amount * 5))
+		angle = radtodeg(arctan2((mousecoord[Y]*2) - drawcoord[Y], (mousecoord[X] * 2) - drawcoord[X]))
+		draw_image(spr_view_line, 0, nx, ny, 3, 2.5, c_text_tertiary, a_text_tertiary, -angle)
+		draw_image(spr_view_line, 0, nx, ny, 2, 2, test((i mod 5) = 0, c_accent, c_background), 1, -angle)
 	}
 	
 	render_set_culling(true)

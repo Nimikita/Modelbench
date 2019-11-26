@@ -110,10 +110,7 @@ else
 // Rotate tool
 tip_set_shortcut(setting_key_tool_rotate, setting_key_tool_rotate_control)
 if (draw_button_icon("toolsettoolrotate", dx, dy, 28, 28, tool_selected = e_tool.ROTATE, e_icon.toolset_rotate, null, false, "toolsettoolrotate"))
-{
 	tool_selected = e_tool.ROTATE
-	view_control_update_rotate()
-}
 	
 if (dw > dh)
 	dx += buttonsize
@@ -133,10 +130,7 @@ else
 // Transform tool(Position, rotate, scale)
 tip_set_shortcut(setting_key_tool_transform, setting_key_tool_transform_control)
 if (draw_button_icon("toolsettooltransform", dx, dy, 28, 28, tool_selected = e_tool.TRANSFORM, e_icon.transform, null, false, "toolsettooltransform"))
-{
 	tool_selected = e_tool.TRANSFORM
-	view_control_update_rotate()
-}
 
 draw_set_alpha(1)
 tip_set_shortcut(-1, false)

@@ -48,9 +48,6 @@ if (window_busy = "uveditorresize")
 	else
 		setting_uv_editor_size = clamp(resize, .25, .75)
 	
-	if (mouse_still = 0)
-		view_control_update_rotate()
-	
 	if (!mouse_left)
 	{
 		window_busy = ""

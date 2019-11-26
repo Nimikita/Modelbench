@@ -31,7 +31,6 @@ draw_box(boxx, boxy, boxw, boxh, false, c_background, 1)
 
 if (view.width != content_width || view.height != content_height)
 {
-	view_control_update_rotate()
 	view.width = content_width
 	view.height = content_height
 }

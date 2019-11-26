@@ -2,9 +2,6 @@
 
 with (app.view_cam)
 {
-	if (zoom != zoom_goal)
-		view_control_update_rotate()
-
 	zoom += (zoom_goal - zoom) / max(1, 4 / delta)
 
 	if (focus_last[X] != focus[X] || 

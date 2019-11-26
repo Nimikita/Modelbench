@@ -7,5 +7,5 @@ point1 = argument0
 point2 = argument1
 
 render_set_culling(false)
-draw_line_width(point1[@ X], point1[@ Y], point2[@ X], point2[@ Y], 4)
+draw_line_width(point1[@ X] * 2, point1[@ Y] * 2, point2[@ X] * 2, point2[@ Y] * 2, 7)
 render_set_culling(true)

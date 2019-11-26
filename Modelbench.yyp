@@ -183,6 +183,14 @@
             }
         },
         {
+            "Key": "05156066-4786-4d23-9fe4-6d83c3dcb713",
+            "Value": {
+                "id": "cc8bfdc5-6b2d-4649-9c9f-d9c5a9ff21c1",
+                "resourcePath": "scripts\\view_shape_cube_draw\\view_shape_cube_draw.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "0528973e-4659-464c-baa2-598debe15815",
             "Value": {
                 "id": "f3375cb4-3a71-433c-b88d-19841aa87fd1",
@@ -1068,6 +1076,14 @@
                 "id": "9d8f2f30-dc9f-4b54-8f31-17fe01c96cc4",
                 "resourcePath": "scripts\\draw_tooltip_icon\\draw_tooltip_icon.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "1cf8b3f7-a92c-4109-9af0-7c64d33d0002",
+            "Value": {
+                "id": "7b330ddb-2419-45ea-aadf-39b5da893b64",
+                "resourcePath": "sprites\\ashley_splash\\ashley_splash.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -3395,14 +3411,6 @@
             "Value": {
                 "id": "35614437-c7cb-46ce-ae8d-b6aad519db13",
                 "resourcePath": "scripts\\action_el_texture\\action_el_texture.yy",
-                "resourceType": "GMScript"
-            }
-        },
-        {
-            "Key": "672d4d87-a7ec-4481-a331-c8e8f4da617a",
-            "Value": {
-                "id": "b9635175-8fbc-4d9f-a5f6-b025b11015ca",
-                "resourcePath": "scripts\\view_control_update_rotate\\view_control_update_rotate.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -6751,6 +6759,14 @@
             }
         },
         {
+            "Key": "cbc90dc3-c592-4572-8716-4a89b878bff1",
+            "Value": {
+                "id": "caddf805-53bb-4fa4-ac11-bcdab1e8b213",
+                "resourcePath": "scripts\\view_shape_triangle_draw\\view_shape_triangle_draw.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "cc246c47-ab48-44e5-a39f-9601d349092c",
             "Value": {
                 "id": "895b69a6-9544-4fc6-9f47-5c6f66bb496d",
@@ -8031,6 +8047,14 @@
             }
         },
         {
+            "Key": "f990b0a8-9c3d-4ab4-a59f-36fe3d48d35f",
+            "Value": {
+                "id": "aed70cb0-4d14-43f1-9558-bcb4f3cf33df",
+                "resourcePath": "scripts\\view_shape_cone_draw\\view_shape_cone_draw.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "f9a410fb-bc7a-4a9b-8190-a76e031eb790",
             "Value": {
                 "id": "df0774bd-2196-425a-9f1e-46a00efeb835",
@@ -8489,9 +8513,11 @@
         "adaa038e-78a7-4ac7-ad7c-d34aaae5a683",
         "6de9eeaa-7dfe-469e-8bdb-e4b33a5bb670",
         "537225c0-9a1f-4be4-8c76-4de737d3f4a1",
-        "672d4d87-a7ec-4481-a331-c8e8f4da617a",
         "60ddd97a-e524-491e-b9a8-00abf3f7c77e",
         "4873b6ab-d936-4c9d-bd83-18e2c9a03da2",
+        "05156066-4786-4d23-9fe4-6d83c3dcb713",
+        "f990b0a8-9c3d-4ab4-a59f-36fe3d48d35f",
+        "cbc90dc3-c592-4572-8716-4a89b878bff1",
         "d77da3b5-1dad-44f9-8ac7-4edb76ad13bf",
         "7fba791e-b81e-4014-9135-6adcb405c7ab",
         "37d21d89-be86-480b-aa2e-e7ee6d8c5781",

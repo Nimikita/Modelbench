@@ -1,13 +1,13 @@
 /// view_control_move(view)
 /// @arg view
 
-var view, lenstart, len, mat, center;
+var view, lenstart, len, mat;
 view = argument0
 
 // Arrow length
 len = point3D_distance(cam_from, el_edit.world_pos) * view_3d_control_size 
 lenstart = test(tool_selected = e_tool.TRANSFORM, len - len/8, 0)
-len *= test(tool_selected != e_tool.TRANSFORM, 1, 1.1)
+len *= test(tool_selected != e_tool.TRANSFORM, 1, 1.25)
 
 // Create matrix
 with (el_edit)
@@ -21,10 +21,10 @@ with (el_edit)
 }
 
 // Draw each axis
-center = point3D_mul_matrix(vec3(0), mat)
-view_control_move_axis(view, e_value.POS_X, c_axisred, center, point3D_mul_matrix(vec3(lenstart, 0, 0), mat), point3D_mul_matrix(vec3(len, 0, 0), mat))
-view_control_move_axis(view, e_value.POS_Y, test(setting_z_is_up, c_axisblue, c_axisgreen), center, point3D_mul_matrix(vec3(0, lenstart, 0), mat), point3D_mul_matrix(vec3(0, len, 0), mat))
-view_control_move_axis(view, e_value.POS_Z, test(setting_z_is_up, c_axisgreen, c_axisblue), center, point3D_mul_matrix(vec3(0, 0, lenstart), mat), point3D_mul_matrix(vec3(0, 0, len), mat))
+//var center = point3D_mul_matrix(vec3(0), mat);
+view_control_move_axis(view, e_value.POS_X, c_axisred, vec3(lenstart, 0, 0), len, mat, X, vec3(0, -90, 0))
+view_control_move_axis(view, e_value.POS_Y, test(setting_z_is_up, c_axisgreen, c_axisblue), vec3(0, lenstart, 0), len, mat, Y, vec3(90, 0, 0))
+view_control_move_axis(view, e_value.POS_Z, test(setting_z_is_up, c_axisblue, c_axisgreen), vec3(0, 0, lenstart), len, mat, Z, vec3(0))
 
 // Is dragging
 if (window_busy = "rendercontrol" && view_control_edit_view = view && view_control_edit < e_value.ROT_X)
@@ -54,8 +54,6 @@ if (window_busy = "rendercontrol" && view_control_edit_view = view && view_contr
 		el_value_set_start(action_el_pos, true)
 		el_value_set(view_control_edit, snap(view_control_value, snapval) - el_edit.value[view_control_edit], true)
 		el_value_set_done()
-		
-		view_control_update_rotate()
 	}
 	
 	// Release
