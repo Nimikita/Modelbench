@@ -43,7 +43,7 @@ else
 if (xx + rad < content_x || xx - rad > content_x + content_width || yy + rad < content_y || yy - rad > content_y + content_height)
 	return 0
 
-context_menu_area(xx - rad, yy - rad, xx + rad, yy + rad, "contextmenuvalue", value, e_value_type.NUMBER, script, def)
+context_menu_area(xx - rad, yy - rad, rad * 2, rad * 2, "contextmenuvalue", value, e_value_type.NUMBER, script, def)
 
 modval = mod_fix(value, 360)
 capwid = string_width_font(text_get(name) + ":", font_emphasis) + 5
