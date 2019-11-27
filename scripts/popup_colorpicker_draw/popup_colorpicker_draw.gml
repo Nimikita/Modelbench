@@ -40,11 +40,6 @@ dy += 228 + 12
 draw_image(spr_colorpicker_hue, 0, dx + 16, dy)
 draw_box(dx + floor((popup.hue / 255) * 196) + 10, dy + 4, 12, 12, false, make_color_hsv(popup.hue, 255, 255), 1)
 draw_image(spr_colorpicker_cursor, 1, dx + floor((popup.hue / 255) * 196) + 16, dy + 10)
-if (window_focus = "colorpickerhuepick" && mouse_wheel <> 0)
-{
-	popup.hue = floor(clamp(popup.hue + (-mouse_wheel) * 10, 0, 255))
-	popup_colorpicker_update(null, make_color_hsv(popup.hue, popup.saturation, popup.brightness), false)
-}
 
 if (app_mouse_box(dx + 16, dy, 196, 20))
 {

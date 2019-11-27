@@ -90,17 +90,21 @@ if (!mouse_left)
 
 sb.value += (sb.value_goal - sb.value) / max(1, 4 / delta)
 
-// Mouse wheel and dragging
-if (window_focus = string(sb) || (window_focus = "" && content_mouseon))
-{
-	if (window_busy = "")
+// Mouse wheel
+if (window_busy = "" && content_mouseon)
+{	
+	if (window_scroll_focus_prev = string(sb))
 	{
 		if (sb.snap_value = 0)
 			sb.value_goal += (mouse_wheel * 15) * 4
 		else
 			sb.value_goal += (mouse_wheel * sb.snap_value) * 4
 	}
-	
+}
+
+// Dragging
+if (window_focus = string(sb) || (window_focus = "" && content_mouseon))
+{
 	if (window_busy = "scrollbar")
 	{
 		mouse_cursor = cr_handpoint

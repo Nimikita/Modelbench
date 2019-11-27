@@ -35,7 +35,7 @@ if (xx + w < content_x || xx > content_x + content_width || yy + h < content_y |
 
 // Mouse
 var mouseon, mouseclick;
-mouseon = app_mouse_box(switchx, switchy, 24, 16) && content_mouseon && (window_busy = "") && !disabled
+mouseon = app_mouse_box(switchx, switchy, 24, 16) && content_mouseon && !disabled
 mouseclick = mouseon && mouse_left
 
 pressed = false

@@ -17,7 +17,7 @@ height = argument4
 if (xx + width < content_x || xx > content_x + content_width || yy + height < content_y || yy > content_y + content_height)
 	return 0
 
-mouseon = app_mouse_box(xx, yy, width, height)
+mouseon = app_mouse_box(xx, yy, width, height) && content_mouseon
 
 // Background
 draw_box(xx, yy, width, height, false, c_background_secondary, 1)
@@ -45,7 +45,6 @@ if (mouseon && content_mouseon)
 
 if (window_focus = string(preview))
 {
-	var zd, m;
 	if (window_busy = "previewrotate")
 	{
 		mouse_cursor = cr_size_all
@@ -73,23 +72,36 @@ if (window_focus = string(preview))
 			app_mouse_clear()
 		}
 	}
-	
-	m = (1 - 0.25 * mouse_wheel)
-	if (m != 1)
-	{
-		preview.goalzoom = clamp(preview.goalzoom * m, 0.1, 100)
-		preview.goalxoff = preview.xoff + (mouse_x - (xx + width / 2)) / preview.zoom - (mouse_x - (xx + width / 2)) / preview.goalzoom
-		preview.goalyoff = preview.yoff + (mouse_y - (yy + height / 2)) / preview.zoom - (mouse_y - (yy + height / 2)) / preview.goalzoom
-	}
-	zd = (preview.goalzoom - preview.zoom) / max(1, 5 / delta)
-	if (zd != 0)
-	{
-		preview.update = true
-		preview.zoom += zd
-		preview.xoff += (preview.goalxoff - preview.xoff) / max(1, 5 / delta)
-		preview.yoff += (preview.goalyoff - preview.yoff) / max(1, 5 / delta)
-	}
 }
+
+// Zoom
+var zd, m;
+m = (1 - 0.25 * mouse_wheel * (window_scroll_focus_prev = string(preview)))
+if (m != 1)
+{
+	preview.goalzoom = clamp(preview.goalzoom * m, 0.1, 100)
+	preview.goalxoff = preview.xoff + (mouse_x - (xx + width / 2)) / preview.zoom - (mouse_x - (xx + width / 2)) / preview.goalzoom
+	preview.goalyoff = preview.yoff + (mouse_y - (yy + height / 2)) / preview.zoom - (mouse_y - (yy + height / 2)) / preview.goalzoom
+}
+zd = (preview.goalzoom - preview.zoom) / max(1, 5 / delta)
+if (zd != 0)
+{
+	preview.update = true
+	preview.zoom += zd
+	preview.xoff += (preview.goalxoff - preview.xoff) / max(1, 5 / delta)
+	preview.yoff += (preview.goalyoff - preview.yoff) / max(1, 5 / delta)
+}
+
+if (!(mouse_x >= xx &&
+	mouse_y >= yy &&
+	mouse_x < xx + width &&
+	mouse_y < yy + height) && content_mouseon &&
+	(window_busy != "previewmove") && (window_busy != "previewrotate") &&
+	(window_focus = string(preview)))
+	window_focus = ""
+
+if (mouseon && window_focus = string(preview))
+	window_scroll_focus = string(preview)
 
 // Render
 with (preview)

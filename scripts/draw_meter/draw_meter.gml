@@ -82,15 +82,6 @@ if (window_busy = name)
 	}
 }
 
-// Mouse wheel
-if (window_busy = "" && window_focus = name && mouse_wheel<>0)
-{
-	if (snapval = 0)
-		script_execute(script, clamp(value - mouse_wheel, minval, maxval) - value, true)
-	else
-		script_execute(script, clamp(value - mouse_wheel * snapval * 5, minval, maxval) - value, true)
-}
-
 microani_set(name, script, (window_busy = name) || mouseon, mouseon && mouse_left, false)
 
 // Textbox

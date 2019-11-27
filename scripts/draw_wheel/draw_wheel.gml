@@ -92,7 +92,7 @@ if (app_mouse_box(labelx, labely - 8, labelw, 16) && mouse_left_pressed)
 }
 
 // Wheel click
-if (app_mouse_box(xx - rad - 10, yy - rad - 10, rad * 2+20, rad * 2+20) && content_mouseon)
+if (app_mouse_box(xx - rad - 10, yy - rad - 10, rad * 2 + 20, rad * 2 + 20) && content_mouseon)
 {
 	mouse_cursor = cr_handpoint
 	
@@ -104,18 +104,7 @@ if (app_mouse_box(xx - rad - 10, yy - rad - 10, rad * 2+20, rad * 2+20) && conte
 		window_busy = name
 		wheel_drag_value = newval
 	}
-}
-
-// Mouse wheel
-if (window_busy = "" && window_focus = name && mouse_wheel<>0)
-{
-	var newval;
-	if (snapval = 0)
-		newval = clamp(value - mouse_wheel * 5, minval, maxval)
-	else
-		newval = clamp(value - mouse_wheel * snapval, minval, maxval)
 	
-	script_execute(script, newval - value, true)
 }
 
 // Textbox

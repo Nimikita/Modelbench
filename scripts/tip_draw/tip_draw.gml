@@ -5,9 +5,6 @@ if (tip_show)
 else
 	tip_alpha = max(0, tip_alpha - 0.1 * delta)
 
-//if (mouse_wheel <> 0 || mouse_left)
-//	tip_alpha = 0
-
 if (tip_alpha = 0)
 {
 	tip_box_x = null

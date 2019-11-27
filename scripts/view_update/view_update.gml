@@ -28,12 +28,20 @@ if (content_mouseon && window_busy = "")
 	}
 }
 
+// Mousewheel
+if (content_mouseon || window_busy = "viewrotatecamera")
+{
+	window_scroll_focus = string(view)
+	
+	if (window_scroll_focus_prev = string(view))
+	{
+		if (mouse_wheel <> 0)
+			view_cam.zoom_goal = clamp(view_cam.zoom_goal * (1 + 0.25 * mouse_wheel), cam_near, cam_far)
+	}
+}
+
 if (window_focus = string(view))
 {
-	// Mousewheel
-	if ((window_busy = "" || window_busy = "viewrotatecamera") && mouse_wheel <> 0)
-		view_cam.zoom_goal = clamp(view_cam.zoom_goal * (1 + 0.25 * mouse_wheel), cam_near, cam_far)
-	
 	// Select or move camera
 	if (window_busy = "viewclick")
 	{

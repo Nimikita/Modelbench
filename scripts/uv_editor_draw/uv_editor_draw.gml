@@ -63,7 +63,7 @@ if (window_focus = "uveditor")
 
 // Zoom
 var zd, m;
-m = (1 - 0.25 * mouse_wheel * uv_editor_mouseon * (window_focus = "uveditor"))
+m = (1 - 0.25 * mouse_wheel * (window_scroll_focus_prev = "uveditor"))
 if (m != 1)
 {
 	uv_editor_goal_zoom = clamp(uv_editor_goal_zoom * m, 0.1, 100)
@@ -77,6 +77,9 @@ if (zd != 0)
 	uv_editor_x += (uv_editor_goal_x - uv_editor_x) / max(1, 5 / delta)
 	uv_editor_y += (uv_editor_goal_y - uv_editor_y) / max(1, 5 / delta)
 }
+
+if (uv_editor_mouseon)
+	window_scroll_focus = "uveditor"
 
 // Draw UV editor
 
