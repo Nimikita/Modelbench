@@ -4,7 +4,7 @@
         "language": "English",
         "translator": "Nimi",
         "forversion": "Alpha 7",
-        "lastchange": "2019.11.25"
+        "lastchange": "2019.11.28"
     },
 	"startup/": {
 		"modeldetected": "Unsaved model detected",
@@ -500,6 +500,7 @@
 		"zisup": "Z is up",
 		"sharedtextureuvs": "Display shared texture UVs",
 		"sharedtextureuvshelp": "Displays shapes that share a texture in the UV editor.",
+		"looksensitivity": "Look sensitivity",
 		"smoothcamera": "Smooth camera",
 		"smoothcameraamount": "Amount",
 		"graphicsblockybending": "Blocky bending",

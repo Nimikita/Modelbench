@@ -100,6 +100,11 @@ tab_control_keycontrol()
 draw_keycontrol("settingskeyslow", dx, dy, dw, setting_key_slow, null, vk_shift, false, action_setting_key_slow)
 tab_next()
 
+// Look sensitivity
+tab_control_meter()
+draw_meter("settingslooksensitivity", dx, dy, dw, setting_look_sensitivity, 48, 0.25, 3, .75, .25, tab.controls.tbx_look_sensitivity, action_setting_look_sensitivity)
+tab_next()
+
 // Smooth camera
 tab_control_keycontrol()
 draw_switch("settingssmoothcamera", dx, dy, setting_smooth_camera, action_setting_smooth_camera, true)

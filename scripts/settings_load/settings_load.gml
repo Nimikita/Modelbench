@@ -81,6 +81,8 @@ if (ds_map_valid(controlsmap))
 	setting_key_fast = value_get_real(controlsmap[?"key_fast"], setting_key_fast)
 	setting_key_slow = value_get_real(controlsmap[?"key_slow"], setting_key_slow)
 	
+	setting_look_sensitivity = value_get_real(controlsmap[?"look_sensitivity"], setting_look_sensitivity)
+	
 	setting_smooth_camera = value_get_real(controlsmap[?"smooth_camera"], setting_smooth_camera)
 	setting_smooth_camera_amount = value_get_real(controlsmap[?"smooth_camera_amount"], setting_smooth_camera_amount)
 	

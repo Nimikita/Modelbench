@@ -59,6 +59,8 @@ json_save_object_start("controls")
 	json_save_var("key_fast", setting_key_fast)
 	json_save_var("key_slow", setting_key_slow)
 	
+	json_save_var("look_sensitivity", setting_look_sensitivity)
+	
 	json_save_var_bool("smooth_camera", setting_smooth_camera)
 	json_save_var("smooth_camera_amount", setting_smooth_camera_amount)
 	

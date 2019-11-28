@@ -231,7 +231,10 @@ with (settings)
 	// Controls
 	controls = tab_add_category("controls", tab_settings_controls, false)
 	with (controls)
+	{
+		tbx_look_sensitivity = new_textbox_decimals()
 		tbx_smooth_camera_amount = new_textbox_integer()
+	}
 	
 	// Interface
 	interface = tab_add_category("interface", tab_settings_interface, false)
