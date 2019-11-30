@@ -1,6 +1,7 @@
 /// micro_animation_event_create()
 
 steps_alive = 0
+steps_hidden = 0
 
 // Values
 hover = 0

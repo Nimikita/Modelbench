@@ -32,6 +32,7 @@ if (true)
 		animation = ds_map_find_value(microanis, name + string(script))
 	
 	current_mcroani = animation
+	current_mcroani.steps_hidden = 0
 	
 	mcroani_arr[e_mcroani.HOVER_LINEAR] = current_mcroani.hover_ani
 	mcroani_arr[e_mcroani.PRESS_LINEAR] = current_mcroani.holding_ani

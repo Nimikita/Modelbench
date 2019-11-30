@@ -11,6 +11,9 @@ toolset_snap_alpha += (toolset_snap_alpha_goal - toolset_snap_alpha) / max(1, 4 
 // Component animations
 with (obj_micro_animation)
 {	
+	if (steps_hidden > 60)
+		continue
+	
 	#region Hover
 	if (hover != hover_prev || steps_alive = 0)
 	{
@@ -132,4 +135,5 @@ with (obj_micro_animation)
 	#endregion
 	
 	steps_alive++
+	steps_hidden++
 }
