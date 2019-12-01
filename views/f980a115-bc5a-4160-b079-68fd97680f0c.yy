@@ -15,7 +15,8 @@
         "2a0b8f7b-b047-4e7c-8b33-7c4457a0be19",
         "c28c2cb2-08c4-4513-810a-1784957e8802",
         "b2d9d1fd-d17c-492f-b660-2a665f2d55f1",
-        "0aa00417-24a9-45bb-b762-8fd834d968ef"
+        "0aa00417-24a9-45bb-b762-8fd834d968ef",
+        "7ee76445-6e67-4362-970e-d4117b82fe30"
     ],
     "filterType": "GMScript",
     "folderName": "Save",

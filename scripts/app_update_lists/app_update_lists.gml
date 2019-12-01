@@ -9,7 +9,7 @@ if (textures_list.update)
 	list_edit = textures_list
 	
 	with (obj_texture)
-		list_add_item(filename, id, text_get("assetstexturesize", size[X], size[Y]), sprite, null, test(id = app.res, e_icon.star, null), action_texture_select)
+		list_add_item(filename + test(filepath = "", "*", ""), id, text_get("assetstexturesize", size[X], size[Y]), sprite, null, test(id = app.res, e_icon.star, null), action_texture_select)
 	
 	textures_list.update = false
 }

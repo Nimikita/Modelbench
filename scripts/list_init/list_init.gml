@@ -120,6 +120,7 @@ switch (name)
 		list_add_item(text_get("contextmenutexturereplace"), null, "", null, e_icon.replace, null, action_texture_replace, false)
 		
 		list_add_item(text_get("contextmenutexturerefresh"), null, "" , null, e_icon.refresh, null, action_texture_refresh, false)
+		listitem_last.disabled = (context_menu_value.filepath = "")
 		break
 	}
 	

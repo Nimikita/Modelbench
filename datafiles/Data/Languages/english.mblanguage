@@ -4,7 +4,7 @@
         "language": "English",
         "translator": "Nimi",
         "forversion": "Alpha 7",
-        "lastchange": "2019.11.30"
+        "lastchange": "2019.12.1"
     },
 	"startup/": {
 		"modeldetected": "Unsaved model detected",
@@ -311,7 +311,8 @@
 		"roottexture": "Root texture",
 		"addtexture": "ADD TEXTURE",
 		"texturesize": "%1x%2 pixels",
-		"texturescale": "Scale"
+		"texturescale": "Scale",
+		"defaulttexture": "Default texture"
 	},
 	"elementeditor/": {
 		"partname": "Part name",

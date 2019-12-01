@@ -13,3 +13,10 @@ window_state = ""
 // Clear temp model directory
 var ret = directory_delete_lib(temp_model_directory);
 model_create_wait = true
+
+// Add default texture to model
+res_edit = new(obj_texture)
+res_edit.sprite = sprite_duplicate(spr_empty)
+res_edit.size = point2D(16, 16)
+res_edit.filename = text_get("assetsdefaulttexture") + ".png"
+res = res_edit

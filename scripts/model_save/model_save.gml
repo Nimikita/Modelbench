@@ -35,6 +35,10 @@ model_save_start(fn)
 model_save_children()
 model_save_done()
 
+// Export texture(s)
+with (obj_texture)
+	model_save_texture_file(id)
+
 debug_timer_stop("model_save")
 log("Model saved")
 
@@ -48,3 +52,5 @@ if (!string_contains(filename_ext(fn), "backup"))
 		snackbar_save_model()
 	}
 }
+
+textures_list.update = true
