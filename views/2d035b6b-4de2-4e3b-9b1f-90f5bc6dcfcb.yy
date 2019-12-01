@@ -10,7 +10,8 @@
         "c573a2fe-2aae-46fd-9503-261e9acd95e0",
         "71c64e00-0ee5-4456-b003-4e8ea259f4b5",
         "31259857-9945-4476-8f2b-9a921170fac1",
-        "8aec2ed9-127f-4f57-a94d-c0377e19ed7e"
+        "8aec2ed9-127f-4f57-a94d-c0377e19ed7e",
+        "6f80fcc8-cc20-4290-bc45-e40c7f150fc6"
     ],
     "filterType": "GMScript",
     "folderName": "Context menu",

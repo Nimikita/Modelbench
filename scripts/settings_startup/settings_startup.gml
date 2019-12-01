@@ -110,6 +110,7 @@ setting_preview_background = true
 
 // Misc settings
 setting_hide_shapes = false
+setting_combine_scale = false
 
 setting_collapse_backup_models = true
 setting_collapse_wind = true

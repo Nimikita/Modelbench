@@ -4,7 +4,7 @@
         "language": "English",
         "translator": "Nimi",
         "forversion": "Alpha 7",
-        "lastchange": "2019.11.28"
+        "lastchange": "2019.11.30"
     },
 	"startup/": {
 		"modeldetected": "Unsaved model detected",
@@ -100,6 +100,8 @@
 	"contextmenu/": {
 		"keycontrolreset": "Reset shortcut",
 		"copylink": "Copy link",
+		"combinescale": "Combine XYZ",
+		"seperatescale": "Seperate XYZ",
 		"value/": {
 			"on": "On",
 			"off": "Off",
@@ -341,7 +343,8 @@
 		"scale/": {
 			"x": "X",
 			"y": "Y",
-			"z": "Z"
+			"z": "Z",
+			"xyz": "XYZ"
 		},
 		"bend/": {
 			"lock": "Lock to bent half of parent",

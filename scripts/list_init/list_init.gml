@@ -52,7 +52,14 @@ switch (name)
 	// Context menu
 	case "contextmenuvalue":
 	case "contextmenucategory":
-	{
+	{	
+		// Combine scale
+		if (name = "contextmenucategory" && context_menu_copy_category.name = "scale")
+		{
+			var text = test(setting_combine_scale, "contextmenuseperatescale", "contextmenucombinescale");
+			list_add_item(text_get(text), !setting_combine_scale, "", null, e_icon.toolset_scale, null, action_category_combine_scale, true)
+		}
+		
 		// Single value copy-paste
 		if (name = "contextmenuvalue")
 		{
