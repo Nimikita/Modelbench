@@ -57,8 +57,6 @@ if (err)
 	borderalpha = 1
 }
 
-//outlineoff = lerp(0, 1, max(mcroani_arr[e_mcroani.ACTIVE], mcroani_arr[e_mcroani.HOVER])) * (1 - mcroani_arr[e_mcroani.DISABLED])
-
 draw_outline(xx + 1, yy + 1, w - 2, h - 2, 1, bordercolor, borderalpha)
 
 if (err)
@@ -76,10 +74,13 @@ if (disabled)
 	update = false
 }
 else
-{
-	update = textbox_draw(tbx, xx + 10, yy + 6, w - 20, h - 9)
-}
+	update = textbox_draw(tbx, xx + 10, yy + 6, w - 20, h - 9, false)
 
+// Textbox context menu
+if (window_focus = string(tbx))
+	context_menu_area(xx, yy, w, h, "contextmenutextbox", tbx, e_value_type.NONE, null, null)
+
+// Placeholder label
 if (tbx.text = "" && placeholder != "")
     draw_label(string_limit(placeholder, w - padding * 2), xx + padding + 7, yy + h - 6, fa_left, fa_bottom, c_text_tertiary, a_text_tertiary, font_value)
 

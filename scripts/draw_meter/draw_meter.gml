@@ -42,11 +42,11 @@ linewid = wid - valuewid - 6
 
 mouseon = app_mouse_box(xx - 8, yy, linewid + 16, hei) && content_mouseon
 
+context_menu_area(linex, yy, linewid, hei, "contextmenuvalue", value, e_value_type.NUMBER, script, def)
+
 // Click on meter
 if (mouseon)
 {
-	context_menu_area(xx - 8, yy, linewid + 16, hei, "contextmenuvalue", value, e_value_type.NUMBER, script, def)
-	
 	mouse_cursor = cr_handpoint
 	if (mouse_left_pressed) // Start dragging
 	{

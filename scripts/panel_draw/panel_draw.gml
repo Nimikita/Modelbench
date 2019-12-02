@@ -190,7 +190,11 @@ for (var t = 0; t < panel.tab_list_amount; t++)
 	dx += tabw[t]
 }
 
-draw_box(boxx, boxy, 1, boxh, false, c_border, a_border)
+// Panel edge
+if (panel = panel_map[?"right"] || panel = panel_map[?"right_secondary"])
+	draw_box(boxx, boxy, 1, boxh, false, c_border, a_border)
+else
+	draw_box(boxx + boxw - 1, boxy, 1, boxh, false, c_border, a_border)
 
 panel.list_glow = max(0, panel.list_glow - 0.05 * delta)
 if (tabmaxw > tabsw)

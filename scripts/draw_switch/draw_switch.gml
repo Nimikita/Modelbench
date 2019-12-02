@@ -40,7 +40,8 @@ mouseclick = mouseon && mouse_left
 
 pressed = false
 
-context_menu_area(xx, yy, w, h, "contextmenuvalue", active, e_value_type.BOOLEAN, script, def)
+if (!disabled)
+	context_menu_area(xx, yy, w, h, "contextmenuvalue", active, e_value_type.BOOLEAN, script, def)
 
 if (mouseon)
 {

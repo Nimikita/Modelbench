@@ -13,6 +13,7 @@ list_add_item(text_get("menurecentmodels"), recent_models, "", null, e_icon.rece
 list_add_item(text_get("menusave"), null, "", null, e_icon.save, null, model_save)
 list_add_item(text_get("menusaveas"), null, "", null, e_icon.save_as, null, model_save_as)
 list_add_item(text_get("menuimportmodel"), null, "", null, e_icon.import, null, null)
+listitem_last.disabled = true
 
 list_add_item(text_get("menusettings"), settings, "", null, e_icon.settings, e_icon.arrow_right_small, action_open_settings, false) // Open settings
 list_add_item(text_get("menuabout"), about, "", null, e_icon.info, e_icon.arrow_right_small, action_open_about) // Open about

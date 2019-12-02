@@ -20,12 +20,15 @@ ctrl = argument[5]
 keydef = argument[6]
 ctrldef = argument[7]
 script = argument[8]
-
 hei = 28
-text = text_get(name) + ":"
-mouseon = app_mouse_box(content_x, yy, content_width, hei) && content_mouseon
 
-context_menu_area(content_x, yy, content_width, hei, "contextmenukeycontrol", array(keydef, ctrldef), e_value_type.NONE, script, null)
+if (xx + wid < content_x || xx > content_x + content_width || yy + hei < content_y || yy > content_y + content_height)
+	return 0
+
+text = text_get(name) + ":"
+mouseon = app_mouse_box(dx, yy, dw, hei) && content_mouseon
+
+context_menu_area(dx, yy, dw, hei, "contextmenukeycontrol", array(keydef, ctrldef), e_value_type.NONE, script, null)
 
 // Check key
 if (window_busy = name)

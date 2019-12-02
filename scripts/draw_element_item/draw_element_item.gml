@@ -218,7 +218,7 @@ if (itemvisible)
 if (itemvisible && itemhover && !expandhover && !lockhover && !visiblehover)
 {
 	element.list_mouseon = true
-	context_menu_area(itemx, itemy, itemw, itemh, "contextmenuelement", element, e_value_type.NONE, null, null)
+	context_menu_area(dx, itemy, dw, itemh, "contextmenuelement", element, e_value_type.NONE, null, null)
 	
 	if (mouse_move > 5)
 	{

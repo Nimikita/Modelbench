@@ -54,7 +54,7 @@ switch (name)
 	case "contextmenucategory":
 	{	
 		// Combine scale
-		if (name = "contextmenucategory" && context_menu_copy_category.name = "scale")
+		if (context_menu_copy_category != null && context_menu_copy_category.name = "scale")
 		{
 			var text = test(setting_combine_scale, "contextmenuseperatescale", "contextmenucombinescale");
 			list_add_item(text_get(text), !setting_combine_scale, "", null, e_icon.toolset_scale, null, action_category_combine_scale, true)

@@ -14,7 +14,7 @@
 /// @arg [disabled]
 
 var name, xx, yy, wid, value, mul, minval, maxval, def, snapval, tbx, script, disabled;
-var update, capwidth, hei;
+var capwidth, hei;
 name = argument[0]
 xx = argument[1]
 yy = argument[2]
@@ -33,14 +33,13 @@ if (argument_count > 12)
 	disabled = argument[12]
 
 hei = 28
+capwidth = string_width_font(text_get(name), font_emphasis) + 10
 
-if (xx + wid < content_x || xx > content_x + content_width || yy + hei < content_y || yy > content_y + content_height)
+if (xx + wid + capwidth < content_x || xx > content_x + content_width || yy + hei < content_y || yy > content_y + content_height)
 	return 0
 
-context_menu_area(xx, yy, wid, hei, "contextmenuvalue", value, e_value_type.NUMBER, script, def)
-
-draw_set_font(font_emphasis)
-capwidth = string_width(text_get(name)) + 10
+if (!disabled)
+	context_menu_area(xx, yy, wid + capwidth, hei, "contextmenuvalue", value, e_value_type.NUMBER, script, def)
 
 if (draw_inputbox(name, xx + capwidth, yy, wid, string(def), tbx, null, disabled))
 	script_execute(script, clamp(snap(string_get_real(tbx.text, 0), snapval), minval, maxval), false)

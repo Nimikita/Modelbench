@@ -1,20 +1,25 @@
-/// textbox_draw(textbox, x, y, width, height)
+/// textbox_draw(textbox, x, y, width, height, [contextmenu])
 /// @arg textbox
 /// @arg x
 /// @arg y
 /// @arg width
 /// @arg height
+/// @arg contextmenu
 /// @desc Draws a box with editable text at the given position and with the given dimensions.
 
-var tbx, xx, yy, w, h;
+var tbx, xx, yy, w, h, contextmenu;
 var changetext, deletetext, inserttext, lineheight, mouseover;
 var a, b, c, l, p, k, ww, hh, str;
 	
-tbx = argument0
-xx = argument1
-yy = argument2
-w = argument3
-h = argument4
+tbx = argument[0]
+xx = argument[1]
+yy = argument[2]
+w = argument[3]
+h = argument[4]
+contextmenu = true
+
+if (argument_count > 5)
+	contextmenu = argument[5]
 
 // Colors
 var textnormal, highlight, texthighlight;
@@ -56,7 +61,8 @@ mouseover = (content_mouseon && app_mouse_box(xx, yy, w, h))
 
 if (window_focus = string(tbx))
 {
-	context_menu_area(xx, yy, w, h, "contextmenutextbox", tbx, e_value_type.NONE, null, null)
+	if (contextmenu)
+		context_menu_area(xx, yy, w, h, "contextmenutextbox", tbx, e_value_type.NONE, null, null)
 	
 	var keys, key_press, action;
 	textbox_isediting = true
