@@ -34,7 +34,7 @@ switch (argument0)
 	
 	// Shape UV
 	case e_value.UV_X:
-	case e_value.UV_Y: return 16
+	case e_value.UV_Y: return 0
 	case e_value.OFFSET_X: 
 	case e_value.OFFSET_Y: return -8
 	case e_value.WIDTH:

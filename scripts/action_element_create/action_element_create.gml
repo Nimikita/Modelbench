@@ -50,7 +50,7 @@ else
 			history_save_el_select()
 		
 		// Create part if shape doesn't have a home
-		if (spawn_type = e_element.PART || (spawn_type > e_element.PART && (el_edit = null || el_edit.element_type != TYPE_PART)))
+		if (spawn_type = e_element.PART || (spawn_type > e_element.PART && el_edit = null))
 		{
 			el = new_element(e_element.PART)
 			with (hobj)
@@ -68,6 +68,9 @@ else
 		}
 		else
 			el = el_edit
+		
+		if (el_edit != null && el_edit.element_type = TYPE_SHAPE)
+			el = el_edit.parent
 		
 		if (spawn_type > e_element.PART)
 		{
