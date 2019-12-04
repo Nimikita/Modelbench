@@ -9,23 +9,9 @@ model_save_texture()
 
 model_save_colors()
 
-if (value[e_value.TEX_MIRROR])
-	json_save_var_bool("texture_mirror", true)
-
-if (value[e_value.INVERT])
-	json_save_var_bool("invert", true)
-
-if (value[e_value.HIDE_BACKFACE])
-	json_save_var_bool("hide_backface", true)
-
-if (value[e_value.FACE_CAMERA])
-	json_save_var_bool("face_camera", true)
-
-if (value[e_value.HOVER])
-	json_save_var_bool("item_bounce", true)
-
 json_save_var_point3D("from", point3D(value[e_value.FROM_X], value[e_value.FROM_Y], value[e_value.FROM_Z]))
 json_save_var_point3D("to", point3D(value[e_value.TO_X], value[e_value.TO_Y], value[e_value.TO_Z]))
+json_save_var_point2D("uv", point2D(value[e_value.UV_X], value[e_value.UV_Y]))
 
 if (value[e_value.INFLATE] != 0)
 	json_save_var("inflate", value[e_value.INFLATE])
@@ -44,12 +30,34 @@ if (!array_compare_value(rot, 0))
 if (!array_compare_value(sca, 1))
 	json_save_var_point3D("scale", sca)
 
-if (value[e_value.EXTRUDE])
-	json_save_var_bool("3d", true)
+if (value[e_value.TEX_MIRROR])
+	json_save_var_bool("texture_mirror", true)
+
+if (value[e_value.INVERT])
+	json_save_var_bool("invert", true)
+
+if (value[e_value.FACE_CAMERA])
+	json_save_var_bool("face_camera", true)
+
+if (value[e_value.HOVER])
+	json_save_var_bool("item_bounce", true)
 
 if (!value[e_value.BEND])
 	json_save_var_bool("bend", false)
 
-json_save_var_point2D("uv", point2D(value[e_value.UV_X], value[e_value.UV_Y]))
+if (type = "plane")
+{
+	if (value[e_value.HIDE_BACKFACE])
+		json_save_var_bool("hide_backface", true)
+
+	if (value[e_value.EXTRUDE])
+		json_save_var_bool("3d", true)
+}
+
+if (locked)
+	json_save_var("locked", true)
+
+if (hidden)
+	json_save_var("visible", false)
 
 model_save_wind()

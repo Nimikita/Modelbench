@@ -8,6 +8,11 @@ var width = 4 + 20 + 4 + 8 + element_move_width + 8;
 dx = mouse_x
 dy = mouse_y
 
+content_x = 0
+content_y = 0
+content_width = window_width
+content_height = window_height
+
 draw_box(dx, dy, width, element_move_obj.elements * 28, false, c_accent_overlay, a_accent_overlay)
 draw_outline(dx, dy, width, element_move_obj.elements * 28, 2, c_accent, 1)
 

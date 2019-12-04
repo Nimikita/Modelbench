@@ -68,6 +68,15 @@ else
 	{
 		with (save_id_find(history_data.element_save_id[e]))
 		{
+			if (!el_value_set_check(id, vid))
+			{
+				if (history_data.par_set_n = history_data.par_set_amount)
+					history_data.set_old_value[e, history_data.par_set_n] = el_value_get_save_id(vid, value[vid])
+				
+				history_data.set_new_value[e, history_data.par_set_n] = el_value_get_save_id(vid, value[vid])
+				continue
+			}
+			
 			if (history_data.par_set_n = history_data.par_set_amount)
 				history_data.set_old_value[e, history_data.par_set_n] = el_value_get_save_id(vid, value[vid])
 			

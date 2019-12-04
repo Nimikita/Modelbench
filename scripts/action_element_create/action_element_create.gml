@@ -88,7 +88,14 @@ else
 			
 			// Extrude 3D planes
 			if (spawn_type = e_element.PLANE_3D)
+			{
 				shape.value[e_value.EXTRUDE] = true
+				shape.value[e_value.OFFSET_Y] = -0.5
+			}
+			
+			// Fix Y offset on planes
+			if (spawn_type = e_element.PLANE)
+				shape.value[e_value.OFFSET_Y] = 0
 			
 			with (shape)
 				el_set_parent(el)

@@ -52,7 +52,7 @@ str += "DPI: " + string(display_get_dpi_x()) + "," + string(display_get_dpi_y())
 str += "Size: " + string(window_width) + "," + string(window_height) + " \n"
 str += "window_busy: " + window_busy + " \n"
 str += "window_focus: " + window_focus + " \n"
-str += "current_step: " + current_step + " \n"
+str += "current_step: " + string(current_step) + " \n"
 str += "\n"
 
 str += "Model: \n"

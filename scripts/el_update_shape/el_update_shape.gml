@@ -55,7 +55,7 @@ value[e_value.FROM_Y] = value[e_value.OFFSET_Y]
 value[e_value.FROM_Z] = value[e_value.OFFSET_Z]
 
 value[e_value.TO_X] = value[e_value.OFFSET_X] + value[e_value.WIDTH]
-value[e_value.TO_Y] = value[e_value.OFFSET_Y] + value[e_value.LENGTH]
+value[e_value.TO_Y] = value[e_value.OFFSET_Y] + test(type != "plane", value[e_value.LENGTH], 0)
 value[e_value.TO_Z] = value[e_value.OFFSET_Z] + value[e_value.HEIGHT]
 
 // Shape size
