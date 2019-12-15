@@ -65,7 +65,14 @@ else
 			
 		// Extrude 3D planes
 		if (spawn_type = e_element.PLANE_3D)
+		{
 			element.value[e_value.EXTRUDE] = true
+			element.value[e_value.OFFSET_Y] = -0.5
+		}
+			
+		// Fix Y offset on planes
+		if (spawn_type = e_element.PLANE)
+			element.value[e_value.OFFSET_Y] = 0
 			
 		with (element)
 			el_set_parent(app.context_menu_value)
@@ -73,16 +80,8 @@ else
 			
 		select = element
 		
-		// Extrude 3D planes
-		if (spawn_type = e_element.PLANE_3D)
-		{
-			shape.value[e_value.EXTRUDE] = true
-			shape.value[e_value.OFFSET_Y] = -0.5
-		}
-			
-		// Fix Y offset on planes
-		if (spawn_type = e_element.PLANE)
-			shape.value[e_value.OFFSET_Y] = 0
+		if (spawn_type != TYPE_PART)
+			setting_hide_shapes = false
 
 		assets.elements.show = true
 		select.parent.extend = true
