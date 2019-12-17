@@ -90,7 +90,7 @@ if (window_focus = string(tbx) && !locked)
 	draw_set_font(font_value)
 	var textsize = string_width(tbx.text);
 	var suffixsize = string_width(tbx.suffix);
-	if (textbox_draw(tbx, xx + wid - textsize - suffixsize, yy + hei / 2 - 8, textsize + suffixsize, 18))
+	if (textbox_draw(tbx, xx + wid - min(valuewid - 12, textsize + suffixsize), yy + hei / 2 - 8, min(valuewid - 12, textsize + suffixsize), 18))
 	{
 		var tbxval = string_get_real(tbx.text, 0)
 		

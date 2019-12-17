@@ -13,7 +13,7 @@ json_save_object_start("general")
 	json_save_var("backup_time", setting_backup_time)
 	json_save_var("backup_amount", setting_backup_amount)
 	json_save_var("slow_generation", setting_slow_generation)
-	json_save_var("refresh_textures", setting_refresh_textures)
+	json_save_var_bool("refresh_textures", setting_refresh_textures)
 
 json_save_object_done()
 

@@ -33,7 +33,7 @@ draw_keycontrol("settingskeyselectelements", dx, dy, dw, setting_key_select_elem
 tab_next(false)
 
 tab_control_keycontrol()
-draw_keycontrol("settingskeyuveditor", dx, dy, dw, setting_key_uv_editor, setting_key_uv_editor_control, ord("U"), true, action_setting_key_select_elements)
+draw_keycontrol("settingskeyuveditor", dx, dy, dw, setting_key_uv_editor, setting_key_uv_editor_control, ord("U"), true, action_setting_key_uv_editor)
 tab_next(false)
 
 tab_control_keycontrol()
@@ -97,7 +97,7 @@ draw_keycontrol("settingskeyfast", dx, dy, dw, setting_key_fast, null, vk_space,
 tab_next(false)
 
 tab_control_keycontrol()
-draw_keycontrol("settingskeyslow", dx, dy, dw, setting_key_slow, null, vk_shift, false, action_setting_key_slow)
+draw_keycontrol("settingskeyslow", dx, dy, dw, setting_key_slow, null, vk_lshift, false, action_setting_key_slow)
 tab_next()
 
 // Look sensitivity
