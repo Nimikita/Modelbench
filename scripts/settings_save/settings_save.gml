@@ -98,19 +98,26 @@ json_save_object_start("graphics")
 	json_save_var_bool("wind", setting_wind)
 	json_save_var("wind_speed", setting_wind_speed)
 	json_save_var("wind_strength", setting_wind_strength)
+	json_save_var("modeling_ssao", setting_modeling_ssao)
 	
 json_save_object_done()
 
 json_save_object_start("render")
 
 	json_save_var_bool("render_ssao", setting_render_ssao)
+	
+	/*
 	json_save_var("render_ssao_radius", setting_render_ssao_radius)
 	json_save_var("render_ssao_power", setting_render_ssao_power)
 	json_save_var("render_ssao_blur_passes", setting_render_ssao_blur_passes)
-
+	*/
+	
 	json_save_var_bool("render_shadows", setting_render_shadows)
+	
+	/*
 	json_save_var("render_shadows_blur_quality", setting_render_shadows_blur_quality)
 	json_save_var("render_shadows_blur_size", setting_render_shadows_blur_size)
+	*/
 	
 	json_save_var_bool("render_aa", setting_render_aa)
 

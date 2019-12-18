@@ -8255,6 +8255,14 @@
             }
         },
         {
+            "Key": "ff71d519-9c4c-40f7-a191-7ec26ee322c3",
+            "Value": {
+                "id": "fc7bd3c9-0af6-4885-ad31-7a25f73dd90f",
+                "resourcePath": "scripts\\action_setting_modeling_ssao\\action_setting_modeling_ssao.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "ff7a7fad-1b68-4b88-bf4c-196c8b110bed",
             "Value": {
                 "id": "58b71538-d6bc-455a-a9a0-acb049ac0b24",
@@ -8418,6 +8426,7 @@
         "81cf6fc1-0173-4a07-bf46-2f6f45a53254",
         "a9c5d970-bf5b-43d9-98cc-46157d2ea4da",
         "364ab4ef-800e-4745-b555-a81fd028cbb7",
+        "ff71d519-9c4c-40f7-a191-7ec26ee322c3",
         "c3588c19-4e75-4404-93ce-4ef53926ce6a",
         "953a7be3-8706-4ee7-b216-be5702db2135",
         "5b372727-b4b0-4a3f-bb42-66472d557fb2",

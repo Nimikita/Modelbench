@@ -8,11 +8,7 @@ cam = argument1
 
 render_start(view.surface, cam, content_width, content_height)
 
-if (program_mode = e_mode.MODELING)
-	render_low()
-else
-	render_high()
-
+render_high()
 view_shape_outline()
 
 // Controls

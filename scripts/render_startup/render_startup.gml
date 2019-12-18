@@ -1,7 +1,8 @@
 /// render_startup()
 
 globalvar render_view_current, render_width, render_height, render_ratio, render_camera, render_target, proj_from, render_proj_from, proj_matrix,
-		  view_proj_matrix, render_prev_color, render_prev_alpha, render_list, render_surface_time, render_background, render_overlay;
+		  view_proj_matrix, render_prev_color, render_prev_alpha, render_list, render_surface_time, render_background, render_overlay, render_ssao,
+		  render_shadows, render_aa;
 
 globalvar render_light_from, render_light_to, render_light_near, render_light_far, render_light_fov, render_light_color, render_light_fade_size,
 		  render_light_spot_sharpness, proj_depth_near, proj_depth_far, render_light_matrix, render_surface;
@@ -27,6 +28,10 @@ render_ratio = 1
 render_camera = null
 render_target = null
 render_overlay = null
+render_ssao = false
+render_shadows = false
+render_aa = false
+
 render_list = ds_list_create()
 render_surface_time = 0
 render_background = true
@@ -42,7 +47,7 @@ render_surface_sun_buffer = null
 
 // SSAO
 globalvar render_ssao_kernel, render_ssao_noise;
-render_ssao_kernel = render_generate_sample_kernel(16)
+render_ssao_kernel = render_generate_sample_kernel(42)
 render_ssao_noise = null
 
 // Render modes

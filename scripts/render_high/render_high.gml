@@ -3,7 +3,7 @@
 var ssaosurf, shadowssurf;
 
 // SSAO
-if (setting_render_ssao)
+if (render_ssao)
 {
 	var depthsurf, normalsurf, brightnesssurf;
 
@@ -85,7 +85,7 @@ if (setting_render_ssao)
 }
 
 // Sun
-if (setting_render_shadows)
+if (render_shadows)
 {
 	var shadowsurftemp;
 	
@@ -177,7 +177,7 @@ if (setting_render_shadows)
 	
 	// Apply shadows to SSAO
 	gpu_set_blendmode(bm_add)
-	if (setting_render_ssao)
+	if (render_ssao)
 	{
 		surface_set_target(ssaosurf)
 		{
@@ -197,7 +197,7 @@ if (setting_render_shadows)
 
 // Render scene and shadows
 var finalsurf;
-if (setting_render_aa)
+if (render_aa)
 {
 	render_surface[3] = surface_require(render_surface[3], render_width, render_height)
 	finalsurf = render_surface[3]
@@ -227,10 +227,10 @@ surface_set_target(finalsurf)
 	
 	gpu_set_blendmode_ext(bm_zero, bm_src_color)
 	
-	if (setting_render_shadows)
+	if (render_shadows)
 		draw_surface(shadowssurf, 0, 0)
 	
-	if (setting_render_ssao)
+	if (render_ssao)
 		draw_surface(ssaosurf, 0, 0)
 	
 	gpu_set_blendmode(bm_normal)
@@ -250,7 +250,7 @@ surface_set_target(finalsurf)
 surface_reset_target()
 
 // AA
-if (setting_render_aa)
+if (render_aa)
 {
 	render_target = surface_require(render_target, render_width, render_height)
 	var prevsurf = finalsurf;

@@ -137,6 +137,7 @@ if (ds_map_valid(graphicsmap))
 	setting_wind = value_get_real(graphicsmap[?"wind"], setting_wind)
 	setting_wind_speed = value_get_real(graphicsmap[?"wind_speed"], setting_wind_speed)
 	setting_wind_strength = value_get_real(graphicsmap[?"wind_strength"], setting_wind_strength)
+	setting_modeling_ao = value_get_real(graphicsmap[?"modeling_ao"], setting_modeling_ao)
 }
 
 // Render
@@ -144,13 +145,19 @@ var rendermap = map[?"render"];
 if (ds_map_valid(rendermap))
 {
 	setting_render_ssao = value_get_real(rendermap[?"render_ssao"], setting_render_ssao)
+	
+	/*
 	setting_render_ssao_radius = value_get_real(rendermap[?"render_ssao_radius"], setting_render_ssao_radius)
 	setting_render_ssao_power = value_get_real(rendermap[?"render_ssao_power"], setting_render_ssao_power)
 	setting_render_ssao_blur_passes = value_get_real(rendermap[?"render_ssao_blur_passes"], setting_render_ssao_blur_passes)
+	*/
 	
 	setting_render_shadows = value_get_real(rendermap[?"render_shadows"], setting_render_shadows)
+	
+	/*
 	setting_render_shadows_blur_quality = value_get_real(rendermap[?"render_shadows_blur_quality"], setting_render_shadows_blur_quality)
 	setting_render_shadows_blur_size = value_get_real(rendermap[?"render_shadows_blur_size"], setting_render_shadows_blur_size)
+	*/
 	
 	setting_render_aa = value_get_real(rendermap[?"render_aa"], setting_render_aa)
 }

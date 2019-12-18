@@ -4,7 +4,7 @@
         "language": "English",
         "translator": "Nimi",
         "forversion": "Alpha 8",
-        "lastchange": "2019.12.17"
+        "lastchange": "2019.12.18"
     },
 	"startup/": {
 		"modeldetected": "Unsaved model detected",
@@ -514,7 +514,8 @@
 		"shapeoutlineopacity": "Shape outline opacity",
 		"graphicswind": "Wind",
 		"graphicswindspeed": "Speed",
-		"graphicswindstrength": "Strength"
+		"graphicswindstrength": "Strength",
+		"graphicsmodelingssao": "Modeling SSAO"
 	},
 	"about/": {
 		"credits": "CREDITS",

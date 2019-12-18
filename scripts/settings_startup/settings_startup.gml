@@ -82,7 +82,7 @@ setting_outline_opacity = .15
 setting_wind = true
 setting_wind_speed = .45
 setting_wind_strength = .5
-
+setting_modeling_ssao = true
 setting_render_shadows = true
 setting_render_shadows_blur_quality = 64
 setting_render_shadows_blur_size = .1

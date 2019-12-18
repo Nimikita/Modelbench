@@ -2,10 +2,11 @@
 
 // SSAO
 tab_control_switch()
-draw_button_collapse("previewssao", !setting_collapse_ssao, action_collapse_ssao, !setting_render_ssao)
+//draw_button_collapse("previewssao", !setting_collapse_ssao, action_collapse_ssao, !setting_render_ssao)
 draw_switch("previewssao", dx, dy, setting_render_ssao, action_setting_render_ssao, true)
 tab_next()
 
+/*
 if (setting_render_ssao && !setting_collapse_ssao)
 {
 	tab_control(48)
@@ -20,13 +21,15 @@ if (setting_render_ssao && !setting_collapse_ssao)
 	draw_meter("previewssaoblurpasses", dx, dy, dw, setting_render_ssao_blur_passes, 48, 0, 8, 2, 1, tab.render.tbx_ssao_blur_passes, action_setting_render_ssao_blur_passes)
 	tab_next()
 }
+*/
 
 // Shadows
 tab_control_switch()
-draw_button_collapse("previewshadows", !setting_collapse_shadows, action_collapse_shadows, !setting_render_shadows)
+//draw_button_collapse("previewshadows", !setting_collapse_shadows, action_collapse_shadows, !setting_render_shadows)
 draw_switch("previewshadows", dx, dy, setting_render_shadows, action_setting_render_shadows, false)
 tab_next()
 
+/*
 if (setting_render_shadows && !setting_collapse_shadows)
 {
 	tab_control(48)
@@ -37,6 +40,7 @@ if (setting_render_shadows && !setting_collapse_shadows)
 	draw_meter("previewshadowsblursize", dx, dy, dw, round(setting_render_shadows_blur_size * 100), 48, 0, 400, 10, 1, tab.render.tbx_shadows_blur_size, action_setting_render_shadows_blur_size)
 	tab_next()
 }
+*/
 
 // AA
 tab_control_switch()

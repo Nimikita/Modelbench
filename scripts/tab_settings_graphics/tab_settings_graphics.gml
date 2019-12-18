@@ -21,3 +21,8 @@ if (setting_wind && !setting_collapse_wind)
 	draw_meter("settingsgraphicswindstrength", dx, dy, dw, setting_wind_strength, 48, 0, 8, .5, 0.05, tab.graphics.tbx_wind_strength, action_setting_wind_strength)
 	tab_next()
 }
+
+// Modeling SSAO
+tab_control_switch()
+draw_switch("settingsgraphicsmodelingssao", dx, dy, setting_modeling_ssao, action_setting_modeling_ssao, true)
+tab_next()
