@@ -148,7 +148,7 @@ while (segpos < size[segaxis])
 	}
 	
 	// Advance
-	segpos += segsize
+	segpos += max(segsize, 0.005)
 	if (segaxis = X)
 	{
 		// Right points
