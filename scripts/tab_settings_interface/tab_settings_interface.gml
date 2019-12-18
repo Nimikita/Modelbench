@@ -35,6 +35,17 @@ for (var i = 0; i < 10; i++)
 }
 tab_next()
 
+dy += 5
+
+// Language
+tab_control_menu(28)
+draw_button_menu("settingslanguage", e_menu.LIST, dx, dy, dw - (24 + icon_button_offset), 28, setting_language_filename, setting_language_filename, action_setting_language)
+
+if (draw_button_icon("settingsopenlanguagefolder", dx + dw - 24 + icon_button_offset, dy + 22, 24, 24, false, e_icon.open_file, null, null, "settingsopenlanguagefolder"))
+	open_url(languages_directory)
+
+tab_next()
+
 // Z is up
 tab_control_switch()
 draw_switch("settingszisup", dx, dy, setting_z_is_up, action_setting_z_is_up, false)

@@ -108,6 +108,11 @@ if (ds_map_valid(interfacemap))
 	
 	setting_accent = value_get_real(interfacemap[?"accent_index"], setting_accent)
 	setting_accent_custom = value_get_color(interfacemap[?"accent_custom"], setting_accent_custom)
+	
+	setting_language_filename = value_get_string(interfacemap[?"language_filename"], setting_language_filename)
+	if (((languages_directory + setting_language_filename) != language_file) && file_exists(languages_directory + setting_language_filename))
+		language_load(languages_directory + setting_language_filename, language_map)
+	
 	setting_z_is_up = value_get_real(interfacemap[?"z_is_up"], setting_z_is_up)
 	setting_shared_texture_uvs = value_get_real(interfacemap[?"shared_texture_uvs"], setting_shared_texture_uvs)
 	setting_outline_opacity = value_get_real(interfacemap[?"outline_opacity"], setting_outline_opacity)

@@ -49,6 +49,21 @@ switch (name)
 		break
 	}
 	
+	case "settingslanguage":
+	{
+		var file;
+		file = file_find_first(languages_directory + "*.mblanguage", 0)
+		
+		while (file != "")
+		{
+			list_add_item(filename_name(file), filename_name(file), "")
+			file = file_find_next()
+		}
+		file_find_close()
+		
+		break
+	}
+	
 	// Context menu
 	case "contextmenuvalue":
 	case "contextmenucategory":

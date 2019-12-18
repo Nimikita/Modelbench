@@ -70,6 +70,7 @@ setting_slow_modifier = 0.25
 setting_theme = theme_light
 setting_accent = 6
 setting_accent_custom = hex_to_color("03A9F4")
+setting_language_filename = "english.mblanguage"
 setting_tip_show = true
 setting_z_is_up = false
 setting_shared_texture_uvs = true

@@ -18,7 +18,11 @@ height = argument[4]
 toggled = false
 margin = 12
 components = 0
-name = item.name
+
+if (item.list.get_name)
+	name = text_get(item.name)
+else
+	name = item.name
 
 if (argument_count > 5)
 	toggled = argument[5]

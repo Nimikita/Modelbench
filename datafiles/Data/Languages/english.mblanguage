@@ -3,8 +3,8 @@
     "file/": {
         "language": "English",
         "translator": "Nimi",
-        "forversion": "Alpha 7",
-        "lastchange": "2019.12.1"
+        "forversion": "Alpha 8",
+        "lastchange": "2019.12.17"
     },
 	"startup/": {
 		"modeldetected": "Unsaved model detected",
@@ -501,6 +501,8 @@
 			"darker": "DARKER"
 		},
 		"accentcolor": "Accent color",
+		"language": "Language",
+		"openlanguagefolder": "Open folder",
 		"zisup": "Z is up",
 		"sharedtextureuvs": "Display shared texture UVs",
 		"sharedtextureuvshelp": "Displays shapes that share a texture in the UV editor.",
