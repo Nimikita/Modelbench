@@ -1,8 +1,9 @@
-/// draw_textfield(name, x, y, width, value, textbox, script, [placeholder, [labelpos, [error]]])
+/// draw_textfield(name, x, y, width, height, value, textbox, script, [placeholder, [labelpos, [error]]])
 /// @arg name
 /// @arg x
 /// @arg y
 /// @arg width
+/// @arg height
 /// @arg value
 /// @arg textbox
 /// @arg script
@@ -10,39 +11,40 @@
 /// @arg [labelpos
 /// @arg [error]]]
 
-var name, xx, yy, wid, value, textbox, script, placeholder, labelpos, err;
+var name, xx, yy, w, h, value, textbox, script, placeholder, labelpos, err;
 var update, capwidth;
 name = argument[0]
 xx = argument[1]
 yy = argument[2]
-wid = argument[3]
-value = argument[4]
-textbox = argument[5]
-script = argument[6]
+w = argument[3]
+h = argument[4]
+value = argument[5]
+textbox = argument[6]
+script = argument[7]
 placeholder = ""
 labelpos = "top"
 err = false
 
 capwidth = 0
 
-if (argument_count > 7)
-	placeholder = argument[7]
-	
 if (argument_count > 8)
-	labelpos = argument[8]
-
+	placeholder = argument[8]
+	
 if (argument_count > 9)
-	err = argument[9]
+	labelpos = argument[9]
+
+if (argument_count > 10)
+	err = argument[10]
 
 if (labelpos = "top")
 	yy += 48 - 28
 else
 	capwidth = string_width_font(text_get(name), font_emphasis) + 10
 
-if (xx + wid < content_x || xx > content_x + content_width || yy + 28 < content_y || yy > content_y + content_height)
+if (xx + w < content_x || xx > content_x + content_width || yy + h < content_y || yy > content_y + content_height)
 	return 0
 
-update = draw_inputbox(name, xx + capwidth, yy, wid - capwidth, placeholder, textbox, script, false, err)
+update = draw_inputbox(name, xx + capwidth, yy, w - capwidth, h, placeholder, textbox, script, false, err)
 
 // Use microanimation from inputbox to determine color
 var labelcolor, labelalpha;
@@ -55,7 +57,7 @@ if (err)
 	labelalpha = 1
 }
 
-draw_box_hover(xx + capwidth, yy, wid - capwidth, 28, max(mcroani_arr[e_mcroani.HOVER], mcroani_arr[e_mcroani.ACTIVE]))
+draw_box_hover(xx + capwidth, yy, w - capwidth, h, max(mcroani_arr[e_mcroani.HOVER], mcroani_arr[e_mcroani.ACTIVE]))
 
 if (labelpos = "top")
 	draw_label(text_get(name), xx, yy - 8, fa_left, fa_bottom, labelcolor, labelalpha, font_label)
@@ -63,4 +65,3 @@ else
 	draw_label(text_get(name), xx, yy + 21, fa_left, fa_bottom, labelcolor, labelalpha, font_emphasis)
 
 return update
-//textbox_draw(textbox, xx, yy + 48 - 28, wid, 28)

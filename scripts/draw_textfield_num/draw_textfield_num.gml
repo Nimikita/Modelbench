@@ -41,7 +41,7 @@ if (xx + wid + capwidth < content_x || xx > content_x + content_width || yy + he
 if (!disabled)
 	context_menu_area(xx, yy, wid + capwidth, hei, "contextmenuvalue", value, e_value_type.NUMBER, script, def)
 
-if (draw_inputbox(name, xx + capwidth, yy, wid, string(def), tbx, null, disabled))
+if (draw_inputbox(name, xx + capwidth, yy, wid, 28, string(def), tbx, null, disabled))
 	script_execute(script, clamp(snap(string_get_real(tbx.text, 0), snapval), minval, maxval), false)
 
 // Use microanimation from inputbox to determine color
@@ -91,9 +91,10 @@ if (window_busy = name + "press")
 // Is dragging
 if (window_busy = name + "drag")
 { 
-	mouse_cursor = cr_size_we
-	dragger_drag_value += mouse_dx * mul
-
+	mouse_cursor = cr_none
+	dragger_drag_value += (mouse_x - mouse_click_x) * mul
+	window_mouse_set(mouse_click_x, mouse_click_y)
+	
 	var d = clamp(snap(dragger_drag_value, snapval), minval, maxval) - value;
 	if (d <> 0)
 	{

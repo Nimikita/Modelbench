@@ -1,35 +1,36 @@
-/// draw_inputbox(name, x, y, width, placeholder, textbox, script, [disabled, [error]])
+/// draw_inputbox(name, x, y, width, height, placeholder, textbox, script, [disabled, [error]])
 /// @arg name
 /// @arg x
 /// @arg y
 /// @arg width
+/// @arg height
 /// @arg placeholder
 /// @arg textbox
 /// @arg script
 /// @arg [disabled
 /// @arg [error]]
 
-var inputname, xx, yy, w, placeholder, tbx, script, disabled, err, capwid, h, padding, font;
+var inputname, xx, yy, w, h, placeholder, tbx, script, disabled, err, capwid, padding, font;
 var update;
 
 inputname = argument[0]
 xx = argument[1]
 yy = argument[2]
 w = argument[3]
-placeholder = argument[4]
-tbx = argument[5]
-script = argument[6]
+h = argument[4]
+placeholder = argument[5]
+tbx = argument[6]
+script = argument[7]
 disabled = false
 err = false
 
-if (argument_count > 7)
-	disabled = argument[7]
-
 if (argument_count > 8)
-	err = argument[8]
+	disabled = argument[8]
+
+if (argument_count > 9)
+	err = argument[9]
 
 capwid = string_width(text_get(inputname))
-h = 28
 padding = 3
 font = null
 
@@ -61,7 +62,7 @@ draw_outline(xx + 1, yy + 1, w - 2, h - 2, 1, bordercolor, borderalpha)
 
 if (err)
 {
-	draw_image(spr_icons, e_icon.alert, xx + w - 14, yy + h/2, 1, 1, c_error, 1)
+	draw_image(spr_icons, e_icon.alert, xx + w - 14, yy + h - 14, 1, 1, c_error, 1)
 	w -= 28
 }
 
@@ -82,7 +83,7 @@ if (window_focus = string(tbx))
 
 // Placeholder label
 if (tbx.text = "" && placeholder != "")
-    draw_label(string_limit(placeholder, w - padding * 2), xx + padding + 7, yy + h - 6, fa_left, fa_bottom, c_text_tertiary, a_text_tertiary, font_value)
+    draw_label(string_limit(placeholder, w - padding * 2), xx + padding + 7, yy + 22, fa_left, fa_bottom, c_text_tertiary, a_text_tertiary, font_value)
 
 // Disabled overlay
 draw_box(xx, yy, w, h, false, c_overlay, a_overlay * mcroani_arr[e_mcroani.DISABLED])

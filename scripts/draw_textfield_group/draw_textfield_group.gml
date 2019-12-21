@@ -104,7 +104,7 @@ for (var i = 0; i < textfield_amount; i++)
 				script_execute(textfield_script[i], clamp(snap(textfield_default[i], snapval), minval, maxval), 0)
 			else
 			{
-				textfield_textbox[i].text = string(textfield_default[i])
+				textfield_textbox[i].text = string_decimals(textfield_default[i])
 				fieldupdate = textfield_textbox[i]
 			}
 		}
@@ -125,16 +125,17 @@ for (var i = 0; i < textfield_amount; i++)
 	// Is dragging
 	if (window_busy = textfield_name[i] + "drag")
 	{ 
-		mouse_cursor = cr_size_we
-		dragger_drag_value += mouse_dx * mul
-
+		mouse_cursor = cr_none
+		dragger_drag_value += (mouse_x - mouse_click_x) * mul
+		window_mouse_set(mouse_click_x, mouse_click_y)
+		
 		var d = clamp(snap(dragger_drag_value, snapval), minval, maxval) - textfield_value[i];
 		
 		if (d <> 0 && textfield_script[i] != null)
 			script_execute(textfield_script[i], d, true)
 		else
 		{
-			textfield_textbox[i].text = string(textfield_value[i] + d)
+			textfield_textbox[i].text = string_decimals(textfield_value[i] + d)
 			fieldupdate = textfield_textbox[i]
 		}
 		
@@ -153,12 +154,10 @@ for (var i = 0; i < textfield_amount; i++)
 		else
 			fieldupdate = textfield_textbox[i]
 	}
-	else
-	{
-		// Idle update
-		if (window_busy != textfield_name[i] + "press" && window_focus != string(textfield_textbox[i]) && !fieldupdate)
-			textfield_textbox[i].text = string_decimals(textfield_value[i])
-	}
+	
+	// Idle update
+	if (window_busy != textfield_name[i] + "press" && window_focus != string(textfield_textbox[i]) && !fieldupdate)
+		textfield_textbox[i].text = string_decimals(textfield_value[i])
 	
 	fieldx += (fieldwid + 2)
 }
