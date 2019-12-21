@@ -33,7 +33,7 @@ for (var i = 0; i < array_length_1d(value); i++)
 		buffer_write_byte(e_json_char.SPACE)
 	}
 	
-	buffer_write_string(test(value[@i], "true", "false"))
+	buffer_write_string((value[@i] ? "true" : "false"))
 }
 
 buffer_write_byte(e_json_char.SPACE)

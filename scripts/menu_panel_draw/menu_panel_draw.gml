@@ -51,9 +51,9 @@ if (menu_panel_ani = 0)
 	return 0
 
 var panelease, panelextease, panelx, panely, panelw, panelh, panelextwid;
-panelease = ease(test(menu_panel_ani_type = "show", "easeoutcirc", "easeincirc"), menu_panel_ani)
-panelextease = ease(test(menu_panel_ext_ani_type = "show", "easeoutcirc", "easeincirc"), menu_panel_ext_ani)
-panelextwid = 300//test(menu_panel_ext = recent_models, 440, 300)
+panelease = ease((menu_panel_ani_type = "show" ? "easeoutcirc" : "easeincirc"), menu_panel_ani)
+panelextease = ease((menu_panel_ext_ani_type = "show" ? "easeoutcirc" : "easeincirc"), menu_panel_ext_ani)
+panelextwid = 300
 panely = 36
 panelh = window_height - 36
 panelw = 300 + (panelextwid * panelextease)

@@ -3,7 +3,7 @@
 
 var view, len, xrot, yrot, zrot;
 view = argument0
-len = point3D_distance(cam_from, el_edit.world_pos) * view_3d_control_size * test(tool_selected != e_tool.TRANSFORM, 0.8, 0.7)
+len = point3D_distance(cam_from, el_edit.world_pos) * view_3d_control_size * (tool_selected != e_tool.TRANSFORM ? 0.8 : 0.7)
 
 // Create matrix
 with (el_edit)
@@ -21,8 +21,8 @@ yrot = matrix_multiply(matrix_build(0, 0, 0, el_edit.value[e_value.ROT_X] + 90, 
 
 // Draw each axis
 view_control_rotate_axis(view, e_value.ROT_X, c_axisred, xrot, len)
-view_control_rotate_axis(view, e_value.ROT_Y, test(setting_z_is_up, c_axisgreen, c_axisblue), yrot, len)
-view_control_rotate_axis(view, e_value.ROT_Z, test(setting_z_is_up, c_axisblue, c_axisgreen), zrot, len)
+view_control_rotate_axis(view, e_value.ROT_Y, (setting_z_is_up ? c_axisgreen : c_axisblue), yrot, len)
+view_control_rotate_axis(view, e_value.ROT_Z, (setting_z_is_up ? c_axisblue : c_axisgreen), zrot, len)
 
 // Is dragging
 if (window_busy = "rendercontrol" && view_control_edit_view = view && view_control_edit >= e_value.ROT_X && view_control_edit <= e_value.ROT_Z)

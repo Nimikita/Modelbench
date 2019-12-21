@@ -95,7 +95,7 @@ else
 		ny = lerp(mousecoord[Y] * 2, drawcoord[Y], i/(view_control_scale_amount * 5))
 		angle = radtodeg(arctan2((mousecoord[Y]*2) - drawcoord[Y], (mousecoord[X] * 2) - drawcoord[X]))
 		draw_image(spr_view_line, 0, nx, ny, 3, 2.5, c_text_tertiary, a_text_tertiary, -angle)
-		draw_image(spr_view_line, 0, nx, ny, 2, 2, test((i mod 5) = 0, c_accent, c_background), 1, -angle)
+		draw_image(spr_view_line, 0, nx, ny, 2, 2, ((i mod 5) = 0 ? c_accent : c_background), 1, -angle)
 	}
 	
 	render_set_culling(true)

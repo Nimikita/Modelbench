@@ -12,7 +12,7 @@ vid = argument1
 color = argument2
 mat = argument3
 len = argument4
-detail = test(view_control_edit = vid, 24, 32)
+detail = (view_control_edit = vid ? 24 : 32)
 
 // Get middle
 pos3D = point3D_mul_matrix(point3D(0, 0, 0), mat)

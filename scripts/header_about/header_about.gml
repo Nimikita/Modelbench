@@ -58,5 +58,5 @@ dy += 32
 
 draw_label(text_get("aboutcompileoutput"), dx, dy, fa_left, fa_bottom, c_text_tertiary, a_text_tertiary, font_subheading)
 dy += 16
-draw_label(test(code_is_compiled(), text_get("aboutcompileoutputyyc"), text_get("aboutcompileoutputvm")), dx, dy + 4, fa_left, fa_bottom, c_text_secondary, a_text_secondary, font_emphasis)
+draw_label((code_is_compiled() ? text_get("aboutcompileoutputyyc") : text_get("aboutcompileoutputvm")), dx, dy + 4, fa_left, fa_bottom, c_text_secondary, a_text_secondary, font_emphasis)
 dy += 32

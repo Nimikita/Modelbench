@@ -25,7 +25,7 @@ else if (button_menu_ani_type = "show") //Show
 if (button_menu_name = "")
 	return 0
 
-var buttonmenuease = ease(test((button_menu_ani_type = "show"), "easeoutexpo", "easeinexpo"), button_menu_ani);
+var buttonmenuease = ease(((button_menu_ani_type = "show") ? "easeoutexpo" : "easeinexpo"), button_menu_ani);
 
 content_x = button_menu_x - ceil(button_menu_w/2)
 content_y = button_menu_y + (16 * buttonmenuease)

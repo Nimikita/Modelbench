@@ -5,7 +5,7 @@ var view, size, angle;
 view = argument0
 
 if (!el_edit.value[e_value.BEND_SIZE_CUSTOM])
-	size = test(app.setting_blocky_bending, 1, 4) / 2
+	size = (app.setting_blocky_bending ? 1 : 4) / 2
 else
 	size = el_edit.bend_size / 2
 

@@ -10,7 +10,7 @@ content_mouseon = app_mouse_box(content_x, content_y, content_width, content_hei
 draw_clear_alpha(c_background, 1)
 draw_box(0, 0, window_width, 192, false, c_overlay, a_overlay)
 
-var pattern = test(setting_theme = theme_light, 0, 1);
+var pattern = (setting_theme = theme_light ? 0 : 1);
 draw_image(spr_startup_left, pattern, 0, 0)
 draw_image(spr_startup_right, pattern, window_width, 0)
 
@@ -60,7 +60,7 @@ if (recent_list_amount > 0)
 	// Recent model grid/list button
 	dx -= (12 + 28)
 	
-	if (draw_button_icon("recentlistmode", dx, dy + 4, 28, 28, false, test(recent_display_mode = "grid", e_icon.recent_list, e_icon.recent_grid)))
+	if (draw_button_icon("recentlistmode", dx, dy + 4, 28, 28, false, (recent_display_mode = "grid" ? e_icon.recent_list : e_icon.recent_grid)))
 	{
 		if (recent_display_mode = "list")
 			recent_display_mode = "grid"

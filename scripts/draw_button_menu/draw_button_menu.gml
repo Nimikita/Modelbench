@@ -86,8 +86,8 @@ var textcolor, textalpha;
 textcolor = merge_color(c_text_main, c_text_tertiary, mcroani_arr[e_mcroani.DISABLED])
 textalpha = lerp(a_text_main, a_text_tertiary, mcroani_arr[e_mcroani.DISABLED])
 
-textoff = test(tex, (imgsize - 4), 0)
-draw_label(string_limit(string_remove_newline(text), wid - textoff - hei - 8), xx + test(tex = null, 0, imgsize) + 8, yy + hei / 2, fa_left, fa_middle, textcolor, textalpha, font_value)
+textoff = (tex ? (imgsize - 4) : 0)
+draw_label(string_limit(string_remove_newline(text), wid - textoff - hei - 8), xx + (tex = null ? 0 : imgsize) + 8, yy + hei / 2, fa_left, fa_middle, textcolor, textalpha, font_value)
 
 // Arrow
 draw_image(spr_arrow_up_down_ani, (mcroani_arr[e_mcroani.ACTIVE] * 15), xx + wid - hei / 2, yy + hei / 2, 1, 1, labelcolor, labelalpha)
@@ -95,7 +95,7 @@ draw_image(spr_arrow_up_down_ani, (mcroani_arr[e_mcroani.ACTIVE] * 15), xx + wid
 // Disabled overlay
 draw_box(xx, yy, wid, hei, false, c_overlay, a_overlay * mcroani_arr[e_mcroani.DISABLED])
 
-microani_update(mouseon, mouseon && mouse_left, test(menu_name = name, !flip, flip), disabled)
+microani_update(mouseon, mouseon && mouse_left, (menu_name = name ? !flip : flip), disabled)
 
 // Update menu position
 if (menu_name = name)

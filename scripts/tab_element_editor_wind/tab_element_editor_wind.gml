@@ -1,7 +1,7 @@
 /// tab_element_editor_wind()
 
 var axistext, text;
-axistext = test(setting_z_is_up, "z", "y")
+axistext = (setting_z_is_up ? "z" : "y")
 
 if (el_edit.value[e_value.WIND_AXIS] = e_vertex_wave.ALL)
 	text = "elementeditorwindaxisall"

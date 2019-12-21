@@ -81,8 +81,8 @@ else
 	lightcolor = c_text_main
 }
 
-color = test(setting_accent < 9, c_button_text, test(color_get_lum(c_accent) > 135, darkcolor, lightcolor))
-alpha = test(setting_accent < 9, a_button_text, test(color_get_lum(c_accent) > 135, a_button_text, a_text_main))
+color = (setting_accent < 9 ? c_button_text : (color_get_lum(c_accent) > 135 ? darkcolor : lightcolor))
+alpha = (setting_accent < 9 ? a_button_text : (color_get_lum(c_accent) > 135 ? a_button_text : a_text_main))
 if (icon != null)
 	textx += 28
 

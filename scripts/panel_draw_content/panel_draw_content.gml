@@ -85,7 +85,7 @@ if (!tab.script)
 			// Hide button
 			tab_control(24)
 			draw_label(text_get(cat[c].name), dx, dy + 13, fa_left, fa_center, c_text_tertiary, a_text_tertiary, font_subheading)
-			if (draw_button_icon(cat[c].name + "close", dx + dw - 24 + icon_button_offset, dy, 24, 24, cat[c].show, null, null, null, test(cat[c].show, "tooltipclose", "tooltipopen"), spr_arrow_ani))
+			if (draw_button_icon(cat[c].name + "close", dx + dw - 24 + icon_button_offset, dy, 24, 24, cat[c].show, null, null, null, (cat[c].show ? "tooltipclose" : "tooltipopen"), spr_arrow_ani))
 				cat[c].show = !cat[c].show
 			tab_next()
 			

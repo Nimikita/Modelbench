@@ -17,7 +17,7 @@ script = argument[5]
 
 caption = text_get(name)
 
-w = dw//test(side = "left", string_width_font(caption, font_emphasis) + size + 10, dw)
+w = dw//(side = "left" ? string_width_font(caption, font_emphasis) + size + 10 : dw)
 h = 28
 
 // Mouse

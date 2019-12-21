@@ -124,8 +124,8 @@ if (window_focus = string(tbxmax))
 else
 	draw_label(string(valuemax) + tbxmax.suffix, xx + wid, yy + hei / 2, fa_right, fa_middle, c_text_main, a_text_main)
 
-dragxmin = test(window_busy = name + "min", meter_drag_value, valuemin)
-dragxmax = test(window_busy = name + "max", meter_drag_value, valuemax)
+dragxmin = (window_busy = name + "min" ? meter_drag_value : valuemin)
+dragxmax = (window_busy = name + "max" ? meter_drag_value : valuemax)
 
 dragy = yy + hei / 2
 

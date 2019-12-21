@@ -63,7 +63,7 @@ if (itemvisible)
 {
 	if (itemhover || element.hidden)
 	{
-		if (draw_button_icon("assetselementhidden" + string(element), xx, itemy + 4, 20, 20, element.hidden, e_icon.show + element.hidden, null, window_busy = "elementselection", test(element.hidden, "tooltipshow", "tooltiphide")))
+		if (draw_button_icon("assetselementhidden" + string(element), xx, itemy + 4, 20, 20, element.hidden, e_icon.show + element.hidden, null, window_busy = "elementselection", (element.hidden ? "tooltipshow" : "tooltiphide")))
 		{
 			element.hidden = !element.hidden
 			el_update_hidden_tree(false)
@@ -82,7 +82,7 @@ if (itemvisible)
 {
 	if (itemhover || element.locked)
 	{
-		if (draw_button_icon("assetselementlock" + string(element), xx, itemy + 4, 20, 20, element.locked, e_icon.unlock - element.locked, null, window_busy = "elementselection", test(element.locked, "tooltipunlock", "tooltiplock")))
+		if (draw_button_icon("assetselementlock" + string(element), xx, itemy + 4, 20, 20, element.locked, e_icon.unlock - element.locked, null, window_busy = "elementselection", (element.locked ? "tooltipunlock" : "tooltiplock")))
 		{
 			element.locked = !element.locked
 			el_update_lock_tree(false)
@@ -106,7 +106,7 @@ haschildren = element.element_type = TYPE_PART
 haschildren = haschildren && ((element.part_list != null && ds_list_size(element.part_list) > 0) || (!hideshapes && (element.shape_list != null && ds_list_size(element.shape_list) > 0)))
 if (itemvisible && haschildren)
 {
-	if (draw_button_icon("assetspartshowchildren" + string(element), xx, itemy + 4, 20, 20, element.extend, null, null, window_busy = "elementselection", test(element.extend, "tooltipcollapse", "tooltipexpand"), spr_arrow_small_ani))
+	if (draw_button_icon("assetspartshowchildren" + string(element), xx, itemy + 4, 20, 20, element.extend, null, null, window_busy = "elementselection", (element.extend ? "tooltipcollapse" : "tooltipexpand"), spr_arrow_small_ani))
 		action_el_extend(element)
 }
 expandhover = app_mouse_box(xx, itemy + 4, 20, 20)
@@ -245,10 +245,10 @@ else
 if (itemvisible && movehover && window_busy = "elementmove")
 {
 	var indexmove, list, index, movesize;
-	indexmove = test(element_move_parts = 0 && element.element_type = TYPE_PART, false, true)
+	indexmove = (element_move_parts = 0 && element.element_type = TYPE_PART ? false : true)
 	list = element_get_list(element.parent, element)
 	index = ds_list_find_index(list, element)
-	movesize = test(element_move_parts = 0, 10, 6)
+	movesize = (element_move_parts = 0 ? 10 : 6)
 	
 	// Shapes can't be parented to root
 	if (element_move_shapes > 0 && element.parent.object_index = app)

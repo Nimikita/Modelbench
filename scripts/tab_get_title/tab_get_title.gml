@@ -21,7 +21,7 @@ else if (tab = element_editor)
 		if (el_edit.name != "")
 			return el_edit.name
 		else
-			return test(el_edit.element_type = TYPE_PART, text_get("assetsnewpart"), text_get("assetsnewshape"))
+			return (el_edit.element_type = TYPE_PART ? text_get("assetsnewpart") : text_get("assetsnewshape"))
 	}
 	else
 		return "???"

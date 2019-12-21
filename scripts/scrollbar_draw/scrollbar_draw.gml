@@ -70,9 +70,9 @@ if (mouseinarea && window_busy = "")
 		if (sb.press < 1)
 		{
 			if (dir)
-				sb.value_goal += test((mouse_x < xx + barpos), -size, size)
+				sb.value_goal += ((mouse_x < xx + barpos) ? -size : size)
 			else
-				sb.value_goal += test((mouse_y < yy + barpos), -size, size)
+				sb.value_goal += ((mouse_y < yy + barpos) ? -size : size)
 			
             sb.value_goal = snap(sb.value_goal, sb.snap_value)
 				

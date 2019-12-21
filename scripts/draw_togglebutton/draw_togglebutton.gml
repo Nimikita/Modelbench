@@ -60,7 +60,7 @@ for (var i = 0; i < buttoncount; i++)
 	
 	var buttonname, totalwidth, startx;
 	buttonname = text_get(togglebutton_name[i])
-	totalwidth = string_width_font(buttonname, font_button) + test(icon = null, 0, 24 + 8)
+	totalwidth = string_width_font(buttonname, font_button) + (icon = null ? 0 : 24 + 8)
 	startx = snap(buttonx + (buttonsize/2) - (totalwidth/2), 2)
 	
 	if (buttonname = "")

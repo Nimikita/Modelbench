@@ -44,7 +44,7 @@ switch (name)
 	{
 		list_add_item(text_get("elementeditorwindaxisnone"), e_vertex_wave.NONE, "")
 		list_add_item(text_get("elementeditorwindaxisall"), e_vertex_wave.ALL, "")
-		list_add_item(text_get("elementeditorwindaxis" + test(setting_z_is_up, "z", "y")), e_vertex_wave.Z_ONLY, "")
+		list_add_item(text_get("elementeditorwindaxis" + (setting_z_is_up ? "z" : "y")), e_vertex_wave.Z_ONLY, "")
 		
 		break
 	}
@@ -71,7 +71,7 @@ switch (name)
 		// Combine scale
 		if (context_menu_copy_category != null && context_menu_copy_category.name = "scale")
 		{
-			var text = test(setting_combine_scale, "contextmenuseperatescale", "contextmenucombinescale");
+			var text = (setting_combine_scale ? "contextmenuseperatescale" : "contextmenucombinescale");
 			list_add_item(text_get(text), !setting_combine_scale, "", null, e_icon.toolset_scale, null, action_category_combine_scale, true)
 		}
 		
@@ -86,7 +86,7 @@ switch (name)
 			if (context_menu_copy_type = e_value_type.NUMBER)
 				caption = string(context_menu_copy)
 			else if (context_menu_copy_type = e_value_type.BOOLEAN)
-				caption = test(context_menu_copy, "On", "Off")
+				caption = (context_menu_copy ? "On" : "Off")
 			else if (context_menu_copy_type = e_value_type.COLOR)
 				caption = color_to_hex(context_menu_copy)
 			else if (context_menu_copy_type = e_value_type.STRING)

@@ -17,9 +17,9 @@ else
 	with (hobj)
 	{
 		save_var_old_value = save_id_get(res_edit)
-		save_var_new_value = test(res_edit = listitem_value, null, save_id_get(listitem_value))
+		save_var_new_value = (res_edit = listitem_value ? null : save_id_get(listitem_value))
 	}
 	
-	res_edit = test(res_edit = listitem_value, null, listitem_value)
+	res_edit = (res_edit = listitem_value ? null : listitem_value)
 }
 

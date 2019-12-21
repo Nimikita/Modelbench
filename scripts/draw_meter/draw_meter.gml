@@ -103,7 +103,7 @@ if (window_focus = string(tbx) && !locked)
 else
 	draw_label(string(value) + tbx.suffix, xx + wid, yy + hei / 2, fa_right, fa_middle, merge_color(c_text_main, c_text_tertiary, mcroani_arr[e_mcroani.DISABLED]), lerp(a_text_main, a_text_tertiary, mcroani_arr[e_mcroani.DISABLED]), font_value)
 
-dragval = test(window_busy = name, meter_drag_value, value)
+dragval = (window_busy = name ? meter_drag_value : value)
 
 if (locked)
 	dragx = .5 * linewid

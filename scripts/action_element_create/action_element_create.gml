@@ -57,7 +57,7 @@ else
 			{
 				spawn_save_id[spawn_amount] = save_id_get(el)
 				spawn_save_type[spawn_amount] = e_element.PART
-				spawn_save_par[spawn_amount] = test((el_edit = null || el_edit.element_type != TYPE_PART), save_id_get(app), save_id_get(el_edit))
+				spawn_save_par[spawn_amount] = ((el_edit = null || el_edit.element_type != TYPE_PART) ? save_id_get(app) : save_id_get(el_edit))
 				spawn_save_extend[spawn_amount] = true
 				spawn_parent_extend = save_id_find(spawn_save_par[spawn_amount]).extend
 				

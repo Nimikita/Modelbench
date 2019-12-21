@@ -33,7 +33,7 @@ with (obj_micro_animation)
 	}
 	
 	hover_offset_ani += (constantspeed * spd) * delta
-	hover_offset_ani_ease = ease(test(hover, outease, inease), hover_offset_ani)
+	hover_offset_ani_ease = ease((hover ? outease : inease), hover_offset_ani)
 	hover_offset_ani = clamp(hover_offset_ani, 0, 1)
 	
 	hover_ani = hover_base + (hover_offset * hover_offset_ani)
@@ -63,7 +63,7 @@ with (obj_micro_animation)
 	}
 	
 	value_offset_ani += (constantspeed * spd) * delta
-	value_offset_ani_ease = ease(test(value, outease, inease), value_offset_ani)
+	value_offset_ani_ease = ease((value ? outease : inease), value_offset_ani)
 	value_offset_ani = clamp(value_offset_ani, 0, 1)
 	
 	value_ani = value_base + (value_offset * value_offset_ani)
@@ -93,7 +93,7 @@ with (obj_micro_animation)
 	}
 	
 	holding_offset_ani += (constantspeed * spd) * delta
-	holding_offset_ani_ease = ease(test(holding, outease, inease), holding_offset_ani)
+	holding_offset_ani_ease = ease((holding ? outease : inease), holding_offset_ani)
 	holding_offset_ani = clamp(holding_offset_ani, 0, 1)
 	
 	holding_ani = holding_base + (holding_offset * holding_offset_ani)
@@ -123,7 +123,7 @@ with (obj_micro_animation)
 	}
 	
 	disabled_offset_ani += (constantspeed * spd) * delta
-	disabled_offset_ani_ease = ease(test(disabled, outease, inease), disabled_offset_ani)
+	disabled_offset_ani_ease = ease((disabled ? outease : inease), disabled_offset_ani)
 	disabled_offset_ani = clamp(disabled_offset_ani, 0, 1)
 	
 	disabled_ani = disabled_base + (disabled_offset * disabled_offset_ani)

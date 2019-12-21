@@ -55,7 +55,7 @@ value[e_value.FROM_Y] = value[e_value.OFFSET_Y]
 value[e_value.FROM_Z] = value[e_value.OFFSET_Z]
 
 value[e_value.TO_X] = value[e_value.OFFSET_X] + value[e_value.WIDTH]
-value[e_value.TO_Y] = value[e_value.OFFSET_Y] + test(type != "plane", value[e_value.LENGTH], 0)
+value[e_value.TO_Y] = value[e_value.OFFSET_Y] + (type != "plane" ? value[e_value.LENGTH] : 0)
 value[e_value.TO_Z] = value[e_value.OFFSET_Z] + value[e_value.HEIGHT]
 
 // Shape size
@@ -98,5 +98,5 @@ world_pos = point3D(matrix_parent[MAT_X], matrix_parent[MAT_Y], matrix_parent[MA
 
 // UV
 wind_wave = value[e_value.WIND_AXIS]
-wind_wave_zmin = test(value[e_value.WIND_ZMIN_ENABLE], value[e_value.WIND_ZMIN], null)
-wind_wave_zmax = test(value[e_value.WIND_ZMAX_ENABLE], value[e_value.WIND_ZMAX], null)
+wind_wave_zmin = (value[e_value.WIND_ZMIN_ENABLE] ? value[e_value.WIND_ZMIN] : null)
+wind_wave_zmax = (value[e_value.WIND_ZMAX_ENABLE] ? value[e_value.WIND_ZMAX] : null)

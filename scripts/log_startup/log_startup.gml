@@ -28,7 +28,7 @@ file_text_writeln(file)
 file_text_close(file)
 
 // System info
-log("modelbench_version", modelbench_version + test((modelbench_version_extra != ""), " (" + modelbench_version_extra + ")", ""))
+log("modelbench_version", modelbench_version + ((modelbench_version_extra != "") ? " (" + modelbench_version_extra + ")" : ""))
 log("gm_runtime", gm_runtime)
 log("YYC", yesno(code_is_compiled()))
 log("working_directory", working_directory)

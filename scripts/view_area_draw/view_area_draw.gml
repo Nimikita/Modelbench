@@ -28,7 +28,7 @@ if (showuveditor)
 	uv_editor_draw(view_area_x, view_area_y, view_area_width, panel_area_height * setting_uv_editor_size)
 
 view_area_y = panel_area_y
-view_area_height = test(showuveditor, panel_area_height * (1 - setting_uv_editor_size), panel_area_height)
+view_area_height = (showuveditor ? panel_area_height * (1 - setting_uv_editor_size) : panel_area_height)
 
 // Draw views
 view_draw(view_main)

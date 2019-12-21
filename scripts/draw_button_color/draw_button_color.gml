@@ -39,12 +39,12 @@ buttonalpha = lerp(0, .17, mcroani_arr[e_mcroani.HOVER] * (1 - mcroani_arr[e_mcr
 buttonalpha = lerp(buttonalpha, .20, mcroani_arr[e_mcroani.PRESS])
 
 draw_box(xx, yy, 28, 28, false, buttoncolor, buttonalpha)
-draw_outline(xx + 2, yy + 2, 24, 24, 2, test(color_get_lum(color) > 150, c_black, c_white), a_border)
+draw_outline(xx + 2, yy + 2, 24, 24, 2, (color_get_lum(color) > 150 ? c_black : c_white), a_border)
 
 // Colorpicker icon
 var iconcolor, iconalpha;
-iconcolor = test(color_get_lum(color) > 150, c_black, c_white)
-iconalpha = test(color_get_lum(color) > 150, 0.5, 1)
+iconcolor = (color_get_lum(color) > 150 ? c_black : c_white)
+iconalpha = (color_get_lum(color) > 150 ? 0.5 : 1)
 draw_image(spr_icons, e_icon.eyedropper, xx + 14, yy + 14, 1, 1, iconcolor, iconalpha * max(mcroani_arr[e_mcroani.HOVER], mcroani_arr[e_mcroani.PRESS], mcroani_arr[e_mcroani.ACTIVE]))
 
 // Hover effect

@@ -85,7 +85,7 @@ else
 			{
 				var el = save_id_find(elementlist[i]);
 				hobj.element_new_par_save_id[i] = element_move_parent.save_id
-				hobj.element_new_index[i] = ds_list_size(element_get_list(element_move_parent, el)) + test(el.element_type = TYPE_PART, partindex, shapeindex)
+				hobj.element_new_index[i] = ds_list_size(element_get_list(element_move_parent, el)) + (el.element_type = TYPE_PART ? partindex : shapeindex)
 				
 				if (el.element_type = TYPE_PART)
 					partindex++
@@ -110,7 +110,7 @@ else
 						hobj.element_new_index[i] = ds_list_size(element_move_parent.shape_list) + shapeindex
 				}
 				else
-					hobj.element_new_index[i] = element_move_index + test(el.element_type = TYPE_PART, partindex, shapeindex)
+					hobj.element_new_index[i] = element_move_index + (el.element_type = TYPE_PART ? partindex : shapeindex)
 				
 				if (el.element_type = TYPE_PART)
 					partindex++

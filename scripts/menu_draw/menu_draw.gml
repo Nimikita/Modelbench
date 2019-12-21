@@ -31,19 +31,19 @@ itemsx = 1
 itemsy = menu_amount
 
 var yy, h;
-h = ease(test((menu_ani_type = "show"), "easeoutexpo", "easeinexpo"), menu_ani) * min(itemsy, menu_show_amount) * menu_item_h
-yy = test(menu_flip, (menu_y - h), (menu_y + menu_button_h))
+h = ease(((menu_ani_type = "show") ? "easeoutexpo" : "easeinexpo"), menu_ani) * min(itemsy, menu_show_amount) * menu_item_h
+yy = (menu_flip ? (menu_y - h) : (menu_y + menu_button_h))
 
 if (h > 2)
-	draw_outline(menu_x, test(menu_flip, yy, yy + 2), menu_w, h - 2, 1, c_border, a_border)
+	draw_outline(menu_x, (menu_flip ? yy : yy + 2), menu_w, h - 2, 1, c_border, a_border)
 draw_box(menu_x, yy, menu_w, h, false, c_background, 1)
-draw_line_ext(menu_x, test(menu_flip, yy + h, yy), menu_x + menu_w, test(menu_flip, yy + h, yy), c_overlay, a_overlay)
+draw_line_ext(menu_x, (menu_flip ? yy + h : yy), menu_x + menu_w, (menu_flip ? yy + h : yy), c_overlay, a_overlay)
 
 // Drop shadow
 var shadowy, shadowh, shadowani;
-shadowy = test(menu_flip, yy, yy - menu_button_h)
+shadowy = (menu_flip ? yy : yy - menu_button_h)
 shadowh = h + menu_button_h
-shadowani = ease(test((menu_ani_type = "show"), "easeoutexpo", "easeinexpo"), menu_ani)
+shadowani = ease(((menu_ani_type = "show") ? "easeoutexpo" : "easeinexpo"), menu_ani)
 draw_dropshadow(menu_x - 1, shadowy - 1, menu_w + 2, shadowh + 2, c_black, shadowani)
 
 content_x = menu_x

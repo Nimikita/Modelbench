@@ -45,7 +45,7 @@ panel_draw(panel_map[?"right"])
 if (window_busy = "panelresize")
 {
 	var resizex;
-	var sizesnap = test(keyboard_check(vk_shift), 20, 1);
+	var sizesnap = (keyboard_check(vk_shift) ? 20 : 1);
 	
 	if (panel_resize = panel_map[?"left"] || panel_resize = panel_map[?"left_secondary"])
 	{

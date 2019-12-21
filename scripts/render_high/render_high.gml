@@ -109,7 +109,7 @@ if (render_shadows)
 		var background_light_data, background_sunlight_range, background_sky_rotation, background_sky_time, background_sunlight_color_final;
 		background_sunlight_range = setting_preview_light_range
 		background_sky_rotation = setting_preview_light_rotation
-		background_sky_time = test(setting_preview_time = 0, 45, test(setting_preview_time = 1, 65, 180))
+		background_sky_time = (setting_preview_time = 0 ? 45 : (setting_preview_time = 1 ? 65 : 180))
 		
 		// Rotate back light opposite to key light
 		if (i = 1)

@@ -35,7 +35,7 @@ dx += 4
 
 // Snap
 tip_set_shortcut(setting_key_snap, setting_key_snap_control)
-draw_button_icon("toolsetsnap", dx, dy, 28, 28, setting_snap, e_icon.magnet, action_setting_snap, false, test(setting_snap, "tooltipsnapdisable", "tooltipsnapenable"))
+draw_button_icon("toolsetsnap", dx, dy, 28, 28, setting_snap, e_icon.magnet, action_setting_snap, false, setting_snap ? "tooltipsnapdisable" : "tooltipsnapenable")
 tip_set_shortcut(-1, false)
 
 dx += 28 + 4 + 6

@@ -5,7 +5,7 @@ var view, len, mat;
 view = argument0
 
 // Arrow length
-len = point3D_distance(cam_from, el_edit.world_pos) * view_3d_control_size * test(tool_selected != e_tool.TRANSFORM, .6, 0.4)
+len = point3D_distance(cam_from, el_edit.world_pos) * view_3d_control_size * (tool_selected != e_tool.TRANSFORM ? .6 : 0.4)
 
 // Create matrix
 with (el_edit)
@@ -26,8 +26,8 @@ if (tool_selected != e_tool.TRANSFORM)
 
 // Draw each axis
 view_control_scale_axis(view, e_value.SCA_X, c_axisred, len, mat, X)
-view_control_scale_axis(view, e_value.SCA_Y, test(setting_z_is_up, c_axisgreen, c_axisblue), len, mat, Y)
-view_control_scale_axis(view, e_value.SCA_Z, test(setting_z_is_up, c_axisblue, c_axisgreen), len, mat, Z)
+view_control_scale_axis(view, e_value.SCA_Y, (setting_z_is_up ? c_axisgreen : c_axisblue), len, mat, Y)
+view_control_scale_axis(view, e_value.SCA_Z, (setting_z_is_up ? c_axisblue : c_axisgreen), len, mat, Z)
 
 // Is dragging
 if (window_busy = "rendercontrol" && view_control_edit_view = view && view_control_edit > e_value.ROT_Z)

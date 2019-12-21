@@ -260,8 +260,8 @@ else
 
 // Face outlines and labels
 var righttext, lefttext;
-righttext = test(el_edit.value[e_value.TEX_MIRROR], "uveditorleft", "uveditorright")
-lefttext = test(el_edit.value[e_value.TEX_MIRROR], "uveditorright", "uveditorleft")
+righttext = (el_edit.value[e_value.TEX_MIRROR] ? "uveditorleft" : "uveditorright")
+lefttext = (el_edit.value[e_value.TEX_MIRROR] ? "uveditorright" : "uveditorleft")
 
 draw_set_font(font_heading)
 draw_set_color(c_background)
@@ -307,7 +307,7 @@ render_set_culling(true)
 // Draw controllers
 
 // X/Y controller
-draw_box(texx + shapeuv[X] - 7, texy + shapeuv[Y] - 7, 12, 12, false, test(window_busy = "uveditorcontrolxy", c_background, c_accent_hover), 1)
+draw_box(texx + shapeuv[X] - 7, texy + shapeuv[Y] - 7, 12, 12, false, (window_busy = "uveditorcontrolxy" ? c_background : c_accent_hover), 1)
 draw_box(texx + shapeuv[X] - 5, texy + shapeuv[Y] - 5, 8, 8, false, c_accent_pressed, 1)
 if (app_mouse_box(texx + shapeuv[X] - 7, texy + shapeuv[Y] - 7, 12, 12))
 {
@@ -327,7 +327,7 @@ else
 	uv_editor_xy_mouseon = false
 
 // Width/Height controller
-draw_box(texx + shapeuv[X] + shapesize[X] - 7, texy + shapeuv[Y] + shapesize[Z] - 7, 12, 12, false, test(window_busy = "uveditorcontrolwh", c_background, c_accent_hover), 1)
+draw_box(texx + shapeuv[X] + shapesize[X] - 7, texy + shapeuv[Y] + shapesize[Z] - 7, 12, 12, false, (window_busy = "uveditorcontrolwh" ? c_background : c_accent_hover), 1)
 draw_box(texx + shapeuv[X] + shapesize[X] - 5, texy + shapeuv[Y] + shapesize[Z] - 5, 8, 8, false, c_accent_pressed, 1)
 if (app_mouse_box(texx + shapeuv[X] + shapesize[X] - 7, texy + shapeuv[Y] + shapesize[Z] - 7, 12, 12))
 {
@@ -349,7 +349,7 @@ else
 // Length controller
 if (el_edit.type = "block")
 {
-	draw_box(texx + shapeuv[X] - shapesize[Y] - 7, texy + shapeuv[Y] - 7, 12, 12, false, test(window_busy = "uveditorcontrollength", c_background, c_accent_hover), 1)
+	draw_box(texx + shapeuv[X] - shapesize[Y] - 7, texy + shapeuv[Y] - 7, 12, 12, false, (window_busy = "uveditorcontrollength" ? c_background : c_accent_hover), 1)
 	draw_box(texx + shapeuv[X] - shapesize[Y] - 5, texy + shapeuv[Y] - 5, 8, 8, false, c_accent_pressed, 1)
 	if (app_mouse_box(texx + shapeuv[X] - shapesize[Y] - 7, texy + shapeuv[Y] - 7, 12, 12))
 	{
