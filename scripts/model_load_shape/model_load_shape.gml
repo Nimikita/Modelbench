@@ -195,13 +195,7 @@ with (new(obj_model_element))
 		return null
 	}
 	
-	/* Check shape type
-	if (type != "block" && type != "plane")
-	{
-		log("Invalid shape type")
-		return null
-	}
-	*/
+	update_vbuffer = true
 	
 	return id
 }

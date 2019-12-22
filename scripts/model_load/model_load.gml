@@ -41,11 +41,7 @@ with (obj_model_element)
 		el_update_part()
 }
 
-with (obj_model_element)
-{
-	if (element_type = TYPE_SHAPE)
-		update_vbuffer = true
-}
+assets.model_properties.tbx_model_name.text = model_name
 
 res_edit = res
 window_state = ""

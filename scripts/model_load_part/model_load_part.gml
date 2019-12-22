@@ -57,10 +57,7 @@ with (new(obj_model_element))
 	value[e_value.POS_Y] = position_noscale[Y]
 	value[e_value.POS_Z] = position_noscale[Z]
 	
-	if (other.object_index = app)
-		position = point3D_mul(position_noscale, vec3(other.root_scale))
-	else
-		position = point3D_mul(position_noscale, other.scale)
+	position = point3D_mul(position_noscale, other.scale)
 	
 	// Tab states for Mine-imator frame editor panel
 	value[e_value.OPEN_POSITION_TAB] = value_get_real(map[?"show_position"], false)
@@ -79,10 +76,7 @@ with (new(obj_model_element))
 	value[e_value.SCA_Y] = scale[Y]
 	value[e_value.SCA_Z] = scale[Z]
 	
-	if (other.object_index = app)
-		scale = vec3_mul(scale, other.root_scale)
-	else
-		scale = vec3_mul(scale, other.scale)
+	scale = vec3_mul(scale, other.scale)
 	
 	// Locked to bent half
 	value[e_value.BEND_LOCK] = value_get_real(map[?"lock_bend"], true)

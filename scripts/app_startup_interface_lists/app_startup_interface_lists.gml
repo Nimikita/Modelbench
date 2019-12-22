@@ -12,8 +12,8 @@ list_add_item("menuopenmodel", null, "", null, e_icon.open_file, null, model_loa
 list_add_item("menurecentmodels", recent_models, "", null, e_icon.recent_files, e_icon.arrow_right_small, action_open_recent_models) // Open recent models
 list_add_item("menusave", null, "", null, e_icon.save, null, model_save)
 list_add_item("menusaveas", null, "", null, e_icon.save_as, null, model_save_as)
-list_add_item("menuimportmodel", null, "", null, e_icon.import, null, null)
-listitem_last.disabled = true
+list_add_item("menuimportmodel", null, "", null, e_icon.import, null, action_model_import)
+//listitem_last.disabled = true
 
 list_add_item("menusettings", settings, "", null, e_icon.settings, e_icon.arrow_right_small, action_open_settings, false) // Open settings
 list_add_item("menuabout", about, "", null, e_icon.info, e_icon.arrow_right_small, action_open_about) // Open about
