@@ -5,7 +5,7 @@
 /// @arg scale
 /// @desc Returns the transformation matrix for bending. The scale factor is used to combat Z-fighting.
 
-var part, bend, pos, rot, sca;
+var part, bend, pos, sca;
 part = argument[0]
 bend = argument[1]
 pos = argument[2]

@@ -14,8 +14,6 @@ tbx.max_chars = argument1			// If larger than 0, sets the maximum allowed number
 tbx.filter_chars = argument2		// If not "", these are the only allowed characters, "0123456789" to only allow digits
 tbx.replace_char = ""				// If not "", replaces all characters with this (text variable remains unchanged)
 tbx.select_on_focus = 1				// If true, all text will be selected upon focusing the textbox
-tbx.color_selected = -1				// The color of selected text, -1 for default
-tbx.color_selection = -1			// The color of the selection box, -1 for default
 tbx.suffix = ""
 tbx.next_tbx = null
 

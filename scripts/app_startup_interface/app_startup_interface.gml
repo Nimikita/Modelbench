@@ -29,7 +29,6 @@ app_startup_interface_lists()
 app_startup_recent()
 
 background_ground_startup()
-background_preview_startup()
 background_sky_startup()
 
 uv_editor_startup()

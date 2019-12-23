@@ -75,7 +75,6 @@ setting_tip_show = true
 setting_z_is_up = false
 setting_shared_texture_uvs = true
 setting_smooth_camera = true
-setting_smooth_camera_amount = 2
 
 setting_blocky_bending = false
 setting_outline_opacity = .15

@@ -25,7 +25,7 @@ app_update_shape_vbuffer()
 
 if (model_create_wait)
 {
-	directory_create_lib(temp_model_directory)
+	directory_create(temp_model_directory)
 	model_save()
 	model_temporary = true
 	

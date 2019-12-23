@@ -62,7 +62,6 @@ json_save_object_start("controls")
 	json_save_var("look_sensitivity", setting_look_sensitivity)
 	
 	json_save_var_bool("smooth_camera", setting_smooth_camera)
-	json_save_var("smooth_camera_amount", setting_smooth_camera_amount)
 	
 	json_save_var_bool("snap", setting_snap)
 	json_save_var("snap_size", setting_snap_size)

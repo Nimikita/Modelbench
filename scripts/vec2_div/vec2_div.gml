@@ -2,7 +2,7 @@
 /// @arg vector
 /// @arg divisor
 
-var vec, d, ret;
+var vec, d;
 vec = argument0
 d = argument1
 

@@ -39,7 +39,7 @@ if (mouseon)
 
 microani_set(name, script, mouseon, mouseon && mouse_left, value || (mouseon && mouse_left) || (mouseon && mouse_left_released))
 
-var labelcolor, labelalpha, iconcolor, iconalpha, backgroundcolor, backgroundalpha;
+var labelcolor, labelalpha, iconcolor, iconalpha;
 labelcolor = merge_color(c_text_main, c_accent, mcroani_arr[e_mcroani.ACTIVE])
 labelcolor = merge_color(labelcolor, c_accent, mcroani_arr[e_mcroani.PRESS])
 labelcolor = merge_color(labelcolor, c_text_tertiary, mcroani_arr[e_mcroani.DISABLED])

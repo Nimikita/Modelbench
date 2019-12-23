@@ -16,6 +16,5 @@ if (argument_count > 1)
 }
 
 microanimation.spd = 1
-microanimation.keep_toggle = true
 
 return microanimation

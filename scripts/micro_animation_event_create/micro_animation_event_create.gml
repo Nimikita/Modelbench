@@ -24,9 +24,3 @@ hover_ani_ease = 0
 value_ani_ease = 0
 holding_ani_ease = 0
 disabled_ani_ease = 0
-
-// Progress and transition
-hover_ease = "easeoutcubic"
-value_ease = "easeoutcubic"
-holding_ease = "easeoutcubic"
-disabled_ease = "easeoutcubic"

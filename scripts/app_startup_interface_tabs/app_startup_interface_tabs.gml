@@ -234,7 +234,6 @@ with (settings)
 	with (controls)
 	{
 		tbx_look_sensitivity = new_textbox_decimals()
-		tbx_smooth_camera_amount = new_textbox_integer()
 	}
 	
 	// Interface

@@ -14,5 +14,3 @@ else
 	index = ds_list_size(element_get_list(parent, id))
 
 ds_list_insert(element_get_list(parent, id), index, id)
-
-update_matrix = true

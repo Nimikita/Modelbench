@@ -10,7 +10,6 @@ depth = 0
 part_list = null
 shape_list = null
 
-show_children = false
 hidden = false
 locked = false
 

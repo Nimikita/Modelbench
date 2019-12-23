@@ -1,11 +1,11 @@
 /// render_startup()
 
-globalvar render_view_current, render_width, render_height, render_ratio, render_camera, render_target, proj_from, render_proj_from, proj_matrix,
+globalvar render_width, render_height, render_ratio, render_camera, render_target, proj_from, render_proj_from, proj_matrix,
 		  view_proj_matrix, render_prev_color, render_prev_alpha, render_list, render_surface_time, render_background, render_overlay, render_ssao,
 		  render_shadows, render_aa;
 
-globalvar render_light_from, render_light_to, render_light_near, render_light_far, render_light_fov, render_light_color, render_light_fade_size,
-		  render_light_spot_sharpness, proj_depth_near, proj_depth_far, render_light_matrix, render_surface;
+globalvar render_light_from, render_light_to, render_light_near, render_light_far, render_light_fov, render_light_color, proj_depth_near, proj_depth_far, 
+		  render_light_matrix, render_surface;
 
 log("Render init")
 
@@ -21,7 +21,6 @@ gpu_set_ztestenable(false)
 gpu_set_zwriteenable(false)
 render_set_culling(true)
 
-render_view_current = null
 render_width = 1
 render_height = 1
 render_ratio = 1

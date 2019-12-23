@@ -100,7 +100,7 @@ with (obj_micro_animation)
 	holding_ani = clamp(holding_ani, 0, 1)
 	
 	holding_ani_ease = holding_base + (holding_offset * holding_offset_ani_ease)
-	holding_ani_ease = clamp(holding_ani_ease, 0, 1)holding_ease = outease
+	holding_ani_ease = clamp(holding_ani_ease, 0, 1)
 	
 	#endregion
 	

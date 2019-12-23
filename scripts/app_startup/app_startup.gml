@@ -9,10 +9,7 @@ if (!log_startup())
 if (!lib_startup())
 	return false
 
-if (!file_lib_startup())
-	return false
-
-if (!file_exists_lib(language_file))
+if (!file_exists(language_file))
 	return missing_file(language_file)
 
 vertex_format_startup()

@@ -87,10 +87,10 @@ if (window_focus = string(view))
 	}
 	
 	// Smoothen angles
-	if ((view_cam.angle_off_xy != 0 || view_cam.angle_off_z != 0) && fps > 30 && setting_smooth_camera && setting_smooth_camera_amount > 0) // Doesn't like low FPS
+	if ((view_cam.angle_off_xy != 0 || view_cam.angle_off_z != 0) && fps > 30 && setting_smooth_camera) // Doesn't like low FPS
 	{
-		view_cam.angle_off_xy -= view_cam.angle_off_xy / ((setting_smooth_camera_amount + 2) / delta)
-		view_cam.angle_off_z -= view_cam.angle_off_z / ((setting_smooth_camera_amount + 2) / delta)
+		view_cam.angle_off_xy -= view_cam.angle_off_xy / (2 / delta)
+		view_cam.angle_off_z -= view_cam.angle_off_z / (2 / delta)
 		
 		view_cam.angle_xy += view_cam.angle_off_xy
 		view_cam.angle_z += view_cam.angle_off_z

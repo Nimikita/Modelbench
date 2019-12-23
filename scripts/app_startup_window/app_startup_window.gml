@@ -26,8 +26,6 @@ window_scroll_focus = ""
 window_scroll_focus_prev = ""
 window_in_focus = window_has_focus()
 
-window_cover = 1
-
 mouse_cursor = cr_default
 mouse_current_x = 0
 mouse_current_y = 0
@@ -72,8 +70,6 @@ tip_w = 0
 tip_h = 0
 tip_box_x = 0
 tip_box_y = 0
-tip_maxwid = 270
-tip_padding = 8
 tip_location_x = 0
 tip_location_y = 0
 tip_wrap = true

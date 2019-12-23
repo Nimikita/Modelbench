@@ -12,10 +12,10 @@ mx = -((display_mouse_get_x() - lockx) / 4)
 my = ((display_mouse_get_y() - locky) / 4)
 display_mouse_set(lockx, locky)
 
-if (fps > 30 && setting_smooth_camera && setting_smooth_camera_amount > 0)
+if (fps > 30 && setting_smooth_camera)
 {
-	view_cam.angle_off_xy += mx / ((setting_smooth_camera_amount + 2) / delta)
-	view_cam.angle_off_z += my / ((setting_smooth_camera_amount + 2) / delta)
+	view_cam.angle_off_xy += mx / (2 / delta)
+	view_cam.angle_off_z += my / (2 / delta)
 }
 else
 {

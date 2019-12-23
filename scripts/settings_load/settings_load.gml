@@ -4,10 +4,10 @@
 
 var fn = settings_file;
 
-if (!file_exists_lib(fn))
+if (!file_exists(fn))
 	fn = data_directory + "settings.file"
 
-if (!file_exists_lib(fn))
+if (!file_exists(fn))
 	return 0
 
 log("Loading settings", fn)
@@ -84,7 +84,6 @@ if (ds_map_valid(controlsmap))
 	setting_look_sensitivity = value_get_real(controlsmap[?"look_sensitivity"], setting_look_sensitivity)
 	
 	setting_smooth_camera = value_get_real(controlsmap[?"smooth_camera"], setting_smooth_camera)
-	setting_smooth_camera_amount = value_get_real(controlsmap[?"smooth_camera_amount"], setting_smooth_camera_amount)
 	
 	setting_snap = value_get_real(controlsmap[?"snap"], setting_snap)
 	setting_snap_size = value_get_real(controlsmap[?"snap_size"], setting_snap_size)

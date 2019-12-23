@@ -11,7 +11,7 @@ else
 if (fn = "")
 	return 0
 
-if (!file_exists_lib(fn))
+if (!file_exists(fn))
 	return 0
 	
 // Start model loading

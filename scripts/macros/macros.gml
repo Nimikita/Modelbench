@@ -26,32 +26,10 @@
 #macro settings_file				data_directory + "settings.mbdata"
 #macro recent_file					data_directory + "recent.mbdata"
 #macro scenery_file					data_directory + "scenery.mbdata"
-#macro key_file						data_directory + "key.mbdata"
 #macro log_previous_file			file_directory + "log_previous.txt"
 #macro log_file						file_directory + "log.txt"
-#macro temp_file					file_directory + "tmp.file"
-#macro temp_image					file_directory + "tmp.png"
-#macro unzip_directory				file_directory + "unzip\\"
 #macro temp_model_directory			file_directory + "modeltemp\\"
 #macro temp_model_backup			temp_model_directory + "\\" + "temp.mbbackup1"
-
-// Minecraft color palette
-#macro c_minecraft_white			hex_to_color("E9ECEC")
-#macro c_minecraft_orange			hex_to_color("F07613")
-#macro c_minecraft_magenta			hex_to_color("BD44B3")
-#macro c_minecraft_light_blue		hex_to_color("3AAFD9")
-#macro c_minecraft_yellow			hex_to_color("F8C627")
-#macro c_minecraft_lime				hex_to_color("70B919")
-#macro c_minecraft_pink				hex_to_color("ED8DAC")
-#macro c_minecraft_gray				hex_to_color("3E4447")
-#macro c_minecraft_light_gray		hex_to_color("8E8E86")
-#macro c_minecraft_cyan				hex_to_color("158991")
-#macro c_minecraft_purple			hex_to_color("792AAC")
-#macro c_minecraft_blue				hex_to_color("35399D")
-#macro c_minecraft_brown			hex_to_color("724728")
-#macro c_minecraft_green			hex_to_color("546D1B")
-#macro c_minecraft_red				hex_to_color("A12722")
-#macro c_minecraft_black			hex_to_color("141519")
 
 // Interface
 #macro glow_alpha					0.45
@@ -59,7 +37,6 @@
 #macro shadow_alpha					0.1
 #macro view_3d_control_size			0.125
 #macro view_3d_control_width		20
-#macro view_3d_box_size				12
 #macro icon_button_offset			4
 #macro snap_min						0.0001
 

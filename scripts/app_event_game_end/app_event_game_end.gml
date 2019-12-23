@@ -9,7 +9,7 @@ if (model_temporary = true)
 		model_save()
 	
 	// Clear temporary model directory
-	directory_delete_lib(temp_model_directory)
+	directory_destroy(temp_model_directory)
 }
 else
 {
@@ -22,5 +22,5 @@ settings_save()
 
 log("Closing...")
 
-file_delete_lib(log_previous_file)
-file_rename_lib(log_file, log_previous_file)
+file_delete(log_previous_file)
+file_rename(log_file, log_previous_file)

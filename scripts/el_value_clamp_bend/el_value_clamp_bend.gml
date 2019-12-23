@@ -80,8 +80,6 @@ else
 			if (history_data.par_set_n = history_data.par_set_amount)
 				history_data.set_old_value[e, history_data.par_set_n] = value[axis]
 			
-			var nval;
-			
 			// Limit bend angle
 			value[axis] = el_value_clamp(axis, value[axis], id)
 			

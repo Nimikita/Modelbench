@@ -25,7 +25,7 @@ if (obj = null)
 	obj = new(obj_texture)
 	obj.filename = name
 	
-	if (file_exists_lib(load_folder + "\\" + name))
+	if (file_exists(load_folder + "\\" + name))
 	{
 		obj.sprite = texture_create_square(load_folder + "\\" + name)
 		obj.filepath = load_folder + "\\" + name

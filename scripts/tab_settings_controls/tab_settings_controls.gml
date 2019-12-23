@@ -109,11 +109,3 @@ tab_next()
 tab_control_keycontrol()
 draw_switch("settingssmoothcamera", dx, dy, setting_smooth_camera, action_setting_smooth_camera, true)
 tab_next()
-
-// Smooth camera amount
-if (setting_smooth_camera)
-{
-	tab_control_meter()
-	draw_meter("settingssmoothcameraamount", dx, dy, dw, setting_smooth_camera_amount, 48, 0, 10, 2, 1, tab.controls.tbx_smooth_camera_amount, action_setting_smooth_camera_amount)
-	tab_next()
-}

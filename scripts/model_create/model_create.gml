@@ -11,7 +11,7 @@ model_folder = temp_model_directory
 window_state = ""
 
 // Clear temp model directory
-var ret = directory_delete_lib(temp_model_directory);
+directory_destroy(temp_model_directory)
 model_create_wait = true
 
 // Add default texture to model

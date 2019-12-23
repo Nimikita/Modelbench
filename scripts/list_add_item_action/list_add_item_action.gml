@@ -26,9 +26,6 @@ if (argument_count > 7)
 	sprite = argument[8]
 }
 
-if (argument_count > 9)
-	inheritstatus = argument[9]
-
 with (item)
 {
 	if (side = "right")

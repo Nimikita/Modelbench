@@ -1,7 +1,6 @@
 /// shader_startup()
 
 globalvar shader_map, shader_texture_surface, shader_texture_filter_linear, shader_texture_filter_mipmap;
-globalvar shader_blend_color, shader_blend_alpha, shader_brightness;
 
 // Init shaders
 log("Shader init")
