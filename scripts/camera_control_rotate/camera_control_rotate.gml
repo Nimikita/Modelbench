@@ -14,8 +14,8 @@ display_mouse_set(lockx, locky)
 
 if (fps > 30 && setting_smooth_camera)
 {
-	view_cam.angle_off_xy += mx / (2 / delta)
-	view_cam.angle_off_z += my / (2 / delta)
+	view_cam.angle_off_xy += mx / (4 / delta)
+	view_cam.angle_off_z += my / (4 / delta)
 }
 else
 {
