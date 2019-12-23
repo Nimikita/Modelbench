@@ -51,42 +51,45 @@ if (window_busy = "" && !textbox_isediting)
 	if (keyboard_check_pressed(setting_key_redo) && app_check_control(setting_key_redo_control))
 		action_toolbar_redo()
 	
-	if (keyboard_check_pressed(setting_key_remove_elements) && app_check_control(setting_key_remove_elements_control))
-		action_el_remove()
-	
-	if (keyboard_check_pressed(setting_key_duplicate_elements) && app_check_control(setting_key_duplicate_elements_control))
-		action_el_duplicate()
-	
-	if (keyboard_check_pressed(setting_key_select_elements) && app_check_control(setting_key_select_elements_control)) 
+	if (program_mode = e_mode.MODELING)
 	{
-		if (el_edit)
-			action_el_deselect_all()
-		else
-			action_el_select_all()
+		if (keyboard_check_pressed(setting_key_remove_elements) && app_check_control(setting_key_remove_elements_control))
+			action_el_remove()
+	
+		if (keyboard_check_pressed(setting_key_duplicate_elements) && app_check_control(setting_key_duplicate_elements_control))
+			action_el_duplicate()
+	
+		if (keyboard_check_pressed(setting_key_select_elements) && app_check_control(setting_key_select_elements_control)) 
+		{
+			if (el_edit)
+				action_el_deselect_all()
+			else
+				action_el_select_all()
+		}
+	
+		if (keyboard_check_pressed(setting_key_uv_editor) && app_check_control(setting_key_uv_editor_control))
+			action_toolbar_show_uv_editor(!setting_show_uv_editor)
+	
+		// Switch tools
+		if (keyboard_check_pressed(setting_key_tool_select) && app_check_control(setting_key_tool_select_control))
+			tool_selected = e_tool.SELECT
+	
+		if (keyboard_check_pressed(setting_key_tool_move) && app_check_control(setting_key_tool_move_control))
+			tool_selected = e_tool.MOVE
+	
+		if (keyboard_check_pressed(setting_key_tool_rotate) && app_check_control(setting_key_tool_rotate_control))
+			tool_selected = e_tool.ROTATE
+	
+		if (keyboard_check_pressed(setting_key_tool_scale) && app_check_control(setting_key_tool_scale_control))
+			tool_selected = e_tool.SCALE
+	
+		if (keyboard_check_pressed(setting_key_tool_transform) && app_check_control(setting_key_tool_transform_control))
+			tool_selected = e_tool.TRANSFORM
+	
+		// Toggle snapping
+		if (keyboard_check_pressed(setting_key_snap) && app_check_control(setting_key_snap_control))
+			action_setting_snap(!setting_snap)
 	}
-	
-	if (keyboard_check_pressed(setting_key_uv_editor) && app_check_control(setting_key_uv_editor_control))
-		action_toolbar_show_uv_editor(!setting_show_uv_editor)
-	
-	// Switch tools
-	if (keyboard_check_pressed(setting_key_tool_select) && app_check_control(setting_key_tool_select_control))
-		tool_selected = e_tool.SELECT
-	
-	if (keyboard_check_pressed(setting_key_tool_move) && app_check_control(setting_key_tool_move_control))
-		tool_selected = e_tool.MOVE
-	
-	if (keyboard_check_pressed(setting_key_tool_rotate) && app_check_control(setting_key_tool_rotate_control))
-		tool_selected = e_tool.ROTATE
-	
-	if (keyboard_check_pressed(setting_key_tool_scale) && app_check_control(setting_key_tool_scale_control))
-		tool_selected = e_tool.SCALE
-	
-	if (keyboard_check_pressed(setting_key_tool_transform) && app_check_control(setting_key_tool_transform_control))
-		tool_selected = e_tool.TRANSFORM
-	
-	// Toggle snapping
-	if (keyboard_check_pressed(setting_key_snap) && app_check_control(setting_key_snap_control))
-		action_setting_snap(!setting_snap)
 }
 else if (textbox_isediting && keyboard_check_pressed(vk_tab) && textbox_lastfocus.next_tbx)
 	window_focus = string(textbox_lastfocus.next_tbx)
