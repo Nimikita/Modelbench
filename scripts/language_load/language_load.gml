@@ -19,7 +19,7 @@ ds_map_clear(map)
 var convfn = file_directory + "conv.tmp";
 json_file_convert_unicode(fn, convfn)
 	
-if (!file_exists(convfn))
+if (!file_exists_lib(convfn))
 {
 	var msg = "An error occurred while reading the language file:\nCould not convert.";
 	log(msg)

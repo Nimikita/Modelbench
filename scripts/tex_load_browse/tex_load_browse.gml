@@ -3,7 +3,7 @@
 
 var fn = file_dialog_open_image();
 
-if (!file_exists(fn))
+if (!file_exists_lib(fn))
 	return ""
 
 return fn

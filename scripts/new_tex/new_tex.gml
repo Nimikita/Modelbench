@@ -28,7 +28,7 @@ if (tex != null)
 		tex = null
 		newfn = filename_get_unique(newfn)
 		copied = true
-		file_copy(fn, newfn)
+		file_copy_lib(fn, newfn)
 	}
 }
 

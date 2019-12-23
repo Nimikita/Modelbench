@@ -5,7 +5,7 @@
 ///		  An existing map can be supplied in the second parameter
 ///		  that will be filled with the types of object fields.
 
-buffer_current = buffer_load(argument[0])
+buffer_current = buffer_load_lib(argument[0])
 
 if (argument_count > 1)
 	json_type_map = argument[1]

@@ -12,11 +12,20 @@ if (!file_exists(pathfile))
 if (!file_exists(pathwindow))
 	return missing_file(pathwindow)
 
-globalvar lib_open_url, lib_json_file_convert_unicode;
+globalvar lib_file_rename, lib_file_copy, lib_file_delete, lib_file_exists, lib_open_url, lib_json_file_convert_unicode;
+globalvar file_copy_temp, lib_directory_create, lib_directory_exists, lib_directory_delete;
 globalvar lib_window_maximize, lib_window_set_focus;
 
 // File library
 log("External library", pathfile)
+file_copy_temp = true
+lib_file_rename = external_define(pathfile, "file_rename", dll_cdecl, ty_real, 2, ty_string, ty_string)
+lib_file_copy = external_define(pathfile, "file_copy", dll_cdecl, ty_real, 2, ty_string, ty_string)
+lib_file_delete = external_define(pathfile, "file_delete", dll_cdecl, ty_real, 1, ty_string)
+lib_file_exists = external_define(pathfile, "file_exists", dll_cdecl, ty_real, 1, ty_string)
+lib_directory_create = external_define(pathfile, "directory_create", dll_cdecl, ty_real, 1, ty_string)
+lib_directory_delete = external_define(pathfile, "directory_delete", dll_cdecl, ty_real, 1, ty_string)
+lib_directory_exists = external_define(pathfile, "directory_exists", dll_cdecl, ty_real, 1, ty_string)
 lib_open_url = external_define(pathfile, "open_url", dll_cdecl, ty_real, 1, ty_string)
 lib_json_file_convert_unicode = external_define(pathfile, "json_file_convert_unicode", dll_cdecl, ty_real, 2, ty_string, ty_string)
 

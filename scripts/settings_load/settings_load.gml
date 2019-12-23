@@ -4,10 +4,7 @@
 
 var fn = settings_file;
 
-if (!file_exists(fn))
-	fn = data_directory + "settings.file"
-
-if (!file_exists(fn))
+if (!file_exists_lib(fn))
 	return 0
 
 log("Loading settings", fn)
@@ -109,7 +106,7 @@ if (ds_map_valid(interfacemap))
 	setting_accent_custom = value_get_color(interfacemap[?"accent_custom"], setting_accent_custom)
 	
 	setting_language_filename = value_get_string(interfacemap[?"language_filename"], setting_language_filename)
-	if (((languages_directory + setting_language_filename) != language_file) && file_exists(languages_directory + setting_language_filename))
+	if (((languages_directory + setting_language_filename) != language_file) && file_exists_lib(languages_directory + setting_language_filename))
 		language_load(languages_directory + setting_language_filename, language_map)
 	
 	setting_z_is_up = value_get_real(interfacemap[?"z_is_up"], setting_z_is_up)

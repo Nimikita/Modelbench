@@ -1231,6 +1231,14 @@
             }
         },
         {
+            "Key": "21f3631a-508b-49c5-9c09-9dc71911ff72",
+            "Value": {
+                "id": "8649fff4-0615-40c6-89cd-5d30a9086d8b",
+                "resourcePath": "scripts\\file_copy_lib\\file_copy_lib.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "2247ec80-47c2-4bff-bf4b-86d7891cac6b",
             "Value": {
                 "id": "fb8040f4-1af6-4cd4-9d5e-e7408f5be4e7",
@@ -1707,6 +1715,14 @@
             "Value": {
                 "id": "f0363851-236a-436a-8ab0-09bad631c2fa",
                 "resourcePath": "scripts\\debug_timer_stop\\debug_timer_stop.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "327d3858-3a69-4452-9666-97dcb0ba096c",
+            "Value": {
+                "id": "53d877fe-fdfe-4d4b-9599-7be0f58bbcaf",
+                "resourcePath": "scripts\\directory_exists_lib\\directory_exists_lib.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -2371,6 +2387,14 @@
             "Value": {
                 "id": "c4ef749d-8d05-4387-977d-ad29fca3f9f8",
                 "resourcePath": "scripts\\draw_box\\draw_box.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "49241bd6-57d5-4b23-a4c1-6bcef17b089b",
+            "Value": {
+                "id": "a5af6bb4-468d-44ba-ba6d-24141b21fd52",
+                "resourcePath": "scripts\\buffer_load_lib\\buffer_load_lib.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -3063,6 +3087,14 @@
             }
         },
         {
+            "Key": "5bf75c1f-82d1-439b-95b1-1809d939457f",
+            "Value": {
+                "id": "d8394b4b-fc84-424a-8d3a-1af775f04b1d",
+                "resourcePath": "scripts\\directory_delete_lib\\directory_delete_lib.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "5c4ffcb6-e19e-461d-9168-6009ffc157f4",
             "Value": {
                 "id": "10d4b4e9-60db-41fe-b921-8d13a2081832",
@@ -3391,6 +3423,14 @@
             }
         },
         {
+            "Key": "66dd5cf1-ed11-4c25-9be8-e8ce40739441",
+            "Value": {
+                "id": "6ebcc718-89dc-4d4c-ad47-a392579dccdb",
+                "resourcePath": "scripts\\file_exists_lib\\file_exists_lib.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "676c4474-0dc6-47e6-ae3d-c0122a052f07",
             "Value": {
                 "id": "8694cd7a-46cc-4e31-9c06-232bb23df0d7",
@@ -3491,6 +3531,14 @@
             "Value": {
                 "id": "4d7f8e68-6d11-42b7-b757-45a15dc32ef4",
                 "resourcePath": "scripts\\action_el_mix_color\\action_el_mix_color.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "69921cee-bf6e-4d2a-9857-c9cb8d056726",
+            "Value": {
+                "id": "5ff8d335-d772-48f2-b345-cd82f541461a",
+                "resourcePath": "scripts\\directory_create_lib\\directory_create_lib.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -4543,6 +4591,14 @@
             }
         },
         {
+            "Key": "8755dd2e-bc83-4671-a05e-f5d521d35cf0",
+            "Value": {
+                "id": "1397f644-a64a-4bb8-9f23-09b9b14054e3",
+                "resourcePath": "scripts\\file_delete_lib\\file_delete_lib.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "87d0a1c1-a314-43a3-9386-98eb395de629",
             "Value": {
                 "id": "def8b9b2-5a7f-4ba5-b69b-c9c356c782c0",
@@ -5343,6 +5399,14 @@
             }
         },
         {
+            "Key": "9d7218d7-1b0f-44df-91d5-1b3d7625ac62",
+            "Value": {
+                "id": "ba2dff77-0a50-42b3-a4d8-046a89ccd982",
+                "resourcePath": "scripts\\file_lib_startup\\file_lib_startup.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "9dbc9194-f77b-4d7d-b9df-f3c72bc51c42",
             "Value": {
                 "id": "8455352e-3d68-4cb3-a504-303fa3504f06",
@@ -5563,6 +5627,14 @@
             "Value": {
                 "id": "2dbe8e05-d318-4c66-89cb-f307aca9bbac",
                 "resourcePath": "scripts\\history_pop\\history_pop.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "a5aaecbd-c0f6-4ef7-bc05-1e959a29fd98",
+            "Value": {
+                "id": "2f26252a-ba93-4857-954d-1ee1b4a21b8e",
+                "resourcePath": "scripts\\file_rename_lib\\file_rename_lib.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -6883,6 +6955,14 @@
             "Value": {
                 "id": "21865638-5932-4d75-917a-f5b1d689bd1d",
                 "resourcePath": "scripts\\draw_url\\draw_url.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "d06f4784-3078-4afc-a852-c0676c193303",
+            "Value": {
+                "id": "d7349c15-c76f-4731-9269-9ded390beb45",
+                "resourcePath": "scripts\\buffer_save_lib\\buffer_save_lib.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -8615,10 +8695,20 @@
         "d88a0fc9-81b3-4bcc-aa22-9a236d43f673",
         "afbc4fa3-056d-490f-ac1e-ca9aeb42f37d",
         "18e7fbc8-398a-4a7b-9dbf-659c6498d61d",
+        "49241bd6-57d5-4b23-a4c1-6bcef17b089b",
+        "d06f4784-3078-4afc-a852-c0676c193303",
+        "69921cee-bf6e-4d2a-9857-c9cb8d056726",
+        "5bf75c1f-82d1-439b-95b1-1809d939457f",
+        "327d3858-3a69-4452-9666-97dcb0ba096c",
+        "21f3631a-508b-49c5-9c09-9dc71911ff72",
+        "8755dd2e-bc83-4671-a05e-f5d521d35cf0",
+        "66dd5cf1-ed11-4c25-9be8-e8ce40739441",
+        "a5aaecbd-c0f6-4ef7-bc05-1e959a29fd98",
         "1bdba71b-5a63-4a28-b0fd-a6094924bc07",
         "808a2e57-d4cd-4d0c-bb00-5328d517221e",
         "b20605e9-e2bf-4698-b1ea-06b30ef75024",
         "f075b6e7-ece8-4653-a107-04fb8629b1f5",
+        "9d7218d7-1b0f-44df-91d5-1b3d7625ac62",
         "cd26e14b-d929-430c-a8fe-ba008806aa71",
         "e667e2d2-dba4-4668-ab95-220d24f5edf6",
         "38cfe0d0-0934-4ed3-8e24-278819325132",

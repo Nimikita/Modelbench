@@ -6,7 +6,7 @@ for (var i = 0; i < loaded_amount; i++)
 	with (save_id_find(loaded_save_id[i]))
 	{
 		if (object_index = obj_texture && copied)
-			file_delete(app.model_folder + "\\" + filename)
+			file_delete_lib(app.model_folder + "\\" + filename)
 		instance_destroy()
 	}
 }

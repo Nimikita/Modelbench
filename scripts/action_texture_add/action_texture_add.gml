@@ -8,7 +8,7 @@ if (history_undo)
 		with (save_id_find(tex_save_id))
 		{
 			if (object_index = obj_texture && copied)
-				file_delete(app.model_folder + "\\" + filename)
+				file_delete_lib(app.model_folder + "\\" + filename)
 			instance_destroy()
 		}
 	}

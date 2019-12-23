@@ -1,6 +1,6 @@
 /// recent_load()
 
-if (!file_exists(recent_file))
+if (!file_exists_lib(recent_file))
 	return 0
 
 var recentmap = json_load(recent_file);

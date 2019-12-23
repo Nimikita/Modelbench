@@ -30,6 +30,7 @@
 #macro log_file						file_directory + "log.txt"
 #macro temp_model_directory			file_directory + "modeltemp\\"
 #macro temp_model_backup			temp_model_directory + "\\" + "temp.mbbackup1"
+#macro temp_file					file_directory + "tmp.file"
 
 // Interface
 #macro glow_alpha					0.45

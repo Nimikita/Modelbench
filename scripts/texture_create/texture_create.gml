@@ -17,7 +17,7 @@ else
 	origin_y = 0
 }
 
-if (!file_exists(fname))
+if (!file_exists_lib(fname))
 	return texture_create_missing()
 
 return sprite_add(fname, 1, false, false, origin_x, origin_y)

@@ -32,5 +32,5 @@ warning_same_part_names = false
 update_vbuffer_list = ds_list_create()
 
 // Recover model from previous session
-if (file_exists(temp_model_backup))
+if (file_exists_lib(temp_model_backup))
 	snackbar_recover_model()

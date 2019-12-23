@@ -4,7 +4,7 @@
 
 var tex = argument0;
 
-if (!file_exists(app.model_folder + tex.filename))
+if (!file_exists_lib(app.model_folder + tex.filename))
 	sprite_save(tex.sprite, 0, app.model_folder + "//" + tex.filename)
 
 // Update filepaths

@@ -19,6 +19,6 @@ save_folder = model_folder
 load_folder = model_folder
 
 // Clear temp model directory
-directory_destroy(temp_model_directory)
+directory_delete_lib(temp_model_directory)
 model_create_wait = true
 recent_add_wait = false
