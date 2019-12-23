@@ -33,7 +33,7 @@ draw_keycontrol("settingskeyselectelements", dx, dy, dw, setting_key_select_elem
 tab_next(false)
 
 tab_control_keycontrol()
-draw_keycontrol("settingskeyuveditor", dx, dy, dw, setting_key_uv_editor, setting_key_uv_editor_control, ord("U"), true, action_setting_key_uv_editor)
+draw_keycontrol("settingskeyuveditor", dx, dy, dw, setting_key_uv_editor, setting_key_uv_editor_control, ord("E"), true, action_setting_key_uv_editor)
 tab_next(false)
 
 tab_control_keycontrol()

@@ -37,7 +37,7 @@ setting_key_duplicate_elements = ord("D")
 setting_key_duplicate_elements_control = true
 setting_key_select_elements = ord("A")
 setting_key_select_elements_control = true
-setting_key_uv_editor = ord("U")
+setting_key_uv_editor = ord("E")
 setting_key_uv_editor_control = true
 
 setting_key_tool_select = ord("W")
