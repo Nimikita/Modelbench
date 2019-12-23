@@ -1,5 +1,5 @@
-/// shader_high_light_sun
-/// @desc Add shadows from the sun
+/// shader_color_light
+/// @desc Blends all pixels by the given color factor
 
 attribute vec3 in_Position;
 attribute vec3 in_Normal;
@@ -7,17 +7,12 @@ attribute vec4 in_Colour;
 attribute vec2 in_TextureCoord;
 attribute vec4 in_Wave;
 
-uniform float uBrightness;
-uniform int uIsGround;
-uniform vec3 uSunAt;
-
-uniform mat4 uLightMatrix;
-
 varying vec3 vPosition;
 varying vec3 vNormal;
+varying vec4 vColor;
 varying vec2 vTexCoord;
-varying vec4 vScreenCoord;
-varying float vBrightness;
+
+uniform vec4 uBlendColor;
 
 // Wind
 uniform float uTime;
@@ -40,12 +35,8 @@ void main()
 	vec3 off = getWind();
 	vPosition = (gm_Matrices[MATRIX_WORLD] * vec4(in_Position + off, 1.0)).xyz;
 	vNormal = (gm_Matrices[MATRIX_WORLD] * vec4(in_Normal, 0.0)).xyz;
+	vColor = in_Colour * uBlendColor;
 	vTexCoord = in_TextureCoord;
-	vScreenCoord = uLightMatrix * vec4(vPosition, 1.0);
-	
-	// Single normal for ground
-	if (uIsGround > 0)
-		vPosition = uSunAt;
 	
 	gl_Position = gm_Matrices[MATRIX_WORLD_VIEW_PROJECTION] * vec4(in_Position + off, 1.0);
 }

@@ -137,7 +137,8 @@ if (ds_map_valid(graphicsmap))
 	setting_wind = value_get_real(graphicsmap[?"wind"], setting_wind)
 	setting_wind_speed = value_get_real(graphicsmap[?"wind_speed"], setting_wind_speed)
 	setting_wind_strength = value_get_real(graphicsmap[?"wind_strength"], setting_wind_strength)
-	setting_modeling_ao = value_get_real(graphicsmap[?"modeling_ao"], setting_modeling_ao)
+	setting_modeling_ssao = value_get_real(graphicsmap[?"modeling_ssao"], setting_modeling_ssao)
+	setting_lighting = value_get_real(graphicsmap[?"lighting"], setting_lighting)
 }
 
 // Render

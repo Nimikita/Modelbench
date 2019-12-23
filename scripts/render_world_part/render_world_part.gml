@@ -4,8 +4,6 @@
 if (hidden || tree_hidden || shape_list = null)
 	return 0
 
-render_set_uniform("uBrightness", 0)
-
 var rendermatrix;
 
 for (var s = 0; s < ds_list_size(shape_list); s++)
@@ -63,6 +61,7 @@ for (var s = 0; s < ds_list_size(shape_list); s++)
 		
 		render_set_uniform_color("uBlendColor", color_blend, color_alpha)
 		render_set_uniform_color("uMixColor", color_mix, color_mix_percent)
+		render_set_uniform("uBrightness", color_brightness)
 		render_set_uniform_color("uShape", id, 1)
 		
 		vbuffer_render_matrix(shape_vbuffer, rendermatrix)

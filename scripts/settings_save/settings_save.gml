@@ -98,8 +98,9 @@ json_save_object_start("graphics")
 	json_save_var_bool("wind", setting_wind)
 	json_save_var("wind_speed", setting_wind_speed)
 	json_save_var("wind_strength", setting_wind_strength)
-	json_save_var("modeling_ssao", setting_modeling_ssao)
-	
+	json_save_var_bool("modeling_ssao", setting_modeling_ssao)
+	json_save_var_bool("lighting", setting_lighting)
+
 json_save_object_done()
 
 json_save_object_start("render")

@@ -1,7 +1,7 @@
 /// shader_startup()
 
 globalvar shader_map, shader_texture_surface, shader_texture_filter_linear, shader_texture_filter_mipmap;
-globalvar shader_blend_color, shader_blend_alpha;
+globalvar shader_blend_color, shader_blend_alpha, shader_brightness;
 
 // Init shaders
 log("Shader init")
@@ -22,6 +22,7 @@ if (!err)
 	
 	new_shader("shader_draw_texture")
 	new_shader("shader_color")
+	new_shader("shader_color_light")
 	new_shader("shader_sky")
 	new_shader("shader_preview")
 	new_shader("shader_depth")
@@ -64,6 +65,14 @@ with (shader_map[?shader_color])
 	new_shader_uniform("uMixColor")
 }
 
+with (shader_map[?shader_color_light])
+{
+	new_shader_uniform("uMixColor")
+	new_shader_uniform("uBrightness")
+	new_shader_uniform("uLightColor")
+	new_shader_uniform("uAmbientColor")
+}
+
 with (shader_map[?shader_sky])
 {
 	new_shader_uniform("uColorTop")
@@ -90,21 +99,18 @@ with (shader_map[?shader_high_light_sun])
 {
 	new_shader_uniform("uBrightness")
 	new_shader_uniform("uBlockBrightness")
-	new_shader_uniform("uLightBleed")
 	new_shader_uniform("uIsGround")
 	new_shader_uniform("uSunAt")
 	new_shader_uniform("uIsSky")
-	new_shader_uniform("uIsWater")
 	new_shader_uniform("uLightMatrix")
 	new_shader_uniform("uLightPosition")
 	new_shader_uniform("uLightNear")
 	new_shader_uniform("uLightFar")
 	new_shader_uniform("uLightColor")
+	new_shader_uniform("uLightAmount")
 	new_shader_sampler("uDepthBuffer")
 	new_shader_uniform("uBlurQuality")
 	new_shader_uniform("uBlurSize")
-	new_shader_uniform("uDiffuseBoost")
-	new_shader_uniform("uBleedLight")
 }
 
 with (shader_map[?shader_high_ssao])

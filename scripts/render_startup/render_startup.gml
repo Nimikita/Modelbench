@@ -54,6 +54,7 @@ render_ssao_noise = null
 globalvar render_mode, render_mode_shader_map, render_shader_obj;
 render_mode_shader_map = ds_map_create()
 render_mode_shader_map[?e_render_mode.COLOR] = shader_color
+render_mode_shader_map[?e_render_mode.COLOR_LIGHT] = shader_color_light
 render_mode_shader_map[?e_render_mode.SKY] = shader_sky
 render_mode_shader_map[?e_render_mode.PREVIEW] = shader_preview
 render_mode_shader_map[?e_render_mode.HIGH_LIGHT_SUN_DEPTH] = shader_depth

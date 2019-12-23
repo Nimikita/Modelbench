@@ -9,3 +9,10 @@ setting_preview_ambient_color = setting_preview_scenery.ambient_color
 setting_preview_light_color[0] = setting_preview_scenery.light_color[0]
 setting_preview_light_color[1] = setting_preview_scenery.light_color[1]
 setting_preview_light_color[2] = setting_preview_scenery.light_color[2]
+setting_preview_lights = 0
+
+for (var i = 0; i < 3; i++)
+{
+	if (setting_preview_light_color[i] != c_black)
+		setting_preview_lights++
+}

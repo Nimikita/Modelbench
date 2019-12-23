@@ -11,6 +11,7 @@ uniform vec3 uLightPosition;
 uniform vec4 uLightColor;
 uniform float uLightNear;
 uniform float uLightFar;
+uniform float uLightAmount;
 
 uniform sampler2D uDepthBuffer;
 
@@ -88,7 +89,7 @@ void main()
 		}
 	
 		// Calculate light
-		light = uBrightness + uLightColor.rgb * dif * (1.0 - shadow);
+		light = (uBrightness/uLightAmount) + (uLightColor.rgb * dif * (1.0 - shadow));
 	}
 	
 	// Set final color

@@ -4,7 +4,7 @@
         "language": "English",
         "translator": "Nimi",
         "forversion": "Alpha 8",
-        "lastchange": "2019.12.18"
+        "lastchange": "2019.12.22"
     },
 	"startup/": {
 		"modeldetected": "Unsaved model detected",
@@ -515,7 +515,8 @@
 		"graphicswind": "Wind",
 		"graphicswindspeed": "Speed",
 		"graphicswindstrength": "Strength",
-		"graphicsmodelingssao": "Modeling SSAO"
+		"graphicsmodelingssao": "Modeling SSAO",
+		"graphicslighting": "Lighting"
 	},
 	"about/": {
 		"credits": "CREDITS",

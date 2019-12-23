@@ -219,7 +219,12 @@ surface_set_target(finalsurf)
 	
 	// World
 	render_world_start()
-	render_world(e_render_mode.COLOR)
+	
+	if (program_mode = e_mode.MODELING && setting_lighting)
+		render_world(e_render_mode.COLOR_LIGHT)
+	else
+		render_world(e_render_mode.COLOR)
+	
 	render_world_done()
 	
 	// Apply shadows and AO

@@ -26,3 +26,8 @@ if (setting_wind && !setting_collapse_wind)
 tab_control_switch()
 draw_switch("settingsgraphicsmodelingssao", dx, dy, setting_modeling_ssao, action_setting_modeling_ssao, true)
 tab_next()
+
+// Modeling lighting
+tab_control_switch()
+draw_switch("settingsgraphicslighting", dx, dy, setting_lighting, action_setting_lighting, true)
+tab_next()

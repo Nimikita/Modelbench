@@ -140,6 +140,7 @@ enum e_icon
 enum e_render_mode
 {
 	COLOR,
+	COLOR_LIGHT,
 	SKY,
 	PREVIEW,
 	HIGH_LIGHT_SUN_DEPTH,
