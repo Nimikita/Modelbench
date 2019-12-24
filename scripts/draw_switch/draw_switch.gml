@@ -68,9 +68,7 @@ else
 }
 
 var backgroundcolor = merge_color(color, c_accent, mcroani_arr[e_mcroani.ACTIVE]);
-backgroundcolor = merge_color(backgroundcolor, c_text_tertiary, mcroani_arr[e_mcroani.DISABLED]);
 var backgroundalpha = lerp(alpha, 1, mcroani_arr[e_mcroani.ACTIVE]);
-backgroundalpha = lerp(backgroundalpha, a_text_tertiary, mcroani_arr[e_mcroani.DISABLED]);
 draw_box(switchx, switchy, 24, 16, false, backgroundcolor, backgroundalpha)
 
 // Draw button
@@ -81,6 +79,9 @@ var buttonalpha = lerp(0, a_accent_overlay, mcroani_arr[e_mcroani.PRESS]);
 draw_box(buttonx, buttony, 10, 12, false, c_white, 1)
 draw_box(buttonx, buttony, 10, 12, false, buttoncolor, buttonalpha)
 draw_box_bevel(buttonx, buttony, 10, 12, 1, true)
+
+// Disabled overlay
+draw_box(switchx, switchy, 24, 16, false, c_background, .5 * mcroani_arr[e_mcroani.DISABLED])
 
 // Draw hover outline
 draw_box_hover(switchx, switchy, 24, 16, mcroani_arr[e_mcroani.HOVER] * (1 - mcroani_arr[e_mcroani.DISABLED]))
