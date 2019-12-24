@@ -56,6 +56,8 @@ if (ds_map_valid(controlsmap))
 	setting_key_uv_editor = value_get_real(controlsmap[?"key_uv_editor"], setting_key_uv_editor)
 	setting_key_uv_editor_control = value_get_real(controlsmap[?"key_uv_editor_control"], setting_key_uv_editor_control)
 	
+	setting_key_tool_pivot = value_get_real(controlsmap[?"key_tool_pivot"], setting_key_tool_pivot)
+	setting_key_tool_pivot_control = value_get_real(controlsmap[?"key_tool_pivot_control"], setting_key_tool_pivot_control)
 	setting_key_tool_move = value_get_real(controlsmap[?"key_tool_move"], setting_key_tool_move)
 	setting_key_tool_move_control = value_get_real(controlsmap[?"key_tool_move_control"], setting_key_tool_move_control)
 	setting_key_tool_rotate = value_get_real(controlsmap[?"key_tool_rotate"], setting_key_tool_rotate)

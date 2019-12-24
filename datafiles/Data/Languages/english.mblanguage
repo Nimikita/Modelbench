@@ -4,7 +4,7 @@
         "language": "English",
         "translator": "Nimi",
         "forversion": "Alpha 8",
-        "lastchange": "2019.12.23"
+        "lastchange": "2019.12.24"
     },
 	"startup/": {
 		"modeldetected": "Unsaved model detected",
@@ -166,6 +166,11 @@
 		"remove": "Remove",
 		"pin": "Pin",
 		"shortcut": "Shortcut: %1",
+		"pivot/": {
+			"x": "X Pivot: %1 (%2)",
+			"y": "Y Pivot: %1 (%2)",
+			"z": "Z Pivot: %1 (%2)"
+		},
 		"position/": {
 			"x": "X Position: %1 (%2)",
 			"y": "Y Position: %1 (%2)",
@@ -218,6 +223,7 @@
 		},
 		"tool/": {
 			"select": "Select tool",
+			"pivot": "Pivot tool",
 			"move": "Move tool",
 			"rotate": "Rotate tool",
 			"scale": "Scale tool",
@@ -478,6 +484,7 @@
 			"uveditor": "Toggle UV editor",
 			"tool/": {
 				"select": "Select tool",
+				"pivot": "Pivot tool",
 				"move": "Move tool",
 				"rotate": "Rotate tool",
 				"scale": "Scale tool",

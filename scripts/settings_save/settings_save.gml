@@ -38,6 +38,8 @@ json_save_object_start("controls")
 	
 	json_save_var("key_tool_select", setting_key_tool_select)
 	json_save_var_bool("key_tool_select_control", setting_key_tool_select_control)
+	json_save_var("key_tool_pivot", setting_key_tool_pivot)
+	json_save_var_bool("key_tool_pivot_control", setting_key_tool_pivot_control)
 	json_save_var("key_tool_move", setting_key_tool_move)
 	json_save_var_bool("key_tool_move_control", setting_key_tool_move_control)
 	json_save_var("key_tool_rotate", setting_key_tool_rotate)

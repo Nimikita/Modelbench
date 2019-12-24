@@ -42,6 +42,8 @@ setting_key_uv_editor_control = true
 
 setting_key_tool_select = ord("W")
 setting_key_tool_select_control = false
+setting_key_tool_pivot = ord("Q")
+setting_key_tool_pivot_control = false
 setting_key_tool_move = ord("G")
 setting_key_tool_move_control = false
 setting_key_tool_rotate = ord("R")

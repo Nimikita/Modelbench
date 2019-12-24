@@ -41,6 +41,10 @@ draw_keycontrol("settingskeytoolselect", dx, dy, dw, setting_key_tool_select, se
 tab_next(false)
 
 tab_control_keycontrol()
+draw_keycontrol("settingskeytoolpivot", dx, dy, dw, setting_key_tool_pivot, setting_key_tool_pivot_control, ord("Q"), false, action_setting_key_tool_pivot)
+tab_next(false)
+
+tab_control_keycontrol()
 draw_keycontrol("settingskeytoolmove", dx, dy, dw, setting_key_tool_move, setting_key_tool_move_control, ord("G"), false, action_setting_key_tool_move)
 tab_next(false)
 

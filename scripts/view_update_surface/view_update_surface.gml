@@ -51,6 +51,10 @@ if (el_edit_amount > 0 && program_mode = e_mode.MODELING)
 					// Position
 					if (tool_selected = e_tool.MOVE || tool_selected = e_tool.TRANSFORM)
 						view_control_move(view)
+						
+					// Pivot
+					if (tool_selected = e_tool.PIVOT && el_edit.element_type = TYPE_SHAPE)
+						view_control_pivot(view)
 					
 					// Bend
 					//if (el_edit.element_type = TYPE_PART && el_edit.value[e_value.BEND])
@@ -62,13 +66,23 @@ if (el_edit_amount > 0 && program_mode = e_mode.MODELING)
 					if (window_busy != "rendercontrolscalexyz")
 					{
 						var mat;
-						if (el_edit.element_type = TYPE_PART)
-							mat = array_copy_1d(el_edit.matrix_edit)
-						else
-							mat = array_copy_1d(el_edit.matrix_parent)
+						
+						if (tool_selected != e_tool.PIVOT || (tool_selected = e_tool.PIVOT && el_edit.element_type = TYPE_PART))
+						{
+							if (el_edit.element_type = TYPE_PART)
+								mat = array_copy_1d(el_edit.matrix_edit)
+							else
+								mat = array_copy_1d(el_edit.matrix_parent)
 	
-						matrix_remove_scale(mat)
-					
+							matrix_remove_scale(mat)
+						}
+						else
+						{
+							mat = matrix_create(el_edit.from, vec3(0), vec3(1))
+							mat = matrix_multiply(mat, matrix_create(vec3(0), el_edit.rotation, vec3(1)))
+							mat = matrix_multiply(mat, matrix_multiply(el_edit.matrix, el_edit.parent.matrix_parent))
+						}
+						
 						origin = point3D_project(matrix_position(mat), view_proj_matrix, render_width, render_height)
 					}
 					else
@@ -81,11 +95,13 @@ if (el_edit_amount > 0 && program_mode = e_mode.MODELING)
 					
 					if (!point3D_project_error)
 					{
-						if (tool_selected >= e_tool.MOVE)
+						if (tool_selected > e_tool.SELECT)
 							draw_circle_ext(origin[X], origin[Y], 28, false, c_background, 1)
 						
 						var icon = null;
-						if (tool_selected = e_tool.MOVE)
+						if (tool_selected = e_tool.PIVOT)
+							icon = e_icon.center
+						else if (tool_selected = e_tool.MOVE)
 							icon = e_icon.toolset_position
 						else if (tool_selected = e_tool.ROTATE)
 							icon = e_icon.toolset_rotate
@@ -114,7 +130,9 @@ if (el_edit_amount > 0 && program_mode = e_mode.MODELING)
 					else if (window_busy = "rendercontrol")
 					{
 						var tooltipstring = "tooltip";
-						if (view_control_edit >= e_value.POS_X && view_control_edit <= e_value.POS_Z)
+						if (view_control_edit >= e_value.OFFSET_X && view_control_edit <= e_value.OFFSET_Z)
+							tooltipstring += "pivot"
+						else if (view_control_edit >= e_value.POS_X && view_control_edit <= e_value.POS_Z)
 							tooltipstring += "position"
 						else if (view_control_edit >= e_value.ROT_X && view_control_edit <= e_value.ROT_Z)
 							tooltipstring += "rotation"

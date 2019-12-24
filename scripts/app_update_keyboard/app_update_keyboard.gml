@@ -73,7 +73,10 @@ if (window_busy = "" && !textbox_isediting)
 		// Switch tools
 		if (keyboard_check_pressed(setting_key_tool_select) && app_check_control(setting_key_tool_select_control))
 			tool_selected = e_tool.SELECT
-	
+		
+		if (keyboard_check_pressed(setting_key_tool_pivot) && app_check_control(setting_key_tool_pivot_control))
+			tool_selected = e_tool.PIVOT
+		
 		if (keyboard_check_pressed(setting_key_tool_move) && app_check_control(setting_key_tool_move_control))
 			tool_selected = e_tool.MOVE
 	

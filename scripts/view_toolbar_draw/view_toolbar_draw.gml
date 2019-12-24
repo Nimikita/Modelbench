@@ -97,6 +97,16 @@ if (dw > dh)
 else
 	dy += buttonsize
 
+// Pivot tool
+tip_set_shortcut(setting_key_tool_pivot, setting_key_tool_pivot_control)
+if (draw_button_icon("toolsettoolpivot", dx, dy, 28, 28, tool_selected = e_tool.PIVOT, e_icon.center, null, false, "toolsettoolpivot"))
+	tool_selected = e_tool.PIVOT
+
+if (dw > dh)
+	dx += buttonsize
+else
+	dy += buttonsize
+
 // Position tool
 tip_set_shortcut(setting_key_tool_move, setting_key_tool_move_control)
 if (draw_button_icon("toolsettoolmove", dx, dy, 28, 28, tool_selected = e_tool.MOVE, e_icon.toolset_position, null, false, "toolsettoolmove"))

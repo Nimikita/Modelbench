@@ -31,6 +31,7 @@ enum e_mode
 enum e_tool
 {
 	SELECT,
+	PIVOT,
 	MOVE,
 	ROTATE,
 	SCALE,
