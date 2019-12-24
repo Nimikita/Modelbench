@@ -120,7 +120,7 @@ if (window_focus = string(tbx))
 	if (!mouse_left && window_busy = string(tbx) + "click")
 		window_busy = ""
 	
-	if (mouse_left_pressed && !keyboard_check(vk_shift) && !context_menu_mouseon)
+	if ((mouse_left_pressed && !keyboard_check(vk_shift) && !context_menu_mouseon) || (tbx.single_line && keyboard_check_pressed(vk_enter)))
 		window_focus = ""
 	
 	if (!tbx.read_only && window_busy = "" && !keyboard_check(vk_control))
@@ -1134,6 +1134,7 @@ else if (textbox_mouseover = tbx)
 {
 	textbox_mouseover = -1
 	mouse_cursor = cr_default
+	
 }
 
 tbx.last_text = tbx.text

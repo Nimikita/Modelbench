@@ -4,7 +4,7 @@
         "language": "English",
         "translator": "Nimi",
         "forversion": "Alpha 8",
-        "lastchange": "2019.12.22"
+        "lastchange": "2019.12.23"
     },
 	"startup/": {
 		"modeldetected": "Unsaved model detected",
@@ -484,6 +484,7 @@
 				"transform": "Transform tool"
 			},
 			"snap": "Toggle snapping",
+			"editsnap": "Edit snapping",
 			"forward": "Forward",
             "back": "Back",
             "left": "Left",

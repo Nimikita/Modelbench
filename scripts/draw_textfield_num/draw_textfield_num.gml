@@ -42,7 +42,7 @@ if (!disabled)
 	context_menu_area(xx, yy, wid + capwidth, hei, "contextmenuvalue", value, e_value_type.NUMBER, script, def)
 
 if (draw_inputbox(name, xx + capwidth, yy, wid, 28, string(def), tbx, null, disabled))
-	script_execute(script, clamp(snap(string_get_real(tbx.text, 0), snapval), minval, maxval), false)
+	script_execute(script, clamp(snap(string_get_real(tbx.text, def), snapval), minval, maxval), false)
 
 // Use microanimation from inputbox to determine color
 var labelcolor, labelalpha;

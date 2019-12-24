@@ -1,7 +1,7 @@
 /// tab_element_editor_appearance()
 
 tab_control(28)
-draw_textfield_num("elementeditorinflate", dx, dy, 86, el_edit.value[e_value.INFLATE], 0.1, -no_limit, no_limit, 0, snap_min, tab.appearance.tbx_inflate, action_el_inflate)
+draw_textfield_num("elementeditorinflate", dx, dy, 86, el_edit.value[e_value.INFLATE], 0.1, -no_limit, no_limit, 0, snap_value, tab.appearance.tbx_inflate, action_el_inflate)
 tab_next()
 
 tab_control_checkbox()

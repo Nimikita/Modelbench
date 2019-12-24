@@ -52,6 +52,8 @@ setting_key_tool_transform = ord("T")
 setting_key_tool_transform_control = false
 setting_key_snap = ord("F")
 setting_key_snap_control = false
+setting_key_edit_snap = ord("F")
+setting_key_edit_snap_control = true
 
 setting_key_forward = ord("W")
 setting_key_back = ord("S")

@@ -67,6 +67,8 @@ if (ds_map_valid(controlsmap))
 	
 	setting_key_snap = value_get_real(controlsmap[?"key_snap"], setting_key_snap)
 	setting_key_snap_control = value_get_real(controlsmap[?"key_snap_control"], setting_key_snap_control)
+	setting_key_edit_snap = value_get_real(controlsmap[?"key_edit_snap"], setting_key_edit_snap)
+	setting_key_edit_snap_control = value_get_real(controlsmap[?"key_edit_snap_control"], setting_key_edit_snap_control)
 	
 	setting_key_forward = value_get_real(controlsmap[?"key_forward"], setting_key_forward)
 	setting_key_back = value_get_real(controlsmap[?"key_back"], setting_key_back)
