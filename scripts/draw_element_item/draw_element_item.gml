@@ -292,12 +292,12 @@ if (element.element_type = TYPE_PART && element.extend)
 	// Draw shapes
 	if (element.shape_list != null && !hideshapes)
 	{
-		//if (itemvisible)
+		if (((content_x + content_width) - linex > 120))
 			draw_box(linex, itemy + itemh, 1, (28 * ds_list_size(element.shape_list)) - 13, false, c_border, a_border)
 		
 		for(var i = 0; i < ds_list_size(element.shape_list); i++)
 		{
-			if ((itemy + itemh + (28 * i) > content_y) && (itemy + (28 * i) < content_y + content_height))
+			if ((itemy + itemh + (28 * i) > content_y) && (itemy + (28 * i) < content_y + content_height) && ((content_x + content_width) - linex > 120))
 				draw_box(linex + 1, dy + (itemh/2), 9, 1, false, c_border, a_border)
 			
 			draw_element_item(element.shape_list[|i], dy, increment + 1)

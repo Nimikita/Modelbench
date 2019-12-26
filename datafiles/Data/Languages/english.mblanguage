@@ -4,7 +4,7 @@
         "language": "English",
         "translator": "Nimi",
         "forversion": "Alpha 8",
-        "lastchange": "2019.12.24"
+        "lastchange": "2019.12.25"
     },
 	"startup/": {
 		"modeldetected": "Unsaved model detected",
@@ -167,24 +167,24 @@
 		"pin": "Pin",
 		"shortcut": "Shortcut: %1",
 		"pivot/": {
-			"x": "X Pivot: %1 (%2)",
+			"x": "X Pivot: %1",
 			"y": "Y Pivot: %1 (%2)",
 			"z": "Z Pivot: %1 (%2)"
 		},
 		"position/": {
-			"x": "X Position: %1 (%2)",
-			"y": "Y Position: %1 (%2)",
-			"z": "Z Position: %1 (%2)"
+			"x": "X Position: %1",
+			"y": "Y Position: %1",
+			"z": "Z Position: %1"
 		},
 		"rotation/": {
-			"x": "X Rotation: %1 (%2)",
-			"y": "Y Rotation: %1 (%2)",
-			"z": "Z Rotation: %1 (%2)"
+			"x": "X Rotation: %1",
+			"y": "Y Rotation: %1",
+			"z": "Z Rotation: %1"
 		},
 		"scale/": {
-			"x": "X Scale: %1 (%2)",
-			"y": "Y Scale: %1 (%2)",
-			"z": "Z Scale: %1 (%2)",
+			"x": "X Scale: %1",
+			"y": "Y Scale: %1",
+			"z": "Z Scale: %1",
 			"xyz": "[ X: %1, Y: %2, Z: %3 ]"
 		},
 		"undo": "Undo",

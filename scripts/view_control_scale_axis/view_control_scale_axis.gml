@@ -56,15 +56,14 @@ else if (view.control_mouseon_last = vid)
 		view_control_edit = vid
 		view_control_edit_view = view
 		view_control_value = el_edit.value[vid]
-		view_control_value_add = 0
 		view_control_vec = point2D_sub(end2D, start2D)
 	}
 	
 	// Right click
 	if (mouse_right_pressed && keyboard_check(vk_shift))
 	{
-		axis_edit = vid
-		action_el_pos(el_edit.value_default[vid], false)
+		axis_edit = vid -e_value.SCA_X
+		action_el_sca(el_edit.value_default[vid], false)
 		app_mouse_clear()
 	}
 	

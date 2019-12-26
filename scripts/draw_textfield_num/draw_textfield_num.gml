@@ -81,7 +81,12 @@ if (window_busy = name + "press")
 {
 	mouse_cursor = cr_size_we
 	
-	if (mouse_dx != 0)
+	if (!mouse_left)
+	{
+		window_busy = ""
+		app_mouse_clear()
+	}
+	else if (mouse_dx != 0)
 	{
 		dragger_drag_value = value
 		window_busy = name + "drag" // Start dragging

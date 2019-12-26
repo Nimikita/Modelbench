@@ -3,6 +3,9 @@
 if (context_menu_level_amount = 0)
 	return 0
 
+if (window_busy = "contextmenu")
+	window_busy = ""
+
 context_menu_mouseon = false
 context_menu_mouseon_item = null
 axis_edit = context_menu_copy_axis_edit
@@ -61,3 +64,6 @@ with (obj_listitem)
 if (((mouse_left_pressed || mouse_right_pressed) && !context_menu_mouseon) || 
 	(mouse_left_released && (!context_menu_mouseon || (context_menu_mouseon_item != null && !context_menu_mouseon_item.disabled && context_menu_mouseon_item.context_menu_name = ""))))
 	context_menu_close()
+
+if (window_busy = "" && context_menu_name != "")
+	window_busy = "contextmenu"

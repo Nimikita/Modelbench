@@ -146,14 +146,8 @@ if (el_edit_amount > 0 && program_mode = e_mode.MODELING)
 						else if ((view_control_edit mod 3) = 2)
 							tooltipstring += "z"
 						
-						var addstring;
-						if (view_control_value_add > 0)
-							addstring = "+" + string(view_control_value_add)
-						else
-							addstring = string(view_control_value_add)
-						
 						tip_force_right = true
-						tip_set(text_get(tooltipstring, el_edit.value[view_control_edit], addstring), mouse_click_x, mouse_click_y, 0, 0, false)
+						tip_set(text_get(tooltipstring, el_edit.value[view_control_edit]), mouse_click_x, mouse_click_y, 0, 0, false)
 						tip_force_right = false
 					}
 					

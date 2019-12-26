@@ -38,10 +38,8 @@ if (window_busy = "rendercontrol" && view_control_edit_view = view && view_contr
 		prevang = point_direction(mouse_previous_x - content_x, mouse_previous_y - content_y, view_control_pos[X], view_control_pos[Y])
 		rot = angle_difference_fix(ang, prevang) * negate(view_control_flip)
 		view_control_value += rot
-		view_control_value_add += rot
 		
 		view_control_value = el_value_clamp(view_control_edit, view_control_value)
-		view_control_value_add = el_value_clamp(view_control_edit, view_control_value_add)
 		snapval = snap_value
 		
 		// Update

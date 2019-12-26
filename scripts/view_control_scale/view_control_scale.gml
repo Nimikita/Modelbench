@@ -44,9 +44,7 @@ if (window_busy = "rendercontrol" && view_control_edit_view = view && view_contr
 		vecmouse = vec2(mouse_dx, mouse_dy)
 		vecdot = vec2_dot(vec2_normalize(view_control_vec), vec2_normalize(vecmouse))
 		move = (vec2_length(vecmouse) / veclen) * vecdot
-		//move /= el_edit.value_inherit[e_value.SCA_X + view_control_edit]
 		view_control_value += move
-		view_control_value_add += move
 		
 		view_control_value = el_value_clamp(view_control_edit, view_control_value)
 		snapval = snap_value

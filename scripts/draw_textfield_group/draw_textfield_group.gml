@@ -115,7 +115,12 @@ for (var i = 0; i < textfield_amount; i++)
 	{
 		mouse_cursor = cr_size_we
 	
-		if (mouse_dx != 0)
+		if (!mouse_left)
+		{
+			window_busy = ""
+			app_mouse_clear()
+		}
+		else if (mouse_dx != 0)
 		{
 			dragger_drag_value = textfield_value[i]
 			window_busy = textfield_name[i] + "drag" // Start dragging
