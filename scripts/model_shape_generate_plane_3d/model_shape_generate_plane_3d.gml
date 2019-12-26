@@ -12,8 +12,8 @@ if (!is_array(alpha))
 
 // Plane dimensions
 var x1, x2, y1, y2, z1, z2, size, scalef;
-x1 = from[X];	y1 = from[Y];			 z1 = from[Z]
-x2 = to[X];		y2 = from[Y] + scale[Y]; z2 = to[Z]
+x1 = from[X];	y1 = from[Y];	z1 = from[Z]
+x2 = to[X];		y2 = to[Y];		z2 = to[Z]
 size = point3D_sub(to, from)
 scalef = 0.005 // Used to combat Z-fighting
 

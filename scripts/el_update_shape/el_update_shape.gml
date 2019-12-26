@@ -62,11 +62,14 @@ value[e_value.TO_Z] = value[e_value.OFFSET_Z] + value[e_value.HEIGHT]
 from_noscale = point3D(value[e_value.FROM_X], value[e_value.FROM_Y], value[e_value.FROM_Z])
 to_noscale = point3D(value[e_value.TO_X], value[e_value.TO_Y], value[e_value.TO_Z])
 if (type = "plane")
+{
 	to_noscale[Y] = from_noscale[Y]
+	
+	if (value[e_value.EXTRUDE])
+		to_noscale[Y] += 1
+} 
 
 inflate = vec3(value[e_value.INFLATE])
-if (type = "plane")
-	inflate[Y] = 0
 
 from = point3D_mul(point3D_sub(from_noscale, inflate), scale)
 to = point3D_mul(point3D_add(to_noscale, inflate), scale)

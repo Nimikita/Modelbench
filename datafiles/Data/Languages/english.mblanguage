@@ -168,8 +168,8 @@
 		"shortcut": "Shortcut: %1",
 		"pivot/": {
 			"x": "X Pivot: %1",
-			"y": "Y Pivot: %1 (%2)",
-			"z": "Z Pivot: %1 (%2)"
+			"y": "Y Pivot: %1",
+			"z": "Z Pivot: %1"
 		},
 		"position/": {
 			"x": "X Position: %1",

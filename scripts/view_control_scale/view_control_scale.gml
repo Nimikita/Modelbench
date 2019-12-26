@@ -75,7 +75,6 @@ if (window_busy = "rendercontrolscalexyz" && view_control_edit_view = view && vi
 		var snapval;
 		
 		view_control_value = el_value_clamp(e_value.SCA_X, view_control_value)
-		view_control_value_add = el_value_clamp(e_value.SCA_X, view_control_value_add)
 		snapval = snap_value
 		
 		// Update
