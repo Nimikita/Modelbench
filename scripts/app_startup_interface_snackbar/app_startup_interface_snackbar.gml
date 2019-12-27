@@ -6,3 +6,5 @@ snackbar_amount = 0
 snackbar_script = null
 snackbar_script_value = null
 snackbar_mouseon = false
+
+http_snackbar_news = http_get(link_news)

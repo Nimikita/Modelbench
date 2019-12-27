@@ -20,7 +20,7 @@ if (argument_count > 5)
 
 draw_set_font(font_button)
 
-var textwidth = string_width(text_get(name)) + 28;
+var textwidth = string_width(text_exists(name) ? text_get(name) : name) + 28;
 width = textwidth
 
 if (icon != null)
@@ -58,7 +58,7 @@ var textx = xx;
 if (icon != null)
 	textx += 28
 
-draw_label(text_get(name), textx + textwidth/2, yy + height/2, fa_center, fa_middle, labelcolor, labelalpha)
+draw_label(text_exists(name) ? text_get(name) : name, textx + textwidth/2, yy + height/2, fa_center, fa_middle, labelcolor, labelalpha)
 
 if (icon != null)
 	draw_image(spr_icons, icon, xx + 18, yy + 18, 1, 1, labelcolor, labelalpha)

@@ -1775,6 +1775,14 @@
             }
         },
         {
+            "Key": "33b91dad-9db4-4d26-88f9-61b79cef49a0",
+            "Value": {
+                "id": "2a70c2f5-d08b-4eeb-a3b1-1078be97b8f1",
+                "resourcePath": "scripts\\app_event_http\\app_event_http.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "33d55e8a-e426-4f96-9892-f9e43b08d4a1",
             "Value": {
                 "id": "8539fa4c-b989-4b9f-9d84-3b9c4c8c3d82",
@@ -2979,6 +2987,14 @@
             "Value": {
                 "id": "bca67d46-0d66-4a44-a995-2c80b8facd88",
                 "resourcePath": "scripts\\list_event_destroy\\list_event_destroy.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "5a01e5d9-f5e9-4d5f-86fe-b111da261e72",
+            "Value": {
+                "id": "8d805b32-3861-4fcc-bda0-76d18368bd5b",
+                "resourcePath": "scripts\\snackbar_news\\snackbar_news.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -8764,6 +8780,7 @@
         "2ca6a4da-f2ac-4de5-a309-bbf2e1f27cff",
         "b0055d4c-fdde-4893-a8d4-691d321aee5a",
         "a47b5120-0087-4c6a-bdce-18abe110c9c5",
+        "5a01e5d9-f5e9-4d5f-86fe-b111da261e72",
         "f522dc65-f393-46c0-91cf-ec976d32322d",
         "89ff1a9a-1e56-4f9c-a2d2-408178efdf66",
         "dd3b7a85-0f5e-4e57-87aa-7a6fa24dc05d",
@@ -8787,6 +8804,7 @@
         "bdbc41a9-c467-4230-8f13-812429b8d2aa",
         "f8179f20-ddcb-4911-bd85-33c6b4307634",
         "4eb28f04-83f0-4054-8438-4a435dfe5963",
+        "33b91dad-9db4-4d26-88f9-61b79cef49a0",
         "6fec4f8b-dc3f-4983-a98c-03a067f5dffd",
         "bf1818c6-25eb-411c-b4da-b7d0e59eb31b",
         "6ce96a96-afd2-40bc-a645-6a6568a04691",

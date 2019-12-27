@@ -35,15 +35,16 @@ draw_box(dx, dy, dw, dh, false, c_background, 1)
 draw_outline(dx, dy, dw, dh, 1, color, 1)
 draw_dropshadow(dx, dy, dw, dh, c_black, 1)
 
+// Dismiss bar
+if (sb.dismiss_time != no_limit)
+	draw_box(dx, dy + dh - 2, dw * (1 - ((current_time - sb.time_created) / (sb.dismiss_time * 1000))), 2, false, color, 1)
+
 // Top line(In all snackbars)
 dy += 22
 dx += 44
-if (sb.icon_custom)
-	draw_image(sb.icon_custom, 0, content_x + 22, dy, 1, 1, color, 1)
-else
-	draw_image(spr_icons, sb.icon, content_x + 22, dy, 1, 1, color, 1)
+draw_image(spr_icons, sb.icon, content_x + 22, dy, 1, 1, color, 1)
 
-draw_label(text_get(sb.label), dx, dy, fa_left, fa_center, c_text_main, 1, font_label)
+draw_label(text_exists(sb.label) ? text_get(sb.label) : sb.label, dx, dy, fa_left, fa_center, c_text_main, 1, font_label)
 
 if (draw_button_icon("snackbarclose" + string(sb), content_x + content_width - 8 - 28, content_y + 8, 28, 28, false, e_icon.close, null, null))
 	sb.remove = true
@@ -51,7 +52,8 @@ if (draw_button_icon("snackbarclose" + string(sb), content_x + content_width - 8
 // Action 1
 if (sb.description = "" && (sb.snackbar_action1 && !sb.snackbar_action2))
 {
-	var actionx = content_x + content_width - 8 - 28 - 4 - (string_width_font(text_get(sb.snackbar_action1_name), font_button) + 28);
+	var name1 = sb.snackbar_action1_name;
+	var actionx = content_x + content_width - 8 - 28 - 4 - (string_width_font(text_exists(name1) ? text_get(name1) : name1, font_button) + 28);
 	if (draw_button_borderless(sb.snackbar_action1_name, actionx, content_y + 8, null, string(sb), null))
 	{
 		snackbar_script = sb.snackbar_action1
@@ -64,7 +66,7 @@ dy += 22
 // Description line
 if (sb.description != "")
 {
-	draw_label(text_get(sb.description), dx, dy, fa_left, fa_center, c_text_main, 1, font_value)
+	draw_label(text_exists(sb.description) ? text_get(sb.description) : sb.description, dx, dy, fa_left, fa_center, c_text_main, 1, font_value)
 	dy += 22
 }
 
@@ -96,3 +98,6 @@ if (sb.description != "" || (sb.snackbar_action1 && sb.snackbar_action2))
 		}
 	}
 }
+
+if (sb.dismiss_time != no_limit && ((current_time - sb.time_created) > (sb.dismiss_time * 1000)))
+	sb.remove = true

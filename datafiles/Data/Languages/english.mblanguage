@@ -4,7 +4,7 @@
         "language": "English",
         "translator": "Nimi",
         "forversion": "Alpha 8",
-        "lastchange": "2019.12.25"
+        "lastchange": "2019.12.26"
     },
 	"startup/": {
 		"modeldetected": "Unsaved model detected",
@@ -85,6 +85,7 @@
 		},
 		"button/": {
 			"download": "DOWNLOAD NOW",
+			"update": "UPDATE",
 			"remindmelater": "REMIND ME LATER"
 		}
 	},

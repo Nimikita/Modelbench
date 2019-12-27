@@ -10,7 +10,7 @@ draw_event_time_start = 0
 
 log("Windows startup")
 
-http_alert_news = null
+http_snackbar_news = null
 
 window_width = 1
 window_height = 1

@@ -4,3 +4,5 @@ var sb = new_snackbar(e_icon.info, "startupmodeldetected", "startupmodeldetected
 
 sb.snackbar_action1_name = "startuprecovermodel"
 sb.snackbar_action1 = model_recover
+
+return sb
