@@ -122,13 +122,18 @@ if (tex != null)
 	padding = 64
 	tw = texture_width(tex)
 	th = texture_height(tex)
-	if (tex != uv_editor_tex)
+	
+	if (uv_editor_tex != tex)
 	{
-		uv_editor_reset_view()
-						
-		uv_editor_goal_zoom = (min(boxw, boxh) - padding * 2) / max(tw, th)
+		if (uv_editor_tex = null)
+		{
+			uv_editor_reset_view()			
+			uv_editor_goal_zoom = (min(boxw, boxh) - padding * 2) / max(tw, th)
+		}
+		
 		uv_editor_tex = tex
 	}
+	
 	texx = floor(boxx + (boxw / 2 - (tw / 2 + uv_editor_x) * uv_editor_zoom))
 	texy = floor(boxy + (boxh / 2 - (th / 2 + uv_editor_y) * uv_editor_zoom))
 	texw = floor(tw * uv_editor_zoom)

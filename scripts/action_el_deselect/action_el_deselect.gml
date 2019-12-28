@@ -1,4 +1,4 @@
-/// action_el_select(element)
+/// action_el_deselect(element)
 /// @arg element
 
 if (history_undo)
@@ -13,23 +13,20 @@ if (history_undo)
 }
 else
 {
-	var element, shift, par, hobj;
+	var element, par, hobj;
 	hobj = null
 	
 	if (history_redo)
 	{
 		element = save_id_find(history_data.element_save_id)
-		shift = history_data.shift
 	}
 	else
 	{
 		element = argument0
-		shift = keyboard_check(vk_shift)
-		hobj = history_set(action_el_select)
+		hobj = history_set(action_el_deselect)
 		with (hobj)
 		{
 			id.element_save_id = save_id_get(element)
-			id.shift = shift
 			history_save_el_select()
 			extend_amount = 0
 		}
@@ -49,13 +46,9 @@ else
 		par = par.parent
 	}
 	
-	// Select
-	if (!shift)
-		el_deselect_all()
-
+	// Deselect
 	with (element)
-		el_select()
+		el_deselect()
 }
 
 app_update_el_edit()
-//el_update_list()

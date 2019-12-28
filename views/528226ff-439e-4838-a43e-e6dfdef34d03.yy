@@ -8,7 +8,8 @@
         "60815a1a-6b77-4ce0-ae3c-370d6b507ea8",
         "33455fe4-6a54-4696-a220-d2a52c6cdf6b",
         "95202992-9cb4-4fcd-aff6-cc53ae5293b5",
-        "831b414e-c0b1-477b-99c8-4e44e591c4ab"
+        "831b414e-c0b1-477b-99c8-4e44e591c4ab",
+        "ab49e248-2dac-41b6-8a22-c4bb9f3adcab"
     ],
     "filterType": "GMScript",
     "folderName": "Select",

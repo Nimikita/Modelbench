@@ -3,7 +3,7 @@
 if (setting_combine_scale)
 {
 	tab_control(28)
-	draw_textfield_num("elementeditorscalexyz", dx, dy, 86, el_edit.value[e_value.SCA_X], 0.1, 0.001, no_limit, 1, snap_value, tab.scale.tbx_xyz, action_el_sca_xyz)
+	draw_textfield_num("elementeditorscalexyz", dx, dy, 86, el_edit.value[e_value.SCA_X], 0.1, 0.001, no_limit, 1, snap_value, tab.scale.tbx_x, action_el_sca_xyz)
 	tab_next()
 }
 else

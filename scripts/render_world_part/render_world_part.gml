@@ -62,7 +62,11 @@ for (var s = 0; s < ds_list_size(shape_list); s++)
 		render_set_uniform_color("uBlendColor", color_blend, color_alpha)
 		render_set_uniform_color("uMixColor", color_mix, color_mix_percent)
 		render_set_uniform("uBrightness", color_brightness)
-		render_set_uniform_color("uShape", id, 1)
+		
+		if ((render_mode = e_render_mode.CLICK) && app.setting_hide_shapes)
+			render_set_uniform_color("uShape", id.parent, 1)
+		else
+			render_set_uniform_color("uShape", id, 1)
 		
 		vbuffer_render_matrix(shape_vbuffer, rendermatrix)
 	}

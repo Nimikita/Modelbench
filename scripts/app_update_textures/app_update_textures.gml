@@ -16,7 +16,10 @@ if (window_in_focus != window_has_focus())
 		textures_list.update = true
 		tex_preview.update = true
 		
-		with (obj_model_shape)
-			update_vbuffer = true
+		with (obj_model_element)
+		{
+			if (element_type = TYPE_SHAPE)
+				update_vbuffer = true
+		}
 	}
 }

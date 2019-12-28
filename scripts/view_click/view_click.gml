@@ -36,9 +36,7 @@ if (el > 0)
 	
 	// Jump in list
 	if (true)
-	{
 		assets.elements.show = true
-	}
 }
 else
 	if (!keyboard_check(vk_shift))

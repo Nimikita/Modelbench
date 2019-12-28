@@ -19,12 +19,13 @@ itemy = yy
 itemw = dw - (24 * increment)
 itemh = 28
 movehover = app_mouse_box_busy(dx, itemy, dw, itemh, "elementmove")
-itemhover = app_mouse_box(dx, itemy, dw, itemh) && content_mouseon
+itemhover = app_mouse_box(dx, itemy, dw, itemh) && content_mouseon 
 expandhover = false
 lockhover = false
 itemvisible = (itemy + itemh > content_y) && (itemy < content_y + content_height)
 
 hideshapes = setting_hide_shapes || (element_move_parts > 0 && window_busy = "elementmove")
+itemhover = itemhover && !(element.element_type = TYPE_SHAPE && hideshapes)
 
 if (itemvisible)
 {
@@ -103,7 +104,7 @@ ww = max(minw, itemw)
 // Expand/collapse children/shape list(s)
 var haschildren;
 haschildren = element.element_type = TYPE_PART
-haschildren = haschildren && ((element.part_list != null && ds_list_size(element.part_list) > 0) || (!hideshapes && (element.shape_list != null && ds_list_size(element.shape_list) > 0)))
+haschildren = haschildren && ((element.part_list != null && ds_list_size(element.part_list) > 0) || (!setting_hide_shapes && (element.shape_list != null && ds_list_size(element.shape_list) > 0)))
 if (itemvisible && haschildren)
 {
 	if (draw_button_icon("assetspartshowchildren" + string(element), xx, itemy + 4, 20, 20, element.extend, null, null, window_busy = "elementselection", (element.extend ? "tooltipcollapse" : "tooltipexpand"), spr_arrow_small_ani))
@@ -235,14 +236,24 @@ if (itemvisible && itemhover && !expandhover && !lockhover && !visiblehover)
 		}
 	}
 	
+	// Deselect if control if held down, select if not held down
 	if (mouse_left_released && window_busy = "")
-		action_el_select(element)
+	{
+		if (keyboard_check(vk_control))
+			action_el_deselect(element)
+		else
+			action_el_select(element)
+	}
 }
 else
 	element.list_mouseon = false
 
+// Overlay for shapes when moving parts in hierarchy
+if (element.element_type = TYPE_SHAPE && hideshapes)
+	draw_box(dx, itemy, dw, itemh, false, c_background, 0.5)
+
 // Move elements
-if (itemvisible && movehover && window_busy = "elementmove")
+if (itemvisible && movehover && window_busy = "elementmove" && !(element.element_type = TYPE_SHAPE && hideshapes))
 {
 	var indexmove, list, index, movesize;
 	indexmove = (element_move_parts = 0 && element.element_type = TYPE_PART ? false : true)
@@ -290,7 +301,7 @@ dy += 28
 if (element.element_type = TYPE_PART && element.extend)
 {
 	// Draw shapes
-	if (element.shape_list != null && !hideshapes)
+	if (element.shape_list != null && !setting_hide_shapes)
 	{
 		if (((content_x + content_width) - linex > 120))
 			draw_box(linex, itemy + itemh, 1, (28 * ds_list_size(element.shape_list)) - 13, false, c_border, a_border)
