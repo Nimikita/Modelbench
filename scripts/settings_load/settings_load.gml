@@ -167,6 +167,8 @@ if (ds_map_valid(rendermap))
 var previewmap = map[?"preview"];
 if (ds_map_valid(previewmap))
 {
+	setting_preview_overlay = value_get_real(previewmap[?"overlay"], setting_preview_overlay)
+	
 	setting_preview_scenery = preview_scenery_find(value_get_string(previewmap[?"scenery"], ""))
 	setting_preview_time = value_get_real(previewmap[?"time"], setting_preview_time)
 	setting_preview_light_rotation = value_get_real(previewmap[?"light_rotation"], setting_preview_light_rotation)

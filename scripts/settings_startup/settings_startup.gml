@@ -71,7 +71,7 @@ setting_look_sensitivity = .75
 setting_fast_modifier = 2.25
 setting_slow_modifier = 0.25
 
-setting_theme = theme_darker
+setting_theme = theme_light
 setting_accent = 6
 setting_accent_custom = hex_to_color("03A9F4")
 setting_language_filename = "english.mblanguage"
@@ -102,6 +102,8 @@ setting_render_ssao_blur_passes = 2
 setting_render_aa = true
 
 // Preview settings
+setting_preview_overlay = false
+
 setting_preview_scenery = null
 setting_preview_background_top = c_white
 setting_preview_background_bottom = c_white

@@ -201,6 +201,8 @@
 			"hide": "Hide UV editor",
 			"show": "Show UV editor"
 		},
+		"overlayhide": "Hide overlay",
+		"overlayshow": "Show overlay",
 		"customaccentcolor": "Custom accent color",
 		"scenery/":
 		{

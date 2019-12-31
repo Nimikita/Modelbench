@@ -133,6 +133,7 @@ enum e_icon
 	dusk,
 	day,
 	night,
+	square_ratio,
 	
 	placeholder = 11
 }

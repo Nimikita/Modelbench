@@ -53,3 +53,7 @@ if (program_mode = e_mode.MODELING)
 	draw_button_icon("toolbaruveditor", dx, dy, 28, 28, setting_show_uv_editor, e_icon.uveditor, action_toolbar_show_uv_editor, false, (setting_show_uv_editor ? "tooltipuveditorhide" : "tooltipuveditorshow"))
 	tip_set_shortcut(-1, false)
 }
+else if (program_mode = e_mode.PREVIEW)
+{
+	draw_button_icon("toolbaroverlay", dx, dy, 28, 28, setting_preview_overlay, e_icon.square_ratio, action_toolbar_preview_overlay, false, (setting_preview_overlay ? "tooltipoverlayhide" : "tooltipoverlayshow"))
+}
