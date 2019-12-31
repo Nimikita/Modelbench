@@ -28,6 +28,14 @@ root_scale = 1
 
 camera_reset()
 
+popup = null
+with (obj_popup)
+{
+	offset_x = 0
+	offset_y = 0
+}
+popup_close()
+
 log("Destroying instances")
 
 with (obj_model_element)

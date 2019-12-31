@@ -103,7 +103,9 @@ dx = content_x
 dy = content_y
 dw = content_width
 dh = content_height
-script_execute(popup.script)
+
+if (popup.script != null)
+	script_execute(popup.script)
 
 if (popup_mouseon && mouse_cursor = cr_default && mouse_left_pressed)
 	window_busy = "popupclick"

@@ -16,7 +16,7 @@ list_add_item("menuimportmodel", null, "", null, e_icon.import, null, action_mod
 //listitem_last.disabled = true
 
 list_add_item("menusettings", settings, "", null, e_icon.settings, e_icon.arrow_right_small, action_open_settings, false) // Open settings
-list_add_item("menuabout", about, "", null, e_icon.info, e_icon.arrow_right_small, action_open_about) // Open about
+list_add_item("menuabout", null, "", null, e_icon.info, e_icon.arrow_right_small, action_open_about) // Open about
 menu_panel_list.get_name = true
 
 textures_list = new_list()

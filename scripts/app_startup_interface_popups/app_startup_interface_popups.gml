@@ -23,3 +23,6 @@ with (popup_colorpicker)
 	tbx_blue.next_tbx = tbx_hexadecimal
 	tbx_hexadecimal.next_tbx = tbx_red
 }
+
+// About popup
+popup_about = new_popup("about", popup_about_draw, 720, 480, false)

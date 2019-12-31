@@ -4,7 +4,7 @@ content_x = 0
 content_y = 0
 content_width = window_width
 content_height = window_height
-content_mouseon = app_mouse_box(content_x, content_y, content_width, content_height)
+content_mouseon = app_mouse_box(content_x, content_y, content_width, content_height) && !popup_mouseon && !snackbar_mouseon && !context_menu_mouseon
 
 // Draw background
 draw_clear_alpha(c_background, 1)
@@ -18,7 +18,7 @@ draw_image(spr_startup_right, pattern, window_width, 0)
 draw_sprite(spr_logo, 0, window_width / 2, 96)
 
 // Version
-draw_label("v " + modelbench_version_full, (window_width / 2) + 245, 130, fa_left, fa_bottom, c_text_secondary, a_text_secondary, font_value)
+draw_button_text(text_get("startupversion", modelbench_version_full), (window_width / 2) + 245, 130, popup_show, popup_about)
 
 dy = 240
 dw = min(window_width - 48, 996)

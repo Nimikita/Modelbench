@@ -254,5 +254,3 @@ with (settings)
 	}
 }
 
-// About
-about = new_tab(null, false, header_about)

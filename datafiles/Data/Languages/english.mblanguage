@@ -4,7 +4,7 @@
         "language": "English",
         "translator": "Nimi",
         "forversion": "Alpha 8",
-        "lastchange": "2019.12.26"
+        "lastchange": "2019.12.31"
     },
 	"startup/": {
 		"modeldetected": "Unsaved model detected",
@@ -14,7 +14,8 @@
 		"newmodel": "NEW MODEL",
 		"recentmodels": "Recent models",
 		"startfromscratch": "Start from scratch...",
-		"loadatemplate": "Load a template..."
+		"loadatemplate": "Load a template...",
+		"version": "v %1"
 	},
 	"recent/": {
 		"lastopened": "Last opened",
@@ -528,16 +529,13 @@
 		"graphicslighting": "Lighting"
 	},
 	"about/": {
+		"version": "Version %1",
+		"releasedate": ", released %1",
+		"forversion": "For %1",
 		"credits": "CREDITS",
-		"forversion": "FOR %1",
 		"development": "DEVELOPMENT",
 		"uibranding": "UI & BRANDING",
 		"specialthanks": "SPECIAL THANKS",
-		"betatesting": "BETA TESTING",
-		"gmruntime": "GM RUNTIME",
-		"gmruntimeprefix": "v%1",
-		"compileoutput": "COMPILE OUTPUT",
-		"compileoutputvm": "Virtual machine",
-		"compileoutputyyc": "YoYo Compiler"
+		"betatesting": "BETA TESTING"
 	}
 }

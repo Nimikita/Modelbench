@@ -8,7 +8,7 @@
 #macro modelbench_version			"0.8"
 #macro modelbench_version_full		modelbench_version + ""
 #macro modelbench_version_extra		""
-#macro modelbench_version_date		"2019.12.4"
+#macro modelbench_version_date		"30.12.2019"
 #macro gm_runtime					GM_runtime_version
 
 // File formats
