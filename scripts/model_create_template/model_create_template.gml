@@ -1,6 +1,6 @@
 /// model_create_template()
 
-var fn = file_dialog_open_model();
+var fn = file_dialog_open_model_template();
 
 if (fn = "")
 	return 0

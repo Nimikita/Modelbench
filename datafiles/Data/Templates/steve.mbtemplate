@@ -1,0 +1,179 @@
+{
+	"name": "",
+	"texture": "steve.png",
+	"texture_size": [ 64, 64 ],
+	"player_skin": true,
+	"parts": [
+		{
+			"name": "body",
+			"position": [ 0, 12, 0 ],
+			"bend": {
+				"part": "upper",
+				"axis": [ "x", "y", "z" ],
+				"direction": [ "both", "both", "both" ],
+				"invert": [ 0, 0, 0 ],
+				"angle": [ 0, 0, 0 ],
+				"offset": 6,
+				"size": 10
+			},
+			"shapes": [
+				{
+					"type": "block",
+					"from": [ -4, 0, -2 ],
+					"to": [ 4, 12, 2 ],
+					"uv": [ 20, 20 ]
+				},
+				{
+					"type": "block",
+					"from": [ -4, -6, -2 ],
+					"to": [ 4, 6, 2 ],
+					"position": [ 0, 6, 0 ],
+					"scale": [ 1.0625, 1.042, 1.125 ],
+					"uv": [ 20, 36 ]
+				}
+			],
+			"parts": [
+				{
+					"name": "head",
+					"position": [ 0, 12, 0 ],
+					"shapes": [
+						{
+							"type": "block",
+							"from": [ -4, 0, -4 ],
+							"to": [ 4, 8, 4 ],
+							"uv": [ 8, 8 ]
+						}
+					],
+					"parts": [
+						{
+							"name": "hat",
+							"position": [ 0, 0, 0 ],
+							"shapes": [
+								{
+									"type": "block",
+									"from": [ -4, -4, -4 ],
+									"to": [ 4, 4, 4 ],
+									"position": [ 0, 4, 0 ],
+									"scale": [ 1.0625, 1.0625, 1.0625 ],
+									"uv": [ 40, 8 ]
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "right_arm",
+					"position": [ -6, 10, 0 ],
+					"bend": {
+						"part": "lower",
+						"axis": "x",
+						"direction": "forward",
+						"invert": 0,
+						"angle": 0,
+						"offset": -4
+					},
+					"shapes": [
+						{
+							"type": "block",
+							"from": [ -2, -10, -2 ],
+							"to": [ 2, 2, 2 ],
+							"uv": [ 44, 20 ]
+						},
+						{
+							"type": "block",
+							"from": [ -2, -6, -2 ],
+							"to": [ 2, 6, 2 ],
+							"position": [ 0, -4, 0 ],
+							"scale": [ 1.125, 1.042, 1.125 ],
+							"uv": [ 44, 36 ]
+						}
+					]
+				},
+				{
+					"name": "left_arm",
+					"position": [ 6, 10, 0 ],
+					"bend": {
+						"part": "lower",
+						"axis": "x",
+						"direction": "forward",
+						"invert": 0,
+						"angle": 0,
+						"offset": -4
+					},
+					"shapes": [
+						{
+							"type": "block",
+							"from": [ -2, -10, -2 ],
+							"to": [ 2, 2, 2 ],
+							"uv": [ 36, 52 ]
+						},
+						{
+							"type": "block",
+							"from": [ -2, -6, -2 ],
+							"to": [ 2, 6, 2 ],
+							"position": [ 0, -4, 0 ],
+							"scale": [ 1.125, 1.042, 1.125 ],
+							"uv": [ 52, 52 ]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "right_leg",
+			"position": [ -2, 12, 0 ],
+			"bend": {
+				"part": "lower",
+				"axis": "x",
+				"direction": "backward",
+				"invert": 0,
+				"angle": 0,
+				"offset": -6
+			},
+			"shapes": [
+				{
+					"type": "block",
+					"from": [ -2, -12, -2 ],
+					"to": [ 2, 0, 2 ],
+					"uv": [ 4, 20 ]
+				},
+				{
+					"type": "block",
+					"from": [ -2, -6, -2 ],
+					"to": [ 2, 6, 2 ],
+					"position": [ 0, -6, 0 ],
+					"scale": [ 1.125, 1.042, 1.125 ],
+					"uv": [ 4, 36 ]
+				}
+			]
+		},
+		{
+			"name": "left_leg",
+			"position": [ 2, 12, 0 ],
+			"bend": {
+				"part": "lower",
+				"axis": "x",
+				"direction": "backward",
+				"invert": 0,
+				"angle": 0,
+				"offset": -6
+			},
+			"shapes": [
+				{
+					"type": "block",
+					"from": [ -2, -12, -2 ],
+					"to": [ 2, 0, 2 ],
+					"uv": [ 20, 52 ]
+				},
+				{
+					"type": "block",
+					"from": [ -2, -6, -2 ],
+					"to": [ 2, 6, 2 ],
+					"position": [ 0, -6, 0 ],
+					"scale": [ 1.125, 1.042, 1.125 ],
+					"uv": [ 4, 52 ]
+				}
+			]
+		}
+	]
+}

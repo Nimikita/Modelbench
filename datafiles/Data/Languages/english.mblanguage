@@ -55,7 +55,8 @@
 			"imagecaption": "Open image",
 			"model": "Mine-imator model",
 			"modelbackup": "Modelbench model backups",
-            "modelcaption": "Open Mine-imator model"
+            "modelcaption": "Open Mine-imator model",
+			"modeltemplate": "Modelbench template"
 		},
 		"save/": {
 			"model": "Mine-imator model",

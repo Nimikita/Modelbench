@@ -20,6 +20,7 @@
 #macro models_directory				working_directory + "Models\\"
 #macro fonts_directory				data_directory + "Fonts\\"
 #macro languages_directory			data_directory + "Languages\\"
+#macro templates_directory			data_directory + "Templates\\"
 
 // Files
 #macro language_file				languages_directory + "english.mblanguage"
