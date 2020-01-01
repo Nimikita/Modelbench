@@ -65,5 +65,10 @@ if (icon != null)
 
 microani_update(mouseon, mouseclick, false)
 
-if (mouseon && mouse_left_released && script != null)
-	script_execute(script)
+if (mouseon && mouse_left_released)
+{
+	if (script != null)
+		script_execute(script)
+	
+	return true
+}

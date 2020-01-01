@@ -73,3 +73,7 @@ draw_label("David", dx, dy + 4, fa_left, fa_bottom, c_text_secondary, a_text_sec
 dy += 19
 draw_button_text("@stuffbydavidn", dx, dy, open_url, "https://twitter.com/stuffbydavidn", "https://twitter.com/stuffbydavidn")
 dy += 54
+
+// Donate button
+if (draw_button_secondary("aboutdonate", content_x + content_width - ((string_width_font(text_get("aboutdonate"), font_button) + 28 + 28) + 12), content_y + content_height - 36 - 8, null, null, e_icon.donate, fa_right))
+	open_url("https://www.paypal.me/BaileyKrueger0/5")

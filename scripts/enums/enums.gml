@@ -134,6 +134,7 @@ enum e_icon
 	day,
 	night,
 	square_ratio,
+	donate,
 	
 	placeholder = 11
 }
