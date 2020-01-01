@@ -4,7 +4,7 @@
         "language": "English",
         "translator": "Nimi",
         "forversion": "Alpha 8",
-        "lastchange": "2019.12.31"
+        "lastchange": "2020.01.01"
     },
 	"startup/": {
 		"modeldetected": "Unsaved model detected",
@@ -414,7 +414,8 @@
 		"facecamera": "Face camera",
 		"hover": "Hover",
 		"extrude": "Extrude",
-		"hidebackface": "Hide backface",
+		"hidefront": "Hide front",
+		"hideback": "Hide back",
 		"windaxis": "Wind axis",
 		"windaxis/": {
 			"none": "None",

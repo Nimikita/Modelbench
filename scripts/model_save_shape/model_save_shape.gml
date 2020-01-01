@@ -47,8 +47,11 @@ if (!value[e_value.BEND])
 
 if (type = "plane")
 {
-	if (value[e_value.HIDE_BACKFACE])
-		json_save_var_bool("hide_backface", true)
+	if (value[e_value.HIDE_BACK])
+		json_save_var_bool("hide_back", true)
+	
+	if (value[e_value.HIDE_FRONT])
+		json_save_var_bool("hide_front", true)
 
 	if (value[e_value.EXTRUDE])
 		json_save_var_bool("3d", true)

@@ -11,7 +11,8 @@
         "04a41aa9-2574-4ba6-8b76-90ace6e742bd",
         "2ede3f44-cd43-49e9-aac0-cc69bb31794b",
         "0712a972-04d5-4cb5-9efe-2f3dd9c15118",
-        "3ecfb2d0-3bee-4580-aaf8-0758dc058b35"
+        "3ecfb2d0-3bee-4580-aaf8-0758dc058b35",
+        "38281822-4ba6-407e-aa91-65172c9b48b9"
     ],
     "filterType": "GMScript",
     "folderName": "Appearance",

@@ -80,8 +80,12 @@ with (new(obj_model_element))
 	// Invert (optional)
 	value[e_value.INVERT] = value_get_real(map[?"invert"], false)
 	
-	// Hide backface (optional, 2D surfaces only)
-	value[e_value.HIDE_BACKFACE] = value_get_real(map[?"hide_backface"], false)
+	// Hide front/back plane faces
+	value[e_value.HIDE_FRONT] = value_get_real(map[?"hide_front"], false)
+	value[e_value.HIDE_BACK] = value_get_real(map[?"hide_back"], false)
+	
+	// Hide backface (old name)
+	value[e_value.HIDE_BACK] = value_get_real(map[?"hide_backface"], false)
 	
 	// Face camera (optional, overrides rotation when rendering)
 	value[e_value.FACE_CAMERA] = value_get_real(map[?"face_camera"], false)

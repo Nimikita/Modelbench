@@ -31,9 +31,13 @@ if (el_edit.element_type = TYPE_SHAPE && el_edit.type = "plane")
 	tab_next()
 }
 
-if (el_edit.element_type = TYPE_SHAPE && el_edit.type = "plane" && !el_edit.value[e_value.EXTRUDE])
+if (el_edit.element_type = TYPE_SHAPE && el_edit.type = "plane")
 {
 	tab_control_checkbox()
-	draw_checkbox("elementeditorhidebackface", dx, dy, el_edit.value[e_value.HIDE_BACKFACE], action_el_hide_backface)
+	draw_checkbox("elementeditorhidefront", dx, dy, el_edit.value[e_value.HIDE_FRONT], action_el_hide_front)
+	tab_next()
+	
+	tab_control_checkbox()
+	draw_checkbox("elementeditorhideback", dx, dy, el_edit.value[e_value.HIDE_BACK], action_el_hide_back)
 	tab_next()
 }

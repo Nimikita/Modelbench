@@ -55,7 +55,8 @@ switch (argument0)
 	case e_value.FACE_CAMERA:
 	case e_value.HOVER:
 	case e_value.EXTRUDE:
-	case e_value.HIDE_BACKFACE:
+	case e_value.HIDE_FRONT:
+	case e_value.HIDE_BACK:
 	
 	case e_value.WIND_AXIS:
 	case e_value.WIND_ZMIN_ENABLE:

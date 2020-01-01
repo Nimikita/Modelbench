@@ -45,7 +45,8 @@ if (other.object_index != app && color_inherit)
 // Shape appearance
 texture_mirror = value[e_value.TEX_MIRROR]
 invert = value[e_value.INVERT]
-hide_backface = value[e_value.HIDE_BACKFACE]
+hide_back = value[e_value.HIDE_BACK]
+hide_front = value[e_value.HIDE_FRONT]
 face_camera = value[e_value.FACE_CAMERA]
 item_bounce = value[e_value.HOVER]
 

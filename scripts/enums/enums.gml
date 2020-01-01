@@ -209,7 +209,8 @@ enum e_value
 	FACE_CAMERA,
 	HOVER,
 	EXTRUDE,
-	HIDE_BACKFACE,
+	HIDE_FRONT,
+	HIDE_BACK,
 	
 	// Shape UV
 	UV_X,
