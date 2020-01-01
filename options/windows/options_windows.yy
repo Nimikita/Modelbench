@@ -7,7 +7,7 @@
     "option_windows_borderless": false,
     "option_windows_company_info": "",
     "option_windows_copy_exe_to_dest": false,
-    "option_windows_copyright_info": "(c) 2019 Bailey Krueger",
+    "option_windows_copyright_info": "(c) 2020 Bailey Krueger",
     "option_windows_description_info": "",
     "option_windows_disable_sandbox": true,
     "option_windows_display_cursor": true,
@@ -31,7 +31,7 @@
     "option_windows_texture_page": "2048x2048",
     "option_windows_use_splash": false,
     "option_windows_version": {
-        "build": 7,
+        "build": 8,
         "major": 0,
         "minor": 0,
         "revision": 0
