@@ -15,7 +15,7 @@ with (tex)
 {
 	save_id = save.save_id
 	
-	tex_load()
+	tex_load(filepath)
 	
 	// Restore element usage
 	for (var s = 0; s < save.usage_el_texture_amount; s++)

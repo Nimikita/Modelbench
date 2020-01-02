@@ -1,7 +1,13 @@
-/// tex_load()
+/// tex_load([fn])
+/// @arg [fn]
 /// @desc Loads a texture
 
-var fn = load_folder + "//" + filename;
+var fn;
+
+if (argument_count = 0)
+	fn = load_folder + "//" + filename
+else
+	fn = argument[0]
 
 debug("Loading texture", fn)
 

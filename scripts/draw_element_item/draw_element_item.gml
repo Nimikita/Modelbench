@@ -39,19 +39,19 @@ if (itemvisible)
 	else if (element.selected || itemhover || element = context_menu_value)
 		draw_box(dx, itemy, dw, itemh, false, c_overlay, a_overlay)
 	
-	// Add to select list
-	if ((window_busy = "elementselection" || window_busy = "elementselectiondone"))
-	{
-		var highlight = box_intersect(dx, itemy, dw, itemh, element_select_x, element_select_y, element_select_width, element_select_height);
-	
-		if (highlight)
-			draw_box(dx, itemy, dw, itemh, false, c_accent_overlay, a_accent_overlay)
-	
-		if (element_select_list != null && highlight)
-			ds_list_add(element_select_list, element)
-	}
-	
 	draw_set_font(font_value)
+}
+
+// Add to select list
+if ((window_busy = "elementselection" || window_busy = "elementselectiondone"))
+{
+	var highlight = box_intersect(dx, itemy, dw, itemh, element_select_x, element_select_y, element_select_width, element_select_height);
+	
+	if (highlight)
+		draw_box(dx, itemy, dw, itemh, false, c_accent_overlay, a_accent_overlay)
+	
+	if (element_select_list != null && highlight)
+		ds_list_add(element_select_list, element)
 }
 
 xx = itemx + itemw - 24

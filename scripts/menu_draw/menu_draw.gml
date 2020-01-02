@@ -58,6 +58,9 @@ if (window_busy = "menu")
 content_mouseon = app_mouse_box(menu_x, yy, menu_w, h)
 if (menu_ani_type = "")
 {
+	if (menu_scroll.needed && content_mouseon)
+		window_scroll_focus = string(menu_scroll)
+	
 	menu_scroll.snap_value = menu_item_h
 	scrollbar_draw(menu_scroll, e_scroll.VERTICAL, menu_x + menu_w - 9, yy, h, (itemsy * menu_item_h))
 }

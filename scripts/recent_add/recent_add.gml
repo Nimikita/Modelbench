@@ -3,6 +3,9 @@
 
 recent_add_wait = false
 
+if (model_temporary)
+	return false
+
 // Find model in list
 var obj = null;
 for (var i = 0; i < ds_list_size(recent_list); i++)

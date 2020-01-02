@@ -13,9 +13,7 @@ else if (!history_redo)
 {
 	hobj = history_set(action_texture_remove)
 	with (hobj)
-	{
 		save_tex = history_save_tex(tex)
-	}
 }
 
 if (!history_undo)
@@ -36,3 +34,4 @@ if (!history_undo)
 
 el_update_part()
 textures_list.update = true
+res_edit = null

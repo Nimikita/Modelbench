@@ -50,8 +50,11 @@ if (ds_map_valid(controlsmap))
 	setting_key_redo = value_get_real(controlsmap[?"key_redo"], setting_key_redo)
 	setting_key_redo_control = value_get_real(controlsmap[?"key_redo_control"], setting_key_redo_control)
 	
-	setting_key_tool_select = value_get_real(controlsmap[?"key_tool_select"], setting_key_tool_select)
-	setting_key_tool_select_control = value_get_real(controlsmap[?"key_tool_select_control"], setting_key_tool_select_control)
+	setting_key_select_elements = value_get_real(controlsmap[?"key_select_elements"], setting_key_select_elements)
+	setting_key_select_elements_control = value_get_real(controlsmap[?"key_select_elements_control"], setting_key_select_elements_control)
+	
+	setting_key_duplicate_elements = value_get_real(controlsmap[?"key_duplicate_elements"], setting_key_duplicate_elements)
+	setting_key_duplicate_elements_control = value_get_real(controlsmap[?"key_duplicate_elements_control"], setting_key_duplicate_elements_control)
 	
 	setting_key_uv_editor = value_get_real(controlsmap[?"key_uv_editor"], setting_key_uv_editor)
 	setting_key_uv_editor_control = value_get_real(controlsmap[?"key_uv_editor_control"], setting_key_uv_editor_control)

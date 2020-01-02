@@ -36,7 +36,7 @@
 		"pintip": "Pin",
 		"removetip": "Remove",
 		"filename": "File name",
-		"models": "Recent models",
+		"models": "Recent models"
 	},
 	"error/": {
 		"fileunreadable": "The file could not be read correctly. See the log for more details. Try loading a backup file(.mbbackup) if one is available.(Change the extention in the file browser.)",
