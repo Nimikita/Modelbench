@@ -4,7 +4,7 @@
 draw_box(dx, dy, dw, 128, false, c_overlay, a_overlay)
 
 // Close
-if (draw_button_icon("aboutclose", dx + dw - 12 - 28, dy + 8, 28, 28, false, e_icon.close, null, false))
+if (draw_button_icon("aboutclose", dx + dw - 12 - 28, dy + 8, 28, 28, false, icons.CLOSE, null, false))
 	popup_close()
 
 // Logo
@@ -75,5 +75,5 @@ draw_button_text("@stuffbydavidn", dx, dy, open_url, "https://twitter.com/stuffb
 dy += 54
 
 // Donate button
-if (draw_button_secondary("aboutdonate", content_x + content_width - ((string_width_font(text_get("aboutdonate"), font_button) + 28 + 28) + 12), content_y + content_height - 36 - 8, null, null, e_icon.donate, fa_right))
+if (draw_button_secondary("aboutdonate", content_x + content_width - ((string_width_font(text_get("aboutdonate"), font_button) + 28 + 28) + 12), content_y + content_height - 36 - 8, null, null, icons.DONATE, fa_right))
 	open_url("https://www.paypal.me/BaileyKrueger0/5")

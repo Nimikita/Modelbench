@@ -33,7 +33,7 @@ if (mode = "simple")
 		// Remove
 		if (hover)
 		{
-			if (draw_button_icon("recentdelete", iconx, recenty + 8, 28, 28, false, e_icon.delete, null, false, "tooltipremove"))
+			if (draw_button_icon("recentdelete", iconx, recenty + 8, 28, 28, false, icons.DELETE, null, false, "tooltipremove"))
 				action_recent_remove(item)
 			mouseon = mouseon && !app_mouse_box(iconx, recenty + 8, 28, 28)
 		}
@@ -102,7 +102,7 @@ if (mode = "list")
 	var filenamesort = (recent_sort_mode = e_recent_sort.filename_ascend || recent_sort_mode = e_recent_sort.filename_descend);
 	if (app_mouse_box(namex, recenty, namewidth, 28) || filenamesort)
 	{
-		if (draw_button_icon("recentfilenamesort", namex + string_width_font(text_get("recentfilename"), font_emphasis) + 12, recenty, 28, 28, filenamesort, e_icon.sort_down + (recent_sort_mode = e_recent_sort.filename_ascend)))
+		if (draw_button_icon("recentfilenamesort", namex + string_width_font(text_get("recentfilename"), font_emphasis) + 12, recenty, 28, 28, filenamesort, icons.SORT_DOWN + (recent_sort_mode = e_recent_sort.filename_ascend)))
 			action_recent_sort_filename()
 	}
 	
@@ -112,7 +112,7 @@ if (mode = "list")
 	var datesort = (recent_sort_mode = e_recent_sort.date_ascend || recent_sort_mode = e_recent_sort.date_descend);
 	if (app_mouse_box(timex, recenty, timewidth, 28) || datesort)
 	{
-		if (draw_button_icon("recentrecentsort", timex + string_width_font(text_get("recentlastopened"), font_emphasis) + 12, recenty, 28, 28, datesort, e_icon.sort_down + (recent_sort_mode = e_recent_sort.date_ascend)))
+		if (draw_button_icon("recentrecentsort", timex + string_width_font(text_get("recentlastopened"), font_emphasis) + 12, recenty, 28, 28, datesort, icons.SORT_DOWN + (recent_sort_mode = e_recent_sort.date_ascend)))
 			action_recent_sort_date()
 	}
 	
@@ -139,7 +139,7 @@ if (mode = "list")
 		// Remove
 		if (hover)
 		{
-			if (draw_button_icon("recentdelete", iconx, recenty + 8, 28, 28, false, e_icon.delete, null, false, "tooltipremove"))
+			if (draw_button_icon("recentdelete", iconx, recenty + 8, 28, 28, false, icons.DELETE, null, false, "tooltipremove"))
 				action_recent_remove(item)
 			mouseon = mouseon && !app_mouse_box(iconx, recenty + 8, 28, 28)
 		}
@@ -148,7 +148,7 @@ if (mode = "list")
 		// Oh yeah. Pin it
 		if (hover || item.pinned)
 		{
-			if (draw_button_icon("recentpin" + item.filename, iconx, recenty + 8, 28, 28, item.pinned, e_icon.pin, null, false, "tooltippin"))
+			if (draw_button_icon("recentpin" + item.filename, iconx, recenty + 8, 28, 28, item.pinned, icons.PIN, null, false, "tooltippin"))
 				action_recent_pin(item)
 			mouseon = mouseon && !app_mouse_box(iconx, recenty + 8, 28, 28)
 		}

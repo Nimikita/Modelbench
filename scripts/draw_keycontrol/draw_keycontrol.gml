@@ -74,7 +74,7 @@ edity = yy + 2
 editx = xx + dw - 24 + icon_button_offset
 
 draw_set_alpha(hover)
-if (draw_button_icon(name + "editbutton", editx, edity, 24, 24, window_busy = name, e_icon.edit, null, false, "tooltipeditshortcut"))
+if (draw_button_icon(name + "editbutton", editx, edity, 24, 24, window_busy = name, icons.EDIT, null, false, "tooltipeditshortcut"))
 	window_busy = name
 draw_set_alpha(1)
 

@@ -45,7 +45,7 @@ draw_outline(xx + 2, yy + 2, 24, 24, 2, (color_get_lum(color) > 150 ? c_black : 
 var iconcolor, iconalpha;
 iconcolor = (color_get_lum(color) > 150 ? c_black : c_white)
 iconalpha = (color_get_lum(color) > 150 ? 0.5 : 1)
-draw_image(spr_icons, e_icon.eyedropper, xx + 14, yy + 14, 1, 1, iconcolor, iconalpha * max(mcroani_arr[e_mcroani.HOVER], mcroani_arr[e_mcroani.PRESS], mcroani_arr[e_mcroani.ACTIVE]))
+draw_image(spr_icons, icons.EYEDROPPER, xx + 14, yy + 14, 1, 1, iconcolor, iconalpha * max(mcroani_arr[e_mcroani.HOVER], mcroani_arr[e_mcroani.PRESS], mcroani_arr[e_mcroani.ACTIVE]))
 
 // Hover effect
 draw_box_hover(xx, yy, 28, 28, mcroani_arr[e_mcroani.HOVER])

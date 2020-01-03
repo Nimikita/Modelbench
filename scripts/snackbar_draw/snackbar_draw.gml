@@ -46,7 +46,7 @@ draw_image(spr_icons, sb.icon, content_x + 22, dy, 1, 1, color, 1)
 
 draw_label(text_exists(sb.label) ? text_get(sb.label) : sb.label, dx, dy, fa_left, fa_center, c_text_main, 1, font_label)
 
-if (draw_button_icon("snackbarclose" + string(sb), content_x + content_width - 8 - 28, content_y + 8, 28, 28, false, e_icon.close, null, null))
+if (draw_button_icon("snackbarclose" + string(sb), content_x + content_width - 8 - 28, content_y + 8, 28, 28, false, icons.CLOSE, null, null))
 	sb.remove = true
 
 // Action 1

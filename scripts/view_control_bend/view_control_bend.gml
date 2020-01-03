@@ -80,7 +80,7 @@ render_set_culling(true)
 if (!offseterror)
 {
 	draw_circle_ext(offsetcoord[X], offsetcoord[Y], 14, false, c_background, 1)
-	draw_image(spr_icons, e_icon.bend, offsetcoord[X], offsetcoord[Y], 1, 1, c_text_main, 1)
+	draw_image(spr_icons, icons.BEND, offsetcoord[X], offsetcoord[Y], 1, 1, c_text_main, 1)
 }
 
 // Size

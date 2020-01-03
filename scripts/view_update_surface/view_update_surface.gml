@@ -100,15 +100,15 @@ if (el_edit_amount > 0 && program_mode = e_mode.MODELING)
 						
 						var icon = null;
 						if (tool_selected = e_tool.PIVOT)
-							icon = e_icon.center
+							icon = icons.CENTER
 						else if (tool_selected = e_tool.MOVE)
-							icon = e_icon.toolset_position
+							icon = icons.TOOLSET_POSITION
 						else if (tool_selected = e_tool.ROTATE)
-							icon = e_icon.toolset_rotate
+							icon = icons.TOOLSET_ROTATE
 						else if (tool_selected = e_tool.SCALE)
-							icon = e_icon.toolset_scale
+							icon = icons.TOOLSET_SCALE
 						else if (tool_selected = e_tool.TRANSFORM)
-							icon = e_icon.transform
+							icon = icons.TRANSFORM
 						
 						if (icon != null)
 							draw_image(spr_icons, icon, origin[X], origin[Y], 2, 2, c_text_secondary, a_text_secondary)

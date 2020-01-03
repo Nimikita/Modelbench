@@ -44,7 +44,7 @@ else
 // New model
 draw_button_options("startupnewmodeloptions", dx, dy, 24, 36)
 dx -= newmodelwidth
-draw_button_primary("startupnewmodel", dx, dy, newmodelwidth, model_create, e_icon.new_file)
+draw_button_primary("startupnewmodel", dx, dy, newmodelwidth, model_create, icons.NEW_FILE)
 
 if (recent_list_amount > 0)
 	dx -= 12 + browsewidth
@@ -52,7 +52,7 @@ else
 	dx = centerx 
 
 // Browse
-draw_button_secondary("startupbrowse", dx, dy, browsewidth, model_load, e_icon.open_file)
+draw_button_secondary("startupbrowse", dx, dy, browsewidth, model_load, icons.OPEN_FILE)
 
 // Show recent models
 if (recent_list_amount > 0)
@@ -60,7 +60,7 @@ if (recent_list_amount > 0)
 	// Recent model grid/list button
 	dx -= (12 + 28)
 	
-	if (draw_button_icon("recentlistmode", dx, dy + 4, 28, 28, false, (recent_display_mode = "grid" ? e_icon.recent_list : e_icon.recent_grid)))
+	if (draw_button_icon("recentlistmode", dx, dy + 4, 28, 28, false, (recent_display_mode = "grid" ? icons.RECENT_LIST : icons.RECENT_GRID)))
 	{
 		if (recent_display_mode = "list")
 			recent_display_mode = "grid"

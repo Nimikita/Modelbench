@@ -64,7 +64,7 @@ if (itemvisible)
 {
 	if (itemhover || element.hidden)
 	{
-		if (draw_button_icon("assetselementhidden" + string(element), xx, itemy + 4, 20, 20, element.hidden, e_icon.show + element.hidden, null, window_busy = "elementselection", (element.hidden ? "tooltipshow" : "tooltiphide")))
+		if (draw_button_icon("assetselementhidden" + string(element), xx, itemy + 4, 20, 20, element.hidden, icons.SHOW + element.hidden, null, window_busy = "elementselection", (element.hidden ? "tooltipshow" : "tooltiphide")))
 		{
 			element.hidden = !element.hidden
 			el_update_hidden_tree(false)
@@ -72,7 +72,7 @@ if (itemvisible)
 		visiblehover = app_mouse_box(xx, itemy + 4, 20, 20)
 	}
 	else if (element.tree_hidden)
-		draw_image(spr_icons, e_icon.dot, xx + 10, itemy + 14, 1, 1, c_text_secondary, a_text_secondary)
+		draw_image(spr_icons, icons.DOT, xx + 10, itemy + 14, 1, 1, c_text_secondary, a_text_secondary)
 }
 
 
@@ -83,7 +83,7 @@ if (itemvisible)
 {
 	if (itemhover || element.locked)
 	{
-		if (draw_button_icon("assetselementlock" + string(element), xx, itemy + 4, 20, 20, element.locked, e_icon.unlock - element.locked, null, window_busy = "elementselection", (element.locked ? "tooltipunlock" : "tooltiplock")))
+		if (draw_button_icon("assetselementlock" + string(element), xx, itemy + 4, 20, 20, element.locked, icons.UNLOCK - element.locked, null, window_busy = "elementselection", (element.locked ? "tooltipunlock" : "tooltiplock")))
 		{
 			element.locked = !element.locked
 			el_update_lock_tree(false)
@@ -91,7 +91,7 @@ if (itemvisible)
 		lockhover = app_mouse_box(xx, itemy + 4, 20, 20)
 	}
 	else if (element.tree_locked)
-		draw_image(spr_icons, e_icon.dot, xx + 10, itemy + 14, 1, 1, c_text_secondary, a_text_secondary)
+		draw_image(spr_icons, icons.DOT, xx + 10, itemy + 14, 1, 1, c_text_secondary, a_text_secondary)
 }
 
 #endregion
@@ -120,17 +120,17 @@ if (itemvisible)
 {
 	var icon, iconcolor, iconalpha;
 	if (element.element_type = TYPE_PART)
-		icon = e_icon.part
+		icon = icons.PART
 	else
 	{
 		if (element.type = "block")
-			icon = e_icon.block
+			icon = icons.BLOCK
 		else if (element.type = "plane")
 		{
 			if (element.value[e_value.EXTRUDE])
-				icon = e_icon.plane3d
+				icon = icons.PLANE3D
 			else
-				icon = e_icon.plane
+				icon = icons.PLANE
 		}
 	}
 	

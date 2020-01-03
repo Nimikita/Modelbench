@@ -22,17 +22,17 @@ for (var e = 0; e < element_move_obj.elements; e++)
 	
 	var icon;
 	if (element.element_type = TYPE_PART)
-		icon = e_icon.part
+		icon = icons.PART
 	else
 	{
 		if (element.type = "block")
-			icon = e_icon.block
+			icon = icons.BLOCK
 		else if (element.type = "plane")
 		{
 			if (element.value[e_value.EXTRUDE])
-				icon = e_icon.plane3d
+				icon = icons.PLANE3D
 			else
-				icon = e_icon.plane
+				icon = icons.PLANE
 		}
 	}
 	

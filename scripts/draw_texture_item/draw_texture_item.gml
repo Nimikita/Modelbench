@@ -56,4 +56,4 @@ draw_label(text_get("assetstexturesize", tex.size[X], tex.size[Y]), xx + 44 + 8,
 
 // Main texture?
 if (tex = app.res)
-	draw_tooltip_icon("roottexture", xx + wid - 28, yy + hei/2, e_icon.star, text_get("assetsroottexture"))
+	draw_tooltip_icon("roottexture", xx + wid - 28, yy + hei/2, icons.STAR, text_get("assetsroottexture"))

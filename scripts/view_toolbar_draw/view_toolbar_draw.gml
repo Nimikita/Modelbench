@@ -42,7 +42,7 @@ dy += 4
 dx += 4
 
 // Add part
-if (draw_button_icon("toolsetaddpart", dx, dy, 28, 28, false, e_icon.part_add, null, false, "toolsetaddpart"))
+if (draw_button_icon("toolsetaddpart", dx, dy, 28, 28, false, icons.PART_ADD, null, false, "toolsetaddpart"))
 	action_element_create(e_element.PART)
 	
 if (dw > dh)
@@ -51,7 +51,7 @@ else
 	dy += buttonsize
 
 // Add block
-if (draw_button_icon("toolsetaddblock", dx, dy, 28, 28, false, e_icon.block_add, null, false, "toolsetaddblock"))
+if (draw_button_icon("toolsetaddblock", dx, dy, 28, 28, false, icons.BLOCK_ADD, null, false, "toolsetaddblock"))
 	action_element_create(e_element.BLOCK)
 	
 if (dw > dh)
@@ -60,7 +60,7 @@ else
 	dy += buttonsize
 
 // Add plane
-if (draw_button_icon("toolsetaddplane", dx, dy, 28, 28, false, e_icon.plane_add, null, false, "toolsetaddplane"))
+if (draw_button_icon("toolsetaddplane", dx, dy, 28, 28, false, icons.PLANE_ADD, null, false, "toolsetaddplane"))
 	action_element_create(e_element.PLANE)
 	
 if (dw > dh)
@@ -69,7 +69,7 @@ else
 	dy += buttonsize
 
 // Add plane (3d)
-if (draw_button_icon("toolsetaddplane3d", dx, dy, 28, 28, false, e_icon.plane3d_add, null, false, "toolsetaddplane3d"))
+if (draw_button_icon("toolsetaddplane3d", dx, dy, 28, 28, false, icons.PLANE3D_ADD, null, false, "toolsetaddplane3d"))
 	action_element_create(e_element.PLANE_3D)
 	
 if (dw > dh)
@@ -89,7 +89,7 @@ else
 
 // Select-only tool
 tip_set_shortcut(setting_key_tool_select, setting_key_tool_select_control)
-if (draw_button_icon("toolsettoolselect", dx, dy, 28, 28, tool_selected = e_tool.SELECT, e_icon.cursor, null, false, "toolsettoolselect"))
+if (draw_button_icon("toolsettoolselect", dx, dy, 28, 28, tool_selected = e_tool.SELECT, icons.CURSOR, null, false, "toolsettoolselect"))
 	tool_selected = e_tool.SELECT
 	
 if (dw > dh)
@@ -99,7 +99,7 @@ else
 
 // Pivot tool
 tip_set_shortcut(setting_key_tool_pivot, setting_key_tool_pivot_control)
-if (draw_button_icon("toolsettoolpivot", dx, dy, 28, 28, tool_selected = e_tool.PIVOT, e_icon.center, null, false, "toolsettoolpivot"))
+if (draw_button_icon("toolsettoolpivot", dx, dy, 28, 28, tool_selected = e_tool.PIVOT, icons.CENTER, null, false, "toolsettoolpivot"))
 	tool_selected = e_tool.PIVOT
 
 if (dw > dh)
@@ -109,7 +109,7 @@ else
 
 // Position tool
 tip_set_shortcut(setting_key_tool_move, setting_key_tool_move_control)
-if (draw_button_icon("toolsettoolmove", dx, dy, 28, 28, tool_selected = e_tool.MOVE, e_icon.toolset_position, null, false, "toolsettoolmove"))
+if (draw_button_icon("toolsettoolmove", dx, dy, 28, 28, tool_selected = e_tool.MOVE, icons.TOOLSET_POSITION, null, false, "toolsettoolmove"))
 	tool_selected = e_tool.MOVE
 	
 if (dw > dh)
@@ -119,7 +119,7 @@ else
 
 // Rotate tool
 tip_set_shortcut(setting_key_tool_rotate, setting_key_tool_rotate_control)
-if (draw_button_icon("toolsettoolrotate", dx, dy, 28, 28, tool_selected = e_tool.ROTATE, e_icon.toolset_rotate, null, false, "toolsettoolrotate"))
+if (draw_button_icon("toolsettoolrotate", dx, dy, 28, 28, tool_selected = e_tool.ROTATE, icons.TOOLSET_ROTATE, null, false, "toolsettoolrotate"))
 	tool_selected = e_tool.ROTATE
 	
 if (dw > dh)
@@ -129,7 +129,7 @@ else
 
 // Scale tool
 tip_set_shortcut(setting_key_tool_scale, setting_key_tool_scale_control)
-if (draw_button_icon("toolsettoolscale", dx, dy, 28, 28, tool_selected = e_tool.SCALE, e_icon.toolset_scale, null, false, "toolsettoolscale"))
+if (draw_button_icon("toolsettoolscale", dx, dy, 28, 28, tool_selected = e_tool.SCALE, icons.TOOLSET_SCALE, null, false, "toolsettoolscale"))
 	tool_selected = e_tool.SCALE
 	
 if (dw > dh)
@@ -139,7 +139,7 @@ else
 
 // Transform tool(Position, rotate, scale)
 tip_set_shortcut(setting_key_tool_transform, setting_key_tool_transform_control)
-if (draw_button_icon("toolsettooltransform", dx, dy, 28, 28, tool_selected = e_tool.TRANSFORM, e_icon.transform, null, false, "toolsettooltransform"))
+if (draw_button_icon("toolsettooltransform", dx, dy, 28, 28, tool_selected = e_tool.TRANSFORM, icons.TRANSFORM, null, false, "toolsettooltransform"))
 	tool_selected = e_tool.TRANSFORM
 
 draw_set_alpha(1)

@@ -20,7 +20,7 @@ draw_label(text_get("assetsmodellocation") + ":", dx, dy + 20, fa_left, fa_botto
 if (model_temporary)
 {
 	draw_label(text_get("assetsmodelnotsaved"), dx, dy + 34, fa_left, fa_bottom, c_error, 1, font_caption)
-	if (draw_button_icon("assetssavemodel", dx + dw - 24 + icon_button_offset, dy + 8, 24, 24, false, e_icon.save, null, null, "assetssavemodel"))
+	if (draw_button_icon("assetssavemodel", dx + dw - 24 + icon_button_offset, dy + 8, 24, 24, false, icons.SAVE, null, null, "assetssavemodel"))
 		model_save()
 }
 else
@@ -28,7 +28,7 @@ else
 	var directory = ".../" + filename_name(model_folder) + "/" + filename_name(model_file);
 	
 	draw_label(directory, dx, dy + 34, fa_left, fa_bottom, c_text_secondary, a_text_secondary, font_caption)
-	if (draw_button_icon("assetsopenfolder", dx + dw - 24 + icon_button_offset, dy + 8, 24, 24, false, e_icon.open_file, null, null, "assetsopenfolder"))
+	if (draw_button_icon("assetsopenfolder", dx + dw - 24 + icon_button_offset, dy + 8, 24, 24, false, icons.OPEN_FILE, null, null, "assetsopenfolder"))
 		open_url(model_folder)
 }
 

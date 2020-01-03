@@ -7,7 +7,7 @@ snackbar_delete("snackbarwarningemptymodelname")
 snackbar_delete("snackbarwarningemptypartname")
 snackbar_delete("snackbarwarningsamepartname")
 
-sb = new_snackbar(e_icon.checkmark, "snackbarsavemodel", "", e_snackbar.SUCCESS, 2)
+sb = new_snackbar(icons.CHECKMARK, "snackbarsavemodel", "", e_snackbar.SUCCESS, 2)
 time = sb.dismiss_time + 2
 
 if (model_name = "")

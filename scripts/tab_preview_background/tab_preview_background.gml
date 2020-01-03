@@ -26,9 +26,9 @@ tab_next()
 
 // Time of day
 tab_control_togglebutton()
-togglebutton_add("previewtimeday", e_icon.day, 0, setting_preview_time = 0, action_preview_time)
-togglebutton_add("previewtimedusk", e_icon.dusk, 1, setting_preview_time = 1, action_preview_time)
-togglebutton_add("previewtimenight", e_icon.night, 2, setting_preview_time = 2, action_preview_time)
+togglebutton_add("previewtimeday", icons.DAY, 0, setting_preview_time = 0, action_preview_time)
+togglebutton_add("previewtimedusk", icons.DUSK, 1, setting_preview_time = 1, action_preview_time)
+togglebutton_add("previewtimenight", icons.NIGHT, 2, setting_preview_time = 2, action_preview_time)
 draw_togglebutton("previewtimeofday", dx, dy)
 tab_next()
 

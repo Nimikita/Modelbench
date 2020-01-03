@@ -62,7 +62,7 @@ draw_outline(xx + 1, yy + 1, w - 2, h - 2, 1, bordercolor, borderalpha)
 
 if (err)
 {
-	draw_image(spr_icons, e_icon.alert, xx + w - 14, yy + h - 14, 1, 1, c_error, 1)
+	draw_image(spr_icons, icons.ALERT, xx + w - 14, yy + h - 14, 1, 1, c_error, 1)
 	w -= 28
 }
 

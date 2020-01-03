@@ -23,9 +23,9 @@ draw_menu_button(dx, dy, boxh, boxh)
 dx += boxh + 4
 dy += 4
 
-draw_button_icon("toolbarundo", dx, dy, 28, 28, false, e_icon.undo, action_toolbar_undo, history_pos = history_amount, "tooltipundo")
+draw_button_icon("toolbarundo", dx, dy, 28, 28, false, icons.UNDO, action_toolbar_undo, history_pos = history_amount, "tooltipundo")
 dx += 28 + 4
-draw_button_icon("toolbarredo", dx, dy, 28, 28, false, e_icon.redo, action_toolbar_redo, history_pos = 0, "tooltipredo")
+draw_button_icon("toolbarredo", dx, dy, 28, 28, false, icons.REDO, action_toolbar_redo, history_pos = 0, "tooltipredo")
 
 // Program mode buttons
 draw_set_font(font_button)
@@ -50,10 +50,10 @@ if (program_mode = e_mode.MODELING)
 {
 	// Toggle UV editor
 	tip_set_shortcut(setting_key_uv_editor, setting_key_uv_editor_control)
-	draw_button_icon("toolbaruveditor", dx, dy, 28, 28, setting_show_uv_editor, e_icon.uveditor, action_toolbar_show_uv_editor, false, (setting_show_uv_editor ? "tooltipuveditorhide" : "tooltipuveditorshow"))
+	draw_button_icon("toolbaruveditor", dx, dy, 28, 28, setting_show_uv_editor, icons.UVEDITOR, action_toolbar_show_uv_editor, false, (setting_show_uv_editor ? "tooltipuveditorhide" : "tooltipuveditorshow"))
 	tip_set_shortcut(-1, false)
 }
 else if (program_mode = e_mode.PREVIEW)
 {
-	draw_button_icon("toolbaroverlay", dx, dy, 28, 28, setting_preview_overlay, e_icon.square_ratio, action_toolbar_preview_overlay, false, (setting_preview_overlay ? "tooltipoverlayhide" : "tooltipoverlayshow"))
+	draw_button_icon("toolbaroverlay", dx, dy, 28, 28, setting_preview_overlay, icons.SQUARE_RATIO, action_toolbar_preview_overlay, false, (setting_preview_overlay ? "tooltipoverlayhide" : "tooltipoverlayshow"))
 }

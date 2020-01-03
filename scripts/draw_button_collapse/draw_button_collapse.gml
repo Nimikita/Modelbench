@@ -4,7 +4,7 @@
 /// @arg script
 /// @arg disabled
 
-draw_button_icon(argument0 + "collapse", dx - icon_button_offset, dy + (tab_control_h / 2) - 12, 24, 24, argument1, e_icon.collapse, argument2, argument3, (argument1 ? "tooltiphideoptions" : "tooltipshowoptions"))
+draw_button_icon(argument0 + "collapse", dx - icon_button_offset, dy + (tab_control_h / 2) - 12, 24, 24, argument1, icons.COLLAPSE, argument2, argument3, (argument1 ? "tooltiphideoptions" : "tooltipshowoptions"))
 
 dx += 28 + 8
 dw -= 28 + 8

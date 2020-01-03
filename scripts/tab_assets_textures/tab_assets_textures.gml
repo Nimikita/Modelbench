@@ -25,7 +25,7 @@ if (res_edit != null)
 
 // Add texture
 tab_control(36)
-if (draw_button_primary("assetsaddtexture", dx, dy, 0, null, e_icon.add, fa_center))
+if (draw_button_primary("assetsaddtexture", dx, dy, 0, null, icons.ADD, fa_center))
 {
 	var fn = file_dialog_open_image();
 	

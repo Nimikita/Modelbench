@@ -11,8 +11,8 @@ switch (name)
 {
 	case "startupnewmodeloptions":
 	{
-		list_add_item(text_get("startupstartfromscratch"), e_part.FRONT, "", null, e_icon.new_file, null, model_create)
-		list_add_item(text_get("startuploadatemplate"), false, "", null, e_icon.new_file_template, null, model_create_template)
+		list_add_item(text_get("startupstartfromscratch"), e_part.FRONT, "", null, icons.NEW_FILE, null, model_create)
+		list_add_item(text_get("startuploadatemplate"), false, "", null, icons.NEW_FILE_TEMPLATE, null, model_create_template)
 		break
 	}
 	
@@ -72,14 +72,14 @@ switch (name)
 		if (context_menu_copy_category != null && context_menu_copy_category.name = "scale")
 		{
 			var text = (setting_combine_scale ? "contextmenuseperatescale" : "contextmenucombinescale");
-			list_add_item(text_get(text), !setting_combine_scale, "", null, e_icon.toolset_scale, null, action_category_combine_scale, true)
+			list_add_item(text_get(text), !setting_combine_scale, "", null, icons.TOOLSET_SCALE, null, action_category_combine_scale, true)
 		}
 		
 		// Single value copy-paste
 		if (name = "contextmenuvalue")
 		{
-			list_add_item(text_get("contextmenuvaluecut"), null, "", null, e_icon.cut, null, action_value_cut, true)
-			list_add_item(text_get("contextmenuvaluecopy"), null, "", null, e_icon.copy, null, action_value_copy, false)
+			list_add_item(text_get("contextmenuvaluecut"), null, "", null, icons.CUT, null, action_value_cut, true)
+			list_add_item(text_get("contextmenuvaluecopy"), null, "", null, icons.COPY, null, action_value_copy, false)
 		
 			var caption = "";
 		
@@ -92,17 +92,17 @@ switch (name)
 			else if (context_menu_copy_type = e_value_type.STRING)
 				caption = context_menu_copy
 		
-			list_add_item(text_get("contextmenuvaluepaste"), null, caption, null, e_icon.paste, null, action_value_paste, false)
+			list_add_item(text_get("contextmenuvaluepaste"), null, caption, null, icons.PASTE, null, action_value_paste, false)
 			listitem_last.disabled = (context_menu_value_type = e_value_type.NONE || (context_menu_copy_type != context_menu_value_type))
 		
-			list_add_item(text_get("contextmenuvaluereset"), null, "", null, e_icon.reset, null, action_value_reset, false)
+			list_add_item(text_get("contextmenuvaluereset"), null, "", null, icons.RESET, null, action_value_reset, false)
 		}
 		
 		if (context_menu_copy_category != null && context_menu_copy_category.copy != null)
 		{
-			list_add_item(text_get("contextmenucategorycopy", text_get("contextmenucategory" + context_menu_copy_category.name)), context_menu_copy_category, "", null, e_icon.copy, null, action_category_copy, true)
-			list_add_item(text_get("contextmenucategorypaste", text_get("contextmenucategory" + context_menu_copy_category.name)), context_menu_copy_category, "", null, e_icon.paste, null, action_category_paste, false)
-			list_add_item(text_get("contextmenucategoryreset", text_get("contextmenucategory" + context_menu_copy_category.name)), context_menu_copy_category, "", null, e_icon.reset, null, action_category_reset, false)
+			list_add_item(text_get("contextmenucategorycopy", text_get("contextmenucategory" + context_menu_copy_category.name)), context_menu_copy_category, "", null, icons.COPY, null, action_category_copy, true)
+			list_add_item(text_get("contextmenucategorypaste", text_get("contextmenucategory" + context_menu_copy_category.name)), context_menu_copy_category, "", null, icons.PASTE, null, action_category_paste, false)
+			list_add_item(text_get("contextmenucategoryreset", text_get("contextmenucategory" + context_menu_copy_category.name)), context_menu_copy_category, "", null, icons.RESET, null, action_category_reset, false)
 		}
 		
 		break
@@ -111,65 +111,65 @@ switch (name)
 	case "contextmenutextbox":
 	{
 		var ctrl = text_get("keycontrol") + " + ";
-		list_add_item(text_get("contextmenutextboxcut"), null, ctrl + "X", null, e_icon.cut, null, action_textbox_cut, true)
+		list_add_item(text_get("contextmenutextboxcut"), null, ctrl + "X", null, icons.CUT, null, action_textbox_cut, true)
 		listitem_last.disabled = (textbox_select_startpos = textbox_select_endpos)
 		
-		list_add_item(text_get("contextmenutextboxcopy"), null, ctrl + "C", null, e_icon.copy, null, action_textbox_copy, false)
+		list_add_item(text_get("contextmenutextboxcopy"), null, ctrl + "C", null, icons.COPY, null, action_textbox_copy, false)
 		listitem_last.disabled = (textbox_select_startpos = textbox_select_endpos)
 		
-		list_add_item(text_get("contextmenutextboxpaste"), null, ctrl + "V", null, e_icon.paste, null, action_textbox_paste, false)
+		list_add_item(text_get("contextmenutextboxpaste"), null, ctrl + "V", null, icons.PASTE, null, action_textbox_paste, false)
 		listitem_last.disabled = (clipboard_get_text() = "" || !clipboard_has_text())
 		
-		list_add_item(text_get("contextmenutextboxselectall"), null, ctrl + "A", null, e_icon.edit, null, action_textbox_select_all, false)
+		list_add_item(text_get("contextmenutextboxselectall"), null, ctrl + "A", null, icons.EDIT, null, action_textbox_select_all, false)
 		break
 	}
 	
 	case "contextmenutexture":
 	{
-		list_add_item(text_get("contextmenutexturesetmain"), null, "", null, e_icon.star, null, action_texture_set_main, true)
+		list_add_item(text_get("contextmenutexturesetmain"), null, "", null, icons.STAR, null, action_texture_set_main, true)
 		listitem_last.disabled = (context_menu_value = app.res)
 		
-		list_add_item(text_get("contextmenutextureremove"), null, "", null, e_icon.delete, null, action_texture_remove, false)
+		list_add_item(text_get("contextmenutextureremove"), null, "", null, icons.DELETE, null, action_texture_remove, false)
 		listitem_last.disabled = (context_menu_value = app.res)
 		
-		list_add_item(text_get("contextmenutexturereplace"), null, "", null, e_icon.replace, null, action_texture_replace, false)
+		list_add_item(text_get("contextmenutexturereplace"), null, "", null, icons.REPLACE, null, action_texture_replace, false)
 		
-		list_add_item(text_get("contextmenutexturerefresh"), null, "" , null, e_icon.refresh, null, action_texture_refresh, false)
+		list_add_item(text_get("contextmenutexturerefresh"), null, "" , null, icons.REFRESH, null, action_texture_refresh, false)
 		listitem_last.disabled = (context_menu_value.filepath = "")
 		break
 	}
 	
 	case "contextmenukeycontrol":
 	{
-		list_add_item(text_get("contextmenukeycontrolreset"), null, "", null, e_icon.reset, null, action_keycontrol, true)
+		list_add_item(text_get("contextmenukeycontrolreset"), null, "", null, icons.RESET, null, action_keycontrol, true)
 		break
 	}
 	
 	case "contextmenuelement":
 	{
-		list_add_item(text_get("contextmenuelementadd"), null, "", null, e_icon.add, e_icon.arrow_right_small, null, true)
+		list_add_item(text_get("contextmenuelementadd"), null, "", null, icons.ADD, icons.ARROW_RIGHT_SMALL, null, true)
 		listitem_last.context_menu_name = "contextmenuaddelement"
 		listitem_last.disabled = context_menu_value.element_type = TYPE_SHAPE
 		
-		list_add_item(text_get("contextmenuelementdelete"), null, "", null, e_icon.delete, null, action_el_remove_single, false)
+		list_add_item(text_get("contextmenuelementdelete"), null, "", null, icons.DELETE, null, action_el_remove_single, false)
 		
-		list_add_item(text_get("contextmenuelementexpandall"), null, "", null, e_icon.expand_all, null, action_expand_all, true)
-		list_add_item(text_get("contextmenuelementcollapseall"), null, "", null, e_icon.collapse_all, null, action_collapse_all, false)
+		list_add_item(text_get("contextmenuelementexpandall"), null, "", null, icons.EXPAND_ALL, null, action_expand_all, true)
+		list_add_item(text_get("contextmenuelementcollapseall"), null, "", null, icons.COLLAPSE_ALL, null, action_collapse_all, false)
 		break
 	}
 	
 	case "contextmenuaddelement":
 	{
-		list_add_item(text_get("contextmenuaddelementpart"), e_element.PART, "", null, e_icon.part_add, null, action_element_create_menu, true)
-		list_add_item(text_get("contextmenuaddelementblock"), e_element.BLOCK, "", null, e_icon.block_add, null, action_element_create_menu, false)
-		list_add_item(text_get("contextmenuaddelementplane"), e_element.PLANE, "", null, e_icon.plane_add, null, action_element_create_menu, false)
-		list_add_item(text_get("contextmenuaddelement3dplane"), e_element.PLANE_3D, "", null, e_icon.plane3d_add, null, action_element_create_menu, false)
+		list_add_item(text_get("contextmenuaddelementpart"), e_element.PART, "", null, icons.PART_ADD, null, action_element_create_menu, true)
+		list_add_item(text_get("contextmenuaddelementblock"), e_element.BLOCK, "", null, icons.BLOCK_ADD, null, action_element_create_menu, false)
+		list_add_item(text_get("contextmenuaddelementplane"), e_element.PLANE, "", null, icons.PLANE_ADD, null, action_element_create_menu, false)
+		list_add_item(text_get("contextmenuaddelement3dplane"), e_element.PLANE_3D, "", null, icons.PLANE3D_ADD, null, action_element_create_menu, false)
 		break
 	}
 	
 	case "contextmenuurl":
 	{
-		list_add_item(text_get("contextmenucopylink"), context_menu_value, "", null, e_icon.link, null, action_copy_text, true)
+		list_add_item(text_get("contextmenucopylink"), context_menu_value, "", null, icons.LINK, null, action_copy_text, true)
 		break
 	}
 }

@@ -1,3 +1,3 @@
 /// snackbar_news()
 
-return new_snackbar(e_icon.info, "", "", e_snackbar.DEFAULT)
+return new_snackbar(icons.INFO, "", "", e_snackbar.DEFAULT)

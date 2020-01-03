@@ -97,7 +97,7 @@ if (tip != "")
 	mouseon = app_mouse_box(xx + string_width(name) + 8, yy + 4, 20, 20) && content_mouseon
 	microani_set(argument[0] + "help", null, mouseon, false, false)
 	
-	draw_image(spr_icons, e_icon.help, xx + string_width(name) + 10 + 8, yy + 14, 1, 1, merge_color(c_text_tertiary, c_text_secondary, mcroani_arr[e_mcroani.HOVER]), lerp(a_text_tertiary, a_text_secondary, mcroani_arr[e_mcroani.HOVER]))
+	draw_image(spr_icons, icons.HELP, xx + string_width(name) + 10 + 8, yy + 14, 1, 1, merge_color(c_text_tertiary, c_text_secondary, mcroani_arr[e_mcroani.HOVER]), lerp(a_text_tertiary, a_text_secondary, mcroani_arr[e_mcroani.HOVER]))
 	tip_set(text_get(argument[0] + "help"), xx + string_width(name) + 8, yy + 4, 20, 20)
 	
 	microani_update(mouseon, false, false)

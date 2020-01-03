@@ -23,7 +23,7 @@ surface_save(surf, fn)
 render_free()
 surface_free(surf)
 
-var sb = new_snackbar(e_icon.checkmark, "snackbarsaveimage", "", e_snackbar.SUCCESS, 5);
+var sb = new_snackbar(icons.CHECKMARK, "snackbarsaveimage", "", e_snackbar.SUCCESS, 5);
 
 sb.snackbar_action1_name = "snackbaropenimage"
 sb.snackbar_action1 = open_url

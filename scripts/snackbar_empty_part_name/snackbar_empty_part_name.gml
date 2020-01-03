@@ -1,3 +1,3 @@
 /// snackbar_empty_part_name()
 
-return new_snackbar(e_icon.warning, "snackbarwarningemptypartname", "snackbarwarningsavemodel", e_snackbar.WARNING)
+return new_snackbar(icons.WARNING, "snackbarwarningemptypartname", "snackbarwarningsavemodel", e_snackbar.WARNING)
