@@ -34,7 +34,7 @@ with (obj_popup)
 	offset_x = 0
 	offset_y = 0
 }
-popup_close()
+popup_ani_type = "hide"
 
 log("Destroying instances")
 
