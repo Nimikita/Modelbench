@@ -60,14 +60,6 @@ if (recent_list_amount > 0)
 	// Recent model grid/list button
 	dx -= (12 + 28)
 	
-	if (draw_button_icon("recentlistmode", dx, dy + 4, 28, 28, false, (recent_display_mode = "grid" ? icons.RECENT_LIST : icons.RECENT_GRID)))
-	{
-		if (recent_display_mode = "list")
-			recent_display_mode = "grid"
-		else
-			recent_display_mode = "list"
-	}
-	
 	dx = (window_width / 2) - (dw / 2)
 	
 	// Recent models label
