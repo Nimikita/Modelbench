@@ -3,8 +3,8 @@
     "file/": {
         "language": "English",
         "translator": "Nimi",
-        "forversion": "Alpha 8",
-        "lastchange": "2020.01.01"
+        "forversion": "0.8.1",
+        "lastchange": "2020.01.04"
     },
 	"startup/": {
 		"modeldetected": "Unsaved model detected",
@@ -431,11 +431,7 @@
 		"windmaximum": "Maximum",
 		"depth": "Render depth",
 		"openpositiontab": "Open position tab",
-		"openpositiontabhelp": "Automatically opens this part's position tab in Mine-imator.",
-		"openrotationtab": "Open rotation tab",
-		"openrotationtabhelp": "Automatically opens this part's rotation tab in Mine-imator.",
-		"openscaletab": "Open scale tab",
-		"openscaletabhelp": "Automatically opens this part's scale tab in Mine-imator."
+		"openpositiontabhelp": "Automatically opens this part's position tab in Mine-imator."
 	},
 	"preview/": {
 		"scenery": "Scenery",

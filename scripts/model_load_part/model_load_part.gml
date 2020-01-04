@@ -61,8 +61,6 @@ with (new(obj_model_element))
 	
 	// Tab states for Mine-imator frame editor panel
 	value[e_value.OPEN_POSITION_TAB] = value_get_real(map[?"show_position"], false)
-	value[e_value.OPEN_ROTATION_TAB] = value_get_real(map[?"show_rotation"], false)
-	value[e_value.OPEN_SCALE_TAB] = value_get_real(map[?"show_scale"], false)
 	
 	// Rotation (optional)
 	rotation = value_get_point3D(map[?"rotation"], vec3(0))

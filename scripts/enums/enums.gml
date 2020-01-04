@@ -239,8 +239,6 @@ enum e_value
 	
 	// Misc
 	OPEN_POSITION_TAB,
-	OPEN_ROTATION_TAB,
-	OPEN_SCALE_TAB,
 	TEXTURE_OBJ,
 	amount
 }

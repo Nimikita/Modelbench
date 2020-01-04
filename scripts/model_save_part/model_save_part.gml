@@ -27,12 +27,6 @@ if (!value[e_value.BEND_LOCK])
 if (value[e_value.OPEN_POSITION_TAB])
 	json_save_var("show_position", true)
 
-if (value[e_value.OPEN_ROTATION_TAB])
-	json_save_var("show_rotation", true)
-
-if (value[e_value.OPEN_SCALE_TAB])
-	json_save_var("show_scale", true)
-
 if (locked)
 	json_save_var("locked", true)
 
