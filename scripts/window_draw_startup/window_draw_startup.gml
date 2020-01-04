@@ -89,23 +89,5 @@ else
 	
 	// Only draw splash if it fits well on screen
 	if ((midy + (sprite_get_height(ashley_splash) / 1.75)) < (window_height - 50))
-	{
-		if (current_step < 5 || render_splash_center)
-		{
-			recent_splash_x = midx
-			recent_splash_y = midy
-			recent_splash_goal_x = recent_splash_x
-			recent_splash_goal_y = recent_splash_y
-			render_splash_center = false
-		}
-		else
-		{
-			recent_splash_goal_x = midx - ((mouse_x - midx) / 20)
-			recent_splash_goal_y = midy - ((mouse_y - midy) / 20)
-			recent_splash_x += (recent_splash_goal_x - recent_splash_x) / max(1, 5 / delta)
-			recent_splash_y += (recent_splash_goal_y - recent_splash_y) / max(1, 5 / delta)
-		}
-	
-		draw_image(ashley_splash, 1, recent_splash_x, recent_splash_y)
-	}
+		draw_image(ashley_splash, 1, midx, midy)
 }

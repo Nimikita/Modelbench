@@ -190,5 +190,4 @@ if (recent_list_update)
 {
 	recent_update()
 	recent_list_update = false
-	render_splash_center = true
 }
