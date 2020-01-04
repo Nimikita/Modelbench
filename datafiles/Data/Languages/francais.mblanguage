@@ -1,0 +1,542 @@
+{
+    "description": "Modelbench language file. Copy and rename this to begin creating your own translation.",
+    "file/": {
+        "language": "Français",
+        "translator": "Voxy",
+        "forversion": "1.0",
+        "lastchange": "2020.01.04"
+    },
+	"startup/": {
+		"modeldetected": "Modèle non-sauvegardé détecté",
+		"modeldetecteddesc": "Un modèle non-sauvegardé provenant d'une session précédente a été trouvé.",
+		"recovermodel": "RÉCUPÉRER...",
+		"browse": "PARCOURIR...",
+		"newmodel": "NOUVEAU MODÈLE",
+		"recentmodels": "Modèles récents",
+		"startfromscratch": "Commencer de zéro...",
+		"loadatemplate": "Charger un gabarit...",
+		"version": "version %1"
+	},
+	"recent/": {
+		"lastopened": "Ouvert",
+		"lastopened/": {
+			"recently": "Ouvert à l'instant",
+			"minutes": "Ouvert il y a %1 minute(s)",
+			"hours": "Ouvert il y a %1 heure(s)",
+			"yesterday": "Ouvert hier",
+			"days": "Ouvert il y a %1 jour(s)",
+			"lastweek": "Ouvert la semaine dernière",
+			"date": "Ouvert le %1.%2.%3",
+			"never": "Jamais ouvert",
+			"future": "Ouvert dans le futur"
+		},
+		"none": "Les modèles que vous avez ouvert récemment apparaîtront ici !",
+		"sortascendingtip": "Ordre ascendant",
+		"sortdescendingtip": "Ordre descendant",
+		"pintip": "Épingler",
+		"removetip": "Retirer",
+		"filename": "Nom du fichier",
+		"models": "Modèles récents"
+	},
+	"error/": {
+		"fileunreadable": "Une erreur s'est produite lors de la lecture du fichier. Consultez le journal pour plus de détails. Si un fichier de sauvegarde .mbbackup est disponible, chargez-le. (Changez l'extension dans l'explorateur de fichiers)",
+        "fileunreadablecaption": "Fichier illisible"
+	},
+	"question/": {
+        "confirmexit": "Enregistrer les modifications de %1 avant de fermer ?",
+        "confirmnew": "Enregistrer les modifications de %1 avant de créer un nouveau modèle ?",
+        "confirmopen": "Enregistrer les modifications de %1 avant d'ouvrir un autre modèle ?",
+		"confirmsaveexit": "Le modèle n'a pas été enregistré. Enregistrer le modèle avant de fermer ?",
+        "replace": "Une ressource possède déjà ce nom de fichier. Voulez-vous la remplacer ?"
+    },
+	"filedialog/": {
+		"open/": {
+			"image": "Images",
+			"imagecaption": "Ouvrir une image",
+			"model": "Modèle Mine-imator",
+			"modelbackup": "Sauvegarde Modelbench",
+            "modelcaption": "Ouvrir un modèle Mine-imator",
+			"modeltemplate": "Gabarit Modelbench"
+		},
+		"save/": {
+			"model": "Modèle Mine-imator",
+			"modelcaption": "Enregistrer un modèle Mine-imator",
+			"image": "Images",
+            "imagecaption": "Enregistrer une image"
+		}
+	},
+	"uveditor/": {
+		"front": "Avant",
+		"back": "Arrière",
+		"left": "Gauche",
+		"right": "Droite",
+		"top": "Haut",
+		"bottom": "Bas"
+	},
+	"snackbar/": {
+		"newupdate": "Une mise-à-jour est disponible !",
+		"newupdatedesc": "%1 est disponible au téléchargement.",
+		"savemodel": "Modèle enregistré avec succès !",
+		"saveimage": "Image enregistrée avec succès !",
+		"openimage": "OUVRIR L'IMAGE",
+		"warning/": {
+			"samepartname": "Certains éléments ont le même nom.",
+			"emptypartname": "Certains éléments n'ont pas de nom.",
+			"emptymodelname": "Ce modèle n'a pas de nom.",
+			"savemodel": "Le modèle risque de ne pas se charger correctement dans Mine-imator."
+		},
+		"button/": {
+			"download": "TÉLÉCHARGER",
+			"update": "METTRE À JOUR",
+			"remindmelater": "PLUS TARD"
+		}
+	},
+	"colorpicker/": {
+		"r": "R",
+		"g": "V",
+		"b": "B",
+		"h": "T",
+		"s": "S",
+		"v": "V",
+		"hex": "Hex"
+	},
+	"contextmenu/": {
+		"keycontrolreset": "Réinitialiser le raccourci",
+		"copylink": "Copier le lien",
+		"combinescale": "Mise à l'échelle uniforme",
+		"seperatescale": "Mise à l'échelle non-uniforme",
+		"value/": {
+			"on": "Activé",
+			"off": "Désactivé",
+			"cut": "Couper la valeur",
+			"copy": "Copier la valeur",
+			"paste": "Coller la valeur",
+			"reset": "Réinitialiser la valeur"
+		},
+		"category/": {
+			"position": "la position",
+			"pivotoffset": "le point de pivot",
+			"rotation": "la rotation",
+			"scale": "l'échelle",
+			"size": "les dimensions",
+			"copy": "Copier %1 valeurs",
+			"paste": "Coller %1 valeurs",
+			"reset": "Réinitialiser %1 valeurs"
+		},
+		"textbox/": {
+			"cut": "Couper",
+			"copy": "Copier",
+			"paste": "Coller",
+			"selectall": "Sélectionner tout"
+		},
+		"texture/": {
+			"setmain": "Définir comme texture principale",
+			"remove": "Supprimer la texture",
+			"replace": "Remplacer la texture",
+			"refresh": "Recharger la texture"
+		},
+		"element/": {
+			"add": "Nouvel élément...",
+			"delete": "Supprimer élément",
+			"expandall": "Développer",
+			"collapseall": "Réduire"
+		},
+		"addelement/": {
+			"part": "Élément",
+			"block": "Bloc",
+			"plane": "Surface",
+			"3dplane": "Surface 3D"
+		}
+	},
+	"toolbar/": {
+		"modeling": "MODÉLISATION",
+		"preview": "APERÇU"
+	},
+	"tooltip/": {
+		"showoptions": "Afficher les options",
+		"hideoptions": "Masquer les options",
+		"open": "Ouvrir",
+		"close": "Fermer",
+		"openmenu": "Ouvrir le menu",
+		"closemenu": "Fermer le menu",
+		"expand": "Développer",
+		"collapse": "Réduire",
+		"show": "Afficher",
+		"hide": "Masquer",
+		"lock": "Verrouiller",
+		"unlock": "Déverrouiller",
+		"editshortcut": "Modifier le raccourci",
+		"remove": "Supprimer",
+		"pin": "Épingler",
+		"shortcut": "Raccourci : %1",
+		"pivot/": {
+			"x": "Pivot sur X : %1",
+			"y": "Pivot sur Y : %1",
+			"z": "Pivot sur Z : %1"
+		},
+		"position/": {
+			"x": "Position sur X : %1",
+			"y": "Position sur Y : %1",
+			"z": "Position sur Z : %1"
+		},
+		"rotation/": {
+			"x": "Rotation sur X : %1",
+			"y": "Rotation sur Y : %1",
+			"z": "Rotation sur Z : %1"
+		},
+		"scale/": {
+			"x": "Échelle sur X : %1",
+			"y": "Échelle sur Y : %1",
+			"z": "Échelle sur Z : %1",
+			"xyz": "[ X : %1, Y : %2, Z : %3 ]"
+		},
+		"undo": "Annuler",
+		"redo": "Rétablir",
+		"snapenable": "Activer le magnétisme",
+		"snapdisable": "Désactiver le magnétisme",
+		"uveditor/": {
+			"editxy": "Repositionner",
+			"editwidthheight": "Modifier la hauteur et largeur",
+			"editlength": "Modifier la longueur",
+			"box": "Définir l'UV de la boîte\n(Cliquer/glisser)",
+			"hide": "Masquer l'éditeur UV",
+			"show": "Afficher l'éditeur UV"
+		},
+		"overlayhide": "Masquer les bordures",
+		"overlayshow": "Afficher les bordures",
+		"customaccentcolor": "Couleur d'accentuation personnalisée",
+		"scenery/":
+		{
+			"overworld_day": "Journée",
+			"overworld_dusk": "Crépuscule",
+			"overworld_night": "Nuit",
+			"desert": "Désert",
+			"snowy_plains": "Plaines enneigées",
+			"cave": "Souterrains",
+			"underwater": "Sous l'eau",
+			"the_end": "L'End",
+			"nether": "Le Nether",
+			"soulsand_valley": "Vallées des âmes"
+		}
+	},
+	"toolset/": {
+		"add/": {
+			"part": "Ajouter un élément",
+			"block": "Ajouter un bloc",
+			"plane": "Ajouter une surface",
+			"plane3d": "Ajouter une surface 3D"
+		},
+		"tool/": {
+			"select": "Outil Sélection",
+			"pivot": "Outil Point de pivot",
+			"move": "Outil Déplacer",
+			"rotate": "Outil Pivoter",
+			"scale": "Outil Mise à l'échelle",
+			"transform": "Outil Transformation"
+		},
+		"snapsize": "Taille"
+	},
+	"tab/": {
+		"assets": "Ressources",
+		"elementeditor": "Gestionnaire d'éléments",
+		"preview": "Aperçu",
+		"recentmodels": "Modèles récents",
+		"settings": "Paramètres",
+		"about": "À propos"
+	},
+	"menu/": {
+		"newmodel": "Nouveau modèle",
+		"newmodeltemplate": "Nouveau modèle (gabarit)...",
+		"openmodel": "Ouvrir un modèle...",
+		"recentmodels": "Modèles récents",
+		"importmodel": "Importer un modèle...",
+		"save": "Enregistrer le modèle",
+		"saveas": "Enregistrer le modèle sous...",
+		"settings": "Paramètres",
+		"about": "À propos"
+	},
+	"key/": {
+        "left": "Gauche",
+        "right": "Droite",
+        "up": "Haut",
+        "down": "Bas",
+        "enter": "Entrée",
+        "escape": "Échap",
+		"space": "Espace",
+        "shift": "Maj",
+		"leftshift": "Maj gauche",
+        "rightshift": "Maj droite",
+        "alt": "Alt",
+        "leftalt": "Alt gauche",
+        "rightalt": "Alt droite",
+        "control": "Ctrl",
+        "leftcontrol": "Ctrl gauche",
+        "rightcontrol": "Ctrl droite",
+        "backspace": "Retour arrière",
+        "tab": "Tab",
+        "home": "Début",
+        "end": "Fin",
+        "delete": "Suppr",
+        "insert": "Inser",
+        "pageup": "Pg.Préc",
+        "pagedown": "Pg.Suiv",
+        "pause": "Pause",
+        "printscreen": "Impr écran"
+    },
+	"modelproperties": "PROPRIÉTÉS DU MODÈLE",
+	"elements": "ÉLÉMENTS",
+	"textures": "TEXTURES",
+	"position": "POSITION",
+	"pivotoffset": "POINT DE PIVOT",
+	"rotation": "ROTATION",
+	"size": "DIMENSIONS",
+	"scale": "ÉCHELLE",
+	"bend": "ARTICULATION",
+	"material": "MATÉRIAU",
+	"appearance": "APPARENCE",
+	"wind": "VENT",
+	"mineimator": "MINE-IMATOR",
+	"background": "ARRIÈRE-PLAN",
+	"render": "RENDU",
+	"export": "EXPORTATION",
+	"general": "GÉNÉRAL",
+	"controls": "CONTRÔLES",
+	"interface": "INTERFACE",
+	"graphics": "GRAPHISMES",
+	"assets/": {
+		"modelname": "Nom du modèle",
+		"emptymodelname": "Le nom ne peut pas être vide.",
+		"modellocation": "Emplacement du modèle",
+		"modelnotsaved": "Modèle non-enregistré",
+		"openfolder": "Ouvrir le dossier",
+		"savemodel": "Enregistrer le modèle",
+		"playerskin": "Utilise un skin Minecraft",
+		"playerskinhelp": "Permettre l'utilisation d'un skin Minecraft dans Mine-imator.",
+		"modelscale": "Échelle du modèle",
+		"hideshapes": "Masquer les formes",
+		"newpart": "Nouvel élément",
+		"newshape": "Nouvelle forme",
+		"moveabove": "Placer au dessus de %1",
+		"movebelow": "Placer en dessous de %1",
+		"parentto": "Apparenter à %1",
+		"roottexture": "Texture principale",
+		"addtexture": "AJOUTER UNE TEXTURE",
+		"texturesize": "%1×%2 pixels",
+		"texturescale": "Échelle",
+		"defaulttexture": "Texture par défaut"
+	},
+	"elementeditor/": {
+		"partname": "Nom de l'élément",
+		"shapename": "Nom de la forme",
+		"emptypartname": "Le nom de l'élement ne peut pas être vide.",
+		"samepartname": "Le nom de l'élement doit être unique.",
+		"newpart": "Nouvel élement",
+		"newshape": "Nouvelle forme",
+		"position/": {
+			"x": "X",
+			"y": "Y",
+			"z": "Z"
+		},
+		"rotation/": {
+			"x": "X",
+			"y": "Y",
+			"z": "Z"
+		},
+		"offset/": {
+			"x": "X",
+			"y": "Y",
+			"z": "Z"
+		},
+		"size/": {
+			"w": "L",
+			"l": "l",
+			"h": "H"
+		},
+		"scale/": {
+			"x": "X",
+			"y": "Y",
+			"z": "Z",
+			"xyz": "XYZ"
+		},
+		"bend/": {
+			"lock": "Rattacher à l'articulation de l'élément",
+			"axis": "Axes activés",
+			"axis/": {
+				"x": "Articuler sur X",
+				"y": "Articuler sur Y",
+				"z": "Articuler sur Z"
+			},
+			"invert": "Axes inversés",
+			"invert/": {
+				"x": "Inverser",
+				"y": "Inverser",
+				"z": "Inverser"
+			},
+			"range/": {
+				"x": "Portée",
+				"y": "Portée",
+				"z": "Portée"
+			},
+			"angle/": {
+				"x": "Angle par défaut",
+				"y": "Angle par défaut",
+				"z": "Angle par défaut"
+			},
+			"inheritangles": "Hériter de l'articulation",
+			"inheritangleshelp": "Activer le paramètre d'héritage d'articulation lors du chargement dans Mine-imator.",
+			"offset": "Décalage",
+			"customsize": "Taille personnalisée",
+			"customsizehelp": "Définir une taille d'articulation personnalisée.",
+			"size": "Taille",
+			"part": "Partie",
+			"part/": {
+				"right": "Droite",
+				"left": "Gauche",
+				"front": "Avant",
+				"back": "Arrière",
+				"upper": "Supérieure",
+				"lower": "Inférieure"
+			}
+		},
+		"texture": "Texture",
+		"inherittexture": "Hériter de la texture",
+		"inheritcolor": "Hériter de l'apparence du parent",
+		"inheritcolorhelp": "Hériter des paramètres d'apparence de l'élément parent.",
+		"blendcolor": "Couleur de produit",
+		"mixcolor": "Couleur de superposition",
+		"mixamount": "Superposition",
+		"opacity": "Opacité",
+		"brightness": "Luminosité",
+		"inflate": "Gonfler",
+		"bend": "Articulation",
+		"mirrortexture": "Retourner la texture",
+		"invert": "Inverser les faces",
+		"facecamera": "Suivre la caméra",
+		"hover": "Rebondir",
+		"extrude": "Extruder",
+		"hidefront": "Masquer la face avant",
+		"hideback": "Masquer la face arrière",
+		"windaxis": "Effet du vent",
+		"windaxis/": {
+			"none": "Nulle part",
+			"all": "Partout",
+			"y": "Sur Y",
+			"z": "Sur Z"
+		},
+		"windminimumy": "Minimum sur Y",
+		"windminimumz": "Minimum sur Z",
+		"windminimum": "Minimum",
+		"windmaximumy": "Maximum sur Y",
+		"windmaximumz": "Maximum sur Z",
+		"windmaximum": "Maximum",
+		"depth": "Ordre de rendu",
+		"openpositiontab": "Ouvrir les options de position",
+		"openpositiontabhelp": "Ouvrir automatiquement les options de position de cet élément dans Mine-imator."
+	},
+	"preview/": {
+		"scenery": "Décor",
+		"timeday": "",
+		"timedusk": "",
+		"timenight": "",
+		"timeofday": "Heure de la journée",
+		"lightrotation": "Rotation de l'éclairage",
+		"lightrange": "Portée de l'éclairage",
+		"ssao": "Occlusion ambiente",
+		"ssaoradius": "Rayon",
+		"ssaopower": "Intensité",
+		"ssaoblurpasses": "Qualité du flou",
+		"shadows": "Ombres",
+		"shadowsblurquality": "Qualité du flou",
+		"shadowsblursize": "Rayon du flou",
+		"aa": "Anti-crénelage",
+		"exportsize": "Taille du rendu",
+		"exportsize/": {
+			"256": "256 px",
+			"512": "512 px",
+			"1024": "1024 px"
+		},
+		"includebackground": "Inclure l'arrière-plan",
+		"exportimage": "EXPORTER L'IMAGE"
+	},
+	"openmodel/": {
+		"recentmodels": "Modèles récents",
+		"browse": "PARCOURIR..."
+	},
+	"settings/": {
+		"fps": "Images par secondes",
+        "fps30": "30",
+        "fps60": "60",
+		"backupmodels": "Copies de sauvegarde",
+		"backupmodelsminutes": "Temps entre chaque sauvegarde (minutes)",
+		"backupmodelsamount": "Nombre de sauvegardes",
+		"slowgeneration": "Ralentir la génération des formes",
+		"slowgenerationhelp": "Mettre à jour les formes plus lentement pour améliorer les performances.",
+		"refreshtextures": "Rechargement auto. des textures",
+		"refreshtextureshelp": "Recharger toutes les textures du modèle lors du focus sur le programme.",
+		"interfaceshortcuts": "Raccourcis de l'interface utilisateur",
+		"camerashortcuts": "Raccourcis de la caméra",
+		"key/": {
+			"open": "Ouvrir un modèle",
+			"save": "Enregister le modèle",
+			"undo": "Annuler",
+			"redo": "Rétablir",
+			"removeelements": "Supprimer les éléments",
+			"duplicateelements": "Dupliquer les éléments",
+			"selectelements": "Sélectionner les éléments",
+			"uveditor": "Basculer l'éditeur d'UV",
+			"tool/": {
+				"select": "Outil Sélection",
+				"pivot": "Outil Point de pivot",
+				"move": "Outil Déplacer",
+				"rotate": "Outil Pivoter",
+				"scale": "Outil Échelle",
+				"transform": "Outil Transformer"
+			},
+			"snap": "Activer le magnétisme",
+			"editsnap": "Modifier le magnétisme",
+			"forward": "Avant",
+            "back": "Arrière",
+            "left": "Gauche",
+            "right": "Droite",
+            "ascend": "Monter",
+            "descend": "Descendre",
+            "reset": "Réinitialiser",
+            "fast": "Plus vite",
+            "slow": "Plus lentement"
+		},
+		"theme": "Thème",
+		"theme/": {
+			"light": "CLAIR",
+			"dark": "FONCÉ",
+			"darker": "NUIT"
+		},
+		"accentcolor": "Couleur d'accentuation",
+		"language": "Langue",
+		"openlanguagefolder": "Ouvrir le dossier",
+		"zisup": "Z est le haut",
+		"sharedtextureuvs": "Afficher tous les îlots UV",
+		"sharedtextureuvshelp": "Afficher les formes utilisant la même texture dans l'éditeur d'UV.",
+		"looksensitivity": "Sensitivité de la caméra",
+		"smoothcamera": "Caméra adoucie",
+		"smoothcameraamount": "Quantité",
+		"graphicsblockybending": "Articulations carrées",
+		"graphicsblockybendinghelp": "Activer un aspect carré pour les articulations sans taille personnalisée.",
+		"shapeoutlineopacity": "Opacité des contours",
+		"graphicswind": "Vent",
+		"graphicswindspeed": "Vitesse",
+		"graphicswindstrength": "Force",
+		"graphicsmodelingssao": "Occlusion ambiente",
+		"graphicslighting": "Éclairage"
+	},
+	"about/": {
+		"version": "Version %1",
+		"releasedate": ", sortie le %1",
+		"forversion": "pour %1",
+		"credits": "CRÉDITS",
+		"development": "DÉVELOPPEMENT",
+		"uibranding": "UI & VISUELS",
+		"specialthanks": "REMERCIEMENTS",
+		"betatesting": "TESTEURS",
+		"donate": "FAIRE UN DON"
+	}
+}

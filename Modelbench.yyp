@@ -807,6 +807,14 @@
             }
         },
         {
+            "Key": "167c5a69-f77c-481e-90d7-4f8ec65e0109",
+            "Value": {
+                "id": "c96fe059-6c97-49be-96ea-ca601fe149ff",
+                "resourcePath": "datafiles_yy\\Data\\Languages\\francais.mblanguage.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
             "Key": "16b1b5d4-af27-443b-bd1e-a8fab4f7306f",
             "Value": {
                 "id": "a59abdac-129f-42b1-8bc8-81e1b5af03cf",
