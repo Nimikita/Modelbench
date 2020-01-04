@@ -36,7 +36,7 @@ if (el_edit_amount > 0 && program_mode = e_mode.MODELING)
 			
 			draw_surface_ext(render_target, 0, 0, 2, 2, 0, c_white, 1)
 			
-			if (el_edit != null)
+			if (el_edit != null && el_edit.parent != null)
 			{
 				if (!el_edit.hidden && !el_edit.tree_hidden)
 				{
@@ -60,9 +60,25 @@ if (el_edit_amount > 0 && program_mode = e_mode.MODELING)
 					//if (el_edit.element_type = TYPE_PART && el_edit.value[e_value.BEND])
 					//	view_control_bend(view)
 					
-					// Tool icon
 					var origin;
 					
+					// Parent position
+					if (el_edit.parent.object_index = obj_model_element)
+					{
+						origin = point3D_project(matrix_position(el_edit.parent.matrix), view_proj_matrix, render_width, render_height)
+						origin[X] = round(origin[X])
+						origin[Y] = round(origin[Y])
+						
+						origin = vec2_mul(origin, 2)
+						
+						if (!point3D_project_error)
+						{
+							draw_circle_ext(origin[X], origin[Y], 28, false, hex_to_color("FF00FF"), 1)
+							draw_image(spr_icons, icons.PART, origin[X], origin[Y], 2, 2, c_white, 1)
+						}
+					}
+					
+					// Tool icon
 					if (window_busy != "rendercontrolscalexyz")
 					{
 						var mat;
@@ -113,7 +129,7 @@ if (el_edit_amount > 0 && program_mode = e_mode.MODELING)
 						if (icon != null)
 							draw_image(spr_icons, icon, origin[X], origin[Y], 2, 2, c_text_secondary, a_text_secondary)
 						else
-							draw_circle_ext(origin[X], origin[Y], 16, false, c_origin, 1)
+							draw_circle_ext(origin[X], origin[Y], 16, false, hex_to_color("00FFFF"), 1)
 					}
 					
 					// Tooltip
