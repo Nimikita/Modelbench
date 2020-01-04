@@ -13,7 +13,7 @@ if (async_load[?"id"] = http_snackbar_news && async_load[?"status"] < 1)
 			var newslist = decodedmap[?"default"];
 			for (var n = 0; n < ds_list_size(newslist); n++)
 			{
-				var newsmap, name, text, icon, button, buttonurl, iid;
+				var newsmap, name, text, button, buttonurl;
 				newsmap = newslist[|n]
 				
 				if (ds_map_valid(newsmap))

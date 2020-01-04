@@ -30,5 +30,4 @@ c_success = theme.green_success
 c_axisred = theme.red
 c_axisgreen = theme.green
 c_axisblue = theme.blue
-c_origin = theme.origin
 c_bend = theme.pink

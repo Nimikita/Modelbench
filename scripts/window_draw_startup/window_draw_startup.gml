@@ -80,6 +80,6 @@ else
 	midy = snap(192 + ((window_height - 192) / 1.75), 2)
 	
 	// Only draw splash if it fits well on screen
-	if ((midy + (sprite_get_height(ashley_splash) / 1.75)) < (window_height - 50))
-		draw_image(ashley_splash, 1, midx, midy)
+	if ((midy + (sprite_get_height(spr_ashley_splash) / 1.75)) < (window_height - 50))
+		draw_image(spr_ashley_splash, 1, midx, midy)
 }

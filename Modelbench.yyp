@@ -1074,7 +1074,7 @@
             "Key": "1cf8b3f7-a92c-4109-9af0-7c64d33d0002",
             "Value": {
                 "id": "7b330ddb-2419-45ea-aadf-39b5da893b64",
-                "resourcePath": "sprites\\ashley_splash\\ashley_splash.yy",
+                "resourcePath": "sprites\\spr_ashley_splash\\spr_ashley_splash.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -8252,14 +8252,6 @@
                 "id": "2e2d7fa8-17e2-4d2c-a57a-181505a4c627",
                 "resourcePath": "views\\fc19351e-b95d-4c12-a070-098cb3b45ad1.yy",
                 "resourceType": "GMFolder"
-            }
-        },
-        {
-            "Key": "fc538a7a-c537-4f52-b9ae-f8fd6b8d6646",
-            "Value": {
-                "id": "dff61425-6dd0-4bee-a816-d9b1fb1432a5",
-                "resourcePath": "sprites\\spr_splash\\spr_splash.yy",
-                "resourceType": "GMSprite"
             }
         },
         {

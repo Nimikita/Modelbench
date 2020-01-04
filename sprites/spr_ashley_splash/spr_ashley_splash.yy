@@ -2,7 +2,7 @@
     "id": "1cf8b3f7-a92c-4109-9af0-7c64d33d0002",
     "modelName": "GMSprite",
     "mvc": "1.12",
-    "name": "ashley_splash",
+    "name": "spr_ashley_splash",
     "For3D": false,
     "HTile": false,
     "VTile": false,
