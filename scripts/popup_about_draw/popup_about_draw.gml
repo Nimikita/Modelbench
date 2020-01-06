@@ -43,11 +43,11 @@ draw_label("Voxy", dx, dy, fa_left, fa_bottom, c_text_secondary, a_text_secondar
 dy += 19
 draw_button_text("@voxybuns", dx, dy, open_url, "https://twitter.com/voxybuns", "https://twitter.com/voxybuns")
 
-// Beta testing
+// Beta testers
 dx += 130 + 24
 dy = content_y + 188
 
-draw_label(text_get("aboutbetatesting"), dx, dy, fa_left, fa_bottom, c_text_tertiary, a_text_tertiary, font_subheading)
+draw_label(text_get("aboutbetatesters"), dx, dy, fa_left, fa_bottom, c_text_tertiary, a_text_tertiary, font_subheading)
 dy += 22
 
 for (var i = 0; i < ds_list_size(beta_testers_list); i++)
@@ -72,7 +72,14 @@ dy += 26
 draw_label("David", dx, dy + 4, fa_left, fa_bottom, c_text_secondary, a_text_secondary, font_emphasis)
 dy += 19
 draw_button_text("@stuffbydavidn", dx, dy, open_url, "https://twitter.com/stuffbydavidn", "https://twitter.com/stuffbydavidn")
+
+// Beta testing
 dy += 54
+draw_label(text_get("aboutbetatesting"), dx, dy, fa_left, fa_bottom, c_text_tertiary, a_text_tertiary, font_subheading)
+dy += 26
+draw_label("Hozq", dx, dy, fa_left, fa_bottom, c_text_secondary, a_text_secondary, font_emphasis)
+dy += 19
+draw_label("Mr.Banders", dx, dy, fa_left, fa_bottom, c_text_secondary, a_text_secondary, font_emphasis)
 
 // Donate button
 if (draw_button_secondary("aboutdonate", content_x + content_width - ((string_width_font(text_get("aboutdonate"), font_button) + 28 + 28) + 12), content_y + content_height - 36 - 8, null, null, icons.DONATE, fa_right))

@@ -4,7 +4,7 @@
         "language": "English",
         "translator": "Nimi",
         "forversion": "0.8.1",
-        "lastchange": "2020.01.04"
+        "lastchange": "2020.01.06"
     },
 	"startup/": {
 		"modeldetected": "Unsaved model detected",
@@ -536,6 +536,7 @@
 		"development": "DEVELOPMENT",
 		"uibranding": "UI & BRANDING",
 		"specialthanks": "SPECIAL THANKS",
+		"betatesters": "BETA TESTERS",
 		"betatesting": "BETA TESTING",
 		"donate": "DONATE"
 	}
