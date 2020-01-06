@@ -5,10 +5,10 @@
 #macro dev_mode						false
 
 // Versions
-#macro modelbench_version			"0.8.1"
+#macro modelbench_version			"1.0.0 PRE-RELEASE 1"
 #macro modelbench_version_full		modelbench_version + ""
 #macro modelbench_version_extra		""
-#macro modelbench_version_date		"04.01.2020"
+#macro modelbench_version_date		"06.01.2020"
 #macro gm_runtime					GM_runtime_version
 
 // File formats

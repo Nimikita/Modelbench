@@ -3,7 +3,7 @@
     "file/": {
         "language": "English",
         "translator": "Nimi",
-        "forversion": "0.8.1",
+        "forversion": "1.0.0",
         "lastchange": "2020.01.06"
     },
 	"startup/": {
