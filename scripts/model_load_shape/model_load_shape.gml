@@ -85,7 +85,7 @@ with (new(obj_model_element))
 	value[e_value.HIDE_BACK] = value_get_real(map[?"hide_back"], false)
 	
 	// Hide backface (old name)
-	if (!is_real(map[?"hide_backface"]))
+	if (is_real(map[?"hide_backface"]))
 		value[e_value.HIDE_BACK] = map[?"hide_backface"]
 	
 	// Face camera (optional, overrides rotation when rendering)
