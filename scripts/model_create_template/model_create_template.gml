@@ -1,9 +1,34 @@
 /// model_create_template()
 
+var save = false;
+
+if (model_changed)
+{
+	if (model_temporary)
+	{
+		if (question(text_get("questionconfirmsaveopen")))
+			save = true
+	}
+	else
+	{
+		if (question(text_get("questionconfirmopen")))
+			save = true
+	}
+}
+
 var fn = file_dialog_open_model_template();
 
 if (fn = "")
 	return 0
+
+// Save model
+if (save)
+{
+	if (!model_save())
+		return 0
+		
+	model_changed = false
+}
 
 log("Creating model from template")
 

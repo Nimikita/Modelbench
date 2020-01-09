@@ -2,6 +2,22 @@
 /// @arg [filename]
 /// @desc Opens a .mimodel or .mbbackup model file.
 
+var save = false;
+
+if (model_changed)
+{
+	if (model_temporary)
+	{
+		if (question(text_get("questionconfirmsaveopen")))
+			save = true
+	}
+	else
+	{
+		if (question(text_get("questionconfirmopen")))
+			save = true
+	}
+}
+
 var fn;
 if (argument_count > 0)
 	fn = argument[0]
@@ -13,7 +29,16 @@ if (fn = "")
 
 if (!file_exists_lib(fn))
 	return 0
-	
+
+// Save model
+if (save)
+{
+	if (!model_save())
+		return 0
+		
+	model_changed = false
+}
+
 // Start model loading
 var rootmap;
 log("Opening model", fn)

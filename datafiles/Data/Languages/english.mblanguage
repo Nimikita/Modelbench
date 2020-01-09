@@ -4,7 +4,7 @@
         "language": "English",
         "translator": "Nimi",
         "forversion": "1.0.0",
-        "lastchange": "2020.01.06"
+        "lastchange": "2020.01.09"
     },
 	"startup/": {
 		"modeldetected": "Unsaved model detected",
@@ -47,6 +47,8 @@
         "confirmnew": "Save the changes made in %1 before creating a new model?",
         "confirmopen": "Save the changes made in %1 before opening another model?",
 		"confirmsaveexit": "The current model hasn't been saved yet. Save the current model before quitting?",
+		"confirmsavenew": "The current model hasn't been saved yet. Save the current model before creating a new model?",
+		"confirmsaveopen": "The current model hasn't been saved yet. Save the current model before opening another model?",
         "replace": "A resource with this filename has already been added into the model. Do you want to replace it with the selected file?"
     },
 	"filedialog/": {

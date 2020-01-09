@@ -6,7 +6,10 @@ var fn = file_dialog_save_model();
 if (fn = "")
 	return 0
 
-log("Saving model as new", fn)
+log("Saving current model", fn)
+model_save()
+
+log("Saving model as new file", fn)
 
 load_folder = model_folder
 model_folder = filename_dir(fn)

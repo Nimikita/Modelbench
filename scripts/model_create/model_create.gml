@@ -1,5 +1,30 @@
 /// model_create()
 
+var save = false;
+
+if (model_changed)
+{
+	if (model_temporary)
+	{
+		if (question(text_get("questionconfirmsavenew")))
+			save = true
+	}
+	else
+	{
+		if (question(text_get("questionconfirmnew")))
+			save = true
+	}
+}
+
+// Save model
+if (save)
+{
+	if (!model_save())
+		return 0
+		
+	model_changed = false
+}
+
 log("Creating model")
 
 log("Using temporary save directory", temp_model_directory)

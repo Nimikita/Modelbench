@@ -6447,14 +6447,6 @@
             }
         },
         {
-            "Key": "bf667119-cc0c-4957-88a5-143cf5e1e900",
-            "Value": {
-                "id": "eaca6ffd-5549-4148-b1f7-5e98be144d4a",
-                "resourcePath": "sprites\\spr_icon\\spr_icon.yy",
-                "resourceType": "GMSprite"
-            }
-        },
-        {
             "Key": "bf6a15e5-999e-4ba8-b501-a214966a09e1",
             "Value": {
                 "id": "b60c9589-78fe-413f-960d-c2e2acbf2f74",
