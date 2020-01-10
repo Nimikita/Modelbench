@@ -111,7 +111,6 @@ setting_preview_light_color = c_white
 setting_preview_ambient_color = c_white
 setting_preview_lights = 1
 
-setting_preview_time = 0
 setting_preview_light_rotation = 225
 setting_preview_light_range = 200
 

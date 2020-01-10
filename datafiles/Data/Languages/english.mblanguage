@@ -4,7 +4,7 @@
         "language": "English",
         "translator": "Nimi",
         "forversion": "1.0.0",
-        "lastchange": "2020.01.09"
+        "lastchange": "2020.01.10"
     },
 	"startup/": {
 		"modeldetected": "Unsaved model detected",
@@ -437,10 +437,6 @@
 	},
 	"preview/": {
 		"scenery": "Scenery",
-		"timeday": "",
-		"timedusk": "",
-		"timenight": "",
-		"timeofday": "Time of day",
 		"lightrotation": "Light rotation",
 		"lightrange": "Light range",
 		"ssao": "SSAO",
