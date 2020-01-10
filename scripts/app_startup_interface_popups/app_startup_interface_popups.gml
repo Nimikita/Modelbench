@@ -25,4 +25,4 @@ with (popup_colorpicker)
 }
 
 // About popup
-popup_about = new_popup("about", popup_about_draw, 720, 480, false)
+popup_about = new_popup("about", popup_about_draw, 542, 480, false)
