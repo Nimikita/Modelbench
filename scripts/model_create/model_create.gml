@@ -11,7 +11,7 @@ if (model_changed)
 	}
 	else
 	{
-		if (question(text_get("questionconfirmnew")))
+		if (question(text_get("questionconfirmnew", model_name)))
 			save = true
 	}
 }
