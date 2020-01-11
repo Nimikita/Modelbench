@@ -16,8 +16,8 @@ void main()
 		tex = mod(tex * uTexScale, uTexScale); // GM sprite bug workaround
 	vec4 baseColor = vColor * texture2D(uTexture, tex); // Get base
 	
-	// Discard if less than 75% opacity
-	if (baseColor.a < .745)
+	// Discard if less than 1% opacity
+	if (floor(baseColor.a * 255.0) / 250.0 < .005)
 		discard;
 	
 	gl_FragColor = vec4((vNormal + 1.0) / 2.0, 1.0);

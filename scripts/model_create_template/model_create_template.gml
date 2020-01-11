@@ -26,9 +26,8 @@ if (save)
 {
 	if (!model_save())
 		return 0
-		
-	model_changed = false
 }
+model_changed = false
 
 log("Creating model from template")
 

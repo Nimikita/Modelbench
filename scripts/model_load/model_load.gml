@@ -35,9 +35,8 @@ if (save)
 {
 	if (!model_save())
 		return 0
-		
-	model_changed = false
 }
+model_changed = false
 
 // Start model loading
 var rootmap;
