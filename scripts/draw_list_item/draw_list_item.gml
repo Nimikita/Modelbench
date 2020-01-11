@@ -41,7 +41,7 @@ item.draw_x = xx
 item.draw_y = yy
 
 if (item.divider)
-	draw_divide(xx, yy, width)
+	draw_divide(xx, yy - 4, width)
 
 if (item.disabled)
 {

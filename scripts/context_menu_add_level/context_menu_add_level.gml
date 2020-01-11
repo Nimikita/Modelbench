@@ -18,6 +18,13 @@ level.level_y = yy
 level.level_width = level.level_list.width + 8
 level.level_height = (ds_list_size(level.level_list.item) * 28) + 8
 
+for (var i = 0; i < ds_list_size(level.level_list.item); i++)
+{
+	var item = level.level_list.item[|i];
+	if (item.divider)
+		level.level_height += 8
+}
+
 // Base level already exists
 if (context_menu_level_amount > 0)
 {

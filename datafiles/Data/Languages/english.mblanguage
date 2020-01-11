@@ -4,7 +4,7 @@
         "language": "English",
         "translator": "Nimi",
         "forversion": "1.0.0",
-        "lastchange": "2020.01.10"
+        "lastchange": "2020.01.11"
     },
 	"startup/": {
 		"modeldetected": "Unsaved model detected",
@@ -121,9 +121,9 @@
 			"rotation": "rotation",
 			"scale": "scale",
 			"size": "size",
-			"copy": "Copy %1 values",
-			"paste": "Paste %1 values",
-			"reset": "Reset %1 values"
+			"copy": "Copy all %1 values",
+			"paste": "Paste all %1 values",
+			"reset": "Reset all %1 values"
 		},
 		"textbox/": {
 			"cut": "Cut",

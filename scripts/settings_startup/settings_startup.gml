@@ -91,7 +91,7 @@ setting_lighting = true
 setting_render_shadows = true
 setting_render_shadows_blur_quality = 64
 setting_render_shadows_blur_size = .1
-setting_render_shadows_sun_buffer_size = 8192
+setting_render_shadows_sun_buffer_size = 2048
 
 setting_render_ssao = true
 setting_render_ssao_radius = 5

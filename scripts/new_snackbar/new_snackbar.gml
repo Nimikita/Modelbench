@@ -19,7 +19,7 @@ if (argument_count > 3)
 if (argument_count > 4)
 	sb.dismiss_time = argument[4]
 
-sb.snackbar_y = window_height
+sb.snackbar_y = window_get_height()
 
 ds_list_insert(snackbar_list, 0, sb)
 

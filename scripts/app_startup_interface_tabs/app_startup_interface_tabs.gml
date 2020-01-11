@@ -22,7 +22,6 @@ with (assets)
 	{
 		tbx_model_name = new_textbox(true, 0, "")
 		tbx_model_scale = new_textbox_decimals()
-		//tbx_model_scale.suffix = "%"
 	}
 	
 	// Elements
@@ -164,9 +163,7 @@ with (element_editor)
 	// Appearance
 	appearance = tab_add_category("appearance", tab_element_editor_appearance, false)
 	with (appearance)
-	{
 		tbx_inflate = new_textbox_ndecimals()
-	}
 	
 	// Wind
 	wind = tab_add_category("wind", tab_element_editor_wind, false)
@@ -199,18 +196,18 @@ with (preview)
 	render = tab_add_category("render", tab_preview_render, false)
 	with (render)
 	{
-		tbx_ssao_radius = new_textbox_integer()
+		//tbx_ssao_radius = new_textbox_integer()
 		tbx_ssao_power = new_textbox_integer()
 		tbx_ssao_power.suffix = "%"
-		tbx_ssao_blur_passes = new_textbox_integer()
+		//tbx_ssao_blur_passes = new_textbox_integer()
 		
-		tbx_shadows_blur_quality = new_textbox_integer()
+		//tbx_shadows_blur_quality = new_textbox_integer()
 		tbx_shadows_blur_size = new_textbox_integer()
 		tbx_shadows_blur_size.suffix = "%"
 	}
 	
 	// Export
-	export = tab_add_category("export", tab_preview_export, false) 
+	tab_add_category("export", tab_preview_export, false) 
 }
 
 // Recent models
@@ -231,9 +228,7 @@ with (settings)
 	// Controls
 	controls = tab_add_category("controls", tab_settings_controls, false)
 	with (controls)
-	{
 		tbx_look_sensitivity = new_textbox_decimals()
-	}
 	
 	// Interface
 	interface = tab_add_category("interface", tab_settings_interface, false)

@@ -72,7 +72,7 @@ switch (name)
 		if (context_menu_copy_category != null && context_menu_copy_category.name = "scale")
 		{
 			var text = (setting_combine_scale ? "contextmenuseperatescale" : "contextmenucombinescale");
-			list_add_item(text_get(text), !setting_combine_scale, "", null, icons.TOOLSET_SCALE, null, action_category_combine_scale, true)
+			list_add_item(text_get(text), null, "", null, icons.TOOLSET_SCALE, null, action_category_combine_scale, true)
 		}
 		
 		// Single value copy-paste
@@ -85,8 +85,6 @@ switch (name)
 		
 			if (context_menu_copy_type = e_value_type.NUMBER)
 				caption = string(context_menu_copy)
-			else if (context_menu_copy_type = e_value_type.BOOLEAN)
-				caption = (context_menu_copy ? "On" : "Off")
 			else if (context_menu_copy_type = e_value_type.COLOR)
 				caption = color_to_hex(context_menu_copy)
 			else if (context_menu_copy_type = e_value_type.STRING)
@@ -100,9 +98,9 @@ switch (name)
 		
 		if (context_menu_copy_category != null && context_menu_copy_category.copy != null)
 		{
-			list_add_item(text_get("contextmenucategorycopy", text_get("contextmenucategory" + context_menu_copy_category.name)), context_menu_copy_category, "", null, icons.COPY, null, action_category_copy, true)
-			list_add_item(text_get("contextmenucategorypaste", text_get("contextmenucategory" + context_menu_copy_category.name)), context_menu_copy_category, "", null, icons.PASTE, null, action_category_paste, false)
-			list_add_item(text_get("contextmenucategoryreset", text_get("contextmenucategory" + context_menu_copy_category.name)), context_menu_copy_category, "", null, icons.RESET, null, action_category_reset, false)
+			list_add_item(text_get("contextmenucategorycopy", text_get("contextmenucategory" + context_menu_copy_category.name)), context_menu_copy_category, "", null, icons.COPY_ALL, null, action_category_copy, true)
+			list_add_item(text_get("contextmenucategorypaste", text_get("contextmenucategory" + context_menu_copy_category.name)), context_menu_copy_category, "", null, icons.PASTE_ALL, null, action_category_paste, false)
+			list_add_item(text_get("contextmenucategoryreset", text_get("contextmenucategory" + context_menu_copy_category.name)), context_menu_copy_category, "", null, icons.RESET_ALL, null, action_category_reset, false)
 		}
 		
 		break

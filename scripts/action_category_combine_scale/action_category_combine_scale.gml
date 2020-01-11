@@ -1,4 +1,3 @@
-/// action_category_combine_scale(combine)
-/// @arg combine
+/// action_category_combine_scale()
 
-setting_combine_scale = argument0
+setting_combine_scale = !setting_combine_scale

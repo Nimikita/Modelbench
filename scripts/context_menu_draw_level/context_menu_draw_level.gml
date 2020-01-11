@@ -35,6 +35,9 @@ for (var i = 0; i < ds_list_size(level.level_list.item); i++)
 {
 	var item = level.level_list.item[|i];
 	
+	if (item.divider)
+		dy += 8
+	
 	draw_list_item(item, dx, dy + 28 * i, dw, 28, item.context_menu_active, 8)
 	
 	if (app_mouse_box(dx, dy + 28 * i, dw, 28))

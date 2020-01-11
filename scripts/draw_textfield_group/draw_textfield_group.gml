@@ -30,9 +30,6 @@ if (xx + wid < content_x || xx > content_x + content_width || yy + hei < content
 	return 0
 }
 
-if (context_menu_copy_category)
-	context_menu_area(xx, yy, wid, hei, "contextmenucategory")
-
 // Draw field backgrounds
 draw_outline(xx + 1, yy + 1, wid - 2, hei - 2, 1, c_border, a_border)
 for (var i = 0; i < textfield_amount; i++)
@@ -50,6 +47,9 @@ for (var i = 0; i < textfield_amount; i++)
 	axis_edit = textfield_axis[i]
 	mouseon = app_mouse_box(fieldx, yy + 2, fieldwid, hei - 4) && content_mouseon
 	boxwid = fieldwid
+	
+	if (context_menu_copy_category)
+		context_menu_area(fieldx, yy, boxwid, hei, "contextmenuvalue", textfield_value[i], e_value_type.NUMBER, textfield_script[i], textfield_default[i])
 	
 	// Adjust draw width to cover dividers
 	if (i <= textfield_amount - 1)

@@ -65,6 +65,13 @@ if ((value = buttonvalue) && !mouseon)
 {
 	toolbar_line_x_goal = xx + 8
 	toolbar_line_width_goal = width - 16
+	
+	// Instant update
+	if (toolbar_line_x = 0)
+	{
+		toolbar_line_x = toolbar_line_x_goal
+		toolbar_line_width = toolbar_line_width_goal
+	}
 }
 
 // Press

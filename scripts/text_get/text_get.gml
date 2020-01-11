@@ -7,6 +7,9 @@ var key, map;
 key = argument[0]
 map = language_map
 
+if (key = "")
+	return ""
+
 if (is_undefined(map[?key]))
 {
 	if (!text_exists(key))

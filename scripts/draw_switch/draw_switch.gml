@@ -40,9 +40,6 @@ mouseclick = mouseon && mouse_left
 
 pressed = false
 
-if (!disabled)
-	context_menu_area(xx, yy, w, h, "contextmenuvalue", active, e_value_type.BOOLEAN, script, def)
-
 if (mouseon)
 {
     if (mouse_left || mouse_left_released)
@@ -94,13 +91,18 @@ microani_update(mouseon, mouseclick, active, disabled)
 
 if (tip != "")
 {
-	mouseon = app_mouse_box(xx + string_width(name) + 8, yy + 4, 20, 20) && content_mouseon
+	mouseon = app_mouse_box(xx + string_width(name) + 8, yy + 4, 20, 20) && content_mouseon && !disabled
+	
 	microani_set(argument[0] + "help", null, mouseon, false, false)
+	buttoncolor = merge_color(c_text_tertiary, c_text_secondary, mcroani_arr[e_mcroani.HOVER])
+	buttonalpha = lerp(a_text_tertiary, a_text_secondary, mcroani_arr[e_mcroani.HOVER]) * lerp(1, .5, mcroani_arr[e_mcroani.DISABLED])
 	
-	draw_image(spr_icons, icons.HELP, xx + string_width(name) + 10 + 8, yy + 14, 1, 1, merge_color(c_text_tertiary, c_text_secondary, mcroani_arr[e_mcroani.HOVER]), lerp(a_text_tertiary, a_text_secondary, mcroani_arr[e_mcroani.HOVER]))
-	tip_set(text_get(argument[0] + "help"), xx + string_width(name) + 8, yy + 4, 20, 20)
+	draw_image(spr_icons, icons.HELP, xx + string_width(name) + 10 + 8, yy + 14, 1, 1, buttoncolor, buttonalpha)
 	
-	microani_update(mouseon, false, false)
+	if (!disabled)
+		tip_set(text_get(argument[0] + "help"), xx + string_width(name) + 8, yy + 4, 20, 20)
+	
+	microani_update(mouseon, false, false, disabled)
 }
 
 // Press
