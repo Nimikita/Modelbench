@@ -807,14 +807,6 @@
             }
         },
         {
-            "Key": "167c5a69-f77c-481e-90d7-4f8ec65e0109",
-            "Value": {
-                "id": "c96fe059-6c97-49be-96ea-ca601fe149ff",
-                "resourcePath": "datafiles_yy\\Data\\Languages\\francais.mblanguage.yy",
-                "resourceType": "GMIncludedFile"
-            }
-        },
-        {
             "Key": "16b1b5d4-af27-443b-bd1e-a8fab4f7306f",
             "Value": {
                 "id": "a59abdac-129f-42b1-8bc8-81e1b5af03cf",
@@ -4703,6 +4695,14 @@
             }
         },
         {
+            "Key": "8a7d41a0-10f1-4dc1-9d87-9925f387acc1",
+            "Value": {
+                "id": "7b18f6fd-b075-4904-a37b-595c45222770",
+                "resourcePath": "datafiles_yy\\Data\\Languages\\francais.mblanguage.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
             "Key": "8a8f35b1-fbce-4c3b-a4e1-707b1fdfb953",
             "Value": {
                 "id": "2da4a100-4da7-441a-8dbc-22d8e9d8733e",
@@ -5196,6 +5196,14 @@
                 "id": "df61b8e4-08ae-4e21-89ed-50ead61e2287",
                 "resourcePath": "views\\96033089-18c6-4dca-85b6-c78cb49053c2.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "963d14d0-6f87-4e61-8f5a-caaf1284b824",
+            "Value": {
+                "id": "72fa9829-932c-4c76-af21-5a2d1a7ab84a",
+                "resourcePath": "datafiles_yy\\Data\\Languages\\svenska.mblanguage.yy",
+                "resourceType": "GMIncludedFile"
             }
         },
         {

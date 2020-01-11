@@ -115,5 +115,5 @@ tab_next()
 
 // Smooth camera
 tab_control_keycontrol()
-draw_switch("settingssmoothcamera", dx, dy, setting_smooth_camera, action_setting_smooth_camera, true)
+draw_switch("settingssmoothcamera", dx, dy, setting_smooth_camera, action_setting_smooth_camera, false)
 tab_next()

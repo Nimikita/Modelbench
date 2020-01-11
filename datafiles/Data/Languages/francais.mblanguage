@@ -3,8 +3,8 @@
     "file/": {
         "language": "Français",
         "translator": "Voxy",
-        "forversion": "1.0",
-        "lastchange": "2020.01.04"
+        "forversion": "1.0.0",
+        "lastchange": "2020.01.11"
     },
 	"startup/": {
 		"modeldetected": "Modèle non-sauvegardé détecté",
@@ -47,6 +47,8 @@
         "confirmnew": "Enregistrer les modifications de %1 avant de créer un nouveau modèle ?",
         "confirmopen": "Enregistrer les modifications de %1 avant d'ouvrir un autre modèle ?",
 		"confirmsaveexit": "Le modèle n'a pas été enregistré. Enregistrer le modèle avant de fermer ?",
+		"confirmsavenew": "Le modèle n'a pas été enregistré. Enregistrer le modèle avant de créer un nouveau modèle ?",
+		"confirmsaveopen": "Le modèle n'a pas été enregistré. Enregistrer le modèle avant d'ouvrir un modèle ?",
         "replace": "Une ressource possède déjà ce nom de fichier. Voulez-vous la remplacer ?"
     },
 	"filedialog/": {
@@ -114,14 +116,14 @@
 			"reset": "Réinitialiser la valeur"
 		},
 		"category/": {
-			"position": "la position",
-			"pivotoffset": "le point de pivot",
-			"rotation": "la rotation",
-			"scale": "l'échelle",
-			"size": "les dimensions",
-			"copy": "Copier %1 valeurs",
-			"paste": "Coller %1 valeurs",
-			"reset": "Réinitialiser %1 valeurs"
+			"position": "de position",
+			"pivotoffset": "de point de pivot",
+			"rotation": "de rotation",
+			"scale": "d'échelle",
+			"size": "de dimensions",
+			"copy": "Copier toutes les valeurs %1",
+			"paste": "Coller toutes les valeurs %1",
+			"reset": "Réinitialiser toutes les valeurs %1"
 		},
 		"textbox/": {
 			"cut": "Couper",
@@ -204,7 +206,7 @@
 		},
 		"overlayhide": "Masquer les bordures",
 		"overlayshow": "Afficher les bordures",
-		"customaccentcolor": "Couleur d'accentuation personnalisée",
+		"customaccentcolor": "Couleur d'accent personnalisée",
 		"scenery/":
 		{
 			"overworld_day": "Journée",
@@ -305,7 +307,7 @@
 	"graphics": "GRAPHISMES",
 	"assets/": {
 		"modelname": "Nom du modèle",
-		"emptymodelname": "Le nom ne peut pas être vide.",
+		"emptymodelname": "Le nom du modèle ne peut pas être vide.",
 		"modellocation": "Emplacement du modèle",
 		"modelnotsaved": "Modèle non-enregistré",
 		"openfolder": "Ouvrir le dossier",
@@ -400,10 +402,10 @@
 		},
 		"texture": "Texture",
 		"inherittexture": "Hériter de la texture",
-		"inheritcolor": "Hériter de l'apparence du parent",
-		"inheritcolorhelp": "Hériter des paramètres d'apparence de l'élément parent.",
-		"blendcolor": "Couleur de produit",
-		"mixcolor": "Couleur de superposition",
+		"inheritcolor": "Hériter des couleurs du parent",
+		"inheritcolorhelp": "Hériter des paramètres de couleur de l'élément parent.",
+		"blendcolor": "Produit de couleur",
+		"mixcolor": "Superposition de couleur",
 		"mixamount": "Superposition",
 		"opacity": "Opacité",
 		"brightness": "Luminosité",
@@ -510,7 +512,7 @@
 			"dark": "FONCÉ",
 			"darker": "NUIT"
 		},
-		"accentcolor": "Couleur d'accentuation",
+		"accentcolor": "Couleur d'accent",
 		"language": "Langue",
 		"openlanguagefolder": "Ouvrir le dossier",
 		"zisup": "Z est le haut",
@@ -536,7 +538,7 @@
 		"development": "DÉVELOPPEMENT",
 		"uibranding": "UI & VISUELS",
 		"specialthanks": "REMERCIEMENTS",
-		"betatesting": "TESTEURS",
+		"betatesting": "BÊTA-TEST",
 		"donate": "FAIRE UN DON"
 	}
 }

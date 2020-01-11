@@ -78,7 +78,7 @@ setting_language_filename = "english.mblanguage"
 setting_tip_show = true
 setting_z_is_up = false
 setting_shared_texture_uvs = true
-setting_smooth_camera = true
+setting_smooth_camera = false
 
 setting_blocky_bending = false
 setting_outline_opacity = .15

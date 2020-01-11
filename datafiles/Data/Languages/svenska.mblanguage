@@ -1,0 +1,545 @@
+{
+    "description": "Modelbench language file. Copy and rename this to begin creating your own translation",
+    "file/": {
+        "language": "Swedish",
+        "translator": "Hozq",
+        "forversion": "1.0.0",
+        "lastchange": "2020.01.11"
+    },
+	"startup/": {
+		"modeldetected": "Osparad modell upptäckt",
+		"modeldetecteddesc": "En osparad modell hittades från en tidigare Modelbench session.",
+		"recovermodel": "ÅTERSTÄLL...",
+		"browse": "SÖK...",
+		"newmodel": "NY MODELL",
+		"recentmodels": "Senaste modeller",
+		"startfromscratch": "Starta från början...",
+		"loadatemplate": "Ladda mall...",
+		"version": "v %1"
+	},
+	"recent/": {
+		"lastopened": "Senast öppnad",
+		"lastopened/": {
+			"recently": "Senast öppnad nyligen",
+			"minutes": "Senast öppnad %1 minuter sedan",
+			"hours": "Senast öppnad %1 timmar sedan",
+			"yesterday": "Senast öppnad igår",
+			"days": "Senast öppnad %1 dagar sedan",
+			"lastweek": "Senast öppnad förra veckan",
+			"date": "Senast öppnad %1.%2.%3",
+			"never": "Aldrig öppnad",
+			"future": "Senast öppnad i framtiden"
+		},
+		"none": "Modeller som du har öppnat tidigare visas här!",
+		"sortascendingtip": "Sort ascending",
+		"sortdescendingtip": "Sort descending",
+		"pintip": "Stifta",
+		"removetip": "Ta bort",
+		"filename": "Filnamn",
+		"models": "Senaste modeller"
+	},
+	"error/": {
+		"fileunreadable": "Filen kunde inte bli läst korrekt. Se loggen för fler detaljer. Testa att ladda en backup fil(.mbbackup) Om en är tillgänglig.(Ändra filtypen i filhanteraren.)",
+        "fileunreadablecaption": "Oläsbar fil"
+	},
+	"question/": {
+        "confirmexit": "Spara ändringar innan avslutning?",
+        "confirmnew": "Spara nya ändringar gorda i %1 innan du skapar en ny modell?",
+        "confirmopen": "Spara nya ändringar gorda i %1 innan du öppnar en ny modell?",
+		"confirmsaveexit": "Den nuvarande modellen har inte blivigt sparad ännu. Spara modellen innan avslutning?",
+		"confirmsavenew": "Den nuvarande modellen har inte blivigt sparad ännu. Spara modellen innan du skapar en ny modell?",
+		"confirmsaveopen": "Den nuvarande modellen har inte blivigt sparad ännu. Spara den nuvarande modellen innan du öppnar en annan modell?",
+        "replace": "En resurs med detta filnamnet har redan blivigt adderat i modellen. Vill du ersätta den med den valda filen?"
+    },
+	"filedialog/": {
+		"open/": {
+			"image": "Bilder",
+			"imagecaption": "Öppna bild",
+			"model": "Mine-imator modell",
+			"modelbackup": "Modelbench modell backups",
+            "modelcaption": "Öppna Mine-imator modell",
+			"modeltemplate": "Modelbench mall"
+		},
+		"save/": {
+			"model": "Mine-imator modell",
+			"modelcaption": "Spara Mine-imator modell",
+			"image": "Bilder",
+            "imagecaption": "Spara bild"
+		}
+	},
+	"uveditor/": {
+		"front": "Fram",
+		"back": "Bak",
+		"left": "Vänster",
+		"right": "Höger",
+		"top": "Topp",
+		"bottom": "Botten"
+	},
+	"snackbar/": {
+		"newupdate": "En ny uppdatering är tillgänglig!",
+		"newupdatedesc": "%1 är tillgänglig för nedladdning.",
+		"savemodel": "Modell sparad!",
+		"saveimage": "Bild sparad!",
+		"openimage": "ÖPPNA BILD",
+		"warning/": {
+			"samepartname": "Vissa delar har samma namn.",
+			"emptypartname": "Vissa delar har inget namn.",
+			"emptymodelname": "Denna modellen har inget namn.",
+			"savemodel": "Modellen kommer inte laddas in korrect i Mine-imator."
+		},
+		"button/": {
+			"download": "LADDA NER NU",
+			"update": "UPPDATERA",
+			"remindmelater": "PÅMINN MIG SENARE"
+		}
+	},
+	"colorpicker/": {
+		"r": "R",
+		"g": "G",
+		"b": "B",
+		"h": "H",
+		"s": "S",
+		"v": "V",
+		"hex": "Hex"
+	},
+	"contextmenu/": {
+		"keycontrolreset": "Återställ genvägar",
+		"copylink": "Kopiera länk",
+		"combinescale": "Kombinera XYZ",
+		"seperatescale": "Seperera XYZ",
+		"value/": {
+			"on": "På",
+			"off": "Av",
+			"cut": "Klipp ut värde",
+			"copy": "Kopiera värde",
+			"paste": "Klistra in värde",
+			"reset": "Återställ värde"
+		},
+		"category/": {
+			"position": "position",
+			"pivotoffset": "pivot offset",
+			"rotation": "rotation",
+			"scale": "skala",
+			"size": "storlek",
+			"copy": "Kopiera %1 värden",
+			"paste": "Klistra in %1 värden",
+			"reset": "Återställ %1 värden"
+		},
+		"textbox/": {
+			"cut": "Klipp ut",
+			"copy": "Kopiera",
+			"paste": "Klistra in",
+			"selectall": "Välj allt"
+		},
+		"texture/": {
+			"setmain": "Gör till huvud textur",
+			"remove": "Ta bort textur från modell",
+			"replace": "Ersätt textur",
+			"refresh": "Uppdatera textur"
+		},
+		"element/": {
+			"add": "Lägg till element...",
+			"delete": "Ta bort element",
+			"expandall": "Öppna allt",
+			"collapseall": "Kollapsa allt"
+		},
+		"addelement/": {
+			"part": "Del",
+			"block": "Block",
+			"plane": "Platta",
+			"3dplane": "3D platta"
+		}
+	},
+	"toolbar/": {
+		"modeling": "MODELLERING",
+		"preview": "FÖRHANDSVISNING"
+	},
+	"tooltip/": {
+		"showoptions": "Visa inställningar",
+		"hideoptions": "Göm inställningar",
+		"open": "Öppna",
+		"close": "Stäng",
+		"openmenu": "Öppna meny",
+		"closemenu": "Stäng meny",
+		"expand": "Öppna",
+		"collapse": "Kollapsa",
+		"show": "Visa",
+		"hide": "Göm",
+		"lock": "Lås",
+		"unlock": "Lås upp",
+		"editshortcut": "Redigera genväg",
+		"remove": "Ta bort",
+		"pin": "Stifta",
+		"shortcut": "Genväg: %1",
+		"pivot/": {
+			"x": "X Pivot: %1",
+			"y": "Y Pivot: %1",
+			"z": "Z Pivot: %1"
+		},
+		"position/": {
+			"x": "X Position: %1",
+			"y": "Y Position: %1",
+			"z": "Z Position: %1"
+		},
+		"rotation/": {
+			"x": "X Rotation: %1",
+			"y": "Y Rotation: %1",
+			"z": "Z Rotation: %1"
+		},
+		"scale/": {
+			"x": "X Skala: %1",
+			"y": "Y Skala: %1",
+			"z": "Z Skala: %1",
+			"xyz": "[ X: %1, Y: %2, Z: %3 ]"
+		},
+		"undo": "Ångra",
+		"redo": "Gör om",
+		"snapenable": "Sätt på verktygs snapping",
+		"snapdisable": "Stäng av verktygs snapping",
+		"uveditor/": {
+			"editxy": "Redigera X/Y",
+			"editwidthheight": "Redigera bredd/höjd",
+			"editlength": "Redigera längd",
+			"box": "Set box UV\n(Hold and drag mouse)",
+			"hide": "Göm UV redigerare",
+			"show": "Visa UV redigerare"
+		},
+		"overlayhide": "Göm overlay",
+		"overlayshow": "Visa overlay",
+		"customaccentcolor": "Custom accent color",
+		"scenery/":
+		{
+			"overworld_day": "Overworld (Dag)",
+			"overworld_dusk": "Overworld (Skymning)",
+			"overworld_night": "Overworld (Natt)",
+			"desert": "Desert",
+			"snowy_plains": "Snowy plains",
+			"cave": "Cave",
+			"underwater": "Underwater",
+			"the_end": "The End",
+			"nether": "Nether",
+			"soulsand_valley": "Nether (Soulsand valley)"
+		}
+	},
+	"toolset/": {
+		"add/": {
+			"part": "Lägg till del",
+			"block": "Lägg till block",
+			"plane": "Lägg till platta",
+			"plane3d": "Lägg till 3D platta"
+		},
+		"tool/": {
+			"select": "Select verktyg",
+			"pivot": "Pivot verktyg",
+			"move": "Move verktyg",
+			"rotate": "Rotate verktyg",
+			"scale": "Scale verktyg",
+			"transform": "Transform verktyg"
+		},
+		"snapsize": "Storlek"
+	},
+	"tab/": {
+		"assets": "Tillgångar",
+		"elementeditor": "Element redigerare",
+		"preview": "Förhandsvisning",
+		"recentmodels": "Nya modeller",
+		"settings": "Inställningar",
+		"about": "Om"
+	},
+	"menu/": {
+		"newmodel": "Ny modell",
+		"newmodeltemplate": "Ny modell från mall...",
+		"openmodel": "Öppna modell...",
+		"recentmodels": "Nya modeller",
+		"importmodel": "Importera modell...",
+		"save": "Spara modell",
+		"saveas": "Spara modell som...",
+		"settings": "Inställningar",
+		"about": "Om"
+	},
+	"key/": {
+        "left": "Left",
+        "right": "Right",
+        "up": "Up",
+        "down": "Down",
+        "enter": "Enter",
+        "escape": "Escape",
+        "space": "Space",
+        "shift": "Shift",
+        "leftshift": "Left shift",
+        "rightshift": "Right shift",
+        "alt": "Alt",
+        "leftalt": "Left alt",
+        "rightalt": "Right alt",
+        "control": "Ctrl",
+        "leftcontrol": "Left control",
+        "rightcontrol": "Right control",
+        "backspace": "Backspace",
+        "tab": "Tab",
+        "home": "Home",
+        "end": "End",
+        "delete": "Delete",
+        "insert": "Insert",
+        "pageup": "Page up",
+        "pagedown": "Page down",
+        "pause": "Pause",
+        "printscreen": "Printscreen"
+    },
+	"modelproperties": "MODELL EGENSKAPER",
+	"elements": "ELEMENT",
+	"textures": "TEXTURER",
+	"position": "POSITION",
+	"pivotoffset": "PIVOT OFFSET",
+	"rotation": "ROTATION",
+	"size": "STORLEK",
+	"scale": "SKALA",
+	"bend": "BÖJNING",
+	"material": "MATERIAL",
+	"appearance": "UTSEENDE",
+	"wind": "VIND",
+	"mineimator": "MINE-IMATOR",
+	"background": "BAKGRUND",
+	"render": "RENDERING",
+	"export": "EXPORTERING",
+	"general": "ALLMÄNT",
+	"controls": "KONTROLLER",
+	"interface": "GRÄNSSNITT",
+	"graphics": "GRAFIK",
+	"assets/": {
+		"modelname": "Modell namn",
+		"emptymodelname": "Modellens namn kan inte vara tomt.",
+		"modellocation": "Modell plats",
+		"modelnotsaved": "Modell inte sparad",
+		"openfolder": "Öppna mapp",
+		"savemodel": "Spara modell",
+		"playerskin": "Tillåt Minecraft skin.",
+		"playerskinhelp": "Tillåt att skins kan bli nedladdade för modellen i Mine-imator.",
+		"modelscale": "Modell skala",
+		"hideshapes": "Göm former",
+		"newpart": "Ny del",
+		"newshape": "Ny form",
+		"moveabove": "Flytta upp %1",
+		"movebelow": "Flytta ner %1",
+		"parentto": "Överordna till %1",
+		"roottexture": "Rot textur",
+		"addtexture": "LÄGG TILL TEXTUR",
+		"texturesize": "%1x%2 pixlar",
+		"texturescale": "Skala",
+		"defaulttexture": "Standard textur"
+	},
+	"elementeditor/": {
+		"partname": "Del namn",
+		"shapename": "Form namn",
+		"emptypartname": "Delens namn kan inte vara tomt.",
+		"samepartname": "Delar kan inte ha samma namn.",
+		"newpart": "Ny del",
+		"newshape": "Ny form",
+		"position/": {
+			"x": "X",
+			"y": "Y",
+			"z": "Z"
+		},
+		"rotation/": {
+			"x": "X",
+			"y": "Y",
+			"z": "Z"
+		},
+		"offset/": {
+			"x": "X",
+			"y": "Y",
+			"z": "Z"
+		},
+		"size/": {
+			"w": "W",
+			"l": "L",
+			"h": "H"
+		},
+		"scale/": {
+			"x": "X",
+			"y": "Y",
+			"z": "Z",
+			"xyz": "XYZ"
+		},
+		"bend/": {
+			"lock": "Låst till den böjda halvan av föräldren",
+			"axis": "Påsatt axis",
+			"axis/": {
+				"x": "Böj på X axis",
+				"y": "Böj på Y axis",
+				"z": "Böj på Z axis"
+			},
+			"invert": "Inverterade axis",
+			"invert/": {
+				"x": "Invertera",
+				"y": "Invertera",
+				"z": "Invertera"
+			},
+			"range/": {
+				"x": "Räckvidd",
+				"y": "Räckvidd",
+				"z": "Räckvidd"
+			},
+			"angle/": {
+				"x": "Standard vinkel",
+				"y": "Standard vinkel",
+				"z": "Standard vinkel"
+			},
+			"inheritangles": "Ärv böjningsvinkel",
+			"inheritangleshelp": "Sätter på 'Ärv böjning' för den här delen i Mine-imator.",
+			"offset": "Offset",
+			"customsize": "Specifik böjningsskala",
+			"customsizehelp": "Tillåter en specific böjningsskala. Den här delens böjning kommer att ignorera programmets böjnings stil.",
+			"size": "Storlek",
+			"part": "Del",
+			"part/": {
+				"right": "Höger",
+				"left": "Vänster",
+				"front": "Fram",
+				"back": "Bak",
+				"upper": "Övre",
+				"lower": "Undre"
+			}
+		},
+		"texture": "Textur",
+		"inherittexture": "Ärv textur",
+		"inheritcolor": "Ärv föräldrens färg",
+		"inheritcolorhelp": "Ärver färginställningarna inklusive opacitet och ljusstyrka.",
+		"blendcolor": "Blend färg",
+		"mixcolor": "Mix färg",
+		"mixamount": "Mix mängd",
+		"opacity": "Opacitet",
+		"brightness": "Ljusstyrka",
+		"inflate": "Blås upp",
+		"bend": "Böj",
+		"mirrortexture": "Spegla textur",
+		"invert": "Invert",
+		"facecamera": "Vänd emot kameran",
+		"hover": "Sväva",
+		"extrude": "Extrusion",
+		"hidefront": "Göm framdel",
+		"hideback": "Göm bakdel",
+		"windaxis": "Vind axis",
+		"windaxis/": {
+			"none": "Ingen",
+			"all": "Alla",
+			"y": "Y",
+			"z": "Z"
+		},
+		"windminimumy": "Minimum Y",
+		"windminimumz": "Minimum Z",
+		"windminimum": "Minimum",
+		"windmaximumy": "Maximal Y",
+		"windmaximumz": "Maximal Z",
+		"windmaximum": "Maximal",
+		"depth": "Renderings djup",
+		"openpositiontab": "Öppen positionsflik",
+		"openpositiontabhelp": "Automatiskt öppnar denna dels positionsflik i Mine-imator."
+	},
+	"preview/": {
+		"scenery": "Bakgrund",
+		"timeday": "",
+		"timedusk": "",
+		"timenight": "",
+		"timeofday": "Dags tidpungt",
+		"lightrotation": "Ljus rotation",
+		"lightrange": "Ljus räckvidd",
+		"ssao": "SSAO",
+		"ssaoradius": "Radie",
+		"ssaopower": "Styrka",
+		"ssaoblurpasses": "Suddighetspasseringar",
+		"shadows": "Shadows",
+		"shadowsblurquality": "Suddighetskvalite",
+		"shadowsblursize": "Suddighetsstorlek",
+		"aa": "AA",
+		"exportsize": "Exporterings storlek",
+		"exportsize/": {
+			"256": "256px",
+			"512": "512px",
+			"1024": "1024px"
+		},
+		"includebackground": "Inkludera bakgrund",
+		"exportimage": "EXPORTERA BILD"
+	},
+	"openmodel/": {
+		"recentmodels": "Senaste modeller",
+		"browse": "SÖK..."
+	},
+	"settings/": {
+		"fps": "Bilder per sekund",
+        "fps30": "30",
+        "fps60": "60",
+		"backupmodels": "Skapa backups",
+		"backupmodelsminutes": "Minuter imellan backups",
+		"backupmodelsamount": "Max sparade backups",
+		"slowgeneration": "Långsam formgenerering",
+		"slowgenerationhelp": "Uppdaterar former saktare. Användbart för prestanda när du ändrar komplexa modeller.",
+		"refreshtextures": "Uppdatera texturer på fokus",
+		"refreshtextureshelp": "Automatiskt uppdatera alla modell texturer när fönstret har fått fokus igen.",
+		"interfaceshortcuts": "Interface genvägsknappar",
+		"camerashortcuts": "Kamera genvägsknappar",
+		"key/": {
+			"open": "Öppna modell",
+			"save": "Spara modell",
+			"undo": "Ångra",
+			"redo": "Göra om",
+			"removeelements": "Ta bort element",
+			"duplicateelements": "Duplicera element",
+			"selectelements": "Välj element",
+			"uveditor": "Toggla UV editor",
+			"tool/": {
+				"select": "Välj verktyg",
+				"pivot": "Pivot verktyg",
+				"move": "Move verktyg",
+				"rotate": "Rotate verktyg",
+				"scale": "Scale verktyg",
+				"transform": "Transform verktyg"
+			},
+			"snap": "Toggla snapping",
+			"editsnap": "Ändra snapping",
+			"forward": "Frammåt",
+            "back": "Bakåt",
+            "left": "Vänster",
+            "right": "Höger",
+            "ascend": "Åka upp",
+            "descend": "Åka ner",
+            "reset": "Återställa",
+            "fast": "Snabbare",
+            "slow": "Saktare"
+		},
+		"theme": "Tema",
+		"theme/": {
+			"light": "LJUS",
+			"dark": "MÖRK",
+			"darker": "MÖRKARE"
+		},
+		"accentcolor": "Accentfärg",
+		"language": "Språk",
+		"openlanguagefolder": "Öppna mapp",
+		"zisup": "Z är upp",
+		"sharedtextureuvs": "Visa delade textur UVs",
+		"sharedtextureuvshelp": "Visar former som delar en textur i UV editorn.",
+		"looksensitivity": "Kamera känslighet",
+		"smoothcamera": "Len kamera rörelse",
+		"smoothcameraamount": "Mängd",
+		"graphicsblockybending": "Blockig böjning",
+		"graphicsblockybendinghelp": "Sätt på blockig böjning på delar utan en specifierad böjningsskala.",
+		"shapeoutlineopacity": "Formernas ytterlinje opacitet",
+		"graphicswind": "Vind",
+		"graphicswindspeed": "Snabbhet",
+		"graphicswindstrength": "Hårdhet",
+		"graphicsmodelingssao": "Modellerings SSAO",
+		"graphicslighting": "Belysning"
+	},
+	"about/": {
+		"version": "Verision %1",
+		"releasedate": ", släppt %1",
+		"forversion": "För %1",
+		"credits": "CREDITS",
+		"development": "UTVECKLING",
+		"uibranding": "UI & VISUALER",
+		"specialthanks": "SPECIELLA TACK",
+		"betatesters": "BETA TESTARE",
+		"betatesting": "BETA TESTNING",
+		"donate": "DONERA"
+	}
+}
