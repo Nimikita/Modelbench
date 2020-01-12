@@ -59,6 +59,8 @@ value[e_value.TO_X] = value[e_value.OFFSET_X] + value[e_value.WIDTH]
 value[e_value.TO_Y] = value[e_value.OFFSET_Y] + (type != "plane" ? value[e_value.LENGTH] : 0)
 value[e_value.TO_Z] = value[e_value.OFFSET_Z] + value[e_value.HEIGHT]
 
+inflate = vec3(value[e_value.INFLATE])
+
 // Shape size
 from_noscale = point3D(value[e_value.FROM_X], value[e_value.FROM_Y], value[e_value.FROM_Z])
 to_noscale = point3D(value[e_value.TO_X], value[e_value.TO_Y], value[e_value.TO_Z])
@@ -68,9 +70,9 @@ if (type = "plane")
 	
 	if (value[e_value.EXTRUDE])
 		to_noscale[Y] += 1
+	else
+		inflate[Y] = 0
 } 
-
-inflate = vec3(value[e_value.INFLATE])
 
 from = point3D_mul(point3D_sub(from_noscale, inflate), scale)
 to = point3D_mul(point3D_add(to_noscale, inflate), scale)

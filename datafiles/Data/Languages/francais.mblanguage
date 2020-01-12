@@ -4,7 +4,7 @@
         "language": "Français",
         "translator": "Voxy",
         "forversion": "1.0.0",
-        "lastchange": "2020.01.11"
+        "lastchange": "2020.01.12"
     },
 	"startup/": {
 		"modeldetected": "Modèle non-sauvegardé détecté",
@@ -404,9 +404,9 @@
 		"inherittexture": "Hériter de la texture",
 		"inheritcolor": "Hériter des couleurs du parent",
 		"inheritcolorhelp": "Hériter des paramètres de couleur de l'élément parent.",
-		"blendcolor": "Produit de couleur",
-		"mixcolor": "Superposition de couleur",
-		"mixamount": "Superposition",
+		"blendcolor": "Couleur de produit",
+		"mixcolor": "Couleur de transition",
+		"mixamount": "Transition",
 		"opacity": "Opacité",
 		"brightness": "Luminosité",
 		"inflate": "Gonfler",

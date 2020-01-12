@@ -147,7 +147,7 @@ with (new(obj_model_element))
 	value[e_value.EXTRUDE] = value_get_real(map[?"3d"], false)
 	
 	// Bending
-	value[e_value.BEND] = value_get_real(map[?"bend"], true)
+	value[e_value.BEND_SHAPE] = value_get_real(map[?"bend"], true)
 	
 	// Create matrix
 	matrix = matrix_create(position, vec3(0), vec3(1))

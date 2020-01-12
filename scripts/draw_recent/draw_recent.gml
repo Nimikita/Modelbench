@@ -82,6 +82,8 @@ if (mode = "list")
 	
 	if ((recent_list_amount * 44) > hei - 28)
 	{
+		window_scroll_focus = string(recent_scrollbar)
+		
 		scrollbar_draw(recent_scrollbar, e_scroll.VERTICAL, xx + wid - 9, yy + 28, hei - 28, recent_list_amount * 44)
 		liststart = snap(recent_scrollbar.value / 44, 1)
 		wid -= 12

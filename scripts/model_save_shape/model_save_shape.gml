@@ -42,7 +42,7 @@ if (value[e_value.FACE_CAMERA])
 if (value[e_value.HOVER])
 	json_save_var_bool("item_bounce", true)
 
-if (!value[e_value.BEND])
+if (!value[e_value.BEND_SHAPE])
 	json_save_var_bool("bend", false)
 
 if (type = "plane")

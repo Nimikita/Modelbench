@@ -4,7 +4,7 @@
         "language": "Swedish",
         "translator": "Hozq",
         "forversion": "1.0.0",
-        "lastchange": "2020.01.11"
+        "lastchange": "2020.01.12"
     },
 	"startup/": {
 		"modeldetected": "Osparad modell upptäckt",
@@ -242,7 +242,7 @@
 		"assets": "Tillgångar",
 		"elementeditor": "Element redigerare",
 		"preview": "Förhandsvisning",
-		"recentmodels": "Nya modeller",
+		"recentmodels": "Senaste modeller",
 		"settings": "Inställningar",
 		"about": "Om"
 	},
@@ -250,7 +250,7 @@
 		"newmodel": "Ny modell",
 		"newmodeltemplate": "Ny modell från mall...",
 		"openmodel": "Öppna modell...",
-		"recentmodels": "Nya modeller",
+		"recentmodels": "Senaste modeller",
 		"importmodel": "Importera modell...",
 		"save": "Spara modell",
 		"saveas": "Spara modell som...",
