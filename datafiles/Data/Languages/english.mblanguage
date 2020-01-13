@@ -4,7 +4,7 @@
         "language": "English",
         "translator": "Nimi",
         "forversion": "1.0.0",
-        "lastchange": "2020.01.11"
+        "lastchange": "2020.01.13"
     },
 	"startup/": {
 		"modeldetected": "Unsaved model detected",
@@ -139,7 +139,10 @@
 		},
 		"element/": {
 			"add": "Add element...",
+			"duplicate": "Duplicate element",
 			"delete": "Delete element",
+			"duplicateselection": "Duplicate selection",
+			"deleteselection": "Delete selection",
 			"expandall": "Expand all",
 			"collapseall": "Collapse all"
 		},
