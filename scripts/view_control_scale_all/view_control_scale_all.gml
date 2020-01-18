@@ -39,6 +39,7 @@ else if (view.control_mouseon_last = -1)
 		view_control_scale_amount = point_distance(mouse_x - content_x, mouse_y - content_y, coord[X], coord[Y]) / radius
 		view_control_scale_coords[X] = coord[X]
 		view_control_scale_coords[Y] = coord[Y]
+		view_control_matrix = mat
 	}
 	
 	// Right click

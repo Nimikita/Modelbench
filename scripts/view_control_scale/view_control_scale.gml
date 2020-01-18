@@ -20,6 +20,9 @@ with (el_edit)
 	matrix_remove_scale(mat)
 }
 
+if (view_control_matrix != null && view_control_edit != null)
+	mat = view_control_matrix
+
 // All axes
 if (tool_selected != e_tool.TRANSFORM)
 	view_control_scale_all(view, mat, 130)
@@ -61,6 +64,8 @@ if (window_busy = "rendercontrol" && view_control_edit_view = view && view_contr
 	{
 		window_busy = ""
 		view_control_edit = null
+		view_control_matrix = null
+		view_control_length = null
 	}
 }
 
@@ -92,5 +97,7 @@ if (window_busy = "rendercontrolscalexyz" && view_control_edit_view = view && vi
 		window_busy = ""
 		view_control_edit = null
 		view_control_scale_amount = 1
+		view_control_matrix = null
+		view_control_length = null
 	}
 }

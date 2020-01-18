@@ -19,6 +19,13 @@ with (el_edit)
 xrot = matrix_multiply(matrix_build(0, 0, 0, 0, -90, el_edit.value[e_value.ROT_Z], 1, 1, 1), zrot)
 yrot = matrix_multiply(matrix_build(0, 0, 0, el_edit.value[e_value.ROT_X] + 90, 0, el_edit.value[e_value.ROT_Z], 1, 1, 1), zrot)
 
+if (view_control_matrix != null && view_control_edit != null)
+{
+	xrot = view_control_matrix
+	yrot = view_control_matrix
+	zrot = view_control_matrix
+}
+
 // Draw each axis
 view_control_rotate_axis(view, e_value.ROT_X, c_axisred, xrot, len)
 view_control_rotate_axis(view, e_value.ROT_Y, (setting_z_is_up ? c_axisgreen : c_axisblue), yrot, len)
@@ -54,5 +61,7 @@ if (window_busy = "rendercontrol" && view_control_edit_view = view && view_contr
 	{
 		window_busy = ""
 		view_control_edit = null
+		view_control_matrix = null
+		view_control_length = null
 	}
 }

@@ -19,3 +19,6 @@ view_control_value = 0
 view_control_scale_coords = vec2(0)
 view_control_scale_amount = 1
 view_control_value_scale = vec3(1)
+
+view_control_matrix = null
+view_control_length = null

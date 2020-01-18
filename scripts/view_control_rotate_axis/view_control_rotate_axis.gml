@@ -14,6 +14,9 @@ mat = argument3
 len = argument4
 detail = (view_control_edit = vid ? 24 : 32)
 
+if (view_control_length != null)
+	len = view_control_length
+
 // Get middle
 pos3D = point3D_mul_matrix(point3D(0, 0, 0), mat)
 pos2D = view_shape_project(pos3D)
@@ -47,6 +50,8 @@ else if (view.control_mouseon_last = vid)
 		view_control_edit_view = view
 		view_control_value = el_edit.value[vid]
 		view_control_pos = pos2D
+		view_control_matrix = mat
+		view_control_length = len
 	}
 	
 	// Right click

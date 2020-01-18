@@ -15,6 +15,9 @@ length = argument3
 mat = argument4
 axis = vec3(argument5 = X, argument5 = Y, argument5 = Z)
 
+if (view_control_length != null)
+	length = view_control_length
+
 start3D = point3D_mul_matrix(vec3(0), mat)
 end3D = point3D_mul_matrix(vec3_mul(axis, length), mat)
 
@@ -57,12 +60,14 @@ else if (view.control_mouseon_last = vid)
 		view_control_edit_view = view
 		view_control_value = el_edit.value[vid]
 		view_control_vec = point2D_sub(end2D, start2D)
+		view_control_matrix = mat
+		view_control_length = length
 	}
 	
 	// Right click
 	if (mouse_right_pressed && keyboard_check(vk_shift))
 	{
-		axis_edit = vid -e_value.SCA_X
+		axis_edit = vid - e_value.SCA_X
 		action_el_sca(el_edit.value_default[vid], false)
 		app_mouse_clear()
 	}
