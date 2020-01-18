@@ -39,6 +39,12 @@ with (new(obj_model_element))
 		value[e_value.TEXTURE_OBJ] = null
 	}
 	
+	// Visibility
+	hidden = !value_get_real(map[?"visible"], true)
+	
+	// Locked
+	locked = value_get_real(map[?"locked"], false)
+	
 	// Render depth
 	depth = value_get_real(map[?"depth"], 0)
 	part_update_depth()

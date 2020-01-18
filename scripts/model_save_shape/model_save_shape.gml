@@ -58,9 +58,9 @@ if (type = "plane")
 }
 
 if (locked)
-	json_save_var("locked", true)
+	json_save_var_bool("locked", true)
 
 if (hidden)
-	json_save_var("visible", false)
+	json_save_var_bool("visible", false)
 
 model_save_wind()

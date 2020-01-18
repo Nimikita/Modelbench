@@ -66,6 +66,12 @@ with (new(obj_model_element))
 		res = other.res
 	}
 	
+	// Visibility
+	hidden = !value_get_real(map[?"visible"], true)
+	
+	// Locked
+	locked = value_get_real(map[?"locked"], false)
+	
 	// Color (optional)
 	value[e_value.INHERIT_COLOR] = value_get_real(map[?"color_inherit"], true)
 	value[e_value.BLEND_COLOR] = value_get_color(map[?"color_blend"], c_white)

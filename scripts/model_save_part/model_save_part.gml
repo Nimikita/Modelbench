@@ -28,10 +28,10 @@ if (value[e_value.OPEN_POSITION_TAB])
 	json_save_var("show_position", true)
 
 if (locked)
-	json_save_var("locked", true)
+	json_save_var_bool("locked", true)
 
 if (hidden)
-	json_save_var("visible", false)
+	json_save_var_bool("visible", false)
 
 model_save_bend()
 

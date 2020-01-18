@@ -74,3 +74,5 @@ recent_add_wait = true
 textures_list.update = true
 
 app_update_name_warning()
+el_update_lock_tree(false)
+el_update_hidden_tree(false)
