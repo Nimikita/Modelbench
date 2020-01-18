@@ -9,7 +9,8 @@
         "90da9ac2-6d27-41ea-858e-136bf36b3d13",
         "6ba2d5f2-a08d-4251-abba-cd26df15f500",
         "067c024a-c850-4ac2-91af-d091e3db53b7",
-        "6eec3af5-4000-4e18-83c8-f712b6fc33a6"
+        "6eec3af5-4000-4e18-83c8-f712b6fc33a6",
+        "aecce60a-3f82-4aa8-921e-54ce8ad5c310"
     ],
     "filterType": "GMScript",
     "folderName": "Texture",

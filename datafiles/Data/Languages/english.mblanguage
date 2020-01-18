@@ -3,8 +3,8 @@
     "file/": {
         "language": "English",
         "translator": "Nimi",
-        "forversion": "1.0.0",
-        "lastchange": "2020.01.13"
+        "forversion": "1.0.1",
+        "lastchange": "2020.01.18"
     },
 	"startup/": {
 		"modeldetected": "Unsaved model detected",
@@ -135,7 +135,8 @@
 			"setmain": "Set as main texture",
 			"remove": "Remove texture from model",
 			"replace": "Replace texture",
-			"refresh": "Refresh texture"
+			"refresh": "Refresh texture",
+			"saveuvmap": "Save UV map"
 		},
 		"element/": {
 			"add": "Add element...",

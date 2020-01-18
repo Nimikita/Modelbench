@@ -132,8 +132,10 @@ switch (name)
 		
 		list_add_item(text_get("contextmenutexturereplace"), null, "", null, icons.REPLACE, null, action_texture_replace, false)
 		
-		list_add_item(text_get("contextmenutexturerefresh"), null, "" , null, icons.REFRESH, null, action_texture_refresh, false)
+		list_add_item(text_get("contextmenutexturerefresh"), null, "", null, icons.REFRESH, null, action_texture_refresh, false)
 		listitem_last.disabled = (context_menu_value.filepath = "")
+		
+		list_add_item(text_get("contextmenutexturesaveuvmap"), null, "", null, icons.TEXTURE_UVMAP, null, action_texture_save_uv_map, false)
 		break
 	}
 	
