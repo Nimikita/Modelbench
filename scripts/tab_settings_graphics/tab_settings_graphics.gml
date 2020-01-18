@@ -20,6 +20,9 @@ if (setting_wind && !setting_collapse_wind)
 	tab_control_meter()
 	draw_meter("settingsgraphicswindstrength", dx, dy, dw, setting_wind_strength, 48, 0, 8, .5, 0.05, tab.graphics.tbx_wind_strength, action_setting_wind_strength)
 	tab_next()
+	
+	draw_divide(dx, dy, dw)
+	dy += 8
 }
 
 // Modeling SSAO
