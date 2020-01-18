@@ -4,8 +4,8 @@
 /// @arg script
 /// @arg disabled
 
-draw_button_icon(argument0 + "collapse", dx - icon_button_offset, dy + (tab_control_h / 2) - 12, 24, 24, argument1, icons.COLLAPSE, argument2, argument3, (argument1 ? "tooltiphideoptions" : "tooltipshowoptions"))
+draw_button_icon(argument0 + "collapse", dx - icon_button_offset + 2, dy + (tab_control_h / 2) - 12 + 2, 20, 20, argument1, null, argument2, argument3, (argument1 ? "tooltiphideoptions" : "tooltipshowoptions"), spr_arrow_small_ani)
 
-dx += 28 + 8
-dw -= 28 + 8
+dx += 20 + 8
+dw -= 20 + 8
 tab_collapse = true

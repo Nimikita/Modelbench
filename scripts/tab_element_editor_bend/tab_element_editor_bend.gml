@@ -38,6 +38,9 @@ for (var i = X; i <= Z; i++)
 	tab_control_meter()
 	draw_meter("elementeditorbendangle" + axisname[i], dx, dy, dw, el_edit.value[e_value.BEND_ANGLE_X + axis_edit], 48, el_edit.value[e_value.BEND_X_MIN + axis_edit], el_edit.value[e_value.BEND_X_MAX + axis_edit], 0, 1, element_editor.bend.tbx_angle[axis_edit], action_el_bend_angle)
 	tab_next()
+	
+	draw_divide(dx, dy, dw)
+	dy += 8
 }
 
 // Inherit bend angles
