@@ -4,7 +4,7 @@
         "language": "English",
         "translator": "Nimi",
         "forversion": "1.0.1",
-        "lastchange": "2020.01.18"
+        "lastchange": "2020.01.19"
     },
 	"startup/": {
 		"modeldetected": "Unsaved model detected",
@@ -107,6 +107,7 @@
 		"copylink": "Copy link",
 		"combinescale": "Combine XYZ",
 		"seperatescale": "Seperate XYZ",
+		"centeraxis": "Center pivot axis",
 		"value/": {
 			"on": "On",
 			"off": "Off",

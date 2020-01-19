@@ -4775,6 +4775,14 @@
             }
         },
         {
+            "Key": "8c5306df-1edd-4268-9647-ad7fe6ae924d",
+            "Value": {
+                "id": "790196df-7a3d-4b48-88b0-770c2fc4666a",
+                "resourcePath": "scripts\\action_el_offset_center\\action_el_offset_center.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "8c70483d-feec-4274-9b1c-2caffad335c6",
             "Value": {
                 "id": "70ae7e0b-1bb5-470f-b2ff-263cb58f8793",
@@ -8394,6 +8402,7 @@
         "6ad3f08c-a5f4-4e2f-98a9-a12fb1e181e3",
         "8b388acc-96de-4027-9f1c-bb52b510d376",
         "c8d9e12c-734a-4a22-9279-a98a021d4121",
+        "8c5306df-1edd-4268-9647-ad7fe6ae924d",
         "95bbf8b8-d466-4081-9afb-65fad4e5f4a4",
         "14030207-c245-45d6-8874-6ab2d16003a6",
         "d49d16a0-10c3-4764-8460-89b805736e69",

@@ -75,6 +75,10 @@ switch (name)
 			list_add_item(text_get(text), null, "", null, icons.TOOLSET_SCALE, null, action_category_combine_scale, true)
 		}
 		
+		// Offset centering
+		if (context_menu_copy_category != null && context_menu_copy_category = element_editor.pivot_offset)
+			list_add_item(text_get("contextmenucenteraxis"), null, "", null, icons.CENTER, null, action_el_offset_center, true)
+		
 		// Single value copy-paste
 		if (name = "contextmenuvalue")
 		{
