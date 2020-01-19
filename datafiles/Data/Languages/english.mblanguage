@@ -476,6 +476,8 @@
 		"slowgenerationhelp": "Updates shapes slower. Useful for better performance when editing complex models.",
 		"refreshtextures": "Refresh textures on focus",
 		"refreshtextureshelp": "Automatically refresh all model textures when the window is refocused.",
+		"adjustpivotresize": "Adjust pivot on resizing",
+		"adjustpivotresizehelp": "Adjust shape pivot based on size editing in the UV editor.",
 		"interfaceshortcuts": "Interface shortcuts",
 		"camerashortcuts": "Camera shortcuts",
 		"key/": {

@@ -135,6 +135,8 @@ if (ds_map_valid(interfacemap))
 
 	setting_show_uv_editor = value_get_real(interfacemap[?"show_uv_editor"], setting_show_uv_editor)
 	setting_uv_editor_size = value_get_real(interfacemap[?"uv_editor_size"], setting_uv_editor_size)
+	
+	setting_adjust_pivot_resize = value_get_real(interfacemap[?"adjust_pivot_resize"], setting_adjust_pivot_resize)
 }
 
 // Graphics

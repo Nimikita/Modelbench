@@ -22,6 +22,7 @@ setting_backup_time = 2
 setting_backup_amount = 3
 setting_slow_generation = false
 setting_refresh_textures = false
+setting_adjust_pivot_resize = true
 
 setting_key_open = ord("O")
 setting_key_open_control = true
@@ -70,6 +71,7 @@ setting_move_speed = 0.7
 setting_look_sensitivity = .75
 setting_fast_modifier = 2.25
 setting_slow_modifier = 0.25
+setting_smooth_camera = false
 
 setting_theme = theme_light
 setting_accent = 6
@@ -78,10 +80,9 @@ setting_language_filename = "english.mblanguage"
 setting_tip_show = true
 setting_z_is_up = false
 setting_shared_texture_uvs = true
-setting_smooth_camera = false
+setting_outline_opacity = .15
 
 setting_blocky_bending = false
-setting_outline_opacity = .15
 setting_wind = true
 setting_wind_speed = .45
 setting_wind_strength = .5

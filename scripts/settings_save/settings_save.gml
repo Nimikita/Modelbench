@@ -94,6 +94,8 @@ json_save_object_start("interface")
 	json_save_var_bool("show_uv_editor", setting_show_uv_editor)
 	json_save_var("uv_editor_size", setting_uv_editor_size)
 	
+	json_save_var_bool("adjust_pivot_resize", setting_adjust_pivot_resize)
+	
 json_save_object_done()
 
 json_save_object_start("graphics")

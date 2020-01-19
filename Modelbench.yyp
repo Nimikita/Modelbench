@@ -7655,6 +7655,14 @@
             }
         },
         {
+            "Key": "e77d8e6d-0835-4c20-9daa-ba71d691d10d",
+            "Value": {
+                "id": "c47c9d41-2034-4381-80ac-177e67b1ae8d",
+                "resourcePath": "scripts\\action_setting_adjust_pivot_resize\\action_setting_adjust_pivot_resize.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "e78d3b45-9a7e-4b80-ad12-87d6de116cd7",
             "Value": {
                 "id": "df329a37-e62f-4d39-b11a-208105d4bff3",
@@ -8509,6 +8517,7 @@
         "c83030f2-182b-4c06-ac0c-c34a974c86b2",
         "71165777-b152-4a47-8910-ba1e1469d44d",
         "20abe9c2-e74b-4ed9-a3da-1fbe63b08583",
+        "e77d8e6d-0835-4c20-9daa-ba71d691d10d",
         "0a820639-060d-48c1-871b-62ab9fb0671f",
         "b3f35ff0-64be-486c-a274-14ba6e34aeee",
         "83ce01a9-d386-427b-b7a5-91c317d3ef9e",

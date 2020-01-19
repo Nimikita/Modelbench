@@ -36,3 +36,8 @@ tab_next()
 tab_control_switch()
 draw_switch("settingsrefreshtextures", dx, dy, setting_refresh_textures, action_setting_refresh_textures, false, "settingsrefreshtextureshelp")
 tab_next()
+
+// Adjust pivot on resizing
+tab_control_switch()
+draw_switch("settingsadjustpivotresize", dx, dy, setting_adjust_pivot_resize, action_setting_adjust_pivot_resize, false, "settingsadjustpivotresizehelp")
+tab_next()
