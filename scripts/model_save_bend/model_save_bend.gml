@@ -49,7 +49,7 @@ if (array_length_1d(axis) > 1)
 {
 	for (var i = 0; i < array_length_1d(axis); i++)
 	{
-		axisedit = i
+		axisedit = axis[i]
 		
 		// Don't flip "y" and "z" positions for axis array
 		if (!(axisenablearray[Y] && axisenablearray[Z]))
