@@ -22,3 +22,5 @@ view_control_value_scale = vec3(1)
 
 view_control_matrix = null
 view_control_length = null
+
+view_control_ratio = 1

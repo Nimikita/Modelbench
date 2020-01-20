@@ -83,7 +83,7 @@ view_shape_line_draw(start2D, end2D)
 // Arrow
 ang = point_direction(start2D[X], start2D[Y], end2D[X], end2D[Y])
 
-var size = (point3D_distance(cam_from, el_edit.world_pos) * view_3d_control_size) * .035;
+var size = (point3D_distance(cam_from, el_edit.world_pos) * view_3d_control_size) * .035 * view_control_ratio;
 view_shape_cube_draw(mat, vec3_mul(axis, length), size)
 
 //draw_box((end2D[X] * 2) - 16, (end2D[Y] * 2) - 16, 32, 32, false)

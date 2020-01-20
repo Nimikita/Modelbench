@@ -5,7 +5,7 @@ var view, len, mat;
 view = argument0
 
 // Arrow length
-len = point3D_distance(cam_from, el_edit.world_pos) * view_3d_control_size * (tool_selected != e_tool.TRANSFORM ? .6 : 0.4)
+len = point3D_distance(cam_from, el_edit.world_pos) * view_3d_control_size * view_control_ratio * (tool_selected != e_tool.TRANSFORM ? .6 : 0.4)
 
 // Create matrix
 with (el_edit)

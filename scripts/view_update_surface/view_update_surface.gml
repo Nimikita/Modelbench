@@ -40,6 +40,8 @@ if (el_edit_amount > 0 && program_mode = e_mode.MODELING)
 			{
 				if (!el_edit.hidden && !el_edit.tree_hidden)
 				{
+					view_control_ratio = max(1, (500 / content_height) * 1.25)
+					
 					// Rotate
 					if (tool_selected = e_tool.ROTATE || tool_selected = e_tool.TRANSFORM)
 						view_control_rotate(view)

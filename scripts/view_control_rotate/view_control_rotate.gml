@@ -3,7 +3,7 @@
 
 var view, len, xrot, yrot, zrot;
 view = argument0
-len = point3D_distance(cam_from, el_edit.world_pos) * view_3d_control_size * (tool_selected != e_tool.TRANSFORM ? 0.8 : 0.7)
+len = point3D_distance(cam_from, el_edit.world_pos) * view_3d_control_size * view_control_ratio * (tool_selected != e_tool.TRANSFORM ? 0.8 : 0.7)
 
 // Create matrix
 with (el_edit)
