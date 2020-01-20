@@ -53,10 +53,10 @@ if (window_busy = "" && !textbox_isediting)
 	
 	if (program_mode = e_mode.MODELING)
 	{
-		if (keyboard_check_pressed(setting_key_remove_elements) && app_check_control(setting_key_remove_elements_control))
+		if (keyboard_check_pressed(setting_key_remove_selection) && app_check_control(setting_key_remove_selection_control))
 			action_el_remove()
 	
-		if (keyboard_check_pressed(setting_key_duplicate_elements) && app_check_control(setting_key_duplicate_elements_control))
+		if (keyboard_check_pressed(setting_key_duplicate_selection) && app_check_control(setting_key_duplicate_selection_control))
 			action_el_duplicate()
 	
 		if (keyboard_check_pressed(setting_key_select_elements) && app_check_control(setting_key_select_elements_control)) 

@@ -3994,7 +3994,7 @@
             "Key": "732d3a20-688f-45e4-b042-0f303fa8eb31",
             "Value": {
                 "id": "880653da-c309-4917-90b5-0f8bdb4d1687",
-                "resourcePath": "scripts\\action_setting_key_duplicate_elements\\action_setting_key_duplicate_elements.yy",
+                "resourcePath": "scripts\\action_setting_key_duplicate_selection\\action_setting_key_duplicate_selection.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -6146,7 +6146,7 @@
             "Key": "b5e57655-b348-4412-a150-b63f9e1c9f48",
             "Value": {
                 "id": "e4cf41bc-fd63-44cb-994c-996937d547ad",
-                "resourcePath": "scripts\\action_setting_key_remove_elements\\action_setting_key_remove_elements.yy",
+                "resourcePath": "scripts\\action_setting_key_remove_selection\\action_setting_key_remove_selection.yy",
                 "resourceType": "GMScript"
             }
         },

@@ -3,7 +3,8 @@
 
 enum e_settings
 {
-	FORMAT_ALPHA_2 = 0
+	FORMAT_ALPHA_2 = 0,
+	FORMAT_101	   = 1
 }
 
 enum e_element

@@ -4,7 +4,7 @@
         "language": "English",
         "translator": "Nimi",
         "forversion": "1.0.1",
-        "lastchange": "2020.01.19"
+        "lastchange": "2020.01.20"
     },
 	"startup/": {
 		"modeldetected": "Unsaved model detected",
@@ -142,9 +142,9 @@
 		"element/": {
 			"add": "Add element...",
 			"duplicate": "Duplicate element",
-			"delete": "Delete element",
+			"remove": "Remove element",
 			"duplicateselection": "Duplicate selection",
-			"deleteselection": "Delete selection",
+			"removeselection": "Remove selection",
 			"expandall": "Expand all",
 			"collapseall": "Collapse all"
 		},
@@ -485,8 +485,8 @@
 			"save": "Save model",
 			"undo": "Undo",
 			"redo": "Redo",
-			"removeelements": "Remove elements",
-			"duplicateelements": "Duplicate elements",
+			"removeselection": "Remove selection",
+			"duplicateselection": "Duplicate selection",
 			"selectelements": "Select elements",
 			"uveditor": "Toggle UV editor",
 			"tool/": {

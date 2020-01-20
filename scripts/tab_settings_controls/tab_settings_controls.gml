@@ -21,11 +21,11 @@ draw_keycontrol("settingskeyredo", dx, dy, dw, setting_key_redo, setting_key_red
 tab_next(false)
 
 tab_control_keycontrol()
-draw_keycontrol("settingskeyremoveelements", dx, dy, dw, setting_key_remove_elements, setting_key_remove_elements_control, ord("R"), true, action_setting_key_remove_elements)
+draw_keycontrol("settingskeyremoveselection", dx, dy, dw, setting_key_remove_selection, setting_key_remove_selection_control, vk_delete, false, action_setting_key_remove_selection)
 tab_next(false)
 
 tab_control_keycontrol()
-draw_keycontrol("settingskeyduplicateelements", dx, dy, dw, setting_key_duplicate_elements, setting_key_duplicate_elements_control, ord("D"), true, action_setting_key_duplicate_elements)
+draw_keycontrol("settingskeyduplicateselection", dx, dy, dw, setting_key_duplicate_selection, setting_key_duplicate_selection_control, ord("D"), true, action_setting_key_duplicate_selection)
 tab_next(false)
 
 tab_control_keycontrol()

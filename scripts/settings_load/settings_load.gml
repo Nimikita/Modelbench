@@ -50,14 +50,25 @@ if (ds_map_valid(controlsmap))
 	setting_key_redo = value_get_real(controlsmap[?"key_redo"], setting_key_redo)
 	setting_key_redo_control = value_get_real(controlsmap[?"key_redo_control"], setting_key_redo_control)
 	
-	setting_key_remove_elements = value_get_real(controlsmap[?"key_remove_elements"], setting_key_remove_elements)
-	setting_key_remove_elements_control = value_get_real(controlsmap[?"key_remove_elements_control"], setting_key_remove_elements_control)
+	if (load_format = e_settings.FORMAT_ALPHA_2)
+	{
+		setting_key_remove_selection = value_get_real(controlsmap[?"key_remove_selection"], setting_key_remove_selection)
+		setting_key_remove_selection_control = value_get_real(controlsmap[?"key_remove_selection_control"], setting_key_remove_selection_control)
+		
+		setting_key_duplicate_selection = value_get_real(controlsmap[?"key_duplicate_selection"], setting_key_duplicate_selection)
+		setting_key_duplicate_selection_control = value_get_real(controlsmap[?"key_duplicate_selection_control"], setting_key_duplicate_selection_control)
+	}
+	else
+	{
+		setting_key_remove_selection = value_get_real(controlsmap[?"key_remove_elements"], setting_key_remove_selection)
+		setting_key_remove_selection_control = value_get_real(controlsmap[?"key_remove_selection_control"], setting_key_remove_selection_control)
+		
+		setting_key_duplicate_selection = value_get_real(controlsmap[?"key_duplicate_elements"], setting_key_duplicate_selection)
+		setting_key_duplicate_selection_control = value_get_real(controlsmap[?"key_duplicate_elements_control"], setting_key_duplicate_selection_control)
+	}
 	
 	setting_key_select_elements = value_get_real(controlsmap[?"key_select_elements"], setting_key_select_elements)
 	setting_key_select_elements_control = value_get_real(controlsmap[?"key_select_elements_control"], setting_key_select_elements_control)
-	
-	setting_key_duplicate_elements = value_get_real(controlsmap[?"key_duplicate_elements"], setting_key_duplicate_elements)
-	setting_key_duplicate_elements_control = value_get_real(controlsmap[?"key_duplicate_elements_control"], setting_key_duplicate_elements_control)
 	
 	setting_key_uv_editor = value_get_real(controlsmap[?"key_uv_editor"], setting_key_uv_editor)
 	setting_key_uv_editor_control = value_get_real(controlsmap[?"key_uv_editor_control"], setting_key_uv_editor_control)
