@@ -3567,14 +3567,6 @@
             }
         },
         {
-            "Key": "6a083b9c-af82-4a18-a964-29c7c5df1ac2",
-            "Value": {
-                "id": "15733219-eb96-474c-afe6-e81b3cf5dc15",
-                "resourcePath": "scripts\\window_draw_testscreen\\window_draw_testscreen.yy",
-                "resourceType": "GMScript"
-            }
-        },
-        {
             "Key": "6a14a877-5258-4fa4-9168-01f50a3ae546",
             "Value": {
                 "id": "b7101e6f-fc0d-4077-8745-7e12617869d8",
@@ -8794,7 +8786,6 @@
         "2c883daf-957c-48d4-bd83-6a8f8939ceed",
         "09fd06be-1da1-4c57-b4db-adf0d5272b44",
         "f11df888-11ed-443e-bbaa-5b9d66ad9fe5",
-        "6a083b9c-af82-4a18-a964-29c7c5df1ac2",
         "9cadabce-61dd-4288-8312-d77e542842f9",
         "d88a0fc9-81b3-4bcc-aa22-9a236d43f673",
         "afbc4fa3-056d-490f-ac1e-ca9aeb42f37d",

@@ -2,13 +2,6 @@
 
 draw_clear(c_background)
 
-if (window_state = "test")
-{
-	window_draw_testscreen()
-	return 0
-}
-
-
 if (window_state = "startup")
 {
 	window_draw_startup()
