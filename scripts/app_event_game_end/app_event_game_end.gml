@@ -18,7 +18,9 @@ else
 			model_save()
 }
 
+// Save settings and recent models
 settings_save()
+recent_save()
 
 log("Closing...")
 
