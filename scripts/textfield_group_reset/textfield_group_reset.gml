@@ -7,4 +7,5 @@ textfield_default = null
 textfield_script = null
 textfield_axis = null
 textfield_textbox = null
+textfield_icon = null
 textfield_amount = 0

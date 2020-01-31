@@ -59,13 +59,18 @@ for (var i = 0; i < textfield_amount; i++)
 	
 	// Field label
 	var labelcolor, labelalpha;
-	labelcolor = merge_color(c_text_secondary, c_accent, mcroani_arr[e_mcroani.ACTIVE])
+	labelcolor = (textfield_icon[i] = null ? c_text_secondary : c_text_tertiary)
+	labelcolor = merge_color(labelcolor, c_accent, mcroani_arr[e_mcroani.ACTIVE])
 	labelcolor = merge_color(labelcolor, c_text_tertiary, mcroani_arr[e_mcroani.DISABLED])
-
-	labelalpha = lerp(a_text_secondary, 1, mcroani_arr[e_mcroani.ACTIVE])
+	
+	labelalpha = (textfield_icon[i] = null ? a_text_secondary : a_text_tertiary)
+	labelalpha = lerp(labelalpha, 1, mcroani_arr[e_mcroani.ACTIVE])
 	labelalpha = lerp(labelalpha, a_text_tertiary, mcroani_arr[e_mcroani.DISABLED])
 	
-	draw_label(text_get(textfield_name[i]), fieldx + 8, yy + (hei/2), fa_left, fa_middle, labelcolor, labelalpha, font_emphasis)
+	if (textfield_icon[i] = null)
+		draw_label(text_get(textfield_name[i]), fieldx + 8, yy + (hei/2), fa_left, fa_middle, labelcolor, labelalpha, font_emphasis)
+	else
+		draw_image(spr_icons, textfield_icon[i], fieldx + 14, yy + (hei/2), 1, 1, labelcolor, labelalpha)
 	
 	draw_outline(fieldx - 1, yy + 1, boxwid + 2, hei - 2, 1, c_accent, mcroani_arr[e_mcroani.ACTIVE])
 	

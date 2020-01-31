@@ -136,7 +136,11 @@ setting_uv_editor_size = 0.5
 
 // Snap
 setting_snap = false
-setting_snap_size = 1
+setting_snap_size_position = 1
+setting_snap_size_rotation = 15
+setting_snap_size_scale = 1
+setting_snap_size_uv = 1
+
 snap_value = 0.0001
 
 settings_load()
@@ -152,8 +156,3 @@ action_preview_scenery(setting_preview_scenery)
 //setting_texture_filtering = false
 setting_texture_filtering_level = 1
 texture_set_mipmap_level(setting_texture_filtering_level)
-
-if (setting_snap)
-	snap_value = setting_snap_size
-else
-	snap_value = snap_min
