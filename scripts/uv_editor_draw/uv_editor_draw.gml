@@ -184,17 +184,34 @@ draw_line_ext(boxx, texy, boxx + boxw, texy, c_border, a_border)
 draw_line_ext(boxx, texy + texh - 1, boxx + boxw, texy + texh - 1, c_border, a_border)
 
 // Pixel outline(zoom required multiplied by texscale for bigger textures)
+var snapval = (setting_snap ? max(setting_snap_size_uv, .125) : 1);
 if (uv_editor_zoom * texscale > 5)
 {
 	var alpha = percent(uv_editor_zoom * texscale, 5, 7);
 	
-	for (var i = texscale; i < texture_width(uv_editor_tex); i += texscale)
+	// Highlight pixels seperately if snap value is not 1
+	if (snapval != 1)
+	{
+		for (var i = texscale; i < texture_width(uv_editor_tex); i += texscale)
+		{
+			if (texx + floor(i * uv_editor_zoom) > boxx && texx + floor(i * uv_editor_zoom) < boxx + boxw)
+				draw_line_ext(texx + floor(i * uv_editor_zoom), texy, texx + floor(i * uv_editor_zoom), texy + texh, c_border, 0.2 * alpha)
+		}
+	
+		for (var i = texscale; i < texture_height(uv_editor_tex); i += texscale)
+		{
+			if (texy + floor(i * uv_editor_zoom) > boxy && texy + floor(i * uv_editor_zoom) < boxy + boxh)
+				draw_line_ext(texx, texy + floor(i * uv_editor_zoom), texx + texw, texy + floor(i * uv_editor_zoom), c_border, 0.2 * alpha)
+		}
+	}
+	
+	for (var i = (texscale * snapval); i < texture_width(uv_editor_tex); i += (texscale * snapval))
 	{
 		if (texx + floor(i * uv_editor_zoom) > boxx && texx + floor(i * uv_editor_zoom) < boxx + boxw)
 			draw_line_ext(texx + floor(i * uv_editor_zoom), texy, texx + floor(i * uv_editor_zoom), texy + texh, c_border, 0.075 * alpha)
 	}
 	
-	for (var i = texscale; i < texture_height(uv_editor_tex); i += texscale)
+	for (var i = (texscale * snapval); i < texture_height(uv_editor_tex); i += (texscale * snapval))
 	{
 		if (texy + floor(i * uv_editor_zoom) > boxy && texy + floor(i * uv_editor_zoom) < boxy + boxh)
 			draw_line_ext(texx, texy + floor(i * uv_editor_zoom), texx + texw, texy + floor(i * uv_editor_zoom), c_border, 0.075 * alpha)
@@ -374,8 +391,8 @@ if (el_edit.type = "block")
 }
 
 var mouseuvx, mouseuvy;
-mouseuvx = snap((mouse_x - texx) / uv_editor_zoom / texscale, 1)
-mouseuvy = snap((mouse_y - texy) / uv_editor_zoom / texscale, 1)
+mouseuvx = snap((mouse_x - texx) / uv_editor_zoom / texscale, setting_snap ? setting_snap_size_uv : 1)
+mouseuvy = snap((mouse_y - texy) / uv_editor_zoom / texscale, setting_snap ? setting_snap_size_uv : 1)
 //draw_label(string(mouseuvx) + ", " + string(mouseuvy), boxx + 32, boxy + 32, fa_left, fa_bottom, c_accent, 1)
 
 // Box UV controls
