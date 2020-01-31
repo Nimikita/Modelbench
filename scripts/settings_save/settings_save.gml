@@ -51,8 +51,6 @@ json_save_object_start("controls")
 	
 	json_save_var("key_snap", setting_key_snap)
 	json_save_var_bool("key_snap_control",setting_key_snap_control)
-	json_save_var("key_edit_snap", setting_key_edit_snap)
-	json_save_var_bool("key_edit_snap_control",setting_key_edit_snap_control)
 	
 	json_save_var("key_forward", setting_key_forward)
 	json_save_var("key_back", setting_key_back)

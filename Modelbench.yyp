@@ -1647,14 +1647,6 @@
             }
         },
         {
-            "Key": "2f57f729-ccf6-46c6-8632-a22c1f4cb55e",
-            "Value": {
-                "id": "14745a16-779b-4b62-a907-a29774b2e85a",
-                "resourcePath": "scripts\\action_setting_key_edit_snap\\action_setting_key_edit_snap.yy",
-                "resourceType": "GMScript"
-            }
-        },
-        {
             "Key": "2fa5ad73-1bab-425d-9dd9-5cb063e0fad6",
             "Value": {
                 "id": "8d9cd6f3-c0ad-4471-8dfe-d96be4e720ee",
@@ -8524,7 +8516,6 @@
         "8e076eb0-25f9-4e31-b779-6e76b515499f",
         "827901fd-d9d2-4702-9809-e613c8c2ddba",
         "434ce76b-9ff5-4223-ada7-e04b9644ae1b",
-        "2f57f729-ccf6-46c6-8632-a22c1f4cb55e",
         "d814096f-3570-4575-bbbe-5a716b01201c",
         "2fa5ad73-1bab-425d-9dd9-5cb063e0fad6",
         "eab1f30e-d456-4c21-9d67-d257827633e0",

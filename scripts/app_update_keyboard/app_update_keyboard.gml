@@ -97,18 +97,6 @@ if (window_busy = "" && !textbox_isediting)
 else if (textbox_isediting && keyboard_check_pressed(vk_tab) && textbox_lastfocus.next_tbx)
 	window_focus = string(textbox_lastfocus.next_tbx)
 
-// Edit snapping
-if (keyboard_check_pressed(setting_key_edit_snap) && app_check_control(setting_key_edit_snap_control) && program_mode = e_mode.MODELING && (setting_snap && window_busy = ""))
-{
-	if (window_focus = string(tbx_snap_size))
-	{
-		window_focus = ""
-		textbox_lastfocus = -1
-	}
-	else
-		window_focus = string(tbx_snap_size)
-}
-
 if (textbox_isediting && !textbox_isediting_respond)
 {
 	textbox_isediting = false

@@ -55,8 +55,6 @@ setting_key_tool_transform = ord("T")
 setting_key_tool_transform_control = false
 setting_key_snap = ord("F")
 setting_key_snap_control = false
-setting_key_edit_snap = ord("F")
-setting_key_edit_snap_control = true
 
 setting_key_forward = ord("W")
 setting_key_back = ord("S")
@@ -140,8 +138,6 @@ setting_snap_size_position = 1
 setting_snap_size_rotation = 15
 setting_snap_size_scale = 1
 setting_snap_size_uv = 1
-
-snap_value = 0.0001
 
 settings_load()
 interface_update()
