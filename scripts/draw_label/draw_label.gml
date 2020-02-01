@@ -14,7 +14,7 @@ var str, xx, yy, halign, valign, color, alpha, font, seperation, width;
 var oldcolor, oldalpha;
 var strwid, strhei;
 
-str = string_hash_to_newline(argument[0])
+str = argument[0]
 xx = argument[1]
 yy = argument[2]
 

@@ -83,6 +83,7 @@ json_save_object_start("interface")
 	json_save_var_bool("z_is_up", setting_z_is_up)
 	json_save_var_bool("shared_texture_uvs", setting_shared_texture_uvs)
 	json_save_var("outline_opacity", setting_outline_opacity)
+	json_save_var_bool("startup_tips", setting_show_startup_tips)
 	
 	json_save_var("panel_left_size", panel_map[?"left"].size)
 	json_save_var("panel_right_size", panel_map[?"right"].size)

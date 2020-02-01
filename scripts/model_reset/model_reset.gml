@@ -58,10 +58,18 @@ for (var v = 0; v < e_value.amount; v++)
 	value[v] = value_default[v]
 }
 
-// Clear 'recover model' snackbar
+// Clear snackbars from startup
 with (obj_snackbar)
 {
+	// Recover model
 	if (snackbar_action1_name = "startuprecovermodel")
+	{
+		snackbar_close(id)
+		break
+	}
+	
+	// Tip
+	if (tip != null)
 	{
 		snackbar_close(id)
 		break

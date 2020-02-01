@@ -45,7 +45,7 @@
 	"question/": {
         "confirmexit": "Save the changes made in %1 before quitting?",
         "confirmnew": "Save the changes made in %1 before creating a new model?",
-        "confirmopen": "Save the changes made in %1 before opening another model?",
+		"confirmopen": "Save the changes made in %1 before opening another model?",
 		"confirmsaveexit": "The current model hasn't been saved yet. Save the current model before quitting?",
 		"confirmsavenew": "The current model hasn't been saved yet. Save the current model before creating a new model?",
 		"confirmsaveopen": "The current model hasn't been saved yet. Save the current model before opening another model?",
@@ -91,6 +91,16 @@
 			"download": "DOWNLOAD NOW",
 			"update": "UPDATE",
 			"remindmelater": "REMIND ME LATER"
+		},
+		"tip/": {
+			"caption": "Tip #%1",
+			"next": "NEXT TIP",
+			"previous": "PREVIOUS TIP",
+			"1": "Try turning on Slow shape generation to increase performance with 3D planes!",
+			"2": "Having trouble finding something? Try right-clicking to show a menu with options.",
+			"3": "If the program feels slow, try disabling shape outlines and SSAO!",
+			"4": "For the best looking bends, move your shapes with the pivot offset tool.",
+			"5": "'Refresh textures on focus' can be helpful for editing textures while modeling!"
 		}
 	},
 	"colorpicker/": {
@@ -520,12 +530,13 @@
 		"zisup": "Z is up",
 		"sharedtextureuvs": "Display shared texture UVs",
 		"sharedtextureuvshelp": "Displays shapes that share a texture in the UV editor.",
+		"shapeoutlineopacity": "Shape outline opacity",
+		"startuptips": "Show startup tips",
 		"looksensitivity": "Look sensitivity",
 		"smoothcamera": "Smooth camera",
 		"smoothcameraamount": "Amount",
 		"graphicsblockybending": "Blocky bending",
 		"graphicsblockybendinghelp": "Enable blocky bending on parts with no custom bend size.",
-		"shapeoutlineopacity": "Shape outline opacity",
 		"graphicswind": "Wind",
 		"graphicswindspeed": "Speed",
 		"graphicswindstrength": "Strength",

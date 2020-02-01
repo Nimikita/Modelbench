@@ -34,3 +34,6 @@ update_vbuffer_list = ds_list_create()
 // Recover model from previous session
 if (file_exists_lib(temp_model_backup))
 	snackbar_recover_model()
+
+if (setting_show_startup_tips)
+	snackbar_tip()

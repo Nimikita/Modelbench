@@ -79,6 +79,7 @@ setting_tip_show = true
 setting_z_is_up = false
 setting_shared_texture_uvs = true
 setting_outline_opacity = .15
+setting_show_startup_tips = true
 
 setting_blocky_bending = false
 setting_wind = true

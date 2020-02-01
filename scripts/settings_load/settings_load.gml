@@ -136,7 +136,8 @@ if (ds_map_valid(interfacemap))
 	setting_z_is_up = value_get_real(interfacemap[?"z_is_up"], setting_z_is_up)
 	setting_shared_texture_uvs = value_get_real(interfacemap[?"shared_texture_uvs"], setting_shared_texture_uvs)
 	setting_outline_opacity = value_get_real(interfacemap[?"outline_opacity"], setting_outline_opacity)
-
+	setting_show_startup_tips = value_get_real(interfacemap[?"startup_tips"], setting_show_startup_tips)
+	
 	setting_panel_left_size = value_get_real(interfacemap[?"panel_left_size"], setting_panel_left_size)
 	setting_panel_right_size = value_get_real(interfacemap[?"panel_right_size"], setting_panel_right_size)
 	setting_panel_left_secondary_size = value_get_real(interfacemap[?"panel_left_secondary_size"], setting_panel_left_secondary_size)
