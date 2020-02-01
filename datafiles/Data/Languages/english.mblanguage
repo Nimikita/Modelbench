@@ -4,7 +4,7 @@
         "language": "English",
         "translator": "Nimi",
         "forversion": "1.0.1",
-        "lastchange": "2020.01.31"
+        "lastchange": "2020.02.01"
     },
 	"startup/": {
 		"modeldetected": "Unsaved model detected",
@@ -46,6 +46,7 @@
         "confirmexit": "Save the changes made in %1 before quitting?",
         "confirmnew": "Save the changes made in %1 before creating a new model?",
 		"confirmopen": "Save the changes made in %1 before opening another model?",
+		"confirmsaveas": "Save the changes made in %1 before saving as a new model?",
 		"confirmsaveexit": "The current model hasn't been saved yet. Save the current model before quitting?",
 		"confirmsavenew": "The current model hasn't been saved yet. Save the current model before creating a new model?",
 		"confirmsaveopen": "The current model hasn't been saved yet. Save the current model before opening another model?",

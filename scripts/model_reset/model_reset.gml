@@ -63,17 +63,11 @@ with (obj_snackbar)
 {
 	// Recover model
 	if (snackbar_action1_name = "startuprecovermodel")
-	{
 		snackbar_close(id)
-		break
-	}
 	
 	// Tip
 	if (tip != null)
-	{
 		snackbar_close(id)
-		break
-	}
 }
 
 // Close menu
