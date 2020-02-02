@@ -122,7 +122,7 @@ switch (name)
 		list_add_item(text_get("contextmenutextboxpaste"), null, ctrl + "V", null, icons.PASTE, null, action_textbox_paste, false)
 		listitem_last.disabled = (clipboard_get_text() = "" || !clipboard_has_text())
 		
-		list_add_item(text_get("contextmenutextboxselectall"), null, ctrl + "A", null, icons.EDIT, null, action_textbox_select_all, false)
+		list_add_item(text_get("contextmenutextboxselectall"), null, ctrl + "A", null, icons.SELECT_ALL, null, action_textbox_select_all, false)
 		break
 	}
 	

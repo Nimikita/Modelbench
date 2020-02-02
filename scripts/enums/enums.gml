@@ -144,6 +144,7 @@ enum icons
 	DELETE_SELECTION,
 	MODEL,
 	TIP,
+	SELECT_ALL,
 	
 	PLACEHOLDER = 11
 }
