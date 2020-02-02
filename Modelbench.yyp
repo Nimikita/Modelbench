@@ -4559,6 +4559,14 @@
             }
         },
         {
+            "Key": "853995f2-c778-4a87-91a7-fc336ed91b53",
+            "Value": {
+                "id": "02148182-1651-4589-9a8f-8d0bb1890104",
+                "resourcePath": "datafiles_yy\\Data\\Languages\\svenska.mblanguage.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
             "Key": "85774483-efbe-4f57-ac24-745fb4884a69",
             "Value": {
                 "id": "79e48f3d-504f-46be-9dc3-836dc2446dfd",
@@ -4708,14 +4716,6 @@
                 "id": "0310c338-55e1-4443-8d40-eb2a64b2abf6",
                 "resourcePath": "scripts\\draw_recent\\draw_recent.yy",
                 "resourceType": "GMScript"
-            }
-        },
-        {
-            "Key": "8a7d41a0-10f1-4dc1-9d87-9925f387acc1",
-            "Value": {
-                "id": "7b18f6fd-b075-4904-a37b-595c45222770",
-                "resourcePath": "datafiles_yy\\Data\\Languages\\francais.mblanguage.yy",
-                "resourceType": "GMIncludedFile"
             }
         },
         {
@@ -5228,14 +5228,6 @@
                 "id": "df61b8e4-08ae-4e21-89ed-50ead61e2287",
                 "resourcePath": "views\\96033089-18c6-4dca-85b6-c78cb49053c2.yy",
                 "resourceType": "GMFolder"
-            }
-        },
-        {
-            "Key": "963d14d0-6f87-4e61-8f5a-caaf1284b824",
-            "Value": {
-                "id": "72fa9829-932c-4c76-af21-5a2d1a7ab84a",
-                "resourcePath": "datafiles_yy\\Data\\Languages\\svenska.mblanguage.yy",
-                "resourceType": "GMIncludedFile"
             }
         },
         {
@@ -6564,6 +6556,14 @@
                 "id": "7a2d7361-55e4-4139-b3f2-e6c8187f93a6",
                 "resourcePath": "views\\c15753bd-9df8-46d6-8862-4a9ce97245b4.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "c18b5b51-0d62-402e-84b9-817316befb01",
+            "Value": {
+                "id": "669ec6e1-6ae9-471d-a7b2-8862467f9f78",
+                "resourcePath": "datafiles_yy\\Data\\Languages\\francais.mblanguage.yy",
+                "resourceType": "GMIncludedFile"
             }
         },
         {

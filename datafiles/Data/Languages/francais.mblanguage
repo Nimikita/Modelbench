@@ -3,8 +3,8 @@
     "file/": {
         "language": "Français",
         "translator": "Voxy",
-        "forversion": "1.0.0",
-        "lastchange": "2020.01.12"
+        "forversion": "1.0.1",
+        "lastchange": "2020.02.02"
     },
 	"startup/": {
 		"modeldetected": "Modèle non-sauvegardé détecté",
@@ -45,7 +45,8 @@
 	"question/": {
         "confirmexit": "Enregistrer les modifications de %1 avant de fermer ?",
         "confirmnew": "Enregistrer les modifications de %1 avant de créer un nouveau modèle ?",
-        "confirmopen": "Enregistrer les modifications de %1 avant d'ouvrir un autre modèle ?",
+		"confirmopen": "Enregistrer les modifications de %1 avant d'ouvrir un autre modèle ?",
+		"confirmsaveas": "Enregistrer les modifications de %1 avant d'en sauvegarder une copie ?",
 		"confirmsaveexit": "Le modèle n'a pas été enregistré. Enregistrer le modèle avant de fermer ?",
 		"confirmsavenew": "Le modèle n'a pas été enregistré. Enregistrer le modèle avant de créer un nouveau modèle ?",
 		"confirmsaveopen": "Le modèle n'a pas été enregistré. Enregistrer le modèle avant d'ouvrir un modèle ?",
@@ -91,6 +92,16 @@
 			"download": "TÉLÉCHARGER",
 			"update": "METTRE À JOUR",
 			"remindmelater": "PLUS TARD"
+		},
+		"tip/": {
+			"caption": "Astuce nº%1",
+			"next": "SUIVANT",
+			"previous": "PRÉCÉDENT",
+			"1": "Si vous utilisez beaucoup de surfaces 3D, activez le paramètre « Ralentir la génération des formes » pour de meilleures performances.",
+			"2": "Pour accéder à des actions supplémentaires, faites un clic droit pour ouvrir un menu contextuel.",
+			"3": "En cas de ralentissements, désactivez l'affichage des contours et de l'occlusion ambiente !",
+			"4": "Pour un meilleur rendu des articulations, déplacez vos formes avec l'outil Point de pivot.",
+			"5": "Activer le rechargement auto. des textures est utile quand vous créez votre texture en même temps que votre modèle !"
 		}
 	},
 	"colorpicker/": {
@@ -107,6 +118,7 @@
 		"copylink": "Copier le lien",
 		"combinescale": "Mise à l'échelle uniforme",
 		"seperatescale": "Mise à l'échelle non-uniforme",
+		"centeraxis": "Centrer le point de pivot",
 		"value/": {
 			"on": "Activé",
 			"off": "Désactivé",
@@ -135,11 +147,15 @@
 			"setmain": "Définir comme texture principale",
 			"remove": "Supprimer la texture",
 			"replace": "Remplacer la texture",
-			"refresh": "Recharger la texture"
+			"refresh": "Recharger la texture",
+			"saveuvmap": "Exporter la carte UV"
 		},
 		"element/": {
 			"add": "Nouvel élément...",
-			"delete": "Supprimer élément",
+			"duplicate": "Dupliquer l'élement",
+			"remove": "Supprimer l'élement",
+			"duplicateselection": "Dupliquer la sélection",
+			"removeselection": "Supprimer la sélection",
 			"expandall": "Développer",
 			"collapseall": "Réduire"
 		},
@@ -475,6 +491,8 @@
 		"slowgenerationhelp": "Mettre à jour les formes plus lentement pour améliorer les performances.",
 		"refreshtextures": "Rechargement auto. des textures",
 		"refreshtextureshelp": "Recharger toutes les textures du modèle lors du focus sur le programme.",
+		"adjustpivotresize": "Ajuster le pivot automatiquement",
+		"adjustpivotresizehelp": "Ajuster la position du point de pivot après le redimensionnement d'une forme.",
 		"interfaceshortcuts": "Raccourcis de l'interface utilisateur",
 		"camerashortcuts": "Raccourcis de la caméra",
 		"key/": {
@@ -482,8 +500,8 @@
 			"save": "Enregister le modèle",
 			"undo": "Annuler",
 			"redo": "Rétablir",
-			"removeelements": "Supprimer les éléments",
-			"duplicateelements": "Dupliquer les éléments",
+			"removeselection": "Supprimer la sélection",
+			"duplicateselection": "Dupliquer la sélection",
 			"selectelements": "Sélectionner les éléments",
 			"uveditor": "Basculer l'éditeur d'UV",
 			"tool/": {
@@ -524,6 +542,7 @@
 		"graphicsblockybending": "Articulations carrées",
 		"graphicsblockybendinghelp": "Activer un aspect carré pour les articulations sans taille personnalisée.",
 		"shapeoutlineopacity": "Opacité des contours",
+		"startuptips": "Afficher les astuces au démarrage",
 		"graphicswind": "Vent",
 		"graphicswindspeed": "Vitesse",
 		"graphicswindstrength": "Force",

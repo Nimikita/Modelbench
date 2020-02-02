@@ -3,8 +3,8 @@
     "file/": {
         "language": "Swedish",
         "translator": "Hozq",
-        "forversion": "1.0.0",
-        "lastchange": "2020.01.12"
+        "forversion": "1.0.1",
+        "lastchange": "2020.02.02"
     },
 	"startup/": {
 		"modeldetected": "Osparad modell upptäckt",
@@ -45,7 +45,8 @@
 	"question/": {
         "confirmexit": "Spara ändringar innan avslutning?",
         "confirmnew": "Spara nya ändringar gorda i %1 innan du skapar en ny modell?",
-        "confirmopen": "Spara nya ändringar gorda i %1 innan du öppnar en ny modell?",
+		"confirmopen": "Spara nya ändringar gorda i %1 innan du öppnar en ny modell?",
+		"confirmsaveas": "Spara ändringarna gjorda i %1 innan du sparar som en ny modell?",
 		"confirmsaveexit": "Den nuvarande modellen har inte blivigt sparad ännu. Spara modellen innan avslutning?",
 		"confirmsavenew": "Den nuvarande modellen har inte blivigt sparad ännu. Spara modellen innan du skapar en ny modell?",
 		"confirmsaveopen": "Den nuvarande modellen har inte blivigt sparad ännu. Spara den nuvarande modellen innan du öppnar en annan modell?",
@@ -91,6 +92,16 @@
 			"download": "LADDA NER NU",
 			"update": "UPPDATERA",
 			"remindmelater": "PÅMINN MIG SENARE"
+		},
+		"tip/": {
+			"caption": "Tip #%1",
+			"next": "NÄSTA TIPS",
+			"previous": "FÖREGÅENDE TIPS",
+			"1": "Sätt på långsamformgenerering för att öka prestandan av 3D plan!",
+			"2": "Har du problem med att hitta något? Testa att höger-klicka för att visa en meny med inställningar.",
+			"3": "Om programmet känns trögt, testa att stänga av formernas ytterlinjer och SSAO!",
+			"4": "För de snyggaste böjningarna, flytta dina former med pivot offset verktyget!",
+			"5": "Uppdatera texturer på fokus' kan vara hjälpsamt om du ska redigera texturer medans du modellerar!"
 		}
 	},
 	"colorpicker/": {
@@ -107,6 +118,7 @@
 		"copylink": "Kopiera länk",
 		"combinescale": "Kombinera XYZ",
 		"seperatescale": "Seperera XYZ",
+		"centeraxis": "Centrera pivot axis",
 		"value/": {
 			"on": "På",
 			"off": "Av",
@@ -135,11 +147,15 @@
 			"setmain": "Gör till huvud textur",
 			"remove": "Ta bort textur från modell",
 			"replace": "Ersätt textur",
-			"refresh": "Uppdatera textur"
+			"refresh": "Uppdatera textur",
+			"saveuvmap": "Spara UV map"
 		},
 		"element/": {
 			"add": "Lägg till element...",
-			"delete": "Ta bort element",
+			"duplicate": "Duplicera element",
+			"remove": "Ta bort element",
+			"duplicateselection": "Duplicera urval",
+			"removeselection": "Ta bort urval",
 			"expandall": "Öppna allt",
 			"collapseall": "Kollapsa allt"
 		},
@@ -475,6 +491,8 @@
 		"slowgenerationhelp": "Uppdaterar former saktare. Användbart för prestanda när du ändrar komplexa modeller.",
 		"refreshtextures": "Uppdatera texturer på fokus",
 		"refreshtextureshelp": "Automatiskt uppdatera alla modell texturer när fönstret har fått fokus igen.",
+		"adjustpivotresize": "Justera pivot vid ändring and storlek",
+		"adjustpivotresizehelp": "Justera form pivot baserat på storleksändring i UV redigeraren.",
 		"interfaceshortcuts": "Interface genvägsknappar",
 		"camerashortcuts": "Kamera genvägsknappar",
 		"key/": {
@@ -482,8 +500,8 @@
 			"save": "Spara modell",
 			"undo": "Ångra",
 			"redo": "Göra om",
-			"removeelements": "Ta bort element",
-			"duplicateelements": "Duplicera element",
+			"removeselection": "Ta bort urval",
+			"duplicateselection": "Duplicera urval",
 			"selectelements": "Välj element",
 			"uveditor": "Toggla UV editor",
 			"tool/": {
@@ -524,6 +542,7 @@
 		"graphicsblockybending": "Blockig böjning",
 		"graphicsblockybendinghelp": "Sätt på blockig böjning på delar utan en specifierad böjningsskala.",
 		"shapeoutlineopacity": "Formernas ytterlinje opacitet",
+		"startuptips": "Visa starttips",
 		"graphicswind": "Vind",
 		"graphicswindspeed": "Snabbhet",
 		"graphicswindstrength": "Hårdhet",
