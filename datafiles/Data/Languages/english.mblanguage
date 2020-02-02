@@ -4,7 +4,7 @@
         "language": "English",
         "translator": "Nimi",
         "forversion": "1.0.1",
-        "lastchange": "2020.02.01"
+        "lastchange": "2020.02.02"
     },
 	"startup/": {
 		"modeldetected": "Unsaved model detected",

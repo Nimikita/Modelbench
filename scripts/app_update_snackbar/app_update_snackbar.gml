@@ -1,6 +1,8 @@
 /// app_update_snackbar()
 /// @desc Updates all snackbars
 
+var descheight;
+
 // Execute any scripts
 if (snackbar_script != null)
 {
@@ -23,7 +25,12 @@ with (obj_snackbar)
 	// Calculate additional height
 	if (description != "")
 	{
-		snackbar_height += 22
+		draw_set_font(app.font_value)
+		
+		descheight = string_height_ext(text_get(description), 22, 480)
+		
+		// Adjust line spacing of last line
+		snackbar_height += (descheight < 22 ? descheight + 8 : descheight - 4)
 		
 		if (snackbar_action1 || snackbar_action2)
 			snackbar_height += 34

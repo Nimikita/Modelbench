@@ -73,7 +73,7 @@ dy += 22
 // Description line
 if (sb.description != "")
 {
-	draw_label(text_exists(sb.description) ? text_get(sb.description) : sb.description, dx, dy, fa_left, fa_center, c_text_main, 1, font_value)
+	draw_label(text_exists(sb.description) ? text_get(sb.description) : sb.description, dx, dy, fa_left, fa_center, c_text_main, 1, font_value, -1, content_width - 44 - 36)
 	dy += 22
 }
 
