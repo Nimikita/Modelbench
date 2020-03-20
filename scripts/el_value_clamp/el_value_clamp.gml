@@ -45,7 +45,7 @@ switch (vid)
 	
 	case e_value.SCA_X:
 	case e_value.SCA_Y:
-	case e_value.SCA_Z: return clamp(val, 0.001, world_size)
+	case e_value.SCA_Z: return clamp(val, snap_min, world_size)
 	
 	case e_value.BEND_SIZE: return clamp(val, 0, no_limit)
 	

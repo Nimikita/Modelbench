@@ -39,5 +39,5 @@ draw_switch("assetsplayerskin", dx, dy, player_skin, action_player_skin, false, 
 tab_next()
 
 tab_control(28)
-draw_textfield_num("assetsmodelscale", dx, dy, 86, root_scale, setting_snap ? min(0.01, setting_snap_size_scale) : 0.01, snap_min, no_limit, 1, setting_snap_size_scale, tab.model_properties.tbx_model_scale, action_model_scale)
+draw_textfield_num("assetsmodelscale", dx, dy, 86, root_scale, setting_snap ? min(snap_min, setting_snap_size_scale) : snap_min, snap_min, no_limit, 1, setting_snap_size_scale, tab.model_properties.tbx_model_scale, action_model_scale)
 tab_next()

@@ -9,5 +9,5 @@ textfield_group_add("elementeditorpositiony", el_edit.value[e_value.POS_X + axis
 axis_edit = (setting_z_is_up ? Z : Y)
 textfield_group_add("elementeditorpositionz", el_edit.value[e_value.POS_X + axis_edit], 0, action_el_pos, axis_edit, tab.position.tbx_z)
 
-draw_textfield_group("elementeditorposition", dx, dy, dw, 0.1, -no_limit, no_limit, setting_snap ? setting_snap_size_position : 0.001)
+draw_textfield_group("elementeditorposition", dx, dy, dw, 0.1, -no_limit, no_limit, setting_snap ? setting_snap_size_position : snap_min)
 tab_next()

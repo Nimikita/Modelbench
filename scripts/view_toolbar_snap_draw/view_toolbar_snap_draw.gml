@@ -49,7 +49,7 @@ textfield_group_add("toolsetsnapsizerotation", setting_snap_size_rotation, 1, ac
 textfield_group_add("toolsetsnapsizescale", setting_snap_size_scale, 1, action_setting_snap_size_scale, null, tbx_snap_size_scale, icons.TOOLSET_SCALE)
 textfield_group_add("toolsetsnapsizeuv", setting_snap_size_uv, 1, action_setting_snap_size_uv, null, tbx_snap_size_uv, icons.UV_EDITOR)
 
-draw_textfield_group("toolsetsnapsize", dx, dy, 288, .01, 0.001, no_limit, 0.001)
+draw_textfield_group("toolsetsnapsize", dx, dy, 288, .01, snap_min, no_limit, snap_min)
 
 draw_set_alpha(1)
 

@@ -1,6 +1,6 @@
 /// tab_element_editor_size()
 
-var snapval = (setting_snap ? setting_snap_size_uv : 0.01);
+var snapval = (setting_snap ? setting_snap_size_uv : snap_min);
 
 tab_control(28)
 textfield_group_add("elementeditorsizew", el_edit.value[e_value.WIDTH], 0, action_el_size, X, tab.size.tbx_width)

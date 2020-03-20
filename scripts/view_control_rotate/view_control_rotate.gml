@@ -47,7 +47,7 @@ if (window_busy = "rendercontrol" && view_control_edit_view = view && view_contr
 		view_control_value += rot
 		
 		view_control_value = el_value_clamp(view_control_edit, view_control_value)
-		snapval = (setting_snap ? setting_snap_size_rotation : 0.001)
+		snapval = (setting_snap ? setting_snap_size_rotation : snap_min)
 		
 		// Update
 		axis_edit = e_value.ROT_X - view_control_edit
