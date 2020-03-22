@@ -19,6 +19,8 @@ vertex_format_startup()
 if (!shader_startup())
 	return false
 
+export_startup()
+
 app_startup_lists()
 app_startup_window()
 app_startup_themes()

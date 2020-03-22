@@ -3,8 +3,8 @@
     "file/": {
         "language": "English",
         "translator": "Nimi",
-        "forversion": "1.0.1",
-        "lastchange": "2020.02.02"
+        "forversion": "1.0.2",
+        "lastchange": "2020.03.21"
     },
 	"startup/": {
 		"modeldetected": "Unsaved model detected",
@@ -65,7 +65,9 @@
 			"model": "Mine-imator model",
 			"modelcaption": "Save Mine-imator model",
 			"image": "Images",
-            "imagecaption": "Save image"
+			"imagecaption": "Save image",
+			"obj": "Wavefront",
+			"objcaption": "Save .obj file"
 		}
 	},
 	"uveditor/": {
@@ -259,6 +261,7 @@
 		"elementeditor": "Element editor",
 		"preview": "Preview",
 		"recentmodels": "Recent models",
+		"exportmodel": "Export model",
 		"settings": "Settings",
 		"about": "About"
 	},
@@ -268,6 +271,7 @@
 		"openmodel": "Open model...",
 		"recentmodels": "Recent models",
 		"importmodel": "Import model...",
+		"exportmodel": "Export model",
 		"save": "Save model",
 		"saveas": "Save model as...",
 		"settings": "Settings",
@@ -475,6 +479,21 @@
 	"openmodel/": {
 		"recentmodels": "Recent models",
 		"browse": "BROWSE..."
+	},
+	"export/": {
+		"disclaimer": "Blend color, mix color, opacity, and brightness settings are not supported!",
+		"selectiononly": "Selection only",
+		"includehidden": "Include hidden elements",
+		"unparentparts": "Unparent parts",
+		"combinelocked": "Combine locked elements",
+		"unparentpartshelp": "Saves parts without their parents' tranformations. Useful for rigging in other softwares.",
+		"mode": "Export mode",
+		"mode/": {
+			"combineall": "Single mesh",
+			"seperateparts": "Parts as objects",
+			"seperateshapes": "Shapes as objects"
+		},
+		"obj": "EXPORT OBJ"
 	},
 	"settings/": {
 		"fps": "Frames per second",

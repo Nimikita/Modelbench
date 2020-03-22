@@ -13,6 +13,7 @@ list_add_item("menurecentmodels", recent_models, "", null, icons.RECENT_FILES, i
 list_add_item("menusave", null, "", null, icons.SAVE, null, model_save)
 list_add_item("menusaveas", null, "", null, icons.SAVE_AS, null, model_save_as)
 list_add_item("menuimportmodel", null, "", null, icons.IMPORT, null, action_model_import)
+list_add_item("menuexportmodel", null, "", null, icons.PLACEHOLDER, icons.ARROW_RIGHT_SMALL, action_open_export)
 //listitem_last.disabled = true
 
 list_add_item("menusettings", settings, "", null, icons.SETTINGS, icons.ARROW_RIGHT_SMALL, action_open_settings, false) // Open settings

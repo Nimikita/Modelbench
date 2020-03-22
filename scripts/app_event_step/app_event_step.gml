@@ -23,6 +23,8 @@ app_update_animations()
 app_update_textures()
 app_update_shape_vbuffer()
 
+export_save()
+
 if (model_create_wait)
 {
 	directory_create_lib(temp_model_directory)

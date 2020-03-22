@@ -213,6 +213,9 @@ with (preview)
 // Recent models
 recent_models = new_tab(null, false, header_recent_models)
 
+// Export
+export = new_tab(null, false, header_export_model)
+
 // Settings
 settings = new_tab(null, false, header_menu_panel)
 with (settings)

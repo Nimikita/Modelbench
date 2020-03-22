@@ -42,3 +42,10 @@ for (var v = 0; v < e_value.amount; v++)
 	value_inherit[v] = value_default[v]
 	value[v] = value_default[v]
 }
+
+shape_export_position_list = null
+shape_export_uv_list = null
+shape_export_vertex_list = null
+
+shape_unique_position_list = null
+shape_unique_uv_list = null

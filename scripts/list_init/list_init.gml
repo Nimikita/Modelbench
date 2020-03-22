@@ -49,6 +49,15 @@ switch (name)
 		break
 	}
 	
+	case "exportmode":
+	{
+		list_add_item(text_get("exportmodecombineall"), e_export.COMBINE_ALL, "")
+		list_add_item(text_get("exportmodeseperateparts"), e_export.SEPERATE_PARTS, "")
+		list_add_item(text_get("exportmodeseperateshapes"), e_export.SEPERATE_SHAPES, "")
+		
+		break
+	}
+	
 	case "settingslanguage":
 	{
 		var file;
