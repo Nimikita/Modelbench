@@ -84,13 +84,6 @@ if (window_busy = name)
 	}
 }
 
-// Textbox click
-if (app_mouse_box(labelx, labely - 8, labelw, 16) && mouse_left_pressed)
-{
-	tbx.text = string_decimals(value)
-	window_focus = string(tbx)
-}
-
 // Wheel click
 if (app_mouse_box(xx - rad - 10, yy - rad - 10, rad * 2 + 20, rad * 2 + 20) && content_mouseon)
 {
@@ -112,8 +105,20 @@ draw_label(text_get(name) + ":", xx - (labeltextw/2), labely, fa_left, fa_middle
 draw_set_font(font_value)
 if (window_focus = string(tbx))
 {
-	if (textbox_draw(tbx, labelx, labely - 8, labelw + 24, 18))
+	if (textbox_draw(tbx, labelx, labely - 8, labeltextw, 18))
 		script_execute(script, clamp(snap(string_get_real(tbx.text, 0), snapval), minval, maxval), false)
 }
 else
 	draw_label(text, labelx, labely, fa_left, fa_middle, c_text_main, a_text_main, font_value)
+
+// Textbox click
+if (app_mouse_box(labelx - capwid, labely - 8, labeltextw, 16))
+{
+	mouse_cursor = cr_handpoint
+	
+	if (mouse_left_pressed)
+	{
+		tbx.text = string_decimals(value)
+		window_focus = string(tbx)
+	}
+}
