@@ -5,6 +5,8 @@ snackbar_y = 0
 snackbar_goal_y = 0
 snackbar_height = 44
 
+remove_alpha = 1
+
 icon = null
 
 label = ""

@@ -903,14 +903,6 @@
             }
         },
         {
-            "Key": "1834c4ed-51cc-4aeb-882c-9acb9cc5526b",
-            "Value": {
-                "id": "b3c05089-68d9-466c-8f34-b42c6f19f956",
-                "resourcePath": "scripts\\snackbar_same_part_name\\snackbar_same_part_name.yy",
-                "resourceType": "GMScript"
-            }
-        },
-        {
             "Key": "1867417f-0a6b-4b92-ae19-035889e548b0",
             "Value": {
                 "id": "e485b62f-f50f-444a-9655-986c7d54edde",
@@ -1571,14 +1563,6 @@
             "Value": {
                 "id": "029345e9-5227-4d55-bcca-206b915cd10c",
                 "resourcePath": "scripts\\uv_editor_reset_view\\uv_editor_reset_view.yy",
-                "resourceType": "GMScript"
-            }
-        },
-        {
-            "Key": "2ca6a4da-f2ac-4de5-a309-bbf2e1f27cff",
-            "Value": {
-                "id": "fa93a391-8697-4fa9-8b7a-674d90a32d45",
-                "resourcePath": "scripts\\snackbar_empty_part_name\\snackbar_empty_part_name.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -6039,14 +6023,6 @@
             }
         },
         {
-            "Key": "b0055d4c-fdde-4893-a8d4-691d321aee5a",
-            "Value": {
-                "id": "b3bfe8a7-3f4d-46f3-aac5-c069c576d64c",
-                "resourcePath": "scripts\\snackbar_empty_model_name\\snackbar_empty_model_name.yy",
-                "resourceType": "GMScript"
-            }
-        },
-        {
             "Key": "b029cbf6-d4e0-4cff-b80d-6d5aabe34ce6",
             "Value": {
                 "id": "76033c53-6d35-4922-bfed-a2eb67a1eea5",
@@ -6836,6 +6812,14 @@
                 "id": "98f56207-2832-45c3-b45b-a04a79a39444",
                 "resourcePath": "views\\c641fea1-3a5a-4995-aa2b-b9e111e8d7ff.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "c6d27104-40a9-4bbf-b785-10df628f468f",
+            "Value": {
+                "id": "125c82a8-95c3-420e-b5d3-ddb4441c6360",
+                "resourcePath": "scripts\\snackbar_error\\snackbar_error.yy",
+                "resourceType": "GMScript"
             }
         },
         {
@@ -9008,9 +8992,7 @@
         "203c23d7-5462-4cd1-a31d-66e71f6d4544",
         "bb60c3ce-9b70-48cc-b963-d707eba66d67",
         "197816bf-8bed-4506-bb99-97a736574deb",
-        "1834c4ed-51cc-4aeb-882c-9acb9cc5526b",
-        "2ca6a4da-f2ac-4de5-a309-bbf2e1f27cff",
-        "b0055d4c-fdde-4893-a8d4-691d321aee5a",
+        "c6d27104-40a9-4bbf-b785-10df628f468f",
         "a47b5120-0087-4c6a-bdce-18abe110c9c5",
         "5a01e5d9-f5e9-4d5f-86fe-b111da261e72",
         "cf785f89-8d28-4f64-b728-d543692baa13",

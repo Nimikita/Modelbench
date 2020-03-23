@@ -88,7 +88,7 @@
 			"samepartname": "Some parts share the same name.",
 			"emptypartname": "Some parts don't have a name.",
 			"emptymodelname": "This model hasn't been given a name.",
-			"savemodel": "The model may not load correctly in Mine-imator."
+			"savemodel": "The model may not load correctly in Mine-imator because of the following:"
 		},
 		"button/": {
 			"download": "DOWNLOAD NOW",
