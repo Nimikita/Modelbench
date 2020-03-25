@@ -17,7 +17,7 @@ content_mouseon = app_mouse_box(dx, dy, dw, dh) && !popup_mouseon && !snackbar_m
 var busy = window_busy;
 window_busy = ""
 
-if (setting_snap || (app_mouse_box(dx - 80, dy - 80, dw + 160, dh + 160) && !popup_mouseon && !snackbar_mouseon && !context_menu_mouseon))
+if (setting_snap || (app_mouse_box(dx - 80, dy - 80, dw + 160, dh + 160) && !popup_mouseon && !snackbar_mouseon && !context_menu_mouseon && menu_panel_ani = 0))
 	toolset_snap_alpha_goal = 1
 else
 	toolset_snap_alpha_goal = .25

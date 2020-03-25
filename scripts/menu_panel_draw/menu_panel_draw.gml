@@ -113,6 +113,9 @@ if (app_mouse_box(panelx + panelw, panely, window_width - panelw, panelh) && mou
 {
 	menu_panel_ani_type = "hide"
 	menu_open = false
+	
+	if (popup = popup_about)
+		popup_close()
 }
 
 draw_gradient(panelx + panelw, panely, shadow_size, panelh, c_black, shadow_alpha, 0, 0, shadow_alpha)

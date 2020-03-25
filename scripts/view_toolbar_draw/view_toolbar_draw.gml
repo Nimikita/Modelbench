@@ -25,7 +25,7 @@ buttonsize = 28 + 4
 
 window_busy = ""
 
-if (app_mouse_box(dx - 80, dy - 80, dw + 160, dh + 160) && !popup_mouseon && !snackbar_mouseon && !context_menu_mouseon)
+if (app_mouse_box(dx - 80, dy - 80, dw + 160, dh + 160) && !popup_mouseon && !snackbar_mouseon && !context_menu_mouseon && menu_panel_ani = 0)
 	toolset_alpha_goal = 1
 else
 	toolset_alpha_goal = .25

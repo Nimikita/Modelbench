@@ -12,18 +12,37 @@ view_update_surface(view, cam)
 // Click
 if (content_mouseon && window_busy = "")
 {
-	mouse_cursor = cr_handpoint
+	//mouse_cursor = cr_handpoint
+	
 	if (mouse_left_pressed)
 	{
 		window_busy = "viewclick"
 		window_focus = string(view)
 	}
 	
+	if (mouse_middle_pressed && !keyboard_check(vk_shift))
+	{
+		window_busy = "viewrotatecamera"
+		
+		view_click_x = display_mouse_get_x()
+		view_click_y = display_mouse_get_y()
+			
+		window_focus = string(view)
+	}
+	
+	/*
 	if (mouse_right_pressed)
 	{
 		view_click_x = display_mouse_get_x()
 		view_click_y = display_mouse_get_y()
 		window_busy = "viewmovecamera"
+		window_focus = string(view)
+	}
+	*/
+	
+	if (mouse_middle_pressed && keyboard_check(vk_shift))
+	{
+		window_busy = "viewpancamera"
 		window_focus = string(view)
 	}
 }
@@ -47,12 +66,14 @@ if (window_focus = string(view))
 	{
 		mouse_cursor = cr_handpoint
 		
+		/*
 		if (mouse_move > 5)
 		{
 			view_click_x = display_mouse_get_x()
 			view_click_y = display_mouse_get_y()
 			window_busy = "viewrotatecamera"
 		}
+		*/
 		
 		if (!mouse_left)
 		{
@@ -68,7 +89,7 @@ if (window_focus = string(view))
 		
 		camera_control_rotate(cam, view_click_x, view_click_y)
 		
-		if (!mouse_left)
+		if (!mouse_middle)
 			window_busy = ""
 	}
 	
@@ -80,6 +101,18 @@ if (window_focus = string(view))
 		camera_control_move(cam, view_click_x, view_click_y)
 		
 		if (!mouse_right)
+		{
+			camera_set_focus()
+			window_busy = ""
+		}
+	}
+	
+	// Pan camera
+	if (window_busy = "viewpancamera")
+	{
+		camera_control_pan()
+		
+		if (!mouse_middle)
 		{
 			camera_set_focus()
 			window_busy = ""

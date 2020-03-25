@@ -8,7 +8,7 @@ switch (tab)
 {
 	case assets: return text_get("tabassets")
 	case preview: return text_get("tabpreview")
-	case recent_models: return text_get("tabpreview")
+	case recent_models: return text_get("tabrecentmodels")
 	case export: return text_get("tabexportmodel")
 	case settings: return text_get("tabsettings")
 	case element_editor:

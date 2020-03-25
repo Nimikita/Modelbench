@@ -3455,6 +3455,14 @@
             }
         },
         {
+            "Key": "642ab793-64d9-4699-b598-87af65badf30",
+            "Value": {
+                "id": "07db802f-2187-4b17-89dc-328a53195d67",
+                "resourcePath": "scripts\\camera_control_pan\\camera_control_pan.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "655403fe-fdff-4551-bd06-4845eb146ef5",
             "Value": {
                 "id": "35028ef6-ae94-423f-be45-6a3f326c9589",
@@ -6407,6 +6415,14 @@
             }
         },
         {
+            "Key": "bc1767c3-2620-4a97-826b-27e58ce9d076",
+            "Value": {
+                "id": "7c33d436-a9c4-4a66-b047-dde4be90cf12",
+                "resourcePath": "scripts\\app_mouse_wrap\\app_mouse_wrap.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "bc2ebfa8-92fd-45cd-aa73-4237e28d49b5",
             "Value": {
                 "id": "43e6e0db-0328-4d87-8aff-b3b590c1bc6f",
@@ -8726,6 +8742,7 @@
         "492806bf-bf48-4b46-a4ff-92fb7aec3206",
         "938ae180-2d9c-4706-87d5-f2db54319090",
         "96caed19-a133-418a-b759-5d0649f51349",
+        "642ab793-64d9-4699-b598-87af65badf30",
         "5a96530d-fa23-471a-a2d2-4dddd5b3e802",
         "f9ca24e4-7080-423c-9501-81cdc3593268",
         "a89964b2-a3f4-42fe-bc24-975737bb0736",
@@ -9027,6 +9044,7 @@
         "58a32e08-7bcb-419a-ba97-baac3fb1271f",
         "ce1ec3d5-47f8-4fcd-9066-fa2ba2cfb504",
         "125aa3a4-5b3d-4105-8d2e-2ad435e57120",
+        "bc1767c3-2620-4a97-826b-27e58ce9d076",
         "786d5a26-b337-4dd9-8daa-f4d19341795e",
         "4af59f1c-5b35-4aa3-8536-ca892e81e5d4",
         "9f1ccf12-e3a5-46c4-bc35-f61f9da33293",
