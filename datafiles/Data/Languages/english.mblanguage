@@ -4,7 +4,7 @@
         "language": "English",
         "translator": "Nimi",
         "forversion": "1.0.2",
-        "lastchange": "2020.03.25"
+        "lastchange": "2020.03.28"
     },
 	"startup/": {
 		"modeldetected": "Unsaved model detected",
@@ -481,7 +481,7 @@
 		"browse": "BROWSE..."
 	},
 	"export/": {
-		"disclaimer": "Blend color, Mix color, Opacity, Brightness, Invert, Face camera, Hover, Wind, and Render depth settings are not supported!",
+		"disclaimer": "Blend color, Mix color, Opacity, Brightness, Invert, Face camera, Hover, Hide Front, Hide Back, Wind, and Render depth settings are not supported!",
 		"disclaimer3dplanes": "Large 3D planes will result in drastic export times, Modelbench will go unresponsive at certain periods.",
 		"selectiononly": "Selection only",
 		"includehidden": "Include hidden elements",
@@ -506,7 +506,10 @@
 	"settings/": {
 		"fps": "Frames per second",
         "fps30": "30",
-        "fps60": "60",
+		"fps60": "60",
+		"featureset": "Feature set",
+		"featuresetmimodel": "Mine-imator model",
+		"featuresetobj": "Wavefront OBJ",
 		"backupmodels": "Backup models",
 		"backupmodelsminutes": "Minutes between backups",
 		"backupmodelsamount": "Maximum saved backups",

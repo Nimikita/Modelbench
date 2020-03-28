@@ -39,6 +39,12 @@ enum e_tool
 	TRANSFORM
 }
 
+enum e_features
+{
+	MIMODEL,
+	OBJ
+}
+
 // Icons
 enum icons
 {

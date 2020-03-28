@@ -28,6 +28,7 @@ var generalmap = map[?"general"];
 if (ds_map_valid(generalmap))
 {
 	room_speed = value_get_real(generalmap[?"fps"], room_speed)
+	setting_feature_set = value_get_real(generalmap[?"feature_set"], setting_feature_set)
 	
 	setting_backup = value_get_real(generalmap[?"backup"], setting_backup)
 	setting_backup_time = value_get_real(generalmap[?"backup_time"], setting_backup_time)

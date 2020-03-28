@@ -9,6 +9,7 @@ json_save_var("format", real(settings_format))
 json_save_object_start("general")
 
 	json_save_var("fps", room_speed)
+	json_save_var("feature_set", setting_feature_set)
 	json_save_var_bool("backup", setting_backup)
 	json_save_var("backup_time", setting_backup_time)
 	json_save_var("backup_amount", setting_backup_amount)

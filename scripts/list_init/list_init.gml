@@ -73,6 +73,13 @@ switch (name)
 		break
 	}
 	
+	case "settingsfeatureset":
+	{
+		list_add_item(text_get("settingsfeaturesetmimodel"), e_features.MIMODEL, ".mimodel")
+		list_add_item(text_get("settingsfeaturesetobj"), e_features.OBJ, ".obj")
+		break
+	}
+	
 	// Context menu
 	case "contextmenuvalue":
 	case "contextmenucategory":

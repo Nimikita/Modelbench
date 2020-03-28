@@ -287,6 +287,14 @@
             }
         },
         {
+            "Key": "07d2eefd-8062-44e1-b7fb-427f6af76b4a",
+            "Value": {
+                "id": "433f1c22-e18b-424d-832e-edbbe55d583a",
+                "resourcePath": "scripts\\action_setting_feature_set\\action_setting_feature_set.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "083314f7-2a47-4de8-b481-4b9fbc6668d7",
             "Value": {
                 "id": "5caf6547-28e9-439a-8792-706d320b3823",
@@ -8711,6 +8719,7 @@
         "d814096f-3570-4575-bbbe-5a716b01201c",
         "2fa5ad73-1bab-425d-9dd9-5cb063e0fad6",
         "eab1f30e-d456-4c21-9d67-d257827633e0",
+        "07d2eefd-8062-44e1-b7fb-427f6af76b4a",
         "e00bd977-c885-43c5-ac1b-c6a7eb7f640a",
         "c6127529-c88c-489c-8bcc-3a862cb73d22",
         "c83030f2-182b-4c06-ac0c-c34a974c86b2",

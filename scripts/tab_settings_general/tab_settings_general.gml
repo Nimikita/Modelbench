@@ -7,6 +7,13 @@ togglebutton_add("settingsfps60", null, 60, room_speed = 60, action_setting_fps)
 draw_togglebutton("settingsfps", dx, dy)
 tab_next()
 
+// Feature set
+var text = (setting_feature_set = e_features.MIMODEL ? "settingsfeaturesetmimodel" : "settingsfeaturesetobj");
+
+tab_control_menu()
+draw_button_menu("settingsfeatureset", e_menu.LIST, dx, dy, dw, 28, setting_feature_set, text_get(text), action_setting_feature_set)
+tab_next()
+
 // Backup models
 tab_control_switch()
 draw_button_collapse("settingsbackupmodels", !setting_collapse_backup_models, action_collapse_backup_models, !setting_backup)

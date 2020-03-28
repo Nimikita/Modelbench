@@ -1,6 +1,8 @@
 /// settings_startup()
 
 program_mode = e_mode.MODELING
+setting_feature_set = e_features.MIMODEL
+
 toolbar_line_x = 0
 toolbar_line_width = 0
 toolbar_line_x_goal = 0
