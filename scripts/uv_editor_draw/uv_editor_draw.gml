@@ -49,8 +49,12 @@ if (window_focus = "uveditor")
 	if (window_busy = "uveditormove")
 	{
 		mouse_cursor = cr_size_all
-		uv_editor_x = uv_editor_click_x + (mouse_click_x - mouse_x) / uv_editor_zoom
-		uv_editor_y = uv_editor_click_y + (mouse_click_y - mouse_y) / uv_editor_zoom
+		
+		uv_editor_x += (mouse_previous_x - mouse_x) / uv_editor_zoom
+		uv_editor_y += (mouse_previous_y - mouse_y) / uv_editor_zoom
+		
+		app_mouse_wrap(content_x, content_y, content_width, content_height)
+		
 		uv_editor_goal_x = uv_editor_x
 		uv_editor_goal_y = uv_editor_y
 		if (!mouse_left)
