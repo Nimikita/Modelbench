@@ -1,10 +1,12 @@
 /// export_startup()
 /// @desc .obj exporting
 
-export_model = false
 export_shape = null
 
 export_verticies = 0
+export_quads = 0
+export_triangles = 0
+
 export_material = ""
 
 export_fn = ""
@@ -25,3 +27,21 @@ export_selection_only = false
 export_include_hidden = false
 export_unparent_parts = false
 export_combine_locked = true
+
+export_shapes = ds_list_create()
+
+export_elements = ds_list_create()
+
+// generate, compile, face
+export_stage = ""
+
+export_file = null
+
+export_generation_done = 0
+export_generation_max = 0
+
+export_compile_done = 0
+export_compile_max = 0
+
+export_face_done = 0
+export_face_max = 0

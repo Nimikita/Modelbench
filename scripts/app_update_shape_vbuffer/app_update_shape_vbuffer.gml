@@ -15,8 +15,11 @@ with (obj_model_element)
 
 for (var i = 0; i < ds_list_size(app.update_vbuffer_list); i++)
 {
-	if (export_model)
+	if (export_stage != "")
+	{
 		export_shape = app.update_vbuffer_list[|i]
+		export_generation_done++
+	}
 	
 	with (app.update_vbuffer_list[|i])
 		shape_update_vbuffer()
@@ -24,7 +27,7 @@ for (var i = 0; i < ds_list_size(app.update_vbuffer_list); i++)
 	ds_list_delete(app.update_vbuffer_list, i)
 	i--
 	
-	if (app.setting_slow_generation)
+	if (app.setting_slow_generation || export_stage != "")
 		break
 }
 

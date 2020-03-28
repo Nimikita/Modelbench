@@ -23,6 +23,8 @@ app_update_animations()
 app_update_textures()
 app_update_shape_vbuffer()
 
+app_update_count()
+
 export_save()
 
 if (model_create_wait)

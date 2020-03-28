@@ -26,6 +26,13 @@ root_scale = 1
 model_temporary = false
 model_changed = false
 
+model_shapes = 0
+model_planes = 0
+model_planes3d = 0
+model_blocks = 0
+model_parts = 0
+model_elements = 0
+
 warning_empty_part_names = false
 warning_same_part_names = false
 

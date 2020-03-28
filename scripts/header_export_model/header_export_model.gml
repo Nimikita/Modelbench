@@ -5,8 +5,13 @@ header_menu_panel()
 draw_image(spr_icons, icons.WARNING, dx + dw/2, dy, 1, 1, c_warning, 1)
 dy += 12 + 8
 
-draw_label(text_get("exportdisclaimer"), dx, dy, fa_left, fa_top, c_text_secondary, a_text_secondary, font_value, -1, dw)
-dy += (string_height_ext(text_get("exportdisclaimer"), -1, dw) + 32)
+var disclaimer = text_get("exportdisclaimer");
+
+if (model_planes3d > 0)
+	disclaimer += "\n\n" + text_get("exportdisclaimer3dplanes")
+
+draw_label(disclaimer, dx, dy, fa_left, fa_top, c_text_secondary, a_text_secondary, font_value, -1, dw)
+dy += (string_height_ext(disclaimer, -1, dw) + 32)
 
 var text = "";
 

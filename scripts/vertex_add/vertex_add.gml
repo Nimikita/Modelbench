@@ -31,7 +31,7 @@ if (argument_count < 8)
 	vertex_color(vbuffer_current, color, alpha)
 	vertex_texcoord(vbuffer_current, texcoord[@ X], texcoord[@ Y])
 	
-	if (app.export_model)
+	if (app.export_stage != "")
 		export_vertex_add(pos, normal, texcoord)
 	
 	zz = pos[@ Z]
@@ -46,7 +46,7 @@ else
 		vertex_color(vbuffer_current, -1, 1)
 	vertex_texcoord(vbuffer_current, argument[6], argument[7])
 	
-	if (app.export_model)
+	if (app.export_stage != "")
 		export_vertex_add(point3D(argument[0], argument[1], argument[2]), point3D(argument[3], argument[4], argument[5]), point2D(argument[6], argument[7]))
 	
 	zz = argument[2]

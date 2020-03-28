@@ -11,8 +11,6 @@ with (obj_texture)
 	
 	str += "newmtl " + filename_change_ext(filename, "") + "\n"
 	str += "map_Kd " + filename + "\n"
-	str += "-blendu off" + "\n"
-	str += "-blendv off" + "\n"
 	
 	str += "\n"
 	

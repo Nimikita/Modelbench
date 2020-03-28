@@ -4,7 +4,7 @@
         "language": "English",
         "translator": "Nimi",
         "forversion": "1.0.2",
-        "lastchange": "2020.03.21"
+        "lastchange": "2020.03.25"
     },
 	"startup/": {
 		"modeldetected": "Unsaved model detected",
@@ -271,7 +271,7 @@
 		"openmodel": "Open model...",
 		"recentmodels": "Recent models",
 		"importmodel": "Import model...",
-		"exportmodel": "Export model",
+		"exportmodel": "Export model as .obj",
 		"save": "Save model",
 		"saveas": "Save model as...",
 		"settings": "Settings",
@@ -481,7 +481,8 @@
 		"browse": "BROWSE..."
 	},
 	"export/": {
-		"disclaimer": "Blend color, mix color, opacity, and brightness settings are not supported!",
+		"disclaimer": "Blend color, Mix color, Opacity, Brightness, Invert, Face camera, Hover, Wind, and Render depth settings are not supported!",
+		"disclaimer3dplanes": "Large 3D planes will result in drastic export times, Modelbench will go unresponsive at certain periods.",
 		"selectiononly": "Selection only",
 		"includehidden": "Include hidden elements",
 		"unparentparts": "Unparent parts",
@@ -493,7 +494,14 @@
 			"seperateparts": "Parts as objects",
 			"seperateshapes": "Shapes as objects"
 		},
-		"obj": "EXPORT OBJ"
+		"obj": "EXPORT OBJ",
+		"stage/": {
+			"total": "Exporting model OBJ...",
+			"done": "(%1% Done)",
+			"generation": "Generating shapes...",
+			"compile": "Compiling vertex data...",
+			"face": "Creating faces data..."
+		}
 	},
 	"settings/": {
 		"fps": "Frames per second",

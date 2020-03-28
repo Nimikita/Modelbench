@@ -145,6 +145,7 @@ enum icons
 	MODEL,
 	TIP,
 	SELECT_ALL,
+	EXPORT_OBJ,
 	
 	PLACEHOLDER = 11
 }
