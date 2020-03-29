@@ -171,6 +171,9 @@ if (el_edit_amount > 0 && program_mode = e_mode.MODELING)
 					
 					view.control_mouseon_last = view.control_mouseon
 					view.control_mouseon = null
+					
+					if (window_busy = "rendercontrol")
+						app_mouse_wrap(content_x, content_y, content_width, content_height)
 				}
 			}
 			
