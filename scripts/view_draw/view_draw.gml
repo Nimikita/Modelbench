@@ -80,6 +80,18 @@ if (content_width > 0 && content_height > 0)
 	
 	view_update(view, null)
 	draw_surface_size(view.surface, content_x, content_y, content_width, content_height)
+	
+	if (mouse_left && window_busy = "viewgroupselect")
+	{
+		var minx, maxx, miny, maxy;
+		minx = min(mouse_x, mouse_click_x)
+		maxx = max(mouse_x, mouse_click_x)
+		miny = min(mouse_y, mouse_click_y)
+		maxy = max(mouse_y, mouse_click_y)
+		
+		draw_box(minx, miny, maxx - minx, maxy - miny, false, c_accent_overlay, a_accent_overlay)
+		draw_outline(minx, miny, maxx - minx, maxy - miny, 2, c_accent, 1)
+	}
 }
 
 // Preview overlay bars

@@ -14,7 +14,7 @@ if (content_mouseon && window_busy = "")
 {
 	//mouse_cursor = cr_handpoint
 	
-	if (mouse_left_pressed)
+	if (mouse_left_pressed && (view_cam = view_cam_viewport))
 	{
 		window_busy = "viewclick"
 		window_focus = string(view)
@@ -62,7 +62,7 @@ if (content_mouseon || window_busy = "viewrotatecamera")
 if (window_focus = string(view))
 {
 	// Select or move camera
-	if (window_busy = "viewclick")
+	if (window_busy = "viewclick" || window_busy = "viewgroupselect")
 	{
 		mouse_cursor = cr_handpoint
 		
@@ -74,6 +74,9 @@ if (window_focus = string(view))
 			window_busy = "viewrotatecamera"
 		}
 		*/
+		
+		if (mouse_left && mouse_move > 5 && window_busy = "viewclick")
+			window_busy = "viewgroupselect"
 		
 		if (!mouse_left)
 		{

@@ -1,5 +1,6 @@
-/// action_el_select_list(list)
+/// action_el_select_list(list, [deselect])
 /// @arg list
+/// @arg [deselect]
 
 if (history_undo)
 {
@@ -13,21 +14,24 @@ else if (history_redo)
 }
 else
 {
-		var list, hobj;
-		list = argument0
-		hobj = history_set(action_el_select_list)
+	var list, hobj;
+	list = argument[0]
+	hobj = history_set(action_el_select_list)
 		
-		with (hobj)
-			history_save_el_select()
+	with (hobj)
+		history_save_el_select()
+	
+	if (argument_count > 1 && argument[1])
+		el_deselect_all()
+	
+	for (var e = 0; e < ds_list_size(list); e++)
+	{
+		with (list[|e])
+			el_select()
+	}
 		
-		for (var e = 0; e < ds_list_size(list); e++)
-		{
-			with (list[|e])
-				el_select()
-		}
-		
-		with (hobj)
-			history_save_el_select_new()
+	with (hobj)
+		history_save_el_select_new()
 }
 
 app_update_el_edit()
