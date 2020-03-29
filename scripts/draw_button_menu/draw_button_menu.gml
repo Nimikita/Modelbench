@@ -12,7 +12,7 @@
 /// @arg [texture]]
 
 var name, type, xx, yy, wid, hei, value, text, script, tex, disabled;
-var flip, imgsize, mouseon, pressed, textoff;
+var flip, mouseon;
 name = argument[0]
 type = argument[1]
 xx = argument[2] 
@@ -22,9 +22,6 @@ hei = argument[5]
 value = argument[6]
 text = argument[7]
 script = argument[8]
-
-if (xx + wid < content_x || xx > content_x + content_width || yy + hei < content_y || yy > content_y + content_height)
-	return 0
 	
 if (argument_count > 9)
 	disabled = argument[9]
@@ -36,61 +33,46 @@ if (argument_count > 10)
 else
 	tex = null
 
-yy += 48 - 28
+if (xx + wid < content_x || xx > content_x + content_width || yy + hei < content_y || yy > content_y + content_height)
+	return 0
 
 flip = (yy + hei + hei * 4 > window_height)
-imgsize = hei - 4
-
-// Mouse
-mouseon = app_mouse_box(xx, yy, wid, hei) && !disabled
-
-if (!content_mouseon)
-	mouseon = false
-
-pressed = false
-if (mouseon)
-{
-	if (mouse_left || mouse_left_released)
-		pressed = true
-	mouse_cursor = cr_handpoint
-}
-
-if (menu_name = name)
-	pressed = true
 
 microani_set(name, null, false, false, false)
 
-var bordercolor, borderalpha, labelcolor, labelalpha;
+// Caption
+var textcolor, textalpha;
+textcolor = merge_color(c_text_secondary, c_text_tertiary, mcroani_arr[e_mcroani.DISABLED])
+textalpha = lerp(a_text_secondary, a_text_tertiary, mcroani_arr[e_mcroani.DISABLED])
+
+draw_label(text_get(name), xx, yy + 16, fa_left, fa_bottom, textcolor, textalpha, font_label)
+yy += 20
+
+// Button
+var bordercolor, borderalpha;
 bordercolor = merge_color(c_border, c_text_secondary, mcroani_arr[e_mcroani.HOVER])
 borderalpha = lerp(a_border, a_text_secondary, mcroani_arr[e_mcroani.HOVER])
 bordercolor = merge_color(bordercolor, c_accent, mcroani_arr[e_mcroani.PRESS])
 borderalpha = lerp(borderalpha, a_accent, mcroani_arr[e_mcroani.PRESS])
 
-labelcolor = merge_color(c_text_secondary, c_text_tertiary, mcroani_arr[e_mcroani.DISABLED])
-labelalpha = lerp(a_text_secondary, a_text_tertiary, mcroani_arr[e_mcroani.DISABLED])
-
-// Label
-draw_label(text_get(name), xx, yy - 8, fa_left, fa_bottom, labelcolor, labelalpha, font_label)
-
-// Button
 draw_box(xx, yy, wid, hei, false, c_background, 1)
 draw_outline(xx, yy, wid, hei, 1, bordercolor, borderalpha)
 draw_box_hover(xx - 1, yy - 1, wid + 2, hei + 2, mcroani_arr[e_mcroani.HOVER])
 
-// Sprite
-if (tex != null)
-	draw_texture(tex, xx + 8, yy + 2, imgsize / texture_width(tex), imgsize / texture_height(tex))
+// Mouse
+mouseon = app_mouse_box(xx, yy, wid, hei) && !disabled && content_mouseon
 
-// Text
-var textcolor, textalpha;
-textcolor = merge_color(c_text_main, c_text_tertiary, mcroani_arr[e_mcroani.DISABLED])
-textalpha = lerp(a_text_main, a_text_tertiary, mcroani_arr[e_mcroani.DISABLED])
+if (mouseon)
+	mouse_cursor = cr_handpoint
 
-textoff = (tex ? (imgsize - 4) : 0)
-draw_label(string_limit(string_remove_newline(text), wid - textoff - hei - 8), xx + (tex = null ? 0 : imgsize) + 8, yy + hei / 2, fa_left, fa_middle, textcolor, textalpha, font_value)
+// Item
+var item = list_add_item(text, null, "", tex, null, null, null, false, false);
+item.disabled = disabled
+draw_list_item(item, xx, yy, wid, hei, false, 8)
+instance_destroy(item)
 
 // Arrow
-draw_image(spr_arrow_up_down_ani, (mcroani_arr[e_mcroani.ACTIVE] * 15), xx + wid - hei / 2, yy + hei / 2, 1, 1, labelcolor, labelalpha)
+draw_image(spr_arrow_up_down_ani, (mcroani_arr[e_mcroani.ACTIVE] * 15), xx + wid - hei / 2, yy + hei / 2, 1, 1, textcolor, textalpha)
 
 // Disabled overlay
 draw_box(xx, yy, wid, hei, false, c_overlay, a_overlay * mcroani_arr[e_mcroani.DISABLED])
@@ -124,6 +106,7 @@ if (mouseon && mouse_left_released)
 	menu_button_h = hei
 	menu_item_w = wid
 	menu_item_h = menu_button_h
+	menu_margin = 8
 	
 	if (!flip)
 		menu_top_y = yy - 2

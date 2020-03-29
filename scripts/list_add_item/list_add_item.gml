@@ -1,4 +1,4 @@
-/// list_add_item(name, value, caption, [thumbnail, left_icon, right_icon, script, [divider]])
+/// list_add_item(name, value, caption, [thumbnail, left_icon, right_icon, script, [divider, [interact]]])
 /// @arg name
 /// @arg value
 /// @arg caption
@@ -6,9 +6,10 @@
 /// @arg left_icon
 /// @arg right_icon
 /// @arg script
-/// @arg [divider]]
+/// @arg [divider
+/// @arg [interact]]]
 
-var item, name, value, caption, thumbnail, lefticon, righticon, script, divider;
+var item, name, value, caption, thumbnail, lefticon, righticon, script, divider, interact;
 name = argument[0]
 value = argument[1]
 caption = argument[2]
@@ -17,6 +18,7 @@ lefticon = null
 righticon = null
 script = null
 divider = false
+interact = true
 
 if (argument_count > 3)
 {
@@ -28,6 +30,9 @@ if (argument_count > 3)
 
 if (argument_count > 7)
 	divider = argument[7]
+
+if (argument_count > 8)
+	interact = argument[8]
 
 item = new(obj_listitem)
 item.name = name
@@ -51,6 +56,8 @@ item.context_menu_active = false
 
 item.draw_x = 0
 item.draw_y = 0
+
+item.interact = interact
 
 if (list_edit != null)
 {

@@ -19,7 +19,7 @@ toggled = false
 margin = 12
 components = 0
 
-if (item.list.get_name)
+if (item.list != null && item.list.get_name)
 	name = text_get(item.name)
 else
 	name = item.name
@@ -50,7 +50,7 @@ if (item.disabled)
 	iconcolor = c_text_tertiary
 	iconalpha = a_text_tertiary
 }
-else if (toggled || (item.hover && mouse_left) || (item.hover && mouse_left_released))
+else if ((toggled || (item.hover && mouse_left) || (item.hover && mouse_left_released)) && item.interact)
 {
 	textcolor = c_accent
 	textalpha = a_accent
@@ -65,9 +65,9 @@ else
 	iconalpha = a_text_tertiary
 }
 
-if (item.hover && mouse_left)
+if (item.hover && mouse_left && item.interact)
 	draw_box(xx, yy, width, height, false, c_accent_overlay, a_accent_overlay)
-else if (item.hover || toggled || (item.hover && mouse_left_released) || ((context_menu_value = listitem_value) && listitem_value != null))
+else if ((item.hover || toggled || (item.hover && mouse_left_released) || ((context_menu_value = listitem_value) && listitem_value != null)) && item.interact)
 	draw_box(xx, yy, width, height, false, c_overlay, a_overlay)
 
 leftp = margin
@@ -152,7 +152,7 @@ var textwidth = width - (leftp + rightp) - 8;
 draw_label(string_limit_font(name, textwidth, font_value), xx + leftp, middley, fa_left, fa_middle, textcolor, textalpha, font_value)
 
 item.hover = hover
-if (hover)
+if (hover && item.interact)
 	mouse_cursor = cr_handpoint
 
 if (item.script && hover && mouse_left_released)

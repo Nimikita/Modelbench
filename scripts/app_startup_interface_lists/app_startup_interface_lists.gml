@@ -19,6 +19,8 @@ list_add_item("menusettings", settings, "", null, icons.SETTINGS, icons.ARROW_RI
 list_add_item("menuabout", null, "", null, icons.INFO, icons.ARROW_RIGHT_SMALL, action_open_about) // Open about
 menu_panel_list.get_name = true
 
+list_edit = null
+
 textures_list = new_list()
 
 globalvar listitem_value;
