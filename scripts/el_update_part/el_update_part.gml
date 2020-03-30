@@ -117,7 +117,7 @@ else
 bend_default_angle = point3D(value[e_value.BEND_ANGLE_X], value[e_value.BEND_ANGLE_Y], value[e_value.BEND_ANGLE_Z])
 
 // Add parent bend
-if (other.object_index != app && parent.value[e_value.BEND] && value[e_value.INHERIT_BEND])
+if (other.object_index != app && parent.value[e_value.BEND] && value[e_value.BEND] && value[e_value.INHERIT_BEND])
 	bend_default_angle = vec3_add(bend_default_angle, parent.bend_default_angle)
 
 // Calculate matrix
