@@ -12,7 +12,8 @@ enum e_element
 	PART,
 	BLOCK,
 	PLANE,
-	PLANE_3D
+	PLANE_3D,
+	amount
 }
 
 enum e_snackbar
@@ -36,7 +37,9 @@ enum e_tool
 	MOVE,
 	ROTATE,
 	SCALE,
-	TRANSFORM
+	TRANSFORM,
+	BEND,
+	amount
 }
 
 enum e_features

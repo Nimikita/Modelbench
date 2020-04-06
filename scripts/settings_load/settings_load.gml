@@ -86,6 +86,8 @@ if (ds_map_valid(controlsmap))
 	setting_key_tool_scale_control = value_get_real(controlsmap[?"key_tool_scale_control"], setting_key_tool_scale_control)
 	setting_key_tool_transform = value_get_real(controlsmap[?"key_tool_transform"], setting_key_tool_transform)
 	setting_key_tool_transform_control = value_get_real(controlsmap[?"key_tool_transform_control"], setting_key_tool_transform_control)
+	setting_key_tool_bend = value_get_real(controlsmap[?"key_tool_bend"], setting_key_tool_bend)
+	setting_key_tool_bend_control = value_get_real(controlsmap[?"key_tool_bend_control"], setting_key_tool_bend_control)
 	
 	setting_key_snap = value_get_real(controlsmap[?"key_snap"], setting_key_snap)
 	setting_key_snap_control = value_get_real(controlsmap[?"key_snap_control"], setting_key_snap_control)

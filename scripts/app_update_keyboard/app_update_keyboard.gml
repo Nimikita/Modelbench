@@ -88,6 +88,9 @@ if (window_busy = "" && !textbox_isediting)
 	
 		if (keyboard_check_pressed(setting_key_tool_transform) && app_check_control(setting_key_tool_transform_control))
 			tool_selected = e_tool.TRANSFORM
+		
+		if (keyboard_check_pressed(setting_key_tool_bend) && app_check_control(setting_key_tool_bend_control))
+			tool_selected = e_tool.BEND
 	
 		// Toggle snapping
 		if (keyboard_check_pressed(setting_key_snap) && app_check_control(setting_key_snap_control))

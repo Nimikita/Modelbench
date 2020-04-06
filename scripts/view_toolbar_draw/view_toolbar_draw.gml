@@ -142,6 +142,16 @@ tip_set_shortcut(setting_key_tool_transform, setting_key_tool_transform_control)
 if (draw_button_icon("toolsettooltransform", dx, dy, 28, 28, tool_selected = e_tool.TRANSFORM, icons.TRANSFORM, null, false, "toolsettooltransform"))
 	tool_selected = e_tool.TRANSFORM
 
+if (dw > dh)
+	dx += buttonsize
+else
+	dy += buttonsize
+
+// Bend tool
+tip_set_shortcut(setting_key_tool_bend, setting_key_tool_bend_control)
+if (draw_button_icon("toolsettoolbend", dx, dy, 28, 28, tool_selected = e_tool.BEND, icons.BEND, null, false, "toolsettoolbend"))
+	tool_selected = e_tool.BEND
+
 draw_set_alpha(1)
 tip_set_shortcut(-1, false)
 tip_force_right = false

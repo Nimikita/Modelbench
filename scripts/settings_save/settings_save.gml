@@ -49,6 +49,8 @@ json_save_object_start("controls")
 	json_save_var_bool("key_tool_scale_control", setting_key_tool_scale_control)
 	json_save_var("key_tool_transform", setting_key_tool_transform)
 	json_save_var_bool("key_tool_transform_control", setting_key_tool_transform_control)
+	json_save_var("setting_key_tool_bend", setting_key_tool_bend)
+	json_save_var_bool("setting_key_tool_bend_control", setting_key_tool_bend_control)
 	
 	json_save_var("key_snap", setting_key_snap)
 	json_save_var_bool("key_snap_control",setting_key_snap_control)

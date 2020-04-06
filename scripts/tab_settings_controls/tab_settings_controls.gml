@@ -61,6 +61,10 @@ draw_keycontrol("settingskeytooltransform", dx, dy, dw, setting_key_tool_transfo
 tab_next(false)
 
 tab_control_keycontrol()
+draw_keycontrol("settingskeytoolbend", dx, dy, dw, setting_key_tool_bend, setting_key_tool_bend_control, ord("B"), false, action_setting_key_tool_bend)
+tab_next(false)
+
+tab_control_keycontrol()
 draw_keycontrol("settingskeysnap", dx, dy, dw, setting_key_snap, setting_key_snap_control, ord("F"), false, action_setting_key_snap)
 tab_next(false)
 

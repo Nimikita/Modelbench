@@ -55,6 +55,8 @@ setting_key_tool_scale = ord("S")
 setting_key_tool_scale_control = false
 setting_key_tool_transform = ord("T")
 setting_key_tool_transform_control = false
+setting_key_tool_bend = ord("B")
+setting_key_tool_bend_control = false
 setting_key_snap = ord("F")
 setting_key_snap_control = false
 

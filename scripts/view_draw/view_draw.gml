@@ -112,7 +112,7 @@ var toolbarx, toolbary, toolbarwid, toolbarhei;
 toolbarx = boxx + 16
 toolbary = boxy + 16
 toolbarwid = 36
-toolbarhei = 4 + (4 * (28 + 4)) + 1 + 4 + (6 * (28 + 4))
+toolbarhei = 4 + (e_element.amount * (28 + 4)) + 1 + 4 + (e_tool.amount * (28 + 4))
 
 if (toolbary + toolbarhei + 16 >= content_height)
 {

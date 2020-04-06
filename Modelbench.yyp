@@ -8047,6 +8047,14 @@
             }
         },
         {
+            "Key": "efa71a34-902b-49ff-a018-62373dc82a63",
+            "Value": {
+                "id": "c88ef4df-808d-4901-9234-1466bb41798f",
+                "resourcePath": "scripts\\action_setting_key_tool_bend\\action_setting_key_tool_bend.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "efa809c8-69db-4dc7-a668-745b7e17e080",
             "Value": {
                 "id": "a08c5e7d-e2f7-48e2-ab77-02f57db55284",
@@ -8715,6 +8723,7 @@
         "e2f6ebfb-94b6-4d80-9765-aa079ba45e88",
         "8e076eb0-25f9-4e31-b779-6e76b515499f",
         "827901fd-d9d2-4702-9809-e613c8c2ddba",
+        "efa71a34-902b-49ff-a018-62373dc82a63",
         "434ce76b-9ff5-4223-ada7-e04b9644ae1b",
         "d814096f-3570-4575-bbbe-5a716b01201c",
         "2fa5ad73-1bab-425d-9dd9-5cb063e0fad6",

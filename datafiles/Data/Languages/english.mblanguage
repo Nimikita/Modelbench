@@ -4,7 +4,7 @@
         "language": "English",
         "translator": "Nimi",
         "forversion": "1.0.2",
-        "lastchange": "2020.03.28"
+        "lastchange": "2020.04.05"
     },
 	"startup/": {
 		"modeldetected": "Unsaved model detected",
@@ -210,6 +210,13 @@
 			"z": "Z Scale: %1",
 			"xyz": "[ X: %1, Y: %2, Z: %3 ]"
 		},
+		"bend/": {
+			"x": "X Bend: %1",
+			"y": "Y Bend: %1",
+			"z": "Z Bend: %1",
+			"offset": "Offset: %1",
+			"xyz": "[ X: %1, Y: %2, Z: %3 ]"
+		},
 		"undo": "Undo",
 		"redo": "Redo",
 		"snapenable": "Enable tool snapping",
@@ -252,7 +259,8 @@
 			"move": "Move tool",
 			"rotate": "Rotate tool",
 			"scale": "Scale tool",
-			"transform": "Transform tool"
+			"transform": "Transform tool",
+			"bend": "Bend tool"
 		},
 		"snapsize": "Size"
 	},
@@ -536,7 +544,8 @@
 				"move": "Move tool",
 				"rotate": "Rotate tool",
 				"scale": "Scale tool",
-				"transform": "Transform tool"
+				"transform": "Transform tool",
+				"bend": "Bend tool"
 			},
 			"snap": "Toggle snapping",
 			"forward": "Forward",

@@ -42,6 +42,10 @@ if (el_edit_amount > 0 && program_mode = e_mode.MODELING)
 				{
 					view_control_ratio = max(1, (500 / content_height) * 1.25)
 					
+					// Bend
+					if (tool_selected = e_tool.BEND && el_edit.element_type = TYPE_PART && el_edit.value[e_value.BEND])
+						view_control_bend(view)
+					
 					// Rotate
 					if (tool_selected = e_tool.ROTATE || tool_selected = e_tool.TRANSFORM)
 						view_control_rotate(view)
@@ -58,25 +62,23 @@ if (el_edit_amount > 0 && program_mode = e_mode.MODELING)
 					if (tool_selected = e_tool.PIVOT && el_edit.element_type = TYPE_SHAPE)
 						view_control_pivot(view)
 					
-					// Bend
-					//if (el_edit.element_type = TYPE_PART && el_edit.value[e_value.BEND])
-					//	view_control_bend(view)
-					
-					var origin;
+					var origin3d, origin2d;
 					
 					// Parent position
 					if (el_edit.parent.object_index = obj_model_element)
 					{
-						origin = point3D_project(matrix_position(el_edit.parent.matrix), view_proj_matrix, render_width, render_height)
-						origin[X] = round(origin[X])
-						origin[Y] = round(origin[Y])
+						origin3d = matrix_position(el_edit.parent.matrix)
+						origin2d = point3D_project(origin3d, view_proj_matrix, render_width, render_height);
 						
-						origin = vec2_mul(origin, 2)
+						origin2d[X] = round(origin2d[X])
+						origin2d[Y] = round(origin2d[Y])
+						
+						origin2d = vec2_mul(origin2d, 2)
 						
 						if (!point3D_project_error)
 						{
-							draw_circle_ext(origin[X], origin[Y], 28, false, hex_to_color("FF00FF"), 1)
-							draw_image(spr_icons, icons.PART, origin[X], origin[Y], 2, 2, c_white, 1)
+							draw_circle_ext(origin2d[X], origin2d[Y], 28, false, hex_to_color("FF00FF"), 1)
+							draw_image(spr_icons, icons.PART, origin2d[X], origin2d[Y], 2, 2, c_white, 1)
 						}
 					}
 					
@@ -85,6 +87,11 @@ if (el_edit_amount > 0 && program_mode = e_mode.MODELING)
 					{
 						var mat;
 						
+						if (tool_selected = e_tool.BEND && el_edit.element_type = TYPE_PART && el_edit.value[e_value.BEND])
+						{
+							origin3d = matrix_position(matrix_multiply(matrix_create(model_part_get_offset_pos(el_edit), vec3(0), vec3(1)), el_edit.matrix_parent))
+						}
+						else
 						if (tool_selected != e_tool.PIVOT || (tool_selected = e_tool.PIVOT && el_edit.element_type = TYPE_PART))
 						{
 							if (el_edit.element_type = TYPE_PART)
@@ -93,28 +100,30 @@ if (el_edit_amount > 0 && program_mode = e_mode.MODELING)
 								mat = array_copy_1d(el_edit.matrix_parent)
 	
 							matrix_remove_scale(mat)
+							origin3d = matrix_position(mat)
 						}
 						else
 						{
 							mat = matrix_create(el_edit.from, vec3(0), vec3(1))
 							mat = matrix_multiply(mat, matrix_create(vec3(0), el_edit.rotation, vec3(1)))
 							mat = matrix_multiply(mat, matrix_multiply(el_edit.matrix, el_edit.parent.matrix_parent))
+							origin3d = matrix_position(mat)
 						}
 						
-						origin = point3D_project(matrix_position(mat), view_proj_matrix, render_width, render_height)
+						origin2d = point3D_project(origin3d, view_proj_matrix, render_width, render_height)
 					}
 					else
-						origin = view_control_scale_coords
+						origin2d = view_control_scale_coords
 					
-					origin[X] = round(origin[X])
-					origin[Y] = round(origin[Y])
+					origin2d[X] = round(origin2d[X])
+					origin2d[Y] = round(origin2d[Y])
 					
-					origin = vec2_mul(origin, 2)
+					origin2d = vec2_mul(origin2d, 2)
 					
 					if (!point3D_project_error)
 					{
 						if (tool_selected > e_tool.SELECT)
-							draw_circle_ext(origin[X], origin[Y], 28, false, c_background, 1)
+							draw_circle_ext(origin2d[X], origin2d[Y], 28, false, c_background, 1)
 						
 						var icon = null;
 						if (tool_selected = e_tool.PIVOT)
@@ -127,14 +136,16 @@ if (el_edit_amount > 0 && program_mode = e_mode.MODELING)
 							icon = icons.TOOLSET_SCALE
 						else if (tool_selected = e_tool.TRANSFORM)
 							icon = icons.TRANSFORM
+						else if (tool_selected = e_tool.BEND)
+							icon = icons.BEND
 						
 						if (icon != null)
-							draw_image(spr_icons, icon, origin[X], origin[Y], 2, 2, c_text_secondary, a_text_secondary)
+							draw_image(spr_icons, icon, origin2d[X], origin2d[Y], 2, 2, c_text_secondary, a_text_secondary)
 						else
-							draw_circle_ext(origin[X], origin[Y], 16, false, hex_to_color("00FFFF"), 1)
+							draw_circle_ext(origin2d[X], origin2d[Y], 16, false, hex_to_color("00FFFF"), 1)
 					}
 					
-					// Tooltip
+					// XYZ scale control tooltip
 					if (window_busy = "rendercontrolscalexyz")
 					{
 						var scalearr;
@@ -145,29 +156,46 @@ if (el_edit_amount > 0 && program_mode = e_mode.MODELING)
 						
 						tip_set(text_get("tooltipscalexyz", scalearr[X], scalearr[Y], scalearr[Z]), mouse_click_x, mouse_click_y, 0, 0, false)
 					}
-					else if (window_busy = "rendercontrol")
-					{
-						var tooltipstring = "tooltip";
-						if (view_control_edit >= e_value.OFFSET_X && view_control_edit <= e_value.OFFSET_Z)
-							tooltipstring += "pivot"
-						else if (view_control_edit >= e_value.POS_X && view_control_edit <= e_value.POS_Z)
-							tooltipstring += "position"
-						else if (view_control_edit >= e_value.ROT_X && view_control_edit <= e_value.ROT_Z)
-							tooltipstring += "rotation"
-						else if (view_control_edit >= e_value.SCA_X && view_control_edit <= e_value.SCA_Z)
-							tooltipstring += "scale"
 					
-						if ((view_control_edit mod 3) = 0)
-							tooltipstring += "x"
-						else if ((view_control_edit mod 3) = 1)
-							tooltipstring += "y"
-						else if ((view_control_edit mod 3) = 2)
-							tooltipstring += "z"
+					// Single value control tooltip
+					if (window_busy = "rendercontrol")
+					{
+						var tooltipstr;
+						tooltipstr = "tooltip"
+						
+						if (view_control_edit >= e_value.OFFSET_X && view_control_edit <= e_value.OFFSET_Z)
+							tooltipstr += "pivot"
+						else if (view_control_edit >= e_value.POS_X && view_control_edit <= e_value.POS_Z)
+							tooltipstr += "position"
+						else if (view_control_edit >= e_value.ROT_X && view_control_edit <= e_value.ROT_Z)
+							tooltipstr += "rotation"
+						else if (view_control_edit >= e_value.SCA_X && view_control_edit <= e_value.SCA_Z)
+							tooltipstr += "scale"
+						else if ((view_control_edit >= e_value.BEND_ANGLE_X && view_control_edit <= e_value.BEND_ANGLE_Z) || view_control_edit = e_value.BEND_OFFSET)
+							tooltipstr += "bend"
+						
+						// Value-specific controls
+						if (view_control_edit = e_value.BEND_OFFSET)
+						{
+							tooltipstr += "offset"
+						}
+						else // Axes controls
+						{
+							if ((view_control_edit mod 3) = 0)
+								tooltipstr += "x"
+							else if ((view_control_edit mod 3) = 1)
+								tooltipstr += (setting_z_is_up ? "y" : "z")
+							else if ((view_control_edit mod 3) = 2)
+								tooltipstr += (setting_z_is_up ? "z" : "y")
+						}
 						
 						tip_force_right = true
-						tip_set(text_get(tooltipstring, el_edit.value[view_control_edit]), mouse_click_x, mouse_click_y, 0, 0, false)
+						tip_set(text_get(tooltipstr, el_edit.value[view_control_edit]), mouse_click_x, mouse_click_y, 0, 0, false)
 						tip_force_right = false
 					}
+					
+					if (view.control_mouseon != null)
+						mouse_cursor = cr_drag
 					
 					view.control_mouseon_last = view.control_mouseon
 					view.control_mouseon = null

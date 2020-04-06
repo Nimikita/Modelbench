@@ -12,6 +12,7 @@ vid = argument1
 color = argument2
 mat = argument3
 len = argument4
+
 detail = (view_control_edit = vid ? 24 : 32)
 
 if (view_control_length != null)
@@ -68,7 +69,7 @@ else
 	draw_set_color(color)
 
 var start3D, start2D, end3D, end2D, v, vdot;
-v = point3D_sub(el_edit.world_pos, cam_from)
+v = point3D_sub(pos3D, cam_from)
 vdot = vec3_dot(v, v)
 
 // Convert start position to screen

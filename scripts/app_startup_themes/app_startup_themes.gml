@@ -8,7 +8,7 @@ globalvar c_accent, a_accent, c_accent_hover, a_accent_hover, c_accent_pressed, 
 globalvar c_text_main, a_text_main, c_text_secondary, a_text_secondary, c_text_tertiary, a_text_tertiary;
 globalvar c_border, a_border, c_overlay, a_overlay;
 globalvar c_background, c_background_secondary, c_button_text, a_button_text;
-globalvar c_viewport_top, c_viewport_bottom, c_error, c_warning, c_success, c_axisred, c_axisgreen, c_axisblue, c_bend;
+globalvar c_viewport_top, c_viewport_bottom, c_error, c_warning, c_success, c_axisred, c_axisgreen, c_axisblue, c_axiscyan, c_axisyellow, c_axismagenta, c_bend;
 
 // Alphas
 a_accent = 1
@@ -64,6 +64,9 @@ theme_edit.red = hex_to_color("FF5656")
 theme_edit.green = hex_to_color("4AB758")
 theme_edit.blue = hex_to_color("1370FB")
 theme_edit.pink = hex_to_color("FF5FFF")
+theme_edit.cyan = hex_to_color("51C2FF")
+theme_edit.yellow = hex_to_color("FFD969")
+theme_edit.magenta = hex_to_color("FF37E8")
 
 #endregion
 
@@ -105,6 +108,9 @@ theme_edit.red = hex_to_color("FF5656")
 theme_edit.green = hex_to_color("23FF88")
 theme_edit.blue = hex_to_color("1370FB")
 theme_edit.pink = hex_to_color("FF5FFF")
+theme_edit.cyan = hex_to_color("51C2FF")
+theme_edit.yellow = hex_to_color("FFD969")
+theme_edit.magenta = hex_to_color("FF37E8")
 
 #endregion
 
@@ -146,5 +152,8 @@ theme_edit.red = hex_to_color("FF5656")
 theme_edit.green = hex_to_color("23FF88")
 theme_edit.blue = hex_to_color("1370FB")
 theme_edit.pink = hex_to_color("FF5FFF")
+theme_edit.cyan = hex_to_color("51C2FF")
+theme_edit.yellow = hex_to_color("FFD969")
+theme_edit.magenta = hex_to_color("FF37E8")
 
 #endregion

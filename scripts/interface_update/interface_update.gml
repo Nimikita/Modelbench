@@ -31,3 +31,8 @@ c_axisred = theme.red
 c_axisgreen = theme.green
 c_axisblue = theme.blue
 c_bend = theme.pink
+
+c_axiscyan = theme.cyan
+c_axisyellow = theme.yellow
+c_axismagenta = theme.magenta
+

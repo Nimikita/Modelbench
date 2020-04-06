@@ -248,14 +248,14 @@ for (var outer = 0; outer < samplesize[arrouteraxis]; outer++)
 			}
 			
 			// South face
-			if (!hide_front && isbent)
+			if (!hide_front)
 			{
 				vbuffer_add_triangle(p2, np2, np3, t1, t2, t3, null, null, null, c_white, 1, invert)
 				vbuffer_add_triangle(np3, p3, p2, t1, t2, t3, null, null, null, c_white, 1, invert)
 			}
 			
 			// North face
-			if (!hide_back && isbent)
+			if (!hide_back)
 			{
 				vbuffer_add_triangle(np1, p1, p4, t1, t2, t3, null, null, null, c_white, 1, invert)
 				vbuffer_add_triangle(p4, np4, np1, t1, t2, t3, null, null, null, c_white, 1, invert)
@@ -301,14 +301,14 @@ for (var outer = 0; outer < samplesize[arrouteraxis]; outer++)
 			}
 			
 			// South face
-			if (!hide_front && isbent)
+			if (!hide_front)
 			{
 				vbuffer_add_triangle(np4, np3, p3, t1, t2, t3, null, null, null, c_white, 1, invert)
 				vbuffer_add_triangle(p3, p4, np4, t1, t2, t3, null, null, null, c_white, 1, invert)
 			}
 			
 			// North face
-			if (!hide_back && isbent)
+			if (!hide_back)
 			{
 				vbuffer_add_triangle(np2, np1, p1, t1, t2, t3, null, null, null, c_white, 1, invert)
 				vbuffer_add_triangle(p1, p2, np2, t1, t2, t3, null, null, null, c_white, 1, invert)
@@ -329,59 +329,6 @@ for (var outer = 0; outer < samplesize[arrouteraxis]; outer++)
 			}
 		}
 	}
-}
-
-// 3D plane optimization
-if (!isbent)
-{
-	var p1, p2, p3, p4;
-	var t1, t2, t3, t4;
-	var mat, faceuv;
-	
-	mat = matrix_build(0, 0, 0, rotation[X], rotation[Y], rotation[Z], 1, 1, 1)
-	faceuv = vec2_div(samplesize, texture_size)
-	
-	if (texture_mirror)
-	{
-		texuv[X] += faceuv[X]
-		faceuv[X] *= -1
-	}
-	
-	// Front face
-	p1 = point3D(from[X], to[Y], to[Z])
-	p2 = to
-	p3 = point3D(to[X], to[Y], from[Z])
-	p4 = point3D(from[X], to[Y], from[Z])
-	
-	p1 = point3D_mul_matrix(p1, mat)
-	p2 = point3D_mul_matrix(p2, mat)
-	p3 = point3D_mul_matrix(p3, mat)
-	p4 = point3D_mul_matrix(p4, mat)
-	
-	t1 = texuv
-	t2 = point2D(texuv[X] + faceuv[X], texuv[Y])
-	t3 = point2D_add(texuv, faceuv)
-	t4 = point2D(texuv[X], texuv[Y] + faceuv[Y])
-	vbuffer_add_triangle(p1, p2, p3, t1, t2, t3)
-	vbuffer_add_triangle(p3, p4, p1, t3, t4, t1)
-	
-	// Back face
-	p1 = point3D(to[X], from[Y], to[Z])
-	p2 = point3D(from[X], from[Y], to[Z])
-	p3 = from
-	p4 = point3D(to[X], from[Y], from[Z])
-	
-	p1 = point3D_mul_matrix(p1, mat)
-	p2 = point3D_mul_matrix(p2, mat)
-	p3 = point3D_mul_matrix(p3, mat)
-	p4 = point3D_mul_matrix(p4, mat)
-	
-	t1 = point2D(texuv[X] + faceuv[X], texuv[Y])
-	t2 = texuv
-	t3 = point2D(texuv[X], texuv[Y] + faceuv[Y])
-	t4 = point2D_add(texuv, faceuv)
-	vbuffer_add_triangle(p1, p2, p3, t1, t2, t3)
-	vbuffer_add_triangle(p3, p4, p1, t3, t4, t1)
 }
 
 vertex_brightness = 0
