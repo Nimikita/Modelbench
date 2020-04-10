@@ -144,6 +144,9 @@ setting_snap_size_rotation = 15
 setting_snap_size_scale = 1
 setting_snap_size_uv = 1
 
+// Orientation
+setting_orientation = e_orientation.GIMBAL
+
 settings_load()
 interface_update()
 

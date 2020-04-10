@@ -1,104 +1,88 @@
 /// view_control_bend(view)
 /// @arg view
 
-var view, size, angle, offsetmouseon;
+var view, size, angle;
+var offset3d, offset2d, offseterr, bent3d, bent2d, benterr, unbent3d, unbent2d, unbenterr;
 view = argument0
-offsetmouseon = (view_control_edit = e_value.BEND_OFFSET)
 
-#region Bend display
+#region Calculate bend size/angle
 
 if (!el_edit.value[e_value.BEND_SIZE_CUSTOM])
 	size = (app.setting_blocky_bending ? 1 : 4) / 2
 else
 	size = el_edit.bend_size / 2
 
-// Offset (Middle)
-var offsetpos = matrix_position(matrix_multiply(matrix_create(model_part_get_offset_pos(el_edit), vec3(0), vec3(1)), el_edit.matrix_parent));
-var offsetcoord = point3D_project(offsetpos, view_proj_matrix, render_width, render_height);
-var offseterror = point3D_project_error;
-
-angle = array_copy_1d(el_edit.bend_default_angle)
-
 // Invert size
-if (el_edit.bend_part = e_part.LOWER || el_edit.bend_part = e_part.BACK || el_edit.bend_part = e_part.LEFT)
-	size *= -1
+size *= negate(el_edit.bend_part = e_part.LOWER || el_edit.bend_part = e_part.BACK || el_edit.bend_part = e_part.LEFT)
 
-// Invert angle
+// Bend angle
 for (var i = X; i <= Z; i++)
-{
-	if (el_edit.value[e_value.BEND_INVERT_X + i])
-		angle[X + i] *= -1
-}
+	angle[X + i] = el_edit.bend_default_angle[X + i] * negate(el_edit.value[e_value.BEND_INVERT_X + i])
 
-// Bend size (Lower point)
-var sizelowerpos = matrix_position(matrix_multiply(matrix_create(model_part_get_offset_pos(el_edit, el_edit.value[e_value.BEND_OFFSET] + -size), vec3(0), vec3(1)), el_edit.matrix_parent));
-var sizelowercoord = point3D_project(sizelowerpos, view_proj_matrix, render_width, render_height);
-var sizelowererror = point3D_project_error;
+#endregion
 
-// Bend size (Upper point)
+#region Calculate point positions
+
+// Offset position
+offset3d = matrix_position(matrix_multiply(matrix_create(model_part_get_offset_pos(el_edit), vec3(0), vec3(1)), el_edit.matrix_parent))
+offset2d = point3D_project(offset3d, view_proj_matrix, render_width, render_height)
+offseterr = point3D_project_error
+
+// Unbent half
+unbent3d = matrix_position(matrix_multiply(matrix_create(model_part_get_offset_pos(el_edit, el_edit.value[e_value.BEND_OFFSET] + -size), vec3(0), vec3(1)), el_edit.matrix_parent))
+unbent2d = point3D_project(unbent3d, view_proj_matrix, render_width, render_height)
+unbenterr = point3D_project_error
+
+// Bent half
 var bendmatrix;
 with (el_edit)
 	bendmatrix = matrix_create(model_part_get_offset_pos(el_edit, size), vec3(0), vec3(1))
 
 bendmatrix = matrix_multiply(bendmatrix, matrix_create(model_part_get_offset_pos(el_edit), angle, vec3(1)))
 	
-var sizeupperpos = matrix_position(matrix_multiply(bendmatrix, el_edit.matrix_parent));
-var sizeuppercoord = point3D_project(sizeupperpos, view_proj_matrix, render_width, render_height);
-var sizeuppererror = point3D_project_error;
+bent3d = matrix_position(matrix_multiply(bendmatrix, el_edit.matrix_parent))
+bent2d = point3D_project(bent3d, view_proj_matrix, render_width, render_height)
+benterr = point3D_project_error
 
-offsetcoord = vec2_mul(offsetcoord, 2)
-sizelowercoord = vec2_mul(sizelowercoord, 2)
-sizeuppercoord = vec2_mul(sizeuppercoord, 2)
+offset2d = vec2_mul(offset2d, 2)
+unbent2d = vec2_mul(unbent2d, 2)
+bent2d = vec2_mul(bent2d, 2)
 
-// Connecting lines
+#endregion
+
+#region Draw bend region indicator
+
 render_set_culling(false)
 
-if (!offseterror && !sizelowererror)
-	draw_line_width_color(offsetcoord[X], offsetcoord[Y], sizelowercoord[X], sizelowercoord[Y], 6, merge_color(c_background, c_bend, .5), c_background)
+// Connecting lines
+if (!offseterr && !unbenterr)
+	draw_line_width_color(offset2d[X], offset2d[Y], unbent2d[X], unbent2d[Y], 6, merge_color(c_background, c_bend, .5), c_background)
 
-if (!offseterror && !sizeuppererror)
-	draw_line_width_color(offsetcoord[X], offsetcoord[Y], sizeuppercoord[X], sizeuppercoord[Y], 6, merge_color(c_bend, c_background, .5), c_bend)
+if (!offseterr && !benterr)
+	draw_line_width_color(offset2d[X], offset2d[Y], bent2d[X], bent2d[Y], 6, merge_color(c_bend, c_background, .5), c_bend)
 
 render_set_culling(true)
 
 // Offset
-if (!offseterror)
-	draw_circle_ext(offsetcoord[X], offsetcoord[Y], 14, false, merge_color(c_bend, c_background, .5), 1)
+if (!offseterr)
+	draw_circle_ext(offset2d[X], offset2d[Y], 14, false, merge_color(c_bend, c_background, .5), 1)
 
 // Size
-if (!sizelowererror)
-	draw_image(spr_diamond, 0, sizelowercoord[X], sizelowercoord[Y], 2, 2, c_background, 1)
+if (!unbenterr)
+	draw_image(spr_diamond, 0, unbent2d[X], unbent2d[Y], 2, 2, c_background, 1)
 
-if (!sizeuppererror)
-	draw_image(spr_diamond, 0, sizeuppercoord[X], sizeuppercoord[Y], 2, 2, c_bend, 1)
+if (!benterr)
+	draw_image(spr_diamond, 0, bent2d[X], bent2d[Y], 2, 2, c_bend, 1)
 
 #endregion
 
-// Bend offset
-if (!offseterror && !sizelowererror && !sizeuppererror)
-{
-	if (point_distance(mouse_x - content_x, mouse_y - content_y, offsetcoord[X]/2, offsetcoord[Y]/2) < 14)
-	{
-		mouse_cursor = cr_handpoint
-		offsetmouseon = true
-		
-		if (mouse_left_pressed)
-		{
-			window_busy = "rendercontrol"
-			view_control_edit_view = view
-			view_control_edit = e_value.BEND_OFFSET
-			view_control_vec = point2D_sub(offsetcoord, sizelowercoord)
-			view_control_value = el_edit.value[e_value.BEND_OFFSET]
-		}
-	}
-}
+#region Bend angle
 
-// Bend angle
-if (!offsetmouseon)
+if (control_mouseon_last != e_value.BEND_OFFSET)
 {
 	var view, len, mat, color, offset;
 	view = argument0
-	len = point3D_distance(cam_from, offsetpos) * view_3d_control_size * view_control_ratio * 0.6
+	len = point3D_distance(cam_from, bent3d) * view_3d_control_size * view_control_ratio * 0.6
 	mat = MAT_IDENTITY
 	color = c_white
 	offset = model_part_get_offset_pos(el_edit)
@@ -168,6 +152,27 @@ if (window_busy = "rendercontrol" && view_control_edit_view = view && view_contr
 	}
 }
 
+#endregion
+
+#region Bend offset
+
+if (!offseterr && !unbenterr && !benterr)
+{
+	if (point_distance(mouse_x - content_x, mouse_y - content_y, offset2d[X]/2, offset2d[Y]/2) < 14)
+	{
+		mouse_cursor = cr_handpoint
+		
+		if (mouse_left_pressed)
+		{
+			window_busy = "rendercontrol"
+			view_control_edit_view = view
+			view_control_edit = e_value.BEND_OFFSET
+			view_control_vec = point2D_sub(offset2d, unbent2d)
+			view_control_value = el_edit.value[e_value.BEND_OFFSET]
+		}
+	}
+}
+
 if (window_busy = "rendercontrol" && view_control_edit_view = view && view_control_edit = e_value.BEND_OFFSET)
 {
 	mouse_cursor = cr_handpoint
@@ -200,3 +205,5 @@ if (window_busy = "rendercontrol" && view_control_edit_view = view && view_contr
 		view_control_edit = null
 	}
 }
+
+#endregion

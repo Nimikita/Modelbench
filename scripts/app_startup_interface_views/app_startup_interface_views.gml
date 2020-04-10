@@ -16,6 +16,8 @@ view_control_vec = vec2(0, 0)
 view_control_pos = vec2(0, 0)
 view_control_flip = false
 view_control_value = 0
+view_control_move_distance = 0
+
 view_control_scale_coords = vec2(0)
 view_control_scale_amount = 1
 view_control_value_scale = vec3(1)

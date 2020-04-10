@@ -38,14 +38,37 @@ if (window_busy = "rendercontrol" && view_control_edit_view = view && view_contr
 	
 	if (!mouse_still)
 	{
-		var ang, prevang, rot, snapval;
+		var ang, prevang, rot, snapval, axesang;
+		axesang = vec3(0)
 		
 		// Find rotate amount
 		ang = point_direction(mouse_x - content_x, mouse_y - content_y, view_control_pos[X], view_control_pos[Y])
 		prevang = point_direction(mouse_previous_x - content_x, mouse_previous_y - content_y, view_control_pos[X], view_control_pos[Y])
 		rot = angle_difference_fix(ang, prevang) * negate(view_control_flip)
-		view_control_value += rot
+		view_control_move_distance += rot
 		
+		snapval = (setting_snap ? setting_snap_size_rotation : snap_min)
+		axesang[view_control_edit - e_value.ROT_X] = snap(view_control_move_distance, snapval)
+		
+		var newval;
+		
+		for (var i = X; i <= Z; i++)
+		{
+			newval[i] = view_control_value[i] + axesang[i]
+			
+			newval[i] = el_value_clamp(e_value.ROT_X + i, newval[i])
+			newval[i] -= el_edit.value[e_value.ROT_X + i]
+		}
+		
+		// Update
+		axis_edit = view_control_edit - e_value.ROT_X
+		el_value_set_start(action_el_rot_xyz, true)
+		el_value_set(e_value.ROT_X, newval[X], true)
+		el_value_set(e_value.ROT_Y, newval[Y], true)
+		el_value_set(e_value.ROT_Z, newval[Z], true)
+		el_value_set_done()
+		
+		/*
 		view_control_value = el_value_clamp(view_control_edit, view_control_value)
 		snapval = (setting_snap ? setting_snap_size_rotation : snap_min)
 		
@@ -54,6 +77,7 @@ if (window_busy = "rendercontrol" && view_control_edit_view = view && view_contr
 		el_value_set_start(action_el_rot, true)
 		el_value_set(view_control_edit, snap(view_control_value, snapval) - el_edit.value[view_control_edit], true)
 		el_value_set_done()
+		*/
 	}
 	
 	// Release
@@ -63,5 +87,6 @@ if (window_busy = "rendercontrol" && view_control_edit_view = view && view_contr
 		view_control_edit = null
 		view_control_matrix = null
 		view_control_length = null
+		view_control_move_distance = 0
 	}
 }

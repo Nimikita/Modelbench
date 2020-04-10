@@ -27,7 +27,8 @@
         "859aa200-840f-44a4-9092-e4c5832dde91",
         "019c738c-62e5-443b-8ca1-8110b4ffa44e",
         "5a32aa6c-c253-4207-bde0-8814ccc84df7",
-        "dfb1af21-215c-4aff-8f71-05e08259e6af"
+        "dfb1af21-215c-4aff-8f71-05e08259e6af",
+        "f5669c39-0fcd-4ef9-aea5-f1387545144b"
     ],
     "filterType": "GMSprite",
     "folderName": "Interface",

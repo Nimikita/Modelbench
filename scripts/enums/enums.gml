@@ -48,6 +48,13 @@ enum e_features
 	OBJ
 }
 
+enum e_orientation
+{
+	GLOBAL,
+	LOCAL,
+	GIMBAL
+}
+
 // Icons
 enum icons
 {
@@ -110,7 +117,7 @@ enum icons
 	DOWNLOAD,
 	REMIND,
 	DUPLICATE,
-	CENTER,
+	PIVOT,
 	SEARCH,
 	PLAY,
 	PAUSE,
@@ -155,6 +162,9 @@ enum icons
 	TIP,
 	SELECT_ALL,
 	EXPORT_OBJ,
+	GLOBAL,
+	LOCAL,
+	GIMBAL,
 	
 	PLACEHOLDER = 11
 }

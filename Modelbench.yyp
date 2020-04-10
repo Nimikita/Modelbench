@@ -2527,6 +2527,14 @@
             }
         },
         {
+            "Key": "49c7e663-c2bd-4e98-aca3-af3c52b1d770",
+            "Value": {
+                "id": "086c9aad-da71-4dac-9467-f47f07d5bc2a",
+                "resourcePath": "scripts\\action_setting_orientation\\action_setting_orientation.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "49ce5bf2-f631-45bc-82f2-abaf5fb65b7f",
             "Value": {
                 "id": "2bfe6a57-67b4-4502-99c0-3010e16530a6",
@@ -8239,6 +8247,14 @@
             }
         },
         {
+            "Key": "f5669c39-0fcd-4ef9-aea5-f1387545144b",
+            "Value": {
+                "id": "1f4068f3-fa86-4a90-a9b2-c4621c77d9ea",
+                "resourcePath": "sprites\\spr_dropshadow_14\\spr_dropshadow_14.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "f5678749-f19e-4087-bb50-2021cc4c0efe",
             "Value": {
                 "id": "ed0abdc6-73d0-4592-b813-8bae351d2516",
@@ -8749,6 +8765,7 @@
         "5b372727-b4b0-4a3f-bb42-66472d557fb2",
         "04fdedfe-488f-4a78-8e69-ea38262e9496",
         "dd0abae0-0efa-4d06-ad5b-d74239fc3b7c",
+        "49c7e663-c2bd-4e98-aca3-af3c52b1d770",
         "9e442cf7-85e9-4653-ba89-c294d115a692",
         "067a5325-f32f-46f6-aa3a-7388dffbf924",
         "2d8a7589-f1ec-43a9-9965-828bcfefd6b2",

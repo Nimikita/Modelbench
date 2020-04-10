@@ -93,7 +93,7 @@ switch (name)
 		
 		// Offset centering
 		if (context_menu_copy_category != null && context_menu_copy_category = element_editor.pivot_offset)
-			list_add_item(text_get("contextmenucenteraxis"), null, "", null, icons.CENTER, null, action_el_offset_center, true)
+			list_add_item(text_get("contextmenucenteraxis"), null, "", null, icons.PIVOT, null, action_el_offset_center, true)
 		
 		// Single value copy-paste
 		if (name = "contextmenuvalue")
@@ -196,6 +196,14 @@ switch (name)
 	case "contextmenuurl":
 	{
 		list_add_item(text_get("contextmenucopylink"), context_menu_value, "", null, icons.LINK, null, action_copy_text, true)
+		break
+	}
+	
+	case "orientation":
+	{
+		list_add_item("Global", e_orientation.GLOBAL, "", null, icons.GLOBAL, null, null, true)
+		list_add_item("Local", e_orientation.LOCAL, "", null, icons.LOCAL, null, null, false)
+		list_add_item("Gimbal", e_orientation.GIMBAL, "", null, icons.GIMBAL, null, null, false)
 		break
 	}
 }

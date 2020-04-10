@@ -3,8 +3,8 @@
     "file/": {
         "language": "English",
         "translator": "Nimi",
-        "forversion": "1.0.2",
-        "lastchange": "2020.04.05"
+        "forversion": "1.1.0",
+        "lastchange": "2020.04.10"
     },
 	"startup/": {
 		"modeldetected": "Unsaved model detected",
@@ -262,7 +262,8 @@
 			"transform": "Transform tool",
 			"bend": "Bend tool"
 		},
-		"snapsize": "Size"
+		"snapsize": "Size",
+		"mode": "Move mode"
 	},
 	"tab/": {
 		"assets": "Assets",

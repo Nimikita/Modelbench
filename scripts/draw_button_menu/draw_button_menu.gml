@@ -1,4 +1,4 @@
-/// draw_button_menu(name, type, x, y, width, height, value, text, script, [disabled, [texture]])
+/// draw_button_menu(name, type, x, y, width, height, value, text, script, [disabled, [texture, [icon]]])
 /// @arg name
 /// @arg type
 /// @arg x
@@ -9,9 +9,10 @@
 /// @arg text
 /// @arg script
 /// @arg [disabled
-/// @arg [texture]]
+/// @arg [texture
+/// @arg [icon]]]
 
-var name, type, xx, yy, wid, hei, value, text, script, tex, disabled;
+var name, type, xx, yy, wid, hei, value, text, script, tex, disabled, icon;
 var flip, mouseon;
 name = argument[0]
 type = argument[1]
@@ -33,6 +34,11 @@ if (argument_count > 10)
 else
 	tex = null
 
+if (argument_count > 11)
+	icon = argument[11]
+else
+	icon = null
+
 if (xx + wid < content_x || xx > content_x + content_width || yy + hei < content_y || yy > content_y + content_height)
 	return 0
 
@@ -40,13 +46,16 @@ flip = (yy + hei + hei * 4 > window_height)
 
 microani_set(name, null, false, false, false)
 
-// Caption
 var textcolor, textalpha;
 textcolor = merge_color(c_text_secondary, c_text_tertiary, mcroani_arr[e_mcroani.DISABLED])
 textalpha = lerp(a_text_secondary, a_text_tertiary, mcroani_arr[e_mcroani.DISABLED])
 
-draw_label(text_get(name), xx, yy + 16, fa_left, fa_bottom, textcolor, textalpha, font_label)
-yy += 20
+// Caption
+if (dh > (hei + 20))
+{
+	draw_label(text_get(name), xx, yy + 16, fa_left, fa_bottom, textcolor, textalpha, font_label)
+	yy += 20
+}
 
 // Button
 var bordercolor, borderalpha;
@@ -55,7 +64,9 @@ borderalpha = lerp(a_border, a_text_secondary, mcroani_arr[e_mcroani.HOVER])
 bordercolor = merge_color(bordercolor, c_accent, mcroani_arr[e_mcroani.PRESS])
 borderalpha = lerp(borderalpha, a_accent, mcroani_arr[e_mcroani.PRESS])
 
-draw_box(xx, yy, wid, hei, false, c_background, 1)
+if (menu_name = name)
+	draw_box(xx, yy, wid, hei, false, c_background, 1)
+
 draw_outline(xx, yy, wid, hei, 1, bordercolor, borderalpha)
 draw_box_hover(xx - 1, yy - 1, wid + 2, hei + 2, mcroani_arr[e_mcroani.HOVER])
 
@@ -66,7 +77,7 @@ if (mouseon)
 	mouse_cursor = cr_handpoint
 
 // Item
-var item = list_add_item(text, null, "", tex, null, null, null, false, false);
+var item = list_add_item(text, null, "", tex, icon, null, null, false, false);
 item.disabled = disabled
 draw_list_item(item, xx, yy, wid, hei, false, 8)
 instance_destroy(item)

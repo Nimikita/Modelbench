@@ -17,7 +17,7 @@ if (el_edit_amount > 0 && program_mode = e_mode.MODELING)
 	// Selection
 	view.surface_select = render_select(view.surface_select);
 	
-	if (surface_exists(render_overlay) && ((surface_get_width(render_overlay) != content_width*2) || (surface_get_height(render_overlay) != content_height*2)))
+	if (surface_exists(render_overlay) && ((surface_get_width(render_overlay) != content_width * 2) || (surface_get_height(render_overlay) != content_height * 2)))
 		surface_free(render_overlay)
 	
 	if (!surface_exists(render_overlay))
@@ -57,7 +57,7 @@ if (el_edit_amount > 0 && program_mode = e_mode.MODELING)
 					// Position
 					if (tool_selected = e_tool.MOVE || tool_selected = e_tool.TRANSFORM)
 						view_control_move(view)
-						
+					
 					// Pivot
 					if (tool_selected = e_tool.PIVOT && el_edit.element_type = TYPE_SHAPE)
 						view_control_pivot(view)
@@ -87,12 +87,19 @@ if (el_edit_amount > 0 && program_mode = e_mode.MODELING)
 					{
 						var mat;
 						
+						// Bend tool
 						if (tool_selected = e_tool.BEND && el_edit.element_type = TYPE_PART && el_edit.value[e_value.BEND])
 						{
 							origin3d = matrix_position(matrix_multiply(matrix_create(model_part_get_offset_pos(el_edit), vec3(0), vec3(1)), el_edit.matrix_parent))
 						}
-						else
-						if (tool_selected != e_tool.PIVOT || (tool_selected = e_tool.PIVOT && el_edit.element_type = TYPE_PART))
+						else if (tool_selected = e_tool.PIVOT && el_edit.element_type = TYPE_SHAPE) // Pivot tool
+						{
+							mat = matrix_create(el_edit.from, vec3(0), vec3(1))
+							mat = matrix_multiply(mat, matrix_create(vec3(0), el_edit.rotation, vec3(1)))
+							mat = matrix_multiply(mat, matrix_multiply(el_edit.matrix, el_edit.parent.matrix_parent))
+							origin3d = matrix_position(mat)
+						}
+						else // Any other tool
 						{
 							if (el_edit.element_type = TYPE_PART)
 								mat = array_copy_1d(el_edit.matrix_edit)
@@ -100,13 +107,6 @@ if (el_edit_amount > 0 && program_mode = e_mode.MODELING)
 								mat = array_copy_1d(el_edit.matrix_parent)
 	
 							matrix_remove_scale(mat)
-							origin3d = matrix_position(mat)
-						}
-						else
-						{
-							mat = matrix_create(el_edit.from, vec3(0), vec3(1))
-							mat = matrix_multiply(mat, matrix_create(vec3(0), el_edit.rotation, vec3(1)))
-							mat = matrix_multiply(mat, matrix_multiply(el_edit.matrix, el_edit.parent.matrix_parent))
 							origin3d = matrix_position(mat)
 						}
 						
@@ -122,27 +122,26 @@ if (el_edit_amount > 0 && program_mode = e_mode.MODELING)
 					
 					if (!point3D_project_error)
 					{
-						if (tool_selected > e_tool.SELECT)
-							draw_circle_ext(origin2d[X], origin2d[Y], 28, false, c_background, 1)
-						
 						var icon = null;
-						if (tool_selected = e_tool.PIVOT)
-							icon = icons.CENTER
-						else if (tool_selected = e_tool.MOVE)
-							icon = icons.TOOLSET_POSITION
-						else if (tool_selected = e_tool.ROTATE)
-							icon = icons.TOOLSET_ROTATE
-						else if (tool_selected = e_tool.SCALE)
-							icon = icons.TOOLSET_SCALE
-						else if (tool_selected = e_tool.TRANSFORM)
-							icon = icons.TRANSFORM
-						else if (tool_selected = e_tool.BEND)
-							icon = icons.BEND
+						
+						switch (tool_selected)
+						{
+							case e_tool.PIVOT: icon = icons.PIVOT; break;
+							case e_tool.MOVE: icon = icons.TOOLSET_POSITION; break;
+							case e_tool.ROTATE: icon = icons.TOOLSET_ROTATE; break;
+							case e_tool.SCALE: icon = icons.SCALE; break;
+							case e_tool.TRANSFORM: icon = icons.TRANSFORM; break;
+							case e_tool.BEND: icon = icons.BEND; break;
+						}
 						
 						if (icon != null)
+						{
+							draw_image(spr_dropshadow_14, 0, origin2d[X], origin2d[Y], 2, 2, c_white, 1)
+							draw_circle_ext(origin2d[X], origin2d[Y], 28, false, c_background, 1)
 							draw_image(spr_icons, icon, origin2d[X], origin2d[Y], 2, 2, c_text_secondary, a_text_secondary)
+						}
 						else
-							draw_circle_ext(origin2d[X], origin2d[Y], 16, false, hex_to_color("00FFFF"), 1)
+							draw_circle_ext(origin2d[X], origin2d[Y], 16, false, c_axiscyan, 1)
 					}
 					
 					// XYZ scale control tooltip

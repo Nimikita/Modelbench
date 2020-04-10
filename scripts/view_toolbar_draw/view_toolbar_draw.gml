@@ -99,7 +99,7 @@ else
 
 // Pivot tool
 tip_set_shortcut(setting_key_tool_pivot, setting_key_tool_pivot_control)
-if (draw_button_icon("toolsettoolpivot", dx, dy, 28, 28, tool_selected = e_tool.PIVOT, icons.CENTER, null, false, "toolsettoolpivot"))
+if (draw_button_icon("toolsettoolpivot", dx, dy, 28, 28, tool_selected = e_tool.PIVOT, icons.PIVOT, null, false, "toolsettoolpivot"))
 	tool_selected = e_tool.PIVOT
 
 if (dw > dh)

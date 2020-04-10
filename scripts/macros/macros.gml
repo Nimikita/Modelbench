@@ -2,11 +2,11 @@
 /// @desc Defines constants used in the project.
 
 // Debug
-#macro dev_mode						false
+#macro dev_mode						true
 #macro debug_export_normals			false
 
 // Versions
-#macro modelbench_version			"1.0.2"
+#macro modelbench_version			"1.1.0"
 #macro modelbench_version_full		modelbench_version + ""
 #macro modelbench_version_extra		""
 #macro modelbench_version_date		"02.02.2020"
