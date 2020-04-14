@@ -20,7 +20,7 @@ with (el_edit)
 
 var controlmat = mat;
 
-if (setting_orientation = e_orientation.GLOBAL)
+if (setting_move_mode = e_move_mode.GLOBAL)
 	controlmat = matrix_multiply(matrix_create(matrix_position(mat), vec3(0), vec3(1)), MAT_IDENTITY)
 
 // Draw each axis
@@ -39,6 +39,7 @@ if (window_busy = "rendercontrol" && view_control_edit_view = view && view_contr
 	{
 		var vecmouse, vecdot, move, snapval;
 		move = vec3(0)
+		axis_edit = view_control_edit - e_value.OFFSET_X
 		
 		// Find move factor
 		vecmouse = vec2(mouse_dx, mouse_dy)
@@ -46,9 +47,13 @@ if (window_busy = "rendercontrol" && view_control_edit_view = view && view_contr
 		view_control_move_distance += (vec2_length(vecmouse) / veclen) * len * vecdot
 		
 		snapval = (setting_snap ? setting_snap_size_position : snap_min)
-		move[view_control_edit - e_value.OFFSET_X] = snap(view_control_move_distance, snapval)
 		
-		if (setting_orientation = e_orientation.GLOBAL)
+		if (setting_snap_mode = e_snap_mode.LOCAL && !setting_snap)
+			move[axis_edit] = snap(view_control_move_distance, snapval)
+		else
+			move[axis_edit] = view_control_move_distance
+		
+		if (setting_move_mode = e_move_mode.GLOBAL)
 			move = vec3_mul_matrix(move, matrix_inverse(mat))
 		
 		var newval;
@@ -60,11 +65,14 @@ if (window_busy = "rendercontrol" && view_control_edit_view = view && view_contr
 			newval[i] = view_control_value[i] + move[i]
 			
 			newval[i] = el_value_clamp(e_value.OFFSET_X + i, newval[i])
+			
+			if ((setting_snap_mode = e_snap_mode.ABSOLUTE && move[i] != 0) || !setting_snap)
+				newval[i] = snap(newval[i], snapval)
+			
 			newval[i] -= el_edit.value[e_value.OFFSET_X + i]
 		}
 		
 		// Update
-		axis_edit = view_control_edit - e_value.OFFSET_X
 		el_value_set_start(action_el_offset_xyz, true)
 		el_value_set(e_value.OFFSET_X, newval[X], true)
 		el_value_set(e_value.OFFSET_Y, newval[Y], true)

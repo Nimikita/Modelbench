@@ -1,4 +1,4 @@
-/// view_control_rotate_axis(view, valueid, color, matrix, length)
+/// view_control_bend_axis(view, valueid, color, matrix, length)
 /// @arg view
 /// @arg valueid
 /// @arg color
@@ -49,16 +49,17 @@ else if (view.control_mouseon_last = vid)
 		window_busy = "rendercontrol"
 		view_control_edit = vid
 		view_control_edit_view = view
-		view_control_value = el_edit.value[view_control_edit]
+		view_control_value = el_edit.value[vid]
 		view_control_pos = pos2D
 		view_control_matrix = mat
 		view_control_length = len
+		view_control_move_distance = 0
 	}
 	
 	// Right click
 	if (mouse_right_pressed && keyboard_check(vk_shift))
 	{
-		axis_edit = vid - e_value.ROT_X
+		axis_edit = vid - e_value.BEND_ANGLE_X
 		action_el_rot(0, false)
 		app_mouse_clear()
 	}

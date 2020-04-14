@@ -4,6 +4,13 @@ var showuveditor, resizemouseon;
 showuveditor = (setting_show_uv_editor && program_mode = e_mode.MODELING)
 resizemouseon = false
 
+// Viewport toolbar adjust
+if (program_mode = e_mode.MODELING)
+{
+	panel_area_y += 36
+	panel_area_height -= 36
+}
+
 // Calculate area
 view_area_x = panel_area_x + panel_map[?"left"].size_real + panel_map[?"left_secondary"].size_real
 view_area_y = panel_area_y + (panel_area_height * (1 - setting_uv_editor_size))
@@ -53,4 +60,14 @@ if (window_busy = "uveditorresize")
 		window_busy = ""
 		app_mouse_clear()
 	}
+}
+
+// Draw top toolbar
+if (program_mode = e_mode.MODELING)
+{
+	panel_area_y -= 36
+	panel_area_height += 36
+	
+	if (program_mode = e_mode.MODELING)
+		view_toolbar_modeling_draw(panel_area_x, panel_area_y, view_area_width, 36)
 }

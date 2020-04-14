@@ -139,13 +139,14 @@ setting_uv_editor_size = 0.5
 
 // Snap
 setting_snap = false
+setting_snap_mode = e_snap_mode.ABSOLUTE
 setting_snap_size_position = 1
 setting_snap_size_rotation = 15
 setting_snap_size_scale = 1
 setting_snap_size_uv = 1
 
 // Orientation
-setting_orientation = e_orientation.GIMBAL
+setting_move_mode = e_move_mode.GIMBAL
 
 settings_load()
 interface_update()

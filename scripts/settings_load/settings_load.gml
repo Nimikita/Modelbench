@@ -107,6 +107,7 @@ if (ds_map_valid(controlsmap))
 	setting_smooth_camera = value_get_real(controlsmap[?"smooth_camera"], setting_smooth_camera)
 	
 	setting_snap = value_get_real(controlsmap[?"snap"], setting_snap)
+	setting_snap_mode = value_get_real(controlsmap[?"snap_mode"], setting_snap_mode)
 	setting_snap_size_position = value_get_real(controlsmap[?"snap_size_position"], setting_snap_size_position)
 	setting_snap_size_rotation = value_get_real(controlsmap[?"snap_size_rotation"], setting_snap_size_rotation)
 	setting_snap_size_scale = value_get_real(controlsmap[?"snap_size_scale"], setting_snap_size_scale)

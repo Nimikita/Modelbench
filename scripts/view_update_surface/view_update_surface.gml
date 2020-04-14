@@ -147,49 +147,51 @@ if (el_edit_amount > 0 && program_mode = e_mode.MODELING)
 					// XYZ scale control tooltip
 					if (window_busy = "rendercontrolscalexyz")
 					{
-						var scalearr;
-						if (setting_z_is_up)
-							scalearr = vec3(el_edit.value[e_value.SCA_X], el_edit.value[e_value.SCA_Y], el_edit.value[e_value.SCA_Z])
-						else
-							scalearr = vec3(el_edit.value[e_value.SCA_X], el_edit.value[e_value.SCA_Z], el_edit.value[e_value.SCA_Y])
+						var zup = setting_z_is_up;
+						var scalearr = point3D(el_edit.value[e_value.SCA_X], el_edit.value[e_value.SCA_Y + zup], el_edit.value[e_value.SCA_Z - zup]);
 						
-						tip_set(text_get("tooltipscalexyz", scalearr[X], scalearr[Y], scalearr[Z]), mouse_click_x, mouse_click_y, 0, 0, false)
+						tip_set(text_get("tooltipxyz", scalearr[X], scalearr[Y], scalearr[Z]), mouse_click_x, mouse_click_y, 0, 0, false)
 					}
 					
 					// Single value control tooltip
 					if (window_busy = "rendercontrol")
 					{
-						var tooltipstr;
-						tooltipstr = "tooltip"
+						var tipstr, value, zup, angle;
+						value = point3D(0, 0, 0)
+						zup = !setting_z_is_up
+						angle = false
 						
 						if (view_control_edit >= e_value.OFFSET_X && view_control_edit <= e_value.OFFSET_Z)
-							tooltipstr += "pivot"
+							value = point3D(el_edit.value[e_value.OFFSET_X], el_edit.value[e_value.OFFSET_Y + zup], el_edit.value[e_value.OFFSET_Z - zup])
 						else if (view_control_edit >= e_value.POS_X && view_control_edit <= e_value.POS_Z)
-							tooltipstr += "position"
-						else if (view_control_edit >= e_value.ROT_X && view_control_edit <= e_value.ROT_Z)
-							tooltipstr += "rotation"
+							value = point3D(el_edit.value[e_value.POS_X], el_edit.value[e_value.POS_Y + zup], el_edit.value[e_value.POS_Z - zup])
 						else if (view_control_edit >= e_value.SCA_X && view_control_edit <= e_value.SCA_Z)
-							tooltipstr += "scale"
+							value = point3D(el_edit.value[e_value.SCA_X], el_edit.value[e_value.SCA_Y + zup], el_edit.value[e_value.SCA_Z - zup])
+						else if (view_control_edit >= e_value.ROT_X && view_control_edit <= e_value.ROT_Z)
+						{
+							value = point3D(el_edit.value[e_value.ROT_X], el_edit.value[e_value.ROT_Y + zup], el_edit.value[e_value.ROT_Z - zup])
+							angle = true
+						}
 						else if ((view_control_edit >= e_value.BEND_ANGLE_X && view_control_edit <= e_value.BEND_ANGLE_Z) || view_control_edit = e_value.BEND_OFFSET)
-							tooltipstr += "bend"
+						{
+							value = point3D(el_edit.value[e_value.BEND_ANGLE_X], el_edit.value[e_value.BEND_ANGLE_Y + zup], el_edit.value[e_value.BEND_ANGLE_Z - zup])
+							angle = true
+						}
+						
+						if (angle)
+							tipstr = text_get("tooltipanglexyz", value[X], value[Y], value[Z])
+						else
+							tipstr = text_get("tooltipxyz", value[X], value[Y], value[Z])
 						
 						// Value-specific controls
 						if (view_control_edit = e_value.BEND_OFFSET)
 						{
-							tooltipstr += "offset"
-						}
-						else // Axes controls
-						{
-							if ((view_control_edit mod 3) = 0)
-								tooltipstr += "x"
-							else if ((view_control_edit mod 3) = 1)
-								tooltipstr += (setting_z_is_up ? "y" : "z")
-							else if ((view_control_edit mod 3) = 2)
-								tooltipstr += (setting_z_is_up ? "z" : "y")
+							value = el_edit.value[e_value.BEND_OFFSET]
+							tipstr = text_get("tooltipoffset", value)
 						}
 						
 						tip_force_right = true
-						tip_set(text_get(tooltipstr, el_edit.value[view_control_edit]), mouse_click_x, mouse_click_y, 0, 0, false)
+						tip_set(tipstr, mouse_click_x, mouse_click_y, 0, 0, false)
 						tip_force_right = false
 					}
 					

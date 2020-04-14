@@ -41,8 +41,8 @@ if (window_busy = "rendercontrol" && view_control_edit_view = view && view_contr
 	var veclen = vec2_length(view_control_vec)
 	if (veclen > 0 && !mouse_still)
 	{
-		var vecmouse, vecdot, move, snapval;
-		move = vec3(0)
+		var vecmouse, vecdot, move, snapval, newval;
+		axis_edit = view_control_edit - e_value.SCA_X
 		
 		// Find move factor
 		vecmouse = vec2(mouse_dx, mouse_dy)
@@ -50,24 +50,22 @@ if (window_busy = "rendercontrol" && view_control_edit_view = view && view_contr
 		view_control_move_distance += ((vec2_length(vecmouse) / veclen) * len * vecdot) * .125
 		
 		snapval = (setting_snap ? setting_snap_size_scale : snap_min)
-		move[view_control_edit - e_value.SCA_X] = snap(view_control_move_distance, snapval)
+		move = view_control_move_distance
 		
-		var newval;
+		if (setting_snap_mode = e_snap_mode.LOCAL && setting_snap)
+			move = snap(move, snapval)
 		
-		for (var i = X; i <= Z; i++)
-		{
-			newval[i] = view_control_value[i] + move[i]
-			
-			newval[i] = el_value_clamp(e_value.SCA_X + i, newval[i])
-			newval[i] -= el_edit.value[e_value.SCA_X + i]
-		}
+		newval = view_control_value + move
+		newval = el_value_clamp(e_value.SCA_X + axis_edit, newval)
+		
+		if (setting_snap_mode = e_snap_mode.ABSOLUTE || !setting_snap)
+			newval = snap(newval, snapval)
+		
+		newval -= el_edit.value[view_control_edit]
 		
 		// Update
-		axis_edit = view_control_edit - e_value.SCA_X
-		el_value_set_start(action_el_pos_xyz, true)
-		el_value_set(e_value.SCA_X, newval[X], true)
-		el_value_set(e_value.SCA_Y, newval[Y], true)
-		el_value_set(e_value.SCA_Z, newval[Z], true)
+		el_value_set_start(action_el_sca, true)
+		el_value_set(e_value.SCA_X + axis_edit, newval, true)
 		el_value_set_done()
 	}
 	

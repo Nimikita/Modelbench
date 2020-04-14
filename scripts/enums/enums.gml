@@ -30,6 +30,19 @@ enum e_mode
 	PREVIEW
 }
 
+enum e_snap_mode
+{
+	ABSOLUTE,
+	LOCAL
+}
+
+enum e_move_mode
+{
+	GLOBAL,
+	LOCAL,
+	GIMBAL
+}
+
 enum e_tool
 {
 	SELECT,
@@ -46,13 +59,6 @@ enum e_features
 {
 	MIMODEL,
 	OBJ
-}
-
-enum e_orientation
-{
-	GLOBAL,
-	LOCAL,
-	GIMBAL
 }
 
 // Icons

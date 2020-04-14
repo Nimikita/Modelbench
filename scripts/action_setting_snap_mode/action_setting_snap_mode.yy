@@ -1,8 +1,8 @@
 {
-    "id": "19c2a715-57e9-452a-a3d0-c8cc2e76e6d0",
+    "id": "0a3435e7-5068-411d-a525-f4dc058376fa",
     "modelName": "GMScript",
     "mvc": "1.0",
-    "name": "view_toolbar_snap_draw",
+    "name": "action_setting_snap_mode",
     "IsCompatibility": false,
     "IsDnD": false
 }

@@ -1,8 +1,8 @@
 {
-    "id": "49c7e663-c2bd-4e98-aca3-af3c52b1d770",
+    "id": "4bd0996f-2e39-492e-9cf7-aa5afb5c6f06",
     "modelName": "GMScript",
     "mvc": "1.0",
-    "name": "action_setting_orientation",
+    "name": "view_control_bend_axis",
     "IsCompatibility": false,
     "IsDnD": false
 }

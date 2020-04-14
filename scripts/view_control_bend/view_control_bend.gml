@@ -110,7 +110,7 @@ if (control_mouseon_last != e_value.BEND_OFFSET)
 		}
 	
 		matrix_remove_scale(mat) 
-		view_control_rotate_axis(view, e_value.BEND_ANGLE_X + i, color, mat, len)
+		view_control_bend_axis(view, e_value.BEND_ANGLE_X + i, color, mat, len)
 	}
 }
 
@@ -121,7 +121,7 @@ if (window_busy = "rendercontrol" && view_control_edit_view = view && view_contr
 	
 	if (!mouse_still)
 	{
-		var ang, prevang, rot, snapval, mul;
+		var ang, prevang, rot, snapval, mul, move;
 		
 		// Find rotate amount
 		axis_edit = view_control_edit - e_value.BEND_ANGLE_X
@@ -130,15 +130,26 @@ if (window_busy = "rendercontrol" && view_control_edit_view = view && view_contr
 		rot = angle_difference_fix(ang, prevang) * negate(view_control_flip) * negate(el_edit.value[e_value.BEND_INVERT_X + axis_edit])
 		mul = min(1, (el_edit.value[e_value.BEND_X_MAX + axis_edit] - el_edit.value[e_value.BEND_X_MIN + axis_edit]) / 90)
 		
-		view_control_value += rot * mul
-		view_control_value = el_value_clamp(view_control_edit, view_control_value)
-		
 		// Snap
 		snapval = (setting_snap ? setting_snap_size_rotation : snap_min)
 		
+		view_control_move_distance += rot * mul
+		move = view_control_move_distance
+		
+		if (setting_snap_mode = e_snap_mode.LOCAL && setting_snap)
+			move = snap(move, snapval)
+		
+		move += view_control_value
+		move = el_value_clamp(view_control_edit, move)
+		
+		if (setting_snap_mode = e_snap_mode.ABSOLUTE || !setting_snap)
+			move = snap(move, snapval)
+		
+		move -= el_edit.value[view_control_edit]
+		
 		// Update
 		el_value_set_start(action_el_bend_angle, true)
-		el_value_set(view_control_edit, snap(view_control_value, snapval) - el_edit.value[view_control_edit], true)
+		el_value_set(view_control_edit, move, true)
 		el_value_set_done()
 	}
 	
@@ -169,6 +180,7 @@ if (!offseterr && !unbenterr && !benterr)
 			view_control_edit = e_value.BEND_OFFSET
 			view_control_vec = point2D_sub(offset2d, unbent2d)
 			view_control_value = el_edit.value[e_value.BEND_OFFSET]
+			view_control_move_distance = 0
 		}
 	}
 }
@@ -186,15 +198,26 @@ if (window_busy = "rendercontrol" && view_control_edit_view = view && view_contr
 		// Find move factor
 		vecmouse = vec2(mouse_dx, mouse_dy)
 		vecdot = vec2_dot(vec2_normalize(view_control_vec), vec2_normalize(vecmouse))
-		move = (vec2_length(vecmouse) / veclen) * (size * 2) * vecdot
-		view_control_value += move
 		
-		view_control_value = el_value_clamp(view_control_edit, view_control_value)
+		view_control_move_distance += (vec2_length(vecmouse) / veclen) * (size * 2) * vecdot
+		move = view_control_move_distance
+		
 		snapval = (setting_snap ? setting_snap_size_position : snap_min)
+		
+		if (setting_snap_mode = e_snap_mode.LOCAL && setting_snap)
+			move = snap(move, snapval)
+		
+		move += view_control_value
+		move = el_value_clamp(view_control_edit, move)
+		
+		if (setting_snap_mode = e_snap_mode.ABSOLUTE || !setting_snap)
+			move = snap(move, snapval)
+		
+		move -= el_edit.value[view_control_edit]
 		
 		// Update
 		el_value_set_start(action_el_bend_offset, true)
-		el_value_set(view_control_edit, snap(view_control_value, snapval) - el_edit.value[view_control_edit], true)
+		el_value_set(view_control_edit, move, true)
 		el_value_set_done()
 	}
 	

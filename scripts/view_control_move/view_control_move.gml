@@ -20,9 +20,9 @@ with (el_edit)
 	matrix_remove_scale(mat)
 }
 
-if (setting_orientation = e_orientation.GLOBAL)
+if (setting_move_mode = e_move_mode.GLOBAL)
 	mat = matrix_multiply(matrix_create(el_edit.world_pos, vec3(0), vec3(1)), MAT_IDENTITY)
-else if (setting_orientation = e_orientation.LOCAL)
+else if (setting_move_mode = e_move_mode.LOCAL)
 	mat = matrix_multiply(matrix_create(vec3(0), el_edit.rotation, vec3(1)), mat)
 
 // Draw each axis
@@ -39,8 +39,9 @@ if (window_busy = "rendercontrol" && view_control_edit_view = view && view_contr
 	var veclen = vec2_length(view_control_vec)
 	if (veclen > 0 && !mouse_still)
 	{
-		var vecmouse, vecdot, move, snapval;
+		var vecmouse, vecdot, move, snapval, newval;
 		move = vec3(0)
+		axis_edit = view_control_edit - e_value.POS_X
 		
 		// Find move factor
 		vecmouse = vec2(mouse_dx, mouse_dy)
@@ -48,17 +49,19 @@ if (window_busy = "rendercontrol" && view_control_edit_view = view && view_contr
 		view_control_move_distance += (vec2_length(vecmouse) / veclen) * len * vecdot
 		
 		snapval = (setting_snap ? setting_snap_size_position : snap_min)
-		move[view_control_edit] = snap(view_control_move_distance, snapval)
 		
-		if (setting_orientation = e_orientation.GLOBAL)
+		if (setting_snap_mode = e_snap_mode.LOCAL && setting_snap)
+			move[axis_edit] = snap(move[axis_edit], snapval)	
+		else
+			move[axis_edit] = view_control_move_distance
+		
+		if (setting_move_mode = e_move_mode.GLOBAL)
 		{
 			mat = (el_edit.element_type = TYPE_PART ? el_edit.matrix_edit : el_edit.matrix_parent)
 			move = vec3_mul_matrix(move, matrix_inverse(mat))
 		}
-		else if (setting_orientation = e_orientation.LOCAL)
+		else if (setting_move_mode = e_move_mode.LOCAL)
 			move = vec3_mul_matrix(move, matrix_create(vec3(0), el_edit.rotation, vec3(1)))
-		
-		var newval;
 		
 		for (var i = X; i <= Z; i++)
 		{
@@ -67,11 +70,14 @@ if (window_busy = "rendercontrol" && view_control_edit_view = view && view_contr
 			newval[i] = view_control_value[i] + move[i]
 			
 			newval[i] = el_value_clamp(e_value.POS_X + i, newval[i])
+				
+			if ((setting_snap_mode = e_snap_mode.ABSOLUTE && move[i] != 0) || !setting_snap)
+				newval[i] = snap(newval[i], snapval)
+			
 			newval[i] -= el_edit.value[e_value.POS_X + i]
 		}
 		
 		// Update
-		axis_edit = view_control_edit
 		el_value_set_start(action_el_pos_xyz, true)
 		el_value_set(e_value.POS_X, newval[X], true)
 		el_value_set(e_value.POS_Y, newval[Y], true)

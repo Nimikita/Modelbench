@@ -189,34 +189,9 @@
 		"remove": "Remove",
 		"pin": "Pin",
 		"shortcut": "Shortcut: %1",
-		"pivot/": {
-			"x": "X Pivot: %1",
-			"y": "Y Pivot: %1",
-			"z": "Z Pivot: %1"
-		},
-		"position/": {
-			"x": "X Position: %1",
-			"y": "Y Position: %1",
-			"z": "Z Position: %1"
-		},
-		"rotation/": {
-			"x": "X Rotation: %1",
-			"y": "Y Rotation: %1",
-			"z": "Z Rotation: %1"
-		},
-		"scale/": {
-			"x": "X Scale: %1",
-			"y": "Y Scale: %1",
-			"z": "Z Scale: %1",
-			"xyz": "[ X: %1, Y: %2, Z: %3 ]"
-		},
-		"bend/": {
-			"x": "X Bend: %1",
-			"y": "Y Bend: %1",
-			"z": "Z Bend: %1",
-			"offset": "Offset: %1",
-			"xyz": "[ X: %1, Y: %2, Z: %3 ]"
-		},
+		"xyz": "X: %1\nY: %2\nZ: %3",
+		"anglexyz": "X: %1°\nY: %2°\nZ: %3°",
+		"offset": "Offset: %1",
 		"undo": "Undo",
 		"redo": "Redo",
 		"snapenable": "Enable tool snapping",
@@ -262,8 +237,22 @@
 			"transform": "Transform tool",
 			"bend": "Bend tool"
 		},
-		"snapsize": "Size",
-		"mode": "Move mode"
+		"snap/":
+		{
+			"size": "Size",
+			"mode": "Mode",
+			"mode/":
+			{
+				"absolute": "Absolute",
+				"local": "Local"
+			}
+		},
+		"movemode": "Move mode",
+		"movemode/": {
+			"global": "Global",
+			"local": "Local",
+			"gimbal": "Gimbal"
+		}
 	},
 	"tab/": {
 		"assets": "Assets",

@@ -124,14 +124,3 @@ if (app_mouse_box(toolbarx, toolbary, toolbarwid, toolbarhei))
 	view.mouseon = false
 
 view_toolbar_draw(toolbarx, toolbary, toolbarwid, toolbarhei)
-
-// Snap toolbar
-toolbarwid = (4 + 28 + 4 + 10 + string_width_font(text_get("toolsetsnapsize"), font_emphasis) + 8 + 288 + 8 + 10 + string_width_font(text_get("toolsetmode"), font_emphasis) + 8 + 128 + 4)
-toolbarhei = 36
-toolbarx = round(boxx + boxw/2 - toolbarwid/2)
-toolbary = round(boxy + 16)
-
-if (app_mouse_box(toolbarx, toolbary, toolbarwid, toolbarhei))
-	view.mouseon = false
-
-view_toolbar_snap_draw(toolbarx, toolbary, toolbarwid, toolbarhei)
