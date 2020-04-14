@@ -4,7 +4,7 @@
         "language": "English",
         "translator": "Nimi",
         "forversion": "1.1.0",
-        "lastchange": "2020.04.10"
+        "lastchange": "2020.04.14"
     },
 	"startup/": {
 		"modeldetected": "Unsaved model detected",
@@ -234,7 +234,7 @@
 			"move": "Move tool",
 			"rotate": "Rotate tool",
 			"scale": "Scale tool",
-			"transform": "Transform tool",
+			"transform": "Multi-transform tool",
 			"bend": "Bend tool"
 		},
 		"snap/":
@@ -534,7 +534,7 @@
 				"move": "Move tool",
 				"rotate": "Rotate tool",
 				"scale": "Scale tool",
-				"transform": "Transform tool",
+				"transform": "Multi-transform tool",
 				"bend": "Bend tool"
 			},
 			"snap": "Toggle snapping",
