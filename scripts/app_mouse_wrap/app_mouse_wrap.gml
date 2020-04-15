@@ -19,7 +19,7 @@ if (mouse_x < xx || display_mouse_get_x() < 2)
 if (mouse_y < yy || display_mouse_get_y() < 2)
 	sety = yy + height
 
-if (mouse_x > xx + width || display_mouse_get_y() > display_get_width() - 2)
+if (mouse_x > xx + width || display_mouse_get_x() > display_get_width() - 2)
 	setx = xx
 
 if (mouse_y > yy + height || display_mouse_get_y() > display_get_height() - 2)

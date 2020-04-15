@@ -69,5 +69,5 @@ if (program_mode = e_mode.MODELING)
 	panel_area_height += 36
 	
 	if (program_mode = e_mode.MODELING)
-		view_toolbar_modeling_draw(panel_area_x, panel_area_y, view_area_width, 36)
+		view_toolbar_modeling_draw(view_area_x, panel_area_y, view_area_width, 36)
 }
