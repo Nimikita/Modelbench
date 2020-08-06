@@ -2535,14 +2535,6 @@
             }
         },
         {
-            "Key": "49c7e663-c2bd-4e98-aca3-af3c52b1d770",
-            "Value": {
-                "id": "086c9aad-da71-4dac-9467-f47f07d5bc2a",
-                "resourcePath": "scripts\\action_setting_move_mode\\action_setting_move_mode.yy",
-                "resourceType": "GMScript"
-            }
-        },
-        {
             "Key": "49ce5bf2-f631-45bc-82f2-abaf5fb65b7f",
             "Value": {
                 "id": "2bfe6a57-67b4-4502-99c0-3010e16530a6",
@@ -5503,6 +5495,14 @@
             }
         },
         {
+            "Key": "9a2e0823-cabd-4c9c-99dc-caa6fa46565f",
+            "Value": {
+                "id": "8df73ff1-ea89-4491-928f-bb1691acb2cd",
+                "resourcePath": "scripts\\view_control_move_plane\\view_control_move_plane.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "9aa677cf-d82a-469e-9dac-06c30df82e9e",
             "Value": {
                 "id": "e5649340-1d2f-41bb-9679-38586a89cce7",
@@ -7719,6 +7719,14 @@
             }
         },
         {
+            "Key": "e1ca4633-8eff-4ba2-9223-d90a29f9c7c7",
+            "Value": {
+                "id": "464c36bf-32b0-4db1-8f43-0ae0b43dd2cf",
+                "resourcePath": "scripts\\point3D_plane_intersect\\point3D_plane_intersect.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "e1ffcfc1-bb95-4daa-938c-e78f8d48ff30",
             "Value": {
                 "id": "2eb12ef2-ce2e-4b31-9368-44d503f2130b",
@@ -8782,7 +8790,6 @@
         "04fdedfe-488f-4a78-8e69-ea38262e9496",
         "dd0abae0-0efa-4d06-ad5b-d74239fc3b7c",
         "0a3435e7-5068-411d-a525-f4dc058376fa",
-        "49c7e663-c2bd-4e98-aca3-af3c52b1d770",
         "9e442cf7-85e9-4653-ba89-c294d115a692",
         "067a5325-f32f-46f6-aa3a-7388dffbf924",
         "2d8a7589-f1ec-43a9-9965-828bcfefd6b2",
@@ -8948,6 +8955,7 @@
         "99e261d5-6759-4db2-b5eb-367f5ea02a93",
         "b2a8e7fd-245b-446a-96c1-750be958b03f",
         "0aeafbb8-41d9-453f-85f8-dae76ae47aea",
+        "9a2e0823-cabd-4c9c-99dc-caa6fa46565f",
         "c82804f1-5cf1-4bdb-bac2-fe6c4b7b345a",
         "66558d49-76c4-42c2-9d35-edd010da73e3",
         "adaa038e-78a7-4ac7-ad7c-d34aaae5a683",
@@ -9394,6 +9402,7 @@
         "6baf1328-5903-4cf4-996c-a7629105d0c3",
         "5193fee6-d18d-4595-adc2-150eaabf3f59",
         "a959c667-f91e-49f8-9b7e-d0db108685cc",
+        "e1ca4633-8eff-4ba2-9223-d90a29f9c7c7",
         "a6fa0339-610d-4631-b365-cfbb1d3e6924",
         "1755a86a-28a9-4c90-bdca-ff64a700b1d4",
         "482ced18-f103-4f4c-ae82-e627959cd4cb",

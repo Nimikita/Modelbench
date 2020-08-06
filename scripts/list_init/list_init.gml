@@ -199,14 +199,6 @@ switch (name)
 		break
 	}
 	
-	case "toolsetmovemode":
-	{
-		list_add_item(text_get("toolsetmovemodeglobal"), e_move_mode.GLOBAL, "", null, icons.GLOBAL, null, null, true)
-		list_add_item(text_get("toolsetmovemodelocal"), e_move_mode.LOCAL, "", null, icons.LOCAL, null, null, false)
-		list_add_item(text_get("toolsetmovemodegimbal"), e_move_mode.GIMBAL, "", null, icons.GIMBAL, null, null, false)
-		break
-	}
-	
 	case "toolsetsnapmode":
 	{
 		list_add_item(text_get("toolsetsnapmodeabsolute"), e_snap_mode.ABSOLUTE, "", null, null, null, null, true)

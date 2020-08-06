@@ -33,6 +33,8 @@ mouse_previous_x = 0
 mouse_previous_y = 0
 mouse_move = 0
 mouse_still = 0
+mouse_wrap_x = 0
+mouse_wrap_y = 0
 app_mouse_clear()
 
 dragger_drag_value = 0

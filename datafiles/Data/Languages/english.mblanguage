@@ -4,7 +4,7 @@
         "language": "English",
         "translator": "Nimi",
         "forversion": "1.1.0",
-        "lastchange": "2020.04.14"
+        "lastchange": "2020.08.06"
     },
 	"startup/": {
 		"modeldetected": "Unsaved model detected",
@@ -246,12 +246,6 @@
 				"absolute": "Absolute",
 				"local": "Local"
 			}
-		},
-		"movemode": "Move mode",
-		"movemode/": {
-			"global": "Global",
-			"local": "Local",
-			"gimbal": "Gimbal"
 		}
 	},
 	"tab/": {

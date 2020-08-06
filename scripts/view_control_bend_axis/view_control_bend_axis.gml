@@ -1,19 +1,21 @@
-/// view_control_bend_axis(view, valueid, color, matrix, length)
+/// view_control_bend_axis(view, control, valueid, color, matrix, length)
 /// @arg view
+/// @arg control
 /// @arg valueid
 /// @arg color
 /// @arg matrix
 /// @arg length
 
-var view, vid, color, mat, len, detail;
+var view, control, vid, color, mat, len, detail;
 var pos3D, pos2D;
 view = argument0
-vid = argument1
-color = argument2
-mat = argument3
-len = argument4
+control = argument1
+vid = argument2
+color = argument3
+mat = argument4
+len = argument5
 
-detail = (view_control_edit = vid ? 24 : 32)
+detail = (view_control_edit = control ? 24 : 32)
 
 if (view_control_length != null)
 	len = view_control_length
@@ -29,7 +31,7 @@ if (window_busy = "rendercontrol")
 {
 	var facevec, camvec;
 	
-	if (view_control_edit != vid)
+	if (view_control_edit != control)
 		return 0
 		
 	// Invert input?
@@ -41,13 +43,13 @@ if (window_busy = "rendercontrol")
 	view_control_pos = pos2D
 	draw_set_color(c_white)
 }
-else if (view.control_mouseon_last = vid)
+else if (view.control_mouseon_last = control)
 {
 	// Left click
 	if (mouse_left_pressed)
 	{
 		window_busy = "rendercontrol"
-		view_control_edit = vid
+		view_control_edit = control
 		view_control_edit_view = view
 		view_control_value = el_edit.value[vid]
 		view_control_pos = pos2D
@@ -96,7 +98,7 @@ for (var i = 1/detail; i <= 1; i += 1/detail)
 	}
 	
 	// Hide line in circle if behind world position
-	if (view_control_edit != vid)
+	if (view_control_edit != control)
 	{	
 		if ((vec3_dot(point3D_sub(start3D, cam_from), v) / vdot) > 1.001)
 		{
@@ -111,7 +113,7 @@ for (var i = 1/detail; i <= 1; i += 1/detail)
 	
 	// Check mouse
 	if (content_mouseon && point_line_distance(start2D[X], start2D[Y], end2D[X], end2D[Y], mouse_x - content_x, mouse_y - content_y) < view_3d_control_width / 2)
-		view.control_mouseon = vid
+		view.control_mouseon = control
 	
 	// Set next start position as current end position
 	start3D = end3D

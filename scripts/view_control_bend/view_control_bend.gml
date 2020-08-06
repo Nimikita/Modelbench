@@ -78,7 +78,7 @@ if (!benterr)
 
 #region Bend angle
 
-if (control_mouseon_last != e_value.BEND_OFFSET)
+if (view.control_mouseon_last != e_control.BEND_OFFSET)
 {
 	var view, len, mat, color, offset;
 	view = argument0
@@ -110,12 +110,12 @@ if (control_mouseon_last != e_value.BEND_OFFSET)
 		}
 	
 		matrix_remove_scale(mat) 
-		view_control_bend_axis(view, e_value.BEND_ANGLE_X + i, color, mat, len)
+		view_control_bend_axis(view, e_control.BEND_X + i, e_value.BEND_ANGLE_X + i, color, mat, len)
 	}
 }
 
 // Is dragging
-if (window_busy = "rendercontrol" && view_control_edit_view = view && view_control_edit >= e_value.BEND_ANGLE_X && view_control_edit <= e_value.BEND_ANGLE_Z)
+if (window_busy = "rendercontrol" && view_control_edit_view = view && view_control_edit >= e_control.BEND_X && view_control_edit <= e_control.BEND_Z)
 {
 	mouse_cursor = cr_handpoint
 	
@@ -124,7 +124,7 @@ if (window_busy = "rendercontrol" && view_control_edit_view = view && view_contr
 		var ang, prevang, rot, snapval, mul, move;
 		
 		// Find rotate amount
-		axis_edit = view_control_edit - e_value.BEND_ANGLE_X
+		axis_edit = view_control_edit - e_control.BEND_X
 		ang = point_direction(mouse_x - content_x, mouse_y - content_y, view_control_pos[X], view_control_pos[Y])
 		prevang = point_direction(mouse_previous_x - content_x, mouse_previous_y - content_y, view_control_pos[X], view_control_pos[Y])
 		rot = angle_difference_fix(ang, prevang) * negate(view_control_flip) * negate(el_edit.value[e_value.BEND_INVERT_X + axis_edit])
@@ -140,16 +140,16 @@ if (window_busy = "rendercontrol" && view_control_edit_view = view && view_contr
 			move = snap(move, snapval)
 		
 		move += view_control_value
-		move = el_value_clamp(view_control_edit, move)
+		move = el_value_clamp(e_value.BEND_ANGLE_X + axis_edit, move)
 		
 		if (setting_snap_mode = e_snap_mode.ABSOLUTE || !setting_snap)
 			move = snap(move, snapval)
 		
-		move -= el_edit.value[view_control_edit]
+		move -= el_edit.value[e_value.BEND_ANGLE_X + axis_edit]
 		
 		// Update
 		el_value_set_start(action_el_bend_angle, true)
-		el_value_set(view_control_edit, move, true)
+		el_value_set(e_value.BEND_ANGLE_X + axis_edit, move, true)
 		el_value_set_done()
 	}
 	
@@ -177,7 +177,7 @@ if (!offseterr && !unbenterr && !benterr)
 		{
 			window_busy = "rendercontrol"
 			view_control_edit_view = view
-			view_control_edit = e_value.BEND_OFFSET
+			view_control_edit = e_control.BEND_OFFSET
 			view_control_vec = point2D_sub(offset2d, unbent2d)
 			view_control_value = el_edit.value[e_value.BEND_OFFSET]
 			view_control_move_distance = 0
@@ -185,7 +185,7 @@ if (!offseterr && !unbenterr && !benterr)
 	}
 }
 
-if (window_busy = "rendercontrol" && view_control_edit_view = view && view_control_edit = e_value.BEND_OFFSET)
+if (window_busy = "rendercontrol" && view_control_edit_view = view && view_control_edit = e_control.BEND_OFFSET)
 {
 	mouse_cursor = cr_handpoint
 	
@@ -208,16 +208,16 @@ if (window_busy = "rendercontrol" && view_control_edit_view = view && view_contr
 			move = snap(move, snapval)
 		
 		move += view_control_value
-		move = el_value_clamp(view_control_edit, move)
+		move = el_value_clamp(e_value.BEND_OFFSET, move)
 		
 		if (setting_snap_mode = e_snap_mode.ABSOLUTE || !setting_snap)
 			move = snap(move, snapval)
 		
-		move -= el_edit.value[view_control_edit]
+		move -= el_edit.value[e_value.BEND_OFFSET]
 		
 		// Update
 		el_value_set_start(action_el_bend_offset, true)
-		el_value_set(view_control_edit, move, true)
+		el_value_set(e_value.BEND_OFFSET, move, true)
 		el_value_set_done()
 	}
 	

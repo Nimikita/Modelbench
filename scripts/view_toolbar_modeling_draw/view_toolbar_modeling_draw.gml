@@ -64,26 +64,4 @@ draw_button_menu("toolsetsnapmode", e_menu.LIST, dx, dy, 128, 28, setting_snap_m
 
 dx += 128 + 8
 
-// Divider
-dx += 4
-draw_box(dx, dy, 1, 28, false, c_border, a_border)
-dx += 4 + 10
-
-// Move mode
-draw_label(text_get("toolsetmovemode"), dx, dy + 14, fa_left, fa_middle, c_text_secondary, a_text_secondary, font_emphasis)
-
-dx += string_width_font(text_get("toolsetmovemode"), font_emphasis) + 8
-
-var text;
-if (setting_move_mode = e_move_mode.GLOBAL)
-	text = "toolsetmovemodeglobal"
-else if (setting_move_mode = e_move_mode.LOCAL)
-	text = "toolsetmovemodelocal"
-else
-	text = "toolsetmovemodegimbal"
-
-draw_button_menu("toolsetmovemode", e_menu.LIST, dx, dy, 128, 28, setting_move_mode, text_get(text), action_setting_move_mode, false, null, icons.GLOBAL + setting_move_mode)
-
-dx += 128 + 8
-
 toolbar_modeling_width = dx - toolbar_modeling_width

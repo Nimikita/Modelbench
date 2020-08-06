@@ -18,18 +18,13 @@ with (el_edit)
 	matrix_remove_scale(mat)
 }
 
-var controlmat = mat;
-
-if (setting_move_mode = e_move_mode.GLOBAL)
-	controlmat = matrix_multiply(matrix_create(matrix_position(mat), vec3(0), vec3(1)), MAT_IDENTITY)
-
 // Draw each axis
-view_control_pivot_axis(view, e_value.OFFSET_X, c_axisred, vec3(0), len, controlmat, X, vec3(0, -90, 0))
-view_control_pivot_axis(view, e_value.OFFSET_Y, (setting_z_is_up ? c_axisgreen : c_axisblue), vec3(0), len, controlmat, Y, vec3(90, 0, 0))
-view_control_pivot_axis(view, e_value.OFFSET_Z, (setting_z_is_up ? c_axisblue : c_axisgreen), vec3(0), len, controlmat, Z, vec3(0))
+view_control_pivot_axis(view, e_control.PIVOT_X, e_value.OFFSET_X, c_axisred, vec3(0), len, mat, X, vec3(0, -90, 0))
+view_control_pivot_axis(view, e_control.PIVOT_Y, e_value.OFFSET_Y, (setting_z_is_up ? c_axisgreen : c_axisblue), vec3(0), len, mat, Y, vec3(90, 0, 0))
+view_control_pivot_axis(view, e_control.PIVOT_Z, e_value.OFFSET_Z, (setting_z_is_up ? c_axisblue : c_axisgreen), vec3(0), len, mat, Z, vec3(0))
 
 // Is dragging
-if (window_busy = "rendercontrol" && view_control_edit_view = view && view_control_edit > e_value.TO_Z && view_control_edit < e_value.WIDTH)
+if (window_busy = "rendercontrol" && view_control_edit_view = view && view_control_edit >= e_control.PIVOT_X && view_control_edit <= e_control.PIVOT_Z)
 {
 	mouse_cursor = cr_handpoint
 	
@@ -39,7 +34,7 @@ if (window_busy = "rendercontrol" && view_control_edit_view = view && view_contr
 	{
 		var vecmouse, vecdot, move, snapval;
 		move = vec3(0)
-		axis_edit = view_control_edit - e_value.OFFSET_X
+		axis_edit = view_control_edit - e_control.PIVOT_X
 		
 		// Find move factor
 		vecmouse = vec2(mouse_dx, mouse_dy)
@@ -48,13 +43,10 @@ if (window_busy = "rendercontrol" && view_control_edit_view = view && view_contr
 		
 		snapval = (setting_snap ? setting_snap_size_position : snap_min)
 		
-		if (setting_snap_mode = e_snap_mode.LOCAL && !setting_snap)
+		if (setting_snap_mode = e_snap_mode.LOCAL && setting_snap)
 			move[axis_edit] = snap(view_control_move_distance, snapval)
 		else
 			move[axis_edit] = view_control_move_distance
-		
-		if (setting_move_mode = e_move_mode.GLOBAL)
-			move = vec3_mul_matrix(move, matrix_inverse(mat))
 		
 		var newval;
 		

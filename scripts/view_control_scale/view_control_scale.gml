@@ -28,12 +28,12 @@ if (tool_selected != e_tool.TRANSFORM)
 	view_control_scale_all(view, mat, 130)
 
 // Draw each axis
-view_control_scale_axis(view, e_value.SCA_X, c_axisred, len, mat, X)
-view_control_scale_axis(view, e_value.SCA_Y, (setting_z_is_up ? c_axisgreen : c_axisblue), len, mat, Y)
-view_control_scale_axis(view, e_value.SCA_Z, (setting_z_is_up ? c_axisblue : c_axisgreen), len, mat, Z)
+view_control_scale_axis(view, e_control.SCA_X, e_value.SCA_X, c_axisred, len, mat, X)
+view_control_scale_axis(view, e_control.SCA_Y, e_value.SCA_Y, (setting_z_is_up ? c_axisgreen : c_axisblue), len, mat, Y)
+view_control_scale_axis(view, e_control.SCA_Z, e_value.SCA_Z, (setting_z_is_up ? c_axisblue : c_axisgreen), len, mat, Z)
 
 // Is dragging
-if (window_busy = "rendercontrol" && view_control_edit_view = view && view_control_edit > e_value.ROT_Z)
+if (window_busy = "rendercontrol" && view_control_edit_view = view && view_control_edit >= e_control.SCA_X && view_control_edit <= e_control.SCA_Z)
 {
 	mouse_cursor = cr_handpoint
 	
@@ -42,7 +42,7 @@ if (window_busy = "rendercontrol" && view_control_edit_view = view && view_contr
 	if (veclen > 0 && !mouse_still)
 	{
 		var vecmouse, vecdot, move, snapval, newval;
-		axis_edit = view_control_edit - e_value.SCA_X
+		axis_edit = view_control_edit - e_control.SCA_X
 		
 		// Find move factor
 		vecmouse = vec2(mouse_dx, mouse_dy)
@@ -61,7 +61,7 @@ if (window_busy = "rendercontrol" && view_control_edit_view = view && view_contr
 		if (setting_snap_mode = e_snap_mode.ABSOLUTE || !setting_snap)
 			newval = snap(newval, snapval)
 		
-		newval -= el_edit.value[view_control_edit]
+		newval -= el_edit.value[e_value.SCA_X + axis_edit]
 		
 		// Update
 		el_value_set_start(action_el_sca, true)
@@ -81,7 +81,7 @@ if (window_busy = "rendercontrol" && view_control_edit_view = view && view_contr
 }
 
 // Is dragging(XYZ scale)
-if (window_busy = "rendercontrolscalexyz" && view_control_edit_view = view && view_control_edit = -1)
+if (window_busy = "rendercontrolscalexyz" && view_control_edit_view = view && view_control_edit = e_control.SCA_XYZ)
 {
 	mouse_cursor = cr_handpoint
 	

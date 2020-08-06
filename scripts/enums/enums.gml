@@ -36,13 +36,6 @@ enum e_snap_mode
 	LOCAL
 }
 
-enum e_move_mode
-{
-	GLOBAL,
-	LOCAL,
-	GIMBAL
-}
-
 enum e_tool
 {
 	SELECT,
@@ -53,6 +46,34 @@ enum e_tool
 	TRANSFORM,
 	BEND,
 	amount
+}
+
+enum e_control
+{
+	POS_X,
+	POS_Y,
+	POS_Z,
+	POS_XY,
+	POS_XZ,
+	POS_YZ,
+	
+	ROT_X,
+	ROT_Y,
+	ROT_Z,
+	
+	SCA_X,
+	SCA_Y,
+	SCA_Z,
+	SCA_XYZ,
+	
+	PIVOT_X,
+	PIVOT_Y,
+	PIVOT_Z,
+	
+	BEND_X,
+	BEND_Y,
+	BEND_Z,
+	BEND_OFFSET
 }
 
 enum e_features

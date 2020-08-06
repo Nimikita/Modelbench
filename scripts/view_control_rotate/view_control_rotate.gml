@@ -27,19 +27,19 @@ if (view_control_matrix != null && view_control_edit != null)
 }
 
 // Draw each axis
-view_control_rotate_axis(view, e_value.ROT_X, c_axisred, xrot, len)
-view_control_rotate_axis(view, e_value.ROT_Y, (setting_z_is_up ? c_axisgreen : c_axisblue), yrot, len)
-view_control_rotate_axis(view, e_value.ROT_Z, (setting_z_is_up ? c_axisblue : c_axisgreen), zrot, len)
+view_control_rotate_axis(view, e_control.ROT_X, e_value.ROT_X, c_axisred, xrot, len)
+view_control_rotate_axis(view, e_control.ROT_Y, e_value.ROT_Y, (setting_z_is_up ? c_axisgreen : c_axisblue), yrot, len)
+view_control_rotate_axis(view, e_control.ROT_Z, e_value.ROT_Z, (setting_z_is_up ? c_axisblue : c_axisgreen), zrot, len)
 
 // Is dragging
-if (window_busy = "rendercontrol" && view_control_edit_view = view && view_control_edit >= e_value.ROT_X && view_control_edit <= e_value.ROT_Z)
+if (window_busy = "rendercontrol" && view_control_edit_view = view && view_control_edit >= e_control.ROT_X && view_control_edit <= e_control.ROT_Z)
 {
 	mouse_cursor = cr_handpoint
 	
 	if (!mouse_still)
 	{
 		var ang, prevang, rot, snapval, axesang, newval;
-		axis_edit = view_control_edit - e_value.ROT_X
+		axis_edit = view_control_edit - e_control.ROT_X
 		
 		// Find rotate amount
 		ang = point_direction(mouse_x - content_x, mouse_y - content_y, view_control_pos[X], view_control_pos[Y])
@@ -59,7 +59,7 @@ if (window_busy = "rendercontrol" && view_control_edit_view = view && view_contr
 		if (setting_snap_mode = e_snap_mode.ABSOLUTE || !setting_snap)
 			newval = snap(newval, snapval)
 			
-		newval -= el_edit.value[view_control_edit]
+		newval -= el_edit.value[e_value.ROT_X + axis_edit]
 		
 		// Update
 		el_value_set_start(action_el_rot, true)

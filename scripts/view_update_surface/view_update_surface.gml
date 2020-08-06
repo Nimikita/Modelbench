@@ -161,18 +161,18 @@ if (el_edit_amount > 0 && program_mode = e_mode.MODELING)
 						zup = !setting_z_is_up
 						angle = false
 						
-						if (view_control_edit >= e_value.OFFSET_X && view_control_edit <= e_value.OFFSET_Z)
+						if (view_control_edit >= e_control.PIVOT_X && view_control_edit <= e_control.PIVOT_Z) // Pivot
 							value = point3D(el_edit.value[e_value.OFFSET_X], el_edit.value[e_value.OFFSET_Y + zup], el_edit.value[e_value.OFFSET_Z - zup])
-						else if (view_control_edit >= e_value.POS_X && view_control_edit <= e_value.POS_Z)
+						else if (view_control_edit >= e_control.POS_X && view_control_edit <= e_control.POS_YZ) // Position
 							value = point3D(el_edit.value[e_value.POS_X], el_edit.value[e_value.POS_Y + zup], el_edit.value[e_value.POS_Z - zup])
-						else if (view_control_edit >= e_value.SCA_X && view_control_edit <= e_value.SCA_Z)
+						else if (view_control_edit >= e_control.SCA_X && view_control_edit <= e_control.SCA_Z)
 							value = point3D(el_edit.value[e_value.SCA_X], el_edit.value[e_value.SCA_Y + zup], el_edit.value[e_value.SCA_Z - zup])
-						else if (view_control_edit >= e_value.ROT_X && view_control_edit <= e_value.ROT_Z)
+						else if (view_control_edit >= e_control.ROT_X && view_control_edit <= e_control.ROT_Z)
 						{
 							value = point3D(el_edit.value[e_value.ROT_X], el_edit.value[e_value.ROT_Y + zup], el_edit.value[e_value.ROT_Z - zup])
 							angle = true
 						}
-						else if ((view_control_edit >= e_value.BEND_ANGLE_X && view_control_edit <= e_value.BEND_ANGLE_Z) || view_control_edit = e_value.BEND_OFFSET)
+						else if ((view_control_edit >= e_control.BEND_X && view_control_edit <= e_control.BEND_Z) || view_control_edit = e_control.BEND_OFFSET)
 						{
 							value = point3D(el_edit.value[e_value.BEND_ANGLE_X], el_edit.value[e_value.BEND_ANGLE_Y + zup], el_edit.value[e_value.BEND_ANGLE_Z - zup])
 							angle = true
@@ -184,7 +184,7 @@ if (el_edit_amount > 0 && program_mode = e_mode.MODELING)
 							tipstr = text_get("tooltipxyz", value[X], value[Y], value[Z])
 						
 						// Value-specific controls
-						if (view_control_edit = e_value.BEND_OFFSET)
+						if (view_control_edit = e_control.BEND_OFFSET)
 						{
 							value = el_edit.value[e_value.BEND_OFFSET]
 							tipstr = text_get("tooltipoffset", value)

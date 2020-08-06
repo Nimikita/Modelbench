@@ -1,6 +1,6 @@
 /// render_startup()
 
-globalvar render_width, render_height, render_ratio, render_camera, render_target, proj_from, render_proj_from, proj_matrix,
+globalvar render_width, render_height, render_ratio, render_camera, render_target, proj_from, render_proj_from, proj_matrix, view_matrix,
 		  view_proj_matrix, render_prev_color, render_prev_alpha, render_list, render_surface_time, render_background, render_overlay, render_ssao,
 		  render_shadows, render_aa;
 

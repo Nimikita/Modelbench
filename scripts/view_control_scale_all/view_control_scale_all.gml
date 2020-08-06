@@ -19,13 +19,13 @@ coord[Y] = round(coord[Y])
 // Check state
 if (window_busy = "rendercontrolscalexyz")
 {
-	if (view_control_edit != -1)
+	if (view_control_edit != e_control.SCA_XYZ)
 		return 0
 	
 	coord = view_control_scale_coords
 	view_control_scale_amount = point_distance(mouse_x - content_x, mouse_y - content_y, view_control_scale_coords[X], view_control_scale_coords[Y]) / radius
 }
-else if (view.control_mouseon_last = -1)
+else if (view.control_mouseon_last = e_control.SCA_XYZ)
 {
 	// Left click
 	if (mouse_left_pressed)
@@ -34,7 +34,7 @@ else if (view.control_mouseon_last = -1)
 		view_control_value_scale[X] = el_edit.value[e_value.SCA_X]
 		view_control_value_scale[Y] = el_edit.value[e_value.SCA_Y]
 		view_control_value_scale[Z] = el_edit.value[e_value.SCA_Z]
-		view_control_edit = -1
+		view_control_edit = e_control.SCA_XYZ
 		view_control_edit_view = view
 		view_control_scale_amount = point_distance(mouse_x - content_x, mouse_y - content_y, coord[X], coord[Y]) / radius
 		view_control_scale_coords[X] = coord[X]
@@ -59,7 +59,7 @@ else if (view.control_mouseon_last = -1)
 draw_set_color(c_background)
 
 // Draw circle
-if (view.control_mouseon_last = -1)
+if (view.control_mouseon_last = e_control.SCA_XYZ)
 	alpha = .5
 else
 	alpha = 0.25
@@ -104,7 +104,7 @@ else
 
 // Check mouse
 if (content_mouseon && abs(point_distance(mouse_x - content_x, mouse_y - content_y, coord[X], coord[Y]) - radius) < view_3d_control_width/2)
-	view.control_mouseon = -1
+	view.control_mouseon = e_control.SCA_XYZ
 	
 draw_set_color(c_white)
 draw_set_alpha(1)

@@ -1,5 +1,6 @@
-/// view_control_move_axis(view, valueid, color, start, length, mat, axis, rotation)
+/// view_control_move_axis(view, control, valueid, color, start, length, mat, axis, rotation)
 /// @arg view
+/// @arg control
 /// @arg valueid
 /// @arg color
 /// @arg start
@@ -8,16 +9,17 @@
 /// @arg axis
 /// @arg rotation
 
-var view, vid, color, start, length, mat, axis, rotation;
+var view, control, vid, color, start, length, mat, axis, rotation;
 var center3D, start3D, end3D, center2D, start2D, end2D;
 view = argument0
-vid = argument1
-color = argument2
-start = argument3
-length = argument4
-mat = argument5
-axis = vec3(argument6 = X, argument6 = Y, argument6 = Z)
-rotation = argument7
+control = argument1
+vid = argument2
+color = argument3
+start = argument4
+length = argument5
+mat = argument6
+axis = vec3(argument7 = X, argument7 = Y, argument7 = Z)
+rotation = argument8
 
 center3D = point3D_mul_matrix(vec3(0), mat)
 start3D = point3D_mul_matrix(start, mat)
@@ -36,9 +38,9 @@ end2D = view_shape_project(end3D)
 if (point3D_project_error)
 	return 0
 
-var alpha = percent(abs(vec3_dot(vec3_normalize(vec3_sub(cam_from, center3D)), vec3_normalize(vec3_sub(end3D, center3D)))), .975, .95);
+var alpha = percent(abs(vec3_dot(vec3_normalize(vec3_sub(end3D, center3D)), vec3_normalize(vec3_sub(cam_from, center3D)))), .9, .8);
 
-if ((window_busy = "rendercontrol" && view_control_edit = vid) || view.control_mouseon_last = vid)
+if ((window_busy = "rendercontrol" && view_control_edit = control) || view.control_mouseon_last = control)
 	alpha = 1
 
 if (alpha = 0)
