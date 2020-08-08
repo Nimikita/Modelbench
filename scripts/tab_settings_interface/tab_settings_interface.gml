@@ -56,11 +56,6 @@ tab_control_switch()
 draw_switch("settingssharedtextureuvs", dx, dy, setting_shared_texture_uvs, action_setting_shared_texture_uvs, true, "settingssharedtextureuvshelp")
 tab_next()
 
-// Shape outline opacity
-tab_control_meter()
-draw_meter("settingsshapeoutlineopacity", dx, dy, dw, round(setting_outline_opacity * 100), 48, 0, 100, 15, 1, tab.interface.tbx_outline_opacity, action_setting_shape_outline_opacity)
-tab_next()
-
 // Startup tips
 tab_control_switch()
 draw_switch("settingsstartuptips", dx, dy, setting_show_startup_tips, action_setting_startup_tips, true)

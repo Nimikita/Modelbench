@@ -58,7 +58,7 @@ if (window_busy = "rendercontrol" && view_control_edit_view = view && view_contr
 			move[i] -= el_edit.value[e_value.POS_X + i]
 			
 			// Snap distance? (Local snap)
-			if (setting_snap_mode = e_snap_mode.LOCAL && setting_snap)
+			if (!setting_snap_absolute && setting_snap)
 				move[i] = snap(move[i], snapval)
 			
 			// Add object value
@@ -68,7 +68,7 @@ if (window_busy = "rendercontrol" && view_control_edit_view = view && view_contr
 			pos[i] = el_value_clamp(e_value.POS_X + i, pos[i])
 			
 			// Snap final value? (Absolute snap)
-			if ((setting_snap_mode = e_snap_mode.ABSOLUTE) || !setting_snap)
+			if (setting_snap_absolute || !setting_snap)
 				pos[i] = snap(pos[i], snapval)
 			
 			// Get difference
@@ -109,7 +109,7 @@ else if (window_busy = "rendercontrol" && view_control_edit_view = view && view_
 		
 		snapval = (setting_snap ? setting_snap_size_position : snap_min)
 		
-		if (setting_snap_mode = e_snap_mode.LOCAL && setting_snap)
+		if (!setting_snap_absolute && setting_snap)
 			move[axis_edit] = snap(view_control_move_distance, snapval)
 		else
 			move[axis_edit] = view_control_move_distance
@@ -122,7 +122,7 @@ else if (window_busy = "rendercontrol" && view_control_edit_view = view && view_
 			
 			newval[i] = el_value_clamp(e_value.POS_X + i, newval[i])
 			
-			if ((setting_snap_mode = e_snap_mode.ABSOLUTE && move[i] != 0) || !setting_snap)
+			if ((setting_snap_absolute && move[i] != 0) || !setting_snap)
 				newval[i] = snap(newval[i], snapval)
 			
 			newval[i] -= el_edit.value[e_value.POS_X + i]

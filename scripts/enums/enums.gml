@@ -82,6 +82,13 @@ enum e_features
 	OBJ
 }
 
+// Chevrons
+enum chevrons
+{
+	DOWN,
+	UP
+}
+
 // Icons
 enum icons
 {
@@ -151,7 +158,7 @@ enum icons
 	LOOP,
 	OPTIONS,
 	TOOLSET_POSITION,
-	SCALE,
+	OVERLAYS,
 	TOOLSET_ROTATE,
 	UV_MIRROR,
 	UV_FLIP,
@@ -192,6 +199,9 @@ enum icons
 	GLOBAL,
 	LOCAL,
 	GIMBAL,
+	SHADING,
+	BLOCKY_BENDING,
+	WIND,
 	
 	PLACEHOLDER = 11
 }

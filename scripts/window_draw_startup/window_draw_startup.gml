@@ -42,7 +42,7 @@ else
 	dx = centerx + (browsewidth + 24 + newmodelwidth)
 
 // New model
-draw_button_options("startupnewmodeloptions", dx, dy, 24, 36)
+draw_settings_button("startupnewmodeloptions", dx, dy, 24, 36, true)
 dx -= newmodelwidth
 draw_button_primary("startupnewmodel", dx, dy, newmodelwidth, model_create, icons.NEW_FILE)
 

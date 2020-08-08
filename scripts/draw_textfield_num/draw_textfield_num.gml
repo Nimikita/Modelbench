@@ -1,4 +1,4 @@
-/// draw_textfield_num(name, x, y, width, value, multiplier, min, max, default, snap, textbox, script, [disabled])
+/// draw_textfield_num(name, x, y, width, value, multiplier, min, max, default, snap, textbox, script, [disabled, [right_side]])
 /// @arg name
 /// @arg x
 /// @arg y
@@ -11,10 +11,11 @@
 /// @arg snap
 /// @arg textbox
 /// @arg script
-/// @arg [disabled]
+/// @arg [disabled
+/// @arg [right_side]]
 
-var name, xx, yy, wid, value, mul, minval, maxval, def, snapval, tbx, script, disabled;
-var capwidth, hei;
+var name, xx, yy, wid, value, mul, minval, maxval, def, snapval, tbx, script, disabled, right_side;
+var capwidth, hei, fieldx;
 name = argument[0]
 xx = argument[1]
 yy = argument[2]
@@ -28,9 +29,13 @@ snapval = argument[9]
 tbx = argument[10]
 script = argument[11]
 disabled = false
+right_side = false
 
 if (argument_count > 12)
 	disabled = argument[12]
+
+if (argument_count > 13)
+	right_side = argument[13]
 
 hei = 28
 capwidth = string_width_font(text_get(name), font_emphasis) + 10
@@ -41,7 +46,12 @@ if (xx + wid + capwidth < content_x || xx > content_x + content_width || yy + he
 if (!disabled)
 	context_menu_area(xx, yy, wid + capwidth, hei, "contextmenuvalue", value, e_value_type.NUMBER, script, def)
 
-if (draw_inputbox(name, xx + capwidth, yy, wid, 28, string(def), tbx, null, disabled))
+if (right_side)
+	fieldx = dx + dw - wid
+else
+	fieldx = xx + capwidth
+
+if (draw_inputbox(name, fieldx, yy, wid, 28, string(def), tbx, null, disabled))
 	script_execute(script, clamp(snap(string_get_real(tbx.text, def), snapval), minval, maxval), false)
 
 // Use microanimation from inputbox to determine color
@@ -52,7 +62,7 @@ labelcolor = merge_color(labelcolor, c_text_tertiary, mcroani_arr[e_mcroani.DISA
 labelalpha = lerp(a_text_secondary, 1, mcroani_arr[e_mcroani.ACTIVE])
 labelalpha = lerp(labelalpha, a_text_tertiary, mcroani_arr[e_mcroani.DISABLED])
 
-draw_box_hover(xx + capwidth, yy, wid, hei, max(mcroani_arr[e_mcroani.HOVER], mcroani_arr[e_mcroani.ACTIVE]) * (1 - mcroani_arr[e_mcroani.DISABLED]))
+draw_box_hover(fieldx, yy, wid, hei, max(mcroani_arr[e_mcroani.HOVER], mcroani_arr[e_mcroani.ACTIVE]) * (1 - mcroani_arr[e_mcroani.DISABLED]))
 
 draw_label(text_get(name), xx, yy + 21, fa_left, fa_bottom, labelcolor, labelalpha, font_emphasis)
 
@@ -66,7 +76,7 @@ if (app_mouse_box(xx, yy, capwidth, hei) && content_mouseon && window_focus != s
 }
 
 // Textbox press
-if (app_mouse_box(xx + capwidth, yy, wid, hei) && content_mouseon && window_focus != string(tbx) && !disabled)
+if (app_mouse_box(fieldx, yy, wid, hei) && content_mouseon && window_focus != string(tbx) && !disabled)
 {
 	if (mouse_left_pressed)
 	{

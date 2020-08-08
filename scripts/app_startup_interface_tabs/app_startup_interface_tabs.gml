@@ -235,19 +235,5 @@ with (settings)
 	
 	// Interface
 	interface = tab_add_category("interface", tab_settings_interface, false)
-	with (interface)
-	{
-		tbx_outline_opacity = new_textbox_integer()
-		tbx_outline_opacity.suffix = "%"
-	}
-	
-	// Graphics
-	graphics = tab_add_category("graphics", tab_settings_graphics, false)
-	with (graphics)
-	{
-		tbx_wind_speed = new_textbox_integer()
-		tbx_wind_speed.suffix = "%"
-		tbx_wind_strength = new_textbox_decimals()
-	}
 }
 

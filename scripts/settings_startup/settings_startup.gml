@@ -82,15 +82,9 @@ setting_language_filename = "english.mblanguage"
 setting_tip_show = true
 setting_z_is_up = false
 setting_shared_texture_uvs = true
-setting_outline_opacity = .15
 setting_show_startup_tips = true
 
 setting_blocky_bending = false
-setting_wind = true
-setting_wind_speed = .45
-setting_wind_strength = .5
-setting_modeling_ssao = true
-setting_lighting = true
 
 setting_render_shadows = true
 setting_render_shadows_blur_quality = 64
@@ -139,11 +133,28 @@ setting_uv_editor_size = 0.5
 
 // Snap
 setting_snap = false
-setting_snap_mode = e_snap_mode.ABSOLUTE
+setting_snap_absolute = false
 setting_snap_size_position = 1
 setting_snap_size_rotation = 15
 setting_snap_size_scale = 1
 setting_snap_size_uv = 1
+
+// Overlays
+setting_overlays = true
+setting_overlays_grid = true
+setting_overlays_gizmos = true
+setting_overlays_outlines = true
+setting_overlays_outline_opacity = .15
+
+// Wind
+setting_wind = true
+setting_wind_speed = .45
+setting_wind_strength = .5
+
+// Shading
+setting_shading = true
+setting_shading_ao = true
+setting_shading_lighting = true
 
 settings_load()
 interface_update()

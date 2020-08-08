@@ -69,12 +69,6 @@ json_save_object_start("controls")
 	
 	json_save_var_bool("smooth_camera", setting_smooth_camera)
 	
-	json_save_var_bool("snap", setting_snap)
-	json_save_var("snap_mode", setting_snap_mode)
-	json_save_var("snap_size_position", setting_snap_size_position)
-	json_save_var("snap_size_rotation", setting_snap_size_rotation)
-	json_save_var("snap_size_scale", setting_snap_size_scale)
-	json_save_var("snap_size_uv", setting_snap_size_uv)
 
 json_save_object_done()
 
@@ -86,7 +80,6 @@ json_save_object_start("interface")
 	json_save_var_color("accent_custom", setting_accent_custom)
 	json_save_var_bool("z_is_up", setting_z_is_up)
 	json_save_var_bool("shared_texture_uvs", setting_shared_texture_uvs)
-	json_save_var("outline_opacity", setting_outline_opacity)
 	json_save_var_bool("startup_tips", setting_show_startup_tips)
 	
 	json_save_var("panel_left_size", panel_map[?"left"].size)
@@ -102,17 +95,6 @@ json_save_object_start("interface")
 	
 	json_save_var_bool("adjust_pivot_resize", setting_adjust_pivot_resize)
 	
-json_save_object_done()
-
-json_save_object_start("graphics")
-
-	json_save_var_bool("blocky_bending", setting_blocky_bending)
-	json_save_var_bool("wind", setting_wind)
-	json_save_var("wind_speed", setting_wind_speed)
-	json_save_var("wind_strength", setting_wind_strength)
-	json_save_var_bool("modeling_ssao", setting_modeling_ssao)
-	json_save_var_bool("lighting", setting_lighting)
-
 json_save_object_done()
 
 json_save_object_start("render")
@@ -147,6 +129,33 @@ json_save_object_start("preview")
 	json_save_var("export_size", setting_preview_export_size)
 	json_save_var_bool("background", setting_preview_background)
 
+json_save_object_done()
+
+json_save_object_start("viewport")
+
+	json_save_var_bool("snap", setting_snap)
+	json_save_var("snap_absolute", setting_snap_absolute)
+	json_save_var("snap_size_position", setting_snap_size_position)
+	json_save_var("snap_size_rotation", setting_snap_size_rotation)
+	json_save_var("snap_size_scale", setting_snap_size_scale)
+	json_save_var("snap_size_uv", setting_snap_size_uv)
+	
+	json_save_var_bool("overlays", setting_overlays)
+	json_save_var_bool("overlays_grid", setting_overlays_grid)
+	json_save_var_bool("overlays_gizmos", setting_overlays_gizmos)
+	json_save_var_bool("overlays_outlines", setting_overlays_outlines)
+	json_save_var("overlays_outline_opacity", setting_overlays_outline_opacity)
+	
+	json_save_var_bool("wind", setting_wind)
+	json_save_var("wind_speed", setting_wind_speed)
+	json_save_var("wind_strength", setting_wind_strength)
+	
+	json_save_var_bool("shading", setting_shading)
+	json_save_var_bool("shading_ao", setting_shading_ao)
+	json_save_var_bool("shading_lighting", setting_shading_lighting)
+	
+	json_save_var_bool("blocky_bending", setting_blocky_bending)
+	
 json_save_object_done()
 
 json_save_object_done()

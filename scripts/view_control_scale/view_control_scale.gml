@@ -52,13 +52,13 @@ if (window_busy = "rendercontrol" && view_control_edit_view = view && view_contr
 		snapval = (setting_snap ? setting_snap_size_scale : snap_min)
 		move = view_control_move_distance
 		
-		if (setting_snap_mode = e_snap_mode.LOCAL && setting_snap)
+		if (!setting_snap_absolute && setting_snap)
 			move = snap(move, snapval)
 		
 		newval = view_control_value + move
 		newval = el_value_clamp(e_value.SCA_X + axis_edit, newval)
 		
-		if (setting_snap_mode = e_snap_mode.ABSOLUTE || !setting_snap)
+		if (setting_snap_absolute || !setting_snap)
 			newval = snap(newval, snapval)
 		
 		newval -= el_edit.value[e_value.SCA_X + axis_edit]

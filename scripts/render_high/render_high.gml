@@ -220,7 +220,7 @@ surface_set_target(finalsurf)
 	// World
 	render_world_start()
 	
-	if (program_mode = e_mode.MODELING && setting_lighting)
+	if (program_mode = e_mode.MODELING && setting_shading_lighting && setting_shading)
 		render_world(e_render_mode.COLOR_LIGHT)
 	else
 		render_world(e_render_mode.COLOR)

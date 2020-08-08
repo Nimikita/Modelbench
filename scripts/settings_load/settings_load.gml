@@ -106,12 +106,7 @@ if (ds_map_valid(controlsmap))
 	
 	setting_smooth_camera = value_get_real(controlsmap[?"smooth_camera"], setting_smooth_camera)
 	
-	setting_snap = value_get_real(controlsmap[?"snap"], setting_snap)
-	setting_snap_mode = value_get_real(controlsmap[?"snap_mode"], setting_snap_mode)
-	setting_snap_size_position = value_get_real(controlsmap[?"snap_size_position"], setting_snap_size_position)
-	setting_snap_size_rotation = value_get_real(controlsmap[?"snap_size_rotation"], setting_snap_size_rotation)
-	setting_snap_size_scale = value_get_real(controlsmap[?"snap_size_scale"], setting_snap_size_scale)
-	setting_snap_size_uv = value_get_real(controlsmap[?"snap_size_uv"], setting_snap_size_uv)
+	
 }
 
 // Interface
@@ -139,7 +134,7 @@ if (ds_map_valid(interfacemap))
 	
 	setting_z_is_up = value_get_real(interfacemap[?"z_is_up"], setting_z_is_up)
 	setting_shared_texture_uvs = value_get_real(interfacemap[?"shared_texture_uvs"], setting_shared_texture_uvs)
-	setting_outline_opacity = value_get_real(interfacemap[?"outline_opacity"], setting_outline_opacity)
+	
 	setting_show_startup_tips = value_get_real(interfacemap[?"startup_tips"], setting_show_startup_tips)
 	
 	setting_panel_left_size = value_get_real(interfacemap[?"panel_left_size"], setting_panel_left_size)
@@ -154,18 +149,6 @@ if (ds_map_valid(interfacemap))
 	setting_uv_editor_size = value_get_real(interfacemap[?"uv_editor_size"], setting_uv_editor_size)
 	
 	setting_adjust_pivot_resize = value_get_real(interfacemap[?"adjust_pivot_resize"], setting_adjust_pivot_resize)
-}
-
-// Graphics
-var graphicsmap = map[?"graphics"];
-if (ds_map_valid(graphicsmap))
-{
-	setting_blocky_bending = value_get_real(graphicsmap[?"blocky_bending"], setting_blocky_bending)
-	setting_wind = value_get_real(graphicsmap[?"wind"], setting_wind)
-	setting_wind_speed = value_get_real(graphicsmap[?"wind_speed"], setting_wind_speed)
-	setting_wind_strength = value_get_real(graphicsmap[?"wind_strength"], setting_wind_strength)
-	setting_modeling_ssao = value_get_real(graphicsmap[?"modeling_ssao"], setting_modeling_ssao)
-	setting_lighting = value_get_real(graphicsmap[?"lighting"], setting_lighting)
 }
 
 // Render
@@ -202,6 +185,34 @@ if (ds_map_valid(previewmap))
 	
 	setting_preview_export_size = value_get_real(previewmap[?"export_size"], setting_preview_export_size)
 	setting_preview_background = value_get_real(previewmap[?"background"], setting_preview_background)
+}
+
+// Viewport
+var viewportmap = map[?"viewport"];
+if (ds_map_valid(viewportmap))
+{
+	setting_snap = value_get_real(viewportmap[?"snap"], setting_snap)
+	setting_snap_absolute = value_get_real(viewportmap[?"snap_absolute"], setting_snap_absolute)
+	setting_snap_size_position = value_get_real(viewportmap[?"snap_size_position"], setting_snap_size_position)
+	setting_snap_size_rotation = value_get_real(viewportmap[?"snap_size_rotation"], setting_snap_size_rotation)
+	setting_snap_size_scale = value_get_real(viewportmap[?"snap_size_scale"], setting_snap_size_scale)
+	setting_snap_size_uv = value_get_real(viewportmap[?"snap_size_uv"], setting_snap_size_uv)
+	
+	setting_overlays = value_get_real(viewportmap[?"overlays"], setting_overlays)
+	setting_overlays_grid = value_get_real(viewportmap[?"overlays_grid"], setting_overlays_grid)
+	setting_overlays_gizmos = value_get_real(viewportmap[?"overlays_gizmos"], setting_overlays_gizmos)
+	setting_overlays_outlines = value_get_real(viewportmap[?"overlays_outlines"], setting_overlays_outlines)
+	setting_overlays_outline_opacity = value_get_real(viewportmap[?"overlays_outline_opacity"], setting_overlays_outline_opacity)
+	
+	setting_wind = value_get_real(viewportmap[?"wind"], setting_wind)
+	setting_wind_speed = value_get_real(viewportmap[?"wind_speed"], setting_wind_speed)
+	setting_wind_strength = value_get_real(viewportmap[?"wind_strength"], setting_wind_strength)
+	
+	setting_shading = value_get_real(viewportmap[?"shading"], setting_shading)
+	setting_shading_ao = value_get_real(viewportmap[?"shading_ao"], setting_shading_ao)
+	setting_shading_lighting = value_get_real(viewportmap[?"shading_lighting"], setting_shading_lighting)
+	
+	setting_blocky_bending = value_get_real(viewportmap[?"blocky_bending"], setting_blocky_bending)
 }
 
 ds_map_destroy(map)

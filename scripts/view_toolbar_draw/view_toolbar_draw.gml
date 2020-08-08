@@ -37,6 +37,7 @@ draw_set_alpha(toolset_alpha)
 // Background
 draw_box(dx, dy, dw, dh, false, c_background, 1)
 draw_dropshadow(dx, dy, dw, dh, c_black, 1)
+draw_outline(dx, dy, dw, dh, 1, c_border, a_border)
 
 dy += 4
 dx += 4
@@ -137,20 +138,20 @@ if (dw > dh)
 else
 	dy += buttonsize
 
-// Transform tool(Position, rotate, scale)
-tip_set_shortcut(setting_key_tool_transform, setting_key_tool_transform_control)
-if (draw_button_icon("toolsettooltransform", dx, dy, 28, 28, tool_selected = e_tool.TRANSFORM, icons.TRANSFORM, null, false, "toolsettooltransform"))
-	tool_selected = e_tool.TRANSFORM
+// Bend tool
+tip_set_shortcut(setting_key_tool_bend, setting_key_tool_bend_control)
+if (draw_button_icon("toolsettoolbend", dx, dy, 28, 28, tool_selected = e_tool.BEND, icons.BEND, null, false, "toolsettoolbend"))
+	tool_selected = e_tool.BEND
 
 if (dw > dh)
 	dx += buttonsize
 else
 	dy += buttonsize
 
-// Bend tool
-tip_set_shortcut(setting_key_tool_bend, setting_key_tool_bend_control)
-if (draw_button_icon("toolsettoolbend", dx, dy, 28, 28, tool_selected = e_tool.BEND, icons.BEND, null, false, "toolsettoolbend"))
-	tool_selected = e_tool.BEND
+// Transform tool(Position, rotate, scale)
+tip_set_shortcut(setting_key_tool_transform, setting_key_tool_transform_control)
+if (draw_button_icon("toolsettooltransform", dx, dy, 28, 28, tool_selected = e_tool.TRANSFORM, icons.TRANSFORM, null, false, "toolsettooltransform"))
+	tool_selected = e_tool.TRANSFORM
 
 draw_set_alpha(1)
 tip_set_shortcut(-1, false)

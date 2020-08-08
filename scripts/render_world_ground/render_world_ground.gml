@@ -1,6 +1,9 @@
 /// render_world_ground()
 /// @desc Renders a grid in the middle of the world
 
+if (!setting_overlays || !setting_overlays_grid)
+	return 0
+
 // Shading
 render_set_uniform_color("uBlendColor", c_white, 1)
 render_set_uniform_int("uIsGround", 1)

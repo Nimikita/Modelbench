@@ -196,6 +196,14 @@
 		"redo": "Redo",
 		"snapenable": "Enable tool snapping",
 		"snapdisable": "Disable tool snapping",
+		"overlaysenable": "Enable overlays",
+		"overlaysdisable": "Disable overlays",
+		"windenable": "Enable wind",
+		"winddisable": "Disable wind",
+		"shadingenable": "Enable shading",
+		"shadingdisable": "Disable shading",
+		"blockybendingenable": "Enable blocky bending",
+		"blockybendingdisable": "Disable blocky bending",
 		"uveditor/": {
 			"editxy": "Edit X/Y",
 			"editwidthheight": "Edit width/height",
@@ -269,6 +277,29 @@
 		"settings": "Settings",
 		"about": "About"
 	},
+	"settingsmenu/": {
+		"snap/": {
+			"move": "Size (Move)",
+			"rotate": "Size (Rotate)",
+			"scale": "Size (Scale)",
+			"uv": "Size (UVs)",
+			"absolute": "Absolute snapping"
+		},
+		"overlays/": {
+			"grid": "Grid",
+			"gizmos": "Gizmos",
+			"outlines": "Outlines",
+			"outlineopacity": "Shape outline opacity"
+		},
+		"wind/": {
+			"speed": "Wind speed",
+			"strength": "Wind strength"
+		},
+		"shading/": {
+			"ao": "Ambient occlusion",
+			"lighting": "Lighting"
+		}
+	},
 	"key/": {
         "left": "Left",
         "right": "Right",
@@ -316,7 +347,6 @@
 	"general": "GENERAL",
 	"controls": "CONTROLS",
 	"interface": "INTERFACE",
-	"graphics": "GRAPHICS",
 	"assets/": {
 		"modelname": "Model name",
 		"emptymodelname": "Model name cannot be empty.",
@@ -554,18 +584,10 @@
 		"zisup": "Z is up",
 		"sharedtextureuvs": "Display shared texture UVs",
 		"sharedtextureuvshelp": "Displays shapes that share a texture in the UV editor.",
-		"shapeoutlineopacity": "Shape outline opacity",
 		"startuptips": "Show startup tips",
 		"looksensitivity": "Look sensitivity",
 		"smoothcamera": "Smooth camera",
-		"smoothcameraamount": "Amount",
-		"graphicsblockybending": "Blocky bending",
-		"graphicsblockybendinghelp": "Enable blocky bending on parts with no custom bend size.",
-		"graphicswind": "Wind",
-		"graphicswindspeed": "Speed",
-		"graphicswindstrength": "Strength",
-		"graphicsmodelingssao": "Modeling SSAO",
-		"graphicslighting": "Lighting"
+		"smoothcameraamount": "Amount"
 	},
 	"about/": {
 		"version": "Version %1",

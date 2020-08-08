@@ -107,7 +107,7 @@ if (program_mode = e_mode.PREVIEW && setting_preview_overlay && (content_width >
 // Mouse on
 view.mouseon = app_mouse_box(boxx, boxy, boxw, boxh)
 
-// Viewport toolbar
+// Toolset toolbar
 var toolbarx, toolbary, toolbarwid, toolbarhei;
 toolbarx = boxx + 16
 toolbary = boxy + 16
@@ -124,3 +124,20 @@ if (app_mouse_box(toolbarx, toolbary, toolbarwid, toolbarhei))
 	view.mouseon = false
 
 view_toolbar_draw(toolbarx, toolbary, toolbarwid, toolbarhei)
+
+// Viewport toolbar
+toolbarx = floor(boxx + (boxw/2) - (toolbar_viewport_width/2))
+toolbary = boxy + 16
+toolbarwid = toolbar_viewport_width
+toolbarhei = 36
+
+if (toolbary + toolbarhei + 16 >= content_height)
+{
+	toolbarwid = toolbarhei
+	toolbarhei = 36
+}
+
+if (app_mouse_box(toolbarx, toolbary, toolbarwid, toolbarhei))
+	view.mouseon = false
+
+view_toolbar_viewport_draw(toolbarx, toolbary, toolbarwid, toolbarhei)

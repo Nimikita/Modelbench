@@ -6,6 +6,7 @@ inease = "easeoutcirc"
 outease = "easeoutcirc"
 
 toolset_alpha += (toolset_alpha_goal - toolset_alpha) / max(1, 4 / delta)
+toolbar_viewport_alpha += (toolbar_viewport_alpha_goal - toolbar_viewport_alpha) / max(1, 4 / delta)
 
 // Component animations
 with (obj_micro_animation)

@@ -15,7 +15,8 @@ view_shape_outline()
 if (el_edit_amount > 0 && program_mode = e_mode.MODELING)
 {
 	// Selection
-	view.surface_select = render_select(view.surface_select);
+	if (setting_overlays && setting_overlays_outlines)
+		view.surface_select = render_select(view.surface_select);
 	
 	if (surface_exists(render_overlay) && ((surface_get_width(render_overlay) != content_width * 2) || (surface_get_height(render_overlay) != content_height * 2)))
 		surface_free(render_overlay)
@@ -36,7 +37,7 @@ if (el_edit_amount > 0 && program_mode = e_mode.MODELING)
 			
 			draw_surface_ext(render_target, 0, 0, 2, 2, 0, c_white, 1)
 			
-			if (el_edit != null && el_edit.parent != null)
+			if (el_edit != null && el_edit.parent != null && (setting_overlays && setting_overlays_gizmos))
 			{
 				if (!el_edit.hidden && !el_edit.tree_hidden)
 				{
@@ -129,7 +130,7 @@ if (el_edit_amount > 0 && program_mode = e_mode.MODELING)
 							case e_tool.PIVOT: icon = icons.PIVOT; break;
 							case e_tool.MOVE: icon = icons.TOOLSET_POSITION; break;
 							case e_tool.ROTATE: icon = icons.TOOLSET_ROTATE; break;
-							case e_tool.SCALE: icon = icons.SCALE; break;
+							case e_tool.SCALE: icon = icons.TOOLSET_SCALE; break;
 							case e_tool.TRANSFORM: icon = icons.TRANSFORM; break;
 							case e_tool.BEND: icon = icons.BEND; break;
 						}
