@@ -36,3 +36,4 @@ c_axiscyan = theme.cyan
 c_axisyellow = theme.yellow
 c_axismagenta = theme.magenta
 
+update_interface_wait = false

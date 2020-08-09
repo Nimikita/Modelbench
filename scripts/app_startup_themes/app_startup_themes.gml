@@ -10,6 +10,8 @@ globalvar c_border, a_border, c_overlay, a_overlay;
 globalvar c_background, c_background_secondary, c_button_text, a_button_text;
 globalvar c_viewport_top, c_viewport_bottom, c_error, c_warning, c_success, c_axisred, c_axisgreen, c_axisblue, c_axiscyan, c_axisyellow, c_axismagenta, c_bend;
 
+update_interface_wait = false
+
 // Alphas
 a_accent = 1
 a_accent_hover = 1

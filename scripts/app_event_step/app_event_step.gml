@@ -36,5 +36,8 @@ if (model_create_wait)
 	model_create_wait = false
 }
 
+if (update_interface_wait)
+	interface_update()
+
 current_step += 60 / room_speed
 step_event_time = current_time - step_event_time_start
