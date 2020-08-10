@@ -41,28 +41,21 @@ if (window_busy = "rendercontrol" && view_control_edit_view = view && view_contr
 	// Move
 	if (!mouse_still)
 	{
-		var move, pos, mat, snapval;
-		
-		// Get world space position of ray cast
+		var move, pos, snapval;
 		move = point3D_plane_intersect(view_control_plane_origin, view_control_plane_normal, cam_from, view_control_ray_dir)
-		
-		// Convert world space into gimbal
-		mat = (el_edit.element_type = TYPE_PART ? el_edit.matrix_edit : el_edit.matrix_parent)
+		move = point3D_sub(move, view_control_plane_origin)
 		move = vec3_mul_matrix(move, matrix_inverse(mat))
 		
 		snapval = (setting_snap ? setting_snap_size_position : snap_min)
 		
 		for (var i = X; i <= Z; i++)
 		{
-			// Get distance
-			move[i] -= el_edit.value[e_value.POS_X + i]
-			
 			// Snap distance? (Local snap)
 			if (!setting_snap_absolute && setting_snap)
 				move[i] = snap(move[i], snapval)
 			
 			// Add object value
-			pos[i] = el_edit.value[e_value.POS_X + i] + move[i]
+			pos[i] = view_control_value[i] + move[i]
 			
 			// Clamp value
 			pos[i] = el_value_clamp(e_value.POS_X + i, pos[i])
