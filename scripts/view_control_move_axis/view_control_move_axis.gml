@@ -75,7 +75,7 @@ else if (view.control_mouseon_last = vid)
 	if (mouse_right_pressed && keyboard_check(vk_shift))
 	{
 		axis_edit = vid
-		action_el_pos(el_edit.value_default[vid], false)
+		action_el_pos(element_value_default(vid), false)
 		app_mouse_clear()
 	}
 	

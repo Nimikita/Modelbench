@@ -1271,6 +1271,14 @@
             }
         },
         {
+            "Key": "216899d8-47ed-4c4a-9a51-dc69e139e1e7",
+            "Value": {
+                "id": "f3e2e468-2b3b-4980-b90d-4ce10336086b",
+                "resourcePath": "scripts\\view_control_move_pan\\view_control_move_pan.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "21c31ac3-3f3b-442f-ae5e-da4198cd925b",
             "Value": {
                 "id": "5e27ce5d-9107-465e-b2e3-b1e8a2e75337",
@@ -9062,6 +9070,7 @@
         "b2a8e7fd-245b-446a-96c1-750be958b03f",
         "0aeafbb8-41d9-453f-85f8-dae76ae47aea",
         "9a2e0823-cabd-4c9c-99dc-caa6fa46565f",
+        "216899d8-47ed-4c4a-9a51-dc69e139e1e7",
         "c82804f1-5cf1-4bdb-bac2-fe6c4b7b345a",
         "66558d49-76c4-42c2-9d35-edd010da73e3",
         "adaa038e-78a7-4ac7-ad7c-d34aaae5a683",

@@ -137,6 +137,9 @@ if (el_edit_amount > 0 && program_mode = e_mode.MODELING)
 						
 						if (icon != null)
 						{
+							if (view.control_mouseon = e_control.POS_PAN)
+								draw_circle_ext(origin2d[X], origin2d[Y], 32, false, c_hover, a_hover)
+							
 							draw_image(spr_dropshadow_14, 0, origin2d[X], origin2d[Y], 2, 2, c_white, 1)
 							draw_circle_ext(origin2d[X], origin2d[Y], 28, false, c_background, 1)
 							draw_image(spr_icons, icon, origin2d[X], origin2d[Y], 2, 2, c_text_secondary, a_text_secondary)
@@ -164,7 +167,7 @@ if (el_edit_amount > 0 && program_mode = e_mode.MODELING)
 						
 						if (view_control_edit >= e_control.PIVOT_X && view_control_edit <= e_control.PIVOT_Z) // Pivot
 							value = point3D(el_edit.value[e_value.OFFSET_X], el_edit.value[e_value.OFFSET_Y + zup], el_edit.value[e_value.OFFSET_Z - zup])
-						else if (view_control_edit >= e_control.POS_X && view_control_edit <= e_control.POS_YZ) // Position
+						else if (view_control_edit >= e_control.POS_X && view_control_edit <= e_control.POS_PAN) // Position
 							value = point3D(el_edit.value[e_value.POS_X], el_edit.value[e_value.POS_Y + zup], el_edit.value[e_value.POS_Z - zup])
 						else if (view_control_edit >= e_control.SCA_X && view_control_edit <= e_control.SCA_Z)
 							value = point3D(el_edit.value[e_value.SCA_X], el_edit.value[e_value.SCA_Y + zup], el_edit.value[e_value.SCA_Z - zup])

@@ -47,9 +47,10 @@ else if (view.control_mouseon_last = e_control.SCA_XYZ)
 	{
 		axis_edit = X
 		el_value_set_start(action_el_sca, true)
-		el_value_set(e_value.SCA_X, el_edit.value_default[e_value.SCA_X], false)
-		el_value_set(e_value.SCA_Y, el_edit.value_default[e_value.SCA_Y], false)
-		el_value_set(e_value.SCA_Z, el_edit.value_default[e_value.SCA_Z], false)
+		
+		for (var i = X; i <= Z; i++)
+			el_value_set(e_value.SCA_X + i, element_value_default(e_value.SCA_X + i), false)
+		
 		el_value_set_done()
 		app_mouse_clear()
 	}

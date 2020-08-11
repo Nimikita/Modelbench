@@ -33,8 +33,9 @@ pe = ps + (len / 5)
 view_control_move_plane(view, e_control.POS_XY, point3D(1, 1, 0), (setting_z_is_up ? c_axisblue : c_axisgreen), mat, vec3(0, 0, 1), point3D(ps, ps, 0), point3D(pe, ps, 0), point3D(pe, pe, 0), point3D(ps, pe, 0)) // XY
 view_control_move_plane(view, e_control.POS_XZ, point3D(1, 0, 1), (setting_z_is_up ? c_axisgreen : c_axisblue), mat, vec3(0, 1, 0), point3D(ps, 0, ps), point3D(pe, 0, ps), point3D(pe, 0, pe), point3D(ps, 0, pe)) // XZ
 view_control_move_plane(view, e_control.POS_YZ, point3D(0, 1, 1), c_axisred, mat, vec3(1, 0, 0), point3D(0, ps, ps), point3D(0, pe, ps), point3D(0, pe, pe), point3D(0, ps, pe)) // YZ
+view_control_move_pan(view, 14)
 
-if (window_busy = "rendercontrol" && view_control_edit_view = view && view_control_edit >= e_control.POS_XY && view_control_edit <= e_control.POS_YZ) // Dragging plane
+if (window_busy = "rendercontrol" && view_control_edit_view = view && view_control_edit >= e_control.POS_XY && view_control_edit <= e_control.POS_PAN) // Dragging plane
 {
 	mouse_cursor = cr_handpoint
 	
@@ -53,6 +54,8 @@ if (window_busy = "rendercontrol" && view_control_edit_view = view && view_contr
 			// Snap distance? (Local snap)
 			if (!setting_snap_absolute && setting_snap)
 				move[i] = snap(move[i], snapval)
+			
+			move[i] /= app.root_scale
 			
 			// Add object value
 			pos[i] = view_control_value[i] + move[i]
@@ -109,7 +112,7 @@ else if (window_busy = "rendercontrol" && view_control_edit_view = view && view_
 		
 		for (var i = X; i <= Z; i++)
 		{
-			move[i] /= el_edit.value_inherit[e_value.SCA_X + i]
+			move[i] /= app.root_scale
 			
 			newval[i] = view_control_value[i] + move[i]
 			

@@ -56,6 +56,7 @@ enum e_control
 	POS_XY,
 	POS_XZ,
 	POS_YZ,
+	POS_PAN,
 	
 	ROT_X,
 	ROT_Y,

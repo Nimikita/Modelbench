@@ -120,12 +120,6 @@ else if (view.control_mouseon_last = control)
 		raywor = point4D_mul_matrix(rayeye, matrix_inverse(view_matrix));
 		view_control_ray_dir = vec3_normalize(vec3(raywor[X], raywor[Y], raywor[Z]))
 		view_control_value = point3D(el_edit.value[e_value.POS_X], el_edit.value[e_value.POS_Y], el_edit.value[e_value.POS_Z])
-		
-		/*
-		
-		view_control_vec = point2D_sub(end2D, center2D)
-		view_control_move_distance = 0
-		*/
 	}
 	
 	// Right click
@@ -133,14 +127,11 @@ else if (view.control_mouseon_last = control)
 	{
 		el_value_set_start(action_el_pos_xyz, true)
 		
-		if (axes[X])
-			el_value_set(e_value.POS_X, el_edit.value_default[e_value.POS_X], false)
-		
-		if (axes[Y])
-			el_value_set(e_value.POS_Y, el_edit.value_default[e_value.POS_Y], false)
-		
-		if (axes[Z])
-			el_value_set(e_value.POS_Z, el_edit.value_default[e_value.POS_Z], false)
+		for (var i = X; i <= Z; i++)
+		{
+			if (axes[i])
+				el_value_set(e_value.POS_X + i, element_value_default(e_value.POS_X + i), false)
+		}
 		
 		el_value_set_done()
 		
