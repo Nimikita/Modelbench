@@ -78,9 +78,6 @@ backgroundalpha = lerp(backgroundalpha, 0, mcroani_arr[e_mcroani.HOVER])
 backgroundcolor = merge_color(backgroundcolor, c_accent_overlay, mcroani_arr[e_mcroani.PRESS])
 backgroundalpha = lerp(backgroundalpha, a_accent_overlay, mcroani_arr[e_mcroani.PRESS])
 
-backgroundcolor = merge_color(backgroundcolor, c_accent_overlay, mcroani_arr[e_mcroani.PRESS])
-backgroundalpha = lerp(backgroundalpha, a_accent_overlay, mcroani_arr[e_mcroani.PRESS])
-
 var prevalpha = draw_get_alpha();
 draw_set_alpha(prevalpha * lerp(1, .5, mcroani_arr[e_mcroani.DISABLED]))
 

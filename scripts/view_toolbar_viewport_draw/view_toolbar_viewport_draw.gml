@@ -42,14 +42,16 @@ toolbar_viewport_width = dx
 dy += 4
 dx += 4
 
+var disable = program_mode != e_mode.MODELING;
+
 // Snap
 tip_set_shortcut(setting_key_snap, setting_key_snap_control)
-draw_button_icon("toolsetsnap", dx, dy, 28, 28, setting_snap, icons.MAGNET, action_setting_snap, false, setting_snap ? "tooltipsnapdisable" : "tooltipsnapenable")
+draw_button_icon("toolsetsnap", dx, dy, 28, 28, setting_snap, icons.MAGNET, action_setting_snap, disable, setting_snap ? "tooltipsnapdisable" : "tooltipsnapenable")
 tip_set_shortcut(-1, false)
 
 dx += 28
 
-draw_settings_button("snapsettings", dx, dy, 16, 28, false, settings_menu_snap)
+draw_settings_button("snapsettings", dx, dy, 16, 28, false, settings_menu_snap, disable)
 dx += 16 + 4
 
 // Divider
@@ -57,10 +59,10 @@ draw_box(dx, dy, 1, 28, false, c_border, a_border)
 dx += 4
 
 // Overlays
-draw_button_icon("toolsetoverlays", dx, dy, 28, 28, setting_overlays, icons.OVERLAYS, action_setting_overlays, false, setting_overlays ? "tooltipoverlaysdisable" : "tooltipoverlaysenable")
+draw_button_icon("toolsetoverlays", dx, dy, 28, 28, setting_overlays, icons.OVERLAYS, action_setting_overlays, disable, setting_overlays ? "tooltipoverlaysdisable" : "tooltipoverlaysenable")
 dx += 28
 
-draw_settings_button("overlaysettings", dx, dy, 16, 28, false, settings_menu_overlays)
+draw_settings_button("overlaysettings", dx, dy, 16, 28, false, settings_menu_overlays, disable)
 dx += 16 + 4
 
 // Wind
@@ -71,10 +73,10 @@ draw_settings_button("windsettings", dx, dy, 16, 28, false, settings_menu_wind)
 dx += 16 + 4
 
 // Shading
-draw_button_icon("toolsetshading", dx, dy, 28, 28, setting_shading, icons.SHADING, action_setting_shading, false, setting_shading ? "tooltipshadingdisable" : "tooltipshadingenable")
+draw_button_icon("toolsetshading", dx, dy, 28, 28, setting_shading, icons.SHADING, action_setting_shading, disable, setting_shading ? "tooltipshadingdisable" : "tooltipshadingenable")
 dx += 28
 
-draw_settings_button("windshading", dx, dy, 16, 28, false, settings_menu_shading)
+draw_settings_button("windshading", dx, dy, 16, 28, false, settings_menu_shading, disable)
 dx += 16 + 4
 
 // Blocky bending
