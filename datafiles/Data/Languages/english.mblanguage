@@ -212,8 +212,8 @@
 			"hide": "Hide UV editor",
 			"show": "Show UV editor"
 		},
-		"overlayhide": "Hide overlay",
-		"overlayshow": "Show overlay",
+		"guideshide": "Hide guides",
+		"guidesshow": "Show guides",
 		"customaccentcolor": "Custom accent color",
 		"scenery/":
 		{
@@ -481,14 +481,9 @@
 		"scenery": "Scenery",
 		"lightrotation": "Light rotation",
 		"lightrange": "Light range",
-		"ssao": "SSAO",
-		"ssaoradius": "Radius",
-		"ssaopower": "Strength",
-		"ssaoblurpasses": "Blur passes",
+		"ao": "Ambient occlusion",
 		"shadows": "Shadows",
-		"shadowsblurquality": "Blur quality",
-		"shadowsblursize": "Blur size",
-		"aa": "AA",
+		"aa": "Anti-aliasing",
 		"exportsize": "Export size",
 		"exportsize/": {
 			"256": "256px",

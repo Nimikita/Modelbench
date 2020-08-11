@@ -155,21 +155,8 @@ if (ds_map_valid(interfacemap))
 var rendermap = map[?"render"];
 if (ds_map_valid(rendermap))
 {
-	setting_render_ssao = value_get_real(rendermap[?"render_ssao"], setting_render_ssao)
-	
-	/*
-	setting_render_ssao_radius = value_get_real(rendermap[?"render_ssao_radius"], setting_render_ssao_radius)
-	setting_render_ssao_power = value_get_real(rendermap[?"render_ssao_power"], setting_render_ssao_power)
-	setting_render_ssao_blur_passes = value_get_real(rendermap[?"render_ssao_blur_passes"], setting_render_ssao_blur_passes)
-	*/
-	
+	setting_render_ao = value_get_real(rendermap[?"render_ao"], setting_render_ao)
 	setting_render_shadows = value_get_real(rendermap[?"render_shadows"], setting_render_shadows)
-	
-	/*
-	setting_render_shadows_blur_quality = value_get_real(rendermap[?"render_shadows_blur_quality"], setting_render_shadows_blur_quality)
-	setting_render_shadows_blur_size = value_get_real(rendermap[?"render_shadows_blur_size"], setting_render_shadows_blur_size)
-	*/
-	
 	setting_render_aa = value_get_real(rendermap[?"render_aa"], setting_render_aa)
 }
 
@@ -177,7 +164,7 @@ if (ds_map_valid(rendermap))
 var previewmap = map[?"preview"];
 if (ds_map_valid(previewmap))
 {
-	setting_preview_overlay = value_get_real(previewmap[?"overlay"], setting_preview_overlay)
+	setting_preview_guides = value_get_real(previewmap[?"overlay"], setting_preview_guides)
 	
 	setting_preview_scenery = preview_scenery_find(value_get_string(previewmap[?"scenery"], ""))
 	setting_preview_light_rotation = value_get_real(previewmap[?"light_rotation"], setting_preview_light_rotation)

@@ -95,7 +95,7 @@ if (content_width > 0 && content_height > 0)
 }
 
 // Preview overlay bars
-if (program_mode = e_mode.PREVIEW && setting_preview_overlay && (content_width > content_height))
+if (program_mode = e_mode.PREVIEW && setting_preview_guides && (content_width > content_height))
 {
 	var barsize;
 	barsize = abs(content_width - content_height)/2

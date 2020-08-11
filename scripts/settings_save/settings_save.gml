@@ -99,28 +99,15 @@ json_save_object_done()
 
 json_save_object_start("render")
 
-	json_save_var_bool("render_ssao", setting_render_ssao)
-	
-	/*
-	json_save_var("render_ssao_radius", setting_render_ssao_radius)
-	json_save_var("render_ssao_power", setting_render_ssao_power)
-	json_save_var("render_ssao_blur_passes", setting_render_ssao_blur_passes)
-	*/
-	
+	json_save_var_bool("render_ao", setting_render_ao)
 	json_save_var_bool("render_shadows", setting_render_shadows)
-	
-	/*
-	json_save_var("render_shadows_blur_quality", setting_render_shadows_blur_quality)
-	json_save_var("render_shadows_blur_size", setting_render_shadows_blur_size)
-	*/
-	
 	json_save_var_bool("render_aa", setting_render_aa)
 
 json_save_object_done()
 
 json_save_object_start("preview")
 	
-	json_save_var_bool("overlay", setting_preview_overlay)
+	json_save_var_bool("overlay", setting_preview_guides)
 	
 	json_save_var("scenery", setting_preview_scenery.name)
 	json_save_var("light_rotation", setting_preview_light_rotation)
@@ -134,7 +121,7 @@ json_save_object_done()
 json_save_object_start("viewport")
 
 	json_save_var_bool("snap", setting_snap)
-	json_save_var("snap_absolute", setting_snap_absolute)
+	json_save_var_bool("snap_absolute", setting_snap_absolute)
 	json_save_var("snap_size_position", setting_snap_size_position)
 	json_save_var("snap_size_rotation", setting_snap_size_rotation)
 	json_save_var("snap_size_scale", setting_snap_size_scale)

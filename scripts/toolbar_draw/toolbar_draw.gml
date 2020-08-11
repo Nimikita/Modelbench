@@ -55,5 +55,5 @@ if (program_mode = e_mode.MODELING)
 }
 else if (program_mode = e_mode.PREVIEW)
 {
-	draw_button_icon("toolbaroverlay", dx, dy, 28, 28, setting_preview_overlay, icons.SQUARE_RATIO, action_toolbar_preview_overlay, false, (setting_preview_overlay ? "tooltipoverlayhide" : "tooltipoverlayshow"))
+	draw_button_icon("toolbarguides", dx, dy, 28, 28, setting_preview_guides, icons.SQUARE_RATIO, action_toolbar_preview_guides, false, (setting_preview_guides ? "tooltipguideshide" : "tooltipguidesshow"))
 }

@@ -91,16 +91,16 @@ setting_render_shadows_blur_quality = 64
 setting_render_shadows_blur_size = .1
 setting_render_shadows_sun_buffer_size = 2048
 
-setting_render_ssao = true
-setting_render_ssao_radius = 5
-setting_render_ssao_power = 1
-setting_render_ssao_color = c_black//hex_to_color("696EA1")
-setting_render_ssao_blur_passes = 2
+setting_render_ao = true
+setting_render_ao_radius = 5
+setting_render_ao_power = 1
+setting_render_ao_color = c_black//hex_to_color("696EA1")
+setting_render_ao_blur_passes = 2
 
 setting_render_aa = true
 
 // Preview settings
-setting_preview_overlay = false
+setting_preview_guides = false
 
 setting_preview_scenery = null
 setting_preview_background_top = c_white

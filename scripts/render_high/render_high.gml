@@ -50,7 +50,7 @@ if (render_ssao)
 	surface_reset_target()
 	
 	// Blur
-	repeat (setting_render_ssao_blur_passes)
+	repeat (setting_render_ao_blur_passes)
 	{
 		var ssaosurftemp;
 		render_surface[3] = surface_require(render_surface[3], render_width, render_height)
