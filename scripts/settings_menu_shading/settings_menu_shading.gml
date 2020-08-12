@@ -1,7 +1,7 @@
 /// settings_menu_shading()
 
 var capwid = text_caption_width("settingsmenushadingao", "settingsmenushadinglighting");
-capwid = min(180, capwid + 116)
+capwid = max(180, capwid + 32)
 
 dx = content_x + 10
 dy = content_y + 8

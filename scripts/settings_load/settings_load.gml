@@ -92,6 +92,7 @@ if (ds_map_valid(controlsmap))
 	setting_key_snap = value_get_real(controlsmap[?"key_snap"], setting_key_snap)
 	setting_key_snap_control = value_get_real(controlsmap[?"key_snap_control"], setting_key_snap_control)
 	
+	/*
 	setting_key_forward = value_get_real(controlsmap[?"key_forward"], setting_key_forward)
 	setting_key_back = value_get_real(controlsmap[?"key_back"], setting_key_back)
 	setting_key_left = value_get_real(controlsmap[?"key_left"], setting_key_left)
@@ -103,6 +104,7 @@ if (ds_map_valid(controlsmap))
 	setting_key_slow = value_get_real(controlsmap[?"key_slow"], setting_key_slow)
 	
 	setting_look_sensitivity = value_get_real(controlsmap[?"look_sensitivity"], setting_look_sensitivity)
+	*/
 	
 	setting_smooth_camera = value_get_real(controlsmap[?"smooth_camera"], setting_smooth_camera)
 	

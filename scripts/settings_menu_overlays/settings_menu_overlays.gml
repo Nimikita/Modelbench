@@ -1,7 +1,7 @@
 /// settings_menu_overlays()
 
 var capwid = text_caption_width("settingsmenuoverlaysgrid", "settingsmenuoverlaysgizmos", "settingsmenuoverlaysoutlines", "settingsmenuoverlaysoutlineopacity");
-capwid = min(180, capwid + 116)
+capwid = max(180, capwid + 32)
 
 dx = content_x + 10
 dy = content_y + 8

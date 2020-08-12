@@ -1,6 +1,6 @@
 /// view_shape_outline()
 
-if (!setting_overlays || setting_overlays_outline_opacity = 0 || program_mode != e_mode.MODELING)
+if (!setting_overlays_outlines || !setting_overlays || setting_overlays_outline_opacity = 0 || program_mode != e_mode.MODELING)
 	return 0
 
 var shapesurf, normalssurf;

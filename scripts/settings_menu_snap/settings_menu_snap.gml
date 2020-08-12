@@ -1,7 +1,7 @@
 /// settings_menu_snap()
 
 var capwid = text_caption_width("settingsmenusnapmove", "settingsmenusnaprotate", "settingsmenusnapscale", "settingsmenusnapuv", "settingsmenusnapabsolute");
-capwid = min(180, capwid + 116)
+capwid = max(180, capwid + 64)
 
 dx = content_x + 10
 dy = content_y + 8

@@ -55,6 +55,7 @@ json_save_object_start("controls")
 	json_save_var("key_snap", setting_key_snap)
 	json_save_var_bool("key_snap_control",setting_key_snap_control)
 	
+	/*
 	json_save_var("key_forward", setting_key_forward)
 	json_save_var("key_back", setting_key_back)
 	json_save_var("key_left", setting_key_left)
@@ -66,6 +67,7 @@ json_save_object_start("controls")
 	json_save_var("key_slow", setting_key_slow)
 	
 	json_save_var("look_sensitivity", setting_look_sensitivity)
+	*/
 	
 	json_save_var_bool("smooth_camera", setting_smooth_camera)
 	

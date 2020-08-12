@@ -69,6 +69,7 @@ draw_keycontrol("settingskeysnap", dx, dy, dw, setting_key_snap, setting_key_sna
 tab_next(false)
 
 // Camera shortcuts
+/*
 dy += 20
 draw_label(text_get("settingscamerashortcuts"), dx, dy, fa_left, fa_bottom, c_text_tertiary, a_text_tertiary, font_label)
 
@@ -112,6 +113,9 @@ tab_next()
 tab_control_meter()
 draw_meter("settingslooksensitivity", dx, dy, dw, setting_look_sensitivity, 48, 0.25, 3, .75, .25, tab.controls.tbx_look_sensitivity, action_setting_look_sensitivity)
 tab_next()
+*/
+
+dy += 8
 
 // Smooth camera
 tab_control_keycontrol()
