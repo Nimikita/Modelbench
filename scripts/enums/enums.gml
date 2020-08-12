@@ -70,6 +70,10 @@ enum e_control
 	PIVOT_X,
 	PIVOT_Y,
 	PIVOT_Z,
+	PIVOT_XY,
+	PIVOT_XZ,
+	PIVOT_YZ,
+	PIVOT_PAN,
 	
 	BEND_X,
 	BEND_Y,

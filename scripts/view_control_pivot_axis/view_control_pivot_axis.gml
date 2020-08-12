@@ -90,7 +90,7 @@ view_shape_line_draw(start2D, end2D)
 //draw_primitive_begin(pr_trianglelist)
 
 // Arrow
-var size = (point3D_distance(cam_from, el_edit.world_pos) * view_3d_control_size) * .06 * view_control_ratio;
+var size = (point3D_distance(cam_from, matrix_position(mat)) * view_3d_control_size) * .06 * view_control_ratio;
 view_shape_cone_draw(mat, vec3_mul(axis, length), rotation, size)
 
 //var ang = point_direction(start2D[X], start2D[Y], end2D[X], end2D[Y]);
