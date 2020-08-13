@@ -7,7 +7,6 @@ var to = argument0;
 to.type = type
 to.element_type = element_type
 to.name = name
-to.display_name = display_name
 to.locked = locked
 to.tree_locked = tree_locked
 to.hidden = hidden
@@ -20,3 +19,22 @@ if (object_index = obj_model_element)
 	to.parent_tree_index = ds_list_find_index(element_get_list(parent, id), id)
 else // History object (copy)
 	to.parent_tree_index = parent_tree_index
+
+// Change name # based on pre-existing part names
+if (element_type = TYPE_PART)
+{
+	var namefilter, namecount;
+	namefilter = string_get_name(name)
+	namecount = 0
+
+	with (obj_model_element)
+	{
+		if (element_type = TYPE_SHAPE)
+			continue
+		
+		if (string_get_name(name) = namefilter)
+			namecount++
+	}
+	
+	to.name = namefilter + " (" + string(namecount) + ")"
+}

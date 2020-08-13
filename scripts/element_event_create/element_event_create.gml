@@ -5,7 +5,6 @@ save_id = ""
 save_id = save_id_create()
 
 name = ""
-display_name = ""
 name_duplicate = false
 name_empty = true
 
