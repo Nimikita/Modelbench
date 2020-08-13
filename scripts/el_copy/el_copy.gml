@@ -20,21 +20,3 @@ if (object_index = obj_model_element)
 else // History object (copy)
 	to.parent_tree_index = parent_tree_index
 
-// Change name # based on pre-existing part names
-if (element_type = TYPE_PART)
-{
-	var namefilter, namecount;
-	namefilter = string_get_name(name)
-	namecount = 0
-
-	with (obj_model_element)
-	{
-		if (element_type = TYPE_SHAPE)
-			continue
-		
-		if (string_get_name(name) = namefilter)
-			namecount++
-	}
-	
-	to.name = namefilter + " (" + string(namecount) + ")"
-}
