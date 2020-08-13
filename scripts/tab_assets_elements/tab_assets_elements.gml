@@ -1,5 +1,11 @@
 /// tab_assets_elements()
 
+// Element search
+tab_control(28)
+if (draw_textfield("assetssearchelements", dx, dy, dw, 28, tab.elements.tbx_search.text, tab.elements.tbx_search, null, text_get("assetssearchelementscaption"), "none"))
+	action_update_search()
+tab_next()
+
 tab_control_switch()
 draw_switch("assetshideshapes", dx, dy, setting_hide_shapes, action_setting_hide_shapes, false)
 tab_next()
@@ -14,12 +20,18 @@ if (!mouse_left && window_busy = "elementselection")
 element_move_parent = null
 element_move_index = null
 
-// Draw elements
-if (part_list != null)
+// Show search results
+if (tab.elements.tbx_search.text != "")
+{
+	for (var i = 0; i < ds_list_size(tab.elements.element_search_list); i++)
+		draw_element_item(tab.elements.element_search_list[|i], dy, 0, true)
+}
+else // Draw hierarchy
 {
 	for (var i = 0; i < ds_list_size(part_list); i++)
 		draw_element_item(part_list[|i], dy, 0)
 }
+
 dy += 8
 
 // Update box selection
@@ -88,6 +100,7 @@ if (window_busy = "elementmove" && !mouse_left)
 		ds_list_destroy(index_list)
 		instance_destroy()
 	}
+	
 }
 
 // Move scrollbar

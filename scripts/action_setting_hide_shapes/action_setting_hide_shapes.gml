@@ -2,3 +2,4 @@
 /// @arg value
 
 setting_hide_shapes = argument0
+action_update_search()

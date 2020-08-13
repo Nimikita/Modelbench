@@ -1,18 +1,23 @@
-/// draw_element_item(element, y, [increment])
+/// draw_element_item(element, y, [increment, [search]])
 /// @arg element
 /// @arg y
-/// @arg [increment]
+/// @arg [increment
+/// @arg [search]]
 /// @desc Draws an element item
 
-var element, yy, increment;
+var element, yy, increment, search;
 var itemx, itemy, itemw, itemh, movehover, itemhover, expandhover, lockhover, visiblehover, itemvisible, xx, ww, linex, minw, mouseonlist;
 var hideshapes;
 element = argument[0]
 yy = argument[1]
 increment = 0
+search = false
 
 if (argument_count > 2)
 	increment = argument[2]
+
+if (argument_count > 3)
+	search = argument[3]
 
 itemx = dx + (24 * increment)
 itemy = yy
@@ -105,7 +110,7 @@ ww = max(minw, itemw)
 var haschildren;
 haschildren = element.element_type = TYPE_PART
 haschildren = haschildren && ((element.part_list != null && ds_list_size(element.part_list) > 0) || (!setting_hide_shapes && (element.shape_list != null && ds_list_size(element.shape_list) > 0)))
-if (itemvisible && haschildren)
+if (itemvisible && haschildren && !search)
 {
 	if (draw_button_icon("assetspartshowchildren" + string(element), xx, itemy + 4, 20, 20, element.extend, null, null, window_busy = "elementselection", (element.extend ? "tooltipcollapse" : "tooltipexpand"), spr_arrow_small_ani))
 		action_el_extend(element)
@@ -221,7 +226,7 @@ if (itemvisible && itemhover && !expandhover && !lockhover && !visiblehover)
 	element.list_mouseon = true
 	context_menu_area(dx, itemy, dw, itemh, "contextmenuelement", element, e_value_type.NONE, null, null)
 	
-	if (mouse_move > 5)
+	if (mouse_move > 5 && !search)
 	{
 		// Start box selection or moving
 		if (element.selected)
@@ -298,7 +303,7 @@ if (itemvisible && movehover && window_busy = "elementmove" && !(element.element
 #region Continue hierarchy
 dy += 28
 
-if (element.element_type = TYPE_PART && element.extend)
+if (element.element_type = TYPE_PART && element.extend && !search)
 {
 	// Draw shapes
 	if (element.shape_list != null && !setting_hide_shapes)

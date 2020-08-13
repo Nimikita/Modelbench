@@ -101,7 +101,7 @@
 			"previous": "PREVIOUS TIP",
 			"1": "Try turning on Slow shape generation to increase performance with 3D planes!",
 			"2": "Having trouble finding something? Try right-clicking to show a menu with options.",
-			"3": "If the program feels slow, try disabling shape outlines and SSAO!",
+			"3": "If the program feels slow, try disabling shape outlines and ambient occlusion!",
 			"4": "For the best looking bends, move your shapes with the pivot offset tool.",
 			"5": "'Refresh textures on focus' can be helpful for editing textures while modeling!"
 		}
@@ -357,6 +357,7 @@
 		"playerskin": "Allow Minecraft skins",
 		"playerskinhelp": "Allow skins to be downloaded for the model in Mine-imator.",
 		"modelscale": "Model scale",
+		"searchelementscaption": "Search...",
 		"hideshapes": "Hide shapes",
 		"newpart": "New part",
 		"newshape": "New shape",

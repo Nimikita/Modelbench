@@ -26,6 +26,11 @@ with (assets)
 	
 	// Elements
 	elements = tab_add_category("elements", tab_assets_elements, false)
+	with (elements)
+	{
+		tbx_search = new_textbox(true, 0, "")
+		element_search_list = ds_list_create()
+	}
 	
 	// Textures
 	textures = tab_add_category("textures", tab_assets_textures, false)
