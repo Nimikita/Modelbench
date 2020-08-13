@@ -9,9 +9,10 @@ tab_next()
 
 // Feature set
 var text = (setting_feature_set = e_features.MIMODEL ? "settingsfeaturesetmimodel" : "settingsfeaturesetobj");
+var caption = (setting_feature_set = e_features.MIMODEL ? ".mimodel" : ".obj");
 
 tab_control_menu()
-draw_button_menu("settingsfeatureset", e_menu.LIST, dx, dy, dw, 28, setting_feature_set, text_get(text), action_setting_feature_set)
+draw_button_menu("settingsfeatureset", e_menu.LIST, dx, dy, dw, 28, setting_feature_set, text_get(text), action_setting_feature_set, false, null, null, caption)
 tab_next()
 
 // Backup models

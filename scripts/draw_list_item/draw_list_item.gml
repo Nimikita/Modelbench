@@ -102,10 +102,13 @@ if (item.actions_left != null)
 }
 
 // Left icon
-if (item.icon_left)
+if (item.icon_left != null)
 {
 	leftp += 4 * (components > 0)
-	draw_image(spr_icons, item.icon_left, xx + leftp + 10, middley, 1, 1, iconcolor, iconalpha)
+	
+	if (item.icon_left != -1)
+		draw_image(spr_icons, item.icon_left, xx + leftp + 10, middley, 1, 1, iconcolor, iconalpha)
+	
 	leftp += 20
 }
 
@@ -128,10 +131,13 @@ if (item.actions_right != null)
 }
 
 // Right icon
-if (item.icon_right)
+if (item.icon_right != null)
 {
 	rightp += 4 * (components > 0)
-	draw_image(spr_icons, item.icon_right, (xx + width - rightp) - 10, middley, 1, 1, iconcolor, iconalpha)
+	
+	if (item.icon_right != -1)
+		draw_image(spr_icons, item.icon_right, (xx + width - rightp) - 10, middley, 1, 1, iconcolor, iconalpha)
+	
 	rightp += 20
 	components++
 }

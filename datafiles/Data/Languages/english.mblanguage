@@ -1,10 +1,11 @@
 {
     "description": "Modelbench language file. Copy and rename this to begin creating your own translation.",
     "file/": {
-        "language": "English",
+		"language": "English",
+		"locale": "en-US",
         "translator": "Nimi",
         "forversion": "1.1.0",
-        "lastchange": "2020.08.12"
+        "lastchange": "2020.08.13"
     },
 	"startup/": {
 		"modeldetected": "Unsaved model detected",

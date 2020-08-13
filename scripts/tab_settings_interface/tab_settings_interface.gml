@@ -39,7 +39,7 @@ dy += 5
 
 // Language
 tab_control_menu(28)
-draw_button_menu("settingslanguage", e_menu.LIST, dx, dy, dw - (24 + icon_button_offset), 28, setting_language_filename, setting_language_filename, action_setting_language)
+draw_button_menu("settingslanguage", e_menu.LIST, dx, dy, dw - (24 + icon_button_offset), 28, setting_language_filename, text_get("filelanguage"), action_setting_language, false, null, null, text_get("filelocale"))
 
 if (draw_button_icon("settingsopenlanguagefolder", dx + dw - 24 + icon_button_offset, dy + 22, 24, 24, false, icons.OPEN_FILE, null, null, "settingsopenlanguagefolder"))
 	open_url(languages_directory)

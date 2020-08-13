@@ -60,12 +60,43 @@ switch (name)
 	
 	case "settingslanguage":
 	{
-		var file;
+		var file, name, locale, err;
 		file = file_find_first(languages_directory + "*.mblanguage", 0)
+		mouse_cursor = cr_hourglass
 		
+		// Read each file's language key
 		while (file != "")
 		{
-			list_add_item(filename_name(file), filename_name(file), "")
+			// Convert unicode (external)
+			var convfn = file_directory + "conv.tmp";
+			json_file_convert_unicode(languages_directory + file, convfn)
+			
+			if (!file_exists_lib(convfn))
+			{
+				file = file_find_next()
+				continue
+			}
+			
+			var json = json_load(convfn);
+			name = filename_name(file)
+			locale = ""
+			err = false
+			
+			if (ds_map_valid(json))
+			{
+				if (!is_undefined(json[?"file/"]))
+				{
+					var filemap = json[? "file/"];
+					name = value_get_string(filemap[?"language"], name)
+					locale = value_get_string(filemap[?"locale"], "")
+				}
+				
+				ds_map_destroy(json)
+			}
+			else
+				err = true
+			
+			list_add_item(name, filename_name(file), locale, null, null, err ? icons.WARNING : null, null)
 			file = file_find_next()
 		}
 		file_find_close()

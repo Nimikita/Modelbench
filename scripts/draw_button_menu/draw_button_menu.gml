@@ -1,4 +1,4 @@
-/// draw_button_menu(name, type, x, y, width, height, value, text, script, [disabled, [texture, [icon]]])
+/// draw_button_menu(name, type, x, y, width, height, value, text, script, [disabled, [texture, [icon, [caption]]]])
 /// @arg name
 /// @arg type
 /// @arg x
@@ -10,9 +10,10 @@
 /// @arg script
 /// @arg [disabled
 /// @arg [texture
-/// @arg [icon]]]
+/// @arg [icon
+/// @arg [caption]]]
 
-var name, type, xx, yy, wid, hei, value, text, script, tex, disabled, icon;
+var name, type, xx, yy, wid, hei, value, text, script, tex, disabled, icon, caption;
 var flip, mouseon;
 name = argument[0]
 type = argument[1]
@@ -38,6 +39,11 @@ if (argument_count > 11)
 	icon = argument[11]
 else
 	icon = null
+
+if (argument_count > 12)
+	caption = argument[12]
+else
+	caption = ""
 
 if (xx + wid < content_x || xx > content_x + content_width || yy + hei < content_y || yy > content_y + content_height)
 	return 0
@@ -77,7 +83,7 @@ if (mouseon)
 	mouse_cursor = cr_handpoint
 
 // Item
-var item = list_add_item(text, null, "", tex, icon, null, null, false, false);
+var item = list_add_item(text, null, caption, tex, icon, -1, null, false, false);
 item.disabled = disabled
 draw_list_item(item, xx, yy, wid, hei, false, 8)
 instance_destroy(item)
