@@ -35,11 +35,11 @@ theme_edit = theme_light
 theme_edit.name = "light"
 theme_edit.pattern = 0
 theme_edit.accent_list = array()
-array_add(theme_edit.accent_list, hex_to_color("EE3030"))
-array_add(theme_edit.accent_list, hex_to_color("E47D31"))
-array_add(theme_edit.accent_list, hex_to_color("ECAD0C"))
-array_add(theme_edit.accent_list, hex_to_color("53CD35"))
-array_add(theme_edit.accent_list, hex_to_color("18B557"))
+array_add(theme_edit.accent_list, hex_to_color("DB3030"))
+array_add(theme_edit.accent_list, hex_to_color("E7711B"))
+array_add(theme_edit.accent_list, hex_to_color("E5A500"))
+array_add(theme_edit.accent_list, hex_to_color("48B82C"))
+array_add(theme_edit.accent_list, hex_to_color("2AAF5F"))
 array_add(theme_edit.accent_list, hex_to_color("18B5AB"))
 array_add(theme_edit.accent_list, hex_to_color("2144F1"))
 array_add(theme_edit.accent_list, hex_to_color("982BCB"))
@@ -79,15 +79,15 @@ theme_edit = theme_dark
 theme_edit.name = "dark"
 theme_edit.pattern = 0
 theme_edit.accent_list = array()
-array_add(theme_edit.accent_list, hex_to_color("FF5F55"))
-array_add(theme_edit.accent_list, hex_to_color("FA9B56"))
-array_add(theme_edit.accent_list, hex_to_color("FFED47"))
-array_add(theme_edit.accent_list, hex_to_color("73DF58"))
-array_add(theme_edit.accent_list, hex_to_color("35D274"))
-array_add(theme_edit.accent_list, hex_to_color("30DDC8"))
-array_add(theme_edit.accent_list, hex_to_color("4986FB"))
-array_add(theme_edit.accent_list, hex_to_color("BB5DE8"))
-array_add(theme_edit.accent_list, hex_to_color("FF6593"))
+array_add(theme_edit.accent_list, hex_to_color("FF7E76"))
+array_add(theme_edit.accent_list, hex_to_color("FFA360"))
+array_add(theme_edit.accent_list, hex_to_color("FFF065"))
+array_add(theme_edit.accent_list, hex_to_color("8BFF6D"))
+array_add(theme_edit.accent_list, hex_to_color("4EF390"))
+array_add(theme_edit.accent_list, hex_to_color("49EED9"))
+array_add(theme_edit.accent_list, hex_to_color("98BBFF"))
+array_add(theme_edit.accent_list, hex_to_color("DF9CFF"))
+array_add(theme_edit.accent_list, hex_to_color("FF9BC5"))
 
 theme_edit.background = hex_to_color("2B373D")
 theme_edit.background_secondary = hex_to_color("18242A")
@@ -103,7 +103,7 @@ theme_edit.button_text = hex_to_color("000000")
 theme_edit.button_text_alpha = .91
 
 // Other colors
-theme_edit.red_error = hex_to_color("FC453A")
+theme_edit.red_error = hex_to_color("FF7A72")
 theme_edit.yellow_warning = hex_to_color("FFEB36")
 theme_edit.green_success = hex_to_color("64E879")
 theme_edit.red = hex_to_color("FF5656")
@@ -123,15 +123,15 @@ theme_edit = theme_darker
 theme_edit.name = "darker"
 theme_edit.pattern = 0
 theme_edit.accent_list = array()
-array_add(theme_edit.accent_list, hex_to_color("FF5F55"))
-array_add(theme_edit.accent_list, hex_to_color("FA9B56"))
-array_add(theme_edit.accent_list, hex_to_color("FFED47"))
-array_add(theme_edit.accent_list, hex_to_color("73DF58"))
-array_add(theme_edit.accent_list, hex_to_color("35D274"))
-array_add(theme_edit.accent_list, hex_to_color("30DDC8"))
-array_add(theme_edit.accent_list, hex_to_color("4986FB"))
-array_add(theme_edit.accent_list, hex_to_color("BB5DE8"))
-array_add(theme_edit.accent_list, hex_to_color("FF6593"))
+array_add(theme_edit.accent_list, hex_to_color("FF7E76"))
+array_add(theme_edit.accent_list, hex_to_color("FFA360"))
+array_add(theme_edit.accent_list, hex_to_color("FFF065"))
+array_add(theme_edit.accent_list, hex_to_color("8BFF6D"))
+array_add(theme_edit.accent_list, hex_to_color("4EF390"))
+array_add(theme_edit.accent_list, hex_to_color("49EED9"))
+array_add(theme_edit.accent_list, hex_to_color("98BBFF"))
+array_add(theme_edit.accent_list, hex_to_color("DF9CFF"))
+array_add(theme_edit.accent_list, hex_to_color("FF9BC5"))
 
 theme_edit.background = hex_to_color("101010")
 theme_edit.background_secondary = hex_to_color("0A0A0A")
@@ -147,7 +147,7 @@ theme_edit.button_text = hex_to_color("000000")
 theme_edit.button_text_alpha = .91
 
 // Other colors
-theme_edit.red_error = hex_to_color("FC453A")
+theme_edit.red_error = hex_to_color("FF7A72")
 theme_edit.yellow_warning = hex_to_color("FFEB36")
 theme_edit.green_success = hex_to_color("64E879")
 theme_edit.red = hex_to_color("FF5656")
