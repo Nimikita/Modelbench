@@ -33,17 +33,23 @@ if (keyboard_check_pressed(vk_f12))
 
 if (window_busy = "" && !textbox_isediting)
 {
-	//if (keyboard_check_pressed(setting_key_new) && app_check_control(setting_key_new_control))
-	//	action_toolbar_new()
+	if (!keyboard_check(vk_shift) && keyboard_check_pressed(setting_key_new) && app_check_control(setting_key_new_control))
+		model_create()
 	
-	//if (keyboard_check_pressed(setting_key_import_asset) && app_check_control(setting_key_import_asset_control))
-	//	action_toolbar_import_asset()
+	if (keyboard_check(vk_shift) && keyboard_check_pressed(setting_key_new) && app_check_control(setting_key_new_control))
+		model_create_template()
 	
 	if (keyboard_check_pressed(setting_key_open) && app_check_control(setting_key_open_control))
 		model_load()
 	
-	if (keyboard_check_pressed(setting_key_save) && app_check_control(setting_key_save_control))
+	if (!keyboard_check(vk_shift) && keyboard_check_pressed(setting_key_save) && app_check_control(setting_key_save_control))
 		model_save()
+	
+	if (keyboard_check(vk_shift) && keyboard_check_pressed(setting_key_save) && app_check_control(setting_key_save_control))
+		model_save_as()
+	
+	if (keyboard_check_pressed(setting_key_import) && app_check_control(setting_key_import_control))
+		action_model_import()
 	
 	if (keyboard_check_pressed(setting_key_undo) && app_check_control(setting_key_undo_control))
 		action_toolbar_undo()

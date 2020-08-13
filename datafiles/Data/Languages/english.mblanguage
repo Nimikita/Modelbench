@@ -60,7 +60,8 @@
 			"model": "Mine-imator model",
 			"modelbackup": "Modelbench model backups",
             "modelcaption": "Open Mine-imator model",
-			"modeltemplate": "Modelbench template"
+			"modeltemplate": "Modelbench template",
+			"modeltemplatecaption": "Open Modelbench template"
 		},
 		"save/": {
 			"model": "Mine-imator model",
@@ -69,6 +70,9 @@
 			"imagecaption": "Save image",
 			"obj": "Wavefront",
 			"objcaption": "Save .obj file"
+		},
+		"import/": {
+			"modelcaption": "Import Mine-imator model"
 		}
 	},
 	"uveditor/": {
@@ -543,8 +547,11 @@
 		"interfaceshortcuts": "Interface shortcuts",
 		"camerashortcuts": "Camera shortcuts",
 		"key/": {
+			"new": "New model",
 			"open": "Open model",
 			"save": "Save model",
+			"saveas": "Save model as",
+			"import": "Import model",
 			"undo": "Undo",
 			"redo": "Redo",
 			"removeselection": "Remove selection",

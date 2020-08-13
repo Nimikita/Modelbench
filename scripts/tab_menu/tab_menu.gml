@@ -11,6 +11,7 @@ for (var i = 0; i < ds_list_size(menu_panel_list.item); i++)
 	else
 		toggled = ((menu_panel_ext != null) && (menu_panel_ext = menu_panel_list.item[|i].value))
 	
+	item.caption = tab_menu_controls(item.name)
 	draw_list_item(menu_panel_list.item[|i], dx, dy, dw, 36, toggled)
 	dy += 36
 	

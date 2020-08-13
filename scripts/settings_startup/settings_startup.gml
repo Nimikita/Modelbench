@@ -26,10 +26,14 @@ setting_slow_generation = false
 setting_refresh_textures = false
 setting_adjust_pivot_resize = true
 
+setting_key_new = ord("N")
+setting_key_new_control = true
 setting_key_open = ord("O")
 setting_key_open_control = true
 setting_key_save = ord("S")
 setting_key_save_control = true
+setting_key_import = ord("I")
+setting_key_import_control = true
 setting_key_undo = ord("Z")
 setting_key_undo_control = true
 setting_key_redo = ord("Y")
