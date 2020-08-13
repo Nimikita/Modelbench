@@ -78,7 +78,8 @@ enum e_control
 	BEND_X,
 	BEND_Y,
 	BEND_Z,
-	BEND_OFFSET
+	BEND_OFFSET,
+	BEND_SIZE
 }
 
 enum e_features

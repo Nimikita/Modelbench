@@ -138,7 +138,7 @@ if (el_edit_amount > 0 && program_mode = e_mode.MODELING)
 						if (icon != null)
 						{
 							// Highlight icon
-							if (view.control_mouseon = e_control.POS_PAN || view.control_mouseon = e_control.PIVOT_PAN)
+							if (view.control_mouseon = e_control.POS_PAN || view.control_mouseon = e_control.PIVOT_PAN || view.control_mouseon = e_control.BEND_OFFSET)
 								draw_circle_ext(origin2d[X], origin2d[Y], 32, false, c_hover, a_hover)
 							
 							draw_image(spr_dropshadow_14, 0, origin2d[X], origin2d[Y], 2, 2, c_white, 1)
@@ -177,7 +177,7 @@ if (el_edit_amount > 0 && program_mode = e_mode.MODELING)
 							value = point3D(el_edit.value[e_value.ROT_X], el_edit.value[e_value.ROT_Y + zup], el_edit.value[e_value.ROT_Z - zup])
 							angle = true
 						}
-						else if ((view_control_edit >= e_control.BEND_X && view_control_edit <= e_control.BEND_Z) || view_control_edit = e_control.BEND_OFFSET)
+						else if ((view_control_edit >= e_control.BEND_X && view_control_edit <= e_control.BEND_SIZE))
 						{
 							value = point3D(el_edit.value[e_value.BEND_ANGLE_X], el_edit.value[e_value.BEND_ANGLE_Y + zup], el_edit.value[e_value.BEND_ANGLE_Z - zup])
 							angle = true
@@ -193,6 +193,12 @@ if (el_edit_amount > 0 && program_mode = e_mode.MODELING)
 						{
 							value = el_edit.value[e_value.BEND_OFFSET]
 							tipstr = text_get("tooltipoffset", value)
+						}
+						
+						if (view_control_edit = e_control.BEND_SIZE)
+						{
+							value = el_edit.value[e_value.BEND_SIZE]
+							tipstr = text_get("tooltipsize", value)
 						}
 						
 						tip_force_right = true

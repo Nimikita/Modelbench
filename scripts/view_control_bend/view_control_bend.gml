@@ -63,26 +63,76 @@ if (!offseterr && !benterr)
 
 render_set_culling(true)
 
-// Offset
-if (!offseterr)
+if (!offseterr && !unbenterr && !benterr)
+{
+	// Offset
+	if (point_distance(mouse_x - content_x, mouse_y - content_y, offset2d[X]/2, offset2d[Y]/2) < 14)
+	{
+		mouse_cursor = cr_handpoint
+		
+		if (mouse_left_pressed)
+		{
+			window_busy = "rendercontrol"
+			view_control_edit_view = view
+			view_control_edit = e_control.BEND_OFFSET
+			view_control_vec = point2D_sub(offset2d, unbent2d)
+			view_control_value = el_edit.value[e_value.BEND_OFFSET]
+			view_control_move_distance = 0
+		}
+		
+		view.control_mouseon = e_control.BEND_OFFSET
+	}
 	draw_circle_ext(offset2d[X], offset2d[Y], 14, false, merge_color(c_bend, c_background, .5), 1)
-
-// Size
-if (!unbenterr)
-	draw_image(spr_diamond, 0, unbent2d[X], unbent2d[Y], 2, 2, c_background, 1)
-
-if (!benterr)
-	draw_image(spr_diamond, 0, bent2d[X], bent2d[Y], 2, 2, c_bend, 1)
+	
+	// Size (Unbent half)
+	if (el_edit.value[e_value.BEND_SIZE_CUSTOM] && point_distance(mouse_x - content_x, mouse_y - content_y, unbent2d[X]/2, unbent2d[Y]/2) < 9)
+	{
+		mouse_cursor = cr_handpoint
+		if (mouse_left_pressed)
+		{
+			window_busy = "rendercontrol"
+			view_control_edit_view = view
+			view_control_edit = e_control.BEND_SIZE
+			view_control_vec = point2D_sub(unbent2d, offset2d)
+			view_control_value = el_edit.value[e_value.BEND_SIZE]
+			view_control_move_distance = 0
+		}
+		
+		view.control_mouseon = e_control.BEND_SIZE
+		draw_circle_ext(unbent2d[X], unbent2d[Y], 24, false, c_hover, a_hover)
+	}
+	draw_circle_ext(unbent2d[X], unbent2d[Y], 18, false, c_background, el_edit.value[e_value.BEND_SIZE_CUSTOM] ? 1 : .75)
+	
+	// Size (Bent half)
+	if (el_edit.value[e_value.BEND_SIZE_CUSTOM] && point_distance(mouse_x - content_x, mouse_y - content_y, bent2d[X]/2, bent2d[Y]/2) < 9)
+	{
+		mouse_cursor = cr_handpoint
+		if (mouse_left_pressed)
+		{
+			window_busy = "rendercontrol"
+			view_control_edit_view = view
+			view_control_edit = e_control.BEND_SIZE
+			view_control_vec = point2D_sub(bent2d, offset2d)
+			view_control_value = el_edit.value[e_value.BEND_SIZE]
+			view_control_move_distance = 0
+		}
+		
+		view.control_mouseon = e_control.BEND_SIZE
+		draw_circle_ext(bent2d[X], bent2d[Y], 24, false, c_hover, a_hover)
+	}
+	draw_circle_ext(bent2d[X], bent2d[Y], 18, false, c_bend, el_edit.value[e_value.BEND_SIZE_CUSTOM] ? 1 : .75)
+	
+}
 
 #endregion
 
 #region Bend angle
 
-if (view.control_mouseon_last != e_control.BEND_OFFSET)
+if (view.control_mouseon_last != e_control.BEND_OFFSET && view.control_mouseon_last != e_control.BEND_SIZE)
 {
 	var view, len, mat, color, offset;
 	view = argument0
-	len = point3D_distance(cam_from, bent3d) * view_3d_control_size * view_control_ratio * 0.6
+	len = point3D_distance(cam_from, el_edit.world_pos) * view_3d_control_size * view_control_ratio * 0.6
 	mat = MAT_IDENTITY
 	color = c_white
 	offset = model_part_get_offset_pos(el_edit)
@@ -167,24 +217,6 @@ if (window_busy = "rendercontrol" && view_control_edit_view = view && view_contr
 
 #region Bend offset
 
-if (!offseterr && !unbenterr && !benterr)
-{
-	if (point_distance(mouse_x - content_x, mouse_y - content_y, offset2d[X]/2, offset2d[Y]/2) < 14)
-	{
-		mouse_cursor = cr_handpoint
-		
-		if (mouse_left_pressed)
-		{
-			window_busy = "rendercontrol"
-			view_control_edit_view = view
-			view_control_edit = e_control.BEND_OFFSET
-			view_control_vec = point2D_sub(offset2d, unbent2d)
-			view_control_value = el_edit.value[e_value.BEND_OFFSET]
-			view_control_move_distance = 0
-		}
-	}
-}
-
 if (window_busy = "rendercontrol" && view_control_edit_view = view && view_control_edit = e_control.BEND_OFFSET)
 {
 	mouse_cursor = cr_handpoint
@@ -218,6 +250,54 @@ if (window_busy = "rendercontrol" && view_control_edit_view = view && view_contr
 		// Update
 		el_value_set_start(action_el_bend_offset, true)
 		el_value_set(e_value.BEND_OFFSET, move, true)
+		el_value_set_done()
+	}
+	
+	// Release
+	if (!mouse_left)
+	{
+		window_busy = ""
+		view_control_edit = null
+	}
+}
+
+#endregion
+
+#region Bend size
+
+if (window_busy = "rendercontrol" && view_control_edit_view = view && view_control_edit = e_control.BEND_SIZE)
+{
+	mouse_cursor = cr_handpoint
+	
+	// Move
+	var veclen = vec2_length(view_control_vec)
+	if (veclen > 0 && !mouse_still)
+	{
+		var vecmouse, vecdot, move, snapval;
+		
+		// Find move factor
+		vecmouse = vec2(mouse_dx, mouse_dy)
+		vecdot = vec2_dot(vec2_normalize(view_control_vec), vec2_normalize(vecmouse))
+		
+		view_control_move_distance += ((vec2_length(vecmouse) / veclen) * (view_control_value * 2) * vecdot)
+		move = view_control_move_distance
+		
+		snapval = (setting_snap ? setting_snap_size_position : snap_min)
+		
+		if (!setting_snap_absolute && setting_snap)
+			move = snap(move, snapval)
+		
+		move += view_control_value
+		move = el_value_clamp(e_value.BEND_SIZE, move)
+		
+		if (setting_snap_absolute || !setting_snap)
+			move = snap(move, snapval)
+		
+		move -= el_edit.value[e_value.BEND_SIZE]
+		
+		// Update
+		el_value_set_start(action_el_bend_size, true)
+		el_value_set(e_value.BEND_SIZE, move, true)
 		el_value_set_done()
 	}
 	

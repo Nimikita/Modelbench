@@ -192,6 +192,7 @@
 		"xyz": "X: %1\nY: %2\nZ: %3",
 		"anglexyz": "X: %1°\nY: %2°\nZ: %3°",
 		"offset": "Offset: %1",
+		"size": "Size: %1",
 		"undo": "Undo",
 		"redo": "Redo",
 		"snapenable": "Enable tool snapping",
