@@ -190,6 +190,7 @@ if (ds_map_valid(viewportmap))
 	setting_overlays = value_get_real(viewportmap[?"overlays"], setting_overlays)
 	setting_overlays_grid = value_get_real(viewportmap[?"overlays_grid"], setting_overlays_grid)
 	setting_overlays_gizmos = value_get_real(viewportmap[?"overlays_gizmos"], setting_overlays_gizmos)
+	setting_overlays_highlights = value_get_real(viewportmap[?"overlays_highlights"], setting_overlays_highlights)
 	setting_overlays_outlines = value_get_real(viewportmap[?"overlays_outlines"], setting_overlays_outlines)
 	setting_overlays_outline_opacity = value_get_real(viewportmap[?"overlays_outline_opacity"], setting_overlays_outline_opacity)
 	

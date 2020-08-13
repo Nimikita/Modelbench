@@ -3,6 +3,7 @@ uniform vec2 uTexScale;
 
 uniform vec4 uMixColor;
 uniform float uBrightness;
+uniform vec4 uHighlightColor;
 
 uniform vec3 uCameraPosition;
 uniform vec4 uAmbientColor;
@@ -21,6 +22,7 @@ void main()
 	vec4 baseColor = vColor * texture2D(uTexture, tex); // Get base
 	
 	baseColor.rgb = mix(baseColor.rgb, uMixColor.rgb, uMixColor.a); // Mix
+	baseColor.rgb = mix(baseColor.rgb, uHighlightColor.rgb, uHighlightColor.a); // Highlight
 	
 	// Diffuse factor
 	float dif = max(0.0, dot(normalize(vNormal), normalize(uCameraPosition)));	

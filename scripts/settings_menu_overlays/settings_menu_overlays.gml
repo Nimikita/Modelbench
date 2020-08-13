@@ -1,6 +1,6 @@
 /// settings_menu_overlays()
 
-var capwid = text_caption_width("settingsmenuoverlaysgrid", "settingsmenuoverlaysgizmos", "settingsmenuoverlaysoutlines", "settingsmenuoverlaysoutlineopacity");
+var capwid = text_caption_width("settingsmenuoverlaysgrid", "settingsmenuoverlaysgizmos", "settingsmenuoverlayshighlights", "settingsmenuoverlaysoutlines", "settingsmenuoverlaysoutlineopacity");
 capwid = max(180, capwid + 32)
 
 dx = content_x + 10
@@ -14,6 +14,10 @@ tab_next()
 
 tab_control_switch()
 draw_switch("settingsmenuoverlaysgizmos", dx, dy, setting_overlays_gizmos, action_setting_overlays_gizmos, true)
+tab_next()
+
+tab_control_switch()
+draw_switch("settingsmenuoverlayshighlights", dx, dy, setting_overlays_highlights, action_setting_overlays_highlights, true)
 tab_next()
 
 tab_control_switch()

@@ -62,11 +62,13 @@ if (err)
 with (shader_map[?shader_color])
 {
 	new_shader_uniform("uMixColor")
+	new_shader_uniform("uHighlightColor")
 }
 
 with (shader_map[?shader_color_light])
 {
 	new_shader_uniform("uMixColor")
+	new_shader_uniform("uHighlightColor")
 	new_shader_uniform("uBrightness")
 	new_shader_uniform("uLightColor")
 	new_shader_uniform("uAmbientColor")

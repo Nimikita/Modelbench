@@ -1087,6 +1087,14 @@
             }
         },
         {
+            "Key": "1b4d60e7-d34e-47c0-8421-1e6d8a537ca0",
+            "Value": {
+                "id": "5ffaa7f2-e8bd-4993-8edd-0ee4e2affa3c",
+                "resourcePath": "scripts\\el_update_parent_hover\\el_update_parent_hover.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "1b5e6ba8-a030-4a8c-b1ff-b0fdbddaae51",
             "Value": {
                 "id": "5ca10206-8a03-4e21-acb0-3803c627e33e",
@@ -4675,6 +4683,14 @@
             "Value": {
                 "id": "518d6ee1-845c-41c2-99d6-8e9e19cb053d",
                 "resourcePath": "scripts\\action_setting_shared_texture_uvs\\action_setting_shared_texture_uvs.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "8229b303-64cd-4b39-af1e-0fc14e97d08c",
+            "Value": {
+                "id": "043f2aca-bf20-4e12-89e2-471096612087",
+                "resourcePath": "scripts\\action_setting_overlays_highlights\\action_setting_overlays_highlights.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -8941,6 +8957,7 @@
         "4b8a0bcd-726b-469c-a295-4c2b19183cc5",
         "f28f6b90-765c-4d0a-8001-121ed965aa13",
         "198b674c-32cc-4e92-8b2f-ab381c34711f",
+        "8229b303-64cd-4b39-af1e-0fc14e97d08c",
         "ee63d098-c2cd-4ca4-bfd4-75ac15e36f1e",
         "c3588c19-4e75-4404-93ce-4ef53926ce6a",
         "953a7be3-8706-4ee7-b216-be5702db2135",
@@ -9311,6 +9328,7 @@
         "4eef396f-b1d3-4cbd-a2d2-9b95146024f0",
         "b21719ef-0d92-4901-87f2-3779a7606a71",
         "cacadda8-d79b-462e-92fc-000888d2f959",
+        "1b4d60e7-d34e-47c0-8421-1e6d8a537ca0",
         "84f4239c-4825-4185-ab97-17904bce8c60",
         "f5690a66-bd8f-4059-92c7-052853c3a34e",
         "2c2a2bf1-532a-4bc2-b621-cd3cdba147e3",

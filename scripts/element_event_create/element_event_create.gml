@@ -13,6 +13,7 @@ type = "block"
 
 parent = null
 parent_is_selected = false
+parent_hover = false
 
 selected = false
 color = make_color_hsv(random(255), 255, 255)

@@ -1,5 +1,8 @@
 /// tab_assets_elements()
 
+tab.elements.element_hover_prev = tab.elements.element_hover
+tab.elements.element_hover = null
+
 // Element search
 tab_control(28)
 if (draw_textfield("assetssearchelements", dx, dy, dw, 28, tab.elements.tbx_search.text, tab.elements.tbx_search, null, text_get("assetssearchelementscaption"), "none"))
@@ -121,3 +124,6 @@ if (window_busy = "elementselection" || window_busy = "elementmove")
 			tab.scroll.value_goal += 16
 	}
 }
+
+if (tab.elements.element_hover != tab.elements.element_hover_prev)
+	el_update_parent_hover()

@@ -132,6 +132,7 @@ json_save_object_start("viewport")
 	json_save_var_bool("overlays", setting_overlays)
 	json_save_var_bool("overlays_grid", setting_overlays_grid)
 	json_save_var_bool("overlays_gizmos", setting_overlays_gizmos)
+	json_save_var_bool("overlays_highlights", setting_overlays_highlights)
 	json_save_var_bool("overlays_outlines", setting_overlays_outlines)
 	json_save_var("overlays_outline_opacity", setting_overlays_outline_opacity)
 	

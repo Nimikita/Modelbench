@@ -9,6 +9,7 @@ render_set_uniform_color("uBlendColor", c_white, 1)
 render_set_uniform_int("uIsGround", 1)
 render_set_uniform("uBrightness", 1)
 render_set_uniform_color("uMixColor", c_black, 0)
+render_set_uniform_color("uHighlightColor", c_black, 0)
 render_set_texture(spr_empty)
 
 // Grid

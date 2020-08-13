@@ -4,7 +4,7 @@
         "language": "English",
         "translator": "Nimi",
         "forversion": "1.1.0",
-        "lastchange": "2020.08.06"
+        "lastchange": "2020.08.12"
     },
 	"startup/": {
 		"modeldetected": "Unsaved model detected",
@@ -288,6 +288,7 @@
 		"overlays/": {
 			"grid": "Grid",
 			"gizmos": "Gizmos",
+			"highlights": "Highlights",
 			"outlines": "Outlines",
 			"outlineopacity": "Shape outline opacity"
 		},

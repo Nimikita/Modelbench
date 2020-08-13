@@ -36,7 +36,10 @@ if (itemvisible)
 {
 	// Hover highlight
 	if (itemhover)
+	{
 		mouse_cursor = cr_handpoint
+		tab.elements.element_hover = element
+	}
 	
 	// Select highlight
 	if (itemhover && mouse_left && element.list_mouseon)

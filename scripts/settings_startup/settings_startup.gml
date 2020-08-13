@@ -143,6 +143,7 @@ setting_snap_size_uv = 1
 setting_overlays = true
 setting_overlays_grid = true
 setting_overlays_gizmos = true
+setting_overlays_highlights = true
 setting_overlays_outlines = true
 setting_overlays_outline_opacity = .15
 
