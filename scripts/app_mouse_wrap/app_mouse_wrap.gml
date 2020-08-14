@@ -22,19 +22,19 @@ if (mouse_x < xx || display_mouse_get_x() < 2)
 
 if (mouse_y < yy || display_mouse_get_y() < 2)
 {
-	sety = yy + height
+	sety = yy + height - 2
 	mouse_wrap_y--
 }
 
 if (mouse_x > xx + width || display_mouse_get_x() > (window_get_x() + window_get_width()) - 2)
 {
-	setx = xx
+	setx = xx + 2
 	mouse_wrap_x++
 }
 
 if (mouse_y > yy + height || display_mouse_get_y() > (window_get_y() + window_get_height()) - 2)
 {
-	sety = yy
+	sety = yy + 2
 	mouse_wrap_y++
 }
 

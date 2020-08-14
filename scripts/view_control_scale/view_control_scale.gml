@@ -81,22 +81,35 @@ if (window_busy = "rendercontrol" && view_control_edit_view = view && view_contr
 }
 
 // Is dragging(XYZ scale)
-if (window_busy = "rendercontrolscalexyz" && view_control_edit_view = view && view_control_edit = e_control.SCA_XYZ)
+if (view_control_edit_view = view && view_control_edit = e_control.SCA_XYZ)
 {
 	mouse_cursor = cr_handpoint
 	
 	// Move
 	if (!mouse_still)
 	{
-		var snapval;
+		var snapval, scaleval;
 		snapval = (setting_snap ? setting_snap_size_scale : snap_min)
+		scaleval = vec3(view_control_scale_amount)
+		
+		for (var i = X; i <= Z; i++)
+		{
+			if (!setting_snap_absolute && setting_snap)
+				scaleval[i] = snap(scaleval[i], snapval)
+			
+			scaleval[i] = view_control_value_scale[i] * scaleval[i]
+			scaleval[i] = el_value_clamp(e_value.SCA_X + i, scaleval[i])
+			
+			if (setting_snap_absolute || !setting_snap)
+				scaleval[i] = snap(scaleval[i], snapval)
+		}
 		
 		// Update
 		axis_edit = X
 		el_value_set_start(action_el_sca, true)
-		el_value_set(e_value.SCA_X, view_control_value_scale[X] * view_control_scale_amount, false)
-		el_value_set(e_value.SCA_Y, view_control_value_scale[Y] * view_control_scale_amount, false)
-		el_value_set(e_value.SCA_Z, view_control_value_scale[Z] * view_control_scale_amount, false)
+		el_value_set(e_value.SCA_X, scaleval[X], false)
+		el_value_set(e_value.SCA_Y, scaleval[Y], false)
+		el_value_set(e_value.SCA_Z, scaleval[Z], false)
 		el_value_set_done()
 	}
 	

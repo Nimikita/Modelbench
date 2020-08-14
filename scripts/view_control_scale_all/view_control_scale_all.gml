@@ -17,20 +17,20 @@ coord[X] = round(coord[X])
 coord[Y] = round(coord[Y])
 
 // Check state
-if (window_busy = "rendercontrolscalexyz")
+if (window_busy = "rendercontrol")
 {
 	if (view_control_edit != e_control.SCA_XYZ)
 		return 0
 	
 	coord = view_control_scale_coords
-	view_control_scale_amount = point_distance(mouse_x - content_x, mouse_y - content_y, view_control_scale_coords[X], view_control_scale_coords[Y]) / radius
+	view_control_scale_amount = point_distance((mouse_wrap_x * content_width) + mouse_x - content_x, (mouse_wrap_y * content_height) + mouse_y - content_y, view_control_scale_coords[X], view_control_scale_coords[Y]) / radius
 }
 else if (view.control_mouseon_last = e_control.SCA_XYZ)
 {
 	// Left click
 	if (mouse_left_pressed)
 	{
-		window_busy = "rendercontrolscalexyz"
+		window_busy = "rendercontrol"
 		view_control_value_scale[X] = el_edit.value[e_value.SCA_X]
 		view_control_value_scale[Y] = el_edit.value[e_value.SCA_Y]
 		view_control_value_scale[Z] = el_edit.value[e_value.SCA_Z]
@@ -67,9 +67,9 @@ else
 
 var drawcoord, mousecoord;
 drawcoord = vec2_mul(coord, 2)
-mousecoord = point2D(mouse_x - content_x, mouse_y - content_y)
+mousecoord = point2D((mouse_wrap_x * content_width) + mouse_x - content_x, (mouse_wrap_y * content_height) + mouse_y - content_y)
 
-if (window_busy != "rendercontrolscalexyz")
+if (view_control_edit != e_control.SCA_XYZ)
 {
 	for (var i = 0; i < 10; i++)
 		draw_circle_ext(drawcoord[X], drawcoord[Y], (radius * 2) + (i * .5), true, c_black, alpha)
@@ -94,6 +94,10 @@ else
 		var nx, ny, angle;
 		nx = lerp(mousecoord[X] * 2, drawcoord[X], i/(view_control_scale_amount * 5))
 		ny = lerp(mousecoord[Y] * 2, drawcoord[Y], i/(view_control_scale_amount * 5))
+		
+		if (nx > content_width * 2 || ny > content_height * 2 || nx < 0 || ny < 0)
+			continue
+				
 		angle = radtodeg(arctan2((mousecoord[Y]*2) - drawcoord[Y], (mousecoord[X] * 2) - drawcoord[X]))
 		draw_image(spr_view_line, 0, nx, ny, 3, 2.5, c_text_tertiary, a_text_tertiary, -angle)
 		draw_image(spr_view_line, 0, nx, ny, 2, 2, ((i mod 5) = 0 ? c_accent : c_background), 1, -angle)

@@ -43,7 +43,7 @@ if (alpha = 0)
 draw_set_alpha(alpha)
 
 // Check state
-if (window_busy = "rendercontrol" || window_busy = "rendercontrolscalexyz")
+if (window_busy = "rendercontrol")
 {
 	if (view_control_edit != control)
 		return 0
