@@ -78,7 +78,7 @@ if (el_edit_amount > 0 && program_mode = e_mode.MODELING)
 						
 						if (!point3D_project_error)
 						{
-							draw_circle_ext(origin2d[X], origin2d[Y], 28, false, hex_to_color("FF00FF"), 1)
+							draw_image(spr_circle_28, 0, origin2d[X], origin2d[Y], 2, 2, hex_to_color("FF00FF"), 1)
 							draw_image(spr_icons, icons.PART, origin2d[X], origin2d[Y], 2, 2, c_white, 1)
 						}
 					}
@@ -139,14 +139,14 @@ if (el_edit_amount > 0 && program_mode = e_mode.MODELING)
 						{
 							// Highlight icon
 							if (view.control_mouseon = e_control.POS_PAN || view.control_mouseon = e_control.PIVOT_PAN || view.control_mouseon = e_control.BEND_OFFSET)
-								draw_circle_ext(origin2d[X], origin2d[Y], 32, false, c_hover, a_hover)
+								draw_image(spr_circle_32, 0, origin2d[X], origin2d[Y], 2, 2, c_hover, a_hover)
 							
 							draw_image(spr_dropshadow_14, 0, origin2d[X], origin2d[Y], 2, 2, c_white, 1)
-							draw_circle_ext(origin2d[X], origin2d[Y], 28, false, c_background, 1)
+							draw_image(spr_circle_28, 0, origin2d[X], origin2d[Y], 2, 2, c_background, 1)
 							draw_image(spr_icons, icon, origin2d[X], origin2d[Y], 2, 2, c_text_secondary, a_text_secondary)
 						}
 						else
-							draw_circle_ext(origin2d[X], origin2d[Y], 16, false, c_axiscyan, 1)
+							draw_image(spr_circle_16, 0, origin2d[X], origin2d[Y], 2, 2, c_axiscyan, 1)
 					}
 					
 					// XYZ scale control tooltip

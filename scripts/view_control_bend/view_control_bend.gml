@@ -82,7 +82,6 @@ if (!offseterr && !unbenterr && !benterr)
 		
 		view.control_mouseon = e_control.BEND_OFFSET
 	}
-	draw_circle_ext(offset2d[X], offset2d[Y], 14, false, merge_color(c_bend, c_background, .5), 1)
 	
 	// Size (Unbent half)
 	if (el_edit.value[e_value.BEND_SIZE_CUSTOM] && point_distance(mouse_x - content_x, mouse_y - content_y, unbent2d[X]/2, unbent2d[Y]/2) < 9)
@@ -99,9 +98,9 @@ if (!offseterr && !unbenterr && !benterr)
 		}
 		
 		view.control_mouseon = e_control.BEND_SIZE
-		draw_circle_ext(unbent2d[X], unbent2d[Y], 24, false, c_hover, a_hover)
+		draw_image(spr_circle_22, 0, unbent2d[X], unbent2d[Y], 2, 2, c_hover, a_hover)
 	}
-	draw_circle_ext(unbent2d[X], unbent2d[Y], 18, false, c_background, el_edit.value[e_value.BEND_SIZE_CUSTOM] ? 1 : .75)
+	draw_image(spr_circle_18, 0, unbent2d[X], unbent2d[Y], 2, 2, c_background, el_edit.value[e_value.BEND_SIZE_CUSTOM] ? 1 : .75)
 	
 	// Size (Bent half)
 	if (el_edit.value[e_value.BEND_SIZE_CUSTOM] && point_distance(mouse_x - content_x, mouse_y - content_y, bent2d[X]/2, bent2d[Y]/2) < 9)
@@ -118,9 +117,9 @@ if (!offseterr && !unbenterr && !benterr)
 		}
 		
 		view.control_mouseon = e_control.BEND_SIZE
-		draw_circle_ext(bent2d[X], bent2d[Y], 24, false, c_hover, a_hover)
+		draw_image(spr_circle_22, 0, bent2d[X], bent2d[Y], 2, 2, c_hover, a_hover)
 	}
-	draw_circle_ext(bent2d[X], bent2d[Y], 18, false, c_bend, el_edit.value[e_value.BEND_SIZE_CUSTOM] ? 1 : .75)
+	draw_image(spr_circle_18, 0, bent2d[X], bent2d[Y], 2, 2, c_bend, el_edit.value[e_value.BEND_SIZE_CUSTOM] ? 1 : .75)
 	
 }
 

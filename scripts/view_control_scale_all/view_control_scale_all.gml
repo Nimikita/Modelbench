@@ -76,8 +76,7 @@ if (window_busy != "rendercontrolscalexyz")
 }
 else
 {
-	draw_circle_ext(mousecoord[X] * 2, mousecoord[Y] * 2, 20, false, c_background, 1)
-	draw_circle_ext(mousecoord[X] * 2, mousecoord[Y] * 2, 12, false, c_background, 2)
+	draw_image(spr_circle_20, 0, mousecoord[X] * 2, mousecoord[Y] * 2, 1, 1, c_background, 1)
 	
 	render_set_culling(false)
 	
