@@ -7,9 +7,9 @@
 
 // Versions
 #macro modelbench_version			"1.1.0"
-#macro modelbench_version_full		modelbench_version + " alpha 4"
+#macro modelbench_version_full		modelbench_version + " alpha 5"
 #macro modelbench_version_extra		""
-#macro modelbench_version_date		"08.12.2020"
+#macro modelbench_version_date		"08.13.2020"
 #macro gm_runtime					GM_runtime_version
 
 // File formats

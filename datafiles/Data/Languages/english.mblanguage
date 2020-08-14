@@ -5,7 +5,7 @@
 		"locale": "en-US",
         "translator": "Nimi",
         "forversion": "1.1.0",
-        "lastchange": "2020.08.13"
+        "lastchange": "2020.08.14"
     },
 	"startup/": {
 		"modeldetected": "Unsaved model detected",
@@ -206,8 +206,9 @@
 		"overlaysdisable": "Disable overlays",
 		"windenable": "Enable wind",
 		"winddisable": "Disable wind",
-		"shadingenable": "Enable shading",
-		"shadingdisable": "Disable shading",
+		"draftmode": "Draft mode",
+		"solidmode": "Solid mode",
+		"texturedmode": "Textured mode",
 		"blockybendingenable": "Enable blocky bending",
 		"blockybendingdisable": "Disable blocky bending",
 		"uveditor/": {

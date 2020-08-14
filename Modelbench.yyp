@@ -2402,7 +2402,7 @@
             "Key": "4470c11f-cd89-431a-8fc6-fdcc9e2b366f",
             "Value": {
                 "id": "a869ce18-4464-4d12-8866-160e785ab530",
-                "resourcePath": "scripts\\action_setting_shading\\action_setting_shading.yy",
+                "resourcePath": "scripts\\action_setting_render\\action_setting_render.yy",
                 "resourceType": "GMScript"
             }
         },

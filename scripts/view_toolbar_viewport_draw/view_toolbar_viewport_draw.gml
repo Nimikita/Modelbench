@@ -72,16 +72,31 @@ dx += 28
 draw_settings_button("windsettings", dx, dy, 16, 28, false, settings_menu_wind)
 dx += 16 + 4
 
-// Shading
-draw_button_icon("toolsetshading", dx, dy, 28, 28, setting_shading, icons.SHADING, action_setting_shading, disable, setting_shading ? "tooltipshadingdisable" : "tooltipshadingenable")
-dx += 28
-
-draw_settings_button("windshading", dx, dy, 16, 28, false, settings_menu_shading, disable)
-dx += 16 + 4
-
 // Blocky bending
 draw_button_icon("toolsetblockybending", dx, dy, 28, 28, setting_blocky_bending, icons.BLOCKY_BENDING, action_setting_blocky_bending, false, setting_blocky_bending ? "tooltipblockybendingdisable" : "tooltipblockybendingenable")
 dx += 28 + 4
+
+// Divider
+draw_box(dx, dy, 1, 28, false, c_border, a_border)
+dx += 4
+
+// Draft rendering
+if (draw_button_icon("toolsetdraft", dx, dy, 28, 28, setting_render_mode = e_viewport_render.DRAFT, icons.DRAFT, null, disable, "tooltipdraftmode"))
+	action_setting_render(e_viewport_render.DRAFT)
+dx += 28 + 4
+
+// Solid rendering
+if (draw_button_icon("toolsetsolid", dx, dy, 28, 28, setting_render_mode = e_viewport_render.SOLID, icons.SOLID, null, disable, "tooltipsolidmode"))
+	action_setting_render(e_viewport_render.SOLID)
+dx += 28 + 4
+
+// Textured rendering
+if (draw_button_icon("toolsettextured", dx, dy, 28, 28, setting_render_mode = e_viewport_render.TEXTURED, icons.TEXTURED, null, disable, "tooltiptexturedmode"))
+	action_setting_render(e_viewport_render.TEXTURED)
+dx += 28
+
+draw_settings_button("shading", dx, dy, 16, 28, false, settings_menu_shading, disable || setting_render_mode = e_viewport_render.DRAFT)
+dx += 16 + 4
 
 toolbar_viewport_width = dx - toolbar_viewport_width
 draw_set_alpha(1)

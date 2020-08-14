@@ -30,6 +30,13 @@ enum e_mode
 	PREVIEW
 }
 
+enum e_viewport_render
+{
+	DRAFT,
+	SOLID,
+	TEXTURED
+}
+
 enum e_snap_mode
 {
 	ABSOLUTE,
@@ -205,9 +212,11 @@ enum icons
 	GLOBAL,
 	LOCAL,
 	GIMBAL,
-	SHADING,
+	SOLID,
 	BLOCKY_BENDING,
 	WIND,
+	DRAFT,
+	TEXTURED,
 	
 	PLACEHOLDER = 11
 }

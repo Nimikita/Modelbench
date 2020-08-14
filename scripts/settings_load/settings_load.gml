@@ -202,6 +202,7 @@ if (ds_map_valid(viewportmap))
 	setting_wind_speed = value_get_real(viewportmap[?"wind_speed"], setting_wind_speed)
 	setting_wind_strength = value_get_real(viewportmap[?"wind_strength"], setting_wind_strength)
 	
+	setting_render_mode = value_get_real(viewportmap[?"render_mode"], setting_render_mode)
 	setting_shading = value_get_real(viewportmap[?"shading"], setting_shading)
 	setting_shading_ao = value_get_real(viewportmap[?"shading_ao"], setting_shading_ao)
 	setting_shading_lighting = value_get_real(viewportmap[?"shading_lighting"], setting_shading_lighting)

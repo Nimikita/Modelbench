@@ -46,7 +46,7 @@ render_surface_sun_buffer = null
 
 // SSAO
 globalvar render_ssao_kernel, render_ssao_noise;
-render_ssao_kernel = render_generate_sample_kernel(42)
+render_ssao_kernel = render_generate_sample_kernel(16)
 render_ssao_noise = null
 
 // Render modes

@@ -54,7 +54,7 @@ for (var s = 0; s < ds_list_size(shape_list); s++)
 		}
 		
 		// Set texture
-		if (res != null)
+		if (res != null && (app.setting_render_mode = e_viewport_render.TEXTURED || app.program_mode = e_mode.PREVIEW))
 			render_set_texture(res.sprite)
 		else
 			render_set_texture(spr_empty)

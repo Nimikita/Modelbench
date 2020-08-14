@@ -157,6 +157,7 @@ setting_wind_speed = .45
 setting_wind_strength = .5
 
 // Shading
+setting_render_mode = e_viewport_render.TEXTURED
 setting_shading = true
 setting_shading_ao = true
 setting_shading_lighting = true

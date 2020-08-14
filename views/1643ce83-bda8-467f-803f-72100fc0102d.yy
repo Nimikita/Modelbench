@@ -9,7 +9,7 @@
         "a0599b9a-78ad-4bd5-86ac-88ef24f34896"
     ],
     "filterType": "GMScript",
-    "folderName": "Shading",
+    "folderName": "Render",
     "isDefaultView": false,
     "localisedFolderName": ""
 }

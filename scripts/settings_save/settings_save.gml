@@ -144,6 +144,7 @@ json_save_object_start("viewport")
 	json_save_var("wind_speed", setting_wind_speed)
 	json_save_var("wind_strength", setting_wind_strength)
 	
+	json_save_var("render_mode", setting_render_mode)
 	json_save_var_bool("shading", setting_shading)
 	json_save_var_bool("shading_ao", setting_shading_ao)
 	json_save_var_bool("shading_lighting", setting_shading_lighting)
