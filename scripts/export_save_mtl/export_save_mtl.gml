@@ -1,6 +1,7 @@
 /// export_save_mtl()
 
-var str = "";
+var str, fnfilter;
+str = ""
 
 str += "# Modelbench MTL file" + "\n"
 
@@ -9,12 +10,13 @@ with (obj_texture)
 	if (!export_save_tex)
 		continue
 	
-	str += "newmtl " + filename_change_ext(filename, "") + "\n"
-	str += "map_Kd " + filename + "\n"
+	fnfilter = string_replace_all(filename, " ", "_")
+	str += "newmtl " + filename_change_ext(fnfilter, "") + "\n"
+	str += "map_Kd " + fnfilter + "\n"
 	
 	str += "\n"
 	
-	sprite_save(sprite, 0, filename_dir(app.export_mtl_fn) + "\\" + filename)
+	sprite_save(sprite, 0, filename_dir(app.export_mtl_fn) + "\\" + fnfilter)
 	
 	export_save_tex = false
 }

@@ -44,7 +44,8 @@ if (element_type = TYPE_SHAPE)
 	}
 			
 	// Change material
-	if ((app.export_material != filename_change_ext(res.filename, "")))
+	var fnfilter = string_replace_all(filename_change_ext(res.filename, ""), " ", "_");
+	if (app.export_material != fnfilter)
 	{
 		// Seperate polygon group
 		if (app.export_mode != e_export.SEPERATE_SHAPES)
@@ -53,7 +54,7 @@ if (element_type = TYPE_SHAPE)
 			file_text_write_string(app.export_file, "g " + (name = "" ? text_get("assetsnewshape") : name) + "\n")
 		}
 		
-		app.export_material = filename_change_ext(res.filename, "")
+		app.export_material = fnfilter
 		res.export_save_tex = true
 		
 		file_text_write_string(app.export_file, "usemtl " + app.export_material + "\n")
