@@ -32,6 +32,9 @@ with (assets)
 		element_search_list = ds_list_create()
 		element_hover = null
 		element_hover_prev = null
+		
+		tbx_name = new_textbox(true, 0, "")
+		name_edit_element = null
 	}
 	
 	// Textures

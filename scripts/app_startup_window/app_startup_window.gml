@@ -35,6 +35,8 @@ mouse_move = 0
 mouse_still = 0
 mouse_wrap_x = 0
 mouse_wrap_y = 0
+mouse_click_timer = 0
+mouse_click_count = 0
 app_mouse_clear()
 
 dragger_drag_value = 0

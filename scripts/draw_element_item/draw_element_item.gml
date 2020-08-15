@@ -179,7 +179,21 @@ if (movehover && (mouse_still > 15 * (60 / room_speed)) && window_busy = "elemen
 #endregion
 
 #region Element name
-if (itemvisible)
+
+// Edit name
+if (tab.elements.name_edit_element = element)
+{
+	if (textbox_draw(tab.elements.tbx_name, xx, itemy + 6, itemw - (xx - itemx) - 52, itemh))
+		action_el_rename(tab.elements.tbx_name.text)
+	
+	if (window_focus != string(tab.elements.tbx_name))
+	{
+		tab.elements.name_edit_element = null
+	}
+}
+
+// Name label
+if (itemvisible && tab.elements.name_edit_element != element)
 {
 	var labelname, labelshort, labelcolor, labelalpha;
 	labelname = element.name
@@ -221,10 +235,28 @@ if (itemvisible)
 	// Preview name tooltip
 	if (string_width(labelname) > itemw - (xx - itemx) - 52)
 		tip_set(labelname, xx, itemy, string_width_font(labelshort, font_value), 28)
+	
+	// Edit name
+	if (labelshort != "...")
+	{
+		var boxwid = min(string_width(labelshort) + 32, itemw - (xx - itemx) - 52);
+		
+		if (app_mouse_box(xx, itemy, boxwid, itemh))
+		{
+			if (mouse_left_double_pressed)
+			{
+				window_busy = string(tab.elements.tbx_name)
+				window_focus = string(tab.elements.tbx_name)
+				tab.elements.tbx_name.text = element.name
+				tab.elements.name_edit_element = element
+			}
+		}
+	}
 }
+
 #endregion
 
-if (itemvisible && itemhover && !expandhover && !lockhover && !visiblehover)
+if (itemvisible && itemhover && !expandhover && !lockhover && !visiblehover && tab.elements.name_edit_element != element)
 {
 	element.list_mouseon = true
 	context_menu_area(dx, itemy, dw, itemh, "contextmenuelement", element, e_value_type.NONE, null, null)
@@ -245,7 +277,7 @@ if (itemvisible && itemhover && !expandhover && !lockhover && !visiblehover)
 	}
 	
 	// Deselect if control if held down, select if not held down
-	if (mouse_left_released && window_busy = "")
+	if (!mouse_left_double_pressed && mouse_left_released && window_busy = "")
 	{
 		if (keyboard_check(vk_control))
 			action_el_deselect(element)
