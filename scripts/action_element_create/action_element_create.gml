@@ -126,3 +126,4 @@ app_update_name_warning()
 el_update_part()
 
 app_update_el_edit()
+action_update_search()
