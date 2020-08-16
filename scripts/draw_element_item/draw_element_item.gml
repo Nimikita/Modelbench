@@ -189,6 +189,7 @@ if (tab.elements.name_edit_element = element)
 	if (window_focus != string(tab.elements.tbx_name))
 	{
 		tab.elements.name_edit_element = null
+		action_update_search()
 	}
 }
 

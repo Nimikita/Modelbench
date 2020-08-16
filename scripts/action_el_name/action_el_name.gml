@@ -40,3 +40,4 @@ else
 }
 
 app_update_name_warning()
+action_update_search()
