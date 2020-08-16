@@ -124,9 +124,6 @@ setting_hide_shapes = false
 setting_combine_scale = false
 
 setting_collapse_backup_models = true
-setting_collapse_wind = true
-setting_collapse_ssao = true
-setting_collapse_shadows = true
 setting_collapse_bend_axis[X] = true
 setting_collapse_bend_axis[Y] = true
 setting_collapse_bend_axis[Z] = true

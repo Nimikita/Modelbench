@@ -81,5 +81,5 @@ else
 	
 	// Only draw splash if it fits well on screen
 	if ((midy + (sprite_get_height(spr_ashley_splash) / 1.75)) < (window_height - 50))
-		draw_image(spr_ashley_splash, 1, midx, midy)
+		draw_image(spr_ashley_splash, 0, midx, midy)
 }

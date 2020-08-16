@@ -257,15 +257,15 @@ if (itemvisible && tab.elements.name_edit_element != element)
 
 #endregion
 
-if (itemvisible && itemhover && !expandhover && !lockhover && !visiblehover && tab.elements.name_edit_element != element)
+if (itemvisible && itemhover && !expandhover && !lockhover && !visiblehover)
 {
 	element.list_mouseon = true
 	context_menu_area(dx, itemy, dw, itemh, "contextmenuelement", element, e_value_type.NONE, null, null)
 	
-	if (mouse_move > 5 && !search)
+	if (mouse_move > 5)
 	{
 		// Start box selection or moving
-		if (element.selected)
+		if (element.selected && !search && tab.elements.name_edit_element != element)
 		{
 			window_busy = "elementmovestart"
 		}

@@ -9,7 +9,7 @@ if (object_index != app)
 	var elementname = name = "" ? text_get("assetsnewpart") : name;
 	
 	if (string_contains(string_upper(elementname), search))
-		ds_list_add(app.tab.elements.element_search_list, id)
+		ds_list_add(app.assets.elements.element_search_list, id)
 }
 
 // Add part shapes to results
@@ -22,7 +22,7 @@ if (!app.setting_hide_shapes && shape_list != null)
 			var elementname = name = "" ? text_get("assetsnewshape") : name;
 	
 			if (string_contains(string_upper(elementname), search))
-				ds_list_add(app.tab.elements.element_search_list, id)
+				ds_list_add(app.assets.elements.element_search_list, id)
 		}
 	}
 }

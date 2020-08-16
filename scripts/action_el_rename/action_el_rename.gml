@@ -1,5 +1,6 @@
 /// action_el_rename(name)
 /// @arg name
+/// @desc Only used for list renaming, only update search list if undo/redo.
 
 if (history_undo)
 {
@@ -37,3 +38,6 @@ else
 }
 
 app_update_name_warning()
+
+if (history_redo || history_undo)
+	action_update_search()
