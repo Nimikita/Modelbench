@@ -78,6 +78,7 @@ setting_look_sensitivity = .75
 setting_fast_modifier = 2.25
 setting_slow_modifier = 0.25
 setting_smooth_camera = false
+setting_legacy_controls = false
 
 setting_theme = theme_light
 setting_accent = 6

@@ -594,7 +594,8 @@
 		"startuptips": "Show startup tips",
 		"looksensitivity": "Look sensitivity",
 		"smoothcamera": "Smooth camera",
-		"smoothcameraamount": "Amount"
+		"legacycontrols": "Legacy viewport controls",
+		"legacycontrolshelp": "Orbit/pan viewport with left mouse button. Hold right mouse button for walk navigation. Disables group select."
 	},
 	"about/": {
 		"version": "Version %1",

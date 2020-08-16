@@ -6503,6 +6503,14 @@
             }
         },
         {
+            "Key": "b466ed10-b9cc-4b92-8381-0b7c923c06f7",
+            "Value": {
+                "id": "652bd9ed-c779-4cbe-a37d-407b22ba6be3",
+                "resourcePath": "scripts\\action_setting_legacy_controls\\action_setting_legacy_controls.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "b4c3df17-a24f-4b7b-87ba-41114a4ab237",
             "Value": {
                 "id": "e5c49ab8-dfd6-4c08-b308-ced849ef7cc8",
@@ -9049,6 +9057,7 @@
         "efa71a34-902b-49ff-a018-62373dc82a63",
         "434ce76b-9ff5-4223-ada7-e04b9644ae1b",
         "d814096f-3570-4575-bbbe-5a716b01201c",
+        "b466ed10-b9cc-4b92-8381-0b7c923c06f7",
         "2fa5ad73-1bab-425d-9dd9-5cb063e0fad6",
         "eab1f30e-d456-4c21-9d67-d257827633e0",
         "07d2eefd-8062-44e1-b7fb-427f6af76b4a",
