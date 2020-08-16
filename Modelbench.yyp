@@ -1431,6 +1431,14 @@
             }
         },
         {
+            "Key": "271025d2-43d7-44cb-8bd2-34955696b751",
+            "Value": {
+                "id": "c966700e-2730-488d-afcd-f3131db3a17b",
+                "resourcePath": "datafiles_yy\\Data\\Languages\\francais.mblanguage.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
             "Key": "2712f285-24d6-4f93-a0fb-47ec70b49ee2",
             "Value": {
                 "id": "8b87ff04-9229-4168-a3cf-2e039cfb7d32",
@@ -4855,14 +4863,6 @@
             }
         },
         {
-            "Key": "853995f2-c778-4a87-91a7-fc336ed91b53",
-            "Value": {
-                "id": "02148182-1651-4589-9a8f-8d0bb1890104",
-                "resourcePath": "datafiles_yy\\Data\\Languages\\svenska.mblanguage.yy",
-                "resourceType": "GMIncludedFile"
-            }
-        },
-        {
             "Key": "85774483-efbe-4f57-ac24-745fb4884a69",
             "Value": {
                 "id": "79e48f3d-504f-46be-9dc3-836dc2446dfd",
@@ -6927,14 +6927,6 @@
             }
         },
         {
-            "Key": "c18b5b51-0d62-402e-84b9-817316befb01",
-            "Value": {
-                "id": "669ec6e1-6ae9-471d-a7b2-8862467f9f78",
-                "resourcePath": "datafiles_yy\\Data\\Languages\\francais.mblanguage.yy",
-                "resourceType": "GMIncludedFile"
-            }
-        },
-        {
             "Key": "c1cddf5a-9509-4378-803e-54fa34981452",
             "Value": {
                 "id": "81f27233-fa3f-4feb-9add-8cec6c048361",
@@ -8140,6 +8132,14 @@
                 "id": "0fbacb7c-2a5d-4853-bafb-0a98f963304f",
                 "resourcePath": "views\\e7e4b99b-b5a7-4272-9bab-2258f131ff44.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "e8631630-0df9-46bf-b05e-8d68af2abb59",
+            "Value": {
+                "id": "189af8a2-b0f5-4ffc-9652-e66732c7b3c9",
+                "resourcePath": "datafiles_yy\\Data\\Languages\\svenska.mblanguage.yy",
+                "resourceType": "GMIncludedFile"
             }
         },
         {
