@@ -80,14 +80,14 @@ dx += 28 + 4
 draw_box(dx, dy, 1, 28, false, c_border, a_border)
 dx += 4
 
-// Draft rendering
-if (draw_button_icon("toolsetdraft", dx, dy, 28, 28, setting_render_mode = e_viewport_render.DRAFT, icons.DRAFT, null, disable, "tooltipdraftmode"))
-	action_setting_render(e_viewport_render.DRAFT)
+// Flat rendering
+if (draw_button_icon("toolsetflat", dx, dy, 28, 28, setting_render_mode = e_viewport_render.FLAT, icons.FLAT, null, disable, "tooltipflatmode"))
+	action_setting_render(e_viewport_render.FLAT)
 dx += 28 + 4
 
-// Solid rendering
-if (draw_button_icon("toolsetsolid", dx, dy, 28, 28, setting_render_mode = e_viewport_render.SOLID, icons.SOLID, null, disable, "tooltipsolidmode"))
-	action_setting_render(e_viewport_render.SOLID)
+// Shaded rendering
+if (draw_button_icon("toolsetshaded", dx, dy, 28, 28, setting_render_mode = e_viewport_render.SHADED, icons.SHADED, null, disable, "tooltipshadedmode"))
+	action_setting_render(e_viewport_render.SHADED)
 dx += 28 + 4
 
 // Textured rendering
@@ -95,7 +95,7 @@ if (draw_button_icon("toolsettextured", dx, dy, 28, 28, setting_render_mode = e_
 	action_setting_render(e_viewport_render.TEXTURED)
 dx += 28
 
-draw_settings_button("shading", dx, dy, 16, 28, false, settings_menu_shading, disable || setting_render_mode = e_viewport_render.DRAFT)
+draw_settings_button("shading", dx, dy, 16, 28, false, settings_menu_shading, disable || setting_render_mode = e_viewport_render.FLAT)
 dx += 16 + 4
 
 toolbar_viewport_width = dx - toolbar_viewport_width

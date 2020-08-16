@@ -32,8 +32,8 @@ enum e_mode
 
 enum e_viewport_render
 {
-	DRAFT,
-	SOLID,
+	FLAT,
+	SHADED,
 	TEXTURED
 }
 
@@ -212,10 +212,10 @@ enum icons
 	GLOBAL,
 	LOCAL,
 	GIMBAL,
-	SOLID,
+	SHADED,
 	BLOCKY_BENDING,
 	WIND,
-	DRAFT,
+	FLAT,
 	TEXTURED,
 	
 	PLACEHOLDER = 11
