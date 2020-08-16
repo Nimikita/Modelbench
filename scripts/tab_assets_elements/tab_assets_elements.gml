@@ -5,8 +5,7 @@ tab.elements.element_hover = null
 
 // Element search
 tab_control(28)
-if (draw_textfield("assetssearchelements", dx, dy, dw, 28, tab.elements.tbx_search.text, tab.elements.tbx_search, null, text_get("assetssearchelementscaption"), "none"))
-	action_update_search()
+draw_textfield("assetssearchelements", dx, dy, dw, 28, tab.elements.tbx_search.text, tab.elements.tbx_search, action_search, text_get("assetssearchelementscaption"), "none")
 tab_next()
 
 tab_control_switch()
@@ -24,7 +23,7 @@ element_move_parent = null
 element_move_index = null
 
 // Show search results
-if (tab.elements.tbx_search.text != "")
+if (tab.elements.search_string != "")
 {
 	for (var i = 0; i < ds_list_size(tab.elements.element_search_list); i++)
 		draw_element_item(tab.elements.element_search_list[|i], dy, 0, true)
