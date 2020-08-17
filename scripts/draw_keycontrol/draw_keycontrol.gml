@@ -1,26 +1,30 @@
-/// draw_keycontrol(name, x, y, width, key, ctrl, keydefault, ctrldefault, script)
+/// draw_keycontrol(name, x, y, width, shortcut, default, keyonly, script, [keyonly])
 /// @arg name
 /// @arg x
 /// @arg y
 /// @arg width
-/// @arg key
-/// @arg ctrl
-/// @arg keydefault
-/// @arg ctrldefault
+/// @arg shortcut
+/// @arg default
 /// @arg script 
+/// @arg [keyonly]
 
-var name, xx, yy, wid, key, ctrl, keydef, ctrldef, script;
-var hei, text, mouseon;
+var name, xx, yy, wid, shortcut, def, script, keyonly;
+var hei, text, mouseon, shortcutnew;
 name = argument[0]
 xx = argument[1]
 yy = argument[2]
 wid = argument[3]
-key = argument[4]
-ctrl = argument[5]
-keydef = argument[6]
-ctrldef = argument[7]
-script = argument[8]
+shortcut = argument[4]
+def = argument[5]
+script = argument[6]
+
+if (argument_count > 7)
+	keyonly = argument[7]
+else
+	keyonly = false
+
 hei = 28
+shortcutnew = shortcut
 
 if (xx + wid < content_x || xx > content_x + content_width || yy + hei < content_y || yy > content_y + content_height)
 	return 0
@@ -28,11 +32,54 @@ if (xx + wid < content_x || xx > content_x + content_width || yy + hei < content
 text = text_get(name) + ":"
 mouseon = app_mouse_box(dx, yy, dw, hei) && content_mouseon
 
-context_menu_area(dx, yy, dw, hei, "contextmenukeycontrol", array(keydef, ctrldef), e_value_type.NONE, script, null)
+context_menu_area(dx, yy, dw, hei, "contextmenukeycontrol", def, e_value_type.NONE, script, null)
 
 // Check key
 if (window_busy = name)
 {
+	// Update shortcut passed on key presses
+	if (keyboard_check_pressed(vk_anykey) && !keyboard_check_pressed(vk_escape))
+	{
+		var key, shift, control;
+		key = keyboard_lastkey
+		shift = (keyboard_check_pressed(vk_shift) || key = 16 || key = 13)
+		control = keyboard_check_pressed(vk_control)
+		
+		keyboard_clear(keyboard_lastkey)
+		
+		// Shift detect(Left shift ID is 16, right is 13)
+		if (shift)
+			shortcutnew = new_shortcut(shortcut[e_shortcut.KEY], shortcut[e_shortcut.CONTROL], !shortcut[e_shortcut.SHIFT])
+		else if (control) // Control detect
+			shortcutnew = new_shortcut(shortcut[e_shortcut.KEY], !shortcut[e_shortcut.CONTROL], shortcut[e_shortcut.SHIFT])
+		else // Key detect
+			shortcutnew = new_shortcut(key, shortcut[e_shortcut.CONTROL], shortcut[e_shortcut.SHIFT])
+		
+		if (keyonly)
+		{
+			if (shift)
+				shortcutnew = new_shortcut(vk_lshift, false, false)
+			else
+				shortcutnew = new_shortcut(shortcutnew[e_shortcut.KEY], false, false)
+		}
+	}
+	
+	// Exit record toggle
+	if (mouse_left_pressed || keyboard_check_pressed(vk_escape))
+	{
+		if (shortcut[e_shortcut.KEY] = "")
+		{
+			// Nothing to be saved, use default
+			if (!shortcut[e_shortcut.SHIFT])
+				shortcutnew = def
+			else
+				shortcutnew = new_shortcut(vk_shift, false, true)
+		}
+		
+		window_busy = ""
+	}
+	
+	/*
 	if (ctrl != null)
 		ctrl = keyboard_check(vk_control)
 	
@@ -61,6 +108,7 @@ if (window_busy = name)
 		
 		window_busy = ""
 	}
+	*/
 }
 
 microani_set(name, script, mouseon || window_busy = name, mouseon && mouse_left, false)
@@ -75,14 +123,19 @@ editx = xx + dw - 24 + icon_button_offset
 
 draw_set_alpha(hover)
 if (draw_button_icon(name + "editbutton", editx, edity, 24, 24, window_busy = name, icons.EDIT, null, false, "tooltipeditshortcut"))
+{
 	window_busy = name
+	shortcutnew = new_shortcut("", false, false)
+}
+
 draw_set_alpha(1)
 
 // Label
 draw_label(text, xx, yy + 14, fa_left, fa_middle, c_text_secondary, a_text_secondary, font_emphasis)
 
-if (window_busy = name)
-	key = ""
+// Update
+if (!array_equals(shortcut, shortcutnew))
+	script_execute(script, shortcutnew)
 
 // Value
-draw_label(text_control_name(key, ctrl), xx + wid - ((24 + 8) * hover), yy + 14, fa_right, fa_middle, c_text_main, a_text_main, font_value)
+draw_label(text_control_name(shortcut), xx + wid - ((24 + 8) * hover), yy + 14, fa_right, fa_middle, c_text_main, a_text_main, font_value)

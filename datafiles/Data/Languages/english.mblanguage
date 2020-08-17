@@ -51,7 +51,8 @@
 		"confirmsaveexit": "The current model hasn't been saved yet. Save the current model before quitting?",
 		"confirmsavenew": "The current model hasn't been saved yet. Save the current model before creating a new model?",
 		"confirmsaveopen": "The current model hasn't been saved yet. Save the current model before opening another model?",
-        "replace": "A resource with this filename has already been added into the model. Do you want to replace it with the selected file?"
+		"replace": "A resource with this filename has already been added into the model. Do you want to replace it with the selected file?",
+		"restoredefaults": "Are you sure you want to restore default shortcut settings?"
     },
 	"filedialog/": {
 		"open/": {
@@ -209,6 +210,7 @@
 		"flatmode": "Flat mode",
 		"shadedmode": "Shaded mode",
 		"texturedmode": "Textured mode",
+		"walknav": "Toggle walk navigation",
 		"blockybendingenable": "Enable blocky bending",
 		"blockybendingdisable": "Disable blocky bending",
 		"uveditor/": {
@@ -545,10 +547,14 @@
 		"refreshtextureshelp": "Automatically refresh all model textures when the window is refocused.",
 		"adjustpivotresize": "Adjust pivot on resizing",
 		"adjustpivotresizehelp": "Adjust shape pivot based on size editing in the UV editor.",
-		"interfaceshortcuts": "Interface shortcuts",
-		"camerashortcuts": "Camera shortcuts",
+		"shortcuts": "Shortcuts",
+		"controlsfile": "File",
+		"controlsediting": "Editing",
+		"controlstools": "Tools",
+		"controlsnavigation": "Navigation",
 		"key/": {
 			"new": "New model",
+			"newtemplate": "New template model",
 			"open": "Open model",
 			"save": "Save model",
 			"saveas": "Save model as",
@@ -569,6 +575,7 @@
 				"bend": "Bend tool"
 			},
 			"snap": "Toggle snapping",
+			"walknavigation": "Walk navigation",
 			"forward": "Forward",
             "back": "Back",
             "left": "Left",
@@ -592,6 +599,7 @@
 		"sharedtextureuvs": "Display shared texture UVs",
 		"sharedtextureuvshelp": "Displays shapes that share a texture in the UV editor.",
 		"startuptips": "Show startup tips",
+		"restoredefaults": "RESTORE DEFAULTS",
 		"looksensitivity": "Look sensitivity",
 		"smoothcamera": "Smooth camera",
 		"legacycontrols": "Legacy viewport controls",

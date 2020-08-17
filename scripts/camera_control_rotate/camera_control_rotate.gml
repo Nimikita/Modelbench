@@ -32,6 +32,6 @@ else
 	camera_set_from()
 }
 
-if (keyboard_check_pressed(setting_key_reset))
+if (keyboard_check_pressed(setting_key_reset[e_shortcut.KEY]))
 	camera_reset()
 

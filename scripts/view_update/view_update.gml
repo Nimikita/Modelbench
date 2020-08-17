@@ -94,14 +94,21 @@ if (window_focus = string(view))
 	}
 	
 	// Move camera
-	if (window_busy = "viewmovecamera")
+	if (window_busy = "viewmovecamera" || window_busy = "viewmovecameratoggle")
 	{
 		mouse_cursor = cr_none
 		
 		camera_control_move(cam, view_click_x, view_click_y)
 		
-		if (!mouse_right)
+		if (!mouse_right && window_busy = "viewmovecamera")
 		{
+			camera_set_focus()
+			window_busy = ""
+		}
+		
+		if (mouse_left_pressed || mouse_right_pressed && window_busy = "viewmovecameratoggle")
+		{
+			app_mouse_clear()
 			camera_set_focus()
 			window_busy = ""
 		}

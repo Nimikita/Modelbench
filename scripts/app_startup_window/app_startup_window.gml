@@ -50,6 +50,7 @@ content_height = 0
 content_mouseon = false
 content_tab = null
 content_direction = null
+content_view = null
 
 dx = 0
 dy = 0
@@ -77,8 +78,7 @@ tip_box_y = 0
 tip_location_x = 0
 tip_location_y = 0
 tip_wrap = true
-tip_shortcut_key = -1
-tip_shortcut_control = false
+tip_shortcut_shortcut = -1
 tip_shortcut_draw = false
 tip_arrow_x = 0
 tip_arrow_y = 0

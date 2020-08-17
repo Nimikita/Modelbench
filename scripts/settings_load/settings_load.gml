@@ -40,76 +40,46 @@ if (ds_map_valid(generalmap))
 
 // Controls
 var controlsmap = map[?"controls"];
-if (ds_map_valid(controlsmap))
+if (ds_map_valid(controlsmap) && load_format >= e_settings.FORMAT_111)
 {
-	setting_key_new = value_get_real(controlsmap[?"key_new"], setting_key_new)
-	setting_key_new_control = value_get_real(controlsmap[?"key_new_control"], setting_key_new_control)
-	setting_key_open = value_get_real(controlsmap[?"key_open"], setting_key_open)
-	setting_key_open_control = value_get_real(controlsmap[?"key_open_control"], setting_key_open_control)
-	setting_key_save = value_get_real(controlsmap[?"key_save"], setting_key_save)
-	setting_key_save_control = value_get_real(controlsmap[?"key_save_control"], setting_key_save_control)
-	setting_key_import = value_get_real(controlsmap[?"key_import"], setting_key_import)
-	setting_key_import_control = value_get_real(controlsmap[?"key_import_control"], setting_key_import_control)
-	setting_key_undo = value_get_real(controlsmap[?"key_undo"], setting_key_undo)
-	setting_key_undo_control = value_get_real(controlsmap[?"key_undo_control"], setting_key_undo_control)
-	setting_key_redo = value_get_real(controlsmap[?"key_redo"], setting_key_redo)
-	setting_key_redo_control = value_get_real(controlsmap[?"key_redo_control"], setting_key_redo_control)
+	setting_key_new = value_get_array(controlsmap[?"key_new"], setting_key_new)
+	setting_key_new_template = value_get_array(controlsmap[?"key_new_template"], setting_key_new_template)
+	setting_key_open = value_get_array(controlsmap[?"key_open"], setting_key_open)
+	setting_key_save = value_get_array(controlsmap[?"key_save"], setting_key_save)
+	setting_key_save_as = value_get_array(controlsmap[?"key_save"], setting_key_save_as)
+	setting_key_import = value_get_array(controlsmap[?"key_import"], setting_key_import)
 	
-	if (load_format = e_settings.FORMAT_ALPHA_2)
-	{
-		setting_key_remove_selection = value_get_real(controlsmap[?"key_remove_selection"], setting_key_remove_selection)
-		setting_key_remove_selection_control = value_get_real(controlsmap[?"key_remove_selection_control"], setting_key_remove_selection_control)
-		
-		setting_key_duplicate_selection = value_get_real(controlsmap[?"key_duplicate_selection"], setting_key_duplicate_selection)
-		setting_key_duplicate_selection_control = value_get_real(controlsmap[?"key_duplicate_selection_control"], setting_key_duplicate_selection_control)
-	}
-	else
-	{
-		setting_key_remove_selection = value_get_real(controlsmap[?"key_remove_elements"], setting_key_remove_selection)
-		setting_key_remove_selection_control = value_get_real(controlsmap[?"key_remove_selection_control"], setting_key_remove_selection_control)
-		
-		setting_key_duplicate_selection = value_get_real(controlsmap[?"key_duplicate_elements"], setting_key_duplicate_selection)
-		setting_key_duplicate_selection_control = value_get_real(controlsmap[?"key_duplicate_elements_control"], setting_key_duplicate_selection_control)
-	}
+	setting_key_undo = value_get_array(controlsmap[?"key_undo"], setting_key_undo)
+	setting_key_redo = value_get_array(controlsmap[?"key_redo"], setting_key_redo)
+	setting_key_remove_selection = value_get_array(controlsmap[?"key_remove_elements"], setting_key_remove_selection)
+	setting_key_duplicate_selection = value_get_array(controlsmap[?"key_duplicate_elements"], setting_key_duplicate_selection)
+	setting_key_select_elements = value_get_array(controlsmap[?"key_select_elements"], setting_key_select_elements)
+	setting_key_uv_editor = value_get_array(controlsmap[?"key_uv_editor"], setting_key_uv_editor)
 	
-	setting_key_select_elements = value_get_real(controlsmap[?"key_select_elements"], setting_key_select_elements)
-	setting_key_select_elements_control = value_get_real(controlsmap[?"key_select_elements_control"], setting_key_select_elements_control)
+	setting_key_tool_select = value_get_array(controlsmap[?"key_tool_select"], setting_key_tool_select)
+	setting_key_tool_pivot = value_get_array(controlsmap[?"key_tool_pivot"], setting_key_tool_pivot)
+	setting_key_tool_move = value_get_array(controlsmap[?"key_tool_move"], setting_key_tool_move)
+	setting_key_tool_rotate = value_get_array(controlsmap[?"key_tool_rotate"], setting_key_tool_rotate)
+	setting_key_tool_scale = value_get_array(controlsmap[?"key_tool_scale"], setting_key_tool_scale)
+	setting_key_tool_transform = value_get_array(controlsmap[?"key_tool_transform"], setting_key_tool_transform)
+	setting_key_tool_bend = value_get_array(controlsmap[?"key_tool_bend"], setting_key_tool_bend)
+	setting_key_snap = value_get_array(controlsmap[?"key_snap"], setting_key_snap)
 	
-	setting_key_uv_editor = value_get_real(controlsmap[?"key_uv_editor"], setting_key_uv_editor)
-	setting_key_uv_editor_control = value_get_real(controlsmap[?"key_uv_editor_control"], setting_key_uv_editor_control)
+	setting_key_walk_navigation = value_get_array(controlsmap[?"walk_navigation"], setting_key_walk_navigation)
+	setting_key_forward = value_get_array(controlsmap[?"key_forward"], setting_key_forward)
+	setting_key_back = value_get_array(controlsmap[?"key_back"], setting_key_back)
+	setting_key_left = value_get_array(controlsmap[?"key_left"], setting_key_left)
+	setting_key_right = value_get_array(controlsmap[?"key_right"], setting_key_right)
+	setting_key_ascend = value_get_array(controlsmap[?"key_ascend"], setting_key_ascend)
+	setting_key_descend = value_get_array(controlsmap[?"key_descend"], setting_key_descend)
+	setting_key_reset = value_get_array(controlsmap[?"key_reset"], setting_key_reset)
+	setting_key_fast = value_get_array(controlsmap[?"key_fast"], setting_key_fast)
+	setting_key_slow = value_get_array(controlsmap[?"key_slow"], setting_key_slow)
 	
-	setting_key_tool_select = value_get_real(controlsmap[?"key_tool_select"], setting_key_tool_select)
-	setting_key_tool_select_control = value_get_real(controlsmap[?"key_tool_select_control"], setting_key_tool_select_control)
-	setting_key_tool_pivot = value_get_real(controlsmap[?"key_tool_pivot"], setting_key_tool_pivot)
-	setting_key_tool_pivot_control = value_get_real(controlsmap[?"key_tool_pivot_control"], setting_key_tool_pivot_control)
-	setting_key_tool_move = value_get_real(controlsmap[?"key_tool_move"], setting_key_tool_move)
-	setting_key_tool_move_control = value_get_real(controlsmap[?"key_tool_move_control"], setting_key_tool_move_control)
-	setting_key_tool_rotate = value_get_real(controlsmap[?"key_tool_rotate"], setting_key_tool_rotate)
-	setting_key_tool_rotate_control = value_get_real(controlsmap[?"key_tool_rotate_control"], setting_key_tool_rotate_control)
-	setting_key_tool_scale = value_get_real(controlsmap[?"key_tool_scale"], setting_key_tool_scale)
-	setting_key_tool_scale_control = value_get_real(controlsmap[?"key_tool_scale_control"], setting_key_tool_scale_control)
-	setting_key_tool_transform = value_get_real(controlsmap[?"key_tool_transform"], setting_key_tool_transform)
-	setting_key_tool_transform_control = value_get_real(controlsmap[?"key_tool_transform_control"], setting_key_tool_transform_control)
-	setting_key_tool_bend = value_get_real(controlsmap[?"key_tool_bend"], setting_key_tool_bend)
-	setting_key_tool_bend_control = value_get_real(controlsmap[?"key_tool_bend_control"], setting_key_tool_bend_control)
+	setting_look_sensitivity = value_get_array(controlsmap[?"look_sensitivity"], setting_look_sensitivity)
 	
-	setting_key_snap = value_get_real(controlsmap[?"key_snap"], setting_key_snap)
-	setting_key_snap_control = value_get_real(controlsmap[?"key_snap_control"], setting_key_snap_control)
-	
-	setting_key_forward = value_get_real(controlsmap[?"key_forward"], setting_key_forward)
-	setting_key_back = value_get_real(controlsmap[?"key_back"], setting_key_back)
-	setting_key_left = value_get_real(controlsmap[?"key_left"], setting_key_left)
-	setting_key_right = value_get_real(controlsmap[?"key_right"], setting_key_right)
-	setting_key_ascend = value_get_real(controlsmap[?"key_ascend"], setting_key_ascend)
-	setting_key_descend = value_get_real(controlsmap[?"key_descend"], setting_key_descend)
-	setting_key_reset = value_get_real(controlsmap[?"key_reset"], setting_key_reset)
-	setting_key_fast = value_get_real(controlsmap[?"key_fast"], setting_key_fast)
-	setting_key_slow = value_get_real(controlsmap[?"key_slow"], setting_key_slow)
-	
-	setting_look_sensitivity = value_get_real(controlsmap[?"look_sensitivity"], setting_look_sensitivity)
-	
-	setting_smooth_camera = value_get_real(controlsmap[?"smooth_camera"], setting_smooth_camera)
-	setting_legacy_controls = value_get_real(controlsmap[?"legacy_controls"], setting_legacy_controls)
+	setting_smooth_camera = value_get_array(controlsmap[?"smooth_camera"], setting_smooth_camera)
+	setting_legacy_controls = value_get_array(controlsmap[?"legacy_controls"], setting_legacy_controls)
 	
 }
 

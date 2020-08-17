@@ -32,10 +32,10 @@ if (showtip)
 	{
 		tip_text = text
 		
-		if (tip_shortcut_key != -1)
+		if (tip_shortcut_shortcut != -1)
 		{
 			tip_shortcut_draw = true
-			tip_text += "\n" + text_get("tooltipshortcut", text_control_name(tip_shortcut_key, tip_shortcut_control))
+			tip_text += "\n" + text_get("tooltipshortcut", text_control_name(tip_shortcut_shortcut))
 		}
 		else
 			tip_shortcut_draw = false

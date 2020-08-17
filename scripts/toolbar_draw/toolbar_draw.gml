@@ -49,9 +49,9 @@ dx = boxw - (28 + 4)
 if (program_mode = e_mode.MODELING)
 {
 	// Toggle UV editor
-	tip_set_shortcut(setting_key_uv_editor, setting_key_uv_editor_control)
+	tip_set_shortcut(setting_key_uv_editor)
 	draw_button_icon("toolbaruveditor", dx, dy, 28, 28, setting_show_uv_editor, icons.UV_EDITOR, action_toolbar_show_uv_editor, false, (setting_show_uv_editor ? "tooltipuveditorhide" : "tooltipuveditorshow"))
-	tip_set_shortcut(-1, false)
+	tip_set_shortcut(-1)
 }
 else if (program_mode = e_mode.PREVIEW)
 {

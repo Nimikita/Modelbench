@@ -1,6 +1,4 @@
-/// action_setting_key_import(key, ctrl)
+/// action_setting_key_import(key)
 /// @arg key
-/// @arg ctrl
 
 setting_key_import = argument0
-setting_key_import_control = argument1

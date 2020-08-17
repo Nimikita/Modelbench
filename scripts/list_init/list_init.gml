@@ -204,10 +204,10 @@ switch (name)
 		
 		list_add_item(text_get("contextmenuelementremove"), null, "", null, icons.DELETE, null, action_el_remove_single, false)
 		
-		list_add_item(text_get("contextmenuelementduplicateselection"), null, text_control_name(setting_key_duplicate_selection, setting_key_duplicate_selection_control), null, icons.DUPLICATE_SELECTION, null, action_el_duplicate, true)
+		list_add_item(text_get("contextmenuelementduplicateselection"), null, text_control_name(setting_key_duplicate_selection), null, icons.DUPLICATE_SELECTION, null, action_el_duplicate, true)
 		listitem_last.disabled = (el_edit = null)
 		
-		list_add_item(text_get("contextmenuelementremoveselection"), null, text_control_name(setting_key_remove_selection, setting_key_remove_selection_control), null, icons.DELETE_SELECTION, null, action_el_remove, false)
+		list_add_item(text_get("contextmenuelementremoveselection"), null, text_control_name(setting_key_remove_selection), null, icons.DELETE_SELECTION, null, action_el_remove, false)
 		listitem_last.disabled = (el_edit = null)
 		
 		list_add_item(text_get("contextmenuelementexpandall"), null, "", null, icons.EXPAND_ALL, null, action_expand_all, true)

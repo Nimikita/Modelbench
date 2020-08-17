@@ -25,6 +25,7 @@ content_y = boxy
 content_width = boxw
 content_height = boxh
 content_mouseon = (view.mouseon && !popup_mouseon && !snackbar_mouseon && !context_menu_mouseon)
+content_view = view
 
 draw_gradient(content_x, content_y + content_height, content_width, shadow_size, c_black, shadow_alpha, shadow_alpha, 0, 0)
 draw_box(boxx, boxy, boxw, boxh, false, c_background, 1)

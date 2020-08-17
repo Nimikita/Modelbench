@@ -45,9 +45,9 @@ dx += 4
 var disable = program_mode != e_mode.MODELING;
 
 // Snap
-tip_set_shortcut(setting_key_snap, setting_key_snap_control)
+tip_set_shortcut(setting_key_snap)
 draw_button_icon("toolsetsnap", dx, dy, 28, 28, setting_snap, icons.MAGNET, action_setting_snap, disable, setting_snap ? "tooltipsnapdisable" : "tooltipsnapenable")
-tip_set_shortcut(-1, false)
+tip_set_shortcut(-1)
 
 dx += 28
 
@@ -97,6 +97,23 @@ dx += 28
 
 draw_settings_button("shading", dx, dy, 16, 28, false, settings_menu_shading, disable || setting_render_mode = e_viewport_render.FLAT)
 dx += 16 + 4
+
+// Divider
+draw_box(dx, dy, 1, 28, false, c_border, a_border)
+dx += 4
+
+// Walk navigation toggle
+tip_set_shortcut(setting_key_walk_navigation)
+if (draw_button_icon("toolwalknav", dx, dy, 28, 28, window_busy = "viewmovecameratoggle", icons.WALK, null, false, "tooltipwalknav"))
+{
+	window_focus = string(content_view)
+	window_busy = "viewmovecameratoggle"
+	view_click_x = display_mouse_get_x()
+	view_click_y = display_mouse_get_y()
+}
+tip_set_shortcut(-1)
+
+dx += 28 + 4
 
 toolbar_viewport_width = dx - toolbar_viewport_width
 draw_set_alpha(1)

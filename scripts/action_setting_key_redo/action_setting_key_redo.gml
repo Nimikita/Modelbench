@@ -1,6 +1,4 @@
-/// action_setting_key_redo(key, ctrl)
+/// action_setting_key_redo(key)
 /// @arg key
-/// @arg ctrl
 
 setting_key_redo = argument0
-setting_key_redo_control = argument1

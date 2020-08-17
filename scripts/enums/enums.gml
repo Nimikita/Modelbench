@@ -4,7 +4,15 @@
 enum e_settings
 {
 	FORMAT_ALPHA_2 = 0,
-	FORMAT_101	   = 1
+	FORMAT_101	   = 1,
+	FORMAT_111	   = 2
+}
+
+enum e_shortcut
+{
+	KEY,
+	CONTROL,
+	SHIFT
 }
 
 enum e_element
@@ -217,6 +225,8 @@ enum icons
 	WIND,
 	FLAT,
 	TEXTURED,
+	WALK,
+	RENAME,
 	
 	PLACEHOLDER = 11
 }

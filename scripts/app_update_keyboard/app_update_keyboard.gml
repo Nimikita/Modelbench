@@ -33,39 +33,47 @@ if (keyboard_check_pressed(vk_f12))
 
 if (window_busy = "" && !textbox_isediting)
 {
-	if (!keyboard_check(vk_shift) && keyboard_check_pressed(setting_key_new) && app_check_control(setting_key_new_control))
+	if (app_check_shortcut(setting_key_new))
 		model_create()
 	
-	if (keyboard_check(vk_shift) && keyboard_check_pressed(setting_key_new) && app_check_control(setting_key_new_control))
+	if (app_check_shortcut(setting_key_new_template))
 		model_create_template()
 	
-	if (keyboard_check_pressed(setting_key_open) && app_check_control(setting_key_open_control))
+	if (app_check_shortcut(setting_key_open))
 		model_load()
 	
-	if (!keyboard_check(vk_shift) && keyboard_check_pressed(setting_key_save) && app_check_control(setting_key_save_control))
+	if (app_check_shortcut(setting_key_save))
 		model_save()
 	
-	if (keyboard_check(vk_shift) && keyboard_check_pressed(setting_key_save) && app_check_control(setting_key_save_control))
+	if (app_check_shortcut(setting_key_save_as))
 		model_save_as()
 	
-	if (keyboard_check_pressed(setting_key_import) && app_check_control(setting_key_import_control))
+	if (app_check_shortcut(setting_key_import))
 		action_model_import()
 	
-	if (keyboard_check_pressed(setting_key_undo) && app_check_control(setting_key_undo_control))
+	if (app_check_shortcut(setting_key_undo))
 		action_toolbar_undo()
 	
-	if (keyboard_check_pressed(setting_key_redo) && app_check_control(setting_key_redo_control))
+	if (app_check_shortcut(setting_key_redo))
 		action_toolbar_redo()
+	
+	if (app_check_shortcut(setting_key_walk_navigation))
+	{
+		window_focus = string(content_view)
+		window_busy = "viewmovecameratoggle"
+		view_click_x = display_mouse_get_x()
+		view_click_y = display_mouse_get_y()
+	}
 	
 	if (program_mode = e_mode.MODELING)
 	{
-		if (keyboard_check_pressed(setting_key_remove_selection) && app_check_control(setting_key_remove_selection_control))
+		if (app_check_shortcut(setting_key_remove_selection))
 			action_el_remove()
 	
-		if (keyboard_check_pressed(setting_key_duplicate_selection) && app_check_control(setting_key_duplicate_selection_control))
+		if (app_check_shortcut(setting_key_duplicate_selection))
 			action_el_duplicate()
 	
-		if (keyboard_check_pressed(setting_key_select_elements) && app_check_control(setting_key_select_elements_control)) 
+		if (app_check_shortcut(setting_key_select_elements))
 		{
 			if (el_edit)
 				action_el_deselect_all()
@@ -73,33 +81,33 @@ if (window_busy = "" && !textbox_isediting)
 				action_el_select_all()
 		}
 	
-		if (keyboard_check_pressed(setting_key_uv_editor) && app_check_control(setting_key_uv_editor_control))
+		if (app_check_shortcut(setting_key_uv_editor))
 			action_toolbar_show_uv_editor(!setting_show_uv_editor)
 	
 		// Switch tools
-		if (keyboard_check_pressed(setting_key_tool_select) && app_check_control(setting_key_tool_select_control))
+		if (app_check_shortcut(setting_key_tool_select))
 			tool_selected = e_tool.SELECT
 		
-		if (keyboard_check_pressed(setting_key_tool_pivot) && app_check_control(setting_key_tool_pivot_control))
+		if (app_check_shortcut(setting_key_tool_pivot))
 			tool_selected = e_tool.PIVOT
 		
-		if (keyboard_check_pressed(setting_key_tool_move) && app_check_control(setting_key_tool_move_control))
+		if (app_check_shortcut(setting_key_tool_move))
 			tool_selected = e_tool.MOVE
 	
-		if (keyboard_check_pressed(setting_key_tool_rotate) && app_check_control(setting_key_tool_rotate_control))
+		if (app_check_shortcut(setting_key_tool_rotate))
 			tool_selected = e_tool.ROTATE
 	
-		if (keyboard_check_pressed(setting_key_tool_scale) && app_check_control(setting_key_tool_scale_control))
+		if (app_check_shortcut(setting_key_tool_scale))
 			tool_selected = e_tool.SCALE
 	
-		if (keyboard_check_pressed(setting_key_tool_transform) && app_check_control(setting_key_tool_transform_control))
+		if (app_check_shortcut(setting_key_tool_transform))
 			tool_selected = e_tool.TRANSFORM
 		
-		if (keyboard_check_pressed(setting_key_tool_bend) && app_check_control(setting_key_tool_bend_control))
+		if (app_check_shortcut(setting_key_tool_bend))
 			tool_selected = e_tool.BEND
 	
 		// Toggle snapping
-		if (keyboard_check_pressed(setting_key_snap) && app_check_control(setting_key_snap_control))
+		if (app_check_shortcut(setting_key_snap))
 			action_setting_snap(!setting_snap)
 	}
 }

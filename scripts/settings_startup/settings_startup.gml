@@ -26,53 +26,7 @@ setting_slow_generation = false
 setting_refresh_textures = false
 setting_adjust_pivot_resize = true
 
-setting_key_new = ord("N")
-setting_key_new_control = true
-setting_key_open = ord("O")
-setting_key_open_control = true
-setting_key_save = ord("S")
-setting_key_save_control = true
-setting_key_import = ord("I")
-setting_key_import_control = true
-setting_key_undo = ord("Z")
-setting_key_undo_control = true
-setting_key_redo = ord("Y")
-setting_key_redo_control = true
-setting_key_remove_selection = vk_delete
-setting_key_remove_selection_control = false
-setting_key_duplicate_selection = ord("D")
-setting_key_duplicate_selection_control = true
-setting_key_select_elements = ord("A")
-setting_key_select_elements_control = true
-setting_key_uv_editor = ord("E")
-setting_key_uv_editor_control = true
-
-setting_key_tool_select = ord("W")
-setting_key_tool_select_control = false
-setting_key_tool_pivot = ord("Q")
-setting_key_tool_pivot_control = false
-setting_key_tool_move = ord("G")
-setting_key_tool_move_control = false
-setting_key_tool_rotate = ord("R")
-setting_key_tool_rotate_control = false
-setting_key_tool_scale = ord("S")
-setting_key_tool_scale_control = false
-setting_key_tool_transform = ord("T")
-setting_key_tool_transform_control = false
-setting_key_tool_bend = ord("B")
-setting_key_tool_bend_control = false
-setting_key_snap = ord("F")
-setting_key_snap_control = false
-
-setting_key_forward = ord("W")
-setting_key_back = ord("S")
-setting_key_left = ord("A")
-setting_key_right = ord("D")
-setting_key_ascend = ord("E")
-setting_key_descend = ord("Q")
-setting_key_reset = ord("R")
-setting_key_fast = vk_space
-setting_key_slow = vk_lshift
+action_controls_reset()
 setting_move_speed = 0.7
 setting_look_sensitivity = .75
 setting_fast_modifier = 2.25
@@ -125,6 +79,11 @@ setting_hide_shapes = false
 setting_combine_scale = false
 
 setting_collapse_backup_models = true
+setting_collapse_controls_file = true
+setting_collapse_controls_editing = true
+setting_collapse_controls_tools = true
+setting_collapse_controls_navigation = true
+
 setting_collapse_bend_axis[X] = true
 setting_collapse_bend_axis[Y] = true
 setting_collapse_bend_axis[Z] = true
