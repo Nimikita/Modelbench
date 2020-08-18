@@ -38,7 +38,7 @@ context_menu_area(dx, yy, dw, hei, "contextmenukeycontrol", def, e_value_type.NO
 if (window_busy = name)
 {
 	// Update shortcut passed on key presses
-	if (keyboard_check_pressed(vk_anykey) && !keyboard_check_pressed(vk_escape))
+	if (keyboard_check_pressed(vk_anykey) && !keyboard_check_pressed(vk_escape) && !keyboard_check_pressed(vk_enter))
 	{
 		var key, shift, control;
 		key = keyboard_lastkey
@@ -65,7 +65,7 @@ if (window_busy = name)
 	}
 	
 	// Exit record toggle
-	if (mouse_left_pressed || keyboard_check_pressed(vk_escape))
+	if (mouse_left_pressed || keyboard_check_pressed(vk_escape) || keyboard_check_pressed(vk_enter))
 	{
 		if (shortcut[e_shortcut.KEY] = "")
 		{

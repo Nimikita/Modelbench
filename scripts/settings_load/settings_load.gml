@@ -76,10 +76,10 @@ if (ds_map_valid(controlsmap) && load_format >= e_settings.FORMAT_111)
 	setting_key_fast = value_get_array(controlsmap[?"key_fast"], setting_key_fast)
 	setting_key_slow = value_get_array(controlsmap[?"key_slow"], setting_key_slow)
 	
-	setting_look_sensitivity = value_get_array(controlsmap[?"look_sensitivity"], setting_look_sensitivity)
+	setting_look_sensitivity = value_get_real(controlsmap[?"look_sensitivity"], setting_look_sensitivity)
 	
-	setting_smooth_camera = value_get_array(controlsmap[?"smooth_camera"], setting_smooth_camera)
-	setting_legacy_controls = value_get_array(controlsmap[?"legacy_controls"], setting_legacy_controls)
+	setting_smooth_camera = value_get_real(controlsmap[?"smooth_camera"], setting_smooth_camera)
+	setting_viewport_controls_middle = value_get_real(controlsmap[?"viewport_controls_middle"], setting_viewport_controls_middle)
 	
 }
 

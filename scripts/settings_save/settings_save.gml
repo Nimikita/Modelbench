@@ -56,7 +56,7 @@ json_save_object_start("controls")
 	json_save_var("look_sensitivity", setting_look_sensitivity)
 	
 	json_save_var_bool("smooth_camera", setting_smooth_camera)
-	json_save_var_bool("legacy_controls", setting_legacy_controls)
+	json_save_var_bool("viewport_controls_middle", setting_viewport_controls_middle)
 	
 
 json_save_object_done()

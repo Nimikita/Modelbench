@@ -4,8 +4,8 @@
 		"language": "English",
 		"locale": "en-US",
         "translator": "Nimi",
-        "forversion": "1.1.0",
-        "lastchange": "2020.08.16"
+        "forversion": "1.1.1",
+        "lastchange": "2020.08.17"
     },
 	"startup/": {
 		"modeldetected": "Unsaved model detected",
@@ -602,8 +602,9 @@
 		"restoredefaults": "RESTORE DEFAULTS",
 		"looksensitivity": "Look sensitivity",
 		"smoothcamera": "Smooth camera",
-		"legacycontrols": "Legacy viewport controls",
-		"legacycontrolshelp": "Orbit/pan viewport with left mouse button. Hold right mouse button for walk navigation. Disables group select."
+		"viewportmousecontrols": "Viewport mouse controls",
+		"viewportmousecontrolsleft": "LEFT CLICK",
+		"viewportmousecontrolsmiddle": "MIDDLE CLICK"
 	},
 	"about/": {
 		"version": "Version %1",

@@ -6570,7 +6570,7 @@
             "Key": "b466ed10-b9cc-4b92-8381-0b7c923c06f7",
             "Value": {
                 "id": "652bd9ed-c779-4cbe-a37d-407b22ba6be3",
-                "resourcePath": "scripts\\action_setting_legacy_controls\\action_setting_legacy_controls.yy",
+                "resourcePath": "scripts\\action_setting_viewport_controls_middle\\action_setting_viewport_controls_middle.yy",
                 "resourceType": "GMScript"
             }
         },
