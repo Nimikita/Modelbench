@@ -32,6 +32,7 @@ mouse_current_y = 0
 mouse_previous_x = 0
 mouse_previous_y = 0
 mouse_move = 0
+mouse_move_right = 0
 mouse_still = 0
 mouse_wrap_x = 0
 mouse_wrap_y = 0

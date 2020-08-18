@@ -28,6 +28,16 @@ else if (mouse_left)
 	mouse_move = max(abs(mouse_x - mouse_click_x), abs(mouse_y - mouse_click_y))
 else
 	mouse_move = 0
+
+if (mouse_right_pressed)
+{
+	mouse_right_click_x = mouse_x
+	mouse_right_click_y = mouse_y
+}
+else if (mouse_right)
+	mouse_move_right = max(abs(mouse_x - mouse_right_click_x), abs(mouse_y - mouse_right_click_y))
+else
+	mouse_move_right = 0
 	
 if (mouse_previous_x != mouse_x || mouse_previous_y != mouse_y)
 	mouse_still = 0

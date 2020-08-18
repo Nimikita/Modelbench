@@ -14,10 +14,18 @@ if (content_mouseon && window_busy = "")
 {
 	mouse_cursor = cr_handpoint
 	
-	if (mouse_left_pressed && (view_cam = view_cam_viewport))
+	if (view_cam = view_cam_viewport)
 	{
-		window_busy = "viewclick"
-		window_focus = string(view)
+		if (mouse_left_pressed)
+		{
+			window_busy = "viewclick"
+			window_focus = string(view)
+		}
+		else if (mouse_right_pressed)
+		{
+			window_busy = "viewrightclick"
+			window_focus = string(view)
+		}
 	}
 	
 	if ((setting_viewport_controls_middle && mouse_middle_pressed) && !keyboard_check(vk_shift))
@@ -29,16 +37,6 @@ if (content_mouseon && window_busy = "")
 			
 		window_focus = string(view)
 	}
-	
-	/*
-	if (mouse_right_pressed)
-	{
-		view_click_x = display_mouse_get_x()
-		view_click_y = display_mouse_get_y()
-		window_busy = "viewmovecamera"
-		window_focus = string(view)
-	}
-	*/
 	
 	if ((setting_viewport_controls_middle ? mouse_middle_pressed : mouse_left_pressed) && keyboard_check(vk_shift))
 	{
@@ -61,7 +59,22 @@ if (content_mouseon || window_busy = "viewrotatecamera")
 
 if (window_focus = string(view))
 {
-	// Select or move camera
+	// Right-click or move camera
+	if (window_busy = "viewrightclick")
+	{
+		if (mouse_move_right > 1)
+		{
+			view_click_x = display_mouse_get_x()
+			view_click_y = display_mouse_get_y()
+			window_busy = "viewmovecamera"
+			window_focus = string(view)
+		}
+		
+		if (!mouse_right)
+			window_busy = ""
+	}
+	
+	// Select or orbit camera
 	if (window_busy = "viewclick" || window_busy = "viewgroupselect")
 	{
 		mouse_cursor = cr_handpoint
