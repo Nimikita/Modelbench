@@ -200,17 +200,16 @@ switch (name)
 	{
 		list_add_item(text_get("contextmenuelementadd"), null, "", null, icons.ADD, icons.ARROW_RIGHT_SMALL, null, true)
 		listitem_last.context_menu_name = "contextmenuaddelement"
-		listitem_last.disabled = context_menu_value.element_type = TYPE_SHAPE
+		listitem_last.disabled = (context_menu_value.element_type = TYPE_SHAPE)
 		
-		list_add_item(text_get("contextmenuelementremove"), null, "", null, icons.DELETE, null, action_el_remove_single, false)
-		
-		list_add_item(text_get("contextmenuelementduplicateselection"), null, text_control_name(setting_key_duplicate_selection), null, icons.DUPLICATE_SELECTION, null, action_el_duplicate, true)
+		list_add_item(text_get("contextmenuelementduplicate"), null, text_control_name(setting_key_duplicate_selection), null, icons.DUPLICATE, null, action_el_duplicate, false)
 		listitem_last.disabled = (el_edit = null)
 		
-		list_add_item(text_get("contextmenuelementremoveselection"), null, text_control_name(setting_key_remove_selection), null, icons.DELETE_SELECTION, null, action_el_remove, false)
+		list_add_item(text_get("contextmenuelementdelete"), null, text_control_name(setting_key_remove_selection), null, icons.DELETE, null, action_el_remove, false)
 		listitem_last.disabled = (el_edit = null)
 		
-		list_add_item(text_get("contextmenuelementexpandall"), null, "", null, icons.EXPAND_ALL, null, action_expand_all, true)
+		list_add_item(text_get("contextmenuviewportselectall"), null, text_control_name(setting_key_select_elements), null, icons.SELECT_ALL, null, action_el_select_all, true)
+		list_add_item(text_get("contextmenuelementexpandall"), null, "", null, icons.EXPAND_ALL, null, action_expand_all, false)
 		list_add_item(text_get("contextmenuelementcollapseall"), null, "", null, icons.COLLAPSE_ALL, null, action_collapse_all, false)
 		break
 	}
@@ -227,6 +226,31 @@ switch (name)
 	case "contextmenuurl":
 	{
 		list_add_item(text_get("contextmenucopylink"), context_menu_value, "", null, icons.LINK, null, action_copy_text, true)
+		break
+	}
+	
+	case "contextmenuviewport":
+	{
+		list_add_item(text_get("contextmenuelementadd"), null, "", null, icons.ADD, icons.ARROW_RIGHT_SMALL, null, true)
+		listitem_last.context_menu_name = "contextmenuviewportaddelement"
+		
+		list_add_item(text_get("contextmenuelementduplicate"), null, text_control_name(setting_key_duplicate_selection), null, icons.DUPLICATE, null, action_el_duplicate, false)
+		listitem_last.disabled = (el_edit = null)
+		
+		list_add_item(text_get("contextmenuelementdelete"), null, text_control_name(setting_key_remove_selection), null, icons.DELETE, null, action_el_remove, false)
+		listitem_last.disabled = (el_edit = null)
+		
+		list_add_item(text_get("contextmenuviewportselectall"), null, text_control_name(setting_key_select_elements), null, icons.SELECT_ALL, null, action_el_select_all, true)
+		
+		break
+	}
+	
+	case "contextmenuviewportaddelement":
+	{
+		list_add_item(text_get("contextmenuaddelementpart"), e_element.PART, "", null, icons.PART_ADD, null, action_element_create, true)
+		list_add_item(text_get("contextmenuaddelementblock"), e_element.BLOCK, "", null, icons.BLOCK_ADD, null, action_element_create, false)
+		list_add_item(text_get("contextmenuaddelementplane"), e_element.PLANE, "", null, icons.PLANE_ADD, null, action_element_create, false)
+		list_add_item(text_get("contextmenuaddelement3dplane"), e_element.PLANE_3D, "", null, icons.PLANE3D_ADD, null, action_element_create, false)
 		break
 	}
 	

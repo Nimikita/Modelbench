@@ -5,7 +5,7 @@
 		"locale": "en-US",
         "translator": "Nimi",
         "forversion": "1.1.1",
-        "lastchange": "2020.08.17"
+        "lastchange": "2020.08.19"
     },
 	"startup/": {
 		"modeldetected": "Unsaved model detected",
@@ -160,10 +160,9 @@
 		},
 		"element/": {
 			"add": "Add element...",
-			"duplicate": "Duplicate element",
-			"remove": "Remove element",
-			"duplicateselection": "Duplicate selection",
-			"removeselection": "Remove selection",
+			"rename": "Rename",
+			"duplicate": "Duplicate",
+			"delete": "Delete",
 			"expandall": "Expand all",
 			"collapseall": "Collapse all"
 		},
@@ -172,6 +171,9 @@
 			"block": "Block",
 			"plane": "Plane",
 			"3dplane": "3D plane"
+		},
+		"viewport/": {
+			"selectall": "Select root elements"
 		}
 	},
 	"toolbar/": {
