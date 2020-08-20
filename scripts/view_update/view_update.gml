@@ -14,18 +14,15 @@ if (content_mouseon && window_busy = "")
 {
 	mouse_cursor = cr_handpoint
 	
-	if (view_cam = view_cam_viewport)
+	if (mouse_left_pressed)
 	{
-		if (mouse_left_pressed)
-		{
-			window_busy = "viewclick"
-			window_focus = string(view)
-		}
-		else if (mouse_right_pressed)
-		{
-			window_busy = "viewrightclick"
-			window_focus = string(view)
-		}
+		window_busy = "viewclick"
+		window_focus = string(view)
+	}
+	else if (mouse_right_pressed)
+	{
+		window_busy = "viewrightclick"
+		window_focus = string(view)
 	}
 	
 	if ((setting_viewport_controls_middle && mouse_middle_pressed) && !keyboard_check(vk_shift))
@@ -73,7 +70,9 @@ if (window_focus = string(view))
 		if (!mouse_right)
 		{
 			window_busy = ""
-			context_menu_area(content_x, content_y, content_width, content_height, "contextmenuviewport", el_edit, e_value_type.NONE, null, null)
+			
+			if (view_cam = view_cam_viewport)
+				context_menu_area(content_x, content_y, content_width, content_height, "contextmenuviewport", el_edit, e_value_type.NONE, null, null)
 		}
 	}
 	
@@ -94,8 +93,10 @@ if (window_focus = string(view))
 		
 		if (!mouse_left)
 		{
-			view_click(view, cam)
 			window_busy = ""
+			
+			if (view_cam = view_cam_viewport)
+				view_click(view, cam)
 		}
 	}
 	
