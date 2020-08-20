@@ -6,7 +6,7 @@
 /// @desc Draws an element item
 
 var element, yy, increment, search;
-var itemx, itemy, itemw, itemh, movehover, itemhover, expandhover, lockhover, visiblehover, itemvisible, xx, ww, linex, minw, mouseonlist;
+var itemx, itemy, itemw, itemh, movehover, itemhover, expandhover, lockhover, visiblehover, errorhover, itemvisible, xx, ww, linex, minw, mouseonlist;
 var hideshapes;
 element = argument[0]
 yy = argument[1]
@@ -67,6 +67,21 @@ minw = 4 + 20 + 4 + 20 + 8 + string_width("...") + (8 + 20 + 4 + 20)
 
 #region Right side icons
 
+if (element.element_type = TYPE_PART && (element.name_duplicate || element.name_empty))
+{
+	errorhover = app_mouse_box(xx, itemy + 4, 20, 20)
+	
+	if (element.name_empty)
+		tip_set(text_get("elementeditoremptypartname"), xx, itemy + 4, 20, 20)
+	else if (element.name_duplicate)
+		tip_set(text_get("elementeditorsamepartname"), xx, itemy + 4, 20, 20)
+	
+	draw_image(spr_icons, icons.ALERT, xx + 10, itemy + 14, 1, 1, c_error, 1)
+	xx -= 24
+}
+else
+	errorhover = false
+
 // Visible
 if (itemvisible)
 {
@@ -121,7 +136,7 @@ if (itemvisible && haschildren && !search)
 expandhover = app_mouse_box(xx, itemy + 4, 20, 20)
 
 xx += 24
-mouseonlist = (itemvisible && itemhover && !expandhover && !lockhover && !visiblehover)
+mouseonlist = (itemvisible && itemhover && !expandhover && !lockhover && !visiblehover && !errorhover)
 
 // Element icon
 if (itemvisible)
@@ -264,7 +279,7 @@ if (itemvisible && tab.elements.name_edit_element != element)
 
 #endregion
 
-if (itemvisible && itemhover && !expandhover && !lockhover && !visiblehover)
+if (itemvisible && itemhover && !expandhover && !lockhover && !visiblehover && !errorhover)
 {
 	element.list_mouseon = true
 	context_menu_area(dx, itemy, dw, itemh, "contextmenuelement", element, e_value_type.NONE, null, null)
