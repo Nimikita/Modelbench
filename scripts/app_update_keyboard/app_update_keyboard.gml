@@ -67,13 +67,16 @@ if (window_busy = "" && !textbox_isediting)
 	
 	if (program_mode = e_mode.MODELING)
 	{
-		if (app_check_shortcut(setting_key_remove_selection))
+		if (app_check_shortcut(setting_key_rename))
+			action_el_rename_start()
+		
+		if (app_check_shortcut(setting_key_delete))
 			action_el_remove()
 	
-		if (app_check_shortcut(setting_key_duplicate_selection))
+		if (app_check_shortcut(setting_key_duplicate))
 			action_el_duplicate()
 	
-		if (app_check_shortcut(setting_key_select_elements))
+		if (app_check_shortcut(setting_key_select_all))
 		{
 			if (el_edit)
 				action_el_deselect_all()

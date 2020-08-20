@@ -8,6 +8,7 @@ history_clear()
 res_edit = null
 el_edit = null
 el_edit_amount = 0
+ds_list_clear(el_edit_list)
 
 textures_list.update = true
 tex_preview.update = true

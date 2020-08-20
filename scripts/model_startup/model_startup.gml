@@ -1,10 +1,11 @@
 /// model_startup()
 
 globalvar load_format, load_folder, save_folder, el_edit, el_edit_amount, res_edit,
-		  axis_edit, save_id_seed;
+		  axis_edit, save_id_seed, el_edit_list;
 
 el_edit = null
 el_edit_amount = 0
+el_edit_list = ds_list_create()
 res_edit = null
 axis_edit = null
 

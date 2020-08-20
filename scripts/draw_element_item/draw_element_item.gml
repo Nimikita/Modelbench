@@ -184,11 +184,17 @@ if (movehover && (mouse_still > 15 * (60 / room_speed)) && window_busy = "elemen
 if (tab.elements.name_edit_element = element)
 {
 	if (textbox_draw(tab.elements.tbx_name, xx, itemy + 6, itemw - (xx - itemx) - 52, itemh))
-		action_el_rename(tab.elements.tbx_name.text)
+	{
+		if (tab.elements.name_edit_element_single)
+			action_el_rename_single(tab.elements.tbx_name.text)
+		else
+			action_el_rename(tab.elements.tbx_name.text)
+	}
 	
 	if (window_focus != string(tab.elements.tbx_name))
 	{
 		tab.elements.name_edit_element = null
+		tab.elements.name_edit_element_single = false
 		action_update_search()
 	}
 }
@@ -246,6 +252,7 @@ if (itemvisible && tab.elements.name_edit_element != element)
 		{
 			if (mouse_left_double_pressed)
 			{
+				tab.elements.name_edit_element_single = true
 				window_busy = string(tab.elements.tbx_name)
 				window_focus = string(tab.elements.tbx_name)
 				tab.elements.tbx_name.text = element.name

@@ -1,4 +1,4 @@
-/// action_el_rename(name)
+/// action_el_rename_single(name)
 /// @arg name
 /// @desc Only used for list renaming, only update search list if undo/redo.
 
@@ -26,24 +26,14 @@ else if (history_redo)
 }
 else
 {
-	var hobj = history_save_var_start(action_el_rename, true);
+	var hobj = history_save_var_start(action_el_rename_single, true);
 	
-	var namesuffix;
-	
-	for (var i = 0; i < ds_list_size(el_edit_list); i++)
+	with (app.assets.elements.name_edit_element)
 	{
-		if (i = 0)
-			namesuffix = argument0
-		else
-			namesuffix = argument0 + " (" + string(i + 1) + ")"
+		with (hobj)
+			history_save_var(app.assets.elements.name_edit_element, other.name, argument0)
 		
-		with (el_edit_list[|i])
-		{
-			with (hobj)
-				history_save_var(other.id, other.name, namesuffix)
-		
-			name = namesuffix
-		}
+		name = argument0
 	}
 }
 

@@ -9,9 +9,10 @@ setting_key_import = new_shortcut(ord("I"), true, false)
 
 setting_key_undo = new_shortcut(ord("Z"), true, false)
 setting_key_redo = new_shortcut(ord("Y"), true, false)
-setting_key_remove_selection = new_shortcut(vk_delete, false, false)
-setting_key_duplicate_selection = new_shortcut(ord("D"), true, false)
-setting_key_select_elements = new_shortcut(ord("A"), true, false)
+setting_key_rename = new_shortcut(vk_f2, false, false)
+setting_key_delete = new_shortcut(vk_delete, false, false)
+setting_key_duplicate = new_shortcut(ord("D"), true, false)
+setting_key_select_all = new_shortcut(ord("A"), true, false)
 setting_key_uv_editor = new_shortcut(ord("E"), true, false)
 
 setting_key_tool_select = new_shortcut(ord("W"), false, false)

@@ -1,8 +1,8 @@
 {
-    "id": "4aebbf6f-12c6-46b9-a66e-b82c60ea6df3",
+    "id": "f6f95e68-1b95-406c-80f9-6d02c018f66c",
     "modelName": "GMScript",
     "mvc": "1.0",
-    "name": "action_el_rename",
+    "name": "app_update_el_edit_list_part",
     "IsCompatibility": false,
     "IsDnD": false
 }

@@ -202,13 +202,16 @@ switch (name)
 		listitem_last.context_menu_name = "contextmenuaddelement"
 		listitem_last.disabled = (context_menu_value.element_type = TYPE_SHAPE)
 		
-		list_add_item(text_get("contextmenuelementduplicate"), null, text_control_name(setting_key_duplicate_selection), null, icons.DUPLICATE, null, action_el_duplicate, false)
+		list_add_item(text_get("contextmenuelementrename"), null, text_control_name(setting_key_rename), null, icons.RENAME, null, action_el_rename_start, false)
 		listitem_last.disabled = (el_edit = null)
 		
-		list_add_item(text_get("contextmenuelementdelete"), null, text_control_name(setting_key_remove_selection), null, icons.DELETE, null, action_el_remove, false)
+		list_add_item(text_get("contextmenuelementduplicate"), null, text_control_name(setting_key_duplicate), null, icons.DUPLICATE, null, action_el_duplicate, false)
 		listitem_last.disabled = (el_edit = null)
 		
-		list_add_item(text_get("contextmenuviewportselectall"), null, text_control_name(setting_key_select_elements), null, icons.SELECT_ALL, null, action_el_select_all, true)
+		list_add_item(text_get("contextmenuelementdelete"), null, text_control_name(setting_key_delete), null, icons.DELETE, null, action_el_remove, false)
+		listitem_last.disabled = (el_edit = null)
+		
+		list_add_item(text_get("contextmenuviewportselectall"), null, text_control_name(setting_key_select_all), null, icons.SELECT_ALL, null, action_el_select_all, true)
 		list_add_item(text_get("contextmenuelementexpandall"), null, "", null, icons.EXPAND_ALL, null, action_expand_all, false)
 		list_add_item(text_get("contextmenuelementcollapseall"), null, "", null, icons.COLLAPSE_ALL, null, action_collapse_all, false)
 		break
@@ -234,13 +237,16 @@ switch (name)
 		list_add_item(text_get("contextmenuelementadd"), null, "", null, icons.ADD, icons.ARROW_RIGHT_SMALL, null, true)
 		listitem_last.context_menu_name = "contextmenuviewportaddelement"
 		
-		list_add_item(text_get("contextmenuelementduplicate"), null, text_control_name(setting_key_duplicate_selection), null, icons.DUPLICATE, null, action_el_duplicate, false)
+		list_add_item(text_get("contextmenuelementrename"), null, text_control_name(setting_key_rename), null, icons.RENAME, null, action_el_rename_start, false)
 		listitem_last.disabled = (el_edit = null)
 		
-		list_add_item(text_get("contextmenuelementdelete"), null, text_control_name(setting_key_remove_selection), null, icons.DELETE, null, action_el_remove, false)
+		list_add_item(text_get("contextmenuelementduplicate"), null, text_control_name(setting_key_duplicate), null, icons.DUPLICATE, null, action_el_duplicate, false)
 		listitem_last.disabled = (el_edit = null)
 		
-		list_add_item(text_get("contextmenuviewportselectall"), null, text_control_name(setting_key_select_elements), null, icons.SELECT_ALL, null, action_el_select_all, true)
+		list_add_item(text_get("contextmenuelementdelete"), null, text_control_name(setting_key_delete), null, icons.DELETE, null, action_el_remove, false)
+		listitem_last.disabled = (el_edit = null)
+		
+		list_add_item(text_get("contextmenuviewportselectall"), null, text_control_name(setting_key_select_all), null, icons.SELECT_ALL, null, action_el_select_all, true)
 		
 		break
 	}

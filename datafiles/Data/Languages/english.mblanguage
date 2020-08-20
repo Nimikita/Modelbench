@@ -5,7 +5,7 @@
 		"locale": "en-US",
         "translator": "Nimi",
         "forversion": "1.1.1",
-        "lastchange": "2020.08.19"
+        "lastchange": "2020.08.20"
     },
 	"startup/": {
 		"modeldetected": "Unsaved model detected",
@@ -173,7 +173,7 @@
 			"3dplane": "3D plane"
 		},
 		"viewport/": {
-			"selectall": "Select root elements"
+			"selectall": "Select all"
 		}
 	},
 	"toolbar/": {
@@ -563,9 +563,10 @@
 			"import": "Import model",
 			"undo": "Undo",
 			"redo": "Redo",
-			"removeselection": "Remove selection",
-			"duplicateselection": "Duplicate selection",
-			"selectelements": "Select elements",
+			"rename": "Rename",
+			"delete": "Delete",
+			"duplicate": "Duplicate",
+			"selectall": "Select all",
 			"uveditor": "Toggle UV editor",
 			"tool/": {
 				"select": "Select tool",

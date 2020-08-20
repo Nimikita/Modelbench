@@ -49,17 +49,21 @@ if (!setting_collapse_controls_editing)
 	tab_control_keycontrol()
 	draw_keycontrol("settingskeyredo", dx, dy, dw, setting_key_redo, new_shortcut(ord("Y"), true, false), action_setting_key_redo)
 	tab_next(false)
-
+	
 	tab_control_keycontrol()
-	draw_keycontrol("settingskeyremoveselection", dx, dy, dw, setting_key_remove_selection, new_shortcut(vk_delete, false, false), action_setting_key_remove_selection)
+	draw_keycontrol("settingskeyrename", dx, dy, dw, setting_key_rename, new_shortcut(vk_f2, false, false), action_setting_key_rename)
+	tab_next(false)
+	
+	tab_control_keycontrol()
+	draw_keycontrol("settingskeydelete", dx, dy, dw, setting_key_delete, new_shortcut(vk_delete, false, false), action_setting_key_delete)
 	tab_next(false)
 
 	tab_control_keycontrol()
-	draw_keycontrol("settingskeyduplicateselection", dx, dy, dw, setting_key_duplicate_selection, new_shortcut(ord("D"), true, false), action_setting_key_duplicate_selection)
+	draw_keycontrol("settingskeyduplicate", dx, dy, dw, setting_key_duplicate, new_shortcut(ord("D"), true, false), action_setting_key_duplicate)
 	tab_next(false)
 
 	tab_control_keycontrol()
-	draw_keycontrol("settingskeyselectelements", dx, dy, dw, setting_key_select_elements, new_shortcut(ord("A"), true, false), action_setting_key_select_elements)
+	draw_keycontrol("settingskeyselectall", dx, dy, dw, setting_key_select_all, new_shortcut(ord("A"), true, false), action_setting_key_select_all)
 	tab_next(false)
 
 	tab_control_keycontrol()

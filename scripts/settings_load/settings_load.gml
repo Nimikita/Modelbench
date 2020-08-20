@@ -51,9 +51,10 @@ if (ds_map_valid(controlsmap) && load_format >= e_settings.FORMAT_111)
 	
 	setting_key_undo = value_get_array(controlsmap[?"key_undo"], setting_key_undo)
 	setting_key_redo = value_get_array(controlsmap[?"key_redo"], setting_key_redo)
-	setting_key_remove_selection = value_get_array(controlsmap[?"key_remove_elements"], setting_key_remove_selection)
-	setting_key_duplicate_selection = value_get_array(controlsmap[?"key_duplicate_elements"], setting_key_duplicate_selection)
-	setting_key_select_elements = value_get_array(controlsmap[?"key_select_elements"], setting_key_select_elements)
+	setting_key_rename = value_get_array(controlsmap[?"key_rename"], setting_key_rename)
+	setting_key_delete = value_get_array(controlsmap[?"key_remove"], setting_key_delete)
+	setting_key_duplicate = value_get_array(controlsmap[?"key_duplicate"], setting_key_duplicate)
+	setting_key_select_all = value_get_array(controlsmap[?"key_select_all"], setting_key_select_all)
 	setting_key_uv_editor = value_get_array(controlsmap[?"key_uv_editor"], setting_key_uv_editor)
 	
 	setting_key_tool_select = value_get_array(controlsmap[?"key_tool_select"], setting_key_tool_select)
