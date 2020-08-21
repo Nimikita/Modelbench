@@ -64,6 +64,7 @@ if (ds_map_valid(controlsmap) && load_format >= e_settings.FORMAT_111)
 	setting_key_tool_scale = value_get_array(controlsmap[?"key_tool_scale"], setting_key_tool_scale)
 	setting_key_tool_transform = value_get_array(controlsmap[?"key_tool_transform"], setting_key_tool_transform)
 	setting_key_tool_bend = value_get_array(controlsmap[?"key_tool_bend"], setting_key_tool_bend)
+	setting_key_tool_resize = value_get_array(controlsmap[?"key_tool_resize"], setting_key_tool_resize)
 	setting_key_snap = value_get_array(controlsmap[?"key_snap"], setting_key_snap)
 	
 	setting_key_walk_navigation = value_get_array(controlsmap[?"walk_navigation"], setting_key_walk_navigation)

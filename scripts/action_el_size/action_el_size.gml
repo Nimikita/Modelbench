@@ -1,5 +1,5 @@
 /// action_el_size(value, add)
-/// @arg bend
+/// @arg value
 /// @arg add
 
 el_value_set_start(action_el_size, true)

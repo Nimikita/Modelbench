@@ -22,6 +22,7 @@ setting_key_tool_rotate = new_shortcut(ord("R"), false, false)
 setting_key_tool_scale = new_shortcut(ord("S"), false, false)
 setting_key_tool_transform = new_shortcut(ord("T"), false, false)
 setting_key_tool_bend = new_shortcut(ord("B"), false, false)
+setting_key_tool_resize = new_shortcut(ord("Z"), false, false)
 setting_key_snap = new_shortcut(ord("F"), false, false)
 
 setting_key_walk_navigation = new_shortcut(ord("F"), false, true)

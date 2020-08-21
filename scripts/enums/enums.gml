@@ -60,6 +60,7 @@ enum e_tool
 	SCALE,
 	TRANSFORM,
 	BEND,
+	RESIZE,
 	amount
 }
 
@@ -94,7 +95,14 @@ enum e_control
 	BEND_Y,
 	BEND_Z,
 	BEND_OFFSET,
-	BEND_SIZE
+	BEND_SIZE,
+	
+	RESIZE_XP,
+	RESIZE_YP,
+	RESIZE_ZP,
+	RESIZE_XN,
+	RESIZE_YN,
+	RESIZE_ZN
 }
 
 enum e_features
@@ -227,6 +235,7 @@ enum icons
 	TEXTURED,
 	WALK,
 	RENAME,
+	TOOLSET_RESIZE,
 	
 	PLACEHOLDER = 11
 }

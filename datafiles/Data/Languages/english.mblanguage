@@ -199,6 +199,7 @@
 		"shortcut": "Shortcut: %1",
 		"xyz": "X: %1\nY: %2\nZ: %3",
 		"anglexyz": "X: %1°\nY: %2°\nZ: %3°",
+		"resize": "Width: %1\nLength: %2\nHeight: %3",
 		"offset": "Offset: %1",
 		"size": "Size: %1",
 		"undo": "Undo",
@@ -254,7 +255,8 @@
 			"rotate": "Rotate tool",
 			"scale": "Scale tool",
 			"transform": "Multi-transform tool",
-			"bend": "Bend tool"
+			"bend": "Bend tool",
+			"resize": "Resize tool"
 		},
 		"snap/":
 		{
@@ -293,7 +295,7 @@
 			"move": "Size (Move)",
 			"rotate": "Size (Rotate)",
 			"scale": "Size (Scale)",
-			"uv": "Size (UVs)",
+			"uv": "Size (Size & UVs)",
 			"absolute": "Absolute snapping"
 		},
 		"overlays/": {
@@ -575,7 +577,8 @@
 				"rotate": "Rotate tool",
 				"scale": "Scale tool",
 				"transform": "Multi-transform tool",
-				"bend": "Bend tool"
+				"bend": "Bend tool",
+				"resize": "Resize tool"
 			},
 			"snap": "Toggle snapping",
 			"walknavigation": "Walk navigation",

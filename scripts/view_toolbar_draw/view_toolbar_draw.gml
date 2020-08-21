@@ -98,16 +98,6 @@ if (dw > dh)
 else
 	dy += buttonsize
 
-// Pivot tool
-tip_set_shortcut(setting_key_tool_pivot)
-if (draw_button_icon("toolsettoolpivot", dx, dy, 28, 28, tool_selected = e_tool.PIVOT, icons.PIVOT, null, false, "toolsettoolpivot"))
-	tool_selected = e_tool.PIVOT
-
-if (dw > dh)
-	dx += buttonsize
-else
-	dy += buttonsize
-
 // Position tool
 tip_set_shortcut(setting_key_tool_move)
 if (draw_button_icon("toolsettoolmove", dx, dy, 28, 28, tool_selected = e_tool.MOVE, icons.TOOLSET_POSITION, null, false, "toolsettoolmove"))
@@ -118,11 +108,31 @@ if (dw > dh)
 else
 	dy += buttonsize
 
+// Pivot tool
+tip_set_shortcut(setting_key_tool_pivot)
+if (draw_button_icon("toolsettoolpivot", dx, dy, 28, 28, tool_selected = e_tool.PIVOT, icons.PIVOT, null, false, "toolsettoolpivot"))
+	tool_selected = e_tool.PIVOT
+
+if (dw > dh)
+	dx += buttonsize
+else
+	dy += buttonsize
+
 // Rotate tool
 tip_set_shortcut(setting_key_tool_rotate)
 if (draw_button_icon("toolsettoolrotate", dx, dy, 28, 28, tool_selected = e_tool.ROTATE, icons.TOOLSET_ROTATE, null, false, "toolsettoolrotate"))
 	tool_selected = e_tool.ROTATE
 	
+if (dw > dh)
+	dx += buttonsize
+else
+	dy += buttonsize
+
+// Resize tool
+tip_set_shortcut(setting_key_tool_resize)
+if (draw_button_icon("toolsettoolresize", dx, dy, 28, 28, tool_selected = e_tool.RESIZE, icons.TOOLSET_RESIZE, null, false, "toolsettoolresize"))
+	tool_selected = e_tool.RESIZE
+
 if (dw > dh)
 	dx += buttonsize
 else

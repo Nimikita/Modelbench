@@ -96,7 +96,11 @@ if (!setting_collapse_controls_tools)
 	tab_control_keycontrol()
 	draw_keycontrol("settingskeytoolrotate", dx, dy, dw, setting_key_tool_rotate, new_shortcut(ord("R"), false, false), action_setting_key_tool_rotate)
 	tab_next(false)
-
+	
+	tab_control_keycontrol()
+	draw_keycontrol("settingskeytoolresize", dx, dy, dw, setting_key_tool_resize, new_shortcut(ord("Z"), false, false), action_setting_key_tool_bend)
+	tab_next(false)
+	
 	tab_control_keycontrol()
 	draw_keycontrol("settingskeytoolscale", dx, dy, dw, setting_key_tool_scale, new_shortcut(ord("S"), false, false), action_setting_key_tool_scale)
 	tab_next(false)

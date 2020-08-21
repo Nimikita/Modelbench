@@ -55,6 +55,10 @@ if (el_edit_amount > 0 && program_mode = e_mode.MODELING)
 					if (tool_selected = e_tool.SCALE || tool_selected = e_tool.TRANSFORM)
 						view_control_scale(view)
 					
+					// Resize
+					if (tool_selected = e_tool.RESIZE && el_edit.element_type = TYPE_SHAPE)
+						view_control_resize(view)
+					
 					// Position
 					if (tool_selected = e_tool.MOVE || tool_selected = e_tool.TRANSFORM)
 						view_control_move(view)
@@ -100,6 +104,19 @@ if (el_edit_amount > 0 && program_mode = e_mode.MODELING)
 							mat = matrix_multiply(mat, matrix_multiply(el_edit.matrix, el_edit.parent.matrix_parent))
 							origin3d = matrix_position(mat)
 						}
+						else if (tool_selected = e_tool.RESIZE && el_edit.element_type = TYPE_SHAPE) // Resize tool
+						{
+							if (view_control_matrix = null)
+							{
+								mat = matrix_create(vec3_add(el_edit.from, vec3_mul(point3D_sub(el_edit.to, el_edit.from), .5)), vec3(0), vec3(1))
+								mat = matrix_multiply(mat, matrix_create(vec3(0), el_edit.rotation, vec3(1)))
+								mat = matrix_multiply(mat, matrix_multiply(el_edit.matrix, el_edit.parent.matrix_parent))
+							}
+							else
+								mat = view_control_matrix
+							
+							origin3d = matrix_position(mat)
+						}
 						else // Any other tool
 						{
 							if (el_edit.element_type = TYPE_PART)
@@ -133,6 +150,7 @@ if (el_edit_amount > 0 && program_mode = e_mode.MODELING)
 							case e_tool.SCALE: icon = icons.TOOLSET_SCALE; break;
 							case e_tool.TRANSFORM: icon = icons.TRANSFORM; break;
 							case e_tool.BEND: icon = icons.BEND; break;
+							case e_tool.RESIZE: icon = icons.TOOLSET_RESIZE; break;
 						}
 						
 						if (icon != null)
@@ -163,46 +181,48 @@ if (el_edit_amount > 0 && program_mode = e_mode.MODELING)
 						// Single value control tooltip
 						if (view_control_edit != e_control.SCA_XYZ)
 						{
-							var tipstr, value, zup, angle;
+							var tipstr, value, zup;
+							tipstr = ""
 							value = point3D(0, 0, 0)
 							zup = !setting_z_is_up
-							angle = false
-						
+							
 							if (view_control_edit >= e_control.PIVOT_X && view_control_edit <= e_control.PIVOT_PAN) // Pivot
 								value = point3D(el_edit.value[e_value.OFFSET_X], el_edit.value[e_value.OFFSET_Y + zup], el_edit.value[e_value.OFFSET_Z - zup])
 							else if (view_control_edit >= e_control.POS_X && view_control_edit <= e_control.POS_PAN) // Position
 								value = point3D(el_edit.value[e_value.POS_X], el_edit.value[e_value.POS_Y + zup], el_edit.value[e_value.POS_Z - zup])
-							else if (view_control_edit >= e_control.SCA_X && view_control_edit <= e_control.SCA_Z)
+							else if (view_control_edit >= e_control.SCA_X && view_control_edit <= e_control.SCA_Z) // Scale
 								value = point3D(el_edit.value[e_value.SCA_X], el_edit.value[e_value.SCA_Y + zup], el_edit.value[e_value.SCA_Z - zup])
-							else if (view_control_edit >= e_control.ROT_X && view_control_edit <= e_control.ROT_Z)
+							else if (view_control_edit >= e_control.RESIZE_XP && view_control_edit <= e_control.RESIZE_ZN) // Size
+							{
+								value = point3D(el_edit.value[e_value.WIDTH], el_edit.value[e_value.LENGTH], el_edit.value[e_value.HEIGHT])
+								tipstr = text_get("tooltipresize", value[X], value[Y], value[Z])
+							}
+							else if (view_control_edit >= e_control.ROT_X && view_control_edit <= e_control.ROT_Z) // Rotation
 							{
 								value = point3D(el_edit.value[e_value.ROT_X], el_edit.value[e_value.ROT_Y + zup], el_edit.value[e_value.ROT_Z - zup])
-								angle = true
-							}
-							else if ((view_control_edit >= e_control.BEND_X && view_control_edit <= e_control.BEND_SIZE))
-							{
-								value = point3D(el_edit.value[e_value.BEND_ANGLE_X], el_edit.value[e_value.BEND_ANGLE_Y + zup], el_edit.value[e_value.BEND_ANGLE_Z - zup])
-								angle = true
-							}
-						
-							if (angle)
 								tipstr = text_get("tooltipanglexyz", value[X], value[Y], value[Z])
+							}
+							else if ((view_control_edit >= e_control.BEND_X && view_control_edit <= e_control.BEND_SIZE)) // Bend angle/size/offset
+							{
+								if (view_control_edit = e_control.BEND_OFFSET)
+								{
+									value = el_edit.value[e_value.BEND_OFFSET]
+									tipstr = text_get("tooltipoffset", value)
+								}
+								else if (view_control_edit = e_control.BEND_SIZE)
+								{
+									value = el_edit.value[e_value.BEND_SIZE]
+									tipstr = text_get("tooltipsize", value)
+								}
+								else
+								{
+									value = point3D(el_edit.value[e_value.BEND_ANGLE_X], el_edit.value[e_value.BEND_ANGLE_Y + zup], el_edit.value[e_value.BEND_ANGLE_Z - zup])
+									tipstr = text_get("tooltipanglexyz", value[X], value[Y], value[Z])
+								}
+							}
 							else
 								tipstr = text_get("tooltipxyz", value[X], value[Y], value[Z])
-						
-							// Value-specific controls
-							if (view_control_edit = e_control.BEND_OFFSET)
-							{
-								value = el_edit.value[e_value.BEND_OFFSET]
-								tipstr = text_get("tooltipoffset", value)
-							}
-						
-							if (view_control_edit = e_control.BEND_SIZE)
-							{
-								value = el_edit.value[e_value.BEND_SIZE]
-								tipstr = text_get("tooltipsize", value)
-							}
-						
+							
 							tip_force_right = true
 							tip_set(tipstr, mouse_click_x, mouse_click_y, 0, 0, false)
 							tip_force_right = false

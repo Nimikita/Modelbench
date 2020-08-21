@@ -108,6 +108,9 @@ if (window_busy = "" && !textbox_isediting)
 		
 		if (app_check_shortcut(setting_key_tool_bend))
 			tool_selected = e_tool.BEND
+			
+		if (app_check_shortcut(setting_key_tool_resize))
+			tool_selected = e_tool.RESIZE
 	
 		// Toggle snapping
 		if (app_check_shortcut(setting_key_snap))
