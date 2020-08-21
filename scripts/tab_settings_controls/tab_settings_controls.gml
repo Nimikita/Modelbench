@@ -98,7 +98,7 @@ if (!setting_collapse_controls_tools)
 	tab_next(false)
 	
 	tab_control_keycontrol()
-	draw_keycontrol("settingskeytoolresize", dx, dy, dw, setting_key_tool_resize, new_shortcut(ord("Z"), false, false), action_setting_key_tool_bend)
+	draw_keycontrol("settingskeytoolresize", dx, dy, dw, setting_key_tool_resize, new_shortcut(ord("Z"), false, false), action_setting_key_tool_resize)
 	tab_next(false)
 	
 	tab_control_keycontrol()
@@ -106,7 +106,7 @@ if (!setting_collapse_controls_tools)
 	tab_next(false)
 	
 	tab_control_keycontrol()
-	draw_keycontrol("settingskeytoolbend", dx, dy, dw, setting_key_tool_bend, new_shortcut(ord("G"), false, false), action_setting_key_tool_bend)
+	draw_keycontrol("settingskeytoolbend", dx, dy, dw, setting_key_tool_bend, new_shortcut(ord("B"), false, false), action_setting_key_tool_bend)
 	tab_next(false)
 	
 	tab_control_keycontrol()
