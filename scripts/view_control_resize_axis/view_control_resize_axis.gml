@@ -68,6 +68,7 @@ else if (view.control_mouseon_last = control)
 		view_control_matrix = mat
 		view_control_length = length
 		view_control_move_distance = 0
+		view_control_resize_double = keyboard_check(vk_alt)
 	}
 	
 	// Right click
