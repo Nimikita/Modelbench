@@ -558,7 +558,7 @@
 		"controlsnavigation": "Navigation",
 		"key/": {
 			"new": "New model",
-			"newtemplate": "New template model",
+			"newtemplate": "New model (template)",
 			"open": "Open model",
 			"save": "Save model",
 			"saveas": "Save model as",
