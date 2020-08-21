@@ -20,8 +20,8 @@ model_changed = false
 model_temporary = false
 model_temporary_backup = false
 
-model_name = ""
-assets.model_properties.tbx_model_name.text = ""
+model_name = text_get("assetsnewmodel")
+assets.model_properties.tbx_model_name.text = model_name
 res = null
 
 player_skin = false

@@ -362,6 +362,7 @@
 	"controls": "CONTROLS",
 	"interface": "INTERFACE",
 	"assets/": {
+		"newmodel": "New model",
 		"modelname": "Model name",
 		"emptymodelname": "Model name cannot be empty.",
 		"modellocation": "Model location",

@@ -1,7 +1,7 @@
 /// tab_assets_model_properties()
 
 tab_control(48)
-if (draw_textfield("assetsmodelname", dx, dy, dw, 28, model_name, tab.model_properties.tbx_model_name, action_model_name, text_get("assetsmodelname"), "top", model_name = ""))
+if (draw_textfield("assetsmodelname", dx, dy, dw, 28, model_name, tab.model_properties.tbx_model_name, action_model_name, text_get("assetsnewmodel"), "top", model_name = ""))
 	model_name = tab.model_properties.tbx_model_name.text
 tab_next()
 
