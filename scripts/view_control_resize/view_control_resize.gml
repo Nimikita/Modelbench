@@ -42,18 +42,19 @@ if (window_busy = "rendercontrol" && view_control_edit_view = view && view_contr
 	var veclen = vec2_length(view_control_vec)
 	if (veclen > 0 && !mouse_still)
 	{
-		var vecmouse, vecdot, move, snapval, newval;
+		var vecmouse, vecdot, move, snapon, snapval, newval;
 		axis_edit = (view_control_edit - e_control.RESIZE_XP) mod 3
 		
 		// Find move factor
 		vecmouse = vec2(mouse_dx, mouse_dy)
 		vecdot = vec2_dot(vec2_normalize(view_control_vec), vec2_normalize(vecmouse))
-		view_control_move_distance += ((vec2_length(vecmouse) / veclen) * len * vecdot) * (view_control_resize_double + 1)
+		view_control_move_distance += ((vec2_length(vecmouse) / veclen) * len * vecdot) * (view_control_resize_double + 1) * (keyboard_check(vk_shift) ? .1 : 1)
 		
-		snapval = (setting_snap ? setting_snap_size_uv : snap_min)
+		snapon = setting_snap || keyboard_check(vk_control) 
+		snapval = (snapon ? setting_snap_size_uv : snap_min)
 		move = view_control_move_distance
 		
-		if (!setting_snap_absolute && setting_snap)
+		if (!setting_snap_absolute && snapon)
 			move = snap(move, snapval)
 		
 		move /= el_edit.scale[axis_edit]
@@ -61,7 +62,7 @@ if (window_busy = "rendercontrol" && view_control_edit_view = view && view_contr
 		newval = view_control_value + move
 		newval = el_value_clamp(e_value.WIDTH + axis_edit, newval)
 		
-		if (setting_snap_absolute || !setting_snap)
+		if (setting_snap_absolute || !snapon)
 			newval = snap(newval, snapval)
 		
 		newval -= el_edit.value[e_value.WIDTH + axis_edit]
