@@ -9,6 +9,7 @@ if (window_state = "startup")
 else
 {
 	panel_area_draw()
+	shortcut_bar_draw()
 	menu_panel_draw()
 	toolbar_draw()
 }

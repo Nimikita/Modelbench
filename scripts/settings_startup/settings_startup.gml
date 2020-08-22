@@ -8,6 +8,12 @@ toolbar_line_width = 0
 toolbar_line_x_goal = 0
 toolbar_line_width_goal = 0
 
+shortcut_bar_list = ds_list_create()
+shortcut_bar_width_list = ds_list_create()
+shortcut_bar_width = 0
+shortcut_bar_width_prev = 0
+shortcut_bar_lines = 1
+
 setting_panel_left_size = 300
 setting_panel_right_size = 300
 setting_panel_left_secondary_size = 300

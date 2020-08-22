@@ -32,6 +32,24 @@ content_width = boxw
 content_height = boxh
 content_mouseon = app_mouse_box(content_x, content_y, content_width, content_height) && !popup_mouseon && !snackbar_mouseon && !context_menu_mouseon
 
+// Add shortcuts
+if (content_mouseon || window_busy = "uveditormove")
+{
+	if (uv_editor_xy_mouseon)
+		shortcut_bar_add(null, e_mouse.LEFT_DRAG, "uveditoredituvs")
+	else if (uv_editor_wh_mouseon)
+		shortcut_bar_add(null, e_mouse.LEFT_DRAG, "uveditoreditwidthheight")
+	else if(uv_editor_length_mouseon)
+		shortcut_bar_add(null, e_mouse.LEFT_DRAG, "uveditoreditlength")
+	else
+		shortcut_bar_add(null, e_mouse.LEFT_DRAG, "panview")
+	
+	if (el_edit != null && el_edit.element_type = TYPE_SHAPE)
+		shortcut_bar_add(new_shortcut("", true, false), e_mouse.LEFT_DRAG, "uveditorboxuvs")
+	
+	shortcut_bar_add(null, e_mouse.SCROLL, "zoom")
+}
+
 // Dragging controls
 if (uv_editor_mouseon && content_mouseon)
 {
@@ -347,7 +365,6 @@ if (app_mouse_box(texx + shapeuv[X] - 7, texy + shapeuv[Y] - 7, 12, 12))
 	
 	uv_editor_xy_mouseon = true
 	mouse_cursor = cr_handpoint
-	tip_set(text_get("tooltipuveditoreditxy"), texx + shapeuv[X] - 7, texy + shapeuv[Y] - 7, 12, 12)
 }
 else
 	uv_editor_xy_mouseon = false
@@ -367,7 +384,6 @@ if (app_mouse_box(texx + shapeuv[X] + shapesize[X] - 7, texy + shapeuv[Y] + shap
 	
 	uv_editor_wh_mouseon = true
 	mouse_cursor = cr_size_nwse
-	tip_set(text_get("tooltipuveditoreditwidthheight"), texx + shapeuv[X] + shapesize[X] - 7, texy + shapeuv[Y] + shapesize[Z] - 7, 12, 12)
 }
 else
 	uv_editor_wh_mouseon = false
@@ -388,7 +404,6 @@ if (el_edit.type = "block")
 	
 		uv_editor_length_mouseon = true
 		mouse_cursor = cr_size_we
-		tip_set(text_get("tooltipuveditoreditlength"), texx + shapeuv[X] - shapesize[Y] - 7, texy + shapeuv[Y] - 7, 12, 12)
 	}
 	else
 		uv_editor_length_mouseon = false
@@ -397,7 +412,6 @@ if (el_edit.type = "block")
 var mouseuvx, mouseuvy;
 mouseuvx = snap((mouse_x - texx) / uv_editor_zoom / texscale, setting_snap ? setting_snap_size_uv : 1)
 mouseuvy = snap((mouse_y - texy) / uv_editor_zoom / texscale, setting_snap ? setting_snap_size_uv : 1)
-//draw_label(string(mouseuvx) + ", " + string(mouseuvy), boxx + 32, boxy + 32, fa_left, fa_bottom, c_accent, 1)
 
 // Box UV controls
 if (keyboard_check(vk_control))
@@ -406,8 +420,6 @@ if (keyboard_check(vk_control))
 	{
 		draw_box(texx + (mouseuvx * uv_editor_zoom * texscale) - 7, texy + (mouseuvy * uv_editor_zoom * texscale) - 7, 12, 12, false, c_accent_hover, 1)
 		draw_box(texx + (mouseuvx * uv_editor_zoom * texscale) - 5, texy + (mouseuvy * uv_editor_zoom * texscale) - 5, 8, 8, false, c_accent_pressed, 1)
-		
-		tip_set(text_get("tooltipuveditorbox"), floor(texx + (mouseuvx * uv_editor_zoom * texscale) - 7), floor(texy + (mouseuvy * uv_editor_zoom * texscale) - 7), 12, 12, false)
 	}
 	
 	mouse_cursor = cr_default

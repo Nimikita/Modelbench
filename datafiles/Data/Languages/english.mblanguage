@@ -5,7 +5,7 @@
 		"locale": "en-US",
         "translator": "Nimi",
         "forversion": "1.1.1",
-        "lastchange": "2020.08.20"
+        "lastchange": "2020.08.22"
     },
 	"startup/": {
 		"modeldetected": "Unsaved model detected",
@@ -217,10 +217,6 @@
 		"blockybendingenable": "Enable blocky bending",
 		"blockybendingdisable": "Disable blocky bending",
 		"uveditor/": {
-			"editxy": "Edit X/Y",
-			"editwidthheight": "Edit width/height",
-			"editlength": "Edit length",
-			"box": "Set box UV\n(Hold and drag mouse)",
 			"hide": "Hide UV editor",
 			"show": "Show UV editor"
 		},
@@ -623,5 +619,33 @@
 		"specialthanks": "SPECIAL THANKS",
 		"betatesting": "BETA TESTING",
 		"donate": "DONATE"
+	},
+	"shortcut/": {
+		"select": "Select",
+		"selectadd": "Select (Add)",
+		"selectshape": "Select shape",
+		"deselect": "Deselect",
+		"groupselect": "Group select",
+		"moveselection": "Move selection",
+		"orbitview": "Orbit view",
+		"panview": "Pan view",
+		"walknavigation": "Walk navigation",
+		"zoom": "Zoom",
+		"editgizmo": "Edit gizmo",
+		"reset": "Reset",
+		"resizearea": "Resize area",
+		"movetab": "Move tab",
+		"resizeaxis": "Resize axis",
+		"contextmenu/": {
+			"viewport": "Viewport context menu",
+			"element": "Element context menu",
+			"texture": "Texture context menu"
+		},
+		"uveditor/": {
+			"edituvs": "Edit UVs",
+			"editlength": "Edit length",
+			"editwidthheight": "Edit width/height",
+			"boxuvs": "Set box UVs"
+		}
 	}
 }

@@ -124,5 +124,22 @@ if (window_busy = "elementselection" || window_busy = "elementmove")
 	}
 }
 
+if (tab.elements.element_hover != null)
+{
+	if (tab.elements.element_hover.selected)
+	{
+		shortcut_bar_add(new_shortcut("", true, false), e_mouse.LEFT_CLICK, "deselect")
+		shortcut_bar_add(null, e_mouse.LEFT_DRAG, "moveselection")
+	}
+	else
+	{
+		shortcut_bar_add(null, e_mouse.LEFT_CLICK, "select")
+		shortcut_bar_add(new_shortcut("", false, true), e_mouse.LEFT_CLICK, "selectadd")
+		shortcut_bar_add(null, e_mouse.LEFT_DRAG, "groupselect")
+	}
+	
+	shortcut_bar_add(null, e_mouse.RIGHT_CLICK, "contextmenuelement")
+}
+
 if (tab.elements.element_hover != tab.elements.element_hover_prev)
 	el_update_parent_hover()

@@ -21,6 +21,9 @@ tab_move_mouseon_position = 0
 panel_area_y += 36
 panel_area_height -= 36
 
+// Adjust panel height for shortcut bar
+panel_area_height -= 28 * shortcut_bar_lines
+
 with (obj_panel)
 	size_real = size * (tab_list_amount > 0)
 

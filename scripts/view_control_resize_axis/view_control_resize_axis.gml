@@ -74,7 +74,7 @@ else if (view.control_mouseon_last = control)
 	// Right click
 	if (mouse_right_pressed && keyboard_check(vk_shift))
 	{
-		axis_edit = axis
+		axis_edit = argument6
 		action_el_size(element_value_default(vid), false)
 		app_mouse_clear()
 	}

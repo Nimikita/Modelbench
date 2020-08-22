@@ -250,6 +250,21 @@ if (resizemouseon && mouse_left_pressed)
 	panel_resize_size = panel.size_real
 }
 
+// Add shortcuts
+if (resizemouseon || window_busy = "panelresize")
+{
+	// Add shortcuts
+	ds_list_clear(shortcut_bar_list)
+	shortcut_bar_add(null, e_mouse.LEFT_DRAG, "resizearea")
+}
+
+// Add shortcuts
+if (tablistmouseon != null)
+	shortcut_bar_add(null, e_mouse.LEFT_CLICK, "select")
+
+if (tabmouseon || window_busy = "tabmove" || tablistmouseon != null)
+	shortcut_bar_add(null, e_mouse.LEFT_DRAG, "movetab")
+
 // Move
 if (tabmouseon && mouse_cursor = cr_default && mouse_left_pressed)
 {
