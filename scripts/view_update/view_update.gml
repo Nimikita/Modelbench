@@ -30,7 +30,7 @@ if (view.control_mouseon_last != null || window_busy = "rendercontrol")
 	}
 }
 
-if (view.control_mouseon_last = null && (content_mouseon || window_busy = "viewclick" || window_busy = "viewrightclick" || window_busy = "viewrotatecamera" || window_busy = "viewpancamera" || window_busy = "viewmovecamera"))
+if (view.control_mouseon_last = null && (content_mouseon || window_busy = "viewclick" || window_busy = "viewrightclick" || window_busy = "viewrotatecamera" || window_busy = "viewpancamera"))
 {
 	if (program_mode = e_mode.MODELING)
 	{
@@ -55,6 +55,22 @@ if (view.control_mouseon_last = null && (content_mouseon || window_busy = "viewc
 		shortcut_bar_add(null, e_mouse.RIGHT_CLICK, "contextmenuviewport")
 	
 	shortcut_bar_add(null, e_mouse.RIGHT_DRAG, "walknavigation")
+}
+
+if (window_busy = "viewmovecamera" || window_busy = "viewmovecameratoggle")
+{
+	shortcut_bar_add(setting_key_forward, null, "moveforward")
+	shortcut_bar_add(setting_key_left, null, "moveleft")
+	shortcut_bar_add(setting_key_back, null, "moveback")
+	shortcut_bar_add(setting_key_right, null, "moveright")
+	
+	shortcut_bar_add(setting_key_ascend, null, "moveascend")
+	shortcut_bar_add(setting_key_descend, null, "movedescend")
+	
+	shortcut_bar_add(setting_key_fast, null, "movefast")
+	shortcut_bar_add(setting_key_slow, null, "moveslow")
+	
+	shortcut_bar_add(setting_key_reset, null, "movereset")
 }
 
 // Click

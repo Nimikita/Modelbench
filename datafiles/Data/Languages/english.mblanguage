@@ -648,6 +648,17 @@
 			"editlength": "Edit length",
 			"editwidthheight": "Edit width/height",
 			"boxuvs": "Set box UVs"
+		},
+		"move/": {
+			"forward": "Forward",
+            "back": "Back",
+            "left": "Left",
+            "right": "Right",
+            "ascend": "Ascend",
+            "descend": "Descend",
+            "reset": "Reset",
+            "fast": "Faster",
+            "slow": "Slower"
 		}
 	}
 }
