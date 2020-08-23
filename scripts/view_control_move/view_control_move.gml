@@ -85,6 +85,7 @@ if (window_busy = "rendercontrol" && view_control_edit_view = view && view_contr
 	{
 		window_busy = ""
 		view_control_edit = null
+		view_control_plane = false
 	}
 }
 else if (window_busy = "rendercontrol" && view_control_edit_view = view && view_control_edit >= e_control.POS_X && view_control_edit <= e_control.POS_Z) // Dragging arrow

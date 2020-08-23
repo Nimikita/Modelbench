@@ -123,6 +123,7 @@ else if (view.control_mouseon_last = control)
 		raywor = point4D_mul_matrix(rayeye, matrix_inverse(view_matrix));
 		view_control_ray_dir = vec3_normalize(vec3(raywor[X], raywor[Y], raywor[Z]))
 		view_control_value = point3D(el_edit.value[e_value.OFFSET_X], el_edit.value[e_value.OFFSET_Y], el_edit.value[e_value.OFFSET_Z])
+		view_control_plane = true
 	}
 	
 	// Right click

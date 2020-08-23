@@ -90,7 +90,7 @@ if (view_control_edit_view = view && view_control_edit = e_control.SCA_XYZ)
 	if (!mouse_still)
 	{
 		var snapon, snapval, scaleval;
-		snapon = setting_snap || keyboard_check(vk_shift)
+		snapon = setting_snap || keyboard_check(vk_control)
 		snapval = (snapon ? setting_snap_size_scale : snap_min)
 		scaleval = vec3(view_control_scale_amount)
 		

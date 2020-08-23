@@ -31,4 +31,4 @@ view_control_ray_dir = vec3(0)
 view_control_plane_normal = vec3(0)
 view_control_plane_origin = vec3(0)
 
-view_control_resize_double = false
+view_control_plane = false

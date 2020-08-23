@@ -42,13 +42,15 @@ if (window_busy = "rendercontrol" && view_control_edit_view = view && view_contr
 	var veclen = vec2_length(view_control_vec)
 	if (veclen > 0 && !mouse_still)
 	{
-		var vecmouse, vecdot, move, snapon, snapval, newval;
+		var wholeaxis, vecmouse, vecdot, move, snapon, snapval, newval;
 		axis_edit = (view_control_edit - e_control.RESIZE_XP) mod 3
+		
+		wholeaxis = keyboard_check(vk_alt)
 		
 		// Find move factor
 		vecmouse = vec2(mouse_dx, mouse_dy)
 		vecdot = vec2_dot(vec2_normalize(view_control_vec), vec2_normalize(vecmouse))
-		view_control_move_distance += ((vec2_length(vecmouse) / veclen) * len * vecdot) * (view_control_resize_double + 1) * (keyboard_check(vk_shift) ? .1 : 1)
+		view_control_move_distance += ((vec2_length(vecmouse) / veclen) * len * vecdot) * (wholeaxis ? 2 : 1) * (keyboard_check(vk_shift) ? .1 : 1)
 		
 		snapon = setting_snap || keyboard_check(vk_control) 
 		snapval = (snapon ? setting_snap_size_uv : snap_min)
@@ -69,7 +71,7 @@ if (window_busy = "rendercontrol" && view_control_edit_view = view && view_contr
 		
 		var offsetval;
 		
-		if (view_control_resize_double)
+		if (wholeaxis)
 			offsetval = newval / 2
 		else
 			offsetval = newval
@@ -79,7 +81,7 @@ if (window_busy = "rendercontrol" && view_control_edit_view = view && view_contr
 		el_value_set(e_value.WIDTH + axis_edit, newval, true)
 		
 		// Negative handle, change shape offset
-		if (view_control_edit >= e_control.RESIZE_XN || view_control_resize_double)
+		if (view_control_edit >= e_control.RESIZE_XN || wholeaxis)
 			el_value_set(e_value.OFFSET_X + axis_edit, -offsetval, true)
 		
 		el_value_set_done()
@@ -93,6 +95,5 @@ if (window_busy = "rendercontrol" && view_control_edit_view = view && view_contr
 		view_control_matrix = null
 		view_control_length = null
 		view_control_move_distance = 0
-		view_control_resize_double = false
 	}
 }

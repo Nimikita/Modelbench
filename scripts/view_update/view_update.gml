@@ -15,13 +15,12 @@ if (view.control_mouseon_last != null || window_busy = "rendercontrol")
 	if (window_busy = "rendercontrol")
 	{
 		// Plane-based gizmos don't support slow movement
-		if (view.control_mouseon_last != e_control.PIVOT_XY && view.control_mouseon_last != e_control.PIVOT_XZ && view.control_mouseon_last != e_control.PIVOT_YZ && view.control_mouseon_last != e_control.PIVOT_PAN &&
-			view.control_mouseon_last != e_control.POS_XY && view.control_mouseon_last != e_control.POS_XZ && view.control_mouseon_last != e_control.POS_YZ && view.control_mouseon_last != e_control.POS_PAN)
+		if (!view_control_plane)
 			shortcut_bar_add(new_shortcut("", false, true), e_mouse.LEFT_DRAG, "transformslower")
 		
 		shortcut_bar_add(new_shortcut("", true, false), e_mouse.LEFT_DRAG, "snap")
 		
-		if (view.control_mouseon_last >= e_control.RESIZE_XP && view.control_mouseon_last <= e_control.RESIZE_ZN)
+		if (view_control_edit >= e_control.RESIZE_XP && view_control_edit <= e_control.RESIZE_ZN)
 			shortcut_bar_add(new_shortcut(vk_alt, false, false), e_mouse.LEFT_DRAG, "resizeaxis")
 	}
 	else
