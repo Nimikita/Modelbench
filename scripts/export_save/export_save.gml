@@ -175,29 +175,4 @@ if (export_stage = "face")
 }
 
 if (export_stage = "finish")
-{
-	file_text_write_string(export_file, "\n")
-	file_text_write_string(export_file, "# " + string(export_verticies) + " verticies, " + string(export_quads) + " quads, " + string(export_triangles) + " triangles")
-	
-	export_verticies = 0
-	export_quads = 0
-	export_triangles = 0
-	
-	ds_list_clear(export_position_list)
-	ds_list_clear(export_uv_list)
-	ds_list_clear(export_normal_list)
-	ds_list_clear(export_shapes)
-	ds_list_clear(export_elements)
-
-	log(".obj export: Writing to file")
-	
-	file_text_close(export_file)
-
-	export_save_mtl()
-
-	log(".obj export: Done")
-
-	export_fn = ""
-	export_stage = ""
-	popup_close()
-}
+	export_end()

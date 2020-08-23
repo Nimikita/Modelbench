@@ -21,6 +21,11 @@ with (obj_model_element)
 	if (tree_hidden && !app.export_include_hidden)
 		continue
 	
+	// Change appearance values (To prevent possible mesh issues)
+	invert = false
+	hide_back = false
+	hide_front = false
+	
 	if ((selected || parent_is_selected) && app.export_selection_only)
 	{
 		if (shape_list != null)
