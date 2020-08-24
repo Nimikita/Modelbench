@@ -2,7 +2,8 @@
 
 uv_editor_mouseon = false
 
-//uv_editor_reset = true
+uv_editor_reset = false
+uv_editor_update_zoom = false
 
 uv_editor_zoom = 1
 uv_editor_goal_zoom = 1

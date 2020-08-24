@@ -5,7 +5,7 @@
 		"locale": "en-US",
         "translator": "Nimi",
         "forversion": "1.1.1",
-        "lastchange": "2020.08.22"
+        "lastchange": "2020.08.23"
     },
 	"startup/": {
 		"modeldetected": "Unsaved model detected",
@@ -127,6 +127,7 @@
 		"combinescale": "Combine XYZ",
 		"seperatescale": "Seperate XYZ",
 		"centeraxis": "Center pivot axis",
+		"resetview": "Reset view",
 		"value/": {
 			"on": "On",
 			"off": "Off",
@@ -641,7 +642,8 @@
 		"contextmenu/": {
 			"viewport": "Viewport context menu",
 			"element": "Element context menu",
-			"texture": "Texture context menu"
+			"texture": "Texture context menu",
+			"uveditor": "UV editor context menu"
 		},
 		"uveditor/": {
 			"edituvs": "Edit UVs",

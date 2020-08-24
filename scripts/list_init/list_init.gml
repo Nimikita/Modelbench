@@ -248,6 +248,8 @@ switch (name)
 		
 		list_add_item(text_get("contextmenuviewportselectall"), null, text_control_name(setting_key_select_all), null, icons.SELECT_ALL, null, action_el_select_all, true)
 		
+		list_add_item(text_get("contextmenuresetview"), null, "", null, icons.RESET, null, camera_reset)
+		
 		break
 	}
 	
@@ -264,6 +266,12 @@ switch (name)
 	{
 		list_add_item(text_get("toolsetsnapmodeabsolute"), e_snap_mode.ABSOLUTE, "", null, null, null, null, true)
 		list_add_item(text_get("toolsetsnapmodelocal"), e_snap_mode.LOCAL, "", null, null, null, null, false)
+		break
+	}
+	
+	case "contextmenuuveditor":
+	{
+		list_add_item(text_get("contextmenuresetview"), null, "", null, icons.RESET, null, uv_editor_reset_view)
 		break
 	}
 }

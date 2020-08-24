@@ -48,7 +48,12 @@ if (content_mouseon || window_busy = "uveditormove")
 		shortcut_bar_add(new_shortcut("", true, false), e_mouse.LEFT_DRAG, "uveditorboxuvs")
 	
 	shortcut_bar_add(null, e_mouse.SCROLL, "zoom")
+	
+	shortcut_bar_add(null, e_mouse.RIGHT_CLICK, "contextmenuuveditor")
 }
+
+// Context menu
+context_menu_area(content_x, content_y, content_width, content_height, "contextmenuuveditor")
 
 // Dragging controls
 if (uv_editor_mouseon && content_mouseon)
@@ -89,16 +94,19 @@ m = (1 - 0.25 * mouse_wheel * (window_scroll_focus_prev = "uveditor"))
 if (m != 1)
 {
 	uv_editor_goal_zoom = clamp(uv_editor_goal_zoom * m, 0.1, 100)
+	
 	uv_editor_goal_x = uv_editor_x + (mouse_x - (boxx + boxw / 2)) / uv_editor_zoom - (mouse_x - (boxx + boxw / 2)) / uv_editor_goal_zoom
 	uv_editor_goal_y = uv_editor_y + (mouse_y - (boxy + boxh / 2)) / uv_editor_zoom - (mouse_y - (boxy + boxh / 2)) / uv_editor_goal_zoom
 }
 zd = (uv_editor_goal_zoom - uv_editor_zoom) / max(1, 5 / delta)
-if (zd != 0)
+if (zd != 0 || (uv_editor_goal_x != uv_editor_x) || (uv_editor_goal_y != uv_editor_y))
 {
 	uv_editor_zoom += zd
 	uv_editor_x += (uv_editor_goal_x - uv_editor_x) / max(1, 5 / delta)
 	uv_editor_y += (uv_editor_goal_y - uv_editor_y) / max(1, 5 / delta)
 }
+
+uv_editor_update_zoom = false
 
 if (uv_editor_mouseon)
 	window_scroll_focus = "uveditor"
@@ -145,16 +153,25 @@ if (tex != null)
 	tw = texture_width(tex)
 	th = texture_height(tex)
 	
-	if (uv_editor_tex != tex)
+	if (uv_editor_tex != tex || uv_editor_reset)
 	{
-		if (uv_editor_tex = null)
+		if (uv_editor_tex = null || uv_editor_reset)
 		{
-			uv_editor_reset_view()			
+			uv_editor_goal_x = 0
+			uv_editor_goal_y = 0
+			
 			uv_editor_goal_zoom = (min(boxw, boxh) - padding * 2) / max(tw, th)
+			
+			if (uv_editor_reset)
+				uv_editor_update_zoom = true
 		}
 		
 		uv_editor_tex = tex
 	}
+	
+	// Clear reset
+	if (uv_editor_reset)
+		uv_editor_reset = false
 	
 	texx = floor(boxx + (boxw / 2 - (tw / 2 + uv_editor_x) * uv_editor_zoom))
 	texy = floor(boxy + (boxh / 2 - (th / 2 + uv_editor_y) * uv_editor_zoom))
