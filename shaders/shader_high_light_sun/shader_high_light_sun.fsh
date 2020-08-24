@@ -93,9 +93,7 @@ void main()
 	}
 	
 	// Set final color
-	vec2 tex = vTexCoord;
-	if (uTexScale.x < 1.0 || uTexScale.y < 1.0)
-		tex = mod(tex * uTexScale, uTexScale); // GM sprite bug workaround
+	vec2 tex = fract(vTexCoord) * uTexScale;
 	vec4 baseColor = texture2D(uTexture, tex);
 	gl_FragColor = vec4(light, uBlendColor.a * baseColor.a);
 	

@@ -54,16 +54,44 @@ for (var s = 0; s < ds_list_size(shape_list); s++)
 		}
 		
 		// Set texture
+		var tex;
 		if (res != null && (app.setting_render_mode = e_viewport_render.TEXTURED || app.program_mode = e_mode.PREVIEW))
-			render_set_texture(res.sprite)
+			tex = res.sprite
 		else
-			render_set_texture(spr_empty)
+			tex = spr_empty
 		
-		render_set_uniform_color("uBlendColor", color_blend, color_alpha)
-		render_set_uniform_color("uMixColor", color_mix, color_mix_percent)
-		render_set_uniform("uBrightness", color_brightness)
+		if (texture_prev != tex)
+		{
+			render_set_texture(tex)
+			texture_prev = tex
+		}
 		
-		render_set_uniform_color("uHighlightColor", c_accent, app.setting_overlays * app.setting_overlays_highlights * parent_hover * .5)
+		if (color_blend_prev != color_blend || color_alpha_prev != color_alpha)
+		{
+			render_set_uniform_color("uBlendColor", color_blend, color_alpha)
+			color_blend_prev = color_blend
+			color_alpha_prev = color_alpha
+		}
+		
+		if (color_mix_prev != color_mix || color_mix_percent_prev != color_mix_percent)
+		{
+			render_set_uniform_color("uMixColor", color_mix, color_mix_percent)
+			color_mix_prev = color_mix
+			color_mix_percent_prev = color_mix_percent
+		}
+		
+		if (color_brightness_prev != color_brightness)
+		{
+			render_set_uniform("uBrightness", color_brightness)
+			color_brightness_prev = color_brightness
+		}
+		
+		var highlight = app.setting_overlays * app.setting_overlays_highlights * parent_hover * .5;
+		if (highlight_prev != highlight)
+		{
+			render_set_uniform_color("uHighlightColor", c_accent, highlight)
+			highlight_prev = highlight
+		}
 		
 		if ((render_mode = e_render_mode.CLICK) && app.setting_hide_shapes)
 			render_set_uniform_color("uShape", id.parent, 1)

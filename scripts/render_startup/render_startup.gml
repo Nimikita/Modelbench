@@ -65,3 +65,13 @@ render_mode_shader_map[?e_render_mode.CLICK] = shader_shape
 render_mode_shader_map[?e_render_mode.SELECT] = shader_shape
 render_mode_shader_map[?e_render_mode.ALPHA_FIX] = shader_alpha_fix
 render_mode_shader_map[?e_render_mode.ALPHA_TEST] = shader_alpha_test
+
+// Previous uniforms
+globalvar texture_prev, color_blend_prev, color_alpha_prev, color_mix_prev, color_mix_percent_prev, color_brightness_prev, highlight_prev;
+texture_prev = null
+color_blend_prev = null
+color_alpha_prev = null
+color_mix_prev = null
+color_mix_percent_prev = null
+color_brightness_prev = null
+highlight_prev = null

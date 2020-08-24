@@ -70,23 +70,7 @@ if (window_busy = "rendercontrol")
 	if (view_control_edit != control)
 		return 0
 	
-	// Update view ray
-	var px, py, rayclip, rayeye, raywor;
-	
-	// Get -1 -> 1 XY mouse coordinates in viewport
-	px = -(((view_control_plane_mouse[X] - content_x + view_control_plane_offset[X]) / content_width) * 2 - 1)
-	py = ((view_control_plane_mouse[Y] - content_y + view_control_plane_offset[Y]) / content_height) * 2 - 1
-	
-	rayclip = vec4(px, py, -1, 1);
-	rayeye = point4D_mul_matrix(rayclip, matrix_inverse(proj_matrix));
-	rayeye = vec4(rayeye[X], rayeye[Y], -1, 0)
-	
-	raywor = point4D_mul_matrix(rayeye, matrix_inverse(view_matrix));
-	view_control_ray_dir = vec3_normalize(vec3(raywor[X], raywor[Y], raywor[Z]))
-	
-	// Update mouse
-	view_control_plane_mouse[X] += mouse_dx * dragger_multiplier
-	view_control_plane_mouse[Y] += mouse_dy * dragger_multiplier
+	view_control_plane_update()
 	
 	draw_set_color(c_white)
 	
@@ -105,25 +89,8 @@ else if (view.control_mouseon_last = control)
 		view_control_edit = control
 		view_control_edit_view = view
 		
-		view_control_plane_normal = vec3_normalize(normal)
-		view_control_plane_origin = el_edit.world_pos
+		view_control_plane_start(el_edit.world_pos, normal)
 		
-		view_control_plane_offset = point2D_sub(view_shape_project(el_edit.world_pos), point2D(mouse_x - content_x, mouse_y - content_y))
-		view_control_plane_mouse = point2D(mouse_x, mouse_y)
-		
-		// Update view ray
-		var px, py, rayclip, rayeye, raywor;
-		
-		// Get -1 -> 1 XY mouse coordinates in viewport
-		px = -(((((mouse_wrap_x * content_width) + mouse_x) - content_x + view_control_plane_offset[X]) / content_width) * 2 - 1)
-		py = ((((mouse_wrap_y * content_height) + mouse_y) - content_y + view_control_plane_offset[Y]) / content_height) * 2 - 1
-		
-		rayclip = vec4(px, py, -1, 1);
-		rayeye = point4D_mul_matrix(rayclip, matrix_inverse(proj_matrix));
-		rayeye = vec4(rayeye[X], rayeye[Y], -1, 0)
-		
-		raywor = point4D_mul_matrix(rayeye, matrix_inverse(view_matrix));
-		view_control_ray_dir = vec3_normalize(vec3(raywor[X], raywor[Y], raywor[Z]))
 		view_control_value = point3D(el_edit.value[e_value.POS_X], el_edit.value[e_value.POS_Y], el_edit.value[e_value.POS_Z])
 		view_control_plane = true
 	}

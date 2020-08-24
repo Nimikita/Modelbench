@@ -647,6 +647,14 @@
             }
         },
         {
+            "Key": "1081bfb8-b4a7-4845-b66b-7eb50f992bed",
+            "Value": {
+                "id": "75a1ddeb-83fe-4dcd-a72f-02a7370ddb18",
+                "resourcePath": "scripts\\view_control_plane_update\\view_control_plane_update.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "11954c9e-f96a-4a15-bd9b-93a0191d4fa5",
             "Value": {
                 "id": "282c7a2e-93cf-47a1-9615-d43c382bafae",
@@ -892,6 +900,14 @@
                 "id": "a59abdac-129f-42b1-8bc8-81e1b5af03cf",
                 "resourcePath": "datafiles_yy\\Data\\Templates\\alex.png.yy",
                 "resourceType": "GMIncludedFile"
+            }
+        },
+        {
+            "Key": "17379ebb-80f8-40e4-b8ea-0096d982b33b",
+            "Value": {
+                "id": "099c086d-ab73-41be-a670-f8e72c6fd9ca",
+                "resourcePath": "scripts\\view_control_plane_start\\view_control_plane_start.yy",
+                "resourceType": "GMScript"
             }
         },
         {
@@ -7703,6 +7719,14 @@
             }
         },
         {
+            "Key": "d215d2dd-6a4d-46f4-ab6c-1e60fd8f5e2c",
+            "Value": {
+                "id": "19724509-149d-4fdd-9555-e86fee320aad",
+                "resourcePath": "scripts\\render_reset_uniforms\\render_reset_uniforms.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "d3383705-6fba-4bf8-9223-b3595cd37d00",
             "Value": {
                 "id": "dbd14639-b849-48f1-a969-8122d63d15c9",
@@ -9535,6 +9559,8 @@
         "ad2d18fe-f5d1-413e-9442-eeae826912dc",
         "4bd0996f-2e39-492e-9cf7-aa5afb5c6f06",
         "8ed8a51c-5738-4620-a6a6-886132d55280",
+        "1081bfb8-b4a7-4845-b66b-7eb50f992bed",
+        "17379ebb-80f8-40e4-b8ea-0096d982b33b",
         "60ddd97a-e524-491e-b9a8-00abf3f7c77e",
         "4873b6ab-d936-4c9d-bd83-18e2c9a03da2",
         "05156066-4786-4d23-9fe4-6d83c3dcb713",
@@ -9853,6 +9879,7 @@
         "2e97fb80-1f4a-497c-b763-59e6d8146469",
         "fe8d1acd-3969-45b5-8928-e66f5349e1d6",
         "1e8c6445-8773-4440-a5dc-e344159e3cfe",
+        "d215d2dd-6a4d-46f4-ab6c-1e60fd8f5e2c",
         "c303c7a1-49b2-48b0-944e-4e7a39a136f3",
         "e8b2e7a7-80cf-438f-8739-b0f9622f78af",
         "162ab404-524a-4288-ad5a-031e0fd3ce61",
