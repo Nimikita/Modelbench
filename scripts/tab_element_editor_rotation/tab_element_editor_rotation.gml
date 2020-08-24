@@ -1,6 +1,6 @@
 /// tab_element_editor_rotation()
 
-var snapval = (setting_snap ? setting_snap_size_rotation : snap_min);
+var snapval = (dragger_snap ? setting_snap_size_rotation : snap_min);
 
 tab_control(60)
 

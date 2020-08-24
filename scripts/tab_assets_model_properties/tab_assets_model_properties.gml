@@ -38,7 +38,7 @@ tab_control_switch()
 draw_switch("assetsplayerskin", dx, dy, player_skin, action_player_skin, false, "assetsplayerskinhelp")
 tab_next()
 
-var snapval = (setting_snap ? setting_snap_size_scale : snap_min);
+var snapval = (dragger_snap ? setting_snap_size_scale : snap_min);
 
 tab_control(28)
 draw_textfield_num("assetsmodelscale", dx, dy, 86, root_scale, 0.01, snap_min, no_limit, 1, snapval, tab.model_properties.tbx_model_scale, action_model_scale)

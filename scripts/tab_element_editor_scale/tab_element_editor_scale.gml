@@ -1,6 +1,6 @@
 /// tab_element_editor_scale()
 
-var snapval = (setting_snap ? setting_snap_size_scale : snap_min);
+var snapval = (dragger_snap ? setting_snap_size_scale : snap_min);
 
 if (setting_combine_scale)
 {

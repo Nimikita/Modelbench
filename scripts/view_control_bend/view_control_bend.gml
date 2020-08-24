@@ -170,29 +170,28 @@ if (window_busy = "rendercontrol" && view_control_edit_view = view && view_contr
 	
 	if (!mouse_still)
 	{
-		var ang, prevang, rot, snapon, snapval, mul, move;
+		var ang, prevang, rot, snapval, mul, move;
 		
 		// Find rotate amount
 		axis_edit = view_control_edit - e_control.BEND_X
 		ang = point_direction(mouse_x - content_x, mouse_y - content_y, view_control_pos[X], view_control_pos[Y])
 		prevang = point_direction(mouse_previous_x - content_x, mouse_previous_y - content_y, view_control_pos[X], view_control_pos[Y])
-		rot = angle_difference_fix(ang, prevang) * negate(view_control_flip) * negate(el_edit.value[e_value.BEND_INVERT_X + axis_edit]) * (keyboard_check(vk_shift) ? .1 : 1)
+		rot = angle_difference_fix(ang, prevang) * negate(view_control_flip) * negate(el_edit.value[e_value.BEND_INVERT_X + axis_edit]) * dragger_multiplier
 		mul = min(1, (el_edit.value[e_value.BEND_X_MAX + axis_edit] - el_edit.value[e_value.BEND_X_MIN + axis_edit]) / 90)
 		
 		// Snap
-		snapon = setting_snap || keyboard_check(vk_control)
-		snapval = (snapon ? setting_snap_size_rotation : snap_min)
+		snapval = (dragger_snap ? setting_snap_size_rotation : snap_min)
 		
 		view_control_move_distance += rot * mul
 		move = view_control_move_distance
 		
-		if (!setting_snap_absolute && snapon)
+		if (!setting_snap_absolute && dragger_snap)
 			move = snap(move, snapval)
 		
 		move += view_control_value
 		move = el_value_clamp(e_value.BEND_ANGLE_X + axis_edit, move)
 		
-		if (setting_snap_absolute || !snapon)
+		if (setting_snap_absolute || !dragger_snap)
 			move = snap(move, snapval)
 		
 		move -= el_edit.value[e_value.BEND_ANGLE_X + axis_edit]
@@ -225,25 +224,24 @@ if (window_busy = "rendercontrol" && view_control_edit_view = view && view_contr
 	var veclen = vec2_length(view_control_vec)
 	if (veclen > 0 && !mouse_still)
 	{
-		var vecmouse, vecdot, move, snapon, snapval;
+		var vecmouse, vecdot, move, snapval;
 		
 		// Find move factor
 		vecmouse = vec2(mouse_dx, mouse_dy)
 		vecdot = vec2_dot(vec2_normalize(view_control_vec), vec2_normalize(vecmouse))
 		
-		view_control_move_distance += (vec2_length(vecmouse) / veclen) * (size * 2) * vecdot * (keyboard_check(vk_shift) ? .1 : 1)
+		view_control_move_distance += (vec2_length(vecmouse) / veclen) * (size * 2) * vecdot * dragger_multiplier
 		move = view_control_move_distance
 		
-		snapon = setting_snap || keyboard_check(vk_control)
-		snapval = (snapon ? setting_snap_size_position : snap_min)
+		snapval = (dragger_snap ? setting_snap_size_position : snap_min)
 		
-		if (!setting_snap_absolute && snapon)
+		if (!setting_snap_absolute && dragger_snap)
 			move = snap(move, snapval)
 		
 		move += view_control_value
 		move = el_value_clamp(e_value.BEND_OFFSET, move)
 		
-		if (setting_snap_absolute || !snapon)
+		if (setting_snap_absolute || !dragger_snap)
 			move = snap(move, snapval)
 		
 		move -= el_edit.value[e_value.BEND_OFFSET]
@@ -274,25 +272,23 @@ if (window_busy = "rendercontrol" && view_control_edit_view = view && view_contr
 	var veclen = vec2_length(view_control_vec)
 	if (veclen > 0 && !mouse_still)
 	{
-		var vecmouse, vecdot, move, snapon, snapval;
+		var vecmouse, vecdot, move, dragger_snap, snapval;
 		
 		// Find move factor
 		vecmouse = vec2(mouse_dx, mouse_dy)
 		vecdot = vec2_dot(vec2_normalize(view_control_vec), vec2_normalize(vecmouse))
 		
-		view_control_move_distance += ((vec2_length(vecmouse) / veclen) * (view_control_value * 2) * vecdot) * (keyboard_check(vk_shift) ? .1 : 1)
+		view_control_move_distance += ((vec2_length(vecmouse) / veclen) * (view_control_value * 2) * vecdot) * dragger_multiplier
 		move = view_control_move_distance
+		snapval = (dragger_snap ? setting_snap_size_position : snap_min)
 		
-		snapon = setting_snap || keyboard_check(vk_control)
-		snapval = (snapon ? setting_snap_size_position : snap_min)
-		
-		if (!setting_snap_absolute && snapon)
+		if (!setting_snap_absolute && dragger_snap)
 			move = snap(move, snapval)
 		
 		move += view_control_value
 		move = el_value_clamp(e_value.BEND_SIZE, move)
 		
-		if (setting_snap_absolute || !snapon)
+		if (setting_snap_absolute || !dragger_snap)
 			move = snap(move, snapval)
 		
 		move -= el_edit.value[e_value.BEND_SIZE]

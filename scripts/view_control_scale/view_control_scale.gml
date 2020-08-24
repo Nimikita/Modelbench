@@ -41,25 +41,24 @@ if (window_busy = "rendercontrol" && view_control_edit_view = view && view_contr
 	var veclen = vec2_length(view_control_vec)
 	if (veclen > 0 && !mouse_still)
 	{
-		var vecmouse, vecdot, move, snapon, snapval, newval;
+		var vecmouse, vecdot, move, snapval, newval;
 		axis_edit = view_control_edit - e_control.SCA_X
 		
 		// Find move factor
 		vecmouse = vec2(mouse_dx, mouse_dy)
 		vecdot = vec2_dot(vec2_normalize(view_control_vec), vec2_normalize(vecmouse))
-		view_control_move_distance += ((vec2_length(vecmouse) / veclen) * len * vecdot) * .125 * (keyboard_check(vk_shift) ? .1 : 1)
+		view_control_move_distance += ((vec2_length(vecmouse) / veclen) * len * vecdot) * .125 * dragger_multiplier
 		
-		snapon = setting_snap || keyboard_check(vk_control)
-		snapval = (snapon ? setting_snap_size_scale : snap_min)
+		snapval = (dragger_snap ? setting_snap_size_scale : snap_min)
 		move = view_control_move_distance
 		
-		if (!setting_snap_absolute && snapon)
+		if (!setting_snap_absolute && dragger_snap)
 			move = snap(move, snapval)
 		
 		newval = view_control_value + move
 		newval = el_value_clamp(e_value.SCA_X + axis_edit, newval)
 		
-		if (setting_snap_absolute || !snapon)
+		if (setting_snap_absolute || !dragger_snap)
 			newval = snap(newval, snapval)
 		
 		newval -= el_edit.value[e_value.SCA_X + axis_edit]
@@ -89,20 +88,19 @@ if (view_control_edit_view = view && view_control_edit = e_control.SCA_XYZ)
 	// Move
 	if (!mouse_still)
 	{
-		var snapon, snapval, scaleval;
-		snapon = setting_snap || keyboard_check(vk_control)
-		snapval = (snapon ? setting_snap_size_scale : snap_min)
+		var snapval, scaleval;
+		snapval = (dragger_snap ? setting_snap_size_scale : snap_min)
 		scaleval = vec3(view_control_scale_amount)
 		
 		for (var i = X; i <= Z; i++)
 		{
-			if (!setting_snap_absolute && snapon)
+			if (!setting_snap_absolute && dragger_snap)
 				scaleval[i] = snap(scaleval[i], snapval)
 			
 			scaleval[i] = view_control_value_scale[i] * scaleval[i]
 			scaleval[i] = el_value_clamp(e_value.SCA_X + i, scaleval[i])
 			
-			if (setting_snap_absolute || !snapon)
+			if (setting_snap_absolute || !dragger_snap)
 				scaleval[i] = snap(scaleval[i], snapval)
 		}
 		

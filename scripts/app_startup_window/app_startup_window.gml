@@ -44,6 +44,9 @@ dragger_drag_value = 0
 meter_drag_value = 0
 wheel_drag_value = 0
 
+dragger_multiplier = 1
+dragger_snap = false
+
 content_x = 0
 content_y = 0
 content_width = 0

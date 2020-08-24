@@ -83,10 +83,10 @@ if (window_busy = "" && !textbox_isediting)
 			else
 				action_el_select_all()
 		}
-	
+		
 		if (app_check_shortcut(setting_key_uv_editor))
 			action_toolbar_show_uv_editor(!setting_show_uv_editor)
-	
+		
 		// Switch tools
 		if (app_check_shortcut(setting_key_tool_select))
 			tool_selected = e_tool.SELECT
@@ -96,22 +96,22 @@ if (window_busy = "" && !textbox_isediting)
 		
 		if (app_check_shortcut(setting_key_tool_move))
 			tool_selected = e_tool.MOVE
-	
+		
 		if (app_check_shortcut(setting_key_tool_rotate))
 			tool_selected = e_tool.ROTATE
-	
+		
 		if (app_check_shortcut(setting_key_tool_scale))
 			tool_selected = e_tool.SCALE
-	
+		
 		if (app_check_shortcut(setting_key_tool_transform))
 			tool_selected = e_tool.TRANSFORM
 		
 		if (app_check_shortcut(setting_key_tool_bend))
 			tool_selected = e_tool.BEND
-			
+		
 		if (app_check_shortcut(setting_key_tool_resize))
 			tool_selected = e_tool.RESIZE
-	
+		
 		// Toggle snapping
 		if (app_check_shortcut(setting_key_snap))
 			action_setting_snap(!setting_snap)
@@ -128,3 +128,7 @@ if (textbox_isediting && !textbox_isediting_respond)
 }
 
 textbox_isediting_respond = false
+
+// Dragger changes
+dragger_multiplier = keyboard_check(vk_shift) ? .1 : 1
+dragger_snap = setting_snap || keyboard_check(vk_control)
