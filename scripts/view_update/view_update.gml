@@ -130,10 +130,8 @@ if (window_focus = string(view))
 		
 		if (!mouse_right)
 		{
-			window_busy = ""
-			
-			if (view_cam = view_cam_viewport)
-				context_menu_area(content_x, content_y, content_width, content_height, "contextmenuviewport", el_edit, e_value_type.NONE, null, null)
+			window_busy = ""	
+			context_menu_area(content_x, content_y, content_width, content_height, "contextmenuviewport", view_cam, e_value_type.NONE, null, null)
 		}
 	}
 	

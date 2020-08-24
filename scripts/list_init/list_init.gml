@@ -234,21 +234,24 @@ switch (name)
 	
 	case "contextmenuviewport":
 	{
-		list_add_item(text_get("contextmenuelementadd"), null, "", null, icons.ADD, icons.ARROW_RIGHT_SMALL, null, true)
-		listitem_last.context_menu_name = "contextmenuviewportaddelement"
+		if (context_menu_value = view_cam_viewport)
+		{
+			list_add_item(text_get("contextmenuelementadd"), null, "", null, icons.ADD, icons.ARROW_RIGHT_SMALL, null, true)
+			listitem_last.context_menu_name = "contextmenuviewportaddelement"
 		
-		list_add_item(text_get("contextmenuelementrename"), null, text_control_name(setting_key_rename), null, icons.RENAME, null, action_el_rename_start, false)
-		listitem_last.disabled = (el_edit = null)
+			list_add_item(text_get("contextmenuelementrename"), null, text_control_name(setting_key_rename), null, icons.RENAME, null, action_el_rename_start, false)
+			listitem_last.disabled = (el_edit = null)
 		
-		list_add_item(text_get("contextmenuelementduplicate"), null, text_control_name(setting_key_duplicate), null, icons.DUPLICATE, null, action_el_duplicate, false)
-		listitem_last.disabled = (el_edit = null)
+			list_add_item(text_get("contextmenuelementduplicate"), null, text_control_name(setting_key_duplicate), null, icons.DUPLICATE, null, action_el_duplicate, false)
+			listitem_last.disabled = (el_edit = null)
 		
-		list_add_item(text_get("contextmenuelementdelete"), null, text_control_name(setting_key_delete), null, icons.DELETE, null, action_el_remove, false)
-		listitem_last.disabled = (el_edit = null)
+			list_add_item(text_get("contextmenuelementdelete"), null, text_control_name(setting_key_delete), null, icons.DELETE, null, action_el_remove, false)
+			listitem_last.disabled = (el_edit = null)
 		
-		list_add_item(text_get("contextmenuviewportselectall"), null, text_control_name(setting_key_select_all), null, icons.SELECT_ALL, null, action_el_select_all, true)
+			list_add_item(text_get("contextmenuviewportselectall"), null, text_control_name(setting_key_select_all), null, icons.SELECT_ALL, null, action_el_select_all, true)
+		}
 		
-		list_add_item(text_get("contextmenuresetview"), null, "", null, icons.RESET, null, camera_reset)
+		list_add_item(text_get("contextmenuresetview"), null, "", null, icons.RESET, null, camera_reset_context_menu)
 		
 		break
 	}

@@ -3071,6 +3071,14 @@
             }
         },
         {
+            "Key": "53c80479-2f8e-4224-9acd-4d04a563787e",
+            "Value": {
+                "id": "c6c426e4-aaee-4860-8e24-b8b08e405d57",
+                "resourcePath": "scripts\\camera_reset_context_menu\\camera_reset_context_menu.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "542a07f4-0748-4ef7-bc1a-516c1fb636cf",
             "Value": {
                 "id": "450d77d9-c391-4b5c-9d55-bca2d9a98060",
@@ -9385,6 +9393,7 @@
         "c2a55a5e-d53d-47f7-9a19-8132efecc81e",
         "7631a182-5570-490b-bedb-76f1ad30c9a6",
         "41413b30-cba2-4f23-b363-a0fc4c20641b",
+        "53c80479-2f8e-4224-9acd-4d04a563787e",
         "13f4644b-95bd-4f0d-b39b-2d501fbd46a3",
         "cd781ae1-a5e0-4288-bc9e-afa731503f42",
         "492806bf-bf48-4b46-a4ff-92fb7aec3206",
