@@ -14,11 +14,10 @@ switch (argument0)
 	case e_value.MIX_COLOR: return c_black
 	
 	// Bend
-	/*
-	case e_value.BEND_OFFSET:
+	case e_value.BEND_OFFSET: return 0
 	case e_value.BEND_AXIS_X:
 	case e_value.BEND_AXIS_Y:
-	case e_value.BEND_AXIS_Z:*/
+	case e_value.BEND_AXIS_Z: return 0
 	
 	case e_value.BEND:
 	case e_value.BEND_SHAPE:

@@ -5367,14 +5367,6 @@
             }
         },
         {
-            "Key": "8ed8a51c-5738-4620-a6a6-886132d55280",
-            "Value": {
-                "id": "0b898668-d5d4-48e6-bc0b-526543711a51",
-                "resourcePath": "scripts\\view_control_bend_size\\view_control_bend_size.yy",
-                "resourceType": "GMScript"
-            }
-        },
-        {
             "Key": "8f1bea6c-2f2c-4213-9b55-85975962a2c6",
             "Value": {
                 "id": "e2a9f838-f8b6-42e8-8ca7-dda9b8b43f5c",
@@ -9558,7 +9550,6 @@
         "537225c0-9a1f-4be4-8c76-4de737d3f4a1",
         "ad2d18fe-f5d1-413e-9442-eeae826912dc",
         "4bd0996f-2e39-492e-9cf7-aa5afb5c6f06",
-        "8ed8a51c-5738-4620-a6a6-886132d55280",
         "1081bfb8-b4a7-4845-b66b-7eb50f992bed",
         "17379ebb-80f8-40e4-b8ea-0096d982b33b",
         "60ddd97a-e524-491e-b9a8-00abf3f7c77e",

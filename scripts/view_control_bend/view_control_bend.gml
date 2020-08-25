@@ -70,6 +70,7 @@ if (!offseterr && !unbenterr && !benterr)
 	{
 		mouse_cursor = cr_handpoint
 		
+		// Left click
 		if (mouse_left_pressed)
 		{
 			window_busy = "rendercontrol"
@@ -80,6 +81,14 @@ if (!offseterr && !unbenterr && !benterr)
 			view_control_move_distance = 0
 		}
 		
+		// Right click
+		if (mouse_right_pressed && keyboard_check(vk_shift))
+		{
+			axis_edit = X
+			action_el_bend_offset(element_value_default(e_value.BEND_OFFSET), false)
+			app_mouse_clear()
+		}
+		
 		view.control_mouseon = e_control.BEND_OFFSET
 	}
 	
@@ -87,6 +96,8 @@ if (!offseterr && !unbenterr && !benterr)
 	if (el_edit.value[e_value.BEND_SIZE_CUSTOM] && point_distance(mouse_x - content_x, mouse_y - content_y, unbent2d[X]/2, unbent2d[Y]/2) < 9)
 	{
 		mouse_cursor = cr_handpoint
+		
+		// Left click
 		if (mouse_left_pressed)
 		{
 			window_busy = "rendercontrol"
@@ -95,6 +106,14 @@ if (!offseterr && !unbenterr && !benterr)
 			view_control_vec = point2D_sub(unbent2d, offset2d)
 			view_control_value = el_edit.value[e_value.BEND_SIZE]
 			view_control_move_distance = 0
+		}
+		
+		// Right click
+		if (mouse_right_pressed && keyboard_check(vk_shift))
+		{
+			axis_edit = X
+			action_el_bend_size(element_value_default(e_value.BEND_SIZE), false)
+			app_mouse_clear()
 		}
 		
 		view.control_mouseon = e_control.BEND_SIZE
@@ -106,6 +125,8 @@ if (!offseterr && !unbenterr && !benterr)
 	if (el_edit.value[e_value.BEND_SIZE_CUSTOM] && point_distance(mouse_x - content_x, mouse_y - content_y, bent2d[X]/2, bent2d[Y]/2) < 9)
 	{
 		mouse_cursor = cr_handpoint
+		
+		// Left click
 		if (mouse_left_pressed)
 		{
 			window_busy = "rendercontrol"
@@ -114,6 +135,14 @@ if (!offseterr && !unbenterr && !benterr)
 			view_control_vec = point2D_sub(bent2d, offset2d)
 			view_control_value = el_edit.value[e_value.BEND_SIZE]
 			view_control_move_distance = 0
+		}
+		
+		// Right click
+		if (mouse_right_pressed && keyboard_check(vk_shift))
+		{
+			axis_edit = X
+			action_el_bend_size(element_value_default(e_value.BEND_SIZE), false)
+			app_mouse_clear()
 		}
 		
 		view.control_mouseon = e_control.BEND_SIZE
@@ -272,7 +301,7 @@ if (window_busy = "rendercontrol" && view_control_edit_view = view && view_contr
 	var veclen = vec2_length(view_control_vec)
 	if (veclen > 0 && !mouse_still)
 	{
-		var vecmouse, vecdot, move, dragger_snap, snapval;
+		var vecmouse, vecdot, move, snapval;
 		
 		// Find move factor
 		vecmouse = vec2(mouse_dx, mouse_dy)

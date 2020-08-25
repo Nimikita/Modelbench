@@ -72,7 +72,7 @@ if (window_busy = name)
 	var angle1, angle2, newval;
 	angle1 = point_direction(xx, yy, mouse_x, mouse_y)
 	angle2 = point_direction(xx, yy, mouse_previous_x, mouse_previous_y)
-	wheel_drag_value += angle_difference_fix(angle1, angle2)
+	wheel_drag_value += angle_difference_fix(angle1, angle2) * dragger_multiplier
 	
 	newval = clamp(snap(wheel_drag_value, snapval), minval, maxval)
 	script_execute(script, newval - value, true)
