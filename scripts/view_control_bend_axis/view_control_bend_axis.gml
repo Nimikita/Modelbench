@@ -62,7 +62,7 @@ else if (view.control_mouseon_last = control)
 	if (mouse_right_pressed && keyboard_check(vk_shift))
 	{
 		axis_edit = vid - e_value.BEND_ANGLE_X
-		action_el_rot(0, false)
+		action_el_bend_angle(0, false)
 		app_mouse_clear()
 	}
 	
