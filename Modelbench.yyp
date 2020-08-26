@@ -8455,6 +8455,14 @@
             }
         },
         {
+            "Key": "eaa2abc4-9da0-4881-b0b7-2176443b092e",
+            "Value": {
+                "id": "fdac5be0-a1e6-42b7-ae45-44918f0a4c85",
+                "resourcePath": "scripts\\action_setting_reduced_motion\\action_setting_reduced_motion.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "eab1f30e-d456-4c21-9d67-d257827633e0",
             "Value": {
                 "id": "197bfdab-ecea-4efa-b771-d12e91c5b3cd",
@@ -9356,6 +9364,7 @@
         "81cf6fc1-0173-4a07-bf46-2f6f45a53254",
         "a9c5d970-bf5b-43d9-98cc-46157d2ea4da",
         "0e40f2c0-07c3-4cd3-9cd1-12888bbecc7d",
+        "eaa2abc4-9da0-4881-b0b7-2176443b092e",
         "364ab4ef-800e-4745-b555-a81fd028cbb7",
         "dd0abae0-0efa-4d06-ad5b-d74239fc3b7c",
         "0a3435e7-5068-411d-a525-f4dc058376fa",

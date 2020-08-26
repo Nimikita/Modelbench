@@ -5,7 +5,7 @@
 		"locale": "en-US",
         "translator": "Nimi",
         "forversion": "1.1.1",
-        "lastchange": "2020.08.23"
+        "lastchange": "2020.08.26"
     },
 	"startup/": {
 		"modeldetected": "Unsaved model detected",
@@ -603,6 +603,7 @@
 		"sharedtextureuvs": "Display shared texture UVs",
 		"sharedtextureuvshelp": "Displays shapes that share a texture in the UV editor.",
 		"startuptips": "Show startup tips",
+		"reducedmotion": "Reduced motion",
 		"restoredefaults": "RESTORE DEFAULTS",
 		"looksensitivity": "Look sensitivity",
 		"smoothcamera": "Smooth camera",

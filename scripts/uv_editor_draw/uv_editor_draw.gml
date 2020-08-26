@@ -101,9 +101,18 @@ if (m != 1)
 zd = (uv_editor_goal_zoom - uv_editor_zoom) / max(1, 5 / delta)
 if (zd != 0 || (uv_editor_goal_x != uv_editor_x) || (uv_editor_goal_y != uv_editor_y))
 {
-	uv_editor_zoom += zd
-	uv_editor_x += (uv_editor_goal_x - uv_editor_x) / max(1, 5 / delta)
-	uv_editor_y += (uv_editor_goal_y - uv_editor_y) / max(1, 5 / delta)
+	if (setting_reduced_motion)
+	{
+		uv_editor_zoom = uv_editor_goal_zoom
+		uv_editor_x = uv_editor_goal_x
+		uv_editor_y = uv_editor_goal_y
+	}
+	else
+	{
+		uv_editor_zoom += zd
+		uv_editor_x += (uv_editor_goal_x - uv_editor_x) / max(1, 5 / delta)
+		uv_editor_y += (uv_editor_goal_y - uv_editor_y) / max(1, 5 / delta)
+	}
 }
 
 uv_editor_update_zoom = false

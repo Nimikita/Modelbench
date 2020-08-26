@@ -49,6 +49,8 @@ setting_z_is_up = false
 setting_shared_texture_uvs = true
 setting_show_startup_tips = true
 
+setting_reduced_motion = false
+
 setting_blocky_bending = false
 
 setting_render_shadows = true

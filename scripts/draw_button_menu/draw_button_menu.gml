@@ -28,7 +28,7 @@ script = argument[8]
 if (argument_count > 9)
 	disabled = argument[9]
 else
-	disabled = null
+	disabled = false
 	
 if (argument_count > 10)
 	tex = argument[10]

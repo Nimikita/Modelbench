@@ -112,6 +112,8 @@ if (ds_map_valid(interfacemap))
 	setting_shared_texture_uvs = value_get_real(interfacemap[?"shared_texture_uvs"], setting_shared_texture_uvs)
 	
 	setting_show_startup_tips = value_get_real(interfacemap[?"startup_tips"], setting_show_startup_tips)
+	setting_reduced_motion = value_get_real(interfacemap[?"reduced_motion"], setting_reduced_motion)
+	
 	
 	setting_panel_left_size = value_get_real(interfacemap[?"panel_left_size"], setting_panel_left_size)
 	setting_panel_right_size = value_get_real(interfacemap[?"panel_right_size"], setting_panel_right_size)

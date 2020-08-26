@@ -39,9 +39,8 @@ draw_toolbar_button("toolbarmodeling", dx, boxy, e_mode.MODELING, program_mode, 
 // Preview
 draw_toolbar_button("toolbarpreview", dx, boxy, e_mode.PREVIEW, program_mode, null)
 
+// Tab underline
 draw_box(toolbar_line_x, content_y + content_height - 2, toolbar_line_width, 2, false, c_accent, 1)
-toolbar_line_x += (toolbar_line_x_goal - toolbar_line_x) / max(1, 3 / delta)
-toolbar_line_width += (toolbar_line_width_goal - toolbar_line_width) / max(1, 3 / delta)
 
 dx = boxw - (28 + 4)
 

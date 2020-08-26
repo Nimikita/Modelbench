@@ -2,8 +2,11 @@
 
 with (app.view_cam)
 {
-	zoom += (zoom_goal - zoom) / max(1, 4 / delta)
-
+	if (app.setting_reduced_motion)
+		zoom = zoom_goal
+	else
+		zoom += (zoom_goal - zoom) / max(1, 4 / delta)
+	
 	if (focus_last[X] != focus[X] || 
 		focus_last[Y] != focus[Y] || 
 		focus_last[Z] != focus[Z])

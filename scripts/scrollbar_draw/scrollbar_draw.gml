@@ -88,8 +88,6 @@ if (mouseinarea && window_busy = "")
 if (!mouse_left)
 	sb.press = 0
 
-sb.value += (sb.value_goal - sb.value) / max(1, 4 / delta)
-
 // Mouse wheel
 if (window_busy = "" && content_mouseon)
 {	

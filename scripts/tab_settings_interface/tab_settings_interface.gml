@@ -60,3 +60,8 @@ tab_next()
 tab_control_switch()
 draw_switch("settingsstartuptips", dx, dy, setting_show_startup_tips, action_setting_startup_tips, true)
 tab_next()
+
+// Reduced motion
+tab_control_switch()
+draw_switch("settingsreducedmotion", dx, dy, setting_reduced_motion, action_setting_reduced_motion, false)
+tab_next()
