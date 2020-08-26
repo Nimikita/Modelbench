@@ -62,7 +62,9 @@ labely = yy + 36
 draw_image(sprite, 0, xx, yy, 1, 1, c_text_secondary, a_text_secondary)
 
 // Bar
-draw_image(spr_dial_dash, 0, xx, yy, 1, 1, color, 1, value)
+gpu_set_tex_filter(true)
+draw_image(spr_dial_dash, 0, xx, yy, .5, .5, color, 1, value - 45)
+gpu_set_tex_filter(false)
 
 // Dragging
 if (window_busy = name)

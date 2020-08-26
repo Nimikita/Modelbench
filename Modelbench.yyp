@@ -7391,14 +7391,6 @@
             }
         },
         {
-            "Key": "c857e420-86ef-4423-8514-116af7e84e88",
-            "Value": {
-                "id": "5d50d8ff-dbf9-4d95-88de-c9f06044002e",
-                "resourcePath": "sprites\\spr_dial_dash\\spr_dial_dash.yy",
-                "resourceType": "GMSprite"
-            }
-        },
-        {
             "Key": "c85c5ced-6c63-4351-8725-3aa7576fd35c",
             "Value": {
                 "id": "77284504-363d-4dad-8f1f-3b489e946d68",
@@ -7916,6 +7908,14 @@
                 "id": "dd815307-131c-4e50-b90b-efe0a910c78c",
                 "resourcePath": "scripts\\window_draw_snackbar\\window_draw_snackbar.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "d8e63a47-0617-4e2d-8d46-cca013e9b585",
+            "Value": {
+                "id": "08db6512-6add-4da0-a597-ba971c6818e7",
+                "resourcePath": "sprites\\spr_dial_dash\\spr_dial_dash.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
