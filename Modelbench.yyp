@@ -4511,6 +4511,14 @@
             }
         },
         {
+            "Key": "76b34faf-4738-4dfe-9d65-13fc7698ca0e",
+            "Value": {
+                "id": "f09a3bc4-0805-4ee9-8063-19b90fad1173",
+                "resourcePath": "views\\76b34faf-4738-4dfe-9d65-13fc7698ca0e.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
             "Key": "771fe011-48de-405e-9887-cc62c9ab350a",
             "Value": {
                 "id": "badc9f77-57d5-4579-827d-8d4727cedfd0",
@@ -5355,6 +5363,14 @@
             "Value": {
                 "id": "2a4818d2-9129-4345-a74b-324d252c84b4",
                 "resourcePath": "scripts\\action_el_wind_zmin_enable\\action_el_wind_zmin_enable.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "8e573b9d-de8c-4590-b8b8-c8b43cbdb4f9",
+            "Value": {
+                "id": "b1e0fd52-1eb5-4a25-b7fb-d97d28cdd992",
+                "resourcePath": "scripts\\scenery_event_destroy\\scenery_event_destroy.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -6452,6 +6468,14 @@
                 "id": "bfbb7cf4-e3d7-49d2-827a-f0f618edfecb",
                 "resourcePath": "scripts\\view_control_scale\\view_control_scale.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "adc50780-22b7-4453-aa48-d85f44fe2ecf",
+            "Value": {
+                "id": "4b556c6a-4210-4fde-a7cf-56b57f4ce642",
+                "resourcePath": "datafiles_yy\\Data\\Textures\\end.png.yy",
+                "resourceType": "GMIncludedFile"
             }
         },
         {
@@ -9699,6 +9723,7 @@
         "cd26e14b-d929-430c-a8fe-ba008806aa71",
         "e667e2d2-dba4-4668-ab95-220d24f5edf6",
         "38cfe0d0-0934-4ed3-8e24-278819325132",
+        "8e573b9d-de8c-4590-b8b8-c8b43cbdb4f9",
         "b2c18de1-58db-4fb3-86be-d11b2a38732a",
         "b561d534-bbb7-45f0-8c02-a5daea6d8d7b",
         "95e8ee2a-f98c-40de-ba10-4e333885d927",

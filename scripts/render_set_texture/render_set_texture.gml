@@ -7,6 +7,7 @@ tex = argument0
 sampler = render_shader_obj.sampler_map[?"uTexture"]
 scalex = 1
 scaley = 1
+texid = null
 
 if (is_undefined(sampler) || sampler < 0)
 	return 0
