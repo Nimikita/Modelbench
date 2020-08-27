@@ -14,14 +14,7 @@ setting_preview_lights = 0
 setting_preview_cubemap_sprite = setting_preview_scenery.cubemap_sprite
 setting_preview_cubemap_repeat = setting_preview_scenery.cubemap_repeat
 setting_preview_cubemap_mapped = setting_preview_scenery.cubemap_mapped
-
-if (setting_preview_cubemap_sprite != null)
-{
-	if (background_cube_vbuffer != null)
-		vbuffer_destroy(background_cube_vbuffer)
-	
-	background_cube_vbuffer = vbuffer_create_cube(1, vec2(0), vec2(setting_preview_cubemap_repeat), false, false, true, setting_preview_cubemap_mapped)
-}
+setting_preview_cubemap_update = (setting_preview_scenery.cubemap_sprite != null)
 
 for (var i = 0; i < 3; i++)
 {

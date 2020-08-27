@@ -2,14 +2,14 @@
 /// @desc Defines constants used in the project.
 
 // Debug
-#macro dev_mode						true
+#macro dev_mode						false
 #macro debug_export_normals			false
 
 // Versions
 #macro modelbench_version			"1.1.1"
-#macro modelbench_version_full		modelbench_version + " alpha 1"
+#macro modelbench_version_full		modelbench_version + " alpha 4"
 #macro modelbench_version_extra		""
-#macro modelbench_version_date		"08.21.2020"
+#macro modelbench_version_date		"08.26.2020"
 #macro gm_runtime					GM_runtime_version
 
 // File formats
@@ -22,6 +22,7 @@
 #macro fonts_directory				data_directory + "Fonts\\"
 #macro languages_directory			data_directory + "Languages\\"
 #macro templates_directory			data_directory + "Templates\\"
+#macro textures_directory			data_directory + "Textures\\"
 
 // Files
 #macro language_file				languages_directory + "english.mblanguage"

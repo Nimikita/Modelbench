@@ -7647,6 +7647,14 @@
             }
         },
         {
+            "Key": "cf77b63f-2634-4992-ab6f-31a4f3c9ad53",
+            "Value": {
+                "id": "2ab24ea5-11fe-489f-80f0-bf7bfde4bb7c",
+                "resourcePath": "scripts\\preview_update_cubemap\\preview_update_cubemap.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "cf785f89-8d28-4f64-b728-d543692baa13",
             "Value": {
                 "id": "c5e9c277-bd17-43e7-8c33-5a9587a3e5ec",
@@ -9724,6 +9732,7 @@
         "e667e2d2-dba4-4668-ab95-220d24f5edf6",
         "38cfe0d0-0934-4ed3-8e24-278819325132",
         "8e573b9d-de8c-4590-b8b8-c8b43cbdb4f9",
+        "cf77b63f-2634-4992-ab6f-31a4f3c9ad53",
         "b2c18de1-58db-4fb3-86be-d11b2a38732a",
         "b561d534-bbb7-45f0-8c02-a5daea6d8d7b",
         "95e8ee2a-f98c-40de-ba10-4e333885d927",

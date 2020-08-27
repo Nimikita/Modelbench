@@ -39,5 +39,8 @@ if (model_create_wait)
 if (update_interface_wait)
 	interface_update()
 
+if (setting_preview_cubemap_update)
+	preview_update_cubemap()
+
 current_step += 60 / room_speed
 step_event_time = current_time - step_event_time_start
