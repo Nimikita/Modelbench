@@ -96,7 +96,7 @@ if (view.control_mouseon_last = null && content_mouseon && window_busy = "")
 		window_focus = string(view)
 	}
 	
-	if ((setting_viewport_controls_middle ? mouse_middle_pressed : mouse_left_pressed) && keyboard_check(vk_shift))
+	if ((setting_viewport_controls_middle && mouse_middle) && keyboard_check(vk_shift))
 	{
 		window_busy = "viewpancamera"
 		window_focus = string(view)
@@ -140,11 +140,17 @@ if (window_focus = string(view))
 	{
 		mouse_cursor = cr_handpoint
 		
-		if (mouse_move > 5 && !setting_viewport_controls_middle)
+		if (mouse_move > 5 && !setting_viewport_controls_middle && !keyboard_check(vk_shift))
 		{
 			view_click_x = display_mouse_get_x()
 			view_click_y = display_mouse_get_y()
 			window_busy = "viewrotatecamera"
+		}
+		
+		if ((!setting_viewport_controls_middle && mouse_left) && mouse_move > 5 && keyboard_check(vk_shift))
+		{
+			window_busy = "viewpancamera"
+			window_focus = string(view)
 		}
 		
 		//if (mouse_left && mouse_move > 5 && window_busy = "viewclick")
