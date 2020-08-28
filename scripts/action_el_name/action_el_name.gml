@@ -41,7 +41,10 @@ else
 		if (el_edit_list[|i] = el_edit)
 			continue
 		
-		namesuffix = argument0 + " (" + string(i + 1) + ")"
+		if (argument0 != "")
+			namesuffix = argument0 + " (" + string(i + 1) + ")"
+		else
+			namesuffix = argument0
 		
 		with (el_edit_list[|i])
 		{

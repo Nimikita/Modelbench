@@ -4,8 +4,8 @@
 		"language": "Svenska",
 		"locale": "sv-SE",
 		"translator": "Hozq",
-        "forversion": "1.1.0",
-        "lastchange": "2020.08.16"
+        "forversion": "1.1.1",
+        "lastchange": "2020.08.27"
     },
 	"startup/": {
 		"modeldetected": "Osparad modell upptäckt",
@@ -51,7 +51,8 @@
 		"confirmsaveexit": "Den nuvarande modellen har inte blivigt sparad ännu. Spara modellen innan avslutning?",
 		"confirmsavenew": "Den nuvarande modellen har inte blivigt sparad ännu. Spara modellen innan du skapar en ny modell?",
 		"confirmsaveopen": "Den nuvarande modellen har inte blivigt sparad ännu. Spara den nuvarande modellen innan du öppnar en annan modell?",
-        "replace": "En resurs med detta filnamnet har redan blivigt adderat i modellen. Vill du ersätta den med den valda filen?"
+		"replace": "En resurs med detta filnamnet har redan blivigt adderat i modellen. Vill du ersätta den med den valda filen?",
+		"restoredefaults": "Är du säker på att du vill återställa standardgenvägsinställningarna?"
     },
 	"filedialog/": {
 		"open/": {
@@ -126,6 +127,7 @@
 		"combinescale": "Kombinera XYZ",
 		"seperatescale": "Seperera XYZ",
 		"centeraxis": "Centrera pivot axis",
+		"resetview": "Återställ vy",
 		"value/": {
 			"on": "På",
 			"off": "Av",
@@ -159,10 +161,9 @@
 		},
 		"element/": {
 			"add": "Lägg till element...",
-			"duplicate": "Duplicera element",
-			"remove": "Ta bort element",
-			"duplicateselection": "Duplicera urval",
-			"removeselection": "Ta bort urval",
+			"rename": "Ändra namn",
+			"duplicate": "Duplicera",
+			"delete": "Ta bort",
 			"expandall": "Öppna allt",
 			"collapseall": "Kollapsa allt"
 		},
@@ -171,6 +172,9 @@
 			"block": "Block",
 			"plane": "Platta",
 			"3dplane": "3D platta"
+		},
+		"viewport/": {
+			"selectall": "Välj allt"
 		}
 	},
 	"toolbar/": {
@@ -196,6 +200,7 @@
 		"shortcut": "Genväg: %1",
 		"xyz": "X: %1\nY: %2\nZ: %3",
 		"anglexyz": "X: %1°\nY: %2°\nZ: %3°",
+		"resize": "Bredd: %1\nLängd: %2\nHöjd: %3",
 		"offset": "Offset: %1",
 		"size": "Size: %1",
 		"undo": "Ångra",
@@ -211,6 +216,7 @@
 		"texturedmode": "Textur läge",
 		"shadingenable": "Sätt på skuggning",
 		"shadingdisable": "Stäng av skuggning",
+		"walknav": "Växla promenadnavigering",
 		"blockybendingenable": "Sätt på fyrkantig böjning",
 		"blockybendingdisable": "Stäng av fyrkantig böjning",
 		"uveditor/": {
@@ -252,7 +258,8 @@
 			"rotate": "Rotera verktyg",
 			"scale": "Skala verktyg",
 			"bend": "Böjnings värktyg",
-			"transform": "Multi-transform verktyg"
+			"transform": "Multi-transform verktyg",
+			"resize": "Storlek ändrings verktyg"
 		},
 		"snap/":
 		{
@@ -359,6 +366,7 @@
 	"interface": "GRÄNSSNITT",
 	"graphics": "GRAFIK",
 	"assets/": {
+		"newmodel": "Ny modell",
 		"modelname": "Modell namn",
 		"emptymodelname": "Modellens namn kan inte vara tomt.",
 		"modellocation": "Modell plats",
@@ -557,20 +565,25 @@
 		"refreshtextureshelp": "Automatiskt uppdatera alla modell texturer när fönstret har fått fokus igen.",
 		"adjustpivotresize": "Justera pivot vid ändring and storlek",
 		"adjustpivotresizehelp": "Justera form pivot baserat på storleksändring i UV redigeraren.",
-		"interfaceshortcuts": "Interface genvägsknappar",
-		"camerashortcuts": "Kamera genvägsknappar",
+		"shortcuts": "Genvägar",
+		"controlsfile": "Fil",
+		"controlsediting": "Redigering",
+		"controlstools": "Värktyg",
+		"controlsnavigation": "Navigation",
 		"key/": {
 			"new": "Ny modell",
+			"newtemplate": "Ny modell (mall)",
 			"open": "Öppna modell",
 			"save": "Spara modell",
 			"saveas": "Spara modell som",
 			"import": "Importera modell",
 			"undo": "Ångra",
 			"redo": "Göra om",
-			"removeselection": "Ta bort urval",
-			"duplicateselection": "Duplicera urval",
-			"selectelements": "Välj element",
-			"uveditor": "Toggla UV editor",
+			"rename": "Ändra namn",
+			"delete": "Ta bort",
+			"duplicate": "Duplicera",
+			"selectall": "Välj allt",
+			"uveditor": "Toggla UV redigerare",
 			"tool/": {
 				"select": "Välj verktyg",
 				"pivot": "Sväng verktyg",
@@ -578,10 +591,11 @@
 				"rotate": "Rotera verktyg",
 				"scale": "Skala verktyg",
 				"transform": "Multi-transform verktyg",
-				"bend": "Böjnings värktyg"
+				"bend": "Böjnings värktyg",
+				"resize": "Storlek ändrings verktyg"
 			},
 			"snap": "Toggla snapping",
-			"editsnap": "Ändra snapping",
+			"walknavigation": "Promenadnavigering",
 			"forward": "Frammåt",
             "back": "Bakåt",
             "left": "Vänster",
@@ -607,15 +621,12 @@
 		"looksensitivity": "Kamera känslighet",
 		"smoothcamera": "Len kamera rörelse",
 		"smoothcameraamount": "Mängd",
-		"graphicsblockybending": "Blockig böjning",
-		"graphicsblockybendinghelp": "Sätt på blockig böjning på delar utan en specifierad böjningsskala.",
-		"shapeoutlineopacity": "Formernas ytterlinje opacitet",
 		"startuptips": "Visa starttips",
-		"graphicswind": "Vind",
-		"graphicswindspeed": "Snabbhet",
-		"graphicswindstrength": "Hårdhet",
-		"graphicsmodelingssao": "Modellerings SSAO",
-		"graphicslighting": "Belysning"
+		"reducedmotion": "Minskad rörelse",
+		"restoredefaults": "ÅTERSTÄLL GENVÄGAR",
+		"viewportmousecontrols": "Kontroller för visningsport",
+		"viewportmousecontrolsleft": "VÄNSTER KLICK",
+		"viewportmousecontrolsmiddle": "MITTEN KLICK"
 	},
 	"about/": {
 		"version": "Verision %1",
@@ -628,5 +639,47 @@
 		"betatesters": "BETA TESTARE",
 		"betatesting": "BETA TESTNING",
 		"donate": "DONERA"
+	},
+	"shortcut/": {
+		"select": "Välj",
+		"selectadd": "Välj (Addera)",
+		"selectshape": "Välj form",
+		"deselect": "Välja",
+		"groupselect": "Välj grupp",
+		"moveselection": "Flytta markering",
+		"orbitview": "Kretsa vy",
+		"panview": "Panorera vy",
+		"walknavigation": "Promenadnavigering",
+		"zoom": "Zoom",
+		"transform": "Transform",
+		"transformslower": "Transform (Slö)",
+		"snap": "Knäpp",
+		"reset": "Återställ",
+		"resizearea": "Ändra storlek på område",
+		"movetab": "Flytta flik",
+		"resizeaxis": "Ändra storlek på axeln",
+		"contextmenu/": {
+			"viewport": "Visningsport kontext meny",
+			"element": "Element kontext meny",
+			"texture": "Textur kontext meny",
+			"uveditor": "UV redigerare kontext meny"
+		},
+		"uveditor/": {
+			"edituvs": "Redigera UVs",
+			"editlength": "Redigera längd",
+			"editwidthheight": "Redigera bredd/höjd",
+			"boxuvs": "Sätt box UVs"
+		},
+		"move/": {
+			"forward": "Framåt",
+            "back": "Bakåt",
+            "left": "Vänster",
+            "right": "Höger",
+            "ascend": "Stig",
+            "descend": "Sjunk",
+            "reset": "Återställ",
+            "fast": "Snabbare",
+            "slow": "Saktare"
+		}
 	}
 }

@@ -1,8 +1,5 @@
 /// tab_assets_elements()
 
-tab.elements.element_hover_prev = tab.elements.element_hover
-tab.elements.element_hover = null
-
 // Element search
 tab_control(28)
 draw_textfield("assetssearchelements", dx, dy, dw, 28, tab.elements.tbx_search.text, tab.elements.tbx_search, action_search, text_get("assetssearchelementscaption"), "none")
@@ -141,5 +138,3 @@ if (tab.elements.element_hover != null)
 	shortcut_bar_add(null, e_mouse.RIGHT_CLICK, "contextmenuelement")
 }
 
-if (tab.elements.element_hover != tab.elements.element_hover_prev)
-	el_update_parent_hover()

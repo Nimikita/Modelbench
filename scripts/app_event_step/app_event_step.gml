@@ -17,6 +17,7 @@ app_update_work_camera()
 app_update_caption()
 app_update_snackbar()
 app_update_lists()
+app_update_highlight()
 
 app_update_animations()
 
@@ -41,6 +42,8 @@ if (update_interface_wait)
 
 if (setting_preview_cubemap_update)
 	preview_update_cubemap()
+
+
 
 current_step += 60 / room_speed
 step_event_time = current_time - step_event_time_start

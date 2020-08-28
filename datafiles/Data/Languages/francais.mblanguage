@@ -4,8 +4,8 @@
 		"language": "Français",
 		"locale": "fr-FR",
         "translator": "Voxy",
-        "forversion": "1.1.0",
-        "lastchange": "2020.08.16"
+        "forversion": "1.1.1",
+        "lastchange": "2020.08.22"
     },
 	"startup/": {
 		"modeldetected": "Modèle non-sauvegardé détecté",
@@ -51,7 +51,8 @@
 		"confirmsaveexit": "Le modèle n'a pas été enregistré. Enregistrer le modèle avant de fermer ?",
 		"confirmsavenew": "Le modèle n'a pas été enregistré. Enregistrer le modèle avant de créer un nouveau modèle ?",
 		"confirmsaveopen": "Le modèle n'a pas été enregistré. Enregistrer le modèle avant d'ouvrir un modèle ?",
-        "replace": "Une ressource possède déjà ce nom de fichier. Voulez-vous la remplacer ?"
+		"replace": "Une ressource possède déjà ce nom de fichier. Voulez-vous la remplacer ?",
+		"restoredefaults": "Êtes-vous sûr de vouloir réinitialiser les raccourcis clavier ?"
     },
 	"filedialog/": {
 		"open/": {
@@ -126,6 +127,7 @@
 		"combinescale": "Mise à l'échelle uniforme",
 		"seperatescale": "Mise à l'échelle non-uniforme",
 		"centeraxis": "Centrer le point de pivot",
+		"resetview": "Réinitialiser la caméra",
 		"value/": {
 			"on": "Activé",
 			"off": "Désactivé",
@@ -148,7 +150,7 @@
 			"cut": "Couper",
 			"copy": "Copier",
 			"paste": "Coller",
-			"selectall": "Sélectionner tout"
+			"selectall": "Tout sélectionner"
 		},
 		"texture/": {
 			"setmain": "Définir comme texture principale",
@@ -159,10 +161,9 @@
 		},
 		"element/": {
 			"add": "Nouvel élément...",
-			"duplicate": "Dupliquer l'élement",
-			"remove": "Supprimer l'élement",
-			"duplicateselection": "Dupliquer la sélection",
-			"removeselection": "Supprimer la sélection",
+			"rename": "Renommer",
+			"duplicate": "Dupliquer",
+			"delete": "Supprimer",
 			"expandall": "Développer",
 			"collapseall": "Réduire"
 		},
@@ -171,6 +172,9 @@
 			"block": "Bloc",
 			"plane": "Surface",
 			"3dplane": "Surface 3D"
+		},
+		"viewport/": {
+			"selectall": "Tout sélectionner"
 		}
 	},
 	"toolbar/": {
@@ -196,6 +200,7 @@
 		"shortcut": "Raccourci : %1",
 		"xyz": "X : %1\nY : %2\nZ : %3",
 		"anglexyz": "X : %1°\nY : %2°\nZ : %3°",
+		"resize": "Largeur : %1\nLongueur : %2\nHauteur : %3",
 		"offset": "Décalage : %1",
 		"size": "Taille : %1",
 		"undo": "Annuler",
@@ -208,11 +213,12 @@
 		"shadedmode": "Rendu ombré",
 		"texturedmode": "Rendu texturé",
 		"shadingenable": "Activer les ombrages",
+		"walknav": "Navigation à la première personne",
 		"shadingdisable": "Désactiver les ombrages",
 		"blockybendingenable": "Activer les articulations carrées",
 		"blockybendingdisable": "Désactiver les articulations carrées",
-		"snapenable": "Activer le magnétisme",
-		"snapdisable": "Désactiver le magnétisme",
+		"snapenable": "Activer l'alignement sur la grille",
+		"snapdisable": "Désactiver l'alignement sur la grille",
 		"uveditor/": {
 			"editxy": "Repositionner",
 			"editwidthheight": "Modifier la hauteur et largeur",
@@ -252,7 +258,8 @@
 			"rotate": "Outil Pivoter",
 			"scale": "Outil Mise à l'échelle",
 			"transform": "Outil Multi-transformation",
-			"bend": "Outil Articuler"
+			"bend": "Outil Articuler",
+			"resize": "Outil Redimensionner"
 		},
 		"snap/":
 		{
@@ -359,6 +366,7 @@
 	"interface": "INTERFACE",
 	"graphics": "GRAPHISMES",
 	"assets/": {
+		"newmodel": "Nouveau modèle",
 		"modelname": "Nom du modèle",
 		"emptymodelname": "Le nom du modèle ne peut pas être vide.",
 		"modellocation": "Emplacement du modèle",
@@ -559,18 +567,24 @@
 		"adjustpivotresize": "Ajuster le pivot automatiquement",
 		"adjustpivotresizehelp": "Ajuster la position du point de pivot après le redimensionnement d'une forme.",
 		"interfaceshortcuts": "Raccourcis de l'interface utilisateur",
-		"camerashortcuts": "Raccourcis de la caméra",
+		"shortcuts": "Raccourcis clavier",
+		"controlsfile": "Fichier",
+		"controlsediting": "Édition",
+		"controlstools": "Outils",
+		"controlsnavigation": "Navigation",
 		"key/": {
 			"new": "Nouveau modèle",
+			"newtemplate": "Nouveau modèle (gabarit)",
 			"open": "Ouvrir un modèle",
 			"save": "Enregister le modèle",
-			"saveas": "Enregistrer le modèle sous...",
+			"saveas": "Enregistrer le modèle sous",
 			"import": "Importer un modèle",
 			"undo": "Annuler",
 			"redo": "Rétablir",
-			"removeselection": "Supprimer la sélection",
-			"duplicateselection": "Dupliquer la sélection",
-			"selectelements": "Sélectionner les éléments",
+			"rename": "Renommer",
+			"delete": "Supprimer",
+			"duplicate": "Dupliquer",
+			"selectall": "Tout sélectionner",
 			"uveditor": "Basculer l'éditeur d'UV",
 			"tool/": {
 				"select": "Outil Sélection",
@@ -579,10 +593,12 @@
 				"rotate": "Outil Pivoter",
 				"scale": "Outil Mise à l'échelle",
 				"transform": "Outil Multi-transformation",
-				"bend": "Outil Articuler"
+				"bend": "Outil Articuler",
+				"resize": "Outil Redimensionner"
 			},
-			"snap": "Activer le magnétisme",
-			"editsnap": "Modifier le magnétisme",
+			"snap": "Activer l'align. sur la grille",
+			"editsnap": "Modifier l'align. sur la grille",
+			"walknavigation": "Navig. première personne",
 			"forward": "Avant",
             "back": "Arrière",
             "left": "Gauche",
@@ -606,17 +622,14 @@
 		"sharedtextureuvs": "Afficher tous les îlots UV",
 		"sharedtextureuvshelp": "Afficher les formes utilisant la même texture dans l'éditeur d'UV.",
 		"looksensitivity": "Sensitivité de la caméra",
+		"viewportmousecontrols": "Contrôles de la caméra",
+		"viewportmousecontrolsleft": "CLIC GAUCHE",
+		"viewportmousecontrolsmiddle": "CLIC CENTRAL",
 		"smoothcamera": "Caméra adoucie",
 		"smoothcameraamount": "Quantité",
-		"graphicsblockybending": "Articulations carrées",
-		"graphicsblockybendinghelp": "Activer un aspect carré pour les articulations sans taille personnalisée.",
-		"shapeoutlineopacity": "Opacité des contours",
 		"startuptips": "Afficher les astuces au démarrage",
-		"graphicswind": "Vent",
-		"graphicswindspeed": "Vitesse",
-		"graphicswindstrength": "Force",
-		"graphicsmodelingssao": "Occlusion ambiente",
-		"graphicslighting": "Éclairage"
+		"reducedmotion": "Réduire les animations",
+		"restoredefaults": "RÉINITIALISER"
 	},
 	"about/": {
 		"version": "Version %1",
@@ -628,5 +641,47 @@
 		"specialthanks": "REMERCIEMENTS",
 		"betatesting": "BÊTA-TEST",
 		"donate": "FAIRE UN DON"
+	},
+	"shortcut/": {
+		"select": "Sélectionner",
+		"selectadd": "Ajouter à la sélection",
+		"selectshape": "Sélectionner une forme",
+		"deselect": "Désélectionner",
+		"groupselect": "Sélection groupée",
+		"moveselection": "Déplacer la sélection",
+		"orbitview": "Orbite",
+		"panview": "Panoramique",
+		"walknavigation": "Navigation 1re personne",
+		"zoom": "Zoom",
+		"transform": "Transformer",
+		"transformslower": "Plus précis",
+		"snap": "Aligner sur la grille",
+		"reset": "Réinitialiser",
+		"resizearea": "Redimensionner la zone",
+		"movetab": "Déplacer le panneau",
+		"resizeaxis": "Axe de redimensionnement",
+		"contextmenu/": {
+			"viewport": "Menu contextuel (fenêtre)",
+			"element": "Menu contextuel (élément)",
+			"texture": "Menu contextuel (texture)",
+			"uveditor": "Menu contextuel (éditeur UV)"
+		},
+		"uveditor/": {
+			"edituvs": "Déplacer les UVs",
+			"editlength": "Modifier la longueur",
+			"editwidthheight": "Modifier la hauteur/largeur",
+			"boxuvs": "Définir une boîte UV"
+		},
+		"move/": {
+			"forward": "Avant",
+            "back": "Arrière",
+            "left": "Gauche",
+            "right": "Droite",
+            "ascend": "Monter",
+            "descend": "Descendre",
+            "reset": "Réinitialiser",
+            "fast": "Plus vite",
+            "slow": "Plus lentement"
+		}
 	}
 }
