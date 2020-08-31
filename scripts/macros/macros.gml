@@ -13,7 +13,7 @@
 #macro gm_runtime					GM_runtime_version
 
 // File formats
-#macro settings_format				e_settings.FORMAT_101
+#macro settings_format				e_settings.FORMAT_111
 
 // Directories
 #macro file_directory				game_save_id

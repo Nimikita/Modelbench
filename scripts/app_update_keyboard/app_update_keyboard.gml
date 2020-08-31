@@ -133,5 +133,13 @@ if (textbox_isediting && !textbox_isediting_respond)
 textbox_isediting_respond = false
 
 // Dragger changes
-dragger_multiplier = keyboard_check(vk_shift) ? .1 : 1
-dragger_snap = setting_snap || keyboard_check(vk_control)
+if (!textbox_isediting)
+{
+	dragger_multiplier = keyboard_check(vk_shift) ? .1 : 1
+	dragger_snap = setting_snap || keyboard_check(vk_control)
+}
+else
+{
+	dragger_multiplier = 1
+	dragger_snap = false
+}
