@@ -2,7 +2,7 @@
 
 globalvar el_type_name_list;
 globalvar language_english_map, language_map;
-globalvar scenery_list, accent_list, beta_testers_list;
+globalvar scenery_list, accent_list, special_thanks_list;
 
 // Element names
 el_type_name_list = ds_list_create()
@@ -40,8 +40,8 @@ ds_list_add(accent_list,
 )
 
 // Beta testers
-beta_testers_list = ds_list_create()
-ds_list_add(beta_testers_list,
+special_thanks_list = ds_list_create()
+ds_list_add(special_thanks_list,
 	"AnxiousCynic",
 	"Aronan",
 	"BloxTheRigger",
