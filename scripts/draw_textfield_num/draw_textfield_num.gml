@@ -52,7 +52,7 @@ else
 	fieldx = xx + capwidth
 
 if (draw_inputbox(name, fieldx, yy, wid, 28, string(def), tbx, null, disabled))
-	script_execute(script, clamp(snap(string_get_real(tbx.text, def), snapval), minval, maxval), false)
+	script_execute(script, clamp(string_get_real(tbx.text, def), minval, maxval), false)
 
 // Use microanimation from inputbox to determine color
 var labelcolor, labelalpha;

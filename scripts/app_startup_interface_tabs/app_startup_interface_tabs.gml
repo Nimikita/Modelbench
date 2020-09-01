@@ -93,6 +93,9 @@ with (element_editor)
 		tbx_x = new_textbox_ndecimals()
 		tbx_y = new_textbox_ndecimals()
 		tbx_z = new_textbox_ndecimals()
+		tbx_x.suffix = "°"
+		tbx_y.suffix = "°"
+		tbx_z.suffix = "°"
 		
 		tbx_x.next_tbx = tbx_y
 		tbx_y.next_tbx = tbx_z

@@ -160,7 +160,7 @@ for (var i = 0; i < textfield_amount; i++)
 	if (update)
 	{
 		if (textfield_script[i] != null)
-			script_execute(textfield_script[i], clamp(snap(string_get_real(textfield_textbox[i].text, textfield_default[i]), snapval), minval, maxval), false)
+			script_execute(textfield_script[i], clamp(string_get_real(textfield_textbox[i].text, textfield_default[i]), minval, maxval), false)
 		else
 			fieldupdate = textfield_textbox[i]
 	}

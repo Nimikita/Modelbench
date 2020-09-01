@@ -48,9 +48,9 @@ context_menu_area(xx - rad, yy - rad, rad * 2, rad * 2, "contextmenuvalue", valu
 modval = mod_fix(value, 360)
 capwid = string_width_font(text_get(name) + ":", font_emphasis) + 5
 if (limit)
-	text = string(modval) + tbx.suffix
+	text = string_decimals(modval) + tbx.suffix
 else
-	text = string(value) + tbx.suffix
+	text = string_decimals(value) + tbx.suffix
 
 labelw = rad
 labeltextw = capwid + string_width_font(text, font_value)
@@ -108,7 +108,7 @@ draw_set_font(font_value)
 if (window_focus = string(tbx))
 {
 	if (textbox_draw(tbx, labelx, labely - 8, labeltextw, 18))
-		script_execute(script, clamp(snap(string_get_real(tbx.text, 0), snapval), minval, maxval), false)
+		script_execute(script, clamp(string_get_real(tbx.text, 0), minval, maxval), false)
 }
 else
 	draw_label(text, labelx, labely, fa_left, fa_middle, c_text_main, a_text_main, font_value)
