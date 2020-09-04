@@ -1,7 +1,7 @@
 # Modelbench
 
 <p align="center">
-  <img src="https://i.imgur.com/MPop9YD.png" width=800/>
+  <img src="https://i.imgur.com/qSs6x0n.png" width=800/>
   <br/>
   <br/>
   <img src="https://i.imgur.com/0osEmHQ.png" width=800/>
