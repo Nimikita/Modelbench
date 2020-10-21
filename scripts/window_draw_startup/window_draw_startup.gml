@@ -66,7 +66,6 @@ if (recent_list_amount > 0)
 	draw_label(text_get("startuprecentmodels"), dx, dy + 16, fa_left, fa_middle, c_accent, 1, font_heading)
 	dy += 72
 	
-	min(window_height)
 	var listheight = 28 + min(window_height - dy, (min(recent_list_amount, 8) * 44));
 	tab_control(listheight)
 	draw_recent(dx, dy, dw, listheight)
