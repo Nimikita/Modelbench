@@ -46,7 +46,7 @@ if (ds_map_valid(controlsmap) && load_format >= e_settings.FORMAT_111)
 	setting_key_new_template = value_get_array(controlsmap[?"key_new_template"], setting_key_new_template)
 	setting_key_open = value_get_array(controlsmap[?"key_open"], setting_key_open)
 	setting_key_save = value_get_array(controlsmap[?"key_save"], setting_key_save)
-	setting_key_save_as = value_get_array(controlsmap[?"key_save"], setting_key_save_as)
+	setting_key_save_as = value_get_array(controlsmap[?"key_save_as"], setting_key_save_as)
 	setting_key_import = value_get_array(controlsmap[?"key_import"], setting_key_import)
 	
 	setting_key_undo = value_get_array(controlsmap[?"key_undo"], setting_key_undo)
