@@ -3,7 +3,7 @@
 json_save_var("type", type)
 
 if (name != "")
-	json_save_var("description", name)
+	json_save_var("description", json_string_encode(name))
 
 model_save_texture()
 

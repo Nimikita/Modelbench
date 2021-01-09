@@ -1,6 +1,6 @@
 /// model_save_part()
 
-json_save_var("name", name)
+json_save_var("name", json_string_encode(name))
 
 if (depth != 0)
 	json_save_var("depth", depth)
