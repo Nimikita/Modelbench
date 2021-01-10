@@ -3,6 +3,8 @@
 startup_last_crash = false
 startup_error = true
 
+model_load_startup()
+
 if (!log_startup())
 	return false
 
@@ -35,6 +37,8 @@ model_startup()
 
 if (dev_mode)
 	model_create()
+else if (model_startup_fn != "")
+	model_load(model_startup_fn)
 
 startup_error = false
 

@@ -35,7 +35,7 @@ lib_window_maximize = external_define(pathwindow, "window_maximize", dll_cdecl, 
 lib_window_set_focus = external_define(pathwindow, "window_set_focus", dll_cdecl, ty_real, 1, ty_string)
 
 // Check for crashes
-if (startup_last_crash && !dev_mode)
+if (startup_last_crash && !dev_mode && model_startup_fn = "")
 {
 	if (show_question("Do you want to report the crash now via the Mine-imator forums? In your bug report, provide instructions on how to recreate the bug and upload the log contents. If the issue concerns a specific model, upload its contents as a .zip.")) 
 	{
