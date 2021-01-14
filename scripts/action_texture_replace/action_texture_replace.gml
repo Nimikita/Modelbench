@@ -1,12 +1,26 @@
-/// action_texture_replace()
+/// action_texture_replace([texture, fn])
+/// @arg [texture
+/// @arg fn]
 
-var texobj = context_menu_value;
+var texobj, fn;
+
+if (argument_count > 0)
+{
+	texobj = argument[0]
+	fn = argument[1]
+}
+else
+{
+	texobj = context_menu_value;
+	fn = ""
+}
 
 if (!history_undo && !history_redo)
 {
 	with (texobj)
 	{
-		var fn = tex_load_browse();
+		if (fn = "")
+			fn = tex_load_browse()
 		
 		if (fn = "")
 			return 0

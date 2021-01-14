@@ -25,7 +25,7 @@ app_update_textures()
 app_update_shape_vbuffer()
 
 app_update_count()
-
+app_update_dnd()
 export_save()
 
 if (model_create_wait)

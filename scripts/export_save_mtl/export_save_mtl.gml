@@ -16,7 +16,7 @@ with (obj_texture)
 	
 	str += "\n"
 	
-	sprite_save(sprite, 0, filename_dir(app.export_mtl_fn) + "\\" + fnfilter)
+	sprite_save_lib(sprite, 0, filename_dir(app.export_mtl_fn) + "\\" + fnfilter)
 	
 	export_save_tex = false
 }

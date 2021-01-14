@@ -34,6 +34,7 @@
 #macro temp_model_directory			file_directory + "modeltemp\\"
 #macro temp_model_backup			temp_model_directory + "\\" + "temp.mbbackup1"
 #macro temp_file					file_directory + "tmp.file"
+#macro temp_image					file_directory + "tmp.png"
 
 // Links
 #macro link_news					"https://www.mineimator.com/news?app=mb&version=" + modelbench_version

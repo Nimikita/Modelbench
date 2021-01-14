@@ -63,6 +63,14 @@
             }
         },
         {
+            "Key": "00f267da-2a82-456b-aba2-dae6cfabab75",
+            "Value": {
+                "id": "c639c497-31b0-49e6-8d72-7f0c13398d4a",
+                "resourcePath": "scripts\\file_dnd_get_enabled\\file_dnd_get_enabled.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "011928f7-3eb1-4268-887c-41adc9fcacdf",
             "Value": {
                 "id": "96017d52-d52e-423d-b9a7-4bb782e8773f",
@@ -599,6 +607,14 @@
             }
         },
         {
+            "Key": "0dc2433e-7946-466b-aa97-3f31d0b5f6b4",
+            "Value": {
+                "id": "8e6bea7e-0b3f-4851-8fcd-1ebebb7f3582",
+                "resourcePath": "scripts\\surface_save_lib\\surface_save_lib.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "0e40f2c0-07c3-4cd3-9cd1-12888bbecc7d",
             "Value": {
                 "id": "bbe13cae-578e-499b-9dbf-e3dbb1a8cbaa",
@@ -636,6 +652,14 @@
                 "id": "e72bd2e5-6d0e-412a-9464-943682c3f3e2",
                 "resourcePath": "objects\\obj_textbox\\obj_textbox.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "0fa69f83-bb34-42f7-80b8-ed48c6c7f62e",
+            "Value": {
+                "id": "14d9529f-e781-4616-9814-1056543e4e44",
+                "resourcePath": "scripts\\app_update_dnd\\app_update_dnd.yy",
+                "resourceType": "GMScript"
             }
         },
         {
@@ -1687,6 +1711,14 @@
             }
         },
         {
+            "Key": "2d69177a-ba31-4587-94f7-f9e8f2ca0546",
+            "Value": {
+                "id": "c399109a-cd88-460b-8322-27f8fb25d4c4",
+                "resourcePath": "scripts\\file_dnd_lib_startup\\file_dnd_lib_startup.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "2d6de25b-4eba-4d91-a9cd-53fff6929a62",
             "Value": {
                 "id": "6bc0b1c6-17c7-41e3-84d9-044e8d4d46f8",
@@ -2455,6 +2487,14 @@
             }
         },
         {
+            "Key": "443727de-f04f-45f5-af98-5377d4208af0",
+            "Value": {
+                "id": "a95cf95b-3327-47d7-92e1-9d31396a87d7",
+                "resourcePath": "datafiles_yy\\Data\\filedropper.dll.yy",
+                "resourceType": "GMIncludedFile"
+            }
+        },
+        {
             "Key": "44376d12-1375-464b-96aa-0b213f7a1c68",
             "Value": {
                 "id": "1e624cd0-0adf-4418-8908-1106febb2b08",
@@ -2595,6 +2635,14 @@
             "Value": {
                 "id": "46d0cf1a-8149-4774-9fe0-5d1b9fef3ee1",
                 "resourcePath": "scripts\\view_shape_project\\view_shape_project.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "488bd7c7-862b-43a0-8b40-10086f5c6da4",
+            "Value": {
+                "id": "175ecdd3-b120-40c1-b467-3cdf5c3a30f9",
+                "resourcePath": "scripts\\sprite_save_lib\\sprite_save_lib.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -5143,6 +5191,14 @@
             }
         },
         {
+            "Key": "87f36e29-7048-45ee-b25e-4d26cea0493a",
+            "Value": {
+                "id": "17ef6da3-94da-4c11-ab54-9c5985d0f4c1",
+                "resourcePath": "scripts\\file_dnd_set_files\\file_dnd_set_files.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "8817561e-71ad-4a77-9bd2-1b977513e0e7",
             "Value": {
                 "id": "9441078a-312c-494d-99c9-d6ea64624fd2",
@@ -5347,6 +5403,14 @@
             "Value": {
                 "id": "4dc3bc36-0f30-49a2-b8b0-65620e4a3049",
                 "resourcePath": "scripts\\tab_next\\tab_next.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "8da2cfbe-6133-44f3-913a-9e13798a1f70",
+            "Value": {
+                "id": "367feaf8-e2f3-4deb-afab-4f82d885c57f",
+                "resourcePath": "scripts\\file_dnd_set_handle\\file_dnd_set_handle.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -7511,6 +7575,14 @@
             }
         },
         {
+            "Key": "ca1ff4bd-b792-49be-9932-2c1925203a5d",
+            "Value": {
+                "id": "720dff14-e864-4177-880e-b581596439db",
+                "resourcePath": "scripts\\file_dnd_lib_update\\file_dnd_lib_update.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "ca2bbfaa-f12f-4f44-938c-0792234a5cf9",
             "Value": {
                 "id": "dcf9e9e7-5842-4e8c-9b92-1e85b84ffb2c",
@@ -8095,6 +8167,14 @@
             }
         },
         {
+            "Key": "ddc5444d-b039-4f79-a4db-99042c65645d",
+            "Value": {
+                "id": "9171b61f-f3f5-409d-983b-cb84689206e3",
+                "resourcePath": "scripts\\file_dnd_get_handle\\file_dnd_get_handle.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "ddcd4f89-6e5e-45c3-ac27-b11b605647aa",
             "Value": {
                 "id": "db62c02b-663d-4dcb-b194-6e772017265b",
@@ -8639,6 +8719,14 @@
             }
         },
         {
+            "Key": "eeaa3cb4-5e5f-4ca5-849d-94bc88eb0c0e",
+            "Value": {
+                "id": "a7a62ade-ca04-4133-953a-b2f8588a3000",
+                "resourcePath": "views\\eeaa3cb4-5e5f-4ca5-849d-94bc88eb0c0e.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
             "Key": "ef5fac00-88de-4813-a61b-6b2dc938584e",
             "Value": {
                 "id": "b99387c9-afee-4a93-ba70-182353bea50e",
@@ -8895,6 +8983,22 @@
             }
         },
         {
+            "Key": "f56ad1bd-a24a-4aae-a94b-722dc6ad1a1c",
+            "Value": {
+                "id": "b8163f99-9a74-4a92-a7bc-427e0ea0715a",
+                "resourcePath": "scripts\\file_dnd_get_files\\file_dnd_get_files.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "f61bca2d-39a5-40b1-bcfe-4a58f3923e16",
+            "Value": {
+                "id": "1aca7ca9-ccf3-4ee5-9701-d82a77a93d17",
+                "resourcePath": "scripts\\file_dnd_reset_files\\file_dnd_reset_files.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "f6b93530-473a-4529-8291-babf2014e2eb",
             "Value": {
                 "id": "ca39925f-856e-45b7-9648-a009878d492e",
@@ -9084,6 +9188,14 @@
                 "id": "1a4bc7b2-fc80-4342-b8e5-9b041f87869f",
                 "resourcePath": "sprites\\spr_circle_20\\spr_circle_20.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "fa427488-ecdb-4d59-962b-6fca9c9efe69",
+            "Value": {
+                "id": "754520c9-165b-452b-b991-10a0c5273788",
+                "resourcePath": "scripts\\file_dnd_set_enabled\\file_dnd_set_enabled.yy",
+                "resourceType": "GMScript"
             }
         },
         {
@@ -9750,10 +9862,21 @@
         "1bdba71b-5a63-4a28-b0fd-a6094924bc07",
         "808a2e57-d4cd-4d0c-bb00-5328d517221e",
         "4c4a3952-db9d-442d-816f-ba4590e60434",
+        "488bd7c7-862b-43a0-8b40-10086f5c6da4",
+        "0dc2433e-7946-466b-aa97-3f31d0b5f6b4",
+        "00f267da-2a82-456b-aba2-dae6cfabab75",
+        "ddc5444d-b039-4f79-a4db-99042c65645d",
+        "f56ad1bd-a24a-4aae-a94b-722dc6ad1a1c",
+        "f61bca2d-39a5-40b1-bcfe-4a58f3923e16",
+        "fa427488-ecdb-4d59-962b-6fca9c9efe69",
+        "8da2cfbe-6133-44f3-913a-9e13798a1f70",
+        "87f36e29-7048-45ee-b25e-4d26cea0493a",
         "b20605e9-e2bf-4698-b1ea-06b30ef75024",
         "f075b6e7-ece8-4653-a107-04fb8629b1f5",
+        "2d69177a-ba31-4587-94f7-f9e8f2ca0546",
         "9d7218d7-1b0f-44df-91d5-1b3d7625ac62",
         "cd26e14b-d929-430c-a8fe-ba008806aa71",
+        "ca1ff4bd-b792-49be-9932-2c1925203a5d",
         "e667e2d2-dba4-4668-ab95-220d24f5edf6",
         "38cfe0d0-0934-4ed3-8e24-278819325132",
         "8e573b9d-de8c-4590-b8b8-c8b43cbdb4f9",
@@ -9812,6 +9935,7 @@
         "125aa3a4-5b3d-4105-8d2e-2ad435e57120",
         "bc1767c3-2620-4a97-826b-27e58ce9d076",
         "d37a5b07-28c1-4d6f-9879-ebfb0b9d9941",
+        "0fa69f83-bb34-42f7-80b8-ed48c6c7f62e",
         "786d5a26-b337-4dd9-8daa-f4d19341795e",
         "4af59f1c-5b35-4aa3-8536-ca892e81e5d4",
         "9f1ccf12-e3a5-46c4-bc35-f61f9da33293",

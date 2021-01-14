@@ -14,6 +14,8 @@ if (!lib_startup())
 if (!file_lib_startup())
 	return false
 
+file_dnd_lib_startup()
+
 if (!file_exists_lib(language_file))
 	return missing_file(language_file)
 

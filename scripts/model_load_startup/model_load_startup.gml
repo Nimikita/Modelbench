@@ -10,7 +10,7 @@ for (var i = 0; i < parameter_count(); i++)
 	ext = filename_ext(p)
 	
 	for (var j = 0; j <= 9; j++)
-		ext = string_replace(ext, string(i), "")
+		ext = string_replace(ext, string(j), "")
 	
 	if (ext = ".mimodel" || ext = ".mbtemplate" || ext = ".mbbackup")
 	{
