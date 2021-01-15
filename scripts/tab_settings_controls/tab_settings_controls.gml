@@ -24,6 +24,10 @@ if (!setting_collapse_controls_file)
 	tab_next(false)
 
 	tab_control_keycontrol()
+	draw_keycontrol("settingskeysave", dx, dy, dw, setting_key_save, new_shortcut(ord("S"), true, false), action_setting_key_save)
+	tab_next(false)
+	
+	tab_control_keycontrol()
 	draw_keycontrol("settingskeysaveas", dx, dy, dw, setting_key_save_as, new_shortcut(ord("S"), true, true), action_setting_key_save_as)
 	tab_next(false)
 
