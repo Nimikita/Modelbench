@@ -13,7 +13,7 @@ surface_set_target(surf)
 {
 	draw_clear_alpha(c_black, 0)
 	gpu_set_blendmode_ext(bm_one, bm_inv_src_alpha)
-	draw_sprite(spr, subimg, 0, 0)
+	draw_sprite(spr, subimg, 1, 0)
 	gpu_set_blendmode(bm_normal)
 }
 surface_reset_target()
