@@ -21,7 +21,7 @@ with (obj_texture)
 var copied = false;
 if (tex != null)
 {
-	if (question(text_get("questionreplace")))
+	if (question(text_get("questionreplace", filename_name(fn))))
 		replaced = true
 	else
 	{

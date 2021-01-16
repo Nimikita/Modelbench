@@ -4,8 +4,8 @@
 		"language": "Svenska",
 		"locale": "sv-SE",
 		"translator": "Hozq",
-        "forversion": "1.1.1",
-        "lastchange": "2020.08.27"
+        "forversion": "1.1.3",
+        "lastchange": "2021.01.16"
     },
 	"startup/": {
 		"modeldetected": "Osparad modell upptäckt",
@@ -51,7 +51,7 @@
 		"confirmsaveexit": "Den nuvarande modellen har inte blivigt sparad ännu. Spara modellen innan avslutning?",
 		"confirmsavenew": "Den nuvarande modellen har inte blivigt sparad ännu. Spara modellen innan du skapar en ny modell?",
 		"confirmsaveopen": "Den nuvarande modellen har inte blivigt sparad ännu. Spara den nuvarande modellen innan du öppnar en annan modell?",
-		"replace": "En resurs med detta filnamnet har redan blivigt adderat i modellen. Vill du ersätta den med den valda filen?",
+		"replace": "En textur vid namn '%1' existerar redan. Vill du byta ut den med den nya texturen?",
 		"restoredefaults": "Är du säker på att du vill återställa standardgenvägsinställningarna?"
     },
 	"filedialog/": {

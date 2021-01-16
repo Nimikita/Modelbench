@@ -4,8 +4,8 @@
 		"language": "Français",
 		"locale": "fr-FR",
         "translator": "Voxy",
-        "forversion": "1.1.1",
-        "lastchange": "2020.08.22"
+        "forversion": "1.1.3",
+        "lastchange": "2021.01.15"
     },
 	"startup/": {
 		"modeldetected": "Modèle non-sauvegardé détecté",
@@ -51,7 +51,7 @@
 		"confirmsaveexit": "Le modèle n'a pas été enregistré. Enregistrer le modèle avant de fermer ?",
 		"confirmsavenew": "Le modèle n'a pas été enregistré. Enregistrer le modèle avant de créer un nouveau modèle ?",
 		"confirmsaveopen": "Le modèle n'a pas été enregistré. Enregistrer le modèle avant d'ouvrir un modèle ?",
-		"replace": "Une ressource possède déjà ce nom de fichier. Voulez-vous la remplacer ?",
+		"replace": "Une texture portant le nom '%1' existe déjà. Voulez-vous la remplacer par la nouvelle texture ?",
 		"restoredefaults": "Êtes-vous sûr de vouloir réinitialiser les raccourcis clavier ?"
     },
 	"filedialog/": {

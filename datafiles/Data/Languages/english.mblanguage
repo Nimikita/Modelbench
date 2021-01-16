@@ -4,8 +4,8 @@
 		"language": "English",
 		"locale": "en-US",
         "translator": "Nimi",
-        "forversion": "1.1.1",
-        "lastchange": "2020.08.26"
+        "forversion": "1.1.3",
+        "lastchange": "2021.01.15"
     },
 	"startup/": {
 		"modeldetected": "Unsaved model detected",
@@ -51,7 +51,7 @@
 		"confirmsaveexit": "The current model hasn't been saved yet. Save the current model before quitting?",
 		"confirmsavenew": "The current model hasn't been saved yet. Save the current model before creating a new model?",
 		"confirmsaveopen": "The current model hasn't been saved yet. Save the current model before opening another model?",
-		"replace": "A resource with this filename has already been added into the model. Do you want to replace it with the selected file?",
+		"replace": "A texture with the name '%1' already exists. Do you want to replace it with the new texture?",
 		"restoredefaults": "Are you sure you want to restore default shortcut settings?"
     },
 	"filedialog/": {
