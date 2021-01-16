@@ -6,10 +6,10 @@
 #macro debug_export_normals			false
 
 // Versions
-#macro modelbench_version			"1.1.2"
+#macro modelbench_version			"1.1.3"
 #macro modelbench_version_full		modelbench_version + ""
 #macro modelbench_version_extra		""
-#macro modelbench_version_date		"09.02.2020"
+#macro modelbench_version_date		"01.16.2021"
 #macro gm_runtime					GM_runtime_version
 
 // File formats
