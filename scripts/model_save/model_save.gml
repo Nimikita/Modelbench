@@ -54,3 +54,5 @@ if (!string_contains(filename_ext(fn), "backup"))
 }
 
 textures_list.update = true
+
+return true

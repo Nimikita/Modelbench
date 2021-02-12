@@ -5,36 +5,38 @@
 /// @arg height
 /// @desc Wraps mouse position in a box
 
-var xx, yy, width, height, setx, sety;
+var xx, yy, width, height, setx, sety, size;
 xx = argument0
 yy = argument1
 width = argument2
 height = argument3
 setx = mouse_x
 sety = mouse_y
+size = 8
 
-if (mouse_x < xx || display_mouse_get_x() < 2)
+if ((mouse_x + (size/2)) < xx || display_mouse_get_x() < (size/2))
 {
-	setx = xx + width
+	setx = xx + width - size
 	mouse_wrap_x--
 }
 
-
-if (mouse_y < yy || display_mouse_get_y() < 2)
+if ((mouse_y + (size/2)) < yy || display_mouse_get_y() < (size/2))
 {
-	sety = yy + height - 2
+	sety = yy + height - size
 	mouse_wrap_y--
 }
 
-if (mouse_x > xx + width || display_mouse_get_x() > (window_get_x() + window_get_width()) - 2)
+// Wrap on right
+if (mouse_x > (xx + width - (size/2)) || (display_mouse_get_x() > (window_get_x() + window_get_width()) - (size/2)))
 {
-	setx = xx + 2
+	setx = xx + size
 	mouse_wrap_x++
 }
 
-if (mouse_y > yy + height || display_mouse_get_y() > (window_get_y() + window_get_height()) - 2)
+// Wrap on bottom
+if (mouse_y > (yy + height - (size/2)) || (display_mouse_get_y() > (window_get_y() + window_get_height()) - (size/2)))
 {
-	sety = yy + 2
+	sety = yy + size
 	mouse_wrap_y++
 }
 
