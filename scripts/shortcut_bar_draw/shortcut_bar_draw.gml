@@ -31,6 +31,8 @@ var width = 0;
 var lines = 1;
 for (var i = 0; i < ds_list_size(shortcut_bar_list); i++)
 {
+	// Uncomment for split multi-line display
+	/*
 	if (!ds_list_empty(shortcut_bar_width_list))
 	{
 		if (shortcut_bar_width = shortcut_bar_width_prev && i < ds_list_size(shortcut_bar_width_list))
@@ -43,6 +45,7 @@ for (var i = 0; i < ds_list_size(shortcut_bar_list); i++)
 			}
 		}
 	}
+	*/
 	
 	dx_start = dx
 	shortcut_draw(shortcut_bar_list[|i])
