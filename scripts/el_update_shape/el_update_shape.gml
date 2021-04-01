@@ -64,6 +64,7 @@ inflate = vec3(value[e_value.INFLATE])
 // Shape size
 from_noscale = point3D(value[e_value.FROM_X], value[e_value.FROM_Y], value[e_value.FROM_Z])
 to_noscale = point3D(value[e_value.TO_X], value[e_value.TO_Y], value[e_value.TO_Z])
+
 if (type = "plane")
 {
 	to_noscale[Y] = from_noscale[Y]
