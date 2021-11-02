@@ -49,18 +49,65 @@ switch (name)
 		break
 	}
 	
+	case "exportmode":
+	{
+		list_add_item(text_get("exportmodecombineall"), e_export.COMBINE_ALL, "")
+		list_add_item(text_get("exportmodeseperateparts"), e_export.SEPERATE_PARTS, "")
+		list_add_item(text_get("exportmodeseperateshapes"), e_export.SEPERATE_SHAPES, "")
+		
+		break
+	}
+	
 	case "settingslanguage":
 	{
-		var file;
+		var file, name, locale, err;
 		file = file_find_first(languages_directory + "*.mblanguage", 0)
+		mouse_cursor = cr_hourglass
 		
+		// Read each file's language key
 		while (file != "")
 		{
-			list_add_item(filename_name(file), filename_name(file), "")
+			// Convert unicode (external)
+			var convfn = file_directory + "conv.tmp";
+			json_file_convert_unicode(languages_directory + file, convfn)
+			
+			if (!file_exists_lib(convfn))
+			{
+				file = file_find_next()
+				continue
+			}
+			
+			var json = json_load(convfn);
+			name = filename_name(file)
+			locale = ""
+			err = false
+			
+			if (ds_map_valid(json))
+			{
+				if (!is_undefined(json[?"file/"]))
+				{
+					var filemap = json[? "file/"];
+					name = value_get_string(filemap[?"language"], name)
+					locale = value_get_string(filemap[?"locale"], "")
+				}
+				
+				ds_map_destroy(json)
+			}
+			else
+				err = true
+			
+			list_add_item(name, filename_name(file), locale, null, null, err ? icons.WARNING : null, null)
 			file = file_find_next()
 		}
 		file_find_close()
 		
+		break
+	}
+	
+	case "settingsfeatureset":
+	{
+		list_add_item(text_get("settingsfeaturesetmimodel"), e_features.MIMODEL, ".mimodel")
+		list_add_item(text_get("settingsfeaturesetobj"), e_features.OBJ, ".obj")
 		break
 	}
 	
@@ -77,7 +124,7 @@ switch (name)
 		
 		// Offset centering
 		if (context_menu_copy_category != null && context_menu_copy_category = element_editor.pivot_offset)
-			list_add_item(text_get("contextmenucenteraxis"), null, "", null, icons.CENTER, null, action_el_offset_center, true)
+			list_add_item(text_get("contextmenucenteraxis"), null, "", null, icons.PIVOT, null, action_el_offset_center, true)
 		
 		// Single value copy-paste
 		if (name = "contextmenuvalue")
@@ -153,17 +200,19 @@ switch (name)
 	{
 		list_add_item(text_get("contextmenuelementadd"), null, "", null, icons.ADD, icons.ARROW_RIGHT_SMALL, null, true)
 		listitem_last.context_menu_name = "contextmenuaddelement"
-		listitem_last.disabled = context_menu_value.element_type = TYPE_SHAPE
+		listitem_last.disabled = (context_menu_value.element_type = TYPE_SHAPE)
 		
-		list_add_item(text_get("contextmenuelementremove"), null, "", null, icons.DELETE, null, action_el_remove_single, false)
-		
-		list_add_item(text_get("contextmenuelementduplicateselection"), null, text_control_name(setting_key_duplicate_selection, setting_key_duplicate_selection_control), null, icons.DUPLICATE_SELECTION, null, action_el_duplicate, true)
+		list_add_item(text_get("contextmenuelementrename"), null, text_control_name(setting_key_rename), null, icons.RENAME, null, action_el_rename_start, false)
 		listitem_last.disabled = (el_edit = null)
 		
-		list_add_item(text_get("contextmenuelementremoveselection"), null, text_control_name(setting_key_remove_selection, setting_key_remove_selection_control), null, icons.DELETE_SELECTION, null, action_el_remove, false)
+		list_add_item(text_get("contextmenuelementduplicate"), null, text_control_name(setting_key_duplicate), null, icons.DUPLICATE, null, action_el_duplicate, false)
 		listitem_last.disabled = (el_edit = null)
 		
-		list_add_item(text_get("contextmenuelementexpandall"), null, "", null, icons.EXPAND_ALL, null, action_expand_all, true)
+		list_add_item(text_get("contextmenuelementdelete"), null, text_control_name(setting_key_delete), null, icons.DELETE, null, action_el_remove, false)
+		listitem_last.disabled = (el_edit = null)
+		
+		list_add_item(text_get("contextmenuviewportselectall"), null, text_control_name(setting_key_select_all), null, icons.SELECT_ALL, null, action_el_select_all, true)
+		list_add_item(text_get("contextmenuelementexpandall"), null, "", null, icons.EXPAND_ALL, null, action_expand_all, false)
 		list_add_item(text_get("contextmenuelementcollapseall"), null, "", null, icons.COLLAPSE_ALL, null, action_collapse_all, false)
 		break
 	}
@@ -182,11 +231,59 @@ switch (name)
 		list_add_item(text_get("contextmenucopylink"), context_menu_value, "", null, icons.LINK, null, action_copy_text, true)
 		break
 	}
+	
+	case "contextmenuviewport":
+	{
+		if (context_menu_value = view_cam_viewport)
+		{
+			list_add_item(text_get("contextmenuelementadd"), null, "", null, icons.ADD, icons.ARROW_RIGHT_SMALL, null, true)
+			listitem_last.context_menu_name = "contextmenuviewportaddelement"
+		
+			list_add_item(text_get("contextmenuelementrename"), null, text_control_name(setting_key_rename), null, icons.RENAME, null, action_el_rename_start, false)
+			listitem_last.disabled = (el_edit = null)
+		
+			list_add_item(text_get("contextmenuelementduplicate"), null, text_control_name(setting_key_duplicate), null, icons.DUPLICATE, null, action_el_duplicate, false)
+			listitem_last.disabled = (el_edit = null)
+		
+			list_add_item(text_get("contextmenuelementdelete"), null, text_control_name(setting_key_delete), null, icons.DELETE, null, action_el_remove, false)
+			listitem_last.disabled = (el_edit = null)
+		
+			list_add_item(text_get("contextmenuviewportselectall"), null, text_control_name(setting_key_select_all), null, icons.SELECT_ALL, null, action_el_select_all, true)
+		}
+		
+		list_add_item(text_get("contextmenuresetview"), null, "", null, icons.RESET, null, camera_reset_context_menu)
+		
+		break
+	}
+	
+	case "contextmenuviewportaddelement":
+	{
+		list_add_item(text_get("contextmenuaddelementpart"), e_element.PART, "", null, icons.PART_ADD, null, action_element_create, true)
+		list_add_item(text_get("contextmenuaddelementblock"), e_element.BLOCK, "", null, icons.BLOCK_ADD, null, action_element_create, false)
+		list_add_item(text_get("contextmenuaddelementplane"), e_element.PLANE, "", null, icons.PLANE_ADD, null, action_element_create, false)
+		list_add_item(text_get("contextmenuaddelement3dplane"), e_element.PLANE_3D, "", null, icons.PLANE3D_ADD, null, action_element_create, false)
+		break
+	}
+	
+	case "toolsetsnapmode":
+	{
+		list_add_item(text_get("toolsetsnapmodeabsolute"), e_snap_mode.ABSOLUTE, "", null, null, null, null, true)
+		list_add_item(text_get("toolsetsnapmodelocal"), e_snap_mode.LOCAL, "", null, null, null, null, false)
+		break
+	}
+	
+	case "contextmenuuveditor":
+	{
+		list_add_item(text_get("contextmenuresetview"), null, "", null, icons.RESET, null, uv_editor_reset_view)
+		break
+	}
 }
 
 list_update_width(list)
 
 if (ds_list_size(list.item) > 0 && list.item[|0].divider)
 	list.item[|0].divider = false
+
+list_edit = null
 
 return list

@@ -32,6 +32,29 @@ content_width = boxw
 content_height = boxh
 content_mouseon = app_mouse_box(content_x, content_y, content_width, content_height) && !popup_mouseon && !snackbar_mouseon && !context_menu_mouseon
 
+// Add shortcuts
+if (content_mouseon || window_busy = "uveditormove")
+{
+	if (uv_editor_xy_mouseon)
+		shortcut_bar_add(null, e_mouse.LEFT_DRAG, "uveditoredituvs")
+	else if (uv_editor_wh_mouseon)
+		shortcut_bar_add(null, e_mouse.LEFT_DRAG, "uveditoreditwidthheight")
+	else if(uv_editor_length_mouseon)
+		shortcut_bar_add(null, e_mouse.LEFT_DRAG, "uveditoreditlength")
+	else
+		shortcut_bar_add(null, e_mouse.LEFT_DRAG, "panview")
+	
+	if (el_edit != null && el_edit.element_type = TYPE_SHAPE)
+		shortcut_bar_add(new_shortcut("", true, false), e_mouse.LEFT_DRAG, "uveditorboxuvs")
+	
+	shortcut_bar_add(null, e_mouse.SCROLL, "zoom")
+	
+	shortcut_bar_add(null, e_mouse.RIGHT_CLICK, "contextmenuuveditor")
+}
+
+// Context menu
+context_menu_area(content_x, content_y, content_width, content_height, "contextmenuuveditor")
+
 // Dragging controls
 if (uv_editor_mouseon && content_mouseon)
 {
@@ -49,8 +72,12 @@ if (window_focus = "uveditor")
 	if (window_busy = "uveditormove")
 	{
 		mouse_cursor = cr_size_all
-		uv_editor_x = uv_editor_click_x + (mouse_click_x - mouse_x) / uv_editor_zoom
-		uv_editor_y = uv_editor_click_y + (mouse_click_y - mouse_y) / uv_editor_zoom
+		
+		uv_editor_x += (mouse_previous_x - mouse_x) / uv_editor_zoom
+		uv_editor_y += (mouse_previous_y - mouse_y) / uv_editor_zoom
+		
+		app_mouse_wrap(content_x, content_y, content_width, content_height)
+		
 		uv_editor_goal_x = uv_editor_x
 		uv_editor_goal_y = uv_editor_y
 		if (!mouse_left)
@@ -67,16 +94,28 @@ m = (1 - 0.25 * mouse_wheel * (window_scroll_focus_prev = "uveditor"))
 if (m != 1)
 {
 	uv_editor_goal_zoom = clamp(uv_editor_goal_zoom * m, 0.1, 100)
+	
 	uv_editor_goal_x = uv_editor_x + (mouse_x - (boxx + boxw / 2)) / uv_editor_zoom - (mouse_x - (boxx + boxw / 2)) / uv_editor_goal_zoom
 	uv_editor_goal_y = uv_editor_y + (mouse_y - (boxy + boxh / 2)) / uv_editor_zoom - (mouse_y - (boxy + boxh / 2)) / uv_editor_goal_zoom
 }
 zd = (uv_editor_goal_zoom - uv_editor_zoom) / max(1, 5 / delta)
-if (zd != 0)
+if (zd != 0 || (uv_editor_goal_x != uv_editor_x) || (uv_editor_goal_y != uv_editor_y))
 {
-	uv_editor_zoom += zd
-	uv_editor_x += (uv_editor_goal_x - uv_editor_x) / max(1, 5 / delta)
-	uv_editor_y += (uv_editor_goal_y - uv_editor_y) / max(1, 5 / delta)
+	if (setting_reduced_motion)
+	{
+		uv_editor_zoom = uv_editor_goal_zoom
+		uv_editor_x = uv_editor_goal_x
+		uv_editor_y = uv_editor_goal_y
+	}
+	else
+	{
+		uv_editor_zoom += zd
+		uv_editor_x += (uv_editor_goal_x - uv_editor_x) / max(1, 5 / delta)
+		uv_editor_y += (uv_editor_goal_y - uv_editor_y) / max(1, 5 / delta)
+	}
 }
+
+uv_editor_update_zoom = false
 
 if (uv_editor_mouseon)
 	window_scroll_focus = "uveditor"
@@ -123,16 +162,25 @@ if (tex != null)
 	tw = texture_width(tex)
 	th = texture_height(tex)
 	
-	if (uv_editor_tex != tex)
+	if (uv_editor_tex != tex || uv_editor_reset)
 	{
-		if (uv_editor_tex = null)
+		if (uv_editor_tex = null || uv_editor_reset)
 		{
-			uv_editor_reset_view()			
+			uv_editor_goal_x = 0
+			uv_editor_goal_y = 0
+			
 			uv_editor_goal_zoom = (min(boxw, boxh) - padding * 2) / max(tw, th)
+			
+			if (uv_editor_reset)
+				uv_editor_update_zoom = true
 		}
 		
 		uv_editor_tex = tex
 	}
+	
+	// Clear reset
+	if (uv_editor_reset)
+		uv_editor_reset = false
 	
 	texx = floor(boxx + (boxw / 2 - (tw / 2 + uv_editor_x) * uv_editor_zoom))
 	texy = floor(boxy + (boxh / 2 - (th / 2 + uv_editor_y) * uv_editor_zoom))
@@ -343,7 +391,6 @@ if (app_mouse_box(texx + shapeuv[X] - 7, texy + shapeuv[Y] - 7, 12, 12))
 	
 	uv_editor_xy_mouseon = true
 	mouse_cursor = cr_handpoint
-	tip_set(text_get("tooltipuveditoreditxy"), texx + shapeuv[X] - 7, texy + shapeuv[Y] - 7, 12, 12)
 }
 else
 	uv_editor_xy_mouseon = false
@@ -363,7 +410,6 @@ if (app_mouse_box(texx + shapeuv[X] + shapesize[X] - 7, texy + shapeuv[Y] + shap
 	
 	uv_editor_wh_mouseon = true
 	mouse_cursor = cr_size_nwse
-	tip_set(text_get("tooltipuveditoreditwidthheight"), texx + shapeuv[X] + shapesize[X] - 7, texy + shapeuv[Y] + shapesize[Z] - 7, 12, 12)
 }
 else
 	uv_editor_wh_mouseon = false
@@ -384,7 +430,6 @@ if (el_edit.type = "block")
 	
 		uv_editor_length_mouseon = true
 		mouse_cursor = cr_size_we
-		tip_set(text_get("tooltipuveditoreditlength"), texx + shapeuv[X] - shapesize[Y] - 7, texy + shapeuv[Y] - 7, 12, 12)
 	}
 	else
 		uv_editor_length_mouseon = false
@@ -393,7 +438,6 @@ if (el_edit.type = "block")
 var mouseuvx, mouseuvy;
 mouseuvx = snap((mouse_x - texx) / uv_editor_zoom / texscale, setting_snap ? setting_snap_size_uv : 1)
 mouseuvy = snap((mouse_y - texy) / uv_editor_zoom / texscale, setting_snap ? setting_snap_size_uv : 1)
-//draw_label(string(mouseuvx) + ", " + string(mouseuvy), boxx + 32, boxy + 32, fa_left, fa_bottom, c_accent, 1)
 
 // Box UV controls
 if (keyboard_check(vk_control))
@@ -402,8 +446,6 @@ if (keyboard_check(vk_control))
 	{
 		draw_box(texx + (mouseuvx * uv_editor_zoom * texscale) - 7, texy + (mouseuvy * uv_editor_zoom * texscale) - 7, 12, 12, false, c_accent_hover, 1)
 		draw_box(texx + (mouseuvx * uv_editor_zoom * texscale) - 5, texy + (mouseuvy * uv_editor_zoom * texscale) - 5, 8, 8, false, c_accent_pressed, 1)
-		
-		tip_set(text_get("tooltipuveditorbox"), floor(texx + (mouseuvx * uv_editor_zoom * texscale) - 7), floor(texy + (mouseuvy * uv_editor_zoom * texscale) - 7), 12, 12, false)
 	}
 	
 	mouse_cursor = cr_default

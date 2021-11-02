@@ -1,6 +1,4 @@
-/// action_setting_key_open(key, ctrl)
+/// action_setting_key_open(key)
 /// @arg key
-/// @arg ctrl
 
 setting_key_open = argument0
-setting_key_open_control = argument1

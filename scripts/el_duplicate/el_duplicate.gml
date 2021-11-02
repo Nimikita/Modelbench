@@ -4,6 +4,28 @@
 copy = new(obj_model_element)
 el_copy(copy)
 
+// Change name # based on pre-existing part names
+if (element_type = TYPE_PART)
+{
+	var namefilter, namecount;
+	namefilter = string_get_name(name)
+	namecount = 0
+
+	with (obj_model_element)
+	{
+		if (element_type = TYPE_SHAPE)
+			continue
+		
+		if (string_get_name(name) = namefilter)
+			namecount++
+	}
+	
+	if (namecount > 0)
+		copy.name = namefilter + " (" + string(namecount) + ")"
+	else
+		copy.name = namefilter
+}
+
 with (copy)
 {
 	root_copy = null

@@ -6,7 +6,8 @@
     "children": [
         "7fb2b678-227f-471a-9afb-f4cb453259b8",
         "44376d12-1375-464b-96aa-0b213f7a1c68",
-        "32034b5e-aa5a-464e-9901-f12237025baa"
+        "32034b5e-aa5a-464e-9901-f12237025baa",
+        "e1ffcfc1-bb95-4daa-938c-e78f8d48ff30"
     ],
     "filterType": "GMScript",
     "folderName": "Headers",

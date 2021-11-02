@@ -2,6 +2,9 @@
 
 var boxx, boxy, boxw, boxh
 
+if (popup != null && popup.block)
+	draw_box(0, 0, window_width, window_height, false, c_black, popup_ani * 0.45)
+
 // Animate
 if (popup_ani_type = "show")
 {

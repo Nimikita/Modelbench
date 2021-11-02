@@ -41,7 +41,7 @@ if (xx + wid < content_x || xx > content_x + content_width || yy + hei < content
 
 // Caption
 draw_label(text_get(name), xx, yy + 15, fa_left, fa_bottom, c_text_secondary, a_text_secondary, font_label)
-yy += 18	
+yy += 18
 
 linewid = wid - (valuewid * 2)
 linex = xx + valuewid
@@ -96,15 +96,13 @@ if (window_focus = string(tbxmin))
 	if (textbox_draw(tbxmin, xx, yy + hei / 2 - 8, textsize + suffixsize, 18))
 	{
 		var tbxval = string_get_real(tbxmin.text, 0)
-		
 		tbxval = clamp(tbxval, minval, maxval)
 		
-		tbxval = snap(tbxval, snapval)
 		script_execute(scriptmin, tbxval, false)
 	}
 }
 else
-	draw_label(string(valuemin) + tbxmin.suffix, xx, yy + hei / 2, fa_left, fa_middle, c_text_main, a_text_main)
+	draw_label(string_decimals(valuemin) + tbxmin.suffix, xx, yy + hei / 2, fa_left, fa_middle, c_text_main, a_text_main)
 
 // Textbox(Maximum)
 if (window_focus = string(tbxmax))
@@ -114,15 +112,13 @@ if (window_focus = string(tbxmax))
 	if (textbox_draw(tbxmax, xx + wid - textsize - suffixsize, yy + hei / 2 - 8, textsize + suffixsize, 18))
 	{
 		var tbxval = string_get_real(tbxmax.text, 0)
-		
 		tbxval = clamp(tbxval, minval, maxval)
 		
-		tbxval = snap(tbxval, snapval)
 		script_execute(scriptmax, tbxval, false)
 	}
 }
 else
-	draw_label(string(valuemax) + tbxmax.suffix, xx + wid, yy + hei / 2, fa_right, fa_middle, c_text_main, a_text_main)
+	draw_label(string_decimals(valuemax) + tbxmax.suffix, xx + wid, yy + hei / 2, fa_right, fa_middle, c_text_main, a_text_main)
 
 dragxmin = (window_busy = name + "min" ? meter_drag_value : valuemin)
 dragxmax = (window_busy = name + "max" ? meter_drag_value : valuemax)

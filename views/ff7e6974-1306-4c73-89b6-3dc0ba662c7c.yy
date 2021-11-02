@@ -14,7 +14,10 @@
         "66dd5cf1-ed11-4c25-9be8-e8ce40739441",
         "a5aaecbd-c0f6-4ef7-bc05-1e959a29fd98",
         "1bdba71b-5a63-4a28-b0fd-a6094924bc07",
-        "808a2e57-d4cd-4d0c-bb00-5328d517221e"
+        "808a2e57-d4cd-4d0c-bb00-5328d517221e",
+        "4c4a3952-db9d-442d-816f-ba4590e60434",
+        "488bd7c7-862b-43a0-8b40-10086f5c6da4",
+        "0dc2433e-7946-466b-aa97-3f31d0b5f6b4"
     ],
     "filterType": "GMScript",
     "folderName": "File",

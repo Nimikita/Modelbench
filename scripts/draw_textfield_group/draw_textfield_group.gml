@@ -136,7 +136,7 @@ for (var i = 0; i < textfield_amount; i++)
 	if (window_busy = textfield_name[i] + "drag")
 	{ 
 		mouse_cursor = cr_none
-		dragger_drag_value += (mouse_x - mouse_click_x) * mul
+		dragger_drag_value += (mouse_x - mouse_click_x) * mul * dragger_multiplier
 		window_mouse_set(mouse_click_x, mouse_click_y)
 		
 		var d = clamp(snap(dragger_drag_value, snapval), minval, maxval) - textfield_value[i];
@@ -160,7 +160,7 @@ for (var i = 0; i < textfield_amount; i++)
 	if (update)
 	{
 		if (textfield_script[i] != null)
-			script_execute(textfield_script[i], clamp(snap(string_get_real(textfield_textbox[i].text, textfield_default[i]), snapval), minval, maxval), false)
+			script_execute(textfield_script[i], clamp(string_get_real(textfield_textbox[i].text, textfield_default[i]), minval, maxval), false)
 		else
 			fieldupdate = textfield_textbox[i]
 	}

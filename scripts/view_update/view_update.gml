@@ -9,21 +9,96 @@ cam = argument1
 // Surface
 view_update_surface(view, cam)
 
+// Add shortcuts
+if (view.control_mouseon_last != null || window_busy = "rendercontrol")
+{
+	if (window_busy = "rendercontrol")
+	{
+		shortcut_bar_add(new_shortcut("", false, true), e_mouse.LEFT_DRAG, "transformslower")
+		shortcut_bar_add(new_shortcut("", true, false), e_mouse.LEFT_DRAG, "snap")
+		
+		if (view_control_edit >= e_control.RESIZE_XP && view_control_edit <= e_control.RESIZE_ZN)
+			shortcut_bar_add(new_shortcut(vk_alt, false, false), e_mouse.LEFT_DRAG, "resizeaxis")
+	}
+	else
+	{
+		shortcut_bar_add(null, e_mouse.LEFT_DRAG, "transform")
+		shortcut_bar_add(new_shortcut("", false, true), e_mouse.RIGHT_CLICK, "reset")
+	}
+}
+
+if (view.control_mouseon_last = null && (content_mouseon || window_busy = "viewclick" || window_busy = "viewrightclick" || window_busy = "viewrotatecamera" || window_busy = "viewpancamera"))
+{
+	if (program_mode = e_mode.MODELING)
+	{
+		shortcut_bar_add(null, e_mouse.LEFT_CLICK, "select")
+		shortcut_bar_add(new_shortcut("", true, false), e_mouse.LEFT_CLICK, "selectshape")
+	}
+	
+	if (!setting_viewport_controls_middle)
+	{
+		shortcut_bar_add(null, e_mouse.LEFT_DRAG, "orbitview")
+		shortcut_bar_add(new_shortcut("", false, true), e_mouse.LEFT_DRAG, "panview")
+	}
+	else
+	{
+		shortcut_bar_add(null, e_mouse.MIDDLE_DRAG, "orbitview")
+		shortcut_bar_add(new_shortcut("", false, true), e_mouse.MIDDLE_DRAG, "panview")
+	}
+	
+	shortcut_bar_add(null, e_mouse.SCROLL, "zoom")
+	
+	if (program_mode = e_mode.MODELING)
+		shortcut_bar_add(null, e_mouse.RIGHT_CLICK, "contextmenuviewport")
+	
+	shortcut_bar_add(null, e_mouse.RIGHT_DRAG, "walknavigation")
+}
+
+if (window_busy = "viewmovecamera" || window_busy = "viewmovecameratoggle")
+{
+	shortcut_bar_add(setting_key_forward, null, "moveforward")
+	shortcut_bar_add(setting_key_left, null, "moveleft")
+	shortcut_bar_add(setting_key_back, null, "moveback")
+	shortcut_bar_add(setting_key_right, null, "moveright")
+	
+	shortcut_bar_add(setting_key_ascend, null, "moveascend")
+	shortcut_bar_add(setting_key_descend, null, "movedescend")
+	
+	shortcut_bar_add(setting_key_fast, null, "movefast")
+	shortcut_bar_add(setting_key_slow, null, "moveslow")
+	
+	shortcut_bar_add(setting_key_reset, null, "movereset")
+}
+
 // Click
-if (content_mouseon && window_busy = "")
+if (view.control_mouseon_last = null && content_mouseon && window_busy = "")
 {
 	mouse_cursor = cr_handpoint
+	
 	if (mouse_left_pressed)
 	{
 		window_busy = "viewclick"
 		window_focus = string(view)
 	}
-	
-	if (mouse_right_pressed)
+	else if (mouse_right_pressed)
 	{
+		window_busy = "viewrightclick"
+		window_focus = string(view)
+	}
+	
+	if ((setting_viewport_controls_middle && mouse_middle_pressed) && !keyboard_check(vk_shift))
+	{
+		window_busy = "viewrotatecamera"
+		
 		view_click_x = display_mouse_get_x()
 		view_click_y = display_mouse_get_y()
-		window_busy = "viewmovecamera"
+			
+		window_focus = string(view)
+	}
+	
+	if ((setting_viewport_controls_middle && mouse_middle) && keyboard_check(vk_shift))
+	{
+		window_busy = "viewpancamera"
 		window_focus = string(view)
 	}
 }
@@ -42,22 +117,51 @@ if (content_mouseon || window_busy = "viewrotatecamera")
 
 if (window_focus = string(view))
 {
-	// Select or move camera
-	if (window_busy = "viewclick")
+	// Right-click or move camera
+	if (window_busy = "viewrightclick")
+	{
+		if (mouse_move_right > 1)
+		{
+			view_click_x = display_mouse_get_x()
+			view_click_y = display_mouse_get_y()
+			window_busy = "viewmovecamera"
+			window_focus = string(view)
+		}
+		
+		if (!mouse_right)
+		{
+			window_busy = ""	
+			context_menu_area(content_x, content_y, content_width, content_height, "contextmenuviewport", view_cam, e_value_type.NONE, null, null)
+		}
+	}
+	
+	// Select or orbit camera
+	if (window_busy = "viewclick" || window_busy = "viewgroupselect")
 	{
 		mouse_cursor = cr_handpoint
 		
-		if (mouse_move > 5)
+		if (mouse_move > 5 && !setting_viewport_controls_middle && !keyboard_check(vk_shift))
 		{
 			view_click_x = display_mouse_get_x()
 			view_click_y = display_mouse_get_y()
 			window_busy = "viewrotatecamera"
 		}
 		
+		if ((!setting_viewport_controls_middle && mouse_left) && mouse_move > 5 && keyboard_check(vk_shift))
+		{
+			window_busy = "viewpancamera"
+			window_focus = string(view)
+		}
+		
+		//if (mouse_left && mouse_move > 5 && window_busy = "viewclick")
+		//	window_busy = "viewgroupselect"
+		
 		if (!mouse_left)
 		{
-			view_click(view, cam)
 			window_busy = ""
+			
+			if (view_cam = view_cam_viewport)
+				view_click(view, cam)
 		}
 	}
 	
@@ -68,18 +172,37 @@ if (window_focus = string(view))
 		
 		camera_control_rotate(cam, view_click_x, view_click_y)
 		
-		if (!mouse_left)
+		if (!setting_viewport_controls_middle ? !mouse_left : !mouse_middle)
 			window_busy = ""
 	}
 	
 	// Move camera
-	if (window_busy = "viewmovecamera")
+	if (window_busy = "viewmovecamera" || window_busy = "viewmovecameratoggle")
 	{
 		mouse_cursor = cr_none
 		
 		camera_control_move(cam, view_click_x, view_click_y)
 		
-		if (!mouse_right)
+		if (!mouse_right && window_busy = "viewmovecamera")
+		{
+			camera_set_focus()
+			window_busy = ""
+		}
+		
+		if (mouse_left_pressed || mouse_right_pressed && window_busy = "viewmovecameratoggle")
+		{
+			app_mouse_clear()
+			camera_set_focus()
+			window_busy = ""
+		}
+	}
+	
+	// Pan camera
+	if (window_busy = "viewpancamera")
+	{
+		camera_control_pan()
+		
+		if (setting_viewport_controls_middle ? !mouse_middle : !mouse_left)
 		{
 			camera_set_focus()
 			window_busy = ""

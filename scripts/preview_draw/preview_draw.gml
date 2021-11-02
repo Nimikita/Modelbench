@@ -28,6 +28,15 @@ if (!instance_exists(preview.select))
 	return 0
 }
 
+// Add shortcuts
+if (mouseon || window_busy = "previewrotate" || window_busy = "previewmove")
+{
+	shortcut_bar_add(null, e_mouse.LEFT_DRAG, "panview")
+	
+	if (window_scroll_focus_prev = string(preview))
+		shortcut_bar_add(null, e_mouse.SCROLL, "zoom")
+}
+
 // Dragging controls
 if (mouseon && content_mouseon)
 {

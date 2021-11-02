@@ -1,7 +1,7 @@
 /// action_model_import()
 
 var fn, rootpart;
-fn = file_dialog_open_model()
+fn = file_dialog_import_model()
 
 if (fn = "")
 	return 0

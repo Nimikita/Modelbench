@@ -48,9 +48,9 @@ context_menu_area(xx - rad, yy - rad, rad * 2, rad * 2, "contextmenuvalue", valu
 modval = mod_fix(value, 360)
 capwid = string_width_font(text_get(name) + ":", font_emphasis) + 5
 if (limit)
-	text = string(modval) + tbx.suffix
+	text = string_decimals(modval) + tbx.suffix
 else
-	text = string(value) + tbx.suffix
+	text = string_decimals(value) + tbx.suffix
 
 labelw = rad
 labeltextw = capwid + string_width_font(text, font_value)
@@ -62,7 +62,9 @@ labely = yy + 36
 draw_image(sprite, 0, xx, yy, 1, 1, c_text_secondary, a_text_secondary)
 
 // Bar
-draw_image(spr_dial_dash, 0, xx, yy, 1, 1, color, 1, value)
+gpu_set_tex_filter(true)
+draw_image(spr_dial_dash, 0, xx, yy, .5, .5, color, 1, value - 45)
+gpu_set_tex_filter(false)
 
 // Dragging
 if (window_busy = name)
@@ -72,7 +74,7 @@ if (window_busy = name)
 	var angle1, angle2, newval;
 	angle1 = point_direction(xx, yy, mouse_x, mouse_y)
 	angle2 = point_direction(xx, yy, mouse_previous_x, mouse_previous_y)
-	wheel_drag_value += angle_difference_fix(angle1, angle2)
+	wheel_drag_value += angle_difference_fix(angle1, angle2) * dragger_multiplier
 	
 	newval = clamp(snap(wheel_drag_value, snapval), minval, maxval)
 	script_execute(script, newval - value, true)
@@ -82,13 +84,6 @@ if (window_busy = name)
 		window_busy = ""
 		app_mouse_clear()
 	}
-}
-
-// Textbox click
-if (app_mouse_box(labelx, labely - 8, labelw, 16) && mouse_left_pressed)
-{
-	tbx.text = string_decimals(value)
-	window_focus = string(tbx)
 }
 
 // Wheel click
@@ -112,8 +107,20 @@ draw_label(text_get(name) + ":", xx - (labeltextw/2), labely, fa_left, fa_middle
 draw_set_font(font_value)
 if (window_focus = string(tbx))
 {
-	if (textbox_draw(tbx, labelx, labely - 8, labelw + 24, 18))
-		script_execute(script, clamp(snap(string_get_real(tbx.text, 0), snapval), minval, maxval), false)
+	if (textbox_draw(tbx, labelx, labely - 8, labeltextw, 18))
+		script_execute(script, clamp(string_get_real(tbx.text, 0), minval, maxval), false)
 }
 else
 	draw_label(text, labelx, labely, fa_left, fa_middle, c_text_main, a_text_main, font_value)
+
+// Textbox click
+if (app_mouse_box(labelx - capwid, labely - 8, labeltextw, 16))
+{
+	mouse_cursor = cr_handpoint
+	
+	if (mouse_left_pressed)
+	{
+		tbx.text = string_decimals(value)
+		window_focus = string(tbx)
+	}
+}

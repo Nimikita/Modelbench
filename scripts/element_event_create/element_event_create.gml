@@ -5,7 +5,6 @@ save_id = ""
 save_id = save_id_create()
 
 name = ""
-display_name = ""
 name_duplicate = false
 name_empty = true
 
@@ -14,6 +13,7 @@ type = "block"
 
 parent = null
 parent_is_selected = false
+parent_hover = false
 
 selected = false
 color = make_color_hsv(random(255), 255, 255)
@@ -37,8 +37,11 @@ world_pos = point3D(0, 0, 0)
 list_mouseon = false
 
 for (var v = 0; v < e_value.amount; v++)
-{
-	value_default[v] = app.value_default[v]
-	value_inherit[v] = value_default[v]
-	value[v] = value_default[v]
-}
+	value[v] = element_value_default(v)
+
+shape_export_position_list = null
+shape_export_uv_list = null
+shape_export_vertex_list = null
+
+shape_unique_position_list = null
+shape_unique_uv_list = null

@@ -10,6 +10,8 @@ if (tab_collapse)
 {
 	dx = dx_start
 	dw = dw_start
+	
+	tab_collapse = false
 }
 
 dy += tab_control_h + (8 * padding)

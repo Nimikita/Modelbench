@@ -1,5 +1,10 @@
 /// tab_assets_elements()
 
+// Element search
+tab_control(28)
+draw_textfield("assetssearchelements", dx, dy, dw, 28, tab.elements.tbx_search.text, tab.elements.tbx_search, action_search, text_get("assetssearchelementscaption"), "none")
+tab_next()
+
 tab_control_switch()
 draw_switch("assetshideshapes", dx, dy, setting_hide_shapes, action_setting_hide_shapes, false)
 tab_next()
@@ -14,12 +19,18 @@ if (!mouse_left && window_busy = "elementselection")
 element_move_parent = null
 element_move_index = null
 
-// Draw elements
-if (part_list != null)
+// Show search results
+if (tab.elements.search_string != "")
+{
+	for (var i = 0; i < ds_list_size(tab.elements.element_search_list); i++)
+		draw_element_item(tab.elements.element_search_list[|i], dy, 0, true)
+}
+else // Draw hierarchy
 {
 	for (var i = 0; i < ds_list_size(part_list); i++)
 		draw_element_item(part_list[|i], dy, 0)
 }
+
 dy += 8
 
 // Update box selection
@@ -88,6 +99,7 @@ if (window_busy = "elementmove" && !mouse_left)
 		ds_list_destroy(index_list)
 		instance_destroy()
 	}
+	
 }
 
 // Move scrollbar
@@ -108,3 +120,21 @@ if (window_busy = "elementselection" || window_busy = "elementmove")
 			tab.scroll.value_goal += 16
 	}
 }
+
+if (tab.elements.element_hover != null)
+{
+	if (tab.elements.element_hover.selected)
+	{
+		shortcut_bar_add(new_shortcut("", true, false), e_mouse.LEFT_CLICK, "deselect")
+		shortcut_bar_add(null, e_mouse.LEFT_DRAG, "moveselection")
+	}
+	else
+	{
+		shortcut_bar_add(null, e_mouse.LEFT_CLICK, "select")
+		shortcut_bar_add(new_shortcut("", false, true), e_mouse.LEFT_CLICK, "selectadd")
+		shortcut_bar_add(null, e_mouse.LEFT_DRAG, "groupselect")
+	}
+	
+	shortcut_bar_add(null, e_mouse.RIGHT_CLICK, "contextmenuelement")
+}
+

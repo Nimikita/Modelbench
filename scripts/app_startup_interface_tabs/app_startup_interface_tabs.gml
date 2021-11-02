@@ -26,6 +26,17 @@ with (assets)
 	
 	// Elements
 	elements = tab_add_category("elements", tab_assets_elements, false)
+	with (elements)
+	{
+		tbx_search = new_textbox(true, 0, "")
+		search_string = ""
+		element_search_list = ds_list_create()
+		element_hover = null
+		element_hover_prev = null
+		
+		tbx_name = new_textbox(true, 0, "")
+		name_edit_element = null
+	}
 	
 	// Textures
 	textures = tab_add_category("textures", tab_assets_textures, false)
@@ -82,6 +93,9 @@ with (element_editor)
 		tbx_x = new_textbox_ndecimals()
 		tbx_y = new_textbox_ndecimals()
 		tbx_z = new_textbox_ndecimals()
+		tbx_x.suffix = "°"
+		tbx_y.suffix = "°"
+		tbx_z.suffix = "°"
 		
 		tbx_x.next_tbx = tbx_y
 		tbx_y.next_tbx = tbx_z
@@ -213,6 +227,9 @@ with (preview)
 // Recent models
 recent_models = new_tab(null, false, header_recent_models)
 
+// Export
+export = new_tab(null, false, header_export_model)
+
 // Settings
 settings = new_tab(null, false, header_menu_panel)
 with (settings)
@@ -232,19 +249,5 @@ with (settings)
 	
 	// Interface
 	interface = tab_add_category("interface", tab_settings_interface, false)
-	with (interface)
-	{
-		tbx_outline_opacity = new_textbox_integer()
-		tbx_outline_opacity.suffix = "%"
-	}
-	
-	// Graphics
-	graphics = tab_add_category("graphics", tab_settings_graphics, false)
-	with (graphics)
-	{
-		tbx_wind_speed = new_textbox_integer()
-		tbx_wind_speed.suffix = "%"
-		tbx_wind_strength = new_textbox_decimals()
-	}
 }
 

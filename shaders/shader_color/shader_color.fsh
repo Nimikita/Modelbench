@@ -2,6 +2,7 @@ uniform sampler2D uTexture;
 uniform vec2 uTexScale;
 
 uniform vec4 uMixColor;
+uniform vec4 uHighlightColor;
 
 uniform vec3 uCameraPosition;
 
@@ -12,12 +13,11 @@ varying vec2 vTexCoord;
 
 void main()
 {
-	vec2 tex = vTexCoord;
-	if (uTexScale.x < 1.0 || uTexScale.y < 1.0)
-		tex = mod(tex * uTexScale, uTexScale); // GM sprite bug workaround
+	vec2 tex = fract(vTexCoord) * uTexScale;
 	vec4 baseColor = vColor * texture2D(uTexture, tex); // Get base
 	
 	baseColor.rgb = mix(baseColor.rgb, uMixColor.rgb, uMixColor.a); // Mix
+	baseColor.rgb = mix(baseColor.rgb, uHighlightColor.rgb, uHighlightColor.a); // Highlight
 	
 	gl_FragColor = baseColor;
 	

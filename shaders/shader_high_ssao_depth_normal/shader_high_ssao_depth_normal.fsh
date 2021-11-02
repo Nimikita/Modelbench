@@ -37,7 +37,7 @@ FSOutput main(FSInput IN) : SV_TARGET
 	FSOutput OUT;
 	
 	// Alpha test
-	float2 tex = fmod(IN.TexCoord * uTexScale, uTexScale);
+	float2 tex = frac(IN.TexCoord) * uTexScale;
 	float4 baseColor = uTextureT.Sample(uTexture, tex);
 	clip((baseColor.a < 1.0) ? -1 : 1);
 	

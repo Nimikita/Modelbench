@@ -8,6 +8,8 @@
         "dd3b7a85-0f5e-4e57-87aa-7a6fa24dc05d",
         "63be6b50-1dec-4356-8d92-81ecd16c63a9",
         "f41e903a-ea05-4d58-915f-0fb7f5f78075",
+        "c438ab5f-c935-49ee-88b5-f3615512b896",
+        "f6f95e68-1b95-406c-80f9-6d02c018f66c",
         "cf62d115-1011-4b89-a14b-0f2fb8d4e378",
         "d6ed5037-a61a-460d-a87b-4ca0fadd0791",
         "2e185fb2-27ca-4b5e-98b5-e7394ee8214d",
@@ -21,7 +23,9 @@
         "6b514f79-9969-4687-b1fe-7f5ec52ee422",
         "335fd65d-f89f-4111-8bb0-f6fc3ba45ede",
         "545f03d6-df54-4a30-a7ce-1bc0bcc12a3a",
-        "6aef2664-f929-41fa-a9cc-bf4c66dcebe1"
+        "6aef2664-f929-41fa-a9cc-bf4c66dcebe1",
+        "7ba02074-3a4d-4173-9c63-de959b929ddd",
+        "743ba85a-acbd-45e2-a867-8ad7189cf850"
     ],
     "filterType": "GMScript",
     "folderName": "Update",

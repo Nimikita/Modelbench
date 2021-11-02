@@ -93,15 +93,13 @@ if (window_focus = string(tbx) && !locked)
 	if (textbox_draw(tbx, xx + wid - min(valuewid - 12, textsize + suffixsize), yy + hei / 2 - 8, min(valuewid - 12, textsize + suffixsize), 18))
 	{
 		var tbxval = string_get_real(tbx.text, 0)
-		
 		tbxval = clamp(tbxval, minval, maxval)
 		
-		tbxval = snap(tbxval, snapval)
 		script_execute(script, tbxval, false)
 	}
 }
 else
-	draw_label(string(value) + tbx.suffix, xx + wid, yy + hei / 2, fa_right, fa_middle, merge_color(c_text_main, c_text_tertiary, mcroani_arr[e_mcroani.DISABLED]), lerp(a_text_main, a_text_tertiary, mcroani_arr[e_mcroani.DISABLED]), font_value)
+	draw_label(string_decimals(value) + tbx.suffix, xx + wid, yy + hei / 2, fa_right, fa_middle, merge_color(c_text_main, c_text_tertiary, mcroani_arr[e_mcroani.DISABLED]), lerp(a_text_main, a_text_tertiary, mcroani_arr[e_mcroani.DISABLED]), font_value)
 
 dragval = (window_busy = name ? meter_drag_value : value)
 

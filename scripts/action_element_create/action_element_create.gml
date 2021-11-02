@@ -34,8 +34,9 @@ else
 		{
 			for (var s = 0; s < spawn_amount; s++)
 			{
-				var parent = save_id_find(spawn_save_id[s]).parent;
-				parent.extend = true	
+				var element = save_id_find(spawn_save_id[s]);
+				element.parent.extend = true
+				element.name = spawn_save_name[s]
 			}
 			
 			history_restore_el_select_new()
@@ -53,12 +54,22 @@ else
 		if (spawn_type = e_element.PART || (spawn_type > e_element.PART && el_edit = null))
 		{
 			el = new_element(e_element.PART)
+			
+			// Try prevent duplicate/empty names when creating a new part
+			var namecount = 0;
+			with (obj_model_element)
+				if (element_type = e_element.PART && string_get_name(name) = text_get("assetsnewpart"))
+					namecount++
+			
+			el.name = text_get("assetsnewpart") + (namecount > 0 ? " (" + string(namecount + 1) + ")" : "")
+			
 			with (hobj)
 			{
 				spawn_save_id[spawn_amount] = save_id_get(el)
 				spawn_save_type[spawn_amount] = e_element.PART
 				spawn_save_par[spawn_amount] = ((el_edit = null || el_edit.element_type != TYPE_PART) ? save_id_get(app) : save_id_get(el_edit))
 				spawn_save_extend[spawn_amount] = true
+				spawn_save_name[spawn_amount] = el.name
 				spawn_parent_extend = save_id_find(spawn_save_par[spawn_amount]).extend
 				
 				spawn_amount++
@@ -83,6 +94,7 @@ else
 				spawn_save_type[spawn_amount] = spawn_type
 				spawn_save_par[spawn_amount] = save_id_get(el)
 				spawn_save_extend[spawn_amount] = false
+				spawn_save_name[spawn_amount] = shape.name
 				spawn_amount++
 			}
 			
@@ -126,3 +138,4 @@ app_update_name_warning()
 el_update_part()
 
 app_update_el_edit()
+action_update_search()

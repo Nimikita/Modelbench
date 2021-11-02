@@ -17,11 +17,16 @@ app_update_work_camera()
 app_update_caption()
 app_update_snackbar()
 app_update_lists()
+app_update_highlight()
 
 app_update_animations()
 
 app_update_textures()
 app_update_shape_vbuffer()
+
+app_update_count()
+app_update_dnd()
+export_save()
 
 if (model_create_wait)
 {
@@ -31,6 +36,14 @@ if (model_create_wait)
 	
 	model_create_wait = false
 }
+
+if (update_interface_wait)
+	interface_update()
+
+if (setting_preview_cubemap_update)
+	preview_update_cubemap()
+
+
 
 current_step += 60 / room_speed
 step_event_time = current_time - step_event_time_start

@@ -25,6 +25,7 @@ content_y = boxy
 content_width = boxw
 content_height = boxh
 content_mouseon = (view.mouseon && !popup_mouseon && !snackbar_mouseon && !context_menu_mouseon)
+content_view = view
 
 draw_gradient(content_x, content_y + content_height, content_width, shadow_size, c_black, shadow_alpha, shadow_alpha, 0, 0)
 draw_box(boxx, boxy, boxw, boxh, false, c_background, 1)
@@ -80,10 +81,22 @@ if (content_width > 0 && content_height > 0)
 	
 	view_update(view, null)
 	draw_surface_size(view.surface, content_x, content_y, content_width, content_height)
+	
+	if (mouse_left && window_busy = "viewgroupselect")
+	{
+		var minx, maxx, miny, maxy;
+		minx = min(mouse_x, mouse_click_x)
+		maxx = max(mouse_x, mouse_click_x)
+		miny = min(mouse_y, mouse_click_y)
+		maxy = max(mouse_y, mouse_click_y)
+		
+		draw_box(minx, miny, maxx - minx, maxy - miny, false, c_accent_overlay, a_accent_overlay)
+		draw_outline(minx, miny, maxx - minx, maxy - miny, 2, c_accent, 1)
+	}
 }
 
 // Preview overlay bars
-if (program_mode = e_mode.PREVIEW && setting_preview_overlay && (content_width > content_height))
+if (program_mode = e_mode.PREVIEW && setting_preview_guides && (content_width > content_height))
 {
 	var barsize;
 	barsize = abs(content_width - content_height)/2
@@ -95,12 +108,12 @@ if (program_mode = e_mode.PREVIEW && setting_preview_overlay && (content_width >
 // Mouse on
 view.mouseon = app_mouse_box(boxx, boxy, boxw, boxh)
 
-// Viewport toolbar
+// Toolset toolbar
 var toolbarx, toolbary, toolbarwid, toolbarhei;
 toolbarx = boxx + 16
 toolbary = boxy + 16
 toolbarwid = 36
-toolbarhei = 4 + (4 * (28 + 4)) + 1 + 4 + (6 * (28 + 4))
+toolbarhei = 4 + (e_element.amount * (28 + 4)) + 1 + 4 + (e_tool.amount * (28 + 4))
 
 if (toolbary + toolbarhei + 16 >= content_height)
 {
@@ -113,13 +126,19 @@ if (app_mouse_box(toolbarx, toolbary, toolbarwid, toolbarhei))
 
 view_toolbar_draw(toolbarx, toolbary, toolbarwid, toolbarhei)
 
-// Snap toolbar
-toolbarwid = 4 + 28 + 4 + 10 + string_width_font(text_get("toolsetsnapsize"), font_emphasis) + 8 + 288 + 4
-toolbarhei = 36
-toolbarx = boxx + boxw/2 - toolbarwid/2
+// Viewport toolbar
+toolbarx = floor(boxx + (boxw/2) - (toolbar_viewport_width/2))
 toolbary = boxy + 16
+toolbarwid = toolbar_viewport_width
+toolbarhei = 36
+
+if (toolbary + toolbarhei + 16 >= content_height)
+{
+	toolbarwid = toolbarhei
+	toolbarhei = 36
+}
 
 if (app_mouse_box(toolbarx, toolbary, toolbarwid, toolbarhei))
 	view.mouseon = false
 
-view_toolbar_snap_draw(toolbarx, toolbary, toolbarwid, toolbarhei)
+view_toolbar_viewport_draw(toolbarx, toolbary, toolbarwid, toolbarhei)

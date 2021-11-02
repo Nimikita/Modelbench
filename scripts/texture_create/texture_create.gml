@@ -20,4 +20,4 @@ else
 if (!file_exists_lib(fname))
 	return texture_create_missing()
 
-return sprite_add(fname, 1, false, false, origin_x, origin_y)
+return sprite_add_lib(fname, 1, false, false, origin_x, origin_y)

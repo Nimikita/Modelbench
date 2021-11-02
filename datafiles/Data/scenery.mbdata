@@ -3,39 +3,38 @@
     "scenery": [
         {
             "name": "overworld_day",
-            "backgroundtop": "#89AFFD",
-            "backgroundbottom": "#B8CFFE",
+            "backgroundtop": "#85ACFF",
+            "backgroundbottom": "#B8D2FF",
             "lightcolor": "#FFFFFF",
-            "ambientcolor": "#696EA1"
+            "ambientcolor": "#8286A5"
         },
         {
             "name": "overworld_dusk",
-            "backgroundtop": "#6E8CCB",
-            "backgroundbottom": "#B2574D",
-            "lightcolor": "#FF4200",
-            "lightcolor2": "#512B44",
+            "backgroundtop": "#373952",
+            "backgroundbottom": "#C54D36",
+            "lightcolor": "#FF3A00",
             "ambientcolor": "#5945A1"
         },
         {
             "name": "overworld_night",
-            "backgroundtop": "#030307",
-            "backgroundbottom": "#070915",
+            "backgroundtop": "#010203",
+            "backgroundbottom": "#0A0C14",
             "lightcolor": "#33558E",
             "ambientcolor": "#53287B"
         },
         {
             "name": "desert",
-            "backgroundtop": "#FFE0C4",
-            "backgroundbottom": "#E8C09C",
-            "lightcolor": "#FFC89E",
-            "ambientcolor": "#BC6569"
+            "backgroundtop": "#EAE8C9",
+            "backgroundbottom": "#CFB888",
+            "lightcolor": "#EAE8C9",
+            "ambientcolor": "#997749"
         },
         {
             "name": "snowy_plains",
             "backgroundtop": "#FFFFFF",
-            "backgroundbottom": "#DCF9FF",
+            "backgroundbottom": "#CBEBF2",
             "lightcolor": "#FFFFFF",
-            "ambientcolor": "#DCF9FF"
+            "ambientcolor": "#ADADAD"
         },
         {
             "name": "cave",
@@ -46,31 +45,36 @@
         },
         {
             "name": "underwater",
-            "backgroundtop": "#274CD3",
-            "backgroundbottom": "#0F136A",
-            "lightcolor": "#1A63D1",
+            "backgroundtop": "#117AC9",
+            "backgroundbottom": "#073B63",
+            "lightcolor": "#A3B3CC",
             "ambientcolor": "#175A92"
         },
         {
             "name": "the_end",
-            "backgroundtop": "#251D22",
-            "backgroundbottom": "#FD54F6",
-            "lightcolor": "#DD91E2",
-            "ambientcolor": "#CB0BD2"
+            "backgroundtop": "#1D1B21",
+            "backgroundbottom": "#54563B",
+            "lightcolor": "#BFC6AF",
+            "ambientcolor": "#818E62",
+            "cubemap":
+            {
+                "texture": "end.png",
+                "texture_repeat": 25
+            }
         },
         {
             "name": "nether",
-            "backgroundtop": "#240505",
-            "backgroundbottom": "#D8460D",
-            "lightcolor": "#A7162B",
-            "ambientcolor": "#AA3511"
+            "backgroundtop": "#3A160B",
+            "backgroundbottom": "#AD3708",
+            "lightcolor": "#BF7465",
+            "ambientcolor": "#9B4022"
         },
         {
             "name": "soulsand_valley",
-            "backgroundtop": "#231911",
-            "backgroundbottom": "#005454",
-            "lightcolor": "#954413",
-            "ambientcolor": "#156069"
+            "backgroundtop": "#183F3D",
+            "backgroundbottom": "#183633",
+            "lightcolor": "#A1807B",
+            "ambientcolor": "#183F3D"
         }
     ]
 }

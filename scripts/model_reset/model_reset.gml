@@ -8,6 +8,7 @@ history_clear()
 res_edit = null
 el_edit = null
 el_edit_amount = 0
+ds_list_clear(el_edit_list)
 
 textures_list.update = true
 tex_preview.update = true
@@ -19,8 +20,8 @@ model_changed = false
 model_temporary = false
 model_temporary_backup = false
 
-model_name = ""
-assets.model_properties.tbx_model_name.text = ""
+model_name = text_get("assetsnewmodel")
+assets.model_properties.tbx_model_name.text = model_name
 res = null
 
 player_skin = false
@@ -52,11 +53,7 @@ else
 app_update_el_edit()
 
 for (var v = 0; v < e_value.amount; v++)
-{
-	value_default[v] = element_value_default(v)
-	value_inherit[v] = value_default[v]
-	value[v] = value_default[v]
-}
+	value[v] = element_value_default(v)
 
 // Clear snackbars from startup
 with (obj_snackbar)

@@ -1,5 +1,5 @@
-/// action_setting_render_ssao_range(value, add)
+/// action_setting_render_ao_range(value, add)
 /// @arg value
 /// @arg add
 
-setting_render_ssao_radius = setting_render_ssao_radius * argument1 + argument0
+setting_render_ao_radius = setting_render_ao_radius * argument1 + argument0

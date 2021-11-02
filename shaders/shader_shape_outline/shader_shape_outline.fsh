@@ -26,7 +26,7 @@ bool isHighlight(vec2 off, vec4 shape, vec3 normal)
 		float dotcomparison = max(0.0, dot(normal, normalize(unpackNormal(texture2D(uNormalBuffer, pos)))));
 		
 		return ((shape.rgb != texture2D(uShapeBuffer, pos).rgb) || dotcomparison < .98);
-	}	
+	}
 }
 
 void main()

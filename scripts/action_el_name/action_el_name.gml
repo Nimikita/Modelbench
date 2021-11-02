@@ -26,17 +26,35 @@ else if (history_redo)
 else
 {
 	var hobj = history_save_var_start(action_el_name, true);
+	var namesuffix;
 	
-	with (obj_model_element)
+	with (el_edit)
 	{
-		if (!selected)
-			continue
-			
 		with (hobj)
 			history_save_var(other.id, other.name, argument0)
-			
+		
 		name = argument0
+	}
+	
+	for (var i = 0; i < ds_list_size(el_edit_list); i++)
+	{
+		if (el_edit_list[|i] = el_edit)
+			continue
+		
+		if (argument0 != "")
+			namesuffix = argument0 + " (" + string(i + 1) + ")"
+		else
+			namesuffix = argument0
+		
+		with (el_edit_list[|i])
+		{
+			with (hobj)
+				history_save_var(other.id, other.name, namesuffix)
+		
+			name = namesuffix
+		}
 	}
 }
 
 app_update_name_warning()
+action_update_search()

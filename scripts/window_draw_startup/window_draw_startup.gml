@@ -42,7 +42,7 @@ else
 	dx = centerx + (browsewidth + 24 + newmodelwidth)
 
 // New model
-draw_button_options("startupnewmodeloptions", dx, dy, 24, 36)
+draw_settings_button("startupnewmodeloptions", dx, dy, 24, 36, true)
 dx -= newmodelwidth
 draw_button_primary("startupnewmodel", dx, dy, newmodelwidth, model_create, icons.NEW_FILE)
 
@@ -66,7 +66,6 @@ if (recent_list_amount > 0)
 	draw_label(text_get("startuprecentmodels"), dx, dy + 16, fa_left, fa_middle, c_accent, 1, font_heading)
 	dy += 72
 	
-	min(window_height)
 	var listheight = 28 + min(window_height - dy, (min(recent_list_amount, 8) * 44));
 	tab_control(listheight)
 	draw_recent(dx, dy, dw, listheight)
@@ -81,5 +80,5 @@ else
 	
 	// Only draw splash if it fits well on screen
 	if ((midy + (sprite_get_height(spr_ashley_splash) / 1.75)) < (window_height - 50))
-		draw_image(spr_ashley_splash, 1, midx, midy)
+		draw_image(spr_ashley_splash, 0, midx, midy)
 }

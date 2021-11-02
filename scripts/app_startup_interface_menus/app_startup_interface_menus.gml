@@ -19,3 +19,4 @@ menu_item_h = 0
 menu_scroll = new(obj_scrollbar)
 menu_top_y = 0
 menu_list = null
+menu_margin = 8

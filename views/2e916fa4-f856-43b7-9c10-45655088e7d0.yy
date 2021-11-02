@@ -23,7 +23,8 @@
         "0dba79ac-cfba-460b-b2ea-3ff4a2c19477",
         "2e97fb80-1f4a-497c-b763-59e6d8146469",
         "fe8d1acd-3969-45b5-8928-e66f5349e1d6",
-        "1e8c6445-8773-4440-a5dc-e344159e3cfe"
+        "1e8c6445-8773-4440-a5dc-e344159e3cfe",
+        "d215d2dd-6a4d-46f4-ab6c-1e60fd8f5e2c"
     ],
     "filterType": "GMScript",
     "folderName": "Render",

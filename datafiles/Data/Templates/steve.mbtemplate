@@ -8,13 +8,10 @@
 			"name": "body",
 			"position": [ 0, 12, 0 ],
 			"bend": {
-				"part": "upper",
-				"axis": [ "x", "y", "z" ],
-				"direction": [ "both", "both", "both" ],
-				"invert": [ 0, 0, 0 ],
-				"angle": [ 0, 0, 0 ],
 				"offset": 6,
-				"size": 10
+				"size": 10,
+				"part": "upper",
+				"axis": [ "x", "y", "z" ]
 			},
 			"shapes": [
 				{
@@ -27,8 +24,8 @@
 					"type": "block",
 					"from": [ -4, -6, -2 ],
 					"to": [ 4, 6, 2 ],
+					"inflate": 0.25,
 					"position": [ 0, 6, 0 ],
-					"scale": [ 1.0625, 1.042, 1.125 ],
 					"uv": [ 20, 36 ]
 				}
 			],
@@ -53,8 +50,8 @@
 									"type": "block",
 									"from": [ -4, -4, -4 ],
 									"to": [ 4, 4, 4 ],
+									"inflate": 0.5,
 									"position": [ 0, 4, 0 ],
-									"scale": [ 1.0625, 1.0625, 1.0625 ],
 									"uv": [ 40, 8 ]
 								}
 							]
@@ -65,12 +62,11 @@
 					"name": "right_arm",
 					"position": [ -6, 10, 0 ],
 					"bend": {
+						"offset": -4,
 						"part": "lower",
 						"axis": "x",
-						"direction": "forward",
-						"invert": 0,
-						"angle": 0,
-						"offset": -4
+						"direction_min": 0,
+						"invert": true
 					},
 					"shapes": [
 						{
@@ -83,8 +79,8 @@
 							"type": "block",
 							"from": [ -2, -6, -2 ],
 							"to": [ 2, 6, 2 ],
+							"inflate": 0.25,
 							"position": [ 0, -4, 0 ],
-							"scale": [ 1.125, 1.042, 1.125 ],
 							"uv": [ 44, 36 ]
 						}
 					]
@@ -93,12 +89,11 @@
 					"name": "left_arm",
 					"position": [ 6, 10, 0 ],
 					"bend": {
+						"offset": -4,
 						"part": "lower",
 						"axis": "x",
-						"direction": "forward",
-						"invert": 0,
-						"angle": 0,
-						"offset": -4
+						"direction_min": 0,
+						"invert": true
 					},
 					"shapes": [
 						{
@@ -111,8 +106,8 @@
 							"type": "block",
 							"from": [ -2, -6, -2 ],
 							"to": [ 2, 6, 2 ],
+							"inflate": 0.25,
 							"position": [ 0, -4, 0 ],
-							"scale": [ 1.125, 1.042, 1.125 ],
 							"uv": [ 52, 52 ]
 						}
 					]
@@ -123,12 +118,10 @@
 			"name": "right_leg",
 			"position": [ -2, 12, 0 ],
 			"bend": {
+				"offset": -6,
 				"part": "lower",
 				"axis": "x",
-				"direction": "backward",
-				"invert": 0,
-				"angle": 0,
-				"offset": -6
+				"direction_min": 0
 			},
 			"shapes": [
 				{
@@ -141,8 +134,8 @@
 					"type": "block",
 					"from": [ -2, -6, -2 ],
 					"to": [ 2, 6, 2 ],
+					"inflate": 0.25,
 					"position": [ 0, -6, 0 ],
-					"scale": [ 1.125, 1.042, 1.125 ],
 					"uv": [ 4, 36 ]
 				}
 			]
@@ -151,12 +144,10 @@
 			"name": "left_leg",
 			"position": [ 2, 12, 0 ],
 			"bend": {
+				"offset": -6,
 				"part": "lower",
 				"axis": "x",
-				"direction": "backward",
-				"invert": 0,
-				"angle": 0,
-				"offset": -6
+				"direction_min": 0
 			},
 			"shapes": [
 				{
@@ -169,8 +160,8 @@
 					"type": "block",
 					"from": [ -2, -6, -2 ],
 					"to": [ 2, 6, 2 ],
+					"inflate": 0.25,
 					"position": [ 0, -6, 0 ],
-					"scale": [ 1.125, 1.042, 1.125 ],
 					"uv": [ 4, 52 ]
 				}
 			]

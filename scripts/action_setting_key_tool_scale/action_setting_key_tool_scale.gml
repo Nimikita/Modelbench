@@ -1,6 +1,4 @@
-/// action_setting_key_tool_scale(key, ctrl)
+/// action_setting_key_tool_scale(key)
 /// @arg key
-/// @arg ctrl
 
 setting_key_tool_scale = argument0
-setting_key_tool_scale_control = argument1

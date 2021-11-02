@@ -60,9 +60,17 @@ if (err)
 
 draw_outline(xx + 1, yy + 1, w - 2, h - 2, 1, bordercolor, borderalpha)
 
+// Error icon
 if (err)
 {
 	draw_image(spr_icons, icons.ALERT, xx + w - 14, yy + h - 14, 1, 1, c_error, 1)
+	w -= 28
+}
+
+// Search icon
+if (string_contains(inputname, "search"))
+{
+	draw_image(spr_icons, icons.SEARCH, xx + w - 14, yy + h - 14, 1, 1, bordercolor, borderalpha)
 	w -= 28
 }
 

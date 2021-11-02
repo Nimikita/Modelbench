@@ -3,16 +3,17 @@
 
 // Debug
 #macro dev_mode						false
+#macro debug_export_normals			false
 
 // Versions
-#macro modelbench_version			"1.0.1"
+#macro modelbench_version			"1.1.3"
 #macro modelbench_version_full		modelbench_version + ""
 #macro modelbench_version_extra		""
-#macro modelbench_version_date		"02.02.2020"
+#macro modelbench_version_date		"01.16.2021"
 #macro gm_runtime					GM_runtime_version
 
 // File formats
-#macro settings_format				e_settings.FORMAT_101
+#macro settings_format				e_settings.FORMAT_111
 
 // Directories
 #macro file_directory				game_save_id
@@ -21,6 +22,7 @@
 #macro fonts_directory				data_directory + "Fonts\\"
 #macro languages_directory			data_directory + "Languages\\"
 #macro templates_directory			data_directory + "Templates\\"
+#macro textures_directory			data_directory + "Textures\\"
 
 // Files
 #macro language_file				languages_directory + "english.mblanguage"
@@ -32,6 +34,7 @@
 #macro temp_model_directory			file_directory + "modeltemp\\"
 #macro temp_model_backup			temp_model_directory + "\\" + "temp.mbbackup1"
 #macro temp_file					file_directory + "tmp.file"
+#macro temp_image					file_directory + "tmp.png"
 
 // Links
 #macro link_news					"https://www.mineimator.com/news?app=mb&version=" + modelbench_version
@@ -44,7 +47,7 @@
 #macro view_3d_control_size			0.125
 #macro view_3d_control_width		20
 #macro icon_button_offset			4
-#macro snap_min						0.0001
+#macro snap_min						0.000001
 
 // Values
 #macro null							noone

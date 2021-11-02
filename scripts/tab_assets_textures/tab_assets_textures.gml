@@ -5,6 +5,8 @@ tab_control(160)
 preview_draw(tex_preview, dx, dy, dw, 160)
 tab_next()
 
+var itemhover = null;
+
 tab_control(ds_list_size(textures_list.item) * 32)
 for (var i = 0; i < ds_list_size(textures_list.item); i++)
 {
@@ -12,9 +14,23 @@ for (var i = 0; i < ds_list_size(textures_list.item); i++)
 	
 	draw_list_item(tex, dx, dy + i * 32, dw, 32, tex.value = res_edit, 4)
 	
+	if (!itemhover && app_mouse_box(dx, dy + i * 32, dw, 32))
+		itemhover = tex
+	
 	context_menu_area(dx, dy + i * 32, dw, 32, "contextmenutexture", tex.value, null, null, null)
 }
 tab_next()
+
+// Add shortcuts
+if (itemhover != null)
+{
+	if (itemhover.value = res_edit)
+		shortcut_bar_add(null, e_mouse.LEFT_CLICK, "deselect")
+	else
+		shortcut_bar_add(null, e_mouse.LEFT_CLICK, "select")
+	
+	shortcut_bar_add(null, e_mouse.RIGHT_CLICK, "contextmenutexture")
+}
 
 if (res_edit != null)
 {

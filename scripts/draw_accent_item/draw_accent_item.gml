@@ -59,7 +59,7 @@ if (mouseon && mouse_left_released)
 	{	
 		if (popup = popup_colorpicker && popup_colorpicker.value_name = "settingsaccentcolor")
 			popup_close()
-		interface_update()
+		update_interface_wait = true
 	}
 	
 	return true

@@ -85,7 +85,7 @@ switch (menu_type)
 			itemy = dy
 			itemh = menu_item_h
 			
-			draw_list_item(item, menu_x, itemy, menu_w - 12 * menu_scroll.needed, menu_item_h, menu_value = item.value, 8)
+			draw_list_item(item, menu_x, itemy, menu_w - 12 * menu_scroll.needed, menu_item_h, menu_value = item.value, menu_margin)
 			
 			if (item.hover)
 				mouseitem = item

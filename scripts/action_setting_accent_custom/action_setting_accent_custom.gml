@@ -3,5 +3,4 @@
 
 setting_accent = 9
 setting_accent_custom = argument0
-
-interface_update()
+update_interface_wait = true

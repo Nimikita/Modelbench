@@ -22,7 +22,7 @@ draw_button_text(text_get("aboutversion", modelbench_version_full), textx, dy + 
 textx += string_width_font(text_get("aboutversion", modelbench_version_full), font_value)
 
 draw_label(text_get("aboutreleasedate", modelbench_version_date), textx, dy + 98, fa_left, fa_bottom, c_text_secondary, a_text_secondary, font_value)
-draw_label(text_get("aboutforversion", "Mine-imator 1.2.6"), content_x + dw/2, dy + 98 + 19, fa_middle, fa_bottom, c_text_secondary, a_text_secondary, font_value)
+draw_label(text_get("aboutforversion", "Mine-imator 1.2.6+"), content_x + dw/2, dy + 98 + 19, fa_middle, fa_bottom, c_text_secondary, a_text_secondary, font_value)
 
 dy += 128 + 48
 dx = content_x + 64
@@ -46,6 +46,8 @@ dy += 26
 draw_label("Hozq", dx, dy, fa_left, fa_bottom, c_text_secondary, a_text_secondary, font_emphasis)
 dy += 19
 draw_label("Mr.Banders", dx, dy, fa_left, fa_bottom, c_text_secondary, a_text_secondary, font_emphasis)
+dy += 19
+draw_label("SoundsDotZip", dx, dy, fa_left, fa_bottom, c_text_secondary, a_text_secondary, font_emphasis)
 
 // Special thanks
 dx += 130 + 24
@@ -57,16 +59,15 @@ draw_label(text_get("aboutspecialthanks"), dx, dy, fa_left, fa_bottom, c_text_te
 dy += 26
 draw_button_text("David", dx, dy, open_url, "https://twitter.com/stuffbydavidn", "https://twitter.com/stuffbydavidn", font_emphasis)
 
-// Beta testers
 dy += 19
 
-for (var i = 0; i < ds_list_size(beta_testers_list); i++)
+for (var i = 0; i < ds_list_size(special_thanks_list); i++)
 {
-	draw_label(beta_testers_list[|i], dx, dy, fa_left, fa_bottom, c_text_secondary, a_text_secondary, font_emphasis)
+	draw_label(special_thanks_list[|i], dx, dy, fa_left, fa_bottom, c_text_secondary, a_text_secondary, font_emphasis)
 	dy += 19
 	
 	// Next row
-	if (i = 6)
+	if (i = 7)
 	{
 		dx += 130 + 24
 		dy = content_y + 176 + 38

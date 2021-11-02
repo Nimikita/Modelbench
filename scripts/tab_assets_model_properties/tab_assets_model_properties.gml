@@ -1,7 +1,7 @@
 /// tab_assets_model_properties()
 
 tab_control(48)
-if (draw_textfield("assetsmodelname", dx, dy, dw, 28, model_name, tab.model_properties.tbx_model_name, action_model_name, text_get("assetsmodelname"), "top", model_name = ""))
+if (draw_textfield("assetsmodelname", dx, dy, dw, 28, model_name, tab.model_properties.tbx_model_name, action_model_name, text_get("assetsnewmodel"), "top", model_name = ""))
 	model_name = tab.model_properties.tbx_model_name.text
 tab_next()
 
@@ -38,6 +38,8 @@ tab_control_switch()
 draw_switch("assetsplayerskin", dx, dy, player_skin, action_player_skin, false, "assetsplayerskinhelp")
 tab_next()
 
+var snapval = (dragger_snap ? setting_snap_size_scale : snap_min);
+
 tab_control(28)
-draw_textfield_num("assetsmodelscale", dx, dy, 86, root_scale, setting_snap ? min(0.01, setting_snap_size_scale) : 0.01, snap_min, no_limit, 1, setting_snap_size_scale, tab.model_properties.tbx_model_scale, action_model_scale)
+draw_textfield_num("assetsmodelscale", dx, dy, 86, root_scale, 0.01, snap_min, no_limit, 1, snapval, tab.model_properties.tbx_model_scale, action_model_scale)
 tab_next()

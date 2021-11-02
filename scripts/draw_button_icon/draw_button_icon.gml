@@ -11,7 +11,7 @@
 /// @arg [tip
 /// @arg [sprite]]]]
 
-var name, xx, yy, wid, hei, value, icon, script, disabled, tip, sprite, animated;
+var name, xx, yy, wid, hei, value, icon, script, disabled, tip, sprite;
 var small, mouseon;
 
 name = argument[0]
@@ -38,8 +38,6 @@ if (argument_count > 9)
 if (argument_count > 10)
 	sprite = argument[10]
 
-animated = (sprite != spr_icons && sprite_get_number(sprite) > 1)
-
 if (xx + wid < content_x || xx > content_x + content_width || yy + hei < content_y || yy > content_y + content_height)
 	return 0
 
@@ -47,14 +45,14 @@ small = ((wid < 28) || (hei < 28))
 
 if (small)
 {
-	mouseon = app_mouse_box(xx, yy, wid, hei) && content_mouseon && !disabled
+	mouseon = (content_mouseon && !disabled && app_mouse_box(xx, yy, wid, hei))
 	
 	if (mouseon)
 		tip_set(tip, xx, yy, wid, hei)
 }
 else
 {
-	mouseon = app_mouse_box(xx + 2, yy + 2, wid - 4, hei - 4) && content_mouseon && !disabled
+	mouseon = (content_mouseon && !disabled && app_mouse_box(xx + 2, yy + 2, wid - 4, hei - 4))
 	
 	if (mouseon)
 		tip_set(tip, xx + 2, yy + 2, wid - 4, hei - 4)
@@ -78,16 +76,10 @@ backgroundalpha = lerp(backgroundalpha, 0, mcroani_arr[e_mcroani.HOVER])
 backgroundcolor = merge_color(backgroundcolor, c_accent_overlay, mcroani_arr[e_mcroani.PRESS])
 backgroundalpha = lerp(backgroundalpha, a_accent_overlay, mcroani_arr[e_mcroani.PRESS])
 
-backgroundcolor = merge_color(backgroundcolor, c_accent_overlay, mcroani_arr[e_mcroani.PRESS])
-backgroundalpha = lerp(backgroundalpha, a_accent_overlay, mcroani_arr[e_mcroani.PRESS])
-
 var prevalpha = draw_get_alpha();
 draw_set_alpha(prevalpha * lerp(1, .5, mcroani_arr[e_mcroani.DISABLED]))
 
-//if (!animated)
-	draw_box(xx, yy, wid, hei, false, backgroundcolor, backgroundalpha)
-
-// Icon
+draw_box(xx, yy, wid, hei, false, backgroundcolor, backgroundalpha)
 
 // Animated icon(if 'icon' is a sprite)
 if (sprite != spr_icons && sprite != null)
@@ -95,7 +87,7 @@ if (sprite != spr_icons && sprite != null)
 	var frame = floor((sprite_get_number(sprite) - 1) * mcroani_arr[e_mcroani.ACTIVE_LINEAR]);
 	draw_image(sprite, frame, xx + wid/2, yy + wid/2, 1, 1, c_text_secondary, a_text_secondary)
 }
-else
+else // Icon
 	draw_image(spr_icons, icon, xx + wid/2, yy + wid/2, 1, 1, merge_color(c_text_secondary, c_accent, mcroani_arr[e_mcroani.ACTIVE]), lerp(a_text_secondary, 1, mcroani_arr[e_mcroani.ACTIVE]))
 
 draw_set_alpha(prevalpha)
@@ -106,5 +98,6 @@ if (mouseon && mouse_left_released)
 {
 	if (script != null)
 		script_execute(script, !value)
+	
 	return true
 }

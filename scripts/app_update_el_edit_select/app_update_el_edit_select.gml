@@ -18,7 +18,7 @@ with (obj_model_element)
 	if (element_type = TYPE_PART)
 	{
 		app.element_editor.bend.enabled = true
-		app.element_editor.mineimator.enabled = true
+		app.element_editor.mineimator.enabled = (app.setting_feature_set = e_features.MIMODEL)
 	}
 	else
 	{
@@ -26,7 +26,7 @@ with (obj_model_element)
 		app.element_editor.pivot_offset.enabled = true
 		app.element_editor.size.enabled = true
 		app.element_editor.appearance.enabled = true
-		app.element_editor.wind.enabled = true
+		app.element_editor.wind.enabled = (app.setting_feature_set = e_features.MIMODEL)
 	}
 }
 

@@ -32,12 +32,20 @@ mouse_current_y = 0
 mouse_previous_x = 0
 mouse_previous_y = 0
 mouse_move = 0
+mouse_move_right = 0
 mouse_still = 0
+mouse_wrap_x = 0
+mouse_wrap_y = 0
+mouse_click_timer = 0
+mouse_click_count = 0
 app_mouse_clear()
 
 dragger_drag_value = 0
 meter_drag_value = 0
 wheel_drag_value = 0
+
+dragger_multiplier = 1
+dragger_snap = false
 
 content_x = 0
 content_y = 0
@@ -46,6 +54,7 @@ content_height = 0
 content_mouseon = false
 content_tab = null
 content_direction = null
+content_view = null
 
 dx = 0
 dy = 0
@@ -73,8 +82,7 @@ tip_box_y = 0
 tip_location_x = 0
 tip_location_y = 0
 tip_wrap = true
-tip_shortcut_key = -1
-tip_shortcut_control = false
+tip_shortcut_shortcut = -1
 tip_shortcut_draw = false
 tip_arrow_x = 0
 tip_arrow_y = 0

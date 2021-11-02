@@ -11,3 +11,5 @@ scale = 1
 
 save_id = ""
 save_id = save_id_create()
+
+export_save_tex = false

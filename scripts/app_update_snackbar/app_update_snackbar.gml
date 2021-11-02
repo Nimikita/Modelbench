@@ -18,7 +18,7 @@ snackbar_script_value = null
 with (obj_snackbar)
 {
 	if (remove)
-		ds_list_delete_value(app.snackbar_list, id)
+		remove_alpha -= (.125/delta)
 	
 	snackbar_height = 44
 	
@@ -42,6 +42,16 @@ with (obj_snackbar)
 	}
 }
 
+// Offscreen and ready to remove
+with (obj_snackbar)
+{
+	if (remove && remove_alpha < 0)
+	{
+		ds_list_delete_value(app.snackbar_list, id)
+		instance_destroy()
+	}
+}
+
 snackbar_amount = ds_list_size(snackbar_list)
 
 // Calculate y position of snackbars(Starting from bottom)
@@ -52,13 +62,13 @@ for (var i = 0; i < snackbar_amount; i++)
 	
 	with (snackbar)
 	{
-		// Delay just a tad so ensure smooth entry animation
+		// Delay to ensure smooth entry animation
 		if (current_time - time_created < 100)
 			continue
 		
 		snackbary -= (26 + snackbar_height)
-		snackbar_goal_y = snackbary
 		
+		snackbar_goal_y = snackbary
 		snackbar_y += (snackbar_goal_y - snackbar_y) / max(1, 3 / delta)
 	}
 }

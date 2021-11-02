@@ -39,9 +39,8 @@ draw_toolbar_button("toolbarmodeling", dx, boxy, e_mode.MODELING, program_mode, 
 // Preview
 draw_toolbar_button("toolbarpreview", dx, boxy, e_mode.PREVIEW, program_mode, null)
 
+// Tab underline
 draw_box(toolbar_line_x, content_y + content_height - 2, toolbar_line_width, 2, false, c_accent, 1)
-toolbar_line_x += (toolbar_line_x_goal - toolbar_line_x) / max(1, 3 / delta)
-toolbar_line_width += (toolbar_line_width_goal - toolbar_line_width) / max(1, 3 / delta)
 
 dx = boxw - (28 + 4)
 
@@ -49,11 +48,11 @@ dx = boxw - (28 + 4)
 if (program_mode = e_mode.MODELING)
 {
 	// Toggle UV editor
-	tip_set_shortcut(setting_key_uv_editor, setting_key_uv_editor_control)
+	tip_set_shortcut(setting_key_uv_editor)
 	draw_button_icon("toolbaruveditor", dx, dy, 28, 28, setting_show_uv_editor, icons.UV_EDITOR, action_toolbar_show_uv_editor, false, (setting_show_uv_editor ? "tooltipuveditorhide" : "tooltipuveditorshow"))
-	tip_set_shortcut(-1, false)
+	tip_set_shortcut(-1)
 }
 else if (program_mode = e_mode.PREVIEW)
 {
-	draw_button_icon("toolbaroverlay", dx, dy, 28, 28, setting_preview_overlay, icons.SQUARE_RATIO, action_toolbar_preview_overlay, false, (setting_preview_overlay ? "tooltipoverlayhide" : "tooltipoverlayshow"))
+	draw_button_icon("toolbarguides", dx, dy, 28, 28, setting_preview_guides, icons.SQUARE_RATIO, action_toolbar_preview_guides, false, (setting_preview_guides ? "tooltipguideshide" : "tooltipguidesshow"))
 }

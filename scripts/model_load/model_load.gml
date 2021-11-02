@@ -23,7 +23,7 @@ if (argument_count > 0)
 	fn = argument[0]
 else
 	fn = file_dialog_open_model()
-	
+
 if (fn = "")
 	return 0
 
@@ -44,7 +44,7 @@ log("Opening model", fn)
 rootmap = model_load_start(fn)
 if (rootmap = null)
 	return 0
-	
+
 model_reset()
 
 model_file = filename_new_ext(fn, ".mimodel")

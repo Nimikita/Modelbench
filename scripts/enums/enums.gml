@@ -1,18 +1,90 @@
 /// enums()
 /// @desc Defines enumerators used in the project.
 
+enum e_mouse
+{
+	LEFT_CLICK,
+	MIDDLE_CLICK,
+	RIGHT_CLICK,
+	LEFT_DRAG,
+	MIDDLE_DRAG,
+	RIGHT_DRAG,
+	SCROLL
+}
+
+// Menus
+enum e_menu
+{
+	LIST
+}
+
+enum e_mode
+{
+	MODELING,
+	PREVIEW
+}
+
+
+enum e_features
+{
+	MIMODEL,
+	OBJ
+}
+
+enum chevrons
+{
+	DOWN,
+	UP
+}
+
+enum e_snap_mode
+{
+	ABSOLUTE,
+	LOCAL
+}
+
+// Scrollbar
+enum e_scroll
+{
+	VERTICAL,
+	HORIZONTAL
+}
+
+enum e_shortcut
+{
+	KEY,
+	CONTROL,
+	SHIFT
+}
+
+enum e_viewport_render
+{
+	FLAT,
+	SHADED,
+	TEXTURED
+}
+
+// Bend
+enum e_bend
+{
+	FORWARD,
+	BACKWARD,
+	BOTH
+}
+
+// Vertex wave
+enum e_vertex_wave
+{
+	NONE,
+	Z_ONLY,
+	ALL
+}
+
 enum e_settings
 {
 	FORMAT_ALPHA_2 = 0,
-	FORMAT_101	   = 1
-}
-
-enum e_element
-{
-	PART,
-	BLOCK,
-	PLANE,
-	PLANE_3D
+	FORMAT_101	   = 1,
+	FORMAT_111	   = 2
 }
 
 enum e_snackbar
@@ -23,10 +95,25 @@ enum e_snackbar
 	SUCCESS
 }
 
-enum e_mode
+enum e_element
 {
-	MODELING,
-	PREVIEW
+	PART,
+	BLOCK,
+	PLANE,
+	PLANE_3D,
+	amount
+}
+
+// Parts
+enum e_part
+{
+	RIGHT,
+	LEFT,
+	FRONT,
+	BACK,
+	UPPER,
+	LOWER,
+	amount
 }
 
 enum e_tool
@@ -36,117 +123,10 @@ enum e_tool
 	MOVE,
 	ROTATE,
 	SCALE,
-	TRANSFORM
-}
-
-// Icons
-enum icons
-{
-	MENU,
-	NEW_FILE,
-	OPEN_FILE,
-	INFO,
-	CLOSE,
-	POINT_LEFT,
-	POINT_RIGHT,
-	SAVE,
-	SAVE_AS,
-	IMPORT,
-	SETTINGS,
-	HELP,
-	ARROW_DOWN,
-	ARROW_RIGHT,
-	ARROW_TOP,
-	ARROW_LEFT,
-	ARROW_DOWN_SMALL,
-	ARROW_RIGHT_SMALL,
-	ARROW_TOP_SMALL,
-	ARROW_LEFT_SMALL,
-	ASSETS,
-	BLOCK,
-	BLOCK_ADD,
-	PLANE,
-	PLANE_ADD,
-	PLANE3D,
-	PLANE3D_ADD,
-	PART,
-	EDIT,
-	DELETE,
-	COPY,
-	PASTE,
-	RESET,
-	MAGNET,
-	SHOW,
-	HIDE,
-	LINK,
-	LOCK,
-	UNLOCK, 
-	UV_ROTATE_COUNTER,
-	UV_ROTATE,
-	UV_EDITOR,
-	PART_ADD,
-	PIN,
-	IMPORT_PART,
-	RECENT_GRID,
-	RECENT_LIST,
-	UNDO,
-	REDO,
-	ADD,
-	REFRESH,
-	CHECKMARK,
-	TEXTURE_ADD,
-	STAR,
-	TEXTURE_ERROR,
-	TEXTURE_UVMAP,
-	DOWNLOAD,
-	REMIND,
-	DUPLICATE,
-	CENTER,
-	SEARCH,
-	PLAY,
-	PAUSE,
-	LOOP,
-	OPTIONS,
-	TOOLSET_POSITION,
-	SCALE,
-	TOOLSET_ROTATE,
-	UV_MIRROR,
-	UV_FLIP,
-	UV_ROTATE_180,
-	SORT_DOWN,
-	SORT_UP,
-	WARNING,
-	CLOSE_SMALL,
-	COLLAPSE,
-	EYEDROPPER,
-	BEND,
-	DOT,
-	TOOLSET_SCALE,
-	CURSOR,
-	RECENT_FILES,
-	NEW_FILE_TEMPLATE,
 	TRANSFORM,
-	ALERT,
-	CUT,
-	REPLACE,
-	COLLAPSE_ALL,
-	EXPAND_ALL,
-	DUSK,
-	DAY,
-	NIGHT,
-	SQUARE_RATIO,
-	DONATE,
-	CUT_ALL,
-	COPY_ALL,
-	PASTE_ALL,
-	RESET_ALL,
-	DUPLICATE_SELECTION,
-	DELETE_SELECTION,
-	MODEL,
-	TIP,
-	SELECT_ALL,
-	
-	PLACEHOLDER = 11
+	BEND,
+	RESIZE,
+	amount
 }
 
 // Render modes
@@ -166,6 +146,47 @@ enum e_render_mode
 	SELECT,
 	ALPHA_FIX,
 	ALPHA_TEST
+}
+
+enum e_control
+{
+	POS_X,
+	POS_Y,
+	POS_Z,
+	POS_XY,
+	POS_XZ,
+	POS_YZ,
+	POS_PAN,
+	
+	ROT_X,
+	ROT_Y,
+	ROT_Z,
+	
+	SCA_X,
+	SCA_Y,
+	SCA_Z,
+	SCA_XYZ,
+	
+	PIVOT_X,
+	PIVOT_Y,
+	PIVOT_Z,
+	PIVOT_XY,
+	PIVOT_XZ,
+	PIVOT_YZ,
+	PIVOT_PAN,
+	
+	BEND_X,
+	BEND_Y,
+	BEND_Z,
+	BEND_OFFSET,
+	BEND_SIZE,
+	
+	RESIZE_XP,
+	RESIZE_YP,
+	RESIZE_ZP,
+	RESIZE_XN,
+	RESIZE_YN,
+	RESIZE_ZN
 }
 
 // Values
@@ -253,43 +274,131 @@ enum e_value
 	amount
 }
 
-// Menus
-enum e_menu
+// Icons
+enum icons
 {
-	LIST
-}
-
-// Parts
-enum e_part
-{
-	RIGHT,
-	LEFT,
-	FRONT,
-	BACK,
-	UPPER,
-	LOWER,
-	amount
-}
-
-// Bend
-enum e_bend
-{
-	FORWARD,
-	BACKWARD,
-	BOTH
-}
-
-// Scrollbar
-enum e_scroll
-{
-	VERTICAL,
-	HORIZONTAL
-}
-
-// Vertex wave
-enum e_vertex_wave
-{
-	NONE,
-	Z_ONLY,
-	ALL
+	MENU,
+	NEW_FILE,
+	OPEN_FILE,
+	INFO,
+	CLOSE,
+	POINT_LEFT,
+	POINT_RIGHT,
+	SAVE,
+	SAVE_AS,
+	IMPORT,
+	SETTINGS,
+	HELP,
+	ARROW_DOWN,
+	ARROW_RIGHT,
+	ARROW_TOP,
+	ARROW_LEFT,
+	ARROW_DOWN_SMALL,
+	ARROW_RIGHT_SMALL,
+	ARROW_TOP_SMALL,
+	ARROW_LEFT_SMALL,
+	ASSETS,
+	BLOCK,
+	BLOCK_ADD,
+	PLANE,
+	PLANE_ADD,
+	PLANE3D,
+	PLANE3D_ADD,
+	PART,
+	EDIT,
+	DELETE,
+	COPY,
+	PASTE,
+	RESET,
+	MAGNET,
+	SHOW,
+	HIDE,
+	LINK,
+	LOCK,
+	UNLOCK, 
+	UV_ROTATE_COUNTER,
+	UV_ROTATE,
+	UV_EDITOR,
+	PART_ADD,
+	PIN,
+	IMPORT_PART,
+	RECENT_GRID,
+	RECENT_LIST,
+	UNDO,
+	REDO,
+	ADD,
+	REFRESH,
+	CHECKMARK,
+	TEXTURE_ADD,
+	STAR,
+	TEXTURE_ERROR,
+	TEXTURE_UVMAP,
+	DOWNLOAD,
+	REMIND,
+	DUPLICATE,
+	PIVOT,
+	SEARCH,
+	PLAY,
+	PAUSE,
+	LOOP,
+	OPTIONS,
+	TOOLSET_POSITION,
+	OVERLAYS,
+	TOOLSET_ROTATE,
+	UV_MIRROR,
+	UV_FLIP,
+	UV_ROTATE_180,
+	SORT_DOWN,
+	SORT_UP,
+	WARNING,
+	CLOSE_SMALL,
+	COLLAPSE,
+	EYEDROPPER,
+	BEND,
+	DOT,
+	TOOLSET_SCALE,
+	CURSOR,
+	RECENT_FILES,
+	NEW_FILE_TEMPLATE,
+	TRANSFORM,
+	ALERT,
+	CUT,
+	REPLACE,
+	COLLAPSE_ALL,
+	EXPAND_ALL,
+	DUSK,
+	DAY,
+	NIGHT,
+	SQUARE_RATIO,
+	DONATE,
+	CUT_ALL,
+	COPY_ALL,
+	PASTE_ALL,
+	RESET_ALL,
+	DUPLICATE_SELECTION,
+	DELETE_SELECTION,
+	MODEL,
+	TIP,
+	SELECT_ALL,
+	EXPORT_OBJ,
+	GLOBAL,
+	LOCAL,
+	GIMBAL,
+	SHADED,
+	BLOCKY_BENDING,
+	WIND,
+	FLAT,
+	TEXTURED,
+	WALK,
+	RENAME,
+	TOOLSET_RESIZE,
+	LEFT_CLICK,
+	LEFT_DRAG,
+	MIDDLE_CLICK,
+	MIDDLE_DRAG,
+	RIGHT_CLICK,
+	RIGHT_DRAG,
+	SCROLL,
+	
+	PLACEHOLDER = 11
 }

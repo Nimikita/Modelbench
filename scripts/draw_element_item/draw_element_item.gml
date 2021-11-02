@@ -1,18 +1,23 @@
-/// draw_element_item(element, y, [increment])
+/// draw_element_item(element, y, [increment, [search]])
 /// @arg element
 /// @arg y
-/// @arg [increment]
+/// @arg [increment
+/// @arg [search]]
 /// @desc Draws an element item
 
-var element, yy, increment;
-var itemx, itemy, itemw, itemh, movehover, itemhover, expandhover, lockhover, visiblehover, itemvisible, xx, ww, linex, minw, mouseonlist;
+var element, yy, increment, search;
+var itemx, itemy, itemw, itemh, movehover, itemhover, expandhover, lockhover, visiblehover, errorhover, itemvisible, xx, ww, linex, minw, mouseonlist;
 var hideshapes;
 element = argument[0]
 yy = argument[1]
 increment = 0
+search = false
 
 if (argument_count > 2)
 	increment = argument[2]
+
+if (argument_count > 3)
+	search = argument[3]
 
 itemx = dx + (24 * increment)
 itemy = yy
@@ -31,7 +36,10 @@ if (itemvisible)
 {
 	// Hover highlight
 	if (itemhover)
+	{
 		mouse_cursor = cr_handpoint
+		tab.elements.element_hover = element
+	}
 	
 	// Select highlight
 	if (itemhover && mouse_left && element.list_mouseon)
@@ -58,6 +66,21 @@ xx = itemx + itemw - 24
 minw = 4 + 20 + 4 + 20 + 8 + string_width("...") + (8 + 20 + 4 + 20)
 
 #region Right side icons
+
+if (element.element_type = TYPE_PART && (element.name_duplicate || element.name_empty))
+{
+	errorhover = app_mouse_box(xx, itemy + 4, 20, 20)
+	
+	if (element.name_empty)
+		tip_set(text_get("elementeditoremptypartname"), xx, itemy + 4, 20, 20)
+	else if (element.name_duplicate)
+		tip_set(text_get("elementeditorsamepartname"), xx, itemy + 4, 20, 20)
+	
+	draw_image(spr_icons, icons.ALERT, xx + 10, itemy + 14, 1, 1, c_error, 1)
+	xx -= 24
+}
+else
+	errorhover = false
 
 // Visible
 if (itemvisible)
@@ -105,7 +128,7 @@ ww = max(minw, itemw)
 var haschildren;
 haschildren = element.element_type = TYPE_PART
 haschildren = haschildren && ((element.part_list != null && ds_list_size(element.part_list) > 0) || (!setting_hide_shapes && (element.shape_list != null && ds_list_size(element.shape_list) > 0)))
-if (itemvisible && haschildren)
+if (itemvisible && haschildren && !search)
 {
 	if (draw_button_icon("assetspartshowchildren" + string(element), xx, itemy + 4, 20, 20, element.extend, null, null, window_busy = "elementselection", (element.extend ? "tooltipcollapse" : "tooltipexpand"), spr_arrow_small_ani))
 		action_el_extend(element)
@@ -113,7 +136,7 @@ if (itemvisible && haschildren)
 expandhover = app_mouse_box(xx, itemy + 4, 20, 20)
 
 xx += 24
-mouseonlist = (itemvisible && itemhover && !expandhover && !lockhover && !visiblehover)
+mouseonlist = (itemvisible && itemhover && !expandhover && !lockhover && !visiblehover && !errorhover)
 
 // Element icon
 if (itemvisible)
@@ -171,7 +194,28 @@ if (movehover && (mouse_still > 15 * (60 / room_speed)) && window_busy = "elemen
 #endregion
 
 #region Element name
-if (itemvisible)
+
+// Edit name
+if (tab.elements.name_edit_element = element)
+{
+	if (textbox_draw(tab.elements.tbx_name, xx, itemy + 6, itemw - (xx - itemx) - 52, itemh))
+	{
+		if (tab.elements.name_edit_element_single)
+			action_el_rename_single(tab.elements.tbx_name.text)
+		else
+			action_el_rename(tab.elements.tbx_name.text)
+	}
+	
+	if (window_focus != string(tab.elements.tbx_name))
+	{
+		tab.elements.name_edit_element = null
+		tab.elements.name_edit_element_single = false
+		action_update_search()
+	}
+}
+
+// Name label
+if (itemvisible && tab.elements.name_edit_element != element)
 {
 	var labelname, labelshort, labelcolor, labelalpha;
 	labelname = element.name
@@ -213,10 +257,29 @@ if (itemvisible)
 	// Preview name tooltip
 	if (string_width(labelname) > itemw - (xx - itemx) - 52)
 		tip_set(labelname, xx, itemy, string_width_font(labelshort, font_value), 28)
+	
+	// Edit name
+	if (labelshort != "...")
+	{
+		var boxwid = min(string_width(labelshort) + 32, itemw - (xx - itemx) - 52);
+		
+		if (app_mouse_box(xx, itemy, boxwid, itemh))
+		{
+			if (mouse_left_double_pressed)
+			{
+				tab.elements.name_edit_element_single = true
+				window_busy = string(tab.elements.tbx_name)
+				window_focus = string(tab.elements.tbx_name)
+				tab.elements.tbx_name.text = element.name
+				tab.elements.name_edit_element = element
+			}
+		}
+	}
 }
+
 #endregion
 
-if (itemvisible && itemhover && !expandhover && !lockhover && !visiblehover)
+if (itemvisible && itemhover && !expandhover && !lockhover && !visiblehover && !errorhover)
 {
 	element.list_mouseon = true
 	context_menu_area(dx, itemy, dw, itemh, "contextmenuelement", element, e_value_type.NONE, null, null)
@@ -224,7 +287,7 @@ if (itemvisible && itemhover && !expandhover && !lockhover && !visiblehover)
 	if (mouse_move > 5)
 	{
 		// Start box selection or moving
-		if (element.selected)
+		if (element.selected && !search && tab.elements.name_edit_element != element)
 		{
 			window_busy = "elementmovestart"
 		}
@@ -237,7 +300,7 @@ if (itemvisible && itemhover && !expandhover && !lockhover && !visiblehover)
 	}
 	
 	// Deselect if control if held down, select if not held down
-	if (mouse_left_released && window_busy = "")
+	if (!mouse_left_double_pressed && mouse_left_released && window_busy = "")
 	{
 		if (keyboard_check(vk_control))
 			action_el_deselect(element)
@@ -298,7 +361,7 @@ if (itemvisible && movehover && window_busy = "elementmove" && !(element.element
 #region Continue hierarchy
 dy += 28
 
-if (element.element_type = TYPE_PART && element.extend)
+if (element.element_type = TYPE_PART && element.extend && !search)
 {
 	// Draw shapes
 	if (element.shape_list != null && !setting_hide_shapes)

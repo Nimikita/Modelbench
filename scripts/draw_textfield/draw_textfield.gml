@@ -38,6 +38,8 @@ if (argument_count > 10)
 
 if (labelpos = "top")
 	yy += 48 - 28
+else if (labelpos = "none")
+	capwidth = 0
 else
 	capwidth = string_width_font(text_get(name), font_emphasis) + 10
 
@@ -61,7 +63,7 @@ draw_box_hover(xx + capwidth, yy, w - capwidth, h, max(mcroani_arr[e_mcroani.HOV
 
 if (labelpos = "top")
 	draw_label(text_get(name), xx, yy - 8, fa_left, fa_bottom, labelcolor, labelalpha, font_label)
-else
+else if (labelpos != "none")
 	draw_label(text_get(name), xx, yy + 21, fa_left, fa_bottom, labelcolor, labelalpha, font_emphasis)
 
 return update

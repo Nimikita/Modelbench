@@ -50,7 +50,7 @@ if (render_ssao)
 	surface_reset_target()
 	
 	// Blur
-	repeat (setting_render_ssao_blur_passes)
+	repeat (setting_render_ao_blur_passes)
 	{
 		var ssaosurftemp;
 		render_surface[3] = surface_require(render_surface[3], render_width, render_height)
@@ -220,7 +220,7 @@ surface_set_target(finalsurf)
 	// World
 	render_world_start()
 	
-	if (program_mode = e_mode.MODELING && setting_lighting)
+	if (program_mode = e_mode.MODELING && setting_shading_lighting && setting_shading)
 		render_world(e_render_mode.COLOR_LIGHT)
 	else
 		render_world(e_render_mode.COLOR)

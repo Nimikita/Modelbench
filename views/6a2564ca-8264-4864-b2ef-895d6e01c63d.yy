@@ -14,7 +14,9 @@
         "4e27036d-a16c-45dd-8dc4-217d20b3482d",
         "9239cbe1-67b4-402b-95be-a14f3edef4a9",
         "b2799c0e-8d65-4bc1-b0a2-848c44574e7d",
-        "721b7470-5fbc-4979-a934-c2c802506fab"
+        "721b7470-5fbc-4979-a934-c2c802506fab",
+        "79eaddab-9d1a-4acf-b355-e177a8acb961",
+        "4a78731f-e25c-43a1-8daa-3116de1f9800"
     ],
     "filterType": "GMScript",
     "folderName": "String",

@@ -2,5 +2,4 @@
 /// @arg theme
 
 setting_theme = argument0
-
-interface_update()
+update_interface_wait = true

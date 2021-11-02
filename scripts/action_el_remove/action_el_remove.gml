@@ -38,3 +38,4 @@ app_update_el_edit()
 app_update_name_warning()
 
 el_update_part()
+action_update_search()

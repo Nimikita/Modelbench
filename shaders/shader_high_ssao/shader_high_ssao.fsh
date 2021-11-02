@@ -1,4 +1,4 @@
-#define SAMPLES 42
+#define SAMPLES 16
 
 varying vec2 vTexCoord;
 

@@ -7,8 +7,10 @@ render_shader_obj = shader_map[?render_mode_shader_map[?render_mode]]
 with (render_shader_obj)
 	shader_use()
 
-// Enable mip-mapping
-//shader_texture_filter_mipmap = true
+// Enable repeating textures
+gpu_set_texrepeat(true)
+gpu_set_tex_mip_filter(tf_linear)
+render_reset_uniforms()
 
 // Neutral depth (0)
 if (render_mode != e_render_mode.HIGH_LIGHT_SUN_DEPTH &&

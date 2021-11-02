@@ -21,6 +21,9 @@ tab_move_mouseon_position = 0
 panel_area_y += 36
 panel_area_height -= 36
 
+// Adjust panel height for shortcut bar
+panel_area_height -= 28 * shortcut_bar_lines
+
 with (obj_panel)
 	size_real = size * (tab_list_amount > 0)
 
@@ -45,7 +48,7 @@ panel_draw(panel_map[?"right"])
 if (window_busy = "panelresize")
 {
 	var resizex;
-	var sizesnap = (keyboard_check(vk_shift) ? 20 : 1);
+	var sizesnap = (keyboard_check(vk_control) ? 20 : 1);
 	
 	if (panel_resize = panel_map[?"left"] || panel_resize = panel_map[?"left_secondary"])
 	{

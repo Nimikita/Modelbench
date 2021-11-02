@@ -25,7 +25,7 @@ buttonsize = 28 + 4
 
 window_busy = ""
 
-if (app_mouse_box(dx - 80, dy - 80, dw + 160, dh + 160) && !popup_mouseon && !snackbar_mouseon && !context_menu_mouseon)
+if (app_mouse_box(dx - 80, dy - 80, dw + 160, dh + 160) && !popup_mouseon && !snackbar_mouseon && !context_menu_mouseon && menu_panel_ani = 0)
 	toolset_alpha_goal = 1
 else
 	toolset_alpha_goal = .25
@@ -37,6 +37,7 @@ draw_set_alpha(toolset_alpha)
 // Background
 draw_box(dx, dy, dw, dh, false, c_background, 1)
 draw_dropshadow(dx, dy, dw, dh, c_black, 1)
+draw_outline(dx, dy, dw, dh, 1, c_border, a_border)
 
 dy += 4
 dx += 4
@@ -88,7 +89,7 @@ else
 	dy += 4
 
 // Select-only tool
-tip_set_shortcut(setting_key_tool_select, setting_key_tool_select_control)
+tip_set_shortcut(setting_key_tool_select)
 if (draw_button_icon("toolsettoolselect", dx, dy, 28, 28, tool_selected = e_tool.SELECT, icons.CURSOR, null, false, "toolsettoolselect"))
 	tool_selected = e_tool.SELECT
 	
@@ -97,18 +98,8 @@ if (dw > dh)
 else
 	dy += buttonsize
 
-// Pivot tool
-tip_set_shortcut(setting_key_tool_pivot, setting_key_tool_pivot_control)
-if (draw_button_icon("toolsettoolpivot", dx, dy, 28, 28, tool_selected = e_tool.PIVOT, icons.CENTER, null, false, "toolsettoolpivot"))
-	tool_selected = e_tool.PIVOT
-
-if (dw > dh)
-	dx += buttonsize
-else
-	dy += buttonsize
-
 // Position tool
-tip_set_shortcut(setting_key_tool_move, setting_key_tool_move_control)
+tip_set_shortcut(setting_key_tool_move)
 if (draw_button_icon("toolsettoolmove", dx, dy, 28, 28, tool_selected = e_tool.MOVE, icons.TOOLSET_POSITION, null, false, "toolsettoolmove"))
 	tool_selected = e_tool.MOVE
 	
@@ -117,8 +108,18 @@ if (dw > dh)
 else
 	dy += buttonsize
 
+// Pivot tool
+tip_set_shortcut(setting_key_tool_pivot)
+if (draw_button_icon("toolsettoolpivot", dx, dy, 28, 28, tool_selected = e_tool.PIVOT, icons.PIVOT, null, false, "toolsettoolpivot"))
+	tool_selected = e_tool.PIVOT
+
+if (dw > dh)
+	dx += buttonsize
+else
+	dy += buttonsize
+
 // Rotate tool
-tip_set_shortcut(setting_key_tool_rotate, setting_key_tool_rotate_control)
+tip_set_shortcut(setting_key_tool_rotate)
 if (draw_button_icon("toolsettoolrotate", dx, dy, 28, 28, tool_selected = e_tool.ROTATE, icons.TOOLSET_ROTATE, null, false, "toolsettoolrotate"))
 	tool_selected = e_tool.ROTATE
 	
@@ -127,8 +128,18 @@ if (dw > dh)
 else
 	dy += buttonsize
 
+// Resize tool
+tip_set_shortcut(setting_key_tool_resize)
+if (draw_button_icon("toolsettoolresize", dx, dy, 28, 28, tool_selected = e_tool.RESIZE, icons.TOOLSET_RESIZE, null, false, "toolsettoolresize"))
+	tool_selected = e_tool.RESIZE
+
+if (dw > dh)
+	dx += buttonsize
+else
+	dy += buttonsize
+
 // Scale tool
-tip_set_shortcut(setting_key_tool_scale, setting_key_tool_scale_control)
+tip_set_shortcut(setting_key_tool_scale)
 if (draw_button_icon("toolsettoolscale", dx, dy, 28, 28, tool_selected = e_tool.SCALE, icons.TOOLSET_SCALE, null, false, "toolsettoolscale"))
 	tool_selected = e_tool.SCALE
 	
@@ -137,11 +148,21 @@ if (dw > dh)
 else
 	dy += buttonsize
 
+// Bend tool
+tip_set_shortcut(setting_key_tool_bend)
+if (draw_button_icon("toolsettoolbend", dx, dy, 28, 28, tool_selected = e_tool.BEND, icons.BEND, null, false, "toolsettoolbend"))
+	tool_selected = e_tool.BEND
+
+if (dw > dh)
+	dx += buttonsize
+else
+	dy += buttonsize
+
 // Transform tool(Position, rotate, scale)
-tip_set_shortcut(setting_key_tool_transform, setting_key_tool_transform_control)
+tip_set_shortcut(setting_key_tool_transform)
 if (draw_button_icon("toolsettooltransform", dx, dy, 28, 28, tool_selected = e_tool.TRANSFORM, icons.TRANSFORM, null, false, "toolsettooltransform"))
 	tool_selected = e_tool.TRANSFORM
 
 draw_set_alpha(1)
-tip_set_shortcut(-1, false)
+tip_set_shortcut(-1)
 tip_force_right = false

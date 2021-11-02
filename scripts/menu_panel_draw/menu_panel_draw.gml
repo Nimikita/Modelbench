@@ -59,7 +59,6 @@ panelh = window_height - 36
 panelw = 300 + (panelextwid * panelextease)
 panelx = -panelw + (panelw * panelease)
 
-
 // Draw window block
 draw_box(0, panely, window_width, panelh, false, c_background, panelease * 0.35)
 draw_box(panelx, panely, panelw, panelh, false, c_background, 1)
@@ -91,7 +90,13 @@ if (panelextease > 0)
 	draw_box(panelx, panely, 300, panelh, false, c_background, 1)
 	
 	// Menu border
-	draw_box(panelx + 300, panely, 1, panelh, false, c_border, a_border)
+	draw_box(panelx + 300 - 1, panely, 1, panelh, false, c_border, a_border)
+	
+	// Menu extention border
+	draw_box(content_x + content_width - 1, panely, 1, panelh, false, c_border, a_border)
+	
+	// Drop shadow
+	draw_gradient(panelx + 300, panely, shadow_size * panelextease, panelh, c_black, shadow_alpha * panelextease, 0, 0, shadow_alpha * panelextease)
 }
 
 // Draw menu
@@ -113,6 +118,9 @@ if (app_mouse_box(panelx + panelw, panely, window_width - panelw, panelh) && mou
 {
 	menu_panel_ani_type = "hide"
 	menu_open = false
+	
+	if (popup = popup_about)
+		popup_close()
 }
 
 draw_gradient(panelx + panelw, panely, shadow_size, panelh, c_black, shadow_alpha, 0, 0, shadow_alpha)

@@ -1,7 +1,7 @@
 /// log_startup()
 
 // Old log detected?
-if (file_exists(log_file) && !dev_mode)
+if (file_exists(log_file) && !dev_mode && model_startup_fn = "")
 {
 	startup_last_crash = true
 	file_delete(log_previous_file)

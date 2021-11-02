@@ -9,33 +9,7 @@ content_width = window_width
 content_height = window_height
 
 // Debug info
-var shapes, parts, blocks, planes, planes3d, str;
-shapes = 0
-parts = 0
-blocks = 0
-planes = 0
-planes3d = 0
-str = ""
-
-with (obj_model_element)
-{
-	if (element_type = TYPE_SHAPE)
-	{
-		shapes++
-			
-		if (type = "plane")
-		{
-			if (value[e_value.EXTRUDE])
-				planes3d++
-			else
-				planes++
-		}	
-		else if (type = "block")
-			blocks++
-	}
-	else
-		parts++
-}
+var str = "";
 
 str += "Performance: \n"
 str += "======================================= \n"
@@ -62,11 +36,11 @@ str += "model_folder: " + model_folder + " \n"
 str += "working_directory: " + working_directory + " \n"
 str += "file_directory: " + file_directory + " \n"
 str += "\n"
-str += "Parts: " + string(parts) + " \n"
-str += "Shapes: " + string(shapes) + " \n"
-str += "    Planes: " + string(planes) + " \n"
-str += "    3D planes: " + string(planes3d) + " \n"
-str += "    Blocks: " + string(blocks) + " \n"
+str += "Parts: " + string(model_parts) + " \n"
+str += "Shapes: " + string(model_shapes) + " \n"
+str += "    Planes: " + string(model_planes) + " \n"
+str += "    3D planes: " + string(model_planes3d) + " \n"
+str += "    Blocks: " + string(model_blocks) + " \n"
 
 var h = string_height_font(str, font_emphasis) + 16;
 

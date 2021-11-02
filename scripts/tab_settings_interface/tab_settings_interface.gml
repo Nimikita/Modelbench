@@ -22,7 +22,7 @@ for (var i = 0; i < 10; i++)
 	{
 		// Set to custom accent
 		popup_colorpicker_show("settingsaccentcolor", setting_accent_custom, setting_accent_custom, action_setting_accent_custom)
-		interface_update()
+		update_interface_wait = true
 	}
 	
 	accentboxx += accentboxw + 7
@@ -39,7 +39,7 @@ dy += 5
 
 // Language
 tab_control_menu(28)
-draw_button_menu("settingslanguage", e_menu.LIST, dx, dy, dw - (24 + icon_button_offset), 28, setting_language_filename, setting_language_filename, action_setting_language)
+draw_button_menu("settingslanguage", e_menu.LIST, dx, dy, dw - (24 + icon_button_offset), 28, setting_language_filename, text_get("filelanguage"), action_setting_language, false, null, null, text_get("filelocale"))
 
 if (draw_button_icon("settingsopenlanguagefolder", dx + dw - 24 + icon_button_offset, dy + 22, 24, 24, false, icons.OPEN_FILE, null, null, "settingsopenlanguagefolder"))
 	open_url(languages_directory)
@@ -56,12 +56,12 @@ tab_control_switch()
 draw_switch("settingssharedtextureuvs", dx, dy, setting_shared_texture_uvs, action_setting_shared_texture_uvs, true, "settingssharedtextureuvshelp")
 tab_next()
 
-// Shape outline opacity
-tab_control_meter()
-draw_meter("settingsshapeoutlineopacity", dx, dy, dw, round(setting_outline_opacity * 100), 48, 0, 100, 15, 1, tab.interface.tbx_outline_opacity, action_setting_shape_outline_opacity)
-tab_next()
-
 // Startup tips
 tab_control_switch()
 draw_switch("settingsstartuptips", dx, dy, setting_show_startup_tips, action_setting_startup_tips, true)
+tab_next()
+
+// Reduced motion
+tab_control_switch()
+draw_switch("settingsreducedmotion", dx, dy, setting_reduced_motion, action_setting_reduced_motion, false)
 tab_next()

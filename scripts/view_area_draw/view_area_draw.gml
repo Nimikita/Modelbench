@@ -37,6 +37,14 @@ view_draw(view_main)
 if (resizemouseon)
 	mouse_cursor = cr_size_ns
 
+// Add shortcut
+if (resizemouseon || window_busy = "uveditorresize")
+{
+	// Add shortcut
+	ds_list_clear(shortcut_bar_list)
+	shortcut_bar_add(null, e_mouse.LEFT_DRAG, "resizearea")
+}
+
 if (window_busy = "uveditorresize")
 {
 	mouse_cursor = cr_size_ns

@@ -1,6 +1,6 @@
 /// render_startup()
 
-globalvar render_width, render_height, render_ratio, render_camera, render_target, proj_from, render_proj_from, proj_matrix,
+globalvar render_width, render_height, render_ratio, render_camera, render_target, proj_from, render_proj_from, proj_matrix, view_matrix,
 		  view_proj_matrix, render_prev_color, render_prev_alpha, render_list, render_surface_time, render_background, render_overlay, render_ssao,
 		  render_shadows, render_aa;
 
@@ -46,7 +46,7 @@ render_surface_sun_buffer = null
 
 // SSAO
 globalvar render_ssao_kernel, render_ssao_noise;
-render_ssao_kernel = render_generate_sample_kernel(42)
+render_ssao_kernel = render_generate_sample_kernel(16)
 render_ssao_noise = null
 
 // Render modes
@@ -65,3 +65,13 @@ render_mode_shader_map[?e_render_mode.CLICK] = shader_shape
 render_mode_shader_map[?e_render_mode.SELECT] = shader_shape
 render_mode_shader_map[?e_render_mode.ALPHA_FIX] = shader_alpha_fix
 render_mode_shader_map[?e_render_mode.ALPHA_TEST] = shader_alpha_test
+
+// Previous uniforms
+globalvar texture_prev, color_blend_prev, color_alpha_prev, color_mix_prev, color_mix_percent_prev, color_brightness_prev, highlight_prev;
+texture_prev = null
+color_blend_prev = null
+color_alpha_prev = null
+color_mix_prev = null
+color_mix_percent_prev = null
+color_brightness_prev = null
+highlight_prev = null
