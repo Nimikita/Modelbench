@@ -1,8 +1,12 @@
 {
-    "id": "f46955c7-c4a8-4f88-b9ee-85ddc431e661",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "point2D_copy",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "Point",
+    "path": "folders/Scripts/Utility/Math/Point.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "point2D_copy",
+  "tags": [],
+  "resourceType": "GMScript",
 }

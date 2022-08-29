@@ -4,7 +4,10 @@
 /// @arg width
 /// @arg height
 
-return (mouse_x >= argument0 &&
-		mouse_y >= argument1 &&
-		mouse_x < argument0 + argument2 &&
-		mouse_y < argument1 + argument3 && window_busy = "" && popup_ani_type = "")
+function app_mouse_box(boxx, boxy, boxw, boxh)
+{
+	return (mouse_x >= boxx &&
+			mouse_y >= boxy &&
+			mouse_x < boxx + boxw &&
+			mouse_y < boxy + boxh && window_busy = "" && popup_ani_type = "")
+}

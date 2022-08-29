@@ -1,8 +1,12 @@
 {
-    "id": "a4f0517a-eb1c-4993-ac44-48c6b56da16e",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "action_el_bend_axis",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "Bend",
+    "path": "folders/Scripts/App/Actions/Element/Element editor/Bend.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "action_el_bend_axis",
+  "tags": [],
+  "resourceType": "GMScript",
 }

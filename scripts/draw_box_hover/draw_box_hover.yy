@@ -1,8 +1,12 @@
 {
-    "id": "a11f6d2f-8007-4893-802c-3f4c02a6447a",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "draw_box_hover",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "Draw",
+    "path": "folders/Scripts/Utility/Draw.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "draw_box_hover",
+  "tags": [],
+  "resourceType": "GMScript",
 }

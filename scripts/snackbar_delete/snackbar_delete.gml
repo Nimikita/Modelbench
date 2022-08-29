@@ -2,8 +2,11 @@
 /// @arg label
 /// @desc Removes snackbars with a given label
 
-with (obj_snackbar)
+function snackbar_delete(dellabel)
 {
-	if (label = argument0)
-		remove = true
+	with (obj_snackbar)
+	{
+		if (label = dellabel)
+			remove = true
+	}
 }

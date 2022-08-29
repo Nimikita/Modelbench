@@ -1,8 +1,12 @@
 {
-    "id": "61fd9274-6ade-4f0e-ac54-dc70d07f4809",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "app_startup_interface_popups",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "Startup",
+    "path": "folders/Scripts/App/Interface/Startup.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "app_startup_interface_popups",
+  "tags": [],
+  "resourceType": "GMScript",
 }

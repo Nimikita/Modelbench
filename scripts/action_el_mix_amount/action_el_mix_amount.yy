@@ -1,8 +1,12 @@
 {
-    "id": "134db19f-3573-421e-914b-aa51701d47bb",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "action_el_mix_amount",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "Material",
+    "path": "folders/Scripts/App/Actions/Element/Element editor/Material.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "action_el_mix_amount",
+  "tags": [],
+  "resourceType": "GMScript",
 }

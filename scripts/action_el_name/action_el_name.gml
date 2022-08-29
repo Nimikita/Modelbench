@@ -1,60 +1,63 @@
 /// action_el_name(name)
 /// @arg name
 
-if (history_undo)
+function action_el_name(newname)
 {
-	with (history_data) 
+	if (history_undo)
 	{
-		for (var e = 0; e < save_var_amount; e++)
+		with (history_data) 
 		{
-			with (save_id_find(save_var_save_id[e]))
-				name = other.save_var_old_value[e]
+			for (var e = 0; e < save_var_amount; e++)
+			{
+				with (save_id_find(save_var_save_id[e]))
+					name = other.save_var_old_value[e]
+			}
 		}
 	}
-}
-else if (history_redo)
-{
-	with (history_data)
+	else if (history_redo)
 	{
-		for (var e = 0; e < save_var_amount; e++)
+		with (history_data)
 		{
-			with (save_id_find(save_var_save_id[e]))
-				name = other.save_var_new_value[e]
+			for (var e = 0; e < save_var_amount; e++)
+			{
+				with (save_id_find(save_var_save_id[e]))
+					name = other.save_var_new_value[e]
+			}
 		}
 	}
-}
-else
-{
-	var hobj = history_save_var_start(action_el_name, true);
-	var namesuffix;
-	
-	with (el_edit)
+	else
 	{
-		with (hobj)
-			history_save_var(other.id, other.name, argument0)
+		var hobj = history_save_var_start(action_el_name, true);
+		var namesuffix;
 		
-		name = argument0
-	}
-	
-	for (var i = 0; i < ds_list_size(el_edit_list); i++)
-	{
-		if (el_edit_list[|i] = el_edit)
-			continue
-		
-		if (argument0 != "")
-			namesuffix = argument0 + " (" + string(i + 1) + ")"
-		else
-			namesuffix = argument0
-		
-		with (el_edit_list[|i])
+		with (el_edit)
 		{
 			with (hobj)
-				history_save_var(other.id, other.name, namesuffix)
+				history_save_var(other.id, other.name, newname)
+			
+			name = newname
+		}
 		
-			name = namesuffix
+		for (var i = 0; i < ds_list_size(el_edit_list); i++)
+		{
+			if (el_edit_list[|i] = el_edit)
+				continue
+			
+			if (newname != "")
+				namesuffix = newname + " (" + string(i + 1) + ")"
+			else
+				namesuffix = newname
+			
+			with (el_edit_list[|i])
+			{
+				with (hobj)
+					history_save_var(other.id, other.name, namesuffix)
+				
+				name = namesuffix
+			}
 		}
 	}
+	
+	app_update_name_warning()
+	action_update_search()
 }
-
-app_update_name_warning()
-action_update_search()

@@ -1,8 +1,12 @@
 {
-    "id": "4ea96593-8444-4450-a72e-2df0435eb264",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "render_set_culling",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "Render",
+    "path": "folders/Scripts/Render.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "render_set_culling",
+  "tags": [],
+  "resourceType": "GMScript",
 }

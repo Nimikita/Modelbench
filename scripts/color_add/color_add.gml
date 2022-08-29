@@ -2,6 +2,9 @@
 /// @arg color1
 /// @arg color2
 
-return make_color_rgb(min(255, color_get_red(argument0) + color_get_red(argument1)), 
-					  min(255, color_get_green(argument0) + color_get_green(argument1)), 
-					  min(255, color_get_blue(argument0) + color_get_blue(argument1)))
+function color_add(col1, col2)
+{
+	return make_color_rgb(min(255, color_get_red(col1) + color_get_red(col2)), 
+						  min(255, color_get_green(col1) + color_get_green(col2)), 
+						  min(255, color_get_blue(col1) + color_get_blue(col2)))
+}

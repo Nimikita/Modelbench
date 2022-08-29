@@ -1,8 +1,12 @@
 {
-    "id": "e1ec0a49-80e3-4cbd-9024-2e2aec42984c",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "settings_menu_shading",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "Menus",
+    "path": "folders/Scripts/App/Interface/Menus.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "settings_menu_shading",
+  "tags": [],
+  "resourceType": "GMScript",
 }

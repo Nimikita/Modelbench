@@ -1,8 +1,12 @@
 {
-    "id": "777ff19e-a224-4604-94c4-264dd02a91bf",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "draw_missing",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "Draw",
+    "path": "folders/Scripts/Utility/Draw.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "draw_missing",
+  "tags": [],
+  "resourceType": "GMScript",
 }

@@ -1,8 +1,12 @@
 {
-    "id": "58a32e08-7bcb-419a-ba97-baac3fb1271f",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "app_mouse_box_busy",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "App",
+    "path": "folders/Scripts/App.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "app_mouse_box_busy",
+  "tags": [],
+  "resourceType": "GMScript",
 }

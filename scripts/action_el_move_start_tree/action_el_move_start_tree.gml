@@ -1,43 +1,44 @@
 /// action_el_move_start_tree(root)
 /// @arg root
 
-var root = argument0;
-
-// Shapes
-if (root.object_index != app)
+function action_el_move_start_tree(root)
 {
-	for (var i = 0; i < ds_list_size(root.shape_list); i++)
+	// Shapes
+	if (root.object_index != app)
 	{
-		with (root.shape_list[|i])
+		for (var i = 0; i < ds_list_size(root.shape_list); i++)
 		{
-			if (selected)
+			with (root.shape_list[|i])
 			{
-				app.element_move_shapes++
-	
-				ds_list_add(app.element_move_obj.elements_list, id)
-				ds_list_add(app.element_move_obj.save_id_list, parent.save_id)
-				ds_list_add(app.element_move_obj.index_list, ds_list_find_index(parent.shape_list, id))
-				app.element_move_obj.elements++
+				if (selected)
+				{
+					app.element_move_shapes++
+					
+					ds_list_add(app.element_move_obj.elements_list, id)
+					ds_list_add(app.element_move_obj.save_id_list, parent.save_id)
+					ds_list_add(app.element_move_obj.index_list, ds_list_find_index(parent.shape_list, id))
+					app.element_move_obj.elements++
+				}
 			}
 		}
 	}
-}
-
-// Parts
-for (var i = 0; i < ds_list_size(root.part_list); i++)
-{
-	with (root.part_list[|i])
+	
+	// Parts
+	for (var i = 0; i < ds_list_size(root.part_list); i++)
 	{
-		if (selected)
+		with (root.part_list[|i])
 		{
-			app.element_move_parts++
-	
-			ds_list_add(app.element_move_obj.elements_list, id)
-			ds_list_add(app.element_move_obj.save_id_list, parent.save_id)
-			ds_list_add(app.element_move_obj.index_list, ds_list_find_index(parent.part_list, id))
-			app.element_move_obj.elements++
+			if (selected)
+			{
+				app.element_move_parts++
+				
+				ds_list_add(app.element_move_obj.elements_list, id)
+				ds_list_add(app.element_move_obj.save_id_list, parent.save_id)
+				ds_list_add(app.element_move_obj.index_list, ds_list_find_index(parent.part_list, id))
+				app.element_move_obj.elements++
+			}
+			
+			action_el_move_start_tree(id)
 		}
-	
-		action_el_move_start_tree(id)
 	}
 }

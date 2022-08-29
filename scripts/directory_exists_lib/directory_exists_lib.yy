@@ -1,8 +1,12 @@
 {
-    "id": "327d3858-3a69-4452-9666-97dcb0ba096c",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "directory_exists_lib",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "File",
+    "path": "folders/Scripts/App/Libraries/File.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "directory_exists_lib",
+  "tags": [],
+  "resourceType": "GMScript",
 }

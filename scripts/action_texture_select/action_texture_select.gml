@@ -1,25 +1,27 @@
 /// action_texture_select()
 
-if (history_undo)
+function action_texture_select()
 {
-	with (history_data) 
-		res_edit = save_id_find(save_var_old_value)
-}
-else if (history_redo)
-{
-	with (history_data) 
-		res_edit = save_id_find(save_var_new_value)
-}
-else
-{
-	var hobj = history_save_var_start(action_texture_select, true);
-	
-	with (hobj)
+	if (history_undo)
 	{
-		save_var_old_value = save_id_get(res_edit)
-		save_var_new_value = (res_edit = listitem_value ? null : save_id_get(listitem_value))
+		with (history_data) 
+			res_edit = save_id_find(save_var_old_value)
 	}
-	
-	res_edit = (res_edit = listitem_value ? null : listitem_value)
+	else if (history_redo)
+	{
+		with (history_data) 
+			res_edit = save_id_find(save_var_new_value)
+	}
+	else
+	{
+		var hobj = history_save_var_start(action_texture_select, true);
+		
+		with (hobj)
+		{
+			save_var_old_value = save_id_get(res_edit)
+			save_var_new_value = (res_edit = listitem_value ? null : save_id_get(listitem_value))
+		}
+		
+		res_edit = (res_edit = listitem_value ? null : listitem_value)
+	}
 }
-

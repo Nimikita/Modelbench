@@ -2,11 +2,14 @@
 /// @arg tex
 /// @desc Refreshes a texture file based on file path
 
-with (argument0)
+function tex_refresh(tex)
 {
-	if (filepath != "" && file_exists_lib(filepath))
+	with (tex)
 	{
-		sprite_delete(sprite)
-		sprite = texture_create_square(filepath)
+		if (filepath != "" && file_exists_lib(filepath))
+		{
+			sprite_delete(sprite)
+			sprite = texture_create_square(filepath)
+		}
 	}
 }

@@ -1,23 +1,10 @@
-/// texture_create(filename, [xorgin, yorgin])
+/// texture_create(filename)
 /// @arg filename
-/// @arg [xorgin
-/// @arg yorgin]
 
-var fname, origin_x, origin_y;
-fname = argument[0]
-
-if (argument_count > 1)
+function texture_create(fn)
 {
-	origin_x = argument[1]
-	origin_y = argument[2]
+	if (!file_exists_lib(fn))
+		return texture_create_missing()
+	
+	return sprite_add_lib(fn)
 }
-else
-{
-	origin_x = 0
-	origin_y = 0
-}
-
-if (!file_exists_lib(fname))
-	return texture_create_missing()
-
-return sprite_add_lib(fname, 1, false, false, origin_x, origin_y)

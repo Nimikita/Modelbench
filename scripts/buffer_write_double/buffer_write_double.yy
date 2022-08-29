@@ -1,8 +1,12 @@
 {
-    "id": "3da29cd3-298f-4457-996d-c93e699a0634",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "buffer_write_double",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "Write",
+    "path": "folders/Scripts/Utility/File/Buffer/Write.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "buffer_write_double",
+  "tags": [],
+  "resourceType": "GMScript",
 }

@@ -1,4 +1,7 @@
 /// texture_event_destroy()
 
-if (sprite != null)
-	sprite_delete(sprite)
+function texture_event_destroy()
+{
+	if (sprite != null)
+		sprite_delete(sprite)
+}

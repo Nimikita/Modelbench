@@ -1,4 +1,7 @@
 /// snackbar_error(str)
 /// @arg str
 
-return new_snackbar(icons.WARNING, "snackbarwarningsavemodel", argument0, e_snackbar.WARNING)
+function snackbar_error(str)
+{
+	return new_snackbar(icons.WARNING, "snackbarwarningsavemodel", str, e_snackbar.WARNING)
+}

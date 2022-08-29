@@ -1,8 +1,12 @@
 {
-    "id": "3842d394-ff6f-4bdd-8d57-de7e75276a88",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "list_init",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "Lists",
+    "path": "folders/Scripts/App/Interface/Components/Lists.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "list_init",
+  "tags": [],
+  "resourceType": "GMScript",
 }

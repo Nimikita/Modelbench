@@ -1,141 +1,143 @@
 /// action_element_create([type])
 
-var spawn_type = null;
-
-if (argument_count > 0)
-	spawn_type = argument0
-
-if (history_undo)
+function action_element_create(argument0)
 {
-	with (history_data)
-	{
-		for (var s = spawn_amount - 1; s >= 0; s--)
-		{
-			var parent = save_id_find(spawn_save_id[s]).parent;
-			parent.extend = spawn_parent_extend
-			
-			with (save_id_find(spawn_save_id[s]))
-				instance_destroy()
-		}
-		
-		history_restore_el_select()
-	}
-}
-else
-{
-	var hobj, el, select;
-	hobj = null
+	var spawn_type = null;
 	
-	if (history_redo)
+	if (argument_count > 0)
+		spawn_type = argument0
+	
+	if (history_undo)
 	{
-		history_restore_element()
-		
 		with (history_data)
 		{
-			for (var s = 0; s < spawn_amount; s++)
+			for (var s = spawn_amount - 1; s >= 0; s--)
 			{
-				var element = save_id_find(spawn_save_id[s]);
-				element.parent.extend = true
-				element.name = spawn_save_name[s]
+				var parent = save_id_find(spawn_save_id[s]).parent;
+				parent.extend = spawn_parent_extend
+				
+				with (save_id_find(spawn_save_id[s]))
+					instance_destroy()
 			}
 			
-			history_restore_el_select_new()
+			history_restore_el_select()
 		}
 	}
 	else
 	{
-		hobj = history_set(action_element_create)
-		hobj.spawn_amount = 0
+		var hobj, el, select;
+		hobj = null
 		
-		with (hobj)
-			history_save_el_select()
-		
-		// Create part if shape doesn't have a home
-		if (spawn_type = e_element.PART || (spawn_type > e_element.PART && el_edit = null))
+		if (history_redo)
 		{
-			el = new_element(e_element.PART)
+			history_restore_element()
 			
-			// Try prevent duplicate/empty names when creating a new part
-			var namecount = 0;
-			with (obj_model_element)
-				if (element_type = e_element.PART && string_get_name(name) = text_get("assetsnewpart"))
-					namecount++
-			
-			el.name = text_get("assetsnewpart") + (namecount > 0 ? " (" + string(namecount + 1) + ")" : "")
-			
-			with (hobj)
+			with (history_data)
 			{
-				spawn_save_id[spawn_amount] = save_id_get(el)
-				spawn_save_type[spawn_amount] = e_element.PART
-				spawn_save_par[spawn_amount] = ((el_edit = null || el_edit.element_type != TYPE_PART) ? save_id_get(app) : save_id_get(el_edit))
-				spawn_save_extend[spawn_amount] = true
-				spawn_save_name[spawn_amount] = el.name
-				spawn_parent_extend = save_id_find(spawn_save_par[spawn_amount]).extend
+				for (var s = 0; s < spawn_amount; s++)
+				{
+					var element = save_id_find(spawn_save_id[s]);
+					element.parent.extend = true
+					element.name = spawn_save_name[s]
+				}
 				
-				spawn_amount++
+				history_restore_el_select_new_obj()
 			}
-			
-			select = el
 		}
 		else
-			el = el_edit
-		
-		if (el_edit != null && el_edit.element_type = TYPE_SHAPE)
-			el = el_edit.parent
-		
-		if (spawn_type > e_element.PART)
 		{
-			var shape;
-			shape = new_element(spawn_type)
+			hobj = history_set(action_element_create)
+			hobj.spawn_amount = 0
 			
 			with (hobj)
+				history_save_el_select()
+			
+			// Create part if shape doesn't have a home
+			if (spawn_type = e_element.PART || (spawn_type > e_element.PART && el_edit = null))
 			{
-				spawn_save_id[spawn_amount] = save_id_get(shape)
-				spawn_save_type[spawn_amount] = spawn_type
-				spawn_save_par[spawn_amount] = save_id_get(el)
-				spawn_save_extend[spawn_amount] = false
-				spawn_save_name[spawn_amount] = shape.name
-				spawn_amount++
+				el = new_element(e_element.PART)
+				
+				// Try prevent duplicate/empty names when creating a new part
+				var namecount = 0;
+				with (obj_model_element)
+					if (element_type = e_element.PART && string_get_name(name) = text_get("assetsnewpart"))
+						namecount++
+				
+				el.name = text_get("assetsnewpart") + (namecount > 0 ? " (" + string(namecount + 1) + ")" : "")
+				
+				with (hobj)
+				{
+					spawn_save_id[spawn_amount] = save_id_get(el)
+					spawn_save_type[spawn_amount] = e_element.PART
+					spawn_save_par[spawn_amount] = ((el_edit = null || el_edit.element_type != TYPE_PART) ? save_id_get(app) : save_id_get(el_edit))
+					spawn_save_extend[spawn_amount] = true
+					spawn_save_name[spawn_amount] = el.name
+					spawn_parent_extend = save_id_find(spawn_save_par[spawn_amount]).extend
+					
+					spawn_amount++
+				}
+				
+				select = el
 			}
+			else
+				el = el_edit
 			
-			// Extrude 3D planes
-			if (spawn_type = e_element.PLANE_3D)
+			if (el_edit != null && el_edit.element_type = TYPE_SHAPE)
+				el = el_edit.parent
+			
+			if (spawn_type > e_element.PART)
 			{
-				shape.value[e_value.EXTRUDE] = true
-				shape.value[e_value.OFFSET_Y] = -0.5
+				var shape;
+				shape = new_element(spawn_type)
+				
+				with (hobj)
+				{
+					spawn_save_id[spawn_amount] = save_id_get(shape)
+					spawn_save_type[spawn_amount] = spawn_type
+					spawn_save_par[spawn_amount] = save_id_get(el)
+					spawn_save_extend[spawn_amount] = false
+					spawn_save_name[spawn_amount] = shape.name
+					spawn_amount++
+				}
+				
+				// Extrude 3D planes
+				if (spawn_type = e_element.PLANE_3D)
+				{
+					shape.value[e_value.EXTRUDE] = true
+					shape.value[e_value.OFFSET_Y] = -0.5
+				}
+				
+				// Fix Y offset on planes
+				if (spawn_type = e_element.PLANE)
+					shape.value[e_value.OFFSET_Y] = 0
+				
+				with (shape)
+					el_set_parent(el)
+				hobj.spawn_parent_extend = shape.parent.extend
+				
+				select = shape
+				setting_hide_shapes = false
 			}
+			assets.elements.show = true
+			select.parent.extend = true
 			
-			// Fix Y offset on planes
-			if (spawn_type = e_element.PLANE)
-				shape.value[e_value.OFFSET_Y] = 0
+			// Select created element
+			with (select)
+				el_select_single()
 			
-			with (shape)
-				el_set_parent(el)
-			hobj.spawn_parent_extend = shape.parent.extend
+			with (hobj)
+				history_save_el_select_new_obj()
 			
-			select = shape
-			setting_hide_shapes = false
+			if (!history_redo)
+				log("Created", el_type_name_list[|spawn_type])
 		}
-		assets.elements.show = true
-		select.parent.extend = true
-		
-		// Select created element
-		with (select)
-			el_select_single()
-			
-		with (hobj)
-			history_save_el_select_new()
-		
-		if (!history_redo)
-			log("Created", el_type_name_list[|spawn_type])
 	}
 	
+	el_update_lock_tree(false)
+	el_update_hidden_tree(false)
+	app_update_name_warning()
+	el_update_part()
+	
+	app_update_el_edit()
+	action_update_search()
 }
-
-el_update_lock_tree(false)
-el_update_hidden_tree(false)
-app_update_name_warning()
-el_update_part()
-
-app_update_el_edit()
-action_update_search()

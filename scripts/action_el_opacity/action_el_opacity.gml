@@ -2,6 +2,9 @@
 /// @arg value
 /// @arg add
 
-el_value_set_start(action_el_opacity, true)
-el_value_set(e_value.OPACITY, argument0 / 100, argument1)
-el_value_set_done()
+function action_el_opacity(value, add)
+{
+	el_value_set_start(action_el_opacity, true)
+	el_value_set(e_value.OPACITY, value / 100, add)
+	el_value_set_done()
+}

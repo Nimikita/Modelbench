@@ -1,8 +1,12 @@
 {
-    "id": "642ab793-64d9-4699-b598-87af65badf30",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "camera_control_pan",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "Camera",
+    "path": "folders/Scripts/App/Camera.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "camera_control_pan",
+  "tags": [],
+  "resourceType": "GMScript",
 }

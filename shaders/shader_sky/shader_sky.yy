@@ -1,7 +1,11 @@
 {
-    "id": "fbdb5da7-8dcb-468d-8d17-5cfbf0033e9f",
-    "modelName": "GMShader",
-    "mvc": "1.0",
-    "name": "shader_sky",
-    "type": 1
+  "type": 1,
+  "parent": {
+    "name": "Shaders",
+    "path": "folders/Shaders.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "shader_sky",
+  "tags": [],
+  "resourceType": "GMShader",
 }

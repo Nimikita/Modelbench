@@ -1,8 +1,12 @@
 {
-    "id": "edfaf298-d31f-4af8-8fa5-4b080e2abde6",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "tab_element_editor_position",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "Element editor",
+    "path": "folders/Scripts/App/Interface/Tabs/Element editor.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "tab_element_editor_position",
+  "tags": [],
+  "resourceType": "GMScript",
 }

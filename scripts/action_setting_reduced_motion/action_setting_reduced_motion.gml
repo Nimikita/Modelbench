@@ -1,4 +1,7 @@
 /// action_setting_reduced_motion(value)
 /// @arg value
 
-setting_reduced_motion = argument0
+function action_setting_reduced_motion(value)
+{
+	setting_reduced_motion = value
+}

@@ -1,4 +1,7 @@
 /// action_setting_overlays_highlights(value)
 /// @arg value
 
-setting_overlays_highlights = argument0
+function action_setting_overlays_highlights(value)
+{
+	setting_overlays_highlights = value
+}

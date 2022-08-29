@@ -3,7 +3,10 @@
 /// @arg y
 /// @arg add
 
-el_value_set_start(action_el_uv_xy, true)
-el_value_set(e_value.UV_X, argument0, argument2)
-el_value_set(e_value.UV_Y, argument1, argument2)
-el_value_set_done()
+function action_el_uv_xy(uvx, uvy, add)
+{
+	el_value_set_start(action_el_uv_xy, true)
+	el_value_set(e_value.UV_X, uvx, add)
+	el_value_set(e_value.UV_Y, uvy, add)
+	el_value_set_done()
+}

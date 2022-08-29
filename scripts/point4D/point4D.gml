@@ -4,11 +4,7 @@
 /// @arg z
 /// @arg w
 
-var pnt;
-
-pnt[X] = argument0
-pnt[Y] = argument1
-pnt[Z] = argument2
-pnt[W] = argument3
-
-return pnt
+function point4D(xx, yy, zz, w)
+{
+	return [xx, yy, zz, w]
+}

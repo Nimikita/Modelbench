@@ -1,8 +1,12 @@
 {
-    "id": "41a26395-d099-4c85-94a7-88e202e69200",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "new_textbox_ninteger",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "Textbox",
+    "path": "folders/Scripts/App/Interface/Components/Textbox.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "new_textbox_ninteger",
+  "tags": [],
+  "resourceType": "GMScript",
 }

@@ -1,4 +1,7 @@
 /// action_setting_key_tool_scale(key)
 /// @arg key
 
-setting_key_tool_scale = argument0
+function action_setting_key_tool_scale(key)
+{
+	setting_key_tool_scale = key
+}

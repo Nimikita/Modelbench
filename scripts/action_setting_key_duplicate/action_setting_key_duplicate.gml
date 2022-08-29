@@ -1,4 +1,7 @@
 /// action_setting_key_duplicate(key)
 /// @arg key
 
-setting_key_duplicate = argument0
+function action_setting_key_duplicate(key)
+{
+	setting_key_duplicate = key
+}

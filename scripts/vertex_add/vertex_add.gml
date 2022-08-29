@@ -1,77 +1,65 @@
-/// vertex_add(x, y, z, nx, ny, nz, tx, ty, [color, alpha])
-/// vertex_add(pos, normal, texcoord, [color, alpha])
+/// vertex_add(x, y, z, nx, ny, nz, tx, ty)
+/// vertex_add(pos, normal, texcoord)
 /// @arg pos
 /// @arg normal
 /// @arg texcoord
-/// @arg [color
-/// @arg alpha]
 
-var zz;
-
-if (argument_count < 8)
+function vertex_add()
 {
-	var pos, normal, texcoord, color, alpha;
-	pos = argument[0]
-	normal = argument[1]
-	texcoord = argument[2]
+	var xx, yy, zz;
 	
-	if (argument_count > 3)
+	if (argument_count < 8)
 	{
-		color = argument[3]
-		alpha = argument[4]
+		var pos, normal, texcoord;
+		pos = argument[0]
+		normal = argument[1]
+		texcoord = argument[2]
+		
+		xx = pos[@ X]
+		yy = pos[@ Y]
+		zz = pos[@ Z]
+		
+		vertex_position_3d(vbuffer_current, xx, yy, pos[@ Z])
+		vertex_normal(vbuffer_current, normal[@ X], normal[@ Y], normal[@ Z])
+		vertex_color(vbuffer_current, vertex_rgb, vertex_alpha)
+		vertex_texcoord(vbuffer_current, texcoord[@ X], texcoord[@ Y])
 	}
 	else
 	{
-		color = -1
-		alpha = 1
+		xx = argument[0]
+		yy = argument[1]
+		zz = argument[2]
+		
+		vertex_position_3d(vbuffer_current, xx, yy, zz)
+		vertex_normal(vbuffer_current, argument[3], argument[4], argument[5])
+		vertex_color(vbuffer_current, vertex_rgb, vertex_alpha)
+		vertex_texcoord(vbuffer_current, argument[6], argument[7])
 	}
 	
-	vertex_position_3d(vbuffer_current, pos[@ X], pos[@ Y], pos[@ Z])
-	vertex_normal(vbuffer_current, normal[@ X], normal[@ Y], normal[@ Z])
-	vertex_color(vbuffer_current, color, alpha)
-	vertex_texcoord(vbuffer_current, texcoord[@ X], texcoord[@ Y])
+	var wavexy, wavez;
+	wavexy = 0
+	wavez = 0
 	
-	if (app.export_stage != "")
-		export_vertex_add(pos, normal, texcoord)
-	
-	zz = pos[@ Z]
-}
-else
-{
-	vertex_position_3d(vbuffer_current, argument[0], argument[1], argument[2])
-	vertex_normal(vbuffer_current, argument[3], argument[4], argument[5])
-	if (argument_count > 8)
-		vertex_color(vbuffer_current, argument[8], argument[9])
-	else
-		vertex_color(vbuffer_current, -1, 1)
-	vertex_texcoord(vbuffer_current, argument[6], argument[7])
-	
-	if (app.export_stage != "")
-		export_vertex_add(point3D(argument[0], argument[1], argument[2]), point3D(argument[3], argument[4], argument[5]), point2D(argument[6], argument[7]))
-	
-	zz = argument[2]
-}
-
-var wavexy, wavez;
-wavexy = 0
-wavez = 0
-	
-// Wave
-if (vertex_wave != e_vertex_wave.NONE)
-{
-	// Vertex Z must be within zmin and zmax (if set)
-	if ((vertex_wave_zmin = null || zz > vertex_wave_zmin) &&
-		(vertex_wave_zmax = null || zz < vertex_wave_zmax))
+	// Wind/custom values
+	if (vertex_wave != e_vertex_wave.NONE)
 	{
-		if (vertex_wave = e_vertex_wave.ALL)
+		// Vertex Z must be within zmin and zmax (if set)
+		if ((vertex_wave_zmin = null || zz > vertex_wave_zmin) &&
+			(vertex_wave_zmax = null || zz < vertex_wave_zmax))
 		{
-			wavexy = 1
-			wavez = 1
+			if (vertex_wave = e_vertex_wave.ALL)
+			{
+				wavexy = 1
+				wavez = 1
+			}
+			else if (vertex_wave = e_vertex_wave.Z_ONLY)
+				wavez = 1
 		}
-		else if (vertex_wave = e_vertex_wave.Z_ONLY)
-			wavez = 1
+		
+		vertex_float4(vbuffer_current, wavexy, wavez, vertex_emissive, vertex_subsurface)
 	}
+	else
+		vertex_float4(vbuffer_current, 0, 0, vertex_emissive, vertex_subsurface)
+	
+	vertex_float3(vbuffer_current, 0, 0, 0)
 }
-
-// Custom
-vertex_float4(vbuffer_current, wavexy, wavez, vertex_brightness, vertex_light_bleeding)

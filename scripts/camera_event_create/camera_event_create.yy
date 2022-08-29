@@ -1,8 +1,12 @@
 {
-    "id": "96caed19-a133-418a-b759-5d0649f51349",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "camera_event_create",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "Camera",
+    "path": "folders/Scripts/App/Camera.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "camera_event_create",
+  "tags": [],
+  "resourceType": "GMScript",
 }

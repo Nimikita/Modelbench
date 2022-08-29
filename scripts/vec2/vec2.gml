@@ -2,17 +2,10 @@
 /// @arg x
 /// @arg y
 
-var vec;
-
-if (argument_count = 1)
+function vec2(xx, yy = undefined)
 {
-	vec[X] = argument[0]
-	vec[Y] = argument[0]
-} 
-else
-{
-	vec[X] = argument[0]
-	vec[Y] = argument[1]
+	if (yy = undefined)
+		return [xx, xx]
+	else
+		return [xx, yy]
 }
-
-return vec

@@ -1,8 +1,12 @@
 {
-    "id": "e05bd65c-c45b-459e-8ac8-363f0f5b46e2",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "tab_control_color",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "Control",
+    "path": "folders/Scripts/App/Interface/Components/Tab/Control.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "tab_control_color",
+  "tags": [],
+  "resourceType": "GMScript",
 }

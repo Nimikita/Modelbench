@@ -1,8 +1,12 @@
 {
-    "id": "1997fd6a-cf99-4452-bcad-a48b261ca665",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "vec3_dot",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "Vector",
+    "path": "folders/Scripts/Utility/Math/Vector.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "vec3_dot",
+  "tags": [],
+  "resourceType": "GMScript",
 }

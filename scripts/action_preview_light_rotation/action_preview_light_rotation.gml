@@ -2,4 +2,7 @@
 /// @arg value
 /// @arg add
 
-setting_preview_light_rotation = setting_preview_light_rotation * argument1 + argument0
+function action_preview_light_rotation(value, add)
+{
+	setting_preview_light_rotation = setting_preview_light_rotation * add + value
+}

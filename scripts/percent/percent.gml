@@ -1,9 +1,16 @@
-/// percent(value, start, end)
+/// percent(value, start, end, [clamp])
 /// @arg value
 /// @arg start
 /// @arg end
+/// @arg [clamp]
 
-if (argument1 = argument2) 
-	return (argument0 < argument1)
+function percent(value, s, e, limit = true)
+{
+	if (s = e) 
+		return (value < s)
 	
-return clamp((argument0 - argument1) / (argument2 - argument1), 0, 1)
+	if (limit)
+		return clamp((value - s) / (e - s), 0, 1)
+	else
+		return (value - s) / (e - s)
+}

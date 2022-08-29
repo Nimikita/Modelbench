@@ -1,8 +1,12 @@
 {
-    "id": "6ae7df68-9975-42fd-bb2a-b7ffff8f61da",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "draw_textfield_group",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "Group",
+    "path": "folders/Scripts/App/Interface/Components/Text field/Group.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "draw_textfield_group",
+  "tags": [],
+  "resourceType": "GMScript",
 }

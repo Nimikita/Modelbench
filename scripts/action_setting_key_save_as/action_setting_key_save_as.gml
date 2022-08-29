@@ -1,4 +1,7 @@
 /// action_setting_key_save_as(key)
 /// @arg key
 
-setting_key_save_as = argument0
+function action_setting_key_save_as(key)
+{
+	setting_key_save_as = key
+}

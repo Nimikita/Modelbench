@@ -1,8 +1,12 @@
 {
-    "id": "f4725dce-8e99-4929-92a6-b6ab9749b0ba",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "action_toolbar_preview_guides",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "Toolbar",
+    "path": "folders/Scripts/App/Actions/Toolbar.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "action_toolbar_preview_guides",
+  "tags": [],
+  "resourceType": "GMScript",
 }

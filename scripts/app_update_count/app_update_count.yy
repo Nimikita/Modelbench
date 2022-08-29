@@ -1,8 +1,12 @@
 {
-    "id": "7ba02074-3a4d-4173-9c63-de959b929ddd",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "app_update_count",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "Update",
+    "path": "folders/Scripts/App/Update.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "app_update_count",
+  "tags": [],
+  "resourceType": "GMScript",
 }

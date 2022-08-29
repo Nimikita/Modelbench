@@ -1,8 +1,12 @@
 {
-    "id": "e122c795-c45b-479b-bb06-59cf65a38ca3",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "action_model_scale",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "Model properties",
+    "path": "folders/Scripts/App/Actions/Assets/Model properties.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "action_model_scale",
+  "tags": [],
+  "resourceType": "GMScript",
 }

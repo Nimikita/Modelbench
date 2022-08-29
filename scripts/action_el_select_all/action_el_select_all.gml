@@ -1,18 +1,21 @@
 /// action_el_select_all()
 
-if (history_undo)
+function action_el_select_all()
 {
-	with (history_data)
-		history_restore_el_select()
-}
-else
-{
-	if (!history_redo)
-		with (history_set(action_el_select_all))
-			history_save_el_select()
+	if (history_undo)
+	{
+		with (history_data)
+			history_restore_el_select()
+	}
+	else
+	{
+		if (!history_redo)
+			with (history_set(action_el_select_all))
+				history_save_el_select()
+		
+		el_deselect_all()
+		el_select_all()
+	}
 	
-	el_deselect_all()
-	el_select_all()
+	app_update_el_edit()
 }
-
-app_update_el_edit()

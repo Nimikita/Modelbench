@@ -1,8 +1,12 @@
 {
-    "id": "6bd0bf60-6e90-4a7e-a426-50cd8acb8281",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "view_toolbar_draw",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "View",
+    "path": "folders/Scripts/App/Interface/Components/View.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "view_toolbar_draw",
+  "tags": [],
+  "resourceType": "GMScript",
 }

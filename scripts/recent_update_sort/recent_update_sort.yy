@@ -1,8 +1,12 @@
 {
-    "id": "cf2d38f9-905a-4370-9e85-ead18c31ce50",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "recent_update_sort",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "Recent",
+    "path": "folders/Scripts/App/Recent.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "recent_update_sort",
+  "tags": [],
+  "resourceType": "GMScript",
 }

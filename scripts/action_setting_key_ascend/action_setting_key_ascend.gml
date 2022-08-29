@@ -1,4 +1,7 @@
 /// action_setting_key_ascend(key)
 /// @arg key
 
-setting_key_ascend = argument0
+function action_setting_key_ascend(key)
+{
+	setting_key_ascend = key
+}

@@ -1,4 +1,7 @@
 /// action_export_include_hidden(value)
 /// @arg value
 
-export_include_hidden = argument0
+function action_export_include_hidden(value)
+{
+	export_include_hidden = value
+}

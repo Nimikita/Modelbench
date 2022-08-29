@@ -1,4 +1,7 @@
 /// action_setting_key_slow(key)
 /// @arg key
 
-setting_key_slow = argument0
+function action_setting_key_slow(key)
+{
+	setting_key_slow = key
+}

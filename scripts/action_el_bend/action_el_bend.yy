@@ -1,8 +1,12 @@
 {
-    "id": "534f5ec0-ead0-4538-917f-9bc7a7a0dffb",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "action_el_bend",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "Appearance",
+    "path": "folders/Scripts/App/Actions/Element/Element editor/Appearance.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "action_el_bend",
+  "tags": [],
+  "resourceType": "GMScript",
 }

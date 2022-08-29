@@ -1,4 +1,7 @@
-/// action_setting_key_new_template(shortcut)
+/// action_setting_key_new_template(key)
 /// @arg key
 
-setting_key_new_template = argument0
+function action_setting_key_new_template(key)
+{
+	setting_key_new_template = key
+}

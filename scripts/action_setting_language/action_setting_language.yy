@@ -1,8 +1,12 @@
 {
-    "id": "b3f35ff0-64be-486c-a274-14ba6e34aeee",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "action_setting_language",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "Interface",
+    "path": "folders/Scripts/App/Actions/Settings/Interface.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "action_setting_language",
+  "tags": [],
+  "resourceType": "GMScript",
 }

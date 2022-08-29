@@ -1,8 +1,12 @@
 {
-    "id": "37f75a30-c932-4367-bb65-fa975c65e5d3",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "action_setting_key_undo",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "Interface",
+    "path": "folders/Scripts/App/Actions/Settings/Controls/Interface.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "action_setting_key_undo",
+  "tags": [],
+  "resourceType": "GMScript",
 }

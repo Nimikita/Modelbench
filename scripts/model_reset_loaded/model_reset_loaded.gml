@@ -1,6 +1,9 @@
 /// model_reset_loaded()
 
-with (obj_texture)
+function model_reset_loaded()
+{
+	with (obj_texture)
+		loaded = false
+	
 	loaded = false
-
-loaded = false
+}

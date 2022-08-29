@@ -1,8 +1,12 @@
 {
-    "id": "18c101b3-f861-4341-97a2-6c52ca8ab33e",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "tex_copy",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "Texture",
+    "path": "folders/Scripts/Model/Texture.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "tex_copy",
+  "tags": [],
+  "resourceType": "GMScript",
 }

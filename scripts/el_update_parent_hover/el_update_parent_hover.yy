@@ -1,8 +1,12 @@
 {
-    "id": "1b4d60e7-d34e-47c0-8421-1e6d8a537ca0",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "el_update_parent_hover",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "Select",
+    "path": "folders/Scripts/Model/Element/Select.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "el_update_parent_hover",
+  "tags": [],
+  "resourceType": "GMScript",
 }

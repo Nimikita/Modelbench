@@ -1,4 +1,7 @@
 /// action_setting_viewport_controls_middle(value)
 /// @arg value
 
-setting_viewport_controls_middle = argument0
+function action_setting_viewport_controls_middle(value)
+{
+	setting_viewport_controls_middle = value
+}

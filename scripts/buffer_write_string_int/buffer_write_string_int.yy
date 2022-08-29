@@ -1,8 +1,12 @@
 {
-    "id": "4ce33d92-c23e-45d1-9934-a8343477a3d4",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "buffer_write_string_int",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "Write",
+    "path": "folders/Scripts/Utility/File/Buffer/Write.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "buffer_write_string_int",
+  "tags": [],
+  "resourceType": "GMScript",
 }

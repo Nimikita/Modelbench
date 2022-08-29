@@ -1,8 +1,12 @@
 {
-    "id": "4f034551-fb20-4d5a-9d88-557005b49bdf",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "action_el_pos_xyz",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "Position",
+    "path": "folders/Scripts/App/Actions/Element/Element editor/Position.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "action_el_pos_xyz",
+  "tags": [],
+  "resourceType": "GMScript",
 }

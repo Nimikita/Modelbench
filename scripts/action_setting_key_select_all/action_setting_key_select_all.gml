@@ -1,4 +1,7 @@
 /// action_setting_key_select_all(key)
 /// @arg key
 
-setting_key_select_all = argument0
+function action_setting_key_select_all(key)
+{
+	setting_key_select_all = key
+}

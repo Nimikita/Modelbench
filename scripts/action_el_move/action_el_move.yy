@@ -1,8 +1,12 @@
 {
-    "id": "91310980-d2eb-4ee7-b9df-8a1bc0680162",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "action_el_move",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "Move",
+    "path": "folders/Scripts/App/Actions/Element/Move.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "action_el_move",
+  "tags": [],
+  "resourceType": "GMScript",
 }

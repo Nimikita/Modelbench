@@ -1,8 +1,12 @@
 {
-    "id": "d77da3b5-1dad-44f9-8ac7-4edb76ad13bf",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "view_area_draw",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "View",
+    "path": "folders/Scripts/App/Interface/Components/View.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "view_area_draw",
+  "tags": [],
+  "resourceType": "GMScript",
 }

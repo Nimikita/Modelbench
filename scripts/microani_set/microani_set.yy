@@ -1,8 +1,12 @@
 {
-    "id": "d8ebc860-9f70-4cab-aacf-f5c99cec5f67",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "microani_set",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "Micro animations",
+    "path": "folders/Scripts/App/Interface/Micro animations.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "microani_set",
+  "tags": [],
+  "resourceType": "GMScript",
 }

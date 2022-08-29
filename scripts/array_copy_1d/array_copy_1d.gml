@@ -1,8 +1,11 @@
 /// array_copy_1d(array)
 /// @arg array
 
-if (array_length_1d(argument0) = 0)
-	return array()
-
-argument0[0] = argument0[0]
-return argument0
+function array_copy_1d(arr)
+{
+	if (array_length(arr) = 0)
+		return array()
+	
+	arr[0] = arr[0]
+	return arr
+}

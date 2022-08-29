@@ -1,8 +1,12 @@
 {
-    "id": "5bd1c24e-0957-430c-ae33-459009147280",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "draw_divide",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "Draw",
+    "path": "folders/Scripts/Utility/Draw.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "draw_divide",
+  "tags": [],
+  "resourceType": "GMScript",
 }

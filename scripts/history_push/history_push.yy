@@ -1,8 +1,12 @@
 {
-    "id": "8cb346c3-597a-485f-9262-5c05a4eafc52",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "history_push",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "History",
+    "path": "folders/Scripts/App/History.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "history_push",
+  "tags": [],
+  "resourceType": "GMScript",
 }

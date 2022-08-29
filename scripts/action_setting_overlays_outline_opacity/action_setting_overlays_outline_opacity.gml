@@ -2,4 +2,7 @@
 /// @arg value
 /// @arg add
 
-setting_overlays_outline_opacity = setting_overlays_outline_opacity * argument1 + argument0 / 100
+function action_setting_overlays_outline_opacity(value, add)
+{
+	setting_overlays_outline_opacity = setting_overlays_outline_opacity * add + value / 100
+}

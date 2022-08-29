@@ -1,8 +1,12 @@
 {
-    "id": "9cadabce-61dd-4288-8312-d77e542842f9",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "window_draw_element_move",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "Window",
+    "path": "folders/Scripts/App/Interface/Window.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "window_draw_element_move",
+  "tags": [],
+  "resourceType": "GMScript",
 }

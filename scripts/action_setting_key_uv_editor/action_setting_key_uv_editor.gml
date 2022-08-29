@@ -1,4 +1,7 @@
 /// action_setting_key_uv_editor(key)
 /// @arg key
 
-setting_key_uv_editor = argument0
+function action_setting_key_uv_editor(key)
+{
+	setting_key_uv_editor = key
+}

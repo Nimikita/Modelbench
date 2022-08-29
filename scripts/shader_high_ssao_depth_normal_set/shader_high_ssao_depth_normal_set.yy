@@ -1,8 +1,12 @@
 {
-    "id": "35e62d7e-7bcf-4b62-abb6-c80dafa5332b",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "shader_high_ssao_depth_normal_set",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "High quality",
+    "path": "folders/Scripts/Render/Shaders/Set/High quality.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "shader_high_ssao_depth_normal_set",
+  "tags": [],
+  "resourceType": "GMScript",
 }

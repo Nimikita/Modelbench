@@ -1,8 +1,12 @@
 {
-    "id": "63ab63b1-7cf8-472d-88aa-49b12c1c526f",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "draw_line_ext",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "Draw",
+    "path": "folders/Scripts/Utility/Draw.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "draw_line_ext",
+  "tags": [],
+  "resourceType": "GMScript",
 }

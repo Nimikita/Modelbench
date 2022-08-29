@@ -1,8 +1,12 @@
 {
-    "id": "c7f7372e-c651-4211-abf8-906c1afb8fe8",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "action_el_opacity",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "Material",
+    "path": "folders/Scripts/App/Actions/Element/Element editor/Material.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "action_el_opacity",
+  "tags": [],
+  "resourceType": "GMScript",
 }

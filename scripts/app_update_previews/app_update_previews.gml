@@ -1,14 +1,17 @@
 /// app_update_previews()
 
-tex_preview.select = res_edit
-
-with (obj_preview)
+function app_update_previews()
 {
-	if (last_select != select)
+	tex_preview.select = res_edit
+	
+	with (obj_preview)
 	{
-		preview_reset_view()
-		reset_view = true
-		update = true
+		if (last_select != select)
+		{
+			preview_reset_view()
+			reset_view = true
+			update = true
+		}
+		last_select = select
 	}
-	last_select = select
 }

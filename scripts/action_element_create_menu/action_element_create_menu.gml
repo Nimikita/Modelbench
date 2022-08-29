@@ -1,107 +1,109 @@
 /// action_element_create_menu([type])
 
-var spawn_type = null;
-
-if (argument_count > 0)
-	spawn_type = argument0
-
-if (history_undo)
+function action_element_create_menu(argument0)
 {
-	with (history_data)
-	{
-		for (var s = spawn_amount - 1; s >= 0; s--)
-		{
-			var parent = save_id_find(spawn_save_id[s]).parent;
-			parent.extend = spawn_parent_extend
-			
-			with (save_id_find(spawn_save_id[s]))
-				instance_destroy()
-		}
-		
-		history_restore_el_select()
-	}
-}
-else
-{
-	var hobj, select;
-	hobj = null
+	var spawn_type = null;
 	
-	if (history_redo)
+	if (argument_count > 0)
+		spawn_type = argument0
+	
+	if (history_undo)
 	{
-		history_restore_element()
-		
 		with (history_data)
 		{
-			for (var s = 0; s < spawn_amount; s++)
+			for (var s = spawn_amount - 1; s >= 0; s--)
 			{
 				var parent = save_id_find(spawn_save_id[s]).parent;
-				parent.extend = true	
+				parent.extend = spawn_parent_extend
+				
+				with (save_id_find(spawn_save_id[s]))
+					instance_destroy()
 			}
 			
-			history_restore_el_select_new()
+			history_restore_el_select()
 		}
 	}
 	else
 	{
-		hobj = history_set(action_element_create_menu)
-		hobj.spawn_amount = 0
+		var hobj, select;
+		hobj = null
 		
-		with (hobj)
-			history_save_el_select()
-		
-		var element;
-		element = new_element(spawn_type)
-			
-		with (hobj)
+		if (history_redo)
 		{
-			spawn_save_id[spawn_amount] = save_id_get(element)
-			spawn_save_type[spawn_amount] = spawn_type
-			spawn_save_par[spawn_amount] = save_id_get(app.context_menu_value)
-			spawn_save_extend[spawn_amount] = false
-			spawn_parent_extend = save_id_find(spawn_save_par[spawn_amount]).extend
+			history_restore_element()
+			
+			with (history_data)
+			{
+				for (var s = 0; s < spawn_amount; s++)
+				{
+					var parent = save_id_find(spawn_save_id[s]).parent;
+					parent.extend = true	
+				}
 				
-			spawn_amount++
+				history_restore_el_select_new_obj()
+			}
 		}
-			
-		// Extrude 3D planes
-		if (spawn_type = e_element.PLANE_3D)
+		else
 		{
-			element.value[e_value.EXTRUDE] = true
-			element.value[e_value.OFFSET_Y] = -0.5
+			hobj = history_set(action_element_create_menu)
+			hobj.spawn_amount = 0
+			
+			with (hobj)
+				history_save_el_select()
+			
+			var element;
+			element = new_element(spawn_type)
+				
+			with (hobj)
+			{
+				spawn_save_id[spawn_amount] = save_id_get(element)
+				spawn_save_type[spawn_amount] = spawn_type
+				spawn_save_par[spawn_amount] = save_id_get(app.context_menu_value)
+				spawn_save_extend[spawn_amount] = false
+				spawn_parent_extend = save_id_find(spawn_save_par[spawn_amount]).extend
+				
+				spawn_amount++
+			}
+			
+			// Extrude 3D planes
+			if (spawn_type = e_element.PLANE_3D)
+			{
+				element.value[e_value.EXTRUDE] = true
+				element.value[e_value.OFFSET_Y] = -0.5
+			}
+			
+			// Fix Y offset on planes
+			if (spawn_type = e_element.PLANE)
+				element.value[e_value.OFFSET_Y] = 0
+			
+			with (element)
+				el_set_parent(app.context_menu_value)
+			hobj.spawn_parent_extend = element.parent.extend
+			
+			select = element
+			
+			if (spawn_type != TYPE_PART)
+				setting_hide_shapes = false
+			
+			assets.elements.show = true
+			select.parent.extend = true
+			
+			// Select created element
+			with (select)
+				el_select_single()
+			
+			with (hobj)
+				history_save_el_select_new_obj()
+			
+			if (!history_redo)
+				log("Created", el_type_name_list[|spawn_type])
 		}
-			
-		// Fix Y offset on planes
-		if (spawn_type = e_element.PLANE)
-			element.value[e_value.OFFSET_Y] = 0
-			
-		with (element)
-			el_set_parent(app.context_menu_value)
-		hobj.spawn_parent_extend = element.parent.extend
-			
-		select = element
-		
-		if (spawn_type != TYPE_PART)
-			setting_hide_shapes = false
-
-		assets.elements.show = true
-		select.parent.extend = true
-		
-		// Select created element
-		with (select)
-			el_select_single()
-			
-		with (hobj)
-			history_save_el_select_new()
-		
-		if (!history_redo)
-			log("Created", el_type_name_list[|spawn_type])
 	}
 	
+	el_update_lock_tree(false)
+	el_update_hidden_tree(false)
+	app_update_name_warning()
+	el_update_part()
+	
+	app_update_el_edit()
 }
-
-el_update_lock_tree(false)
-el_update_hidden_tree(false)
-app_update_name_warning()
-el_update_part()
-
-app_update_el_edit()

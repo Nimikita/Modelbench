@@ -1,8 +1,12 @@
 {
-    "id": "e8872180-3585-4416-bd0f-c48500d27078",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "action_el_extend",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "Element",
+    "path": "folders/Scripts/App/Actions/Element.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "action_el_extend",
+  "tags": [],
+  "resourceType": "GMScript",
 }

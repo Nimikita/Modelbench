@@ -1,8 +1,12 @@
 {
-    "id": "496985dd-0d40-4845-8e94-025accd2c622",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "action_textbox_paste",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "Textbox",
+    "path": "folders/Scripts/App/Actions/Context menu/Textbox.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "action_textbox_paste",
+  "tags": [],
+  "resourceType": "GMScript",
 }

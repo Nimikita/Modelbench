@@ -1,8 +1,12 @@
 {
-    "id": "cca08fc8-8eed-4232-939e-d01629bf764b",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "draw_gradient",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "Draw",
+    "path": "folders/Scripts/Utility/Draw.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "draw_gradient",
+  "tags": [],
+  "resourceType": "GMScript",
 }

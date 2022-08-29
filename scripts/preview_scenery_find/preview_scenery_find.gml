@@ -1,10 +1,13 @@
 /// preview_scenery_find(name)
 /// @arg name
 
-with (obj_scenery)
+function preview_scenery_find(namefind)
 {
-	if (argument0 = name)
-		return id
+	with (obj_scenery)
+	{
+		if (namefind = name)
+			return id
+	}
+	
+	return null
 }
-
-return null

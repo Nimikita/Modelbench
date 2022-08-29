@@ -1,8 +1,12 @@
 {
-    "id": "b60f0a90-f268-43e3-89bc-d519f196a001",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "buffer_skip",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "Buffer",
+    "path": "folders/Scripts/Utility/File/Buffer.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "buffer_skip",
+  "tags": [],
+  "resourceType": "GMScript",
 }

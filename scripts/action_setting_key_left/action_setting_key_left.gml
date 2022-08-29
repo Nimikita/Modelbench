@@ -1,4 +1,7 @@
 /// action_setting_key_left(key)
 /// @arg key
 
-setting_key_left = argument0
+function action_setting_key_left(key)
+{
+	setting_key_left = key
+}

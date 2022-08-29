@@ -2,30 +2,30 @@
 /// @arg string
 /// @arg width
 /// @arg font
-
-var str, wid, nstr, pos;
-str = argument0
-wid = argument1
-
-if (string_width_font("...", argument2) > wid)
-	return ""
-
-if (string_width_font(str, argument2) <= wid) 
-	return str
-
-nstr = ""
-pos = 1
-while (pos <= string_length(str))
+function string_limit_font(str, wid, font)
 {
-	var char = string_char_at(str, pos)
-	if (char = "\n")
-		char = " "
-		
-	if (string_width_font(nstr + char + "...", argument2) >= wid)
-		break
+	var nstr, pos;
 	
-	nstr += char
-	pos++
+	if (string_width_font("...", font) > wid)
+		return ""
+	
+	if (string_width_font(str, font) <= wid) 
+		return str
+	
+	nstr = ""
+	pos = 1
+	while (pos <= string_length(str))
+	{
+		var char = string_char_at(str, pos)
+		if (char = "\n")
+			char = " "
+		
+		if (string_width_font(nstr + char + "...", font) >= wid)
+			break
+		
+		nstr += char
+		pos++
+	}
+	
+	return nstr + "..."
 }
-
-return nstr + "..."

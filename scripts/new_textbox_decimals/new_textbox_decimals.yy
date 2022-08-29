@@ -1,8 +1,12 @@
 {
-    "id": "3768de84-635b-408d-bf43-a76281b694b8",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "new_textbox_decimals",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "Textbox",
+    "path": "folders/Scripts/App/Interface/Components/Textbox.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "new_textbox_decimals",
+  "tags": [],
+  "resourceType": "GMScript",
 }

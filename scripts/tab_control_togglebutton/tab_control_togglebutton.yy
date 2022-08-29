@@ -1,8 +1,12 @@
 {
-    "id": "9d318898-91d8-47b2-a046-b5068de72aaf",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "tab_control_togglebutton",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "Control",
+    "path": "folders/Scripts/App/Interface/Components/Tab/Control.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "tab_control_togglebutton",
+  "tags": [],
+  "resourceType": "GMScript",
 }

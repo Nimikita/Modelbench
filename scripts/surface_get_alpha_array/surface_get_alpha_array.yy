@@ -1,8 +1,12 @@
 {
-    "id": "f7adcc89-733e-4f62-904f-9157a62f92c0",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "surface_get_alpha_array",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "Surface",
+    "path": "folders/Scripts/Utility/Surface.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "surface_get_alpha_array",
+  "tags": [],
+  "resourceType": "GMScript",
 }

@@ -1,8 +1,12 @@
 {
-    "id": "826c173c-00c6-44a5-b830-45255d91cd8e",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "point2D_add",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "Point",
+    "path": "folders/Scripts/Utility/Math/Point.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "point2D_add",
+  "tags": [],
+  "resourceType": "GMScript",
 }

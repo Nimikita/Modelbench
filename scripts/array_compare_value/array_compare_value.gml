@@ -2,14 +2,13 @@
 /// @arg array
 /// @arg value
 
-var arr, value;
-arr = argument0
-value = argument1
-
-for (var i = 0; i < array_length_1d(arr); i++)
+function array_compare_value(arr, value)
 {
-	if (arr[i] != value)
-		return false
+	for (var i = 0; i < array_length(arr); i++)
+	{
+		if (arr[i] != value)
+			return false
+	}
+	
+	return true
 }
-
-return true

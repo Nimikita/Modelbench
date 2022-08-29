@@ -3,7 +3,10 @@
 /// @arg color
 /// @arg alpha
 
-shader_set_uniform_f(argument0, 
-					 color_get_red(argument1) / 255, 
-					 color_get_green(argument1) / 255, 
-					 color_get_blue(argument1) / 255, argument2)
+function shader_set_uniform_color(name, color, alpha)
+{
+	shader_set_uniform_f(name, 
+						 color_get_red(color) / 255, 
+						 color_get_green(color) / 255, 
+						 color_get_blue(color) / 255, alpha)
+}

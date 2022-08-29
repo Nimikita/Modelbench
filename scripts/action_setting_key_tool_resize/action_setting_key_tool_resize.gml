@@ -1,4 +1,7 @@
 /// action_setting_key_tool_resize(key)
 /// @arg key
 
-setting_key_tool_resize = argument0
+function action_setting_key_tool_resize(key)
+{
+	setting_key_tool_resize = key
+}

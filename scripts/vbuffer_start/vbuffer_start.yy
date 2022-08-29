@@ -1,8 +1,12 @@
 {
-    "id": "b1ccc98c-55b2-4ee1-a20c-da684d5ef740",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "vbuffer_start",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "Vertex buffer",
+    "path": "folders/Scripts/Utility/Vertex/Vertex buffer.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "vbuffer_start",
+  "tags": [],
+  "resourceType": "GMScript",
 }

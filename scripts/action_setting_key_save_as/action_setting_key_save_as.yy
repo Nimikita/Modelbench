@@ -1,8 +1,12 @@
 {
-    "id": "e77cda43-4a44-4dc7-ad20-df5fdbc652ac",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "action_setting_key_save_as",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "Interface",
+    "path": "folders/Scripts/App/Actions/Settings/Controls/Interface.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "action_setting_key_save_as",
+  "tags": [],
+  "resourceType": "GMScript",
 }

@@ -1,8 +1,12 @@
 {
-    "id": "808a2e57-d4cd-4d0c-bb00-5328d517221e",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "open_url",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "File",
+    "path": "folders/Scripts/App/Libraries/File.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "open_url",
+  "tags": [],
+  "resourceType": "GMScript",
 }

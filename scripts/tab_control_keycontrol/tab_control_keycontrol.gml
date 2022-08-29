@@ -1,3 +1,6 @@
 /// tab_control_keycontrol()
 
-tab_control(28)
+function tab_control_keycontrol()
+{
+	tab_control(28)
+}

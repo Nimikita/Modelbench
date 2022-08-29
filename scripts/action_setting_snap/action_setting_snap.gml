@@ -1,4 +1,7 @@
 /// action_setting_snap(value)
 /// @arg value
 
-setting_snap = argument0
+function action_setting_snap(value)
+{
+	setting_snap = value
+}

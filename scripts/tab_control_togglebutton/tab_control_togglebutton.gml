@@ -1,3 +1,6 @@
 /// tab_control_togglebutton()
 
-tab_control(56)
+function tab_control_togglebutton()
+{
+	tab_control(56)
+}

@@ -1,8 +1,12 @@
 {
-    "id": "be0c928c-6189-45af-9377-d074a01ef3fe",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "action_el_brightness",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "Material",
+    "path": "folders/Scripts/App/Actions/Element/Element editor/Material.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "action_el_brightness",
+  "tags": [],
+  "resourceType": "GMScript",
 }

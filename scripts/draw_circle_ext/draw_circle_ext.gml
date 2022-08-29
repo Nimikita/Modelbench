@@ -1,27 +1,33 @@
-/// draw_circle_ext(x, y, radius, outline, [color, alpha])
+/// draw_circle_ext(x, y, radius, outline, detail, color, alpha)
 /// @arg x
 /// @arg y
 /// @arg radius
 /// @arg outline
-/// @arg [color
-/// @arg alpha]
+/// @arg detail
+/// @arg color
+/// @arg alpha
 
-var xx, yy, radius, outline, color, alpha;
-xx = argument[0]
-yy = argument[1]
-radius = argument[2]
-outline = argument[3]
-color = draw_get_color()
-alpha = draw_get_alpha()
-
-if (argument_count > 4)
+function draw_circle_ext(xx, yy, rad, outline, detail, color, alpha)
 {
-	draw_set_color(argument[4])
-	draw_set_alpha(alpha * argument[5])
+	var oldcolor, oldalpha;
+	oldcolor = draw_get_color()
+	oldalpha = draw_get_alpha()
+	draw_set_color(color)
+	draw_set_alpha(oldalpha * alpha)
+	
+	if (outline)
+		draw_primitive_begin(pr_linestrip)
+	else
+	{
+		draw_primitive_begin(pr_trianglefan)
+		draw_vertex(xx, yy)
+	}
+	
+	for (var s = 0; s <= pi * 2; s += (pi * 2) / detail)
+		draw_vertex(xx + cos(s) * rad, yy + sin(s) * rad)
+	
+	draw_primitive_end()
+	
+	draw_set_color(oldcolor)
+	draw_set_alpha(oldalpha)
 }
-
-draw_set_circle_precision(64)
-draw_circle(xx, yy, radius, outline)
-
-draw_set_color(color)
-draw_set_alpha(alpha)

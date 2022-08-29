@@ -1,8 +1,12 @@
 {
-    "id": "d1590506-bd53-4465-9ec7-162321e443ca",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "popup_switch",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "Popup",
+    "path": "folders/Scripts/App/Interface/Components/Popup.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "popup_switch",
+  "tags": [],
+  "resourceType": "GMScript",
 }

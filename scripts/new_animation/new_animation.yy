@@ -1,8 +1,12 @@
 {
-    "id": "f43cd13d-b9db-4200-82c6-af49ae0da8db",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "new_animation",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "Micro animations",
+    "path": "folders/Scripts/App/Interface/Micro animations.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "new_animation",
+  "tags": [],
+  "resourceType": "GMScript",
 }

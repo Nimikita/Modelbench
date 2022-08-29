@@ -2,42 +2,45 @@
 /// @arg name
 /// @desc Only used for list renaming, only update search list if undo/redo.
 
-if (history_undo)
+function action_el_rename_single(newname)
 {
-	with (history_data) 
+	if (history_undo)
 	{
-		for (var e = 0; e < save_var_amount; e++)
+		with (history_data) 
 		{
-			with (save_id_find(save_var_save_id[e]))
-				name = other.save_var_old_value[e]
+			for (var e = 0; e < save_var_amount; e++)
+			{
+				with (save_id_find(save_var_save_id[e]))
+					name = other.save_var_old_value[e]
+			}
 		}
 	}
-}
-else if (history_redo)
-{
-	with (history_data)
+	else if (history_redo)
 	{
-		for (var e = 0; e < save_var_amount; e++)
+		with (history_data)
 		{
-			with (save_id_find(save_var_save_id[e]))
-				name = other.save_var_new_value[e]
+			for (var e = 0; e < save_var_amount; e++)
+			{
+				with (save_id_find(save_var_save_id[e]))
+					name = other.save_var_new_value[e]
+			}
 		}
 	}
-}
-else
-{
-	var hobj = history_save_var_start(action_el_rename_single, true);
-	
-	with (app.assets.elements.name_edit_element)
+	else
 	{
-		with (hobj)
-			history_save_var(app.assets.elements.name_edit_element, other.name, argument0)
+		var hobj = history_save_var_start(action_el_rename_single, true);
 		
-		name = argument0
+		with (app.assets.elements.name_edit_element)
+		{
+			with (hobj)
+				history_save_var(app.assets.elements.name_edit_element, other.name, newname)
+			
+			name = newname
+		}
 	}
+	
+	app_update_name_warning()
+	
+	if (history_redo || history_undo)
+		action_update_search()
 }
-
-app_update_name_warning()
-
-if (history_redo || history_undo)
-	action_update_search()

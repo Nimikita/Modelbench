@@ -1,4 +1,7 @@
 /// action_setting_key_walk_navigation(key)
 /// @arg key
 
-setting_key_walk_navigation = argument0
+function action_setting_key_walk_navigation(key)
+{
+	setting_key_walk_navigation = key
+}

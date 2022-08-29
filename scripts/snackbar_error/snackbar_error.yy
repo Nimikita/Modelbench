@@ -1,8 +1,12 @@
 {
-    "id": "c6d27104-40a9-4bbf-b785-10df628f468f",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "snackbar_error",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "Show",
+    "path": "folders/Scripts/App/Snackbars/Show.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "snackbar_error",
+  "tags": [],
+  "resourceType": "GMScript",
 }

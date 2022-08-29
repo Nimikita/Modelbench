@@ -1,3 +1,6 @@
 /// camera_event_create()
 
-camera_reset()
+function camera_event_create()
+{
+	camera_reset()
+}

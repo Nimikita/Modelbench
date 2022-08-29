@@ -1,8 +1,12 @@
 {
-    "id": "3ecfb2d0-3bee-4580-aaf8-0758dc058b35",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "action_el_hide_back",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "Appearance",
+    "path": "folders/Scripts/App/Actions/Element/Element editor/Appearance.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "action_el_hide_back",
+  "tags": [],
+  "resourceType": "GMScript",
 }

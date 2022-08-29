@@ -1,4 +1,7 @@
 /// action_setting_key_import(key)
 /// @arg key
 
-setting_key_import = argument0
+function action_setting_key_import(key)
+{
+	setting_key_import = key
+}

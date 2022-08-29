@@ -1,8 +1,12 @@
 {
-    "id": "e77d8e6d-0835-4c20-9daa-ba71d691d10d",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "action_setting_adjust_pivot_resize",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "Program",
+    "path": "folders/Scripts/App/Actions/Settings/Program.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "action_setting_adjust_pivot_resize",
+  "tags": [],
+  "resourceType": "GMScript",
 }

@@ -1,8 +1,12 @@
 {
-    "id": "d215d2dd-6a4d-46f4-ab6c-1e60fd8f5e2c",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "render_reset_uniforms",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "Render",
+    "path": "folders/Scripts/Render.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "render_reset_uniforms",
+  "tags": [],
+  "resourceType": "GMScript",
 }

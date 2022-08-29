@@ -1,43 +1,46 @@
 /// action_collapse_all()
 
-if (history_undo)
+function action_collapse_all()
 {
-	with (history_data)
+	if (history_undo)
 	{
-		for (var i = 0; i < save_var_amount; i++)
+		with (history_data)
 		{
-			var element = save_id_find(save_var_save_id[i]);
-			element.extend = save_var_old_value[i]
-		}
-	}
-}
-else if (history_redo)
-{
-	with (history_data) 
-	{
-		for (var i = 0; i < save_var_amount; i++)
-		{
-			var element = save_id_find(save_var_save_id[i]);
-			element.extend = save_var_new_value[i]
-		}
-	}
-}
-else
-{
-	var hobj;
-	hobj = history_save_var_start(action_collapse_all, true);
-	
-	with (hobj)
-	{
-		with (obj_model_element)
-		{
-			element = id
-			if (element_type = TYPE_PART && element.extend)
+			for (var i = 0; i < save_var_amount; i++)
 			{
-				with (other)
-					history_save_var(element, element.extend, false)
-				
-				element.extend = false
+				var element = save_id_find(save_var_save_id[i]);
+				element.extend = save_var_old_value[i]
+			}
+		}
+	}
+	else if (history_redo)
+	{
+		with (history_data) 
+		{
+			for (var i = 0; i < save_var_amount; i++)
+			{
+				var element = save_id_find(save_var_save_id[i]);
+				element.extend = save_var_new_value[i]
+			}
+		}
+	}
+	else
+	{
+		var hobj;
+		hobj = history_save_var_start(action_collapse_all, true);
+		
+		with (hobj)
+		{
+			with (obj_model_element)
+			{
+				element = id
+				if (element_type = TYPE_PART && element.extend)
+				{
+					with (other)
+						history_save_var(element, element.extend, false)
+					
+					element.extend = false
+				}
 			}
 		}
 	}

@@ -1,8 +1,12 @@
 {
-    "id": "0aa00417-24a9-45bb-b762-8fd834d968ef",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "model_save_wind",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "Save",
+    "path": "folders/Scripts/Model/Save.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "model_save_wind",
+  "tags": [],
+  "resourceType": "GMScript",
 }

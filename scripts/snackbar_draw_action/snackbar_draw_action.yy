@@ -1,8 +1,12 @@
 {
-    "id": "bcec4e62-6a4d-43a5-82dd-6838c8fea94e",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "snackbar_draw_action",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "Snackbar",
+    "path": "folders/Scripts/App/Interface/Components/Snackbar.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "snackbar_draw_action",
+  "tags": [],
+  "resourceType": "GMScript",
 }

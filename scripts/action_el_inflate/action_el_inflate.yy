@@ -1,8 +1,12 @@
 {
-    "id": "bf110a94-1542-4f59-8040-201962346aeb",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "action_el_inflate",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "Appearance",
+    "path": "folders/Scripts/App/Actions/Element/Element editor/Appearance.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "action_el_inflate",
+  "tags": [],
+  "resourceType": "GMScript",
 }

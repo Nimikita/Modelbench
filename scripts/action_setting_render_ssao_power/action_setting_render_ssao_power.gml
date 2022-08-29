@@ -2,4 +2,7 @@
 /// @arg value
 /// @arg add
 
-setting_render_ao_power = setting_render_ao_power * argument1 + argument0 / 100
+function action_setting_render_ssao_power(value, add)
+{
+	setting_render_ao_power = setting_render_ao_power * add + value / 100
+}

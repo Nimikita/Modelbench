@@ -1,8 +1,12 @@
 {
-    "id": "1bdba71b-5a63-4a28-b0fd-a6094924bc07",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "json_file_convert_unicode",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "File",
+    "path": "folders/Scripts/App/Libraries/File.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "json_file_convert_unicode",
+  "tags": [],
+  "resourceType": "GMScript",
 }

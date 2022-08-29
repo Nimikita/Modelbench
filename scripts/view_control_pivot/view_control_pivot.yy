@@ -1,8 +1,12 @@
 {
-    "id": "f3700340-73b2-4181-a88f-0a53b46f7337",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "view_control_pivot",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "Pivot",
+    "path": "folders/Scripts/App/Interface/Components/View/Control/Pivot.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "view_control_pivot",
+  "tags": [],
+  "resourceType": "GMScript",
 }

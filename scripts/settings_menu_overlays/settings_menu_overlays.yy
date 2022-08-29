@@ -1,8 +1,12 @@
 {
-    "id": "6aa6753d-e67b-4f33-a90f-57be3c16158d",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "settings_menu_overlays",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "Menus",
+    "path": "folders/Scripts/App/Interface/Menus.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "settings_menu_overlays",
+  "tags": [],
+  "resourceType": "GMScript",
 }

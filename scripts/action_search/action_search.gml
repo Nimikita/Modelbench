@@ -1,30 +1,33 @@
 /// action_search(search)
 /// @arg search
 
-if (history_undo)
+function action_search(search)
 {
-	with (history_data)
+	if (history_undo)
 	{
-		app.assets.elements.search_string = save_var_old_value[0]
-		app.assets.elements.tbx_search.text = app.assets.elements.search_string
+		with (history_data)
+		{
+			app.assets.elements.search_string = save_var_old_value[0]
+			app.assets.elements.tbx_search.text = app.assets.elements.search_string
+		}
 	}
-}
-else if (history_redo)
-{
-	with (history_data)
+	else if (history_redo)
 	{
-		app.assets.elements.search_string = save_var_new_value[0]
-		app.assets.elements.tbx_search.text = app.assets.elements.search_string
+		with (history_data)
+		{
+			app.assets.elements.search_string = save_var_new_value[0]
+			app.assets.elements.tbx_search.text = app.assets.elements.search_string
+		}
 	}
-}
-else
-{
-	var hobj = history_save_var_start(action_search, true);
+	else
+	{
+		var hobj = history_save_var_start(action_search, true);
+		
+		with (hobj)
+			history_save_var(app, app.assets.elements.search_string, search)
+		
+		app.assets.elements.search_string = search
+	}
 	
-	with (hobj)
-		history_save_var(app, app.assets.elements.search_string, argument0)
-	
-	app.assets.elements.search_string = argument0
+	action_update_search()
 }
-
-action_update_search()

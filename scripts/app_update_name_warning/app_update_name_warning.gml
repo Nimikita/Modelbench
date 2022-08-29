@@ -1,33 +1,36 @@
 /// app_update_name_warning()
 /// @desc Updates warning status for parts if their name is found in another part or is empty
 
-warning_empty_part_names = false
-warning_same_part_names = false
- 
-with (obj_model_element)
+function app_update_name_warning()
 {
-	name_duplicate = false
-	name_empty = false
-	
-	if (element_type = TYPE_SHAPE)
-		continue
+	warning_empty_part_names = false
+	warning_same_part_names = false
 	
 	with (obj_model_element)
 	{
-		if (element_type = TYPE_SHAPE || id = other)
+		name_duplicate = false
+		name_empty = false
+		
+		if (element_type = TYPE_SHAPE)
 			continue
-			
-		if (name = other.name && name != "")
+		
+		with (obj_model_element)
 		{
-			name_duplicate = true
-			other.name_duplicate = true
-			app.warning_same_part_names = true
+			if (element_type = TYPE_SHAPE || id = other.id)
+				continue
+			
+			if (name = other.name && name != "")
+			{
+				name_duplicate = true
+				other.name_duplicate = true
+				app.warning_same_part_names = true
+			}
 		}
-	}
-	
-	if (name = "")
-	{
-		app.warning_empty_part_names = true
-		name_empty = true
+		
+		if (name = "")
+		{
+			app.warning_empty_part_names = true
+			name_empty = true
+		}
 	}
 }

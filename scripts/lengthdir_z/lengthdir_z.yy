@@ -1,8 +1,12 @@
 {
-    "id": "60fd0976-b79e-47cf-9357-afb0ba2985f2",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "lengthdir_z",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "Math",
+    "path": "folders/Scripts/Utility/Math.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "lengthdir_z",
+  "tags": [],
+  "resourceType": "GMScript",
 }

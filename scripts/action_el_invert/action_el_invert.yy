@@ -1,8 +1,12 @@
 {
-    "id": "8892cdea-e4e6-466e-98a1-3e260822a8b4",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "action_el_invert",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "Appearance",
+    "path": "folders/Scripts/App/Actions/Element/Element editor/Appearance.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "action_el_invert",
+  "tags": [],
+  "resourceType": "GMScript",
 }

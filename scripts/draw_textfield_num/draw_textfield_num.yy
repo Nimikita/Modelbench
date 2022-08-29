@@ -1,8 +1,12 @@
 {
-    "id": "e23cfe9c-19ef-426b-94d8-245bd3f64364",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "draw_textfield_num",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "Text field",
+    "path": "folders/Scripts/App/Interface/Components/Text field.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "draw_textfield_num",
+  "tags": [],
+  "resourceType": "GMScript",
 }

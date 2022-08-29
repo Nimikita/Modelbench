@@ -1,8 +1,12 @@
 {
-    "id": "6ab93892-60f7-408b-ade0-243ba609ead8",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "render_world_start",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "World",
+    "path": "folders/Scripts/Render/World.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "render_world_start",
+  "tags": [],
+  "resourceType": "GMScript",
 }

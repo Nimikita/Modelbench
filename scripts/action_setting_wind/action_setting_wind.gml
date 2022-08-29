@@ -1,4 +1,7 @@
 /// action_setting_wind(value)
 /// @arg value
 
-setting_wind = argument0
+function action_setting_wind(value)
+{
+	setting_wind = argument0
+}

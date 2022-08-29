@@ -1,4 +1,7 @@
 /// action_setting_key_snap(key)
 /// @arg key
 
-setting_key_snap = argument0
+function action_setting_key_snap(key)
+{
+	setting_key_snap = key
+}

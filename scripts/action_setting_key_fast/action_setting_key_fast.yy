@@ -1,8 +1,12 @@
 {
-    "id": "601df611-7286-4579-a312-3c602a5293cb",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "action_setting_key_fast",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "Camera",
+    "path": "folders/Scripts/App/Actions/Settings/Controls/Camera.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "action_setting_key_fast",
+  "tags": [],
+  "resourceType": "GMScript",
 }

@@ -1,8 +1,12 @@
 {
-    "id": "070b62d8-d4b2-4da0-9ea1-71981e79aeae",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "yesno",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "Utility",
+    "path": "folders/Scripts/Utility.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "yesno",
+  "tags": [],
+  "resourceType": "GMScript",
 }

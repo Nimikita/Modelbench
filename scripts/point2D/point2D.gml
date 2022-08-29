@@ -2,9 +2,7 @@
 /// @arg x
 /// @arg y
 
-var pnt;
-
-pnt[X] = argument0
-pnt[Y] = argument1
-
-return pnt
+function point2D(xx, yy)
+{
+	return [xx, yy]
+}

@@ -2,19 +2,20 @@
 /// @arg string
 /// @arg font
 
-var str, font, prevfont, width;
-str = argument0
-font = argument1
-prevfont = draw_get_font()
-width = 0
-
-if (font != prevfont)
+function string_width_font(str, font)
 {
-	draw_set_font(font)
-	width = string_width(str)
-	draw_set_font(prevfont)
-}
-else
-	width = string_width(str)
+	var prevfont, width;
+	prevfont = draw_get_font()
+	width = 0
 	
-return width
+	if (font != prevfont)
+	{
+		draw_set_font(font)
+		width = string_width(str)
+		draw_set_font(prevfont)
+	}
+	else
+		width = string_width(str)
+	
+	return width
+}

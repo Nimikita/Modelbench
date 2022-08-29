@@ -3,18 +3,21 @@
 /// @arg script
 /// @arg show
 
-var cat = new(obj_category);
-
-category[category_amount] = cat
-category_amount++
-
-with (cat)
+function tab_add_category(argument0, argument1, argument2)
 {
-	name = argument0
-	script = argument1
-	show = argument2
-	enabled = true
-	copy = null
+	var cat = new_obj(obj_category);
 	
-	return id
+	category[category_amount] = cat
+	category_amount++
+	
+	with (cat)
+	{
+		name = argument0
+		script = argument1
+		show = argument2
+		enabled = true
+		copy = null
+		
+		return id
+	}
 }

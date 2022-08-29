@@ -1,8 +1,12 @@
 {
-    "id": "91f5d9f2-eaf6-45d3-ab9e-00079e21d909",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "action_setting_key_open",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "Interface",
+    "path": "folders/Scripts/App/Actions/Settings/Controls/Interface.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "action_setting_key_open",
+  "tags": [],
+  "resourceType": "GMScript",
 }

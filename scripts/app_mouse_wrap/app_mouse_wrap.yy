@@ -1,8 +1,12 @@
 {
-    "id": "bc1767c3-2620-4a97-826b-27e58ce9d076",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "app_mouse_wrap",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "App",
+    "path": "folders/Scripts/App.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "app_mouse_wrap",
+  "tags": [],
+  "resourceType": "GMScript",
 }

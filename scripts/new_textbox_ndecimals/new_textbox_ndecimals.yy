@@ -1,8 +1,12 @@
 {
-    "id": "2884c770-a095-4a6a-a65e-d6288793b203",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "new_textbox_ndecimals",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "Textbox",
+    "path": "folders/Scripts/App/Interface/Components/Textbox.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "new_textbox_ndecimals",
+  "tags": [],
+  "resourceType": "GMScript",
 }

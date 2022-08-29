@@ -1,8 +1,12 @@
 {
-    "id": "d35b78ef-fa03-4e71-8933-ff03ab1aaa16",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "color_get_lum",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "Color",
+    "path": "folders/Scripts/Utility/Color.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "color_get_lum",
+  "tags": [],
+  "resourceType": "GMScript",
 }

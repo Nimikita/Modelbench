@@ -2,15 +2,16 @@
 /// @arg filename
 /// @desc Checks if model JSON can be parsed
 
-var fn = argument0;
-
-// Decode JSON
-var map = json_load(fn);
-if (!ds_map_valid(map))
+function model_load_start(fn)
 {
-	log("Could not parse JSON file", fn)
-	error("errorfileunreadable")
-	return null
+	// Decode JSON
+	var map = json_load(fn);
+	if (!ds_map_valid(map))
+	{
+		log("Could not parse JSON file", fn)
+		error("errorfileunreadable")
+		return null
+	}
+	
+	return map
 }
-
-return map

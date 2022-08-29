@@ -1,8 +1,12 @@
 {
-    "id": "dc94c244-aeba-4609-aad9-f2dca90d678e",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "matrix_world_reset",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "Matrix",
+    "path": "folders/Scripts/Utility/Math/Matrix.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "matrix_world_reset",
+  "tags": [],
+  "resourceType": "GMScript",
 }

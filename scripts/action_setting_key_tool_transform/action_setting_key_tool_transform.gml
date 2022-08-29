@@ -1,4 +1,7 @@
 /// action_setting_key_tool_transform(key)
 /// @arg key
 
-setting_key_tool_transform = argument0
+function action_setting_key_tool_transform(key)
+{
+	setting_key_tool_transform = key
+}

@@ -1,8 +1,12 @@
 {
-    "id": "52569db7-46e7-415f-9694-8f3309f09175",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "action_setting_key_tool_pivot",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "Interface",
+    "path": "folders/Scripts/App/Actions/Settings/Controls/Interface.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "action_setting_key_tool_pivot",
+  "tags": [],
+  "resourceType": "GMScript",
 }

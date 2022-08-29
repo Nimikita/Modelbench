@@ -1,4 +1,7 @@
 /// action_setting_key_forward(key)
 /// @arg key
 
-setting_key_forward = argument0
+function action_setting_key_forward(key)
+{
+	setting_key_forward = key
+}

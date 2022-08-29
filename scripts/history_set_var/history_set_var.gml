@@ -5,27 +5,25 @@
 /// @arg combine
 /// @desc Registering history for changing a single variable.
 
-var script, oldval, newval, combine, hobj;
-script = argument0
-oldval = argument1
-newval = argument2
-combine = argument3
-	
-history_pop()
-
-if (combine && history_amount > 0 &&
-	history[0].script = script &&
-	history[0].save_axis_edit = axis_edit) // Add to existing
-	hobj = history[0]
-else
+function history_set_var(script, oldval, newval, combine)
 {
-	history_push()
+	var hobj;
 	
-	log("Action Set variable", script_get_name(script), oldval, newval, combine)
+	history_pop()
 	
-	hobj = new_history(script)
+	if (combine && history_amount > 0 &&
+		history[0].script = script &&
+		history[0].save_axis_edit = axis_edit) // Add to existing
+		hobj = history[0]
+	else
+	{
+		history_push()
+		
+		log("Action Set variable", script_get_name(script), oldval, newval, combine)
+		
+		hobj = new_history(script)
+		history[0] = hobj
+	}
 	
-	history[0] = hobj
+	return hobj
 }
-
-return hobj

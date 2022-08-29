@@ -1,8 +1,12 @@
 {
-    "id": "1e8c6445-8773-4440-a5dc-e344159e3cfe",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "render_free",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "Render",
+    "path": "folders/Scripts/Render.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "render_free",
+  "tags": [],
+  "resourceType": "GMScript",
 }

@@ -1,3 +1,6 @@
 /// tab_control_switch()
 
-tab_control(28)
+function tab_control_switch()
+{
+	tab_control(28)
+}

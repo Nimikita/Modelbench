@@ -1,8 +1,12 @@
 {
-    "id": "97e2f21e-a54e-4244-bd76-221b772e6e24",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "vbuffer_create_surface",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "Vertex buffer",
+    "path": "folders/Scripts/Utility/Vertex/Vertex buffer.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "vbuffer_create_surface",
+  "tags": [],
+  "resourceType": "GMScript",
 }

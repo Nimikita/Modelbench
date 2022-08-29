@@ -1,4 +1,7 @@
 /// action_setting_overlays_gizmos(value)
 /// @arg value
 
-setting_overlays_gizmos = argument0
+function action_setting_overlays_gizmos(value)
+{
+	setting_overlays_gizmos = value
+}

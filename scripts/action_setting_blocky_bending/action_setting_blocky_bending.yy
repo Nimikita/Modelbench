@@ -1,8 +1,12 @@
 {
-    "id": "364ab4ef-800e-4745-b555-a81fd028cbb7",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "action_setting_blocky_bending",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "Graphics",
+    "path": "folders/Scripts/App/Actions/Settings/Graphics.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "action_setting_blocky_bending",
+  "tags": [],
+  "resourceType": "GMScript",
 }

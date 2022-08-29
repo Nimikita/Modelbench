@@ -1,8 +1,12 @@
 {
-    "id": "21f3631a-508b-49c5-9c09-9dc71911ff72",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "file_copy_lib",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "File",
+    "path": "folders/Scripts/App/Libraries/File.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "file_copy_lib",
+  "tags": [],
+  "resourceType": "GMScript",
 }

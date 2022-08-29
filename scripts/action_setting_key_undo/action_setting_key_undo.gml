@@ -1,4 +1,7 @@
 /// action_setting_key_undo(key)
 /// @arg key
 
-setting_key_undo = argument0
+function action_setting_key_undo(key)
+{
+	setting_key_undo = key
+}

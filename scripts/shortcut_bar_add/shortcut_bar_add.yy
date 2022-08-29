@@ -1,8 +1,12 @@
 {
-    "id": "797406fa-aaa2-451a-9768-1540c26cabab",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "shortcut_bar_add",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "Shortcut bar",
+    "path": "folders/Scripts/App/Interface/Shortcut bar.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "shortcut_bar_add",
+  "tags": [],
+  "resourceType": "GMScript",
 }

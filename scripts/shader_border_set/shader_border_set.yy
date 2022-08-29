@@ -1,8 +1,12 @@
 {
-    "id": "565e5a87-c921-4446-9259-be0a2a9ab180",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "shader_border_set",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "Set",
+    "path": "folders/Scripts/Render/Shaders/Set.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "shader_border_set",
+  "tags": [],
+  "resourceType": "GMScript",
 }

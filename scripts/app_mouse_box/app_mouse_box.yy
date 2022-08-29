@@ -1,8 +1,12 @@
 {
-    "id": "6ce96a96-afd2-40bc-a645-6a6568a04691",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "app_mouse_box",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "App",
+    "path": "folders/Scripts/App.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "app_mouse_box",
+  "tags": [],
+  "resourceType": "GMScript",
 }

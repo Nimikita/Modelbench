@@ -1,4 +1,7 @@
 /// action_toolbar_preview_guides(value)
 /// @arg value
 
-setting_preview_guides = argument0
+function action_toolbar_preview_guides(value)
+{
+	setting_preview_guides = value
+}

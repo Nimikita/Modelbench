@@ -1,4 +1,7 @@
 /// action_setting_key_back(key)
 /// @arg key
 
-setting_key_back = argument0
+function action_setting_key_back(key)
+{
+	setting_key_back = key
+}

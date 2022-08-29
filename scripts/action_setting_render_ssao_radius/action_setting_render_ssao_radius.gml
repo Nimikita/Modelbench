@@ -2,4 +2,7 @@
 /// @arg value
 /// @arg add
 
-setting_render_ao_radius = setting_render_ao_radius * argument1 + argument0
+function action_setting_render_ssao_radius(value, add)
+{
+	setting_render_ao_radius = setting_render_ao_radius * add + value
+}

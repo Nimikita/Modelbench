@@ -1,8 +1,12 @@
 {
-    "id": "c0bfc572-52f8-4401-a51f-bd06c48a53d0",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "model_shape_generate_block",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "Model",
+    "path": "folders/Scripts/Model.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "model_shape_generate_block",
+  "tags": [],
+  "resourceType": "GMScript",
 }

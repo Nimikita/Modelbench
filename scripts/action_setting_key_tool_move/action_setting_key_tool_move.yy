@@ -1,8 +1,12 @@
 {
-    "id": "4eb40d83-c232-4f61-8268-0fcc1c75f3ec",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "action_setting_key_tool_move",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "Interface",
+    "path": "folders/Scripts/App/Actions/Settings/Controls/Interface.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "action_setting_key_tool_move",
+  "tags": [],
+  "resourceType": "GMScript",
 }

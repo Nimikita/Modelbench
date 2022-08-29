@@ -1,4 +1,7 @@
 /// action_export_unparent_parts(value)
 /// @arg value
 
-export_unparent_parts = argument0
+function action_export_unparent_parts(value)
+{
+	export_unparent_parts = value
+}

@@ -1,8 +1,12 @@
 {
-    "id": "aba254ae-1041-4044-b6b8-4989d15300c5",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "draw_image",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "Draw",
+    "path": "folders/Scripts/Utility/Draw.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "draw_image",
+  "tags": [],
+  "resourceType": "GMScript",
 }

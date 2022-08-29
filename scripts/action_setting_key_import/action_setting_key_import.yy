@@ -1,8 +1,12 @@
 {
-    "id": "4fea6d64-7043-4f6b-8b8b-335a0b500bed",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "action_setting_key_import",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "Interface",
+    "path": "folders/Scripts/App/Actions/Settings/Controls/Interface.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "action_setting_key_import",
+  "tags": [],
+  "resourceType": "GMScript",
 }

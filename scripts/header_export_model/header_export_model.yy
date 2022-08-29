@@ -1,8 +1,12 @@
 {
-    "id": "e1ffcfc1-bb95-4daa-938c-e78f8d48ff30",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "header_export_model",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "Headers",
+    "path": "folders/Scripts/App/Interface/Headers.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "header_export_model",
+  "tags": [],
+  "resourceType": "GMScript",
 }

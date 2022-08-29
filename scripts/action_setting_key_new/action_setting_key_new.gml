@@ -1,4 +1,9 @@
-/// action_setting_key_new(key)
+/// action_setting_key_new_obj(key)
 /// @arg key
+function action_setting_key_new_obj(argument0) {
 
-setting_key_new = argument0
+	setting_key_new = argument0
+
+
+
+}

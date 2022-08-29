@@ -1,4 +1,7 @@
 /// action_setting_z_is_up(value)
 /// @arg value
 
-setting_z_is_up = argument0
+function action_setting_z_is_up(value)
+{
+	setting_z_is_up = value
+}

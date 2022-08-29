@@ -1,8 +1,12 @@
 {
-    "id": "dd0abae0-0efa-4d06-ad5b-d74239fc3b7c",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "action_setting_snap",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "Snap",
+    "path": "folders/Scripts/App/Actions/Settings/Viewport/Snap.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "action_setting_snap",
+  "tags": [],
+  "resourceType": "GMScript",
 }

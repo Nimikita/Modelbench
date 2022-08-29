@@ -1,4 +1,7 @@
 /// action_setting_key_tool_bend(key)
 /// @arg key
 
-setting_key_tool_bend = argument0
+function action_setting_key_tool_bend(key)
+{
+	setting_key_tool_bend = key
+}

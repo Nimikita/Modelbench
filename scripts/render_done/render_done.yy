@@ -1,8 +1,12 @@
 {
-    "id": "106f9179-cb68-4013-ada4-c3642b156f8a",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "render_done",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "Render",
+    "path": "folders/Scripts/Render.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "render_done",
+  "tags": [],
+  "resourceType": "GMScript",
 }

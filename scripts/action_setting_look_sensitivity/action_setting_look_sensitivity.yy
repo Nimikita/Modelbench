@@ -1,8 +1,12 @@
 {
-    "id": "2fa5ad73-1bab-425d-9dd9-5cb063e0fad6",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "action_setting_look_sensitivity",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "Controls",
+    "path": "folders/Scripts/App/Actions/Settings/Controls.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "action_setting_look_sensitivity",
+  "tags": [],
+  "resourceType": "GMScript",
 }

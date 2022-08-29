@@ -4,21 +4,10 @@
 /// @arg z
 /// @arg w
 
-var vec;
-
-if (argument_count = 1)
+function vec4(xx, yy, zz, w)
 {
-	vec[X] = argument[0]
-	vec[Y] = argument[0]
-	vec[Z] = argument[0]
-	vec[W] = argument[0]
+	if (yy = undefined)
+		return [xx, xx, xx, xx]
+	else
+		return [xx, yy, zz, w]
 }
-else
-{
-	vec[X] = argument[0]
-	vec[Y] = argument[1]
-	vec[Z] = argument[2]
-	vec[W] = argument[3]
-}
-
-return vec

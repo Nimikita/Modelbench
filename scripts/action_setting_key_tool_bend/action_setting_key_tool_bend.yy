@@ -1,8 +1,12 @@
 {
-    "id": "efa71a34-902b-49ff-a018-62373dc82a63",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "action_setting_key_tool_bend",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "Interface",
+    "path": "folders/Scripts/App/Actions/Settings/Controls/Interface.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "action_setting_key_tool_bend",
+  "tags": [],
+  "resourceType": "GMScript",
 }

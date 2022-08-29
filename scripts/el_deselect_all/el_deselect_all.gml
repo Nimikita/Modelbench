@@ -1,13 +1,16 @@
 /// el_deselect_all()
 /// @desc Deselects all timelines and keyframes.
 
-with (obj_model_element)
+function el_deselect_all()
 {
-	if (selected)
-		selected = false
+	with (obj_model_element)
+	{
+		if (selected)
+			selected = false
+		
+		parent_is_selected = false
+	}
 	
-	parent_is_selected = false
+	el_edit_amount = 0
+	el_edit = null
 }
-
-el_edit_amount = 0
-el_edit = null

@@ -1,8 +1,12 @@
 {
-    "id": "6890d50f-6beb-4bec-b781-3fd7313217df",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "model_load_texture",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "Texture",
+    "path": "folders/Scripts/Model/Texture.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "model_load_texture",
+  "tags": [],
+  "resourceType": "GMScript",
 }

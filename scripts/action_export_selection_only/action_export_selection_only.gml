@@ -1,4 +1,7 @@
 /// action_export_selection_only(value)
 /// @arg value
 
-export_selection_only = argument0
+function action_export_selection_only(value)
+{
+	export_selection_only = value
+}

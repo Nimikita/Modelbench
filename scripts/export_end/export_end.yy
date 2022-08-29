@@ -1,8 +1,12 @@
 {
-    "id": "612db760-675c-4659-942b-3bf84c50c65b",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "export_end",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "Export",
+    "path": "folders/Scripts/Model/Export.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "export_end",
+  "tags": [],
+  "resourceType": "GMScript",
 }

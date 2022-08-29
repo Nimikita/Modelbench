@@ -1,8 +1,12 @@
 {
-    "id": "8e076eb0-25f9-4e31-b779-6e76b515499f",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "action_setting_key_tool_scale",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "Interface",
+    "path": "folders/Scripts/App/Actions/Settings/Controls/Interface.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "action_setting_key_tool_scale",
+  "tags": [],
+  "resourceType": "GMScript",
 }

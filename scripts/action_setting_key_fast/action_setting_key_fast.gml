@@ -1,4 +1,7 @@
 /// action_setting_key_fast(key)
 /// @arg key
 
-setting_key_fast = argument0
+function action_setting_key_fast(key)
+{
+	setting_key_fast = key
+}

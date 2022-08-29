@@ -1,4 +1,7 @@
 /// action_setting_refresh_textures(value)
 /// @arg value
 
-setting_refresh_textures = argument0
+function action_setting_refresh_textures(value)
+{
+	setting_refresh_textures = value
+}

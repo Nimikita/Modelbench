@@ -1,8 +1,12 @@
 {
-    "id": "5e952f02-a390-4f31-b3d4-9b456fa8395e",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "new_shortcut",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "Controls",
+    "path": "folders/Scripts/App/Controls.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "new_shortcut",
+  "tags": [],
+  "resourceType": "GMScript",
 }

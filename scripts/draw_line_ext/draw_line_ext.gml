@@ -1,4 +1,4 @@
-/// draw_line_ext(x1,y1,x2,y2,color,alpha)
+/// draw_line_ext(x1, y1, x2, y2, color, alpha)
 /// @arg x1
 /// @arg y1
 /// @arg x2
@@ -6,19 +6,14 @@
 /// @arg color
 /// @arg alpha
 
-var x1, y1, x2, y2, color, alpha;
-x1 = argument0 - 1
-y1 = argument1 - 1
-x2 = argument2 - 1
-y2 = argument3 - 1
-
-color = draw_get_color()
-alpha = draw_get_alpha()
-
-draw_set_color(argument4)
-draw_set_alpha(alpha * argument5)
-
-draw_line(x1, y1, x2, y2)
-
-draw_set_color(color)
-draw_set_alpha(alpha)
+function draw_line_ext(x1, y1, x2, y2, color, alpha)
+{
+	alpha = alpha * draw_get_alpha()
+	
+	draw_primitive_begin(pr_linelist)
+	
+	draw_vertex_color(x1, y1, color, alpha)
+	draw_vertex_color(x2, y2, color, alpha)
+	
+	draw_primitive_end()
+}

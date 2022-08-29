@@ -1,4 +1,7 @@
 /// tip_set_shortcut(shortcut)
 /// @arg shortcut
 
-tip_shortcut_shortcut = argument0
+function tip_set_shortcut(shortcut)
+{
+	tip_shortcut_shortcut = shortcut
+}

@@ -1,8 +1,12 @@
 {
-    "id": "a4cd36cc-ab6a-4d5b-801a-6f8a1d449fba",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "action_setting_render_ao",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "Render",
+    "path": "folders/Scripts/App/Actions/Preview/Render.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "action_setting_render_ao",
+  "tags": [],
+  "resourceType": "GMScript",
 }

@@ -2,19 +2,22 @@
 /// @arg name
 /// @arg [value]
 
-var microanimation = new(obj_micro_animation)
-ds_map_add(microanis, argument[0], microanimation)
-
-if (argument_count > 1)
+function new_animation()
 {
-	with (microanimation)
+	var microanimation = new_obj(obj_micro_animation)
+	ds_map_add(microanis, argument[0], microanimation)
+	
+	if (argument_count > 1)
 	{
-		value = argument[1]
-		value_ani = argument[1]
-		value_ani_ease = argument[1]
+		with (microanimation)
+		{
+			value = argument[1]
+			value_ani = argument[1]
+			value_ani_ease = argument[1]
+		}
 	}
+	
+	microanimation.spd = 1
+	
+	return microanimation
 }
-
-microanimation.spd = 1
-
-return microanimation

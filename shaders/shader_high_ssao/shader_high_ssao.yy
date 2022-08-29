@@ -1,7 +1,11 @@
 {
-    "id": "b34db545-27f6-4838-8901-c083a4ff78b6",
-    "modelName": "GMShader",
-    "mvc": "1.0",
-    "name": "shader_high_ssao",
-    "type": 1
+  "type": 1,
+  "parent": {
+    "name": "SSAO",
+    "path": "folders/Shaders/High quality/SSAO.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "shader_high_ssao",
+  "tags": [],
+  "resourceType": "GMShader",
 }

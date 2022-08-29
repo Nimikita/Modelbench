@@ -1,8 +1,12 @@
 {
-    "id": "a89964b2-a3f4-42fe-bc24-975737bb0736",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "debug",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "Debug",
+    "path": "folders/Scripts/App/Debug.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "debug",
+  "tags": [],
+  "resourceType": "GMScript",
 }

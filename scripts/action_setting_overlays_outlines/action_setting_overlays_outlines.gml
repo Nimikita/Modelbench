@@ -1,4 +1,7 @@
 /// action_setting_overlays_outlines(value)
 /// @arg value
 
-setting_overlays_outlines = argument0
+function action_setting_overlays_outlines(value)
+{
+	setting_overlays_outlines = value
+}

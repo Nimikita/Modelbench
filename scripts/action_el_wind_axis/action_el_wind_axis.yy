@@ -1,8 +1,12 @@
 {
-    "id": "45e6c162-6cef-4a77-baf0-00e0d9a86e34",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "action_el_wind_axis",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "Wind",
+    "path": "folders/Scripts/App/Actions/Element/Element editor/Wind.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "action_el_wind_axis",
+  "tags": [],
+  "resourceType": "GMScript",
 }

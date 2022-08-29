@@ -1,4 +1,7 @@
 /// action_setting_slow_generation(value)
 /// @arg value
 
-setting_slow_generation = argument0
+function action_setting_slow_generation(value)
+{
+	setting_slow_generation = value
+}

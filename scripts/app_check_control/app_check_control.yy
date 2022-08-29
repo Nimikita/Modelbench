@@ -1,8 +1,12 @@
 {
-    "id": "e07b5287-98be-4fa9-8c7a-8bde60e18021",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "app_check_control",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "App",
+    "path": "folders/Scripts/App.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "app_check_control",
+  "tags": [],
+  "resourceType": "GMScript",
 }

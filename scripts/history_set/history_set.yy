@@ -1,8 +1,12 @@
 {
-    "id": "f0edbf10-41ba-4bc5-9cae-37f5fc40c57c",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "history_set",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "Set",
+    "path": "folders/Scripts/App/History/Set.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "history_set",
+  "tags": [],
+  "resourceType": "GMScript",
 }

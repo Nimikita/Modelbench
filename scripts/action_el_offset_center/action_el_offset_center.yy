@@ -1,8 +1,12 @@
 {
-    "id": "8c5306df-1edd-4268-9647-ad7fe6ae924d",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "action_el_offset_center",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "Offset",
+    "path": "folders/Scripts/App/Actions/Element/Element editor/Offset.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "action_el_offset_center",
+  "tags": [],
+  "resourceType": "GMScript",
 }

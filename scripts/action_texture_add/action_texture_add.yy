@@ -1,8 +1,12 @@
 {
-    "id": "f7dcb6f5-c420-47c3-b240-0eda6f8618a3",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "action_texture_add",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "Texture",
+    "path": "folders/Scripts/App/Actions/Texture.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "action_texture_add",
+  "tags": [],
+  "resourceType": "GMScript",
 }

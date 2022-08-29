@@ -1,8 +1,12 @@
 {
-    "id": "416bd8dd-9eb3-41bd-9a7b-ef9c1ffa2294",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "action_export_include_hidden",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "Export",
+    "path": "folders/Scripts/App/Actions/Export.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "action_export_include_hidden",
+  "tags": [],
+  "resourceType": "GMScript",
 }

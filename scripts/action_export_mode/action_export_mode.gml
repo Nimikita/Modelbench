@@ -1,4 +1,7 @@
 /// action_export_mode(mode)
 /// @arg mode
 
-export_mode = argument0
+function action_export_mode(mode)
+{
+	export_mode = mode
+}

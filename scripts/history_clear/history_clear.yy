@@ -1,8 +1,12 @@
 {
-    "id": "4b6f6206-8747-48e4-a226-78bcd50b39ac",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "history_clear",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "History",
+    "path": "folders/Scripts/App/History.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "history_clear",
+  "tags": [],
+  "resourceType": "GMScript",
 }

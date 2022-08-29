@@ -1,25 +1,28 @@
 /// app_update_textures()
 /// @desc Refreshes all textures in the current model when the window is refocused
 
-if (!setting_refresh_textures)
-	return 0
-
-if (window_in_focus != window_has_focus())
+function app_update_textures()
 {
-	window_in_focus = window_has_focus()
+	if (!setting_refresh_textures)
+		return 0
 	
-	if (window_in_focus)
+	if (window_in_focus != window_has_focus())
 	{
-		with (obj_texture)
-			tex_refresh(id)
+		window_in_focus = window_has_focus()
 		
-		textures_list.update = true
-		tex_preview.update = true
-		
-		with (obj_model_element)
+		if (window_in_focus)
 		{
-			if (element_type = TYPE_SHAPE)
-				update_vbuffer = true
+			with (obj_texture)
+				tex_refresh(id)
+			
+			textures_list.update = true
+			tex_preview.update = true
+			
+			with (obj_model_element)
+			{
+				if (element_type = TYPE_SHAPE)
+					update_vbuffer = true
+			}
 		}
 	}
 }

@@ -1,8 +1,12 @@
 {
-    "id": "68429980-404e-4eb8-a274-3d74e7e3f198",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "recent_load",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "Recent",
+    "path": "folders/Scripts/App/Recent.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "recent_load",
+  "tags": [],
+  "resourceType": "GMScript",
 }

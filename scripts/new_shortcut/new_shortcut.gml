@@ -3,4 +3,7 @@
 /// @arg control
 /// @arg shift
 
-return [ argument0, argument1, argument2 ]
+function new_shortcut(keyID, control, shift)
+{
+	return [ keyID, control, shift ]
+}

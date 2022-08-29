@@ -1,8 +1,12 @@
 {
-    "id": "236ad05e-7604-4262-98b2-41f055589581",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "render_world_start_light",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "World",
+    "path": "folders/Scripts/Render/World.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "render_world_start_light",
+  "tags": [],
+  "resourceType": "GMScript",
 }
