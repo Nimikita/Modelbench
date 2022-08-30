@@ -29,7 +29,7 @@ function tab_assets_model_properties()
 		var directory = ".../" + filename_name(model_folder) + "/" + filename_name(model_file);
 		
 		draw_label(directory, dx, dy + 34, fa_left, fa_bottom, c_text_secondary, a_text_secondary, font_caption)
-		if (draw_button_icon("assetsopenfolder", dx + dw - 24 + icon_button_offset, dy + 8, 24, 24, false, icons.OPEN_FILE, null, null, "assetsopenfolder"))
+		if (draw_button_icon("assetsopenfolder", dx + dw - 24 + icon_button_offset, dy + 8, 24, 24, false, icons.FILE, null, null, "assetsopenfolder"))
 			open_url(model_folder)
 	}
 	

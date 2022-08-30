@@ -3,7 +3,7 @@
 function snackbar_tip()
 {
 	var sb;
-	sb = new_snackbar(icons.TIP, "snackbartipcaption", "", e_snackbar.DEFAULT)
+	sb = new_snackbar(icons.INFO, "snackbartipcaption", "", e_snackbar.DEFAULT)
 	sb.tip = irandom_range(0, 4)
 	
 	sb.description = ("snackbartip" + string(sb.tip + 1))

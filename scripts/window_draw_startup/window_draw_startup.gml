@@ -46,7 +46,7 @@ function window_draw_startup()
 	// New model
 	draw_settings_button("startupnewmodeloptions", dx, dy, 24, 36, true)
 	dx -= newmodelwidth
-	draw_button_primary("startupnewmodel", dx, dy, newmodelwidth, model_create, icons.NEW_FILE)
+	draw_button_primary("startupnewmodel", dx, dy, newmodelwidth, model_create, icons.FILE)
 	
 	if (recent_list_amount > 0)
 		dx -= 12 + browsewidth
@@ -54,7 +54,7 @@ function window_draw_startup()
 		dx = centerx 
 	
 	// Browse
-	draw_button_secondary("startupbrowse", dx, dy, browsewidth, model_load, icons.OPEN_FILE)
+	draw_button_secondary("startupbrowse", dx, dy, browsewidth, model_load, icons.FOLDER)
 	
 	// Show recent models
 	if (recent_list_amount > 0)

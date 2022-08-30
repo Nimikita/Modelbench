@@ -143,12 +143,12 @@ function view_update_surface(view, cam)
 							switch (tool_selected)
 							{
 								case e_tool.PIVOT: icon = icons.PIVOT; break;
-								case e_tool.MOVE: icon = icons.TOOLSET_POSITION; break;
-								case e_tool.ROTATE: icon = icons.TOOLSET_ROTATE; break;
-								case e_tool.SCALE: icon = icons.TOOLSET_SCALE; break;
+								case e_tool.MOVE: icon = icons.MOVE; break;
+								case e_tool.ROTATE: icon = icons.ROTATE; break;
+								case e_tool.SCALE: icon = icons.SCALE; break;
 								case e_tool.TRANSFORM: icon = icons.TRANSFORM; break;
 								case e_tool.BEND: icon = icons.BEND; break;
-								case e_tool.RESIZE: icon = icons.TOOLSET_RESIZE; break;
+								case e_tool.RESIZE: icon = icons.BOUNDARY_BOX; break;
 							}
 							
 							if (icon != null)

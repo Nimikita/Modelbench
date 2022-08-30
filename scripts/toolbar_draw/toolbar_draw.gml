@@ -51,9 +51,9 @@ function toolbar_draw()
 	{
 		// Toggle UV editor
 		tip_set_shortcut(setting_key_uv_editor)
-		draw_button_icon("toolbaruveditor", dx, dy, 28, 28, setting_show_uv_editor, icons.UV_EDITOR, action_toolbar_show_uv_editor, false, (setting_show_uv_editor ? "tooltipuveditorhide" : "tooltipuveditorshow"))
+		draw_button_icon("toolbaruveditor", dx, dy, 28, 28, setting_show_uv_editor, icons.TEXTURE, action_toolbar_show_uv_editor, false, (setting_show_uv_editor ? "tooltipuveditorhide" : "tooltipuveditorshow"))
 		tip_set_shortcut(-1)
 	}
 	else if (program_mode = e_mode.PREVIEW)
-		draw_button_icon("toolbarguides", dx, dy, 28, 28, setting_preview_guides, icons.SQUARE_RATIO, action_toolbar_preview_guides, false, (setting_preview_guides ? "tooltipguideshide" : "tooltipguidesshow"))
+		draw_button_icon("toolbarguides", dx, dy, 28, 28, setting_preview_guides, icons.LETTERBOX, action_toolbar_preview_guides, false, (setting_preview_guides ? "tooltipguideshide" : "tooltipguidesshow"))
 }

@@ -33,14 +33,14 @@ function shortcut_draw(shortcut)
 	{
 		switch (shortcut[1])
 		{
-			case e_mouse.LEFT_CLICK: mouse = icons.LEFT_CLICK; break;
-			case e_mouse.LEFT_DRAG: mouse = icons.LEFT_DRAG; break;
-			case e_mouse.RIGHT_CLICK: mouse = icons.RIGHT_CLICK; break;
-			case e_mouse.RIGHT_DRAG: mouse = icons.RIGHT_DRAG; break;
-			case e_mouse.MIDDLE_CLICK: mouse = icons.MIDDLE_CLICK; break;
-			case e_mouse.MIDDLE_DRAG: mouse = icons.MIDDLE_DRAG; break;
+			case e_mouse.LEFT_CLICK: mouse = icons.CLICK_LEFT; break;
+			case e_mouse.LEFT_DRAG: mouse = icons.DRAG_LEFT; break;
+			case e_mouse.RIGHT_CLICK: mouse = icons.CLICK_RIGHT; break;
+			case e_mouse.RIGHT_DRAG: mouse = icons.DRAG_RIGHT; break;
+			case e_mouse.MIDDLE_CLICK: mouse = icons.CLICK_MIDDLE; break;
+			case e_mouse.MIDDLE_DRAG: mouse = icons.DRAG_MIDDLE; break;
 			case e_mouse.SCROLL: mouse = icons.SCROLL; break;
-			default: mouse = icons.PLACEHOLDER;
+			default: mouse = icons.HELP;
 		}
 		
 		draw_image(spr_icons, mouse, dx + 10, yy, 1, 1, c_text_tertiary, a_text_tertiary)

@@ -7,7 +7,7 @@ function snackbar_save_model()
 	snackbar_delete("snackbarsavemodel")
 	snackbar_delete("snackbarwarningsavemodel")
 	
-	sb = new_snackbar(icons.CHECKMARK, "snackbarsavemodel", "", e_snackbar.SUCCESS, 2)
+	sb = new_snackbar(icons.TICK, "snackbarsavemodel", "", e_snackbar.SUCCESS, 2)
 	time = sb.dismiss_time
 	
 	var errorstr, errors;

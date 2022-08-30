@@ -3,5 +3,5 @@
 
 function snackbar_error(str)
 {
-	return new_snackbar(icons.WARNING, "snackbarwarningsavemodel", str, e_snackbar.WARNING)
+	return new_snackbar(icons.WARNING_DIAMOND, "snackbarwarningsavemodel", str, e_snackbar.WARNING)
 }

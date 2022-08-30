@@ -35,6 +35,7 @@ function app_startup_themes()
 	theme_edit = theme_light
 	
 	theme_edit.name = "light"
+	theme_edit.dark = false
 	theme_edit.pattern = 0
 	theme_edit.accent_list = array()
 	array_add(theme_edit.accent_list, hex_to_color("DB3030"))
@@ -79,6 +80,7 @@ function app_startup_themes()
 	theme_edit = theme_dark
 	
 	theme_edit.name = "dark"
+	theme_edit.dark = true
 	theme_edit.pattern = 0
 	theme_edit.accent_list = array()
 	array_add(theme_edit.accent_list, hex_to_color("FF7E76"))
@@ -123,6 +125,7 @@ function app_startup_themes()
 	theme_edit = theme_darker
 	
 	theme_edit.name = "darker"
+	theme_edit.dark = true
 	theme_edit.pattern = 0
 	theme_edit.accent_list = array()
 	array_add(theme_edit.accent_list, hex_to_color("FF7E76"))

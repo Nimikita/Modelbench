@@ -75,7 +75,7 @@ function view_toolbar_viewport_draw(barx, bary, barw, barh)
 	dx += 16 + 4
 	
 	// Blocky bending
-	draw_button_icon("toolsetblockybending", dx, dy, 28, 28, setting_blocky_bending, icons.BLOCKY_BENDING, action_setting_blocky_bending, false, setting_blocky_bending ? "tooltipblockybendingdisable" : "tooltipblockybendingenable")
+	draw_button_icon("toolsetblockybending", dx, dy, 28, 28, setting_blocky_bending, icons.BEND, action_setting_blocky_bending, false, setting_blocky_bending ? "tooltipblockybendingdisable" : "tooltipblockybendingenable")
 	dx += 28 + 4
 	
 	// Divider
@@ -83,17 +83,17 @@ function view_toolbar_viewport_draw(barx, bary, barw, barh)
 	dx += 4
 	
 	// Flat rendering
-	if (draw_button_icon("toolsetflat", dx, dy, 28, 28, setting_render_mode = e_viewport_render.FLAT, icons.FLAT, null, disable, "tooltipflatmode"))
+	if (draw_button_icon("toolsetflat", dx, dy, 28, 28, setting_render_mode = e_viewport_render.FLAT, icons.SPHERE_FLAT, null, disable, "tooltipflatmode"))
 		action_setting_render(e_viewport_render.FLAT)
 	dx += 28 + 4
 	
 	// Shaded rendering
-	if (draw_button_icon("toolsetshaded", dx, dy, 28, 28, setting_render_mode = e_viewport_render.SHADED, icons.SHADED, null, disable, "tooltipshadedmode"))
+	if (draw_button_icon("toolsetshaded", dx, dy, 28, 28, setting_render_mode = e_viewport_render.SHADED, setting_theme.dark ? icons.SPHERE__DARK : icons.SPHERE, null, disable, "tooltipshadedmode"))
 		action_setting_render(e_viewport_render.SHADED)
 	dx += 28 + 4
 	
 	// Textured rendering
-	if (draw_button_icon("toolsettextured", dx, dy, 28, 28, setting_render_mode = e_viewport_render.TEXTURED, icons.TEXTURED, null, disable, "tooltiptexturedmode"))
+	if (draw_button_icon("toolsettextured", dx, dy, 28, 28, setting_render_mode = e_viewport_render.TEXTURED, icons.SPHERE_TEXTURE, null, disable, "tooltiptexturedmode"))
 		action_setting_render(e_viewport_render.TEXTURED)
 	dx += 28
 	

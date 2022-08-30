@@ -65,7 +65,7 @@ function draw_panel_buttton()
 	draw_image(spr_icons, icon, xx + 22, yy + hei/2, 1, 1, iconcolor, iconalpha)
 	
 	if (arrow)
-		draw_image(spr_icons, icons.ARROW_RIGHT_SMALL, xx + wid - 22, yy + hei/2, 1, 1, iconcolor, iconalpha)
+		draw_image(spr_icons, icons.CHEVRON_RIGHT, xx + wid - 22, yy + hei/2, 1, 1, iconcolor, iconalpha)
 	
 	microani_update(mouseon, mouseon && mouse_left, value || (mouseon && mouse_left_released), disabled)
 	

@@ -43,7 +43,7 @@ function tab_assets_textures()
 	
 	// Add texture
 	tab_control(36)
-	if (draw_button_primary("assetsaddtexture", dx, dy, 0, null, icons.ADD, fa_center))
+	if (draw_button_primary("assetsaddtexture", dx, dy, 0, null, icons.PLUS, fa_center))
 	{
 		var fn = file_dialog_open_image();
 		

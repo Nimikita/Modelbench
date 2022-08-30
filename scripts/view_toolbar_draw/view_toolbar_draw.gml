@@ -54,7 +54,7 @@ function view_toolbar_draw(barx, bary, barw, barh)
 		dy += buttonsize
 	
 	// Add block
-	if (draw_button_icon("toolsetaddblock", dx, dy, 28, 28, false, icons.BLOCK_ADD, null, false, "toolsetaddblock"))
+	if (draw_button_icon("toolsetaddblock", dx, dy, 28, 28, false, icons.CUBE_ADD, null, false, "toolsetaddblock"))
 		action_element_create(e_element.BLOCK)
 	
 	if (dw > dh)
@@ -72,7 +72,7 @@ function view_toolbar_draw(barx, bary, barw, barh)
 		dy += buttonsize
 	
 	// Add plane (3d)
-	if (draw_button_icon("toolsetaddplane3d", dx, dy, 28, 28, false, icons.PLANE3D_ADD, null, false, "toolsetaddplane3d"))
+	if (draw_button_icon("toolsetaddplane3d", dx, dy, 28, 28, false, icons.PLANE_3D_ADD, null, false, "toolsetaddplane3d"))
 		action_element_create(e_element.PLANE_3D)
 	
 	if (dw > dh)
@@ -92,7 +92,7 @@ function view_toolbar_draw(barx, bary, barw, barh)
 	
 	// Select-only tool
 	tip_set_shortcut(setting_key_tool_select)
-	if (draw_button_icon("toolsettoolselect", dx, dy, 28, 28, tool_selected = e_tool.SELECT, icons.CURSOR, null, false, "toolsettoolselect"))
+	if (draw_button_icon("toolsettoolselect", dx, dy, 28, 28, tool_selected = e_tool.SELECT, icons.SELECT, null, false, "toolsettoolselect"))
 		tool_selected = e_tool.SELECT
 	
 	if (dw > dh)
@@ -102,7 +102,7 @@ function view_toolbar_draw(barx, bary, barw, barh)
 	
 	// Position tool
 	tip_set_shortcut(setting_key_tool_move)
-	if (draw_button_icon("toolsettoolmove", dx, dy, 28, 28, tool_selected = e_tool.MOVE, icons.TOOLSET_POSITION, null, false, "toolsettoolmove"))
+	if (draw_button_icon("toolsettoolmove", dx, dy, 28, 28, tool_selected = e_tool.MOVE, icons.MOVE, null, false, "toolsettoolmove"))
 		tool_selected = e_tool.MOVE
 	
 	if (dw > dh)
@@ -122,7 +122,7 @@ function view_toolbar_draw(barx, bary, barw, barh)
 	
 	// Rotate tool
 	tip_set_shortcut(setting_key_tool_rotate)
-	if (draw_button_icon("toolsettoolrotate", dx, dy, 28, 28, tool_selected = e_tool.ROTATE, icons.TOOLSET_ROTATE, null, false, "toolsettoolrotate"))
+	if (draw_button_icon("toolsettoolrotate", dx, dy, 28, 28, tool_selected = e_tool.ROTATE, icons.ROTATE, null, false, "toolsettoolrotate"))
 		tool_selected = e_tool.ROTATE
 	
 	if (dw > dh)
@@ -132,7 +132,7 @@ function view_toolbar_draw(barx, bary, barw, barh)
 	
 	// Resize tool
 	tip_set_shortcut(setting_key_tool_resize)
-	if (draw_button_icon("toolsettoolresize", dx, dy, 28, 28, tool_selected = e_tool.RESIZE, icons.TOOLSET_RESIZE, null, false, "toolsettoolresize"))
+	if (draw_button_icon("toolsettoolresize", dx, dy, 28, 28, tool_selected = e_tool.RESIZE, icons.BOUNDARY_BOX, null, false, "toolsettoolresize"))
 		tool_selected = e_tool.RESIZE
 	
 	if (dw > dh)
@@ -142,7 +142,7 @@ function view_toolbar_draw(barx, bary, barw, barh)
 	
 	// Scale tool
 	tip_set_shortcut(setting_key_tool_scale)
-	if (draw_button_icon("toolsettoolscale", dx, dy, 28, 28, tool_selected = e_tool.SCALE, icons.TOOLSET_SCALE, null, false, "toolsettoolscale"))
+	if (draw_button_icon("toolsettoolscale", dx, dy, 28, 28, tool_selected = e_tool.SCALE, icons.SCALE, null, false, "toolsettoolscale"))
 		tool_selected = e_tool.SCALE
 	
 	if (dw > dh)

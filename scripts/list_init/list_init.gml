@@ -12,8 +12,8 @@ function list_init(name)
 	{
 		case "startupnewmodeloptions":
 		{
-			list_add_item(text_get("startupstartfromscratch"), e_part.FRONT, "", null, icons.NEW_FILE, null, model_create)
-			list_add_item(text_get("startuploadatemplate"), false, "", null, icons.NEW_FILE_TEMPLATE, null, model_create_template)
+			list_add_item(text_get("startupstartfromscratch"), e_part.FRONT, "", null, icons.FILE, null, model_create)
+			list_add_item(text_get("startuploadatemplate"), false, "", null, icons.FILE_TEMPLATE, null, model_create_template)
 			break
 		}
 		
@@ -97,7 +97,7 @@ function list_init(name)
 				else
 					err = true
 				
-				list_add_item(filename, filename_name(file), locale, null, null, err ? icons.WARNING : null, null)
+				list_add_item(filename, filename_name(file), locale, null, null, err ? icons.WARNING_DIAMOND : null, null)
 				file = file_find_next()
 			}
 			file_find_close()
@@ -120,7 +120,7 @@ function list_init(name)
 			if (context_menu_copy_category != null && context_menu_copy_category.name = "scale")
 			{
 				var text = (setting_combine_scale ? "contextmenuseperatescale" : "contextmenucombinescale");
-				list_add_item(text_get(text), null, "", null, icons.TOOLSET_SCALE, null, action_category_combine_scale, true)
+				list_add_item(text_get(text), null, "", null, icons.SCALE, null, action_category_combine_scale, true)
 			}
 			
 			// Offset centering
@@ -187,7 +187,7 @@ function list_init(name)
 			list_add_item(text_get("contextmenutexturerefresh"), null, "", null, icons.REFRESH, null, action_texture_refresh, false)
 			listitem_last.disabled = (context_menu_value.filepath = "")
 			
-			list_add_item(text_get("contextmenutexturesaveuvmap"), null, "", null, icons.TEXTURE_UVMAP, null, action_texture_save_uv_map, false)
+			list_add_item(text_get("contextmenutexturesaveuvmap"), null, "", null, icons.TEXTURE, null, action_texture_save_uv_map, false)
 			break
 		}
 		
@@ -199,7 +199,7 @@ function list_init(name)
 		
 		case "contextmenuelement":
 		{
-			list_add_item(text_get("contextmenuelementadd"), null, "", null, icons.ADD, icons.ARROW_RIGHT_SMALL, null, true)
+			list_add_item(text_get("contextmenuelementadd"), null, "", null, icons.PLUS, icons.CHEVRON_RIGHT, null, true)
 			listitem_last.context_menu_name = "contextmenuaddelement"
 			listitem_last.disabled = (context_menu_value.element_type = TYPE_SHAPE)
 			
@@ -213,17 +213,17 @@ function list_init(name)
 			listitem_last.disabled = (el_edit = null)
 			
 			list_add_item(text_get("contextmenuviewportselectall"), null, text_control_name(setting_key_select_all), null, icons.SELECT_ALL, null, action_el_select_all, true)
-			list_add_item(text_get("contextmenuelementexpandall"), null, "", null, icons.EXPAND_ALL, null, action_expand_all, false)
-			list_add_item(text_get("contextmenuelementcollapseall"), null, "", null, icons.COLLAPSE_ALL, null, action_collapse_all, false)
+			list_add_item(text_get("contextmenuelementexpandall"), null, "", null, icons.MINIMIZE, null, action_expand_all, false)
+			list_add_item(text_get("contextmenuelementcollapseall"), null, "", null, icons.MAXIMIZE, null, action_collapse_all, false)
 			break
 		}
 		
 		case "contextmenuaddelement":
 		{
 			list_add_item(text_get("contextmenuaddelementpart"), e_element.PART, "", null, icons.PART_ADD, null, action_element_create_menu, true)
-			list_add_item(text_get("contextmenuaddelementblock"), e_element.BLOCK, "", null, icons.BLOCK_ADD, null, action_element_create_menu, false)
+			list_add_item(text_get("contextmenuaddelementblock"), e_element.BLOCK, "", null, icons.CUBE_ADD, null, action_element_create_menu, false)
 			list_add_item(text_get("contextmenuaddelementplane"), e_element.PLANE, "", null, icons.PLANE_ADD, null, action_element_create_menu, false)
-			list_add_item(text_get("contextmenuaddelement3dplane"), e_element.PLANE_3D, "", null, icons.PLANE3D_ADD, null, action_element_create_menu, false)
+			list_add_item(text_get("contextmenuaddelement3dplane"), e_element.PLANE_3D, "", null, icons.PLANE_3D_ADD, null, action_element_create_menu, false)
 			break
 		}
 		
@@ -237,7 +237,7 @@ function list_init(name)
 		{
 			if (context_menu_value = view_cam_viewport)
 			{
-				list_add_item(text_get("contextmenuelementadd"), null, "", null, icons.ADD, icons.ARROW_RIGHT_SMALL, null, true)
+				list_add_item(text_get("contextmenuelementadd"), null, "", null, icons.PLUS, icons.CHEVRON_RIGHT, null, true)
 				listitem_last.context_menu_name = "contextmenuviewportaddelement"
 				
 				list_add_item(text_get("contextmenuelementrename"), null, text_control_name(setting_key_rename), null, icons.RENAME, null, action_el_rename_start, false)
@@ -260,9 +260,9 @@ function list_init(name)
 		case "contextmenuviewportaddelement":
 		{
 			list_add_item(text_get("contextmenuaddelementpart"), e_element.PART, "", null, icons.PART_ADD, null, action_element_create, true)
-			list_add_item(text_get("contextmenuaddelementblock"), e_element.BLOCK, "", null, icons.BLOCK_ADD, null, action_element_create, false)
+			list_add_item(text_get("contextmenuaddelementblock"), e_element.BLOCK, "", null, icons.CUBE_ADD, null, action_element_create, false)
 			list_add_item(text_get("contextmenuaddelementplane"), e_element.PLANE, "", null, icons.PLANE_ADD, null, action_element_create, false)
-			list_add_item(text_get("contextmenuaddelement3dplane"), e_element.PLANE_3D, "", null, icons.PLANE3D_ADD, null, action_element_create, false)
+			list_add_item(text_get("contextmenuaddelement3dplane"), e_element.PLANE_3D, "", null, icons.PLANE_3D_ADD, null, action_element_create, false)
 			break
 		}
 		

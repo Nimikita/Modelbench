@@ -110,7 +110,7 @@ function draw_keycontrol(name, xx, yy, wid, shortcut, def, script, keyonly = fal
 	editx = xx + dw - 24 + icon_button_offset
 	
 	draw_set_alpha(hover)
-	if (draw_button_icon(name + "editbutton", editx, edity, 24, 24, window_busy = name, icons.EDIT, null, false, "tooltipeditshortcut"))
+	if (draw_button_icon(name + "editbutton", editx, edity, 24, 24, window_busy = name, icons.PENCIL, null, false, "tooltipeditshortcut"))
 	{
 		window_busy = name
 		shortcutnew = new_shortcut("", false, false)

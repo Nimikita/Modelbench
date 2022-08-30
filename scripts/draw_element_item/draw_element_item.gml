@@ -78,7 +78,7 @@ function draw_element_item()
 		else if (element.name_duplicate)
 			tip_set(text_get("elementeditorsamepartname"), xx, itemy + 4, 20, 20)
 		
-		draw_image(spr_icons, icons.ALERT, xx + 10, itemy + 14, 1, 1, c_error, 1)
+		draw_image(spr_icons, icons.WARNING_TRIANGLE, xx + 10, itemy + 14, 1, 1, c_error, 1)
 		xx -= 24
 	}
 	else
@@ -89,7 +89,7 @@ function draw_element_item()
 	{
 		if (itemhover || element.hidden)
 		{
-			if (draw_button_icon("assetselementhidden" + string(element), xx, itemy + 4, 20, 20, element.hidden, icons.SHOW + element.hidden, null, window_busy = "elementselection", (element.hidden ? "tooltipshow" : "tooltiphide")))
+			if (draw_button_icon("assetselementhidden" + string(element), xx, itemy + 4, 20, 20, element.hidden, element.hidden ? icons.HIDDEN_SMALL : icons.VISIBLE_SMALL, null, window_busy = "elementselection", (element.hidden ? "tooltipshow" : "tooltiphide")))
 			{
 				element.hidden = !element.hidden
 				el_update_hidden_tree(false)
@@ -152,7 +152,7 @@ function draw_element_item()
 			else if (element.type = "plane")
 			{
 				if (element.value[e_value.EXTRUDE])
-					icon = icons.PLANE3D
+					icon = (setting_theme.dark ? icons.PLANE_3D__DARK : icons.PLANE_3D)
 				else
 					icon = icons.PLANE
 			}

@@ -99,7 +99,7 @@ function draw_switch()
 		buttoncolor = merge_color(c_text_tertiary, c_text_secondary, mcroani_arr[e_mcroani.HOVER])
 		buttonalpha = lerp(a_text_tertiary, a_text_secondary, mcroani_arr[e_mcroani.HOVER]) * lerp(1, .5, mcroani_arr[e_mcroani.DISABLED])
 		
-		draw_image(spr_icons, icons.HELP, xx + string_width(name) + 10 + 8, yy + 14, 1, 1, buttoncolor, buttonalpha)
+		draw_image(spr_icons, icons.HELP_CIRCLE, xx + string_width(name) + 10 + 8, yy + 14, 1, 1, buttoncolor, buttonalpha)
 		
 		if (!disabled)
 			tip_set(text_get(argument[0] + "help"), xx + string_width(name) + 8, yy + 4, 20, 20)

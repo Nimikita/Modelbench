@@ -32,7 +32,7 @@ function window_draw_element_move()
 			else if (element.type = "plane")
 			{
 				if (element.value[e_value.EXTRUDE])
-					icon = icons.PLANE3D
+					icon = (setting_theme.dark ? icons.PLANE_3D__DARK : icons.PLANE_3D)
 				else
 					icon = icons.PLANE
 			}
