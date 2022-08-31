@@ -158,7 +158,7 @@ function draw_meter_range(name, xx, yy, wid, minval, maxval, snapval, valuemin, 
 	// Dragger(Minimum)
 	draw_box(linex + dragxmin - 6, dragy - 10, 12, 20, false, c_accent, 1)
 	draw_box_bevel(linex + dragxmin - 6, dragy - 10, 12, 20, 1)
-	draw_box_hover(linex + dragxmin - 6, dragy - 10, 12, 20, mcroani_arr[e_mcroani.HOVER])
+	draw_box_hover(linex + dragxmin - 6, dragy - 10, 12, 20, microani_arr[e_microani.HOVER])
 	
 	microani_set(name + "max", scriptmax, (window_busy = name + "max") || mouseonmax, mouseonmax && mouse_left, false)
 	microani_update((window_busy = name + "max") || mouseonmax, mouseonmax && mouse_left, false)
@@ -166,5 +166,5 @@ function draw_meter_range(name, xx, yy, wid, minval, maxval, snapval, valuemin, 
 	// Dragger(Maximum)
 	draw_box(linex + dragxmax - 6, dragy - 10, 12, 20, false, c_accent, 1)
 	draw_box_bevel(linex + dragxmax - 6, dragy - 10, 12, 20, 1)
-	draw_box_hover(linex + dragxmax - 6, dragy - 10, 12, 20, mcroani_arr[e_mcroani.HOVER])
+	draw_box_hover(linex + dragxmax - 6, dragy - 10, 12, 20, microani_arr[e_microani.HOVER])
 }

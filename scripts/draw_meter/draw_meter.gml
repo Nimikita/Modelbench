@@ -86,7 +86,7 @@ function draw_meter(name, xx, yy, wid, value, valuewid, minval, maxval, def, sna
 		}
 	}
 	else
-		draw_label(string_decimals(value) + tbx.suffix, xx + wid, yy + hei / 2, fa_right, fa_middle, merge_color(c_text_main, c_text_tertiary, mcroani_arr[e_mcroani.DISABLED]), lerp(a_text_main, a_text_tertiary, mcroani_arr[e_mcroani.DISABLED]), font_value)
+		draw_label(string_decimals(value) + tbx.suffix, xx + wid, yy + hei / 2, fa_right, fa_middle, merge_color(c_text_main, c_text_tertiary, microani_arr[e_microani.DISABLED]), lerp(a_text_main, a_text_tertiary, microani_arr[e_microani.DISABLED]), font_value)
 	
 	dragval = (window_busy = name ? meter_drag_value : value)
 	
@@ -111,12 +111,12 @@ function draw_meter(name, xx, yy, wid, value, valuewid, minval, maxval, def, sna
 	}
 	
 	// Line
-	draw_box(linex, dragy - 1, linewid + 1, 2, false, merge_color(c_text_secondary, c_text_tertiary, mcroani_arr[e_mcroani.DISABLED]), lerp(a_text_secondary, a_text_tertiary, mcroani_arr[e_mcroani.DISABLED]))
-	draw_box(linex, dragy - 1, dragx + 1, 2, false, c_accent, lerp(1, 0, mcroani_arr[e_mcroani.DISABLED]))
+	draw_box(linex, dragy - 1, linewid + 1, 2, false, merge_color(c_text_secondary, c_text_tertiary, microani_arr[e_microani.DISABLED]), lerp(a_text_secondary, a_text_tertiary, microani_arr[e_microani.DISABLED]))
+	draw_box(linex, dragy - 1, dragx + 1, 2, false, c_accent, lerp(1, 0, microani_arr[e_microani.DISABLED]))
 	
 	// Dragger
-	draw_box(linex + dragx - 6, dragy - 10, 12, 20, false, c_background, 1)
-	draw_box(linex + dragx - 6, dragy - 10, 12, 20, false, merge_color(c_accent, c_text_tertiary, mcroani_arr[e_mcroani.DISABLED]), lerp(1, a_text_tertiary, mcroani_arr[e_mcroani.DISABLED]))
+	draw_box(linex + dragx - 6, dragy - 10, 12, 20, false, c_level_middle, 1)
+	draw_box(linex + dragx - 6, dragy - 10, 12, 20, false, merge_color(c_accent, c_text_tertiary, microani_arr[e_microani.DISABLED]), lerp(1, a_text_tertiary, microani_arr[e_microani.DISABLED]))
 	draw_box_bevel(linex + dragx - 6, dragy - 10, 12, 20, 1)
-	draw_box_hover(linex + dragx - 6, dragy - 10, 12, 20, mcroani_arr[e_mcroani.HOVER] * (1 - mcroani_arr[e_mcroani.DISABLED]))
+	draw_box_hover(linex + dragx - 6, dragy - 10, 12, 20, microani_arr[e_microani.HOVER] * (1 - microani_arr[e_microani.DISABLED]))
 }

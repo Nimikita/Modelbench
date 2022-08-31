@@ -15,12 +15,12 @@ function shortcut_draw(shortcut)
 		var keyboardarray = text_control_name(shortcut[0], true);
 		for (var i = 0; i < array_length(keyboardarray); i++)
 		{
-			var stringsize = string_width_font(keyboardarray[i], font_emphasis);
+			var stringsize = string_width_font(keyboardarray[i], font_label);
 			
 			draw_box(dx, yy - 8, stringsize + 12, 16, false, c_text_tertiary, a_text_tertiary)
-			draw_box(dx + 2, yy - 6, stringsize + 8, 12, false, c_background, 1)
+			draw_box(dx + 2, yy - 6, stringsize + 8, 12, false, c_level_middle, 1)
 			
-			draw_label(keyboardarray[i], dx + 6, yy, fa_left, fa_middle, c_text_tertiary, a_text_tertiary, font_emphasis)
+			draw_label(keyboardarray[i], dx + 6, yy, fa_left, fa_middle, c_text_tertiary, a_text_tertiary, font_label)
 			
 			dx += (stringsize + 12) + (i < (array_length(keyboardarray) - 1) ? imgpadding : 0)
 		}

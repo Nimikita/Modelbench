@@ -7,7 +7,7 @@ function shortcut_bar_draw()
 	content_width = window_width
 	content_height = (28 * shortcut_bar_lines)
 	
-	draw_box(content_x, content_y, content_width, content_height, false, c_background, 1)
+	draw_box(content_x, content_y, content_width, content_height, false, c_level_middle, 1)
 	draw_box(content_x, content_y - 1, content_width, 1, false, c_border, a_border)
 	
 	dx = content_x + 12

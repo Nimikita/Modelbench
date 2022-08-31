@@ -62,21 +62,21 @@ function draw_textfield_group()
 		// Field label
 		var labelcolor, labelalpha;
 		labelcolor = (textfield_icon[i] = null ? c_text_secondary : c_text_tertiary)
-		labelcolor = merge_color(labelcolor, c_accent, mcroani_arr[e_mcroani.ACTIVE])
-		labelcolor = merge_color(labelcolor, c_text_tertiary, mcroani_arr[e_mcroani.DISABLED])
+		labelcolor = merge_color(labelcolor, c_accent, microani_arr[e_microani.ACTIVE])
+		labelcolor = merge_color(labelcolor, c_text_tertiary, microani_arr[e_microani.DISABLED])
 		
 		labelalpha = (textfield_icon[i] = null ? a_text_secondary : a_text_tertiary)
-		labelalpha = lerp(labelalpha, 1, mcroani_arr[e_mcroani.ACTIVE])
-		labelalpha = lerp(labelalpha, a_text_tertiary, mcroani_arr[e_mcroani.DISABLED])
+		labelalpha = lerp(labelalpha, 1, microani_arr[e_microani.ACTIVE])
+		labelalpha = lerp(labelalpha, a_text_tertiary, microani_arr[e_microani.DISABLED])
 		
 		if (textfield_icon[i] = null)
-			draw_label(text_get(textfield_name[i]), fieldx + 8, yy + (hei/2), fa_left, fa_middle, labelcolor, labelalpha, font_emphasis)
+			draw_label(text_get(textfield_name[i]), fieldx + 8, yy + (hei/2), fa_left, fa_middle, labelcolor, labelalpha, font_label)
 		else
 			draw_image(spr_icons, textfield_icon[i], floor(fieldx + 14), yy + (hei/2), 1, 1, labelcolor, labelalpha)
 		
-		draw_outline(fieldx - 1, yy + 1, boxwid + 2, hei - 2, 1, c_accent, mcroani_arr[e_mcroani.ACTIVE])
+		draw_outline(fieldx - 1, yy + 1, boxwid + 2, hei - 2, 1, c_accent, microani_arr[e_microani.ACTIVE])
 		
-		draw_box_hover(fieldx - 2, yy, boxwid + 4, hei, max(mcroani_arr[e_mcroani.HOVER], mcroani_arr[e_mcroani.ACTIVE]) * (1 - mcroani_arr[e_mcroani.DISABLED]))
+		draw_box_hover(fieldx - 2, yy, boxwid + 4, hei, max(microani_arr[e_microani.HOVER], microani_arr[e_microani.ACTIVE]) * (1 - microani_arr[e_microani.DISABLED]))
 		
 		microani_update(mouseon || window_focus = string(textfield_textbox[i]), false, window_focus = string(textfield_textbox[i]), false)
 		

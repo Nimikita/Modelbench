@@ -96,6 +96,15 @@ function enums()
 		SUCCESS
 	}
 	
+	// Toasts
+	enum e_toast
+	{
+		INFO,
+		POSITIVE,
+		WARNING,
+		NEGATIVE
+	}
+	
 	enum e_element
 	{
 		PART,

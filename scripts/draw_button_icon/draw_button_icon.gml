@@ -66,31 +66,31 @@ function draw_button_icon()
 	microani_set(name, script, mouseon, mouseon && mouse_left, value)
 	
 	// Hover outline
-	draw_box_hover(xx, yy, wid, hei, mcroani_arr[e_mcroani.HOVER])
+	draw_box_hover(xx, yy, wid, hei, microani_arr[e_microani.HOVER])
 	
 	// Background
 	var backgroundcolor, backgroundalpha;
-	backgroundcolor = merge_color(c_accent_overlay, c_overlay, mcroani_arr[e_mcroani.ACTIVE])
-	backgroundalpha = lerp(0, a_overlay, mcroani_arr[e_mcroani.ACTIVE])
+	backgroundcolor = merge_color(c_accent_overlay, c_overlay, microani_arr[e_microani.ACTIVE])
+	backgroundalpha = lerp(0, a_overlay, microani_arr[e_microani.ACTIVE])
 	
-	backgroundalpha = lerp(backgroundalpha, 0, mcroani_arr[e_mcroani.HOVER])
+	backgroundalpha = lerp(backgroundalpha, 0, microani_arr[e_microani.HOVER])
 	
-	backgroundcolor = merge_color(backgroundcolor, c_accent_overlay, mcroani_arr[e_mcroani.PRESS])
-	backgroundalpha = lerp(backgroundalpha, a_accent_overlay, mcroani_arr[e_mcroani.PRESS])
+	backgroundcolor = merge_color(backgroundcolor, c_accent_overlay, microani_arr[e_microani.PRESS])
+	backgroundalpha = lerp(backgroundalpha, a_accent_overlay, microani_arr[e_microani.PRESS])
 	
 	var prevalpha = draw_get_alpha();
-	draw_set_alpha(prevalpha * lerp(1, .5, mcroani_arr[e_mcroani.DISABLED]))
+	draw_set_alpha(prevalpha * lerp(1, .5, microani_arr[e_microani.DISABLED]))
 	
 	draw_box(xx, yy, wid, hei, false, backgroundcolor, backgroundalpha)
 	
 	// Animated icon(if 'icon' is a sprite)
 	if (sprite != spr_icons && sprite != null)
 	{
-		var frame = floor((sprite_get_number(sprite) - 1) * mcroani_arr[e_mcroani.ACTIVE_LINEAR]);
+		var frame = floor((sprite_get_number(sprite) - 1) * microani_arr[e_microani.ACTIVE_LINEAR]);
 		draw_image(sprite, frame, xx + wid/2, yy + wid/2, 1, 1, c_text_secondary, a_text_secondary)
 	}
 	else // Icon
-		draw_image(spr_icons, icon, xx + wid/2, yy + wid/2, 1, 1, merge_color(c_text_secondary, c_accent, mcroani_arr[e_mcroani.ACTIVE]), lerp(a_text_secondary, 1, mcroani_arr[e_mcroani.ACTIVE]))
+		draw_image(spr_icons, icon, xx + wid/2, yy + wid/2, 1, 1, merge_color(c_text_secondary, c_accent, microani_arr[e_microani.ACTIVE]), lerp(a_text_secondary, 1, microani_arr[e_microani.ACTIVE]))
 	
 	draw_set_alpha(prevalpha)
 	

@@ -68,7 +68,7 @@ function popup_draw()
 	content_tab = null
 	
 	draw_dropshadow(boxx, boxy, boxw, boxh, c_black, 1)
-	draw_box(boxx, boxy, boxw, boxh, false, c_background, 1)
+	draw_box(boxx, boxy, boxw, boxh, false, c_level_middle, 1)
 	draw_outline(boxx, boxy, boxw, boxh, 1, c_overlay, a_overlay)
 	
 	// Move

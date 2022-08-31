@@ -16,7 +16,7 @@ function preview_draw(preview, xx, yy, width, height)
 	mouseon = app_mouse_box(xx, yy, width, height) && content_mouseon
 	
 	// Background
-	draw_box(xx, yy, width, height, false, c_background_secondary, 1)
+	draw_box(xx, yy, width, height, false, c_level_bottom, 1)
 	
 	if (!instance_exists(preview.select))
 	{

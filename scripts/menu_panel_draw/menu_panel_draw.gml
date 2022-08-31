@@ -62,8 +62,8 @@ function menu_panel_draw()
 	panelx = -panelw + (panelw * panelease)
 	
 	// Draw window block
-	draw_box(0, panely, window_width, panelh, false, c_background, panelease * 0.35)
-	draw_box(panelx, panely, panelw, panelh, false, c_background, 1)
+	draw_box(0, panely, window_width, panelh, false, c_level_middle, panelease * 0.35)
+	draw_box(panelx, panely, panelw, panelh, false, c_level_middle, 1)
 	
 	// Menu extention
 	if (panelextease > 0)
@@ -89,7 +89,7 @@ function menu_panel_draw()
 		}
 		
 		// Cover it up
-		draw_box(panelx, panely, 300, panelh, false, c_background, 1)
+		draw_box(panelx, panely, 300, panelh, false, c_level_middle, 1)
 		
 		// Menu border
 		draw_box(panelx + 300 - 1, panely, 1, panelh, false, c_border, a_border)

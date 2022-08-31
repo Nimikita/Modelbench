@@ -9,7 +9,7 @@ function background_ground_startup()
 	
 	size = 192
 	maincolor = c_text_main
-	secondarycolor = c_background
+	secondarycolor = c_level_middle
 	
 	vertex_rgb = c_white
 	

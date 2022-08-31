@@ -44,10 +44,10 @@ function draw_recent(xx, yy, wid, hei, mode = recent_display_mode)
 			// Animation
 			microani_set("recent" + string(item), null, mouseon, mouseon && mouse_left, false)
 			
-			draw_box(xx, recenty, wid, 44, false, c_overlay, a_overlay * mcroani_arr[e_mcroani.HOVER])
-			draw_box_hover(xx, recenty, wid, 44, mcroani_arr[e_mcroani.HOVER])
+			draw_box(xx, recenty, wid, 44, false, c_overlay, a_overlay * microani_arr[e_microani.HOVER])
+			draw_box_hover(xx, recenty, wid, 44, microani_arr[e_microani.HOVER])
 			
-			draw_box(xx, recenty, wid, 44, false, c_accent_overlay, a_accent_overlay * mcroani_arr[e_mcroani.PRESS])
+			draw_box(xx, recenty, wid, 44, false, c_accent_overlay, a_accent_overlay * microani_arr[e_microani.PRESS])
 			
 			microani_update(mouseon, mouseon && mouse_left, false)
 			
@@ -95,22 +95,22 @@ function draw_recent(xx, yy, wid, hei, mode = recent_display_mode)
 		timex = xx + 12 + namewidth + 12
 		
 		// File name
-		draw_label(text_get("recentfilename"), namex, recenty + 14, fa_left, fa_middle, c_text_secondary, a_text_secondary, font_emphasis)
+		draw_label(text_get("recentfilename"), namex, recenty + 14, fa_left, fa_middle, c_text_secondary, a_text_secondary, font_label)
 		
 		var filenamesort = (recent_sort_mode = e_recent_sort.filename_ascend || recent_sort_mode = e_recent_sort.filename_descend);
 		if (app_mouse_box(namex, recenty, namewidth, 28) || filenamesort)
 		{
-			if (draw_button_icon("recentfilenamesort", namex + string_width_font(text_get("recentfilename"), font_emphasis) + 12, recenty, 28, 28, filenamesort, icons.SORT_DOWN + (recent_sort_mode = e_recent_sort.filename_ascend)))
+			if (draw_button_icon("recentfilenamesort", namex + string_width_font(text_get("recentfilename"), font_label) + 12, recenty, 28, 28, filenamesort, icons.SORT_DOWN + (recent_sort_mode = e_recent_sort.filename_ascend)))
 				action_recent_sort_filename()
 		}
 		
 		// Last opened
-		draw_label(text_get("recentlastopened"), timex, recenty + 14, fa_left, fa_middle, c_text_secondary, a_text_secondary, font_emphasis)
+		draw_label(text_get("recentlastopened"), timex, recenty + 14, fa_left, fa_middle, c_text_secondary, a_text_secondary, font_label)
 		
 		var datesort = (recent_sort_mode = e_recent_sort.date_ascend || recent_sort_mode = e_recent_sort.date_descend);
 		if (app_mouse_box(timex, recenty, timewidth, 28) || datesort)
 		{
-			if (draw_button_icon("recentrecentsort", timex + string_width_font(text_get("recentlastopened"), font_emphasis) + 12, recenty, 28, 28, datesort, icons.SORT_DOWN + (recent_sort_mode = e_recent_sort.date_ascend)))
+			if (draw_button_icon("recentrecentsort", timex + string_width_font(text_get("recentlastopened"), font_label) + 12, recenty, 28, 28, datesort, icons.SORT_DOWN + (recent_sort_mode = e_recent_sort.date_ascend)))
 				action_recent_sort_date()
 		}
 		
@@ -157,10 +157,10 @@ function draw_recent(xx, yy, wid, hei, mode = recent_display_mode)
 			// Animation
 			microani_set("recent" + string(item), null, mouseon, mouseon && mouse_left, false)
 			
-			draw_box(xx, recenty, wid, 44, false, c_overlay, a_overlay * mcroani_arr[e_mcroani.HOVER])
-			draw_box_hover(xx, recenty, wid, 44, mcroani_arr[e_mcroani.HOVER])
+			draw_box(xx, recenty, wid, 44, false, c_overlay, a_overlay * microani_arr[e_microani.HOVER])
+			draw_box_hover(xx, recenty, wid, 44, microani_arr[e_microani.HOVER])
 			
-			draw_box(xx, recenty, wid, 44, false, c_accent_overlay, a_accent_overlay * mcroani_arr[e_mcroani.PRESS])
+			draw_box(xx, recenty, wid, 44, false, c_accent_overlay, a_accent_overlay * microani_arr[e_microani.PRESS])
 			
 			microani_update(mouseon, mouseon && mouse_left, false)
 			

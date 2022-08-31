@@ -1,9 +1,10 @@
-/// tab_add_category(name, script, show)
+/// tab_add_category(name, icon, script, show)
 /// @arg name
+/// @arg icon
 /// @arg script
 /// @arg show
 
-function tab_add_category(argument0, argument1, argument2)
+function tab_add_category(name, icon, script, show)
 {
 	var cat = new_obj(obj_category);
 	
@@ -12,9 +13,10 @@ function tab_add_category(argument0, argument1, argument2)
 	
 	with (cat)
 	{
-		name = argument0
-		script = argument1
-		show = argument2
+		id.name = argument0
+		id.icon = argument1
+		id.script = argument2
+		id.show = argument3
 		enabled = true
 		copy = null
 		

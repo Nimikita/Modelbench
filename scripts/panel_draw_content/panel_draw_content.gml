@@ -17,19 +17,18 @@ function panel_draw_content()
 	if (content_direction = e_scroll.VERTICAL)
 	{
 		if (tab.scroll.needed)
-			tab.scrollbar_margin_goal = 1
-		else
-			tab.scrollbar_margin_goal = 0
+		{
+			dividew -= 12
+			dw -= 12
+		}
 		
-		dividew -= (tab.scrollbar_margin * 12)
-		dw -= (tab.scrollbar_margin * 12)
 		dy -= tab.scroll.value
 	}
 	else
 	{
 		dh -= 30 * tab.scroll.needed
 		dx -= tab.scroll.value
-		
+	
 		// Minimum height
 		if (dh < minh)
 		{
@@ -59,12 +58,15 @@ function panel_draw_content()
 				catamount++
 			}
 		}
-		columns = 1//clamp(floor(dw / minw), 1, catamount)
-		dw = ceil((dw - 8*(columns - 1)) / columns)
+		
+		columns = 1
+		dw = ceil((dw - 8 * (columns - 1)) / columns)
 		c = 0
 		
 		dy = dy_start
 		dh = dh_start
+		
+		dy -= 8
 		
 		// Content at top of categories
 		if (tab.header_script)
@@ -82,28 +84,23 @@ function panel_draw_content()
 			
 			repeat (cats)
 			{
-				// Hide button
-				tab_control(24)
-				draw_label(text_get(cat[c].name), dx, dy + 13, fa_left, fa_center, c_text_tertiary, a_text_tertiary, font_subheading)
-				if (draw_button_icon(cat[c].name + "close", dx + dw - 24 + icon_button_offset, dy, 24, 24, cat[c].show, null, null, null, "", spr_arrow_ani))
-					cat[c].show = !cat[c].show
-				tab_next()
-				
-				// Set copy name
-				context_menu_copy_category = cat[c]
+				tab_control(28)
+				draw_subheader(cat[c], content_x + 4, dy, dividew - 8, 28)
+				tab_next(false)
 				
 				// Draw contents
 				if (cat[c].show && cat[c].script)
-					script_execute(cat[c].script)
-				
-				if (c < catamount - 1)
 				{
-					dy += 20
-					draw_divide(content_x, dy - 13, dividew - 1)
+					dy += 8
+					script_execute(cat[c].script)
+					dy += 8
 				}
 				
-				// Reset copy name
-				context_menu_copy_category = null
+				if (c < catamount - 1 && cat[c].show && cat[c].script)
+				{
+					draw_divide(content_x, dy, dividew - 1)
+					dy += 8
+				}
 				
 				maxh = max(dy - dy_start, maxh)
 				c++
@@ -118,7 +115,7 @@ function panel_draw_content()
 	
 	// Scrollbar
 	if (content_direction = e_scroll.VERTICAL)
-		scrollbar_draw(tab.scroll, e_scroll.VERTICAL, content_x + (content_width - (9 + (3 * tab.scrollbar_margin))) + 3, content_y, content_height, maxh + 15, c_accent, c_accent_hover, c_black)
+		scrollbar_draw(tab.scroll, e_scroll.VERTICAL, content_x + dividew, content_y, content_height, maxh + 32)
 	else
 		scrollbar_draw(tab.scroll, e_scroll.HORIZONTAL, content_x, content_y + content_height - 35, content_width, dx + dw - content_x + tab.scroll.value + 15)
 }

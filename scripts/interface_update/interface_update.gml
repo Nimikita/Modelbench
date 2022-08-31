@@ -5,15 +5,6 @@ function interface_update()
 {
 	var theme = setting_theme;
 	
-	// Accent color(s)
-	
-	if (setting_accent = 9)
-		c_accent = setting_accent_custom
-	else
-		c_accent = theme.accent_list[setting_accent]
-	
-	interface_update_accent()
-	
 	c_text_main = theme.text_main
 	c_text_secondary = theme.text_secondary
 	c_text_tertiary = theme.text_tertiary
@@ -21,9 +12,11 @@ function interface_update()
 	c_overlay = theme.overlay
 	c_button_text = theme.button_text
 	a_button_text = theme.button_text_alpha
+	a_dark_overlay = theme.dark_overlay_alpha
 	
-	c_background = theme.background
-	c_background_secondary = theme.background_secondary
+	c_level_top = theme.level_top
+	c_level_middle = theme.level_middle
+	c_level_bottom = theme.level_bottom
 	c_viewport_top = theme.viewport_top
 	c_viewport_bottom = theme.viewport_bottom
 	c_error = theme.red_error
@@ -37,6 +30,14 @@ function interface_update()
 	c_axiscyan = theme.cyan
 	c_axisyellow = theme.yellow
 	c_axismagenta = theme.magenta
+	
+	// Accent color(s)
+	if (setting_accent = 9)
+		c_accent = setting_accent_custom
+	else
+		c_accent = theme.accent_list[setting_accent]
+	
+	interface_update_accent()
 	
 	update_interface_wait = false
 }

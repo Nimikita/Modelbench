@@ -4,11 +4,10 @@
 function panel_draw(panel)
 {
 	var boxx, boxy, boxw, boxh, resizemouseon, padding;
-	var tabtitle, tabx, tabw, tabmaxw, tabsw, tabsh, tablistmouseon, tabmouseon;
+	var tabtitle, tabx, tabw, tabmaxw, tabsw, tabswprev, tabsh, tablistmouseon, tabmouseon;
 	var dx, dy;
 	
-	panel.glow = max(0, panel.glow - 0.05)
-	if (panel.size_real < 1 && panel.glow = 0)
+	if (panel.size_real < 1 && !panel.glow)
 		return 0
 	
 	// Calculate box
@@ -16,41 +15,45 @@ function panel_draw(panel)
 	{
 		boxx = panel_area_x
 		boxy = panel_area_y
-		boxw = panel.size_real
+		boxw = panel.size_real_ani
 		boxh = panel_area_height
 		content_direction = e_scroll.VERTICAL
-		if (panel.glow > 0)
-			draw_gradient(boxx, boxy, 100, boxh, c_accent, panel.glow * glow_alpha, 0, 0, panel.glow * glow_alpha)
+		
+		if (panel.glow)
+			draw_box(boxx, boxy, panel.size_glow, boxh, false, c_accent, glow_alpha)
 	}
 	else if (panel = panel_map[?"left_secondary"])
 	{
-		boxx = panel_area_x + panel_map[?"left"].size_real
+		boxx = panel_area_x + panel_map[?"left"].size_real_ani
 		boxy = panel_area_y
-		boxw = panel.size_real
+		boxw = panel.size_real_ani
 		boxh = panel_area_height
 		content_direction = e_scroll.VERTICAL
-		if (panel.glow > 0)
-			draw_gradient(boxx, boxy, 100, boxh, c_accent, panel.glow * glow_alpha, 0, 0, panel.glow * glow_alpha)
+		
+		if (panel.glow)
+			draw_box(boxx, boxy, panel.size_glow, boxh, false, c_accent, glow_alpha)
 	}
 	else if (panel = panel_map[?"right"])
 	{
-		boxx = panel_area_x + panel_area_width - panel.size_real
+		boxx = panel_area_x + panel_area_width - panel.size_real_ani
 		boxy = panel_area_y
-		boxw = panel.size_real
+		boxw = panel.size_real_ani
 		boxh = panel_area_height
 		content_direction = e_scroll.VERTICAL
-		if (panel.glow > 0)
-			draw_gradient(boxx + boxw - 100, boxy, 100, boxh, c_accent, 0, panel.glow * glow_alpha, panel.glow * glow_alpha, 0)
+		
+		if (panel.glow)
+			draw_box(boxx + boxw - panel.size_glow, boxy, panel.size_glow, boxh, false, c_accent, glow_alpha)
 	}
 	else if (panel = panel_map[?"right_secondary"])
 	{
-		boxx = panel_area_x + panel_area_width - panel_map[?"right"].size_real - panel.size_real
+		boxx = panel_area_x + panel_area_width - panel_map[?"right"].size_real_ani - panel.size_real_ani
 		boxy = panel_area_y
-		boxw = panel.size_real
+		boxw = panel.size_real_ani
 		boxh = panel_area_height
 		content_direction = e_scroll.VERTICAL
-		if (panel.glow > 0)
-			draw_gradient(boxx + boxw - 100, boxy, 100, boxh, c_accent, 0, panel.glow * glow_alpha, panel.glow * glow_alpha, 0)
+		
+		if (panel.glow)
+			draw_box(boxx + boxw - panel.size_glow, boxy, panel.size_glow, boxh, false, c_accent, glow_alpha)
 	}
 	
 	if (boxw < 1 || boxh < 1)
@@ -65,180 +68,257 @@ function panel_draw(panel)
 	boxh = ceil(boxh)
 	
 	// Background
-	draw_box(boxx, boxy, boxw, boxh, false, c_background, 1)
+	draw_box(boxx, boxy, boxw, boxh, false, c_level_middle, 1)
 	
 	// Content
-	tabsh = min(boxh, 28)
-	content_x = boxx
-	content_y = boxy + tabsh
-	content_width = boxw
-	content_height = boxh - tabsh
-	content_mouseon = (app_mouse_box(content_x, content_y, content_width, content_height) && !popup_mouseon && !snackbar_mouseon && !context_menu_mouseon)
+	tabsh = min(boxh, 24)
 	content_tab = panel.tab_list[panel.tab_selected]
+	content_x = boxx
+	content_y = boxy + (tabsh * content_tab.movable)
+	content_width = boxw
+	content_height = boxh - (tabsh * content_tab.movable)
+	content_mouseon = (app_mouse_box(content_x, content_y, content_width, content_height) && !popup_mouseon && !snackbar_mouseon && !context_menu_mouseon)
 	panel_draw_content()
 	content_y = boxy
 	
 	// Tabs
 	tabsw = 0
+	tabswprev = 0
 	tabmaxw = boxw
 	padding = 10
 	tablistmouseon = null
 	tabmouseon = false
 	
-	for (var t = 0; t < panel.tab_list_amount; t++)
+	if (content_tab.movable)
 	{
-		var tab, sel;
-		tab = panel.tab_list[t]
-		sel = (panel.tab_selected = t)
-		
-		tabtitle[t] = tab_get_title(tab)
-		
-		tabw[t] = string_width_font(tabtitle[t], font_label) + 16
-		
-		if (tab.closeable)
-			tabw[t] += 26
-		
-		tabw[t] = min(tabw[t], tabmaxw)
-		tabsw += tabw[t]
-	}
-	
-	dx = boxx
-	dy = boxy
-	content_mouseon = !popup_mouseon && !snackbar_mouseon && !context_menu_mouseon
-	
-	// Tabs background
-	draw_box(dx, dy, content_width, tabsh, false, c_background_secondary, 1)
-	
-	draw_box(dx, dy + tabsh, content_width, 1, false, c_border, a_border)
-	
-	for (var t = 0; t < panel.tab_list_amount; t++)
-	{
-		var tab, sel, dw, dh;
-		tab = panel.tab_list[t]
-		sel = (panel.tab_selected = t)
-		
-		tabx[t] = dx
+		if (panel.tab_list_amount > 0)
+		{
+			// Get full width of all tabs
+			for (var t = 0; t < panel.tab_list_amount; t++)
+			{
+				var tab, sel;
+				tab = panel.tab_list[t]
+				sel = (panel.tab_selected = t)
+				
+				tabtitle[t] = tab_get_title(tab)
+				
+				draw_set_font(sel ? font_label : font_value)
+				tabw[t] = string_width(tabtitle[t])
+				
+				if (tab.closeable)
+					tabw[t] += 36
+				else
+					tabw[t] += 16
+				
+				tabswprev += tabw[t]
+			}
 			
-		dw = tabw[t]
-		dh = tabsh
-		
-		if (sel)
-			draw_box(dx, dy, dw, dh + 1, false, c_background, 1)
-		
-		tabtitle[t] = string_limit(tabtitle[t], dw - (26 * tab.closeable))
-		
-		// Close button
-		if (tab.closeable)
-		{
-			if (draw_button_icon("tabclose" + string(tab), dx + dw - 26, dy + 2, 24, 24, false, icons.CLOSE_SMALL))
-			{
-				tab_close(tab)
-				return 0
-			}
-		}
-		
-		// Label
-		draw_label(tabtitle[t], dx + 8, round(dy + (dh/2)), fa_left, fa_center, (sel ? c_accent : c_text_secondary), (sel ? 1 : a_text_secondary), font_label)
-		
-		// Outline/border
-		if (sel)
-		{
-			if (t != 0)
-				draw_box(dx - 1, dy, 1, dh, false, c_border, a_border)
+			// Adjust tab widths
+			var selnamew, unselnamew;
+			selnamew = tabw[panel.tab_selected];
+			unselnamew = max(28, (boxw - selnamew) / (panel.tab_list_amount - 1)) // Set new unactive tab save
+			selnamew = min(selnamew, 144, boxw - (unselnamew * (panel.tab_list_amount - 1))) // Update tab size based on new unactive tab save
+			unselnamew = max(28, (boxw - selnamew) / (panel.tab_list_amount - 1)) // Update unactive tab size based on new active tab size
+			unselnamew = min(unselnamew, 144)
 			
-			draw_box(dx + dw - 1, dy, 1, dh + 1, false, c_border, a_border)
-		}
-		else
-		{
-			if (t < panel.tab_list_amount)
+			for (var t = 0; t < panel.tab_list_amount; t++)
 			{
-				if (panel.tab_selected != t + 1)
-					draw_box(dx + dw, dy + 2, 1, dh - 4, false, c_border, a_border)
+				var tab, sel;
+				tab = panel.tab_list[t]
+				sel = (panel.tab_selected = t)
+				
+				if (sel)
+				{
+					tabw[t] = min(144, tabw[t], selnamew)
+					tabsw += tabw[t]
+				}
+				else
+				{
+					tabw[t] = min(144, tabw[t], unselnamew)
+					tabsw += tabw[t]
+				}
 			}
 		}
 		
-		// Click
-		if (app_mouse_box(dx, dy, dw, dh) && !app_mouse_box(dx + dw - (26 * tab.closeable), dy + 2, 24 * tab.closeable, 24))
-		{
-			if (!sel)
-			{
-				tablistmouseon = t
-				mouse_cursor = cr_handpoint
-			}
-			else
-				tabmouseon = true
-		}
+		dx = boxx
+		dy = boxy
+		content_mouseon = !popup_mouseon && !snackbar_mouseon && !context_menu_mouseon
 		
-		// List glow
-		tab.glow = max(0, tab.glow - 0.05)
-		if (window_busy = "tabmove")
+		// Tabs background
+		draw_box(dx, dy, tabmaxw, tabsh, false, c_level_bottom, 1)
+		
+		draw_box(dx, dy + tabsh, tabmaxw, 1, false, c_border, a_border)
+		
+		for (var t = 0; t < panel.tab_list_amount; t++)
 		{
-			window_busy = ""
+			var tab, sel, dw, dh, hover;
+			tab = panel.tab_list[t]
+			sel = (panel.tab_selected = t)
+			
+			tabx[t] = dx
+			
+			dw = tabw[t]
+			dh = tabsh
+			hover = false
+			
+			// Mouseon
 			if (app_mouse_box(dx, dy, dw, dh))
 			{
-				tab.glow = min(1, tab.glow + 0.1 * delta)
-				tab_move_mouseon_panel = panel
-				tab_move_mouseon_position = t
+				hover = true
+				
+				if (!app_mouse_box(dx + dw - (20 * tab.closeable), dy + 4, 16 * tab.closeable, 16))
+				{
+					if (!sel)
+					{
+						tablistmouseon = t
+						mouse_cursor = cr_handpoint
+					}
+					else
+						tabmouseon = true
+				}
 			}
-			window_busy = "tabmove"
-		}
-		
-		if (tab.glow > 0)
-			draw_box(dx, dy, dw, dh, false, c_accent, tab.glow * glow_alpha)
-		
-		dx += tabw[t]
-	}
-	
-	// Panel edge
-	if (panel = panel_map[?"right"] || panel = panel_map[?"right_secondary"])
-		draw_box(boxx, boxy, 1, boxh, false, c_border, a_border)
-	else
-		draw_box(boxx + boxw - 1, boxy, 1, boxh, false, c_border, a_border)
-	
-	panel.list_glow = max(0, panel.list_glow - 0.05 * delta)
-	if (tabmaxw > tabsw)
-	{
-		// Moving?
-		if (window_busy = "tabmove")
-		{
-			window_busy = ""
-			if (app_mouse_box(boxx + tabsw, boxy, tabmaxw - tabsw, tabsh))
+			
+			if (sel)
+				draw_box(dx, dy, dw, dh + 1, false, c_level_middle, 1)
+			
+			var limit = dw - 16;
+			
+			if ((hover || sel) && tab.closeable)
+				limit -= 20
+			
+			draw_set_font(sel ? font_label : font_value)
+			
+			if (string_width(tabtitle[t]) > limit)
+				tip_set(tabtitle[t], dx, dy, dw, dh)
+			
+			tabtitle[t] = string_limit(tabtitle[t], limit)
+			
+			// Close button
+			if (tab.closeable && (hover || sel))
 			{
-				panel.list_glow = min(1, panel.list_glow + 0.1 * delta)
-				tab_move_mouseon_panel = panel
-				tab_move_mouseon_position = panel.tab_list_amount
+				if (hover && mouse_middle_pressed)
+				{
+					tab_close(tab)
+					return 0
+				}
+				
+				if (draw_button_icon("tabclose" + string(tab), floor(dx + dw - 20), dy + 4, 16, 16, false, icons.CLOSE_SMALL))
+				{
+					tab_close(tab)
+					return 0
+				}
 			}
-			window_busy = "tabmove"
+			
+			// Label
+			draw_label(tabtitle[t], floor(dx + 8), round(dy + (dh/2)), fa_left, fa_center, (sel ? c_accent : (hover ? c_text_main : c_text_secondary)), (sel ? 1 : (hover ? a_text_main : a_text_secondary)), sel ? font_label : font_value)
+			
+			// Outline/border
+			if (sel)
+			{
+				if (t != 0)
+					draw_box(dx - 1, dy, 1, dh, false, c_border, a_border)
+				
+				draw_box(dx + dw - 1, dy, 1, dh + 1, false, c_border, a_border)
+			}
+			else
+			{
+				if (t < panel.tab_list_amount)
+				{
+					if (panel.tab_selected != t + 1)
+						draw_box(dx + dw, dy, 1, dh, false, c_border, a_border)
+				}
+			}
+			
+			// List glow
+			tab.glow = max(0, tab.glow - 0.05)
+			if (window_busy = "tabmove")
+			{
+				window_busy = ""
+				if (app_mouse_box(dx, dy, dw, dh))
+				{
+					tab.glow = min(1, tab.glow + 0.1 * delta)
+					tab.panel_last = panel
+					tab_move_mouseon_panel = panel
+					tab_move_mouseon_position = t
+				}
+				window_busy = "tabmove"
+			}
+			
+			if (tab.glow > 0)
+				draw_box(dx, dy, dw, dh, false, c_accent, tab.glow * glow_alpha)
+			
+			dx += tabw[t]
 		}
 		
-		// Glow for new tab
-		if (panel.list_glow > 0)
-			draw_box(boxx + tabsw, boxy, min(tab_move_width, tabmaxw - tabsw), tabsh, false, c_accent, panel.list_glow * glow_alpha)
+		// Panel edge
+		if (panel = panel_map[?"right"] || panel = panel_map[?"right_secondary"])
+			draw_box(boxx, boxy, 1, boxh, false, c_border, a_border)
+		else
+			draw_box(boxx + boxw - 1, boxy, 1, boxh, false, c_border, a_border)
+		
+		panel.list_glow = max(0, panel.list_glow - 0.05 * delta)
+		if (tabmaxw > tabsw)
+		{
+			// Moving?
+			if (window_busy = "tabmove")
+			{
+				window_busy = ""
+				if (app_mouse_box(boxx + tabsw, boxy, tabmaxw - tabsw, tabsh))
+				{
+					panel.list_glow = min(1, panel.list_glow + 0.1 * delta)
+					tab_move_mouseon_panel = panel
+					tab_move_mouseon_position = panel.tab_list_amount
+				}
+				window_busy = "tabmove"
+			}
+			
+			// Glow for new tab
+			if (panel.list_glow > 0)
+				draw_box(boxx + tabsw, boxy, min(tab_move_width, tabmaxw - tabsw), tabsh, false, c_accent, panel.list_glow * glow_alpha)
+		}
+		
+		// Glow
+		if (content_tab.glow > 0)
+			draw_box(boxx, boxy + tabsh, boxw, boxh - tabsh, false, c_accent, content_tab.glow * glow_alpha)
 	}
-	
-	// Glow
-	if (content_tab.glow > 0)
-		draw_box(boxx, boxy + tabsh, boxw, boxh - tabsh, false, c_accent, content_tab.glow * glow_alpha)
 	
 	// Border
 	resizemouseon = false
 	if (panel = panel_map[?"left"] || panel = panel_map[?"left_secondary"])
 	{
 		draw_gradient(boxx + boxw, boxy, shadow_size, boxh, c_black, shadow_alpha, 0, 0, shadow_alpha)
-		if (app_mouse_box(boxx + boxw - 5, boxy, 5, boxh) && tablistmouseon = null && !popup_mouseon && !snackbar_mouseon && !context_menu_mouseon)
+		if (app_mouse_box(boxx + boxw - 8, boxy, 8, boxh) && tablistmouseon = null && !popup_mouseon && !snackbar_mouseon && !context_menu_mouseon)
 		{
 			mouse_cursor = cr_size_we
 			resizemouseon = true
 		}
+		
+		if (resizemouseon || panel = panel_resize)
+			draw_box(boxx + boxw - 2, boxy, 4, boxh, false, c_hover, a_hover)
 	}
 	else if (panel = panel_map[?"right"] || panel = panel_map[?"right_secondary"])
 	{
 		draw_gradient(boxx - shadow_size, boxy, shadow_size, boxh, c_black, 0, shadow_alpha, shadow_alpha, 0)
-		if (app_mouse_box(boxx, boxy, 5, boxh) && tablistmouseon = null && !popup_mouseon && !snackbar_mouseon && !context_menu_mouseon)
+		if (app_mouse_box(boxx, boxy, 8, boxh) && tablistmouseon = null && !popup_mouseon && !snackbar_mouseon && !context_menu_mouseon)
 		{
 			mouse_cursor = cr_size_we
 			resizemouseon = true
 		}
+		
+		if (resizemouseon || panel = panel_resize)
+			draw_box(boxx - 2, boxy, 4, boxh, false, c_hover, a_hover)
+	}
+	else if (panel = panel_map[?"bottom"])
+	{
+		draw_gradient(boxx, boxy - shadow_size, boxw, shadow_size, c_black, 0, 0, shadow_alpha, shadow_alpha) 
+		if (app_mouse_box(boxx, boxy, boxw, 8) && tablistmouseon = null && !popup_mouseon && !snackbar_mouseon && !context_menu_mouseon)
+		{
+			mouse_cursor = cr_size_ns
+			resizemouseon = true
+		}
+		
+		if (resizemouseon || panel = panel_resize)
+			draw_box(boxx, boxy - 2, boxw, 4, false, c_hover, a_hover)
 	}
 	
 	// Resize
@@ -248,21 +328,6 @@ function panel_draw(panel)
 		panel_resize = panel
 		panel_resize_size = panel.size_real
 	}
-	
-	// Add shortcuts
-	if (resizemouseon || window_busy = "panelresize")
-	{
-		// Add shortcuts
-		ds_list_clear(shortcut_bar_list)
-		shortcut_bar_add(null, e_mouse.LEFT_DRAG, "resizearea")
-	}
-	
-	// Add shortcuts
-	if (tablistmouseon != null)
-		shortcut_bar_add(null, e_mouse.LEFT_CLICK, "select")
-	
-	if (tabmouseon || window_busy = "tabmove" || tablistmouseon != null)
-		shortcut_bar_add(null, e_mouse.LEFT_DRAG, "movetab")
 	
 	// Move
 	if (tabmouseon && mouse_cursor = cr_default && mouse_left_pressed)

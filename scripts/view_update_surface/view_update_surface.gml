@@ -158,7 +158,7 @@ function view_update_surface(view, cam)
 									draw_image(spr_circle_32, 0, origin2d[X], origin2d[Y], 2, 2, c_hover, a_hover)
 								
 								draw_image(spr_dropshadow_14, 0, origin2d[X], origin2d[Y], 2, 2, c_white, 1)
-								draw_image(spr_circle_28, 0, origin2d[X], origin2d[Y], 2, 2, c_background, 1)
+								draw_image(spr_circle_28, 0, origin2d[X], origin2d[Y], 2, 2, c_level_middle, 1)
 								draw_image(spr_icons, icon, origin2d[X], origin2d[Y], 2, 2, c_text_secondary, a_text_secondary)
 							}
 							else

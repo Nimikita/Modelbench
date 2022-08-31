@@ -27,7 +27,7 @@ function view_draw(view)
 	content_view = view
 	
 	draw_gradient(content_x, content_y + content_height, content_width, shadow_size, c_black, shadow_alpha, shadow_alpha, 0, 0)
-	draw_box(boxx, boxy, boxw, boxh, false, c_background, 1)
+	draw_box(boxx, boxy, boxw, boxh, false, c_level_middle, 1)
 	
 	if (view.width != content_width || view.height != content_height)
 	{
@@ -71,7 +71,7 @@ function view_draw(view)
 		// Preview transparency
 		if (program_mode = e_mode.PREVIEW)
 		{
-			draw_box(boxx, boxy, boxw, boxh, false, c_background, 1)
+			draw_box(boxx, boxy, boxw, boxh, false, c_level_middle, 1)
 			
 			for (var i = 0; i < ceil(boxw/192); i++)
 				for (var j = 0; j < ceil(boxh/192); j++)

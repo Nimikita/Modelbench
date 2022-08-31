@@ -27,7 +27,7 @@ function context_menu_draw_level(index)
 	
 	draw_dropshadow(dx, dy, dw, dh, c_black, 1)
 	draw_outline(dx, dy, dw, dh, 1, c_border, a_border)
-	draw_box(dx, dy, dw, dh, false, c_background, 1)
+	draw_box(dx, dy, dw, dh, false, c_level_middle, 1)
 	
 	dy += 4
 	

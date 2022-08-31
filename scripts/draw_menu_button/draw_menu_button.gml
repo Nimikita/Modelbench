@@ -20,15 +20,15 @@ function draw_menu_button(argument0, argument1, argument2, argument3)
 	
 	microani_set("menu", null, mouseon, mouseon && mouse_left, menu_open)
 	
-	if (menu_open || mcroani_arr[e_mcroani.ACTIVE_LINEAR] > 0)
+	if (menu_open || microani_arr[e_microani.ACTIVE_LINEAR] > 0)
 	{
-		var frame = floor((sprite_get_number(spr_menu_open) - 1) * mcroani_arr[e_mcroani.ACTIVE_LINEAR]);
+		var frame = floor((sprite_get_number(spr_menu_open) - 1) * microani_arr[e_microani.ACTIVE_LINEAR]);
 		draw_image(spr_menu_open, frame, xx + wid/2, yy + wid/2, 1, 1, c_text_secondary, a_text_secondary)
 		tip_set(text_get("tooltipclosemenu"), xx, yy, wid, hei)
 	}
 	else
 	{
-		var frame = floor((sprite_get_number(spr_menu_hover) - 1) * mcroani_arr[e_mcroani.HOVER_LINEAR]);
+		var frame = floor((sprite_get_number(spr_menu_hover) - 1) * microani_arr[e_microani.HOVER_LINEAR]);
 		draw_image(spr_menu_hover, frame, xx + wid/2, yy + wid/2, 1, 1, c_text_secondary, a_text_secondary)
 		tip_set(text_get("tooltipopenmenu"), xx, yy, wid, hei)
 	}

@@ -50,12 +50,12 @@ function draw_inputbox()
 	
 	// Field background
 	var bordercolor, borderalpha;
-	bordercolor = merge_color(c_border, c_text_secondary, mcroani_arr[e_mcroani.HOVER])
-	borderalpha = lerp(a_border, a_text_secondary, mcroani_arr[e_mcroani.HOVER])
-	bordercolor = merge_color(bordercolor, c_accent, max(mcroani_arr[e_mcroani.PRESS], mcroani_arr[e_mcroani.ACTIVE]))
-	borderalpha = lerp(borderalpha, a_accent, max(mcroani_arr[e_mcroani.PRESS], mcroani_arr[e_mcroani.ACTIVE]))
-	bordercolor = merge_color(bordercolor, c_border, mcroani_arr[e_mcroani.DISABLED])
-	borderalpha = lerp(borderalpha, a_border, mcroani_arr[e_mcroani.DISABLED])
+	bordercolor = merge_color(c_border, c_text_secondary, microani_arr[e_microani.HOVER])
+	borderalpha = lerp(a_border, a_text_secondary, microani_arr[e_microani.HOVER])
+	bordercolor = merge_color(bordercolor, c_accent, max(microani_arr[e_microani.PRESS], microani_arr[e_microani.ACTIVE]))
+	borderalpha = lerp(borderalpha, a_accent, max(microani_arr[e_microani.PRESS], microani_arr[e_microani.ACTIVE]))
+	bordercolor = merge_color(bordercolor, c_border, microani_arr[e_microani.DISABLED])
+	borderalpha = lerp(borderalpha, a_border, microani_arr[e_microani.DISABLED])
 	
 	if (err)
 	{
@@ -99,7 +99,7 @@ function draw_inputbox()
 	    draw_label(string_limit(placeholder, w - padding * 2), xx + padding + 7, yy + 22, fa_left, fa_bottom, c_text_tertiary, a_text_tertiary, font_value)
 	
 	// Disabled overlay
-	draw_box(xx, yy, w, h, false, c_overlay, a_overlay * mcroani_arr[e_mcroani.DISABLED])
+	draw_box(xx, yy, w, h, false, c_overlay, a_overlay * microani_arr[e_microani.DISABLED])
 	
 	if (update && (script != null))
 	    script_execute(script, tbx.text)

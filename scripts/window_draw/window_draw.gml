@@ -2,7 +2,7 @@
 
 function window_draw()
 {
-	draw_clear(c_background)
+	draw_clear(c_level_middle)
 	
 	if (window_state = "startup")
 	{

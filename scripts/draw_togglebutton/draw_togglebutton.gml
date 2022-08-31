@@ -50,9 +50,9 @@ function draw_togglebutton()
 		
 		// Draw base button
 		var backgroundcolor, backgroundalpha;
-		backgroundcolor = merge_color(c_overlay, c_accent_overlay, mcroani_arr[e_mcroani.PRESS])
-		backgroundalpha = lerp(0, a_overlay, min(1.0, mcroani_arr[e_mcroani.HOVER] + mcroani_arr[e_mcroani.ACTIVE]))
-		backgroundalpha = lerp(backgroundalpha, a_accent_overlay, mcroani_arr[e_mcroani.PRESS])
+		backgroundcolor = merge_color(c_overlay, c_accent_overlay, microani_arr[e_microani.PRESS])
+		backgroundalpha = lerp(0, a_overlay, min(1.0, microani_arr[e_microani.HOVER] + microani_arr[e_microani.ACTIVE]))
+		backgroundalpha = lerp(backgroundalpha, a_accent_overlay, microani_arr[e_microani.PRESS])
 		draw_box(buttonx, yy, buttonsize, buttonh, false, backgroundcolor, backgroundalpha)
 		
 		var labelcolor, labelalpha;
@@ -68,15 +68,15 @@ function draw_togglebutton()
 			totalwidth = 20
 			startx = snap(buttonx + (buttonsize/2) - (totalwidth/2), 2)
 			
-			labelcolor = merge_color(c_text_secondary, c_accent, mcroani_arr[e_mcroani.ACTIVE])
-			labelalpha = lerp(a_text_secondary, 1, mcroani_arr[e_mcroani.ACTIVE])
+			labelcolor = merge_color(c_text_secondary, c_accent, microani_arr[e_microani.ACTIVE])
+			labelalpha = lerp(a_text_secondary, 1, microani_arr[e_microani.ACTIVE])
 		}
 		else
 		{
-			labelcolor = merge_color(c_accent, c_accent_hover, mcroani_arr[e_mcroani.HOVER])
-			labelcolor = merge_color(labelcolor, c_accent_pressed, min(1.0, mcroani_arr[e_mcroani.PRESS] + mcroani_arr[e_mcroani.ACTIVE]))
-			labelalpha = lerp(1, a_accent_hover, mcroani_arr[e_mcroani.HOVER])
-			labelalpha = lerp(labelalpha, a_accent_pressed, min(1.0, mcroani_arr[e_mcroani.PRESS] + mcroani_arr[e_mcroani.ACTIVE]))
+			labelcolor = merge_color(c_accent, c_accent_hover, microani_arr[e_microani.HOVER])
+			labelcolor = merge_color(labelcolor, c_accent_pressed, min(1.0, microani_arr[e_microani.PRESS] + microani_arr[e_microani.ACTIVE]))
+			labelalpha = lerp(1, a_accent_hover, microani_arr[e_microani.HOVER])
+			labelalpha = lerp(labelalpha, a_accent_pressed, min(1.0, microani_arr[e_microani.PRESS] + microani_arr[e_microani.ACTIVE]))
 		}
 		
 		// Icon
@@ -122,7 +122,7 @@ function draw_togglebutton()
 		
 		microani_set(name + togglebutton_name[i], null, mouseon, mouseon && mouse_left, togglebutton_active[i])
 		
-		draw_box_hover(buttonx, yy, buttonsize, buttonh, mcroani_arr[e_mcroani.HOVER])
+		draw_box_hover(buttonx, yy, buttonsize, buttonh, microani_arr[e_microani.HOVER])
 		buttonx += buttonsize
 	}
 	

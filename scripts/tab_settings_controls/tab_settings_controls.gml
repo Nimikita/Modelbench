@@ -8,7 +8,7 @@ function tab_settings_controls()
 	
 	tab_control(28)
 	draw_button_collapse("settingscontrolsfile", !setting_collapse_controls_file, action_collapse_controls_file, false)
-	draw_label(text_get("settingscontrolsfile"), dx, dy + 14, fa_left, fa_middle, c_text_secondary, a_text_secondary, font_emphasis)
+	draw_label(text_get("settingscontrolsfile"), dx, dy + 14, fa_left, fa_middle, c_text_secondary, a_text_secondary, font_label)
 	tab_next()
 	
 	if (!setting_collapse_controls_file)
@@ -43,7 +43,7 @@ function tab_settings_controls()
 	
 	tab_control(28)
 	draw_button_collapse("settingscontrolsediting", !setting_collapse_controls_editing, action_collapse_controls_editing, false)
-	draw_label(text_get("settingscontrolsediting"), dx, dy + 14, fa_left, fa_middle, c_text_secondary, a_text_secondary, font_emphasis)
+	draw_label(text_get("settingscontrolsediting"), dx, dy + 14, fa_left, fa_middle, c_text_secondary, a_text_secondary, font_label)
 	tab_next()
 	
 	if (!setting_collapse_controls_editing)
@@ -82,7 +82,7 @@ function tab_settings_controls()
 	
 	tab_control(28)
 	draw_button_collapse("settingscontrolstools", !setting_collapse_controls_tools, action_collapse_controls_tools, false)
-	draw_label(text_get("settingscontrolstools"), dx, dy + 14, fa_left, fa_middle, c_text_secondary, a_text_secondary, font_emphasis)
+	draw_label(text_get("settingscontrolstools"), dx, dy + 14, fa_left, fa_middle, c_text_secondary, a_text_secondary, font_label)
 	tab_next()
 	
 	if (!setting_collapse_controls_tools)
@@ -129,7 +129,7 @@ function tab_settings_controls()
 	
 	tab_control(28)
 	draw_button_collapse("settingscontrolsnavigation", !setting_collapse_controls_navigation, action_collapse_controls_navigation, false)
-	draw_label(text_get("settingscontrolsnavigation"), dx, dy + 14, fa_left, fa_middle, c_text_secondary, a_text_secondary, font_emphasis)
+	draw_label(text_get("settingscontrolsnavigation"), dx, dy + 14, fa_left, fa_middle, c_text_secondary, a_text_secondary, font_label)
 	tab_next()
 	
 	if (!setting_collapse_controls_navigation)

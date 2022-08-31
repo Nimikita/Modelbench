@@ -66,28 +66,28 @@ function draw_switch()
 		alpha = a_text_secondary
 	}
 	
-	var backgroundcolor = merge_color(color, c_accent, mcroani_arr[e_mcroani.ACTIVE]);
-	var backgroundalpha = lerp(alpha, 1, mcroani_arr[e_mcroani.ACTIVE]);
+	var backgroundcolor = merge_color(color, c_accent, microani_arr[e_microani.ACTIVE]);
+	var backgroundalpha = lerp(alpha, 1, microani_arr[e_microani.ACTIVE]);
 	draw_box(switchx, switchy, 24, 16, false, backgroundcolor, backgroundalpha)
 	
 	// Draw button
-	var buttonx = switchx + 2 + (10 * mcroani_arr[e_mcroani.ACTIVE]);
+	var buttonx = switchx + 2 + (10 * microani_arr[e_microani.ACTIVE]);
 	var buttony = switchy + 2;
 	var buttoncolor = c_accent_overlay;
-	var buttonalpha = lerp(0, a_accent_overlay, mcroani_arr[e_mcroani.PRESS]);
+	var buttonalpha = lerp(0, a_accent_overlay, microani_arr[e_microani.PRESS]);
 	draw_box(buttonx, buttony, 10, 12, false, c_white, 1)
 	draw_box(buttonx, buttony, 10, 12, false, buttoncolor, buttonalpha)
 	draw_box_bevel(buttonx, buttony, 10, 12, 1, true)
 	
 	// Disabled overlay
-	draw_box(switchx, switchy, 24, 16, false, c_background, .5 * mcroani_arr[e_mcroani.DISABLED])
+	draw_box(switchx, switchy, 24, 16, false, c_level_middle, .5 * microani_arr[e_microani.DISABLED])
 	
 	// Draw hover outline
-	draw_box_hover(switchx, switchy, 24, 16, mcroani_arr[e_mcroani.HOVER] * (1 - mcroani_arr[e_mcroani.DISABLED]))
+	draw_box_hover(switchx, switchy, 24, 16, microani_arr[e_microani.HOVER] * (1 - microani_arr[e_microani.DISABLED]))
 	
 	// Label
-	draw_set_font(font_emphasis)
-	draw_label(name, xx, yy + 14, fa_left, fa_middle, lerp(c_text_secondary, c_text_tertiary, mcroani_arr[e_mcroani.DISABLED]), lerp(a_text_secondary, a_text_tertiary, mcroani_arr[e_mcroani.DISABLED]))
+	draw_set_font(font_label)
+	draw_label(name, xx, yy + 14, fa_left, fa_middle, lerp(c_text_secondary, c_text_tertiary, microani_arr[e_microani.DISABLED]), lerp(a_text_secondary, a_text_tertiary, microani_arr[e_microani.DISABLED]))
 	
 	microani_update(mouseon, mouseclick, active, disabled)
 	
@@ -96,8 +96,8 @@ function draw_switch()
 		mouseon = app_mouse_box(xx + string_width(name) + 8, yy + 4, 20, 20) && content_mouseon && !disabled
 		
 		microani_set(argument[0] + "help", null, mouseon, false, false)
-		buttoncolor = merge_color(c_text_tertiary, c_text_secondary, mcroani_arr[e_mcroani.HOVER])
-		buttonalpha = lerp(a_text_tertiary, a_text_secondary, mcroani_arr[e_mcroani.HOVER]) * lerp(1, .5, mcroani_arr[e_mcroani.DISABLED])
+		buttoncolor = merge_color(c_text_tertiary, c_text_secondary, microani_arr[e_microani.HOVER])
+		buttonalpha = lerp(a_text_tertiary, a_text_secondary, microani_arr[e_microani.HOVER]) * lerp(1, .5, microani_arr[e_microani.DISABLED])
 		
 		draw_image(spr_icons, icons.HELP_CIRCLE, xx + string_width(name) + 10 + 8, yy + 14, 1, 1, buttoncolor, buttonalpha)
 		

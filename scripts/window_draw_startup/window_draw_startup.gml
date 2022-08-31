@@ -9,7 +9,7 @@ function window_draw_startup()
 	content_mouseon = app_mouse_box(content_x, content_y, content_width, content_height) && !popup_mouseon && !snackbar_mouseon && !context_menu_mouseon
 	
 	// Draw background
-	draw_clear_alpha(c_background, 1)
+	draw_clear_alpha(c_level_middle, 1)
 	draw_box(0, 0, window_width, 192, false, c_overlay, a_overlay)
 	
 	var pattern = (setting_theme = theme_light ? 0 : 1);

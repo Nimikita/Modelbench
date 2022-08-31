@@ -40,7 +40,7 @@ function draw_textfield_num()
 		right_side = argument[13]
 	
 	hei = 28
-	capwidth = string_width_font(text_get(name), font_emphasis) + 10
+	capwidth = string_width_font(text_get(name), font_label) + 10
 	
 	if (xx + wid + capwidth < content_x || xx > content_x + content_width || yy + hei < content_y || yy > content_y + content_height)
 		return 0
@@ -58,15 +58,15 @@ function draw_textfield_num()
 	
 	// Use microanimation from inputbox to determine color
 	var labelcolor, labelalpha;
-	labelcolor = merge_color(c_text_secondary, c_accent, mcroani_arr[e_mcroani.ACTIVE])
-	labelcolor = merge_color(labelcolor, c_text_tertiary, mcroani_arr[e_mcroani.DISABLED])
+	labelcolor = merge_color(c_text_secondary, c_accent, microani_arr[e_microani.ACTIVE])
+	labelcolor = merge_color(labelcolor, c_text_tertiary, microani_arr[e_microani.DISABLED])
 	
-	labelalpha = lerp(a_text_secondary, 1, mcroani_arr[e_mcroani.ACTIVE])
-	labelalpha = lerp(labelalpha, a_text_tertiary, mcroani_arr[e_mcroani.DISABLED])
+	labelalpha = lerp(a_text_secondary, 1, microani_arr[e_microani.ACTIVE])
+	labelalpha = lerp(labelalpha, a_text_tertiary, microani_arr[e_microani.DISABLED])
 	
-	draw_box_hover(fieldx, yy, wid, hei, max(mcroani_arr[e_mcroani.HOVER], mcroani_arr[e_mcroani.ACTIVE]) * (1 - mcroani_arr[e_mcroani.DISABLED]))
+	draw_box_hover(fieldx, yy, wid, hei, max(microani_arr[e_microani.HOVER], microani_arr[e_microani.ACTIVE]) * (1 - microani_arr[e_microani.DISABLED]))
 	
-	draw_label(text_get(name), xx, yy + 21, fa_left, fa_bottom, labelcolor, labelalpha, font_emphasis)
+	draw_label(text_get(name), xx, yy + 21, fa_left, fa_bottom, labelcolor, labelalpha, font_label)
 	
 	// Drag
 	if (app_mouse_box(xx, yy, capwidth, hei) && content_mouseon && window_focus != string(tbx) && !disabled)

@@ -21,7 +21,7 @@ function app_event_step()
 	app_update_lists()
 	app_update_highlight()
 	
-	app_update_animations()
+	app_update_micro_animations()
 	
 	app_update_textures()
 	app_update_shape_vbuffer()

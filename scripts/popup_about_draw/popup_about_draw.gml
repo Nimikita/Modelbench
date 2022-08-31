@@ -33,23 +33,23 @@ function popup_about_draw()
 	dy += 12
 	draw_label(text_get("aboutdevelopment"), dx, dy, fa_left, fa_bottom, c_text_tertiary, a_text_tertiary, font_subheading)
 	dy += 26
-	draw_button_text("Nimi", dx, dy, open_url, "https://twitter.com/NimiKitamura", "https://twitter.com/NimiKitamura", font_emphasis)
+	draw_button_text("Nimi", dx, dy, open_url, "https://twitter.com/NimiKitamura", "https://twitter.com/NimiKitamura", font_label)
 	
 	// UI/Branding
 	dy += 34
 	draw_label(text_get("aboutuibranding"), dx, dy, fa_left, fa_bottom, c_text_tertiary, a_text_tertiary, font_subheading)
 	dy += 26
-	draw_button_text("Voxy", dx, dy, open_url, "https://twitter.com/voxybuns", "https://twitter.com/voxybuns", font_emphasis)
+	draw_button_text("Voxy", dx, dy, open_url, "https://twitter.com/voxybuns", "https://twitter.com/voxybuns", font_label)
 	
 	// Beta testing
 	dy += 34
 	draw_label(text_get("aboutbetatesting"), dx, dy, fa_left, fa_bottom, c_text_tertiary, a_text_tertiary, font_subheading)
 	dy += 26
-	draw_label("Hozq", dx, dy, fa_left, fa_bottom, c_text_secondary, a_text_secondary, font_emphasis)
+	draw_label("Hozq", dx, dy, fa_left, fa_bottom, c_text_secondary, a_text_secondary, font_label)
 	dy += 19
-	draw_label("Mr.Banders", dx, dy, fa_left, fa_bottom, c_text_secondary, a_text_secondary, font_emphasis)
+	draw_label("Mr.Banders", dx, dy, fa_left, fa_bottom, c_text_secondary, a_text_secondary, font_label)
 	dy += 19
-	draw_label("SoundsDotZip", dx, dy, fa_left, fa_bottom, c_text_secondary, a_text_secondary, font_emphasis)
+	draw_label("SoundsDotZip", dx, dy, fa_left, fa_bottom, c_text_secondary, a_text_secondary, font_label)
 	
 	// Special thanks
 	dx += 130 + 24
@@ -59,13 +59,13 @@ function popup_about_draw()
 	dy += 12
 	draw_label(text_get("aboutspecialthanks"), dx, dy, fa_left, fa_bottom, c_text_tertiary, a_text_tertiary, font_subheading)
 	dy += 26
-	draw_button_text("David", dx, dy, open_url, "https://twitter.com/stuffbydavidn", "https://twitter.com/stuffbydavidn", font_emphasis)
+	draw_button_text("David", dx, dy, open_url, "https://twitter.com/stuffbydavidn", "https://twitter.com/stuffbydavidn", font_label)
 	
 	dy += 19
 	
 	for (var i = 0; i < ds_list_size(special_thanks_list); i++)
 	{
-		draw_label(special_thanks_list[|i], dx, dy, fa_left, fa_bottom, c_text_secondary, a_text_secondary, font_emphasis)
+		draw_label(special_thanks_list[|i], dx, dy, fa_left, fa_bottom, c_text_secondary, a_text_secondary, font_label)
 		dy += 19
 		
 		// Next row

@@ -16,9 +16,9 @@ function draw_texture_item(xx, yy, wid, hei, tex)
 	
 	microani_set(string(tex) + "item", null, mouseon, false, tex = res_edit)
 	microani_update(mouseon, false, tex = res_edit)
-	draw_box_hover(xx, yy, wid, hei, mcroani_arr[e_mcroani.HOVER])
+	draw_box_hover(xx, yy, wid, hei, microani_arr[e_microani.HOVER])
 	
-	draw_box(xx, yy, wid, hei, false, c_overlay, a_overlay * mcroani_arr[e_mcroani.HOVER])
+	draw_box(xx, yy, wid, hei, false, c_overlay, a_overlay * microani_arr[e_microani.HOVER])
 	
 	if (mouseon)
 	{
@@ -33,7 +33,7 @@ function draw_texture_item(xx, yy, wid, hei, tex)
 		}
 	}
 	
-	draw_box(xx, yy, wid, hei, false, c_accent_overlay, a_accent_overlay * mcroani_arr[e_mcroani.ACTIVE])
+	draw_box(xx, yy, wid, hei, false, c_accent_overlay, a_accent_overlay * microani_arr[e_microani.ACTIVE])
 	
 	// Draw texture preview
 	draw_box(xx + 8, yy + 8, 32, 32, false, c_border, a_border)

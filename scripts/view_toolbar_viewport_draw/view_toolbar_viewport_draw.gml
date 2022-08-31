@@ -31,7 +31,7 @@ function view_toolbar_viewport_draw(barx, bary, barw, barh)
 	draw_set_alpha(toolbar_viewport_alpha)
 	
 	// Background
-	draw_box(dx, dy, dw, dh, false, c_background, 1)
+	draw_box(dx, dy, dw, dh, false, c_level_middle, 1)
 	draw_dropshadow(dx, dy, dw, dh, c_black, 1)
 	draw_outline(dx, dy, dw, dh, 1, c_border, a_border)
 	

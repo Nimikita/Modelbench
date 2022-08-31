@@ -55,8 +55,8 @@ function draw_button_menu()
 	microani_set(name, null, false, false, false)
 	
 	var textcolor, textalpha;
-	textcolor = merge_color(c_text_secondary, c_text_tertiary, mcroani_arr[e_mcroani.DISABLED])
-	textalpha = lerp(a_text_secondary, a_text_tertiary, mcroani_arr[e_mcroani.DISABLED])
+	textcolor = merge_color(c_text_secondary, c_text_tertiary, microani_arr[e_microani.DISABLED])
+	textalpha = lerp(a_text_secondary, a_text_tertiary, microani_arr[e_microani.DISABLED])
 	
 	// Caption
 	if (dh > (hei + 20))
@@ -67,16 +67,16 @@ function draw_button_menu()
 	
 	// Button
 	var bordercolor, borderalpha;
-	bordercolor = merge_color(c_border, c_text_secondary, mcroani_arr[e_mcroani.HOVER])
-	borderalpha = lerp(a_border, a_text_secondary, mcroani_arr[e_mcroani.HOVER])
-	bordercolor = merge_color(bordercolor, c_accent, mcroani_arr[e_mcroani.PRESS])
-	borderalpha = lerp(borderalpha, a_accent, mcroani_arr[e_mcroani.PRESS])
+	bordercolor = merge_color(c_border, c_text_secondary, microani_arr[e_microani.HOVER])
+	borderalpha = lerp(a_border, a_text_secondary, microani_arr[e_microani.HOVER])
+	bordercolor = merge_color(bordercolor, c_accent, microani_arr[e_microani.PRESS])
+	borderalpha = lerp(borderalpha, a_accent, microani_arr[e_microani.PRESS])
 	
 	if (menu_name = name)
-		draw_box(xx, yy, wid, hei, false, c_background, 1)
+		draw_box(xx, yy, wid, hei, false, c_level_middle, 1)
 	
 	draw_outline(xx, yy, wid, hei, 1, bordercolor, borderalpha)
-	draw_box_hover(xx - 1, yy - 1, wid + 2, hei + 2, mcroani_arr[e_mcroani.HOVER])
+	draw_box_hover(xx - 1, yy - 1, wid + 2, hei + 2, microani_arr[e_microani.HOVER])
 	
 	// Mouse
 	mouseon = app_mouse_box(xx, yy, wid, hei) && !disabled && content_mouseon
@@ -91,10 +91,10 @@ function draw_button_menu()
 	instance_destroy(item)
 	
 	// Arrow
-	draw_image(spr_arrow_up_down_ani, (mcroani_arr[e_mcroani.ACTIVE] * 15), xx + wid - hei / 2, yy + hei / 2, 1, 1, textcolor, textalpha)
+	draw_image(spr_arrow_up_down_ani, (microani_arr[e_microani.ACTIVE] * 15), xx + wid - hei / 2, yy + hei / 2, 1, 1, textcolor, textalpha)
 	
 	// Disabled overlay
-	draw_box(xx, yy, wid, hei, false, c_overlay, a_overlay * mcroani_arr[e_mcroani.DISABLED])
+	draw_box(xx, yy, wid, hei, false, c_overlay, a_overlay * microani_arr[e_microani.DISABLED])
 	
 	microani_update(mouseon, mouseon && mouse_left, (menu_name = name ? !flip : flip), disabled)
 	

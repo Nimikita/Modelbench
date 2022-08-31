@@ -102,7 +102,7 @@ function draw_keycontrol(name, xx, yy, wid, shortcut, def, script, keyonly = fal
 	microani_set(name, script, mouseon || window_busy = name, mouseon && mouse_left, false)
 	microani_update(mouseon || window_busy = name, mouseon && mouse_left, false)
 	
-	var hover = mcroani_arr[e_mcroani.HOVER];
+	var hover = microani_arr[e_microani.HOVER];
 	
 	// Edit button
 	var editx, edity;
@@ -119,7 +119,7 @@ function draw_keycontrol(name, xx, yy, wid, shortcut, def, script, keyonly = fal
 	draw_set_alpha(1)
 	
 	// Label
-	draw_label(text, xx, yy + 14, fa_left, fa_middle, c_text_secondary, a_text_secondary, font_emphasis)
+	draw_label(text, xx, yy + 14, fa_left, fa_middle, c_text_secondary, a_text_secondary, font_label)
 	
 	// Update
 	if (!array_equals(shortcut, shortcutnew))

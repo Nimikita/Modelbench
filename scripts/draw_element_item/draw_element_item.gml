@@ -107,7 +107,7 @@ function draw_element_item()
 	{
 		if (itemhover || element.locked)
 		{
-			if (draw_button_icon("assetselementlock" + string(element), xx, itemy + 4, 20, 20, element.locked, icons.UNLOCK - element.locked, null, window_busy = "elementselection", (element.locked ? "tooltipunlock" : "tooltiplock")))
+			if (draw_button_icon("assetselementlock" + string(element), xx, itemy + 4, 20, 20, element.locked, element.locked ? icons.LOCK_SMALL : icons.UNLOCK_SMALL, null, window_busy = "elementselection", (element.locked ? "tooltipunlock" : "tooltiplock")))
 			{
 				element.locked = !element.locked
 				el_update_lock_tree(false)
@@ -148,7 +148,7 @@ function draw_element_item()
 		else
 		{
 			if (element.type = "block")
-				icon = icons.BLOCK
+				icon = icons.CUBE
 			else if (element.type = "plane")
 			{
 				if (element.value[e_value.EXTRUDE])
@@ -314,7 +314,7 @@ function draw_element_item()
 	
 	// Overlay for shapes when moving parts in hierarchy
 	if (element.element_type = TYPE_SHAPE && hideshapes)
-		draw_box(dx, itemy, dw, itemh, false, c_background, 0.5)
+		draw_box(dx, itemy, dw, itemh, false, c_level_middle, 0.5)
 	
 	// Move elements
 	if (itemvisible && movehover && window_busy = "elementmove" && !(element.element_type = TYPE_SHAPE && hideshapes))

@@ -56,15 +56,15 @@ function draw_button_primary()
 	
 	// Draw button background
 	var buttoncolor, buttonalpha;
-	buttoncolor = merge_color(c_accent, c_accent_hover, mcroani_arr[e_mcroani.HOVER] * (1 - mcroani_arr[e_mcroani.PRESS]))
-	buttoncolor = merge_color(buttoncolor, c_accent_pressed, mcroani_arr[e_mcroani.PRESS])
-	buttonalpha = lerp(1, a_accent_hover, mcroani_arr[e_mcroani.HOVER] * (1 - mcroani_arr[e_mcroani.PRESS]))
-	buttonalpha = lerp(buttonalpha, a_accent_pressed, mcroani_arr[e_mcroani.PRESS])
+	buttoncolor = merge_color(c_accent, c_accent_hover, microani_arr[e_microani.HOVER] * (1 - microani_arr[e_microani.PRESS]))
+	buttoncolor = merge_color(buttoncolor, c_accent_pressed, microani_arr[e_microani.PRESS])
+	buttonalpha = lerp(1, a_accent_hover, microani_arr[e_microani.HOVER] * (1 - microani_arr[e_microani.PRESS]))
+	buttonalpha = lerp(buttonalpha, a_accent_pressed, microani_arr[e_microani.PRESS])
 	
 	draw_box(xx, yy, width, height, false, buttoncolor, buttonalpha)	
 	
 	// Accent accent hover outline
-	draw_box_hover(xx, yy, width, height, mcroani_arr[e_mcroani.HOVER])
+	draw_box_hover(xx, yy, width, height, microani_arr[e_microani.HOVER])
 	
 	// Bevel shading
 	draw_box_bevel(xx, yy, width, height, 1)

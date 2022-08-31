@@ -41,19 +41,19 @@ function draw_button_secondary()
 	microani_set(name, script, mouseon, mouseclick, false)
 	
 	// Accent hover outline
-	draw_box_hover(xx, yy, width, height, mcroani_arr[e_mcroani.HOVER])
+	draw_box_hover(xx, yy, width, height, microani_arr[e_microani.HOVER])
 	
 	// Box
 	var bordercolor, borderalpha, labelcolor, labelalpha;
-	bordercolor = merge_color(c_border, c_accent, mcroani_arr[e_mcroani.PRESS])
-	borderalpha = lerp(a_border, 1, mcroani_arr[e_mcroani.PRESS])
+	bordercolor = merge_color(c_border, c_accent, microani_arr[e_microani.PRESS])
+	borderalpha = lerp(a_border, 1, microani_arr[e_microani.PRESS])
 	
-	labelcolor = merge_color(c_accent, c_accent_hover, mcroani_arr[e_mcroani.HOVER])
-	labelcolor = merge_color(labelcolor, c_accent_pressed, mcroani_arr[e_mcroani.PRESS])
-	labelalpha = lerp(1, a_accent_hover, mcroani_arr[e_mcroani.HOVER])
-	labelalpha = lerp(labelalpha, a_accent_pressed, mcroani_arr[e_mcroani.PRESS])
+	labelcolor = merge_color(c_accent, c_accent_hover, microani_arr[e_microani.HOVER])
+	labelcolor = merge_color(labelcolor, c_accent_pressed, microani_arr[e_microani.PRESS])
+	labelalpha = lerp(1, a_accent_hover, microani_arr[e_microani.HOVER])
+	labelalpha = lerp(labelalpha, a_accent_pressed, microani_arr[e_microani.PRESS])
 	
-	draw_box(xx, yy, width, height, false, c_accent_overlay, a_accent_overlay * mcroani_arr[e_mcroani.PRESS])
+	draw_box(xx, yy, width, height, false, c_accent_overlay, a_accent_overlay * microani_arr[e_microani.PRESS])
 	draw_outline(xx + 1, yy + 1, width - 2, height - 2, 1, bordercolor, borderalpha)
 	
 	var textx = xx;

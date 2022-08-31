@@ -43,7 +43,7 @@ function draw_textfield()
 	else if (labelpos = "none")
 		capwidth = 0
 	else
-		capwidth = string_width_font(text_get(name), font_emphasis) + 10
+		capwidth = string_width_font(text_get(name), font_label) + 10
 	
 	if (xx + w < content_x || xx > content_x + content_width || yy + h < content_y || yy > content_y + content_height)
 		return 0
@@ -52,8 +52,8 @@ function draw_textfield()
 	
 	// Use microanimation from inputbox to determine color
 	var labelcolor, labelalpha;
-	labelcolor = merge_color(c_text_secondary, c_accent, mcroani_arr[e_mcroani.ACTIVE])
-	labelalpha = lerp(a_text_secondary, 1, mcroani_arr[e_mcroani.ACTIVE])
+	labelcolor = merge_color(c_text_secondary, c_accent, microani_arr[e_microani.ACTIVE])
+	labelalpha = lerp(a_text_secondary, 1, microani_arr[e_microani.ACTIVE])
 	
 	if (err)
 	{
@@ -61,12 +61,12 @@ function draw_textfield()
 		labelalpha = 1
 	}
 	
-	draw_box_hover(xx + capwidth, yy, w - capwidth, h, max(mcroani_arr[e_mcroani.HOVER], mcroani_arr[e_mcroani.ACTIVE]))
+	draw_box_hover(xx + capwidth, yy, w - capwidth, h, max(microani_arr[e_microani.HOVER], microani_arr[e_microani.ACTIVE]))
 	
 	if (labelpos = "top")
 		draw_label(text_get(name), xx, yy - 8, fa_left, fa_bottom, labelcolor, labelalpha, font_label)
 	else if (labelpos != "none")
-		draw_label(text_get(name), xx, yy + 21, fa_left, fa_bottom, labelcolor, labelalpha, font_emphasis)
+		draw_label(text_get(name), xx, yy + 21, fa_left, fa_bottom, labelcolor, labelalpha, font_label)
 	
 	return update
 }

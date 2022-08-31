@@ -32,11 +32,11 @@ function draw_toolbar_button(name, xx, yy, buttonvalue, value, script)
 	}
 	
 	var ani, color, alpha;
-	ani = mcroani_arr[e_mcroani.ACTIVE]
+	ani = microani_arr[e_microani.ACTIVE]
 	color = merge_color(c_text_secondary, c_accent, ani)
 	alpha = lerp(a_text_secondary, 1, ani)
 	
-	draw_box(xx, yy, width, height, false, c_accent_overlay, lerp(0, a_accent_overlay, mcroani_arr[e_mcroani.HOVER]))
+	draw_box(xx, yy, width, height, false, c_accent_overlay, lerp(0, a_accent_overlay, microani_arr[e_microani.HOVER]))
 	
 	draw_label(name, xx + width/2, yy + 27, fa_center, fa_bottom, color, alpha)
 	

@@ -28,9 +28,9 @@ function draw_button_color(name, xx, yy, color, def, script)
 	draw_box(xx, yy, 28, 28, false, color, 1)
 	
 	var buttoncolor, buttonalpha;
-	buttoncolor = merge_color(c_white, c_black, mcroani_arr[e_mcroani.PRESS])
-	buttonalpha = lerp(0, .17, mcroani_arr[e_mcroani.HOVER] * (1 - mcroani_arr[e_mcroani.PRESS]))
-	buttonalpha = lerp(buttonalpha, .20, mcroani_arr[e_mcroani.PRESS])
+	buttoncolor = merge_color(c_white, c_black, microani_arr[e_microani.PRESS])
+	buttonalpha = lerp(0, .17, microani_arr[e_microani.HOVER] * (1 - microani_arr[e_microani.PRESS]))
+	buttonalpha = lerp(buttonalpha, .20, microani_arr[e_microani.PRESS])
 	
 	draw_box(xx, yy, 28, 28, false, buttoncolor, buttonalpha)
 	draw_outline(xx + 2, yy + 2, 24, 24, 2, (color_get_lum(color) > 150 ? c_black : c_white), a_border)
@@ -39,12 +39,12 @@ function draw_button_color(name, xx, yy, color, def, script)
 	var iconcolor, iconalpha;
 	iconcolor = (color_get_lum(color) > 150 ? c_black : c_white)
 	iconalpha = (color_get_lum(color) > 150 ? 0.5 : 1)
-	draw_image(spr_icons, icons.PICKER, xx + 14, yy + 14, 1, 1, iconcolor, iconalpha * max(mcroani_arr[e_mcroani.HOVER], mcroani_arr[e_mcroani.PRESS], mcroani_arr[e_mcroani.ACTIVE]))
+	draw_image(spr_icons, icons.PICKER, xx + 14, yy + 14, 1, 1, iconcolor, iconalpha * max(microani_arr[e_microani.HOVER], microani_arr[e_microani.PRESS], microani_arr[e_microani.ACTIVE]))
 	
 	// Hover effect
-	draw_box_hover(xx, yy, 28, 28, mcroani_arr[e_mcroani.HOVER])
+	draw_box_hover(xx, yy, 28, 28, microani_arr[e_microani.HOVER])
 	
-	draw_label(text_get(name), xx + 28 + 12, yy + 14, fa_left, fa_middle, lerp(c_text_secondary, c_text_tertiary, mcroani_arr[e_mcroani.DISABLED]), lerp(a_text_secondary, a_text_tertiary, mcroani_arr[e_mcroani.DISABLED]), font_emphasis)
+	draw_label(text_get(name), xx + 28 + 12, yy + 14, fa_left, fa_middle, lerp(c_text_secondary, c_text_tertiary, microani_arr[e_microani.DISABLED]), lerp(a_text_secondary, a_text_tertiary, microani_arr[e_microani.DISABLED]), font_label)
 	
 	microani_update(mouseon, mouseclick, popup = popup_colorpicker && popup_colorpicker.value_name = name)
 	

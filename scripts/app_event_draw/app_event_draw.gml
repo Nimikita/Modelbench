@@ -6,7 +6,7 @@ function app_event_draw()
 	draw_event_time_start = current_time
 	
 	draw_set_font(font_label)
-	draw_set_color(c_background)
+	draw_set_color(c_level_middle)
 	
 	window_draw()
 	draw_event_time = current_time - draw_event_time_start

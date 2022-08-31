@@ -12,6 +12,7 @@ function app_startup_interface_tabs()
 	tab_move_box_width = 0
 	tab_move_box_height = 0
 	tab_move_mouseon_panel = null
+	tab_move_mouseon_panel_prev = null
 	tab_move_mouseon_position = 0
 	
 	// Assets
@@ -19,7 +20,7 @@ function app_startup_interface_tabs()
 	with (assets)
 	{
 		// Model properties
-		model_properties = tab_add_category("modelproperties", tab_assets_model_properties, false)
+		model_properties = tab_add_category("modelproperties", icons.MODEL, tab_assets_model_properties, false)
 		with (model_properties)
 		{
 			tbx_model_name = new_textbox(true, 0, "")
@@ -27,7 +28,7 @@ function app_startup_interface_tabs()
 		}
 		
 		// Elements
-		elements = tab_add_category("elements", tab_assets_elements, false)
+		elements = tab_add_category("elements", icons.HIERARCHY_SMALL, tab_assets_elements, false)
 		with (elements)
 		{
 			tbx_search = new_textbox(true, 0, "")
@@ -41,7 +42,7 @@ function app_startup_interface_tabs()
 		}
 		
 		// Textures
-		textures = tab_add_category("textures", tab_assets_textures, false)
+		textures = tab_add_category("textures", icons.FILE_SMALL, tab_assets_textures, false)
 		with (textures)
 		{
 			preview = new_obj(obj_preview)
@@ -59,7 +60,7 @@ function app_startup_interface_tabs()
 		tbx_depth = new_textbox_ninteger()
 		
 		// Position
-		position = tab_add_category("position", tab_element_editor_position, false)
+		position = tab_add_category("position", icons.TRANSFORM_SMALL, tab_element_editor_position, false)
 		with (position)
 		{
 			tbx_x = new_textbox_ndecimals()
@@ -74,7 +75,7 @@ function app_startup_interface_tabs()
 		}
 		
 		// Pivot offset
-		pivot_offset = tab_add_category("pivotoffset", tab_element_editor_offset, false)
+		pivot_offset = tab_add_category("pivotoffset", icons.TRANSFORM_SMALL, tab_element_editor_offset, false)
 		with (pivot_offset)
 		{
 			tbx_x = new_textbox_ndecimals()
@@ -89,7 +90,7 @@ function app_startup_interface_tabs()
 		}
 		
 		// Rotation
-		rotation = tab_add_category("rotation", tab_element_editor_rotation, false)
+		rotation = tab_add_category("rotation", icons.TRANSFORM_SMALL, tab_element_editor_rotation, false)
 		with (rotation)
 		{
 			tbx_x = new_textbox_ndecimals()
@@ -107,7 +108,7 @@ function app_startup_interface_tabs()
 		}
 		
 		// Size
-		size = tab_add_category("size", tab_element_editor_size, false)
+		size = tab_add_category("size", icons.TRANSFORM_SMALL, tab_element_editor_size, false)
 		with (size)
 		{
 			tbx_width = new_textbox_ndecimals()
@@ -122,7 +123,7 @@ function app_startup_interface_tabs()
 		}
 		
 		// Scale
-		scale = tab_add_category("scale", tab_element_editor_scale, false)
+		scale = tab_add_category("scale", icons.TRANSFORM_SMALL, tab_element_editor_scale, false)
 		with (scale)
 		{
 			tbx_x = new_textbox_ndecimals()
@@ -137,7 +138,7 @@ function app_startup_interface_tabs()
 		}
 		
 		// Bend
-		bend = tab_add_category("bend", tab_element_editor_bend, false)
+		bend = tab_add_category("bend", icons.TRANSFORM_SMALL, tab_element_editor_bend, false)
 		with (bend)
 		{
 			tbx_offset = new_textbox_ndecimals()
@@ -165,7 +166,7 @@ function app_startup_interface_tabs()
 		}
 		
 		// Material
-		material = tab_add_category("material", tab_element_editor_material, false)
+		material = tab_add_category("material", [icons.SPHERE_SHADING_SMALL, icons.SPHERE_SHADING_SMALL__DARK], tab_element_editor_material, false)
 		with (material)
 		{
 			tbx_mix_amount = new_textbox_integer()
@@ -177,12 +178,12 @@ function app_startup_interface_tabs()
 		}
 		
 		// Appearance
-		appearance = tab_add_category("appearance", tab_element_editor_appearance, false)
+		appearance = tab_add_category("appearance", [icons.SPHERE_SHADING_SMALL, icons.SPHERE_SHADING_SMALL__DARK], tab_element_editor_appearance, false)
 		with (appearance)
 			tbx_inflate = new_textbox_ndecimals()
 		
 		// Wind
-		wind = tab_add_category("wind", tab_element_editor_wind, false)
+		wind = tab_add_category("wind", icons.WIND, tab_element_editor_wind, false)
 		with (wind)
 		{
 			tbx_zmin = new_textbox_ndecimals()
@@ -190,7 +191,7 @@ function app_startup_interface_tabs()
 		}
 		
 		// Mine-imator
-		mineimator = tab_add_category("mineimator", tab_element_editor_mineimator, false)
+		mineimator = tab_add_category("mineimator", icons.CLAPPERBOARD_SMALL, tab_element_editor_mineimator, false)
 	}
 	
 	// Preview
@@ -199,7 +200,7 @@ function app_startup_interface_tabs()
 	with (preview)
 	{
 		// Background
-		background = tab_add_category("background", tab_preview_background, true) 
+		background = tab_add_category("background", icons.WORLD_SMALL, tab_preview_background, true) 
 		with (background)
 		{
 			tbx_light_rotation = new_textbox_decimals()
@@ -209,7 +210,7 @@ function app_startup_interface_tabs()
 		}
 		
 		// Render
-		render = tab_add_category("render", tab_preview_render, false)
+		render = tab_add_category("render", icons.CAMERA_SMALL, tab_preview_render, false)
 		with (render)
 		{
 			//tbx_ssao_radius = new_textbox_integer()
@@ -223,7 +224,7 @@ function app_startup_interface_tabs()
 		}
 		
 		// Export
-		tab_add_category("export", tab_preview_export, false) 
+		tab_add_category("export", icons.FILE_EXPORT, tab_preview_export, false) 
 	}
 	
 	// Recent models
@@ -237,7 +238,7 @@ function app_startup_interface_tabs()
 	with (settings)
 	{
 		// General
-		general = tab_add_category("general", tab_settings_general, false)
+		general = tab_add_category("general", icons.SETTINGS_SMALL, tab_settings_general, false)
 		with (general)
 		{
 			tbx_backup_time = new_textbox_integer()
@@ -245,11 +246,11 @@ function app_startup_interface_tabs()
 		}
 		
 		// Controls
-		controls = tab_add_category("controls", tab_settings_controls, false)
+		controls = tab_add_category("controls", icons.KEYBOARD_SMALL, tab_settings_controls, false)
 		with (controls)
 			tbx_look_sensitivity = new_textbox_decimals()
 		
 		// Interface
-		interface = tab_add_category("interface", tab_settings_interface, false)
+		interface = tab_add_category("interface", icons.BRUSH_SMALL, tab_settings_interface, false)
 	}
 }

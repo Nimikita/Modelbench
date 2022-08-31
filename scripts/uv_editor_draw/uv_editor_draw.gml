@@ -125,7 +125,7 @@ function uv_editor_draw(viewx, viewy, vieww, viewh)
 	// Draw UV editor
 	
 	// Draw tiled 'transprent' background
-	draw_box(boxx, boxy, boxw, boxh, false, c_background, 1)
+	draw_box(boxx, boxy, boxw, boxh, false, c_level_middle, 1)
 	
 	for (var i = 0; i < ceil(boxw/192); i++)
 		for (var j = 0; j < ceil(boxh/192); j++)
@@ -269,10 +269,10 @@ function uv_editor_draw(viewx, viewy, vieww, viewh)
 	}
 	
 	// Text
-	draw_label("[ 0, 0 ]", texx - 8, texy - 8, fa_right, fa_bottom, c_text_main, a_text_main, font_emphasis)
-	draw_label("[ " + string(texture_width(uv_editor_tex)) + ", 0 ]", texx + texw + 8, texy - 8, fa_left, fa_bottom, c_text_main, a_text_main, font_emphasis)
-	draw_label("[ 0, " + string(texture_height(uv_editor_tex)) + " ]", texx - 8, texy + texh + 8, fa_right, fa_top, c_text_main, a_text_main, font_emphasis)
-	draw_label("[ " + string(texture_width(uv_editor_tex)) + ", " + string(texture_height(uv_editor_tex)) + " ]", texx + texw + 8, texy + texh + 8, fa_left, fa_top, c_text_main, a_text_main, font_emphasis)
+	draw_label("[ 0, 0 ]", texx - 8, texy - 8, fa_right, fa_bottom, c_text_main, a_text_main, font_label)
+	draw_label("[ " + string(texture_width(uv_editor_tex)) + ", 0 ]", texx + texw + 8, texy - 8, fa_left, fa_bottom, c_text_main, a_text_main, font_label)
+	draw_label("[ 0, " + string(texture_height(uv_editor_tex)) + " ]", texx - 8, texy + texh + 8, fa_right, fa_top, c_text_main, a_text_main, font_label)
+	draw_label("[ " + string(texture_width(uv_editor_tex)) + ", " + string(texture_height(uv_editor_tex)) + " ]", texx + texw + 8, texy + texh + 8, fa_left, fa_top, c_text_main, a_text_main, font_label)
 	
 	var overlaytexscale, shapeuv, shapesize, shapeuvnozoom, shapesizenozoom;
 	
@@ -336,7 +336,7 @@ function uv_editor_draw(viewx, viewy, vieww, viewh)
 	lefttext = (el_edit.value[e_value.TEX_MIRROR] ? "uveditorright" : "uveditorleft")
 	
 	draw_set_font(font_heading)
-	draw_set_color(c_background)
+	draw_set_color(c_level_middle)
 	draw_set_valign(fa_center)
 	draw_set_halign(fa_middle)
 	
@@ -379,7 +379,7 @@ function uv_editor_draw(viewx, viewy, vieww, viewh)
 	// Draw controllers
 	
 	// X/Y controller
-	draw_box(texx + shapeuv[X] - 7, texy + shapeuv[Y] - 7, 12, 12, false, (window_busy = "uveditorcontrolxy" ? c_background : c_accent_hover), 1)
+	draw_box(texx + shapeuv[X] - 7, texy + shapeuv[Y] - 7, 12, 12, false, (window_busy = "uveditorcontrolxy" ? c_level_middle : c_accent_hover), 1)
 	draw_box(texx + shapeuv[X] - 5, texy + shapeuv[Y] - 5, 8, 8, false, c_accent_pressed, 1)
 	if (app_mouse_box(texx + shapeuv[X] - 7, texy + shapeuv[Y] - 7, 12, 12))
 	{
@@ -398,7 +398,7 @@ function uv_editor_draw(viewx, viewy, vieww, viewh)
 		uv_editor_xy_mouseon = false
 	
 	// Width/Height controller
-	draw_box(texx + shapeuv[X] + shapesize[X] - 7, texy + shapeuv[Y] + shapesize[Z] - 7, 12, 12, false, (window_busy = "uveditorcontrolwh" ? c_background : c_accent_hover), 1)
+	draw_box(texx + shapeuv[X] + shapesize[X] - 7, texy + shapeuv[Y] + shapesize[Z] - 7, 12, 12, false, (window_busy = "uveditorcontrolwh" ? c_level_middle : c_accent_hover), 1)
 	draw_box(texx + shapeuv[X] + shapesize[X] - 5, texy + shapeuv[Y] + shapesize[Z] - 5, 8, 8, false, c_accent_pressed, 1)
 	if (app_mouse_box(texx + shapeuv[X] + shapesize[X] - 7, texy + shapeuv[Y] + shapesize[Z] - 7, 12, 12))
 	{
@@ -419,7 +419,7 @@ function uv_editor_draw(viewx, viewy, vieww, viewh)
 	// Length controller
 	if (el_edit.type = "block")
 	{
-		draw_box(texx + shapeuv[X] - shapesize[Y] - 7, texy + shapeuv[Y] - 7, 12, 12, false, (window_busy = "uveditorcontrollength" ? c_background : c_accent_hover), 1)
+		draw_box(texx + shapeuv[X] - shapesize[Y] - 7, texy + shapeuv[Y] - 7, 12, 12, false, (window_busy = "uveditorcontrollength" ? c_level_middle : c_accent_hover), 1)
 		draw_box(texx + shapeuv[X] - shapesize[Y] - 5, texy + shapeuv[Y] - 5, 8, 8, false, c_accent_pressed, 1)
 		if (app_mouse_box(texx + shapeuv[X] - shapesize[Y] - 7, texy + shapeuv[Y] - 7, 12, 12))
 		{

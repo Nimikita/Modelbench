@@ -26,8 +26,19 @@ function panel_area_draw()
 	// Adjust panel height for shortcut bar
 	panel_area_height -= 28 * shortcut_bar_lines
 	
+	// Set size
 	with (obj_panel)
+	{
+		size_ani += 0.035 * delta
+		size_ani = clamp(size_ani, 0, 1)
+		size_real_ani = ceil((size_real - 16) + (16 * ease("easeoutcirc", size_ani)))
+		
+		glow_ani += 0.035 * delta
+		glow_ani = clamp(glow_ani, 0, 1)
+		size_glow = (size - 16) + (16 * ease("easeoutcirc", glow_ani))
+		
 		size_real = size * (tab_list_amount > 0)
+	}
 	
 	// Stop panels overlapping
 	panel_map[?"left"].size_real -= max(0, panel_map[?"left_secondary"].size_real + panel_map[?"left"].size_real + panel_map[?"right"].size_real + panel_map[?"right_secondary"].size_real - panel_area_width)
@@ -119,6 +130,23 @@ function panel_area_draw()
 				tab_move_mouseon_panel = panel_map[?"right_secondary"]
 			
 			tab_move_mouseon_panel.glow = min(1, tab_move_mouseon_panel.glow + 0.1 * delta)
+			
+			if (tab_move_mouseon_panel_prev != tab_move_mouseon_panel)
+			{
+				if (tab_move_mouseon_panel_prev != null)
+				{
+					tab_move_mouseon_panel_prev.glow = false
+					tab_move_mouseon_panel_prev.glow_ani = 0	
+				}
+				
+				if (tab_move_mouseon_panel != null)
+				{
+					tab_move_mouseon_panel.glow_ani = 0
+					tab_move_mouseon_panel.glow = true
+				}
+			}
+			
+			tab_move_mouseon_panel_prev = tab_move_mouseon_panel
 		}
 		
 		// Let it go
@@ -126,6 +154,7 @@ function panel_area_draw()
 		{
 			panel_tab_list_add(tab_move_mouseon_panel, tab_move_mouseon_position, tab_move)
 			window_busy = ""
+			tab_move_mouseon_panel_prev = null
 			
 			with (obj_tab)
 				glow = 0

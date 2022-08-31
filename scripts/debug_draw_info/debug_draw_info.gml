@@ -44,8 +44,8 @@ function debug_draw_info()
 	str += "    3D planes: " + string(model_planes3d) + " \n"
 	str += "    Blocks: " + string(model_blocks) + " \n"
 	
-	var h = string_height_font(str, font_emphasis) + 16;
+	var h = string_height_font(str, font_label) + 16;
 	
-	draw_box(8, window_height - h - 8, string_width_font(str, font_emphasis) + 16, h, false, c_black, .75)
-	draw_label(str, 16, window_height - 16, fa_left, fa_bottom, c_white, 1, font_emphasis)
+	draw_box(8, window_height - h - 8, string_width_font(str, font_label) + 16, h, false, c_black, .75)
+	draw_label(str, 16, window_height - 16, fa_left, fa_bottom, c_white, 1, font_label)
 }

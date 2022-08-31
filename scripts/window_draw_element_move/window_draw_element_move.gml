@@ -28,7 +28,7 @@ function window_draw_element_move()
 		else
 		{
 			if (element.type = "block")
-				icon = icons.BLOCK
+				icon = icons.CUBE
 			else if (element.type = "plane")
 			{
 				if (element.value[e_value.EXTRUDE])

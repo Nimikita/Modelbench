@@ -21,11 +21,11 @@ function snackbar_draw_action(name, xx, yy, hei, script, value, snackbar)
 	
 	microani_set("snackbaraction" + string(snackbar), script, mouseon, mouseon && mouse_left, false)
 	
-	color = merge_color(c_text_secondary, c_text_main, mcroani_arr[e_mcroani.HOVER])
-	color = merge_color(color, c_accent, mcroani_arr[e_mcroani.PRESS])
+	color = merge_color(c_text_secondary, c_text_main, microani_arr[e_microani.HOVER])
+	color = merge_color(color, c_accent, microani_arr[e_microani.PRESS])
 	
-	alpha = lerp(a_text_secondary, a_text_main, mcroani_arr[e_mcroani.HOVER])
-	alpha = lerp(alpha, 1, mcroani_arr[e_mcroani.PRESS])
+	alpha = lerp(a_text_secondary, a_text_main, microani_arr[e_microani.HOVER])
+	alpha = lerp(alpha, 1, microani_arr[e_microani.PRESS])
 	
 	draw_label(name, xx, yy + hei/2, fa_left, fa_center, color, alpha, font_button)
 	

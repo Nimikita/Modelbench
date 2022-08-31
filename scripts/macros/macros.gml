@@ -3,7 +3,7 @@
 function macros()
 {
 	// Debug
-	#macro dev_mode						false
+	#macro dev_mode						true
 	#macro debug_export_normals			false
 	
 	// Versions

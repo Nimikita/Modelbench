@@ -54,7 +54,7 @@ function view_control_scale_all(view, mat, radius)
 		}
 	}
 	
-	draw_set_color(c_background)
+	draw_set_color(c_level_middle)
 	
 	// Draw circle
 	if (view.control_mouseon_last = e_control.SCA_XYZ)
@@ -73,14 +73,14 @@ function view_control_scale_all(view, mat, radius)
 	}
 	else
 	{
-		draw_image(spr_circle_20, 0, mousecoord[X] * 2, mousecoord[Y] * 2, 1, 1, c_background, 1)
+		draw_image(spr_circle_20, 0, mousecoord[X] * 2, mousecoord[Y] * 2, 1, 1, c_level_middle, 1)
 		
 		render_set_culling(false)
 		
 		draw_set_color(c_text_tertiary)
 		draw_set_alpha(a_text_tertiary)
 		draw_line_width(drawcoord[X], drawcoord[Y], mousecoord[X] * 2, mousecoord[Y] * 2, 8)
-		draw_set_color(c_background)
+		draw_set_color(c_level_middle)
 		draw_set_alpha(1)
 		
 		draw_line_width(drawcoord[X], drawcoord[Y], mousecoord[X] * 2, mousecoord[Y] * 2, 4)
@@ -97,7 +97,7 @@ function view_control_scale_all(view, mat, radius)
 			
 			angle = radtodeg(arctan2((mousecoord[Y]*2) - drawcoord[Y], (mousecoord[X] * 2) - drawcoord[X]))
 			draw_image(spr_view_line, 0, nx, ny, 3, 2.5, c_text_tertiary, a_text_tertiary, -angle)
-			draw_image(spr_view_line, 0, nx, ny, 2, 2, ((i mod 5) = 0 ? c_accent : c_background), 1, -angle)
+			draw_image(spr_view_line, 0, nx, ny, 2, 2, ((i mod 5) = 0 ? c_accent : c_level_middle), 1, -angle)
 		}
 		
 		render_set_culling(true)

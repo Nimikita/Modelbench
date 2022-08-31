@@ -38,7 +38,7 @@ function menu_draw()
 	
 	if (h > 2)
 		draw_outline(menu_x, (menu_flip ? yy : yy + 2), menu_w, h - 2, 1, c_border, a_border)
-	draw_box(menu_x, yy, menu_w, h, false, c_background, 1)
+	draw_box(menu_x, yy, menu_w, h, false, c_level_middle, 1)
 	draw_line_ext(menu_x, (menu_flip ? yy + h : yy), menu_x + menu_w, (menu_flip ? yy + h : yy), c_overlay, a_overlay)
 	
 	// Drop shadow

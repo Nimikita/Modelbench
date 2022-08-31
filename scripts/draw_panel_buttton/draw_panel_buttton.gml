@@ -42,24 +42,24 @@ function draw_panel_buttton()
 	microani_set(name, script, mouseon, mouseon && mouse_left, value || (mouseon && mouse_left) || (mouseon && mouse_left_released))
 	
 	var labelcolor, labelalpha, iconcolor, iconalpha;
-	labelcolor = merge_color(c_text_main, c_accent, mcroani_arr[e_mcroani.ACTIVE])
-	labelcolor = merge_color(labelcolor, c_accent, mcroani_arr[e_mcroani.PRESS])
-	labelcolor = merge_color(labelcolor, c_text_tertiary, mcroani_arr[e_mcroani.DISABLED])
+	labelcolor = merge_color(c_text_main, c_accent, microani_arr[e_microani.ACTIVE])
+	labelcolor = merge_color(labelcolor, c_accent, microani_arr[e_microani.PRESS])
+	labelcolor = merge_color(labelcolor, c_text_tertiary, microani_arr[e_microani.DISABLED])
 	
-	labelalpha = lerp(a_text_main, 1, mcroani_arr[e_mcroani.ACTIVE])
-	labelalpha = lerp(labelalpha, 1, mcroani_arr[e_mcroani.PRESS])
-	labelalpha = lerp(labelalpha, a_text_tertiary, mcroani_arr[e_mcroani.DISABLED])
+	labelalpha = lerp(a_text_main, 1, microani_arr[e_microani.ACTIVE])
+	labelalpha = lerp(labelalpha, 1, microani_arr[e_microani.PRESS])
+	labelalpha = lerp(labelalpha, a_text_tertiary, microani_arr[e_microani.DISABLED])
 	
-	iconcolor = merge_color(c_text_tertiary, c_accent, mcroani_arr[e_mcroani.ACTIVE])
-	iconcolor = merge_color(iconcolor, c_accent, mcroani_arr[e_mcroani.PRESS])
-	iconcolor = merge_color(iconcolor, c_text_tertiary, mcroani_arr[e_mcroani.DISABLED])
+	iconcolor = merge_color(c_text_tertiary, c_accent, microani_arr[e_microani.ACTIVE])
+	iconcolor = merge_color(iconcolor, c_accent, microani_arr[e_microani.PRESS])
+	iconcolor = merge_color(iconcolor, c_text_tertiary, microani_arr[e_microani.DISABLED])
 	
-	iconalpha = lerp(a_text_tertiary, 1, mcroani_arr[e_mcroani.ACTIVE])
-	iconalpha = lerp(iconalpha, 1, mcroani_arr[e_mcroani.PRESS])
-	iconalpha = lerp(iconalpha, a_text_tertiary, mcroani_arr[e_mcroani.DISABLED])
+	iconalpha = lerp(a_text_tertiary, 1, microani_arr[e_microani.ACTIVE])
+	iconalpha = lerp(iconalpha, 1, microani_arr[e_microani.PRESS])
+	iconalpha = lerp(iconalpha, a_text_tertiary, microani_arr[e_microani.DISABLED])
 	
-	draw_box(xx, yy, wid, hei, false, c_overlay, a_overlay * clamp(mcroani_arr[e_mcroani.ACTIVE] + mcroani_arr[e_mcroani.HOVER], 0, 1))
-	draw_box(xx, yy, wid, hei, false, c_accent_overlay, a_accent_overlay * mcroani_arr[e_mcroani.PRESS])
+	draw_box(xx, yy, wid, hei, false, c_overlay, a_overlay * clamp(microani_arr[e_microani.ACTIVE] + microani_arr[e_microani.HOVER], 0, 1))
+	draw_box(xx, yy, wid, hei, false, c_accent_overlay, a_accent_overlay * microani_arr[e_microani.PRESS])
 	
 	draw_label(text_get(name), xx + 44, yy + hei/2, fa_left, fa_center, labelcolor, labelalpha, font_value)
 	draw_image(spr_icons, icon, xx + 22, yy + hei/2, 1, 1, iconcolor, iconalpha)

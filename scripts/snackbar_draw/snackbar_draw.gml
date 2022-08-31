@@ -32,7 +32,7 @@ function snackbar_draw(sb)
 	dh = content_height
 	
 	// Snackbar background
-	draw_box(dx, dy, dw, dh, false, c_background, 1)
+	draw_box(dx, dy, dw, dh, false, c_level_middle, 1)
 	draw_outline(dx, dy, dw, dh, 1, color, 1)
 	draw_dropshadow(dx, dy, dw, dh, c_black, 1)
 	

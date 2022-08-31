@@ -48,7 +48,7 @@ function draw_wheel()
 	context_menu_area(xx - rad, yy - rad, rad * 2, rad * 2, "contextmenuvalue", value, e_value_type.NUMBER, script, def)
 	
 	modval = mod_fix(value, 360)
-	capwid = string_width_font(text_get(name) + ":", font_emphasis) + 5
+	capwid = string_width_font(text_get(name) + ":", font_label) + 5
 	if (limit)
 		text = string_decimals(modval) + tbx.suffix
 	else
@@ -104,7 +104,7 @@ function draw_wheel()
 	}
 	
 	// Textbox
-	draw_label(text_get(name) + ":", xx - (labeltextw/2), labely, fa_left, fa_middle, c_text_secondary, a_text_secondary, font_emphasis)
+	draw_label(text_get(name) + ":", xx - (labeltextw/2), labely, fa_left, fa_middle, c_text_secondary, a_text_secondary, font_label)
 	draw_set_font(font_value)
 	if (window_focus = string(tbx))
 	{

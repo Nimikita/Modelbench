@@ -38,26 +38,26 @@ function draw_checkbox(name, xx, yy, active, script)
 	checkboxx = (xx + dw - 18) + 9
 	checkboxy = yy + (h/2)
 	
-	var checkboxcolor = merge_color(c_text_secondary, c_accent, mcroani_arr[e_mcroani.PRESS]);
-	checkboxcolor = merge_color(checkboxcolor, c_accent, mcroani_arr[e_mcroani.ACTIVE])
-	checkboxcolor = merge_color(checkboxcolor, c_accent_hover, mcroani_arr[e_mcroani.ACTIVE] * mcroani_arr[e_mcroani.HOVER])
-	checkboxcolor = merge_color(checkboxcolor, c_accent_pressed, mcroani_arr[e_mcroani.ACTIVE] * mcroani_arr[e_mcroani.PRESS])
+	var checkboxcolor = merge_color(c_text_secondary, c_accent, microani_arr[e_microani.PRESS]);
+	checkboxcolor = merge_color(checkboxcolor, c_accent, microani_arr[e_microani.ACTIVE])
+	checkboxcolor = merge_color(checkboxcolor, c_accent_hover, microani_arr[e_microani.ACTIVE] * microani_arr[e_microani.HOVER])
+	checkboxcolor = merge_color(checkboxcolor, c_accent_pressed, microani_arr[e_microani.ACTIVE] * microani_arr[e_microani.PRESS])
 	
-	var checkboxalpha = lerp(a_text_secondary, 1, mcroani_arr[e_mcroani.PRESS]);
-	checkboxalpha = lerp(checkboxalpha, 1, mcroani_arr[e_mcroani.ACTIVE])
-	checkboxalpha = lerp(checkboxalpha, a_accent_hover, mcroani_arr[e_mcroani.ACTIVE] * mcroani_arr[e_mcroani.HOVER])
-	checkboxalpha = lerp(checkboxalpha, a_accent_pressed, mcroani_arr[e_mcroani.ACTIVE] * mcroani_arr[e_mcroani.PRESS])
+	var checkboxalpha = lerp(a_text_secondary, 1, microani_arr[e_microani.PRESS]);
+	checkboxalpha = lerp(checkboxalpha, 1, microani_arr[e_microani.ACTIVE])
+	checkboxalpha = lerp(checkboxalpha, a_accent_hover, microani_arr[e_microani.ACTIVE] * microani_arr[e_microani.HOVER])
+	checkboxalpha = lerp(checkboxalpha, a_accent_pressed, microani_arr[e_microani.ACTIVE] * microani_arr[e_microani.PRESS])
 	
 	// Draw checkbox
-	draw_image(spr_checkbox, 0, checkboxx, checkboxy, 1, 1, checkboxcolor, checkboxalpha * (1.0 - mcroani_arr[e_mcroani.HOVER]))
-	draw_image(spr_checkbox, 1, checkboxx, checkboxy, 1, 1, checkboxcolor, checkboxalpha * mcroani_arr[e_mcroani.HOVER] * (1.0 - mcroani_arr[e_mcroani.ACTIVE]))
-	draw_image(spr_checkbox, 2, checkboxx, checkboxy, 1, 1, checkboxcolor, checkboxalpha * mcroani_arr[e_mcroani.ACTIVE])
+	draw_image(spr_checkbox, 0, checkboxx, checkboxy, 1, 1, checkboxcolor, checkboxalpha * (1.0 - microani_arr[e_microani.HOVER]))
+	draw_image(spr_checkbox, 1, checkboxx, checkboxy, 1, 1, checkboxcolor, checkboxalpha * microani_arr[e_microani.HOVER] * (1.0 - microani_arr[e_microani.ACTIVE]))
+	draw_image(spr_checkbox, 2, checkboxx, checkboxy, 1, 1, checkboxcolor, checkboxalpha * microani_arr[e_microani.ACTIVE])
 	
 	// Draw hover outline
-	draw_box_hover(checkboxx - 9, checkboxy - 9, 18, 18, mcroani_arr[e_mcroani.HOVER])
+	draw_box_hover(checkboxx - 9, checkboxy - 9, 18, 18, microani_arr[e_microani.HOVER])
 	
 	// Label
-	draw_label(name, xx, yy + (h/2), fa_left, fa_middle, c_text_secondary, a_text_secondary, font_emphasis)
+	draw_label(name, xx, yy + (h/2), fa_left, fa_middle, c_text_secondary, a_text_secondary, font_label)
 	
 	microani_update(mouseon, mouseclick, active)
 	
