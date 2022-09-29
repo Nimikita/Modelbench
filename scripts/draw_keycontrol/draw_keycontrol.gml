@@ -20,7 +20,7 @@ function draw_keycontrol(name, xx, yy, wid, shortcut, def, script, keyonly = fal
 	text = text_get(name) + ":"
 	mouseon = app_mouse_box(dx, yy, dw, hei) && content_mouseon
 	
-	context_menu_area(dx, yy, dw, hei, "contextmenukeycontrol", def, e_value_type.NONE, script, null)
+	context_menu_area(dx, yy, dw, hei, "contextmenukeycontrol", def, e_context_type.NONE, script, null)
 	
 	// Check key
 	if (window_busy = name)

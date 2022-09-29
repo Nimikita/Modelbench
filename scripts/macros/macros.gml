@@ -1,5 +1,6 @@
 /// macros()
 /// @desc Defines constants used in the project.
+
 function macros()
 {
 	// Debug
@@ -7,10 +8,10 @@ function macros()
 	#macro debug_export_normals			false
 	
 	// Versions
-	#macro modelbench_version			"1.1.4"
+	#macro modelbench_version			"1.2.0"
 	#macro modelbench_version_full		modelbench_version + ""
 	#macro modelbench_version_extra		""
-	#macro modelbench_version_date		"02.12.2021"
+	#macro modelbench_version_date		"??.??.2022"
 	#macro gm_runtime					GM_runtime_version
 
 	// File formats
@@ -39,6 +40,8 @@ function macros()
 	
 	// Links
 	#macro link_news					"https://www.mineimator.com/news?app=mb&version=" + modelbench_version
+	#macro link_forums					"https://www.mineimatorforums.com/index.php?/forum/53-modelbench-discussion/"
+	#macro link_forums_bugs				"https://www.mineimatorforums.com/index.php?/forum/55-modelbench-issues-and-bugs/&do=add"
 	#macro http_ok						200
 	
 	// Interface
@@ -49,6 +52,8 @@ function macros()
 	#macro view_3d_control_width		20
 	#macro icon_button_offset			4
 	#macro snap_min						0.000001
+	#macro label_height					9
+	#macro dragger_width				74
 	
 	// Values
 	#macro null							noone

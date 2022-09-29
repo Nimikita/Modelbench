@@ -8,6 +8,7 @@ function uv_editor_draw(viewx, viewy, vieww, viewh)
 {
 	var boxx, boxy, boxw, boxh;
 	var texx, texy, texw, texh;
+	var zoom;
 	
 	// Calculate box
 	boxx = viewx
@@ -32,7 +33,7 @@ function uv_editor_draw(viewx, viewy, vieww, viewh)
 	content_y = boxy
 	content_width = boxw
 	content_height = boxh
-	content_mouseon = app_mouse_box(content_x, content_y, content_width, content_height) && !popup_mouseon && !snackbar_mouseon && !context_menu_mouseon
+	content_mouseon = app_mouse_box(content_x, content_y, content_width, content_height) && !popup_mouseon && !toast_mouseon && !context_menu_mouseon
 	
 	// Add shortcuts
 	if (content_mouseon || window_busy = "uveditormove")
@@ -91,12 +92,12 @@ function uv_editor_draw(viewx, viewy, vieww, viewh)
 	}
 	
 	// Zoom
-	var zd, m;
+	var zd, m, zoom;
 	m = (1 - 0.25 * mouse_wheel * (window_scroll_focus_prev = "uveditor"))
 	if (m != 1)
 	{
 		uv_editor_goal_zoom = clamp(uv_editor_goal_zoom * m, 0.1, 100)
-	
+		
 		uv_editor_goal_x = uv_editor_x + (mouse_x - (boxx + boxw / 2)) / uv_editor_zoom - (mouse_x - (boxx + boxw / 2)) / uv_editor_goal_zoom
 		uv_editor_goal_y = uv_editor_y + (mouse_y - (boxy + boxh / 2)) / uv_editor_zoom - (mouse_y - (boxy + boxh / 2)) / uv_editor_goal_zoom
 	}
@@ -118,6 +119,7 @@ function uv_editor_draw(viewx, viewy, vieww, viewh)
 	}
 	
 	uv_editor_update_zoom = false
+	zoom = uv_editor_zoom
 	
 	if (uv_editor_mouseon)
 		window_scroll_focus = "uveditor"
@@ -184,12 +186,12 @@ function uv_editor_draw(viewx, viewy, vieww, viewh)
 		if (uv_editor_reset)
 			uv_editor_reset = false
 		
-		texx = floor(boxx + (boxw / 2 - (tw / 2 + uv_editor_x) * uv_editor_zoom))
-		texy = floor(boxy + (boxh / 2 - (th / 2 + uv_editor_y) * uv_editor_zoom))
-		texw = floor(tw * uv_editor_zoom)
-		texh = floor(th * uv_editor_zoom)
+		texx = floor(boxx + (boxw / 2 - (tw / 2 + uv_editor_x) * zoom))
+		texy = floor(boxy + (boxh / 2 - (th / 2 + uv_editor_y) * zoom))
+		texw = floor(tw * zoom)
+		texh = floor(th * zoom)
 		
-		draw_texture(uv_editor_tex, texx, texy, uv_editor_zoom, uv_editor_zoom)
+		draw_texture(uv_editor_tex, texx, texy, zoom, zoom)
 		
 		// Repeat texture
 		var maxrepeat = max(ceil(boxh/texh), ceil(boxw/texw));
@@ -217,7 +219,7 @@ function uv_editor_draw(viewx, viewy, vieww, viewh)
 						continue
 					}
 					
-					draw_texture(uv_editor_tex, boxx + xrepeat, boxy + yrepeat, uv_editor_zoom, uv_editor_zoom, c_white, alpha * percent(maxrepeat, 15, 10))
+					draw_texture(uv_editor_tex, boxx + xrepeat, boxy + yrepeat, zoom, zoom, c_white, alpha * percent(maxrepeat, 15, 10))
 					xrepeat += texw
 				}
 				
@@ -228,51 +230,53 @@ function uv_editor_draw(viewx, viewy, vieww, viewh)
 	
 	// Texture outline
 	draw_line_ext(texx, boxy, texx, boxy + boxh, c_border, a_border)
-	draw_line_ext(texx + texw - 1, boxy, texx + texw - 1, boxy + boxh, c_border, a_border)
+	draw_line_ext(texx + texw + 1, boxy, texx + texw + 1, boxy + boxh, c_border, a_border)
 	
 	draw_line_ext(boxx, texy, boxx + boxw, texy, c_border, a_border)
-	draw_line_ext(boxx, texy + texh - 1, boxx + boxw, texy + texh - 1, c_border, a_border)
+	draw_line_ext(boxx, texy + texh + 1, boxx + boxw, texy + texh + 1, c_border, a_border)
 	
 	// Pixel outline(zoom required multiplied by texscale for bigger textures)
 	var snapval = (setting_snap ? max(setting_snap_size_uv, .125) : 1);
-	if (uv_editor_zoom * texscale > 5)
+	if (zoom * texscale > 5)
 	{
-		var alpha = percent(uv_editor_zoom * texscale, 5, 7);
+		var alpha = percent(zoom * texscale, 5, 7);
 		
 		// Highlight pixels seperately if snap value is not 1
 		if (snapval != 1)
 		{
 			for (var i = texscale; i < texture_width(uv_editor_tex); i += texscale)
 			{
-				if (texx + floor(i * uv_editor_zoom) > boxx && texx + floor(i * uv_editor_zoom) < boxx + boxw)
-					draw_line_ext(texx + floor(i * uv_editor_zoom), texy, texx + floor(i * uv_editor_zoom), texy + texh, c_border, 0.2 * alpha)
+				if (texx + floor(i * zoom) > boxx && texx + floor(i * zoom) < boxx + boxw)
+					draw_line_ext(texx + floor(i * zoom), texy, texx + floor(i * zoom), texy + texh, c_border, 0.2 * alpha)
 			}
 			
 			for (var i = texscale; i < texture_height(uv_editor_tex); i += texscale)
 			{
-				if (texy + floor(i * uv_editor_zoom) > boxy && texy + floor(i * uv_editor_zoom) < boxy + boxh)
-					draw_line_ext(texx, texy + floor(i * uv_editor_zoom), texx + texw, texy + floor(i * uv_editor_zoom), c_border, 0.2 * alpha)
+				if (texy + floor(i * zoom) > boxy && texy + floor(i * zoom) < boxy + boxh)
+					draw_line_ext(texx, texy + floor(i * zoom), texx + texw, texy + floor(i * zoom), c_border, 0.2 * alpha)
 			}
 		}
 		
 		for (var i = (texscale * snapval); i < texture_width(uv_editor_tex); i += (texscale * snapval))
 		{
-			if (texx + floor(i * uv_editor_zoom) > boxx && texx + floor(i * uv_editor_zoom) < boxx + boxw)
-				draw_line_ext(texx + floor(i * uv_editor_zoom), texy, texx + floor(i * uv_editor_zoom), texy + texh, c_border, 0.075 * alpha)
+			if (texx + floor(i * zoom) > boxx && texx + floor(i * zoom) < boxx + boxw)
+				draw_line_ext(texx + floor(i * zoom), texy, texx + floor(i * zoom), texy + texh, c_border, 0.075 * alpha)
 		}
 		
 		for (var i = (texscale * snapval); i < texture_height(uv_editor_tex); i += (texscale * snapval))
 		{
-			if (texy + floor(i * uv_editor_zoom) > boxy && texy + floor(i * uv_editor_zoom) < boxy + boxh)
-				draw_line_ext(texx, texy + floor(i * uv_editor_zoom), texx + texw, texy + floor(i * uv_editor_zoom), c_border, 0.075 * alpha)
+			if (texy + floor(i * zoom) > boxy && texy + floor(i * zoom) < boxy + boxh)
+				draw_line_ext(texx, texy + floor(i * zoom), texx + texw, texy + floor(i * zoom), c_border, 0.075 * alpha)
 		}
 	}
 	
 	// Text
+	/*
 	draw_label("[ 0, 0 ]", texx - 8, texy - 8, fa_right, fa_bottom, c_text_main, a_text_main, font_label)
 	draw_label("[ " + string(texture_width(uv_editor_tex)) + ", 0 ]", texx + texw + 8, texy - 8, fa_left, fa_bottom, c_text_main, a_text_main, font_label)
 	draw_label("[ 0, " + string(texture_height(uv_editor_tex)) + " ]", texx - 8, texy + texh + 8, fa_right, fa_top, c_text_main, a_text_main, font_label)
 	draw_label("[ " + string(texture_width(uv_editor_tex)) + ", " + string(texture_height(uv_editor_tex)) + " ]", texx + texw + 8, texy + texh + 8, fa_left, fa_top, c_text_main, a_text_main, font_label)
+	*/
 	
 	var overlaytexscale, shapeuv, shapesize, shapeuvnozoom, shapesizenozoom;
 	
@@ -291,16 +295,16 @@ function uv_editor_draw(viewx, viewy, vieww, viewh)
 				continue
 		
 		overlaytexscale = res.scale
-		shapeuv = vec2_mul(vec2_mul(uv, overlaytexscale), other.uv_editor_zoom)
-		shapesize = vec3_mul(vec3_mul(point3D_sub(to_noscale, from_noscale), overlaytexscale), other.uv_editor_zoom)
+		shapeuv = vec2_mul(vec2_mul(uv, overlaytexscale), zoom)
+		shapesize = vec3_mul(vec3_mul(point3D_sub(to_noscale, from_noscale), overlaytexscale), zoom)
 		
 		if (type = "block")
 		{
-			draw_box(texx + (shapeuv[X] - shapesize[Y]), texy + shapeuv[Y], shapesize[Y] + shapesize[X] + shapesize[Y] + shapesize[X], shapesize[Z], false, c_accent, .35)
-			draw_box(texx + shapeuv[X], texy + shapeuv[Y] - shapesize[Y], shapesize[X] * 2, shapesize[Y], false, c_accent, .35)
+			draw_box(texx + (shapeuv[X] - shapesize[Y]), texy + shapeuv[Y], shapesize[Y] + shapesize[X] + shapesize[Y] + shapesize[X], shapesize[Z], false, c_text_main, .2)
+			draw_box(texx + shapeuv[X], texy + shapeuv[Y] - shapesize[Y], shapesize[X] * 2, shapesize[Y], false, c_text_main, .2)
 		}
 		else
-			draw_box(texx + shapeuv[X], texy + shapeuv[Y], shapesize[X], shapesize[Z], false, c_accent, .35)
+			draw_box(texx + shapeuv[X], texy + shapeuv[Y], shapesize[X], shapesize[Z], false, c_text_main, .2)
 	}
 	
 	// Stop drawing if we aren't editing any shapes
@@ -316,19 +320,19 @@ function uv_editor_draw(viewx, viewy, vieww, viewh)
 		return 0
 	}
 	
-	shapeuv = vec2_mul(vec2_mul(el_edit.uv, texscale), uv_editor_zoom)
-	shapesize = vec3_mul(vec3_mul(point3D_sub(el_edit.to_noscale, el_edit.from_noscale), texscale), uv_editor_zoom)
+	shapeuv = vec2_mul(vec2_mul(el_edit.uv, texscale), zoom)
+	shapesize = vec3_mul(vec3_mul(point3D_sub(el_edit.to_noscale, el_edit.from_noscale), texscale), zoom)
 	shapeuvnozoom = el_edit.uv
 	shapesizenozoom = point3D_sub(el_edit.to_noscale, el_edit.from_noscale)
 	
 	// Shape edit overlay
 	if (el_edit.type = "block")
 	{
-		draw_box(texx + (shapeuv[X] - shapesize[Y]), texy + shapeuv[Y], shapesize[Y] + shapesize[X] + shapesize[Y] + shapesize[X], shapesize[Z], false, c_accent, .5)
-		draw_box(texx + shapeuv[X], texy + shapeuv[Y] - shapesize[Y], shapesize[X] * 2, shapesize[Y], false, c_accent, .5)
+		draw_box(texx + (shapeuv[X] - shapesize[Y]), texy + shapeuv[Y], shapesize[Y] + shapesize[X] + shapesize[Y] + shapesize[X], shapesize[Z], false, c_accent, .3)
+		draw_box(texx + shapeuv[X], texy + shapeuv[Y] - shapesize[Y], shapesize[X] * 2, shapesize[Y], false, c_accent, .3)
 	}
 	else
-		draw_box(texx + shapeuv[X], texy + shapeuv[Y], shapesize[X], shapesize[Z], false, c_accent, .5)
+		draw_box(texx + shapeuv[X], texy + shapeuv[Y], shapesize[X], shapesize[Z], false, c_accent, .3)
 	
 	// Face outlines and labels
 	var righttext, lefttext;
@@ -438,16 +442,16 @@ function uv_editor_draw(viewx, viewy, vieww, viewh)
 	}
 	
 	var mouseuvx, mouseuvy;
-	mouseuvx = snap((mouse_x - texx) / uv_editor_zoom / texscale, setting_snap ? setting_snap_size_uv : 1)
-	mouseuvy = snap((mouse_y - texy) / uv_editor_zoom / texscale, setting_snap ? setting_snap_size_uv : 1)
+	mouseuvx = snap((mouse_x - texx) / zoom / texscale, setting_snap ? setting_snap_size_uv : 1)
+	mouseuvy = snap((mouse_y - texy) / zoom / texscale, setting_snap ? setting_snap_size_uv : 1)
 	
 	// Box UV controls
 	if (keyboard_check(vk_control))
 	{
 		if (window_busy != "uveditorcontrolbox" && content_mouseon)
 		{
-			draw_box(texx + (mouseuvx * uv_editor_zoom * texscale) - 7, texy + (mouseuvy * uv_editor_zoom * texscale) - 7, 12, 12, false, c_accent_hover, 1)
-			draw_box(texx + (mouseuvx * uv_editor_zoom * texscale) - 5, texy + (mouseuvy * uv_editor_zoom * texscale) - 5, 8, 8, false, c_accent_pressed, 1)
+			draw_box(texx + (mouseuvx * zoom * texscale) - 7, texy + (mouseuvy * zoom * texscale) - 7, 12, 12, false, c_accent_hover, 1)
+			draw_box(texx + (mouseuvx * zoom * texscale) - 5, texy + (mouseuvy * zoom * texscale) - 5, 8, 8, false, c_accent_pressed, 1)
 		}
 		
 		mouse_cursor = cr_default

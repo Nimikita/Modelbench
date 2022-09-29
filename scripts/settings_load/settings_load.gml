@@ -112,7 +112,6 @@ function settings_load()
 		setting_z_is_up = value_get_real(interfacemap[?"z_is_up"], setting_z_is_up)
 		setting_shared_texture_uvs = value_get_real(interfacemap[?"shared_texture_uvs"], setting_shared_texture_uvs)
 		
-		setting_show_startup_tips = value_get_real(interfacemap[?"startup_tips"], setting_show_startup_tips)
 		setting_reduced_motion = value_get_real(interfacemap[?"reduced_motion"], setting_reduced_motion)
 		
 		setting_panel_left_size = value_get_real(interfacemap[?"panel_left_size"], setting_panel_left_size)
@@ -127,6 +126,7 @@ function settings_load()
 		setting_uv_editor_size = value_get_real(interfacemap[?"uv_editor_size"], setting_uv_editor_size)
 		
 		setting_adjust_pivot_resize = value_get_real(interfacemap[?"adjust_pivot_resize"], setting_adjust_pivot_resize)
+		setting_show_shortcuts_bar = value_get_real(interfacemap[?"show_shortcuts_bar"], setting_show_shortcuts_bar)
 	}
 	
 	// Render

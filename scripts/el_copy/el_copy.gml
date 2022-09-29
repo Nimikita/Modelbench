@@ -11,7 +11,6 @@ function el_copy(to)
 	to.tree_locked = tree_locked
 	to.hidden = hidden
 	to.tree_hidden = tree_hidden
-	to.depth = depth
 	to.extend = extend
 	
 	to.parent = parent

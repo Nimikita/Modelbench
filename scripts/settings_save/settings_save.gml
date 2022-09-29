@@ -72,7 +72,6 @@ function settings_save()
 		json_save_var_color("accent_custom", setting_accent_custom)
 		json_save_var_bool("z_is_up", setting_z_is_up)
 		json_save_var_bool("shared_texture_uvs", setting_shared_texture_uvs)
-		json_save_var_bool("startup_tips", setting_show_startup_tips)
 		json_save_var_bool("reduced_motion", setting_reduced_motion)
 		
 		json_save_var("panel_left_size", panel_map[?"left"].size)
@@ -87,6 +86,7 @@ function settings_save()
 		json_save_var("uv_editor_size", setting_uv_editor_size)
 		
 		json_save_var_bool("adjust_pivot_resize", setting_adjust_pivot_resize)
+		json_save_var_bool("show_shortcuts_bar", setting_show_shortcuts_bar)
 		
 	json_save_object_done()
 	

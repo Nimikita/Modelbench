@@ -2,5 +2,5 @@
 
 function action_category_combine_scale()
 {
-	setting_combine_scale = !setting_combine_scale
+	element_editor.transform.scale_all = !element_editor.transform.scale_all
 }

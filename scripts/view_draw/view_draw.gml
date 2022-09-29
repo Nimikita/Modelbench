@@ -4,6 +4,8 @@
 function view_draw(view)
 {
 	var boxx, boxy, boxw, boxh;
+	var captionx, captiony, captionw, captionh;
+	var padding, dx, dy;
 	
 	// Calculate box
 	boxx = view_area_x
@@ -23,11 +25,98 @@ function view_draw(view)
 	content_y = boxy
 	content_width = boxw
 	content_height = boxh
-	content_mouseon = (view.mouseon && !popup_mouseon && !snackbar_mouseon && !context_menu_mouseon)
+	content_mouseon = (view.mouseon && !popup_mouseon && !toast_mouseon && !context_menu_mouseon)
 	content_view = view
 	
 	draw_gradient(content_x, content_y + content_height, content_width, shadow_size, c_black, shadow_alpha, shadow_alpha, 0, 0)
 	draw_box(boxx, boxy, boxw, boxh, false, c_level_middle, 1)
+	
+	// Caption
+	padding = 4
+	captionx = boxx + 12
+	captiony = boxy + padding
+	captionw = boxw
+	captionh = 32
+	
+	//clip_begin(boxx, boxy, boxw, 32)
+	
+	// Buttons
+	var disable = program_mode != e_mode.MODELING;
+	dw = 24
+	dh = 24
+	dx = boxx + boxw - (dw + padding)
+	dy = boxy + padding
+	
+	// Walk navigation toggle
+	tip_set_shortcut(setting_key_walk_navigation)
+	if (draw_button_icon("toolwalknav", dx, dy, dw, dh, window_busy = "viewmovecameratoggle", icons.WALK, null, false, "tooltipwalknav"))
+	{
+		window_focus = string(content_view)
+		window_busy = "viewmovecameratoggle"
+		view_click_x = display_mouse_get_x()
+		view_click_y = display_mouse_get_y()
+	}
+	tip_set_shortcut(-1)
+	
+	// Divider
+	dx -= 4
+	draw_box(dx, dy, 1, dh, false, c_border, a_border)
+	
+	// Textured rendering
+	dx -= 16 + 4
+	draw_settings_button("shading", dx, dy, 16, dh, false, settings_menu_shading, disable || setting_render_mode = e_viewport_render.FLAT)
+	
+	dx -= dw
+	if (draw_button_icon("toolsettextured", dx, dy, dw, dh, setting_render_mode = e_viewport_render.TEXTURED, icons.SPHERE_TEXTURE, null, disable, "tooltiptexturedmode"))
+		action_setting_render(e_viewport_render.TEXTURED)
+	
+	// Shaded rendering
+	dx -= dw + 4
+	if (draw_button_icon("toolsetshaded", dx, dy, dw, dh, setting_render_mode = e_viewport_render.SHADED, setting_theme.dark ? icons.SPHERE__DARK : icons.SPHERE, null, disable, "tooltipshadedmode"))
+		action_setting_render(e_viewport_render.SHADED)
+	
+	// Flat rendering
+	dx -= dw + 4
+	if (draw_button_icon("toolsetflat", dx, dy, dw, dh, setting_render_mode = e_viewport_render.FLAT, icons.SPHERE_FLAT, null, disable, "tooltipflatmode"))
+		action_setting_render(e_viewport_render.FLAT)
+	
+	// Divider
+	dx -= 4
+	draw_box(dx, dy, 1, dw, false, c_border, a_border)
+	
+	// Blocky bending
+	dx -= dw + 4
+	draw_button_icon("toolsetblockybending", dx, dy, dw, dh, setting_blocky_bending, icons.BEND_SHARP, action_setting_blocky_bending, false, setting_blocky_bending ? "tooltipblockybendingdisable" : "tooltipblockybendingenable")
+	
+	// Wind
+	dx -= 16 + 4
+	draw_settings_button("windsettings", dx, dy, 16, dh, false, settings_menu_wind)
+	
+	dx -= dw
+	draw_button_icon("toolsetwind", dx, dy, dw, dh, setting_wind, icons.WIND, action_setting_wind, false, setting_wind ? "tooltipwinddisable" : "tooltipwindenable")
+	
+	// Overlays
+	dx -= 16 + 4
+	draw_settings_button("overlaysettings", dx, dy, 16, dh, false, settings_menu_overlays, disable)
+	
+	dx -= dw
+	draw_button_icon("toolsetoverlays", dx, dy, dw, dh, setting_overlays, icons.OVERLAYS, action_setting_overlays, disable, setting_overlays ? "tooltipoverlaysdisable" : "tooltipoverlaysenable")
+	
+	// Divider
+	dx -= 4
+	draw_box(dx, dy, 1, dw, false, c_border, a_border)
+	
+	// Snap
+	dx -= 16 + 4
+	draw_settings_button("snapsettings", dx, dy, 16, dh, false, settings_menu_snap, disable)
+	
+	dx -= dw
+	tip_set_shortcut(setting_key_snap)
+	draw_button_icon("toolsetsnap", dx, dy, dw, dh, setting_snap, icons.MAGNET, action_setting_snap, disable, setting_snap ? "tooltipsnapdisable" : "tooltipsnapenable")
+	tip_set_shortcut(-1)
+	
+	content_y = boxy + captionh
+	content_height = boxh - captionh
 	
 	if (view.width != content_width || view.height != content_height)
 	{
@@ -66,7 +155,7 @@ function view_draw(view)
 		content_y = floor(content_y)
 		content_width = ceil(content_width)
 		content_height = ceil(content_height)
-		content_mouseon = (app_mouse_box(content_x, content_y, content_width, content_height) && view.mouseon && !popup_mouseon && !snackbar_mouseon && !context_menu_mouseon)
+		content_mouseon = (app_mouse_box(content_x, content_y, content_width, content_height) && view.mouseon && !popup_mouseon && !toast_mouseon && !context_menu_mouseon)
 		
 		// Preview transparency
 		if (program_mode = e_mode.PREVIEW)
@@ -110,7 +199,7 @@ function view_draw(view)
 	// Toolset toolbar
 	var toolbarx, toolbary, toolbarwid, toolbarhei;
 	toolbarx = boxx + 16
-	toolbary = boxy + 16
+	toolbary = boxy + captionh + 16
 	toolbarwid = 36
 	toolbarhei = 4 + (e_element.amount * (28 + 4)) + 1 + 4 + (e_tool.amount * (28 + 4))
 	
@@ -126,19 +215,6 @@ function view_draw(view)
 	view_toolbar_draw(toolbarx, toolbary, toolbarwid, toolbarhei)
 	
 	// Viewport toolbar
-	toolbarx = floor(boxx + (boxw/2) - (toolbar_viewport_width/2))
-	toolbary = boxy + 16
-	toolbarwid = toolbar_viewport_width
-	toolbarhei = 36
-	
-	if (toolbary + toolbarhei + 16 >= content_height)
-	{
-		toolbarwid = toolbarhei
-		toolbarhei = 36
-	}
-	
-	if (app_mouse_box(toolbarx, toolbary, toolbarwid, toolbarhei))
-		view.mouseon = false
-	
-	view_toolbar_viewport_draw(toolbarx, toolbary, toolbarwid, toolbarhei)
+	draw_gradient(boxx, boxy + captionh, boxw, shadow_size, c_black, shadow_alpha, shadow_alpha, 0, 0)
+	draw_box(boxx, boxy + captionh - 1, boxw, 1, false, c_border, a_border)
 }

@@ -2,17 +2,18 @@
 
 function tab_settings_controls()
 {
-	dy += 20 
-	draw_label(text_get("settingsshortcuts") + ":", dx, dy, fa_left, fa_bottom, c_text_tertiary, a_text_tertiary, font_label) 
-	dy += 8
-	
-	tab_control(28)
-	draw_button_collapse("settingscontrolsfile", !setting_collapse_controls_file, action_collapse_controls_file, false)
-	draw_label(text_get("settingscontrolsfile"), dx, dy + 14, fa_left, fa_middle, c_text_secondary, a_text_secondary, font_label)
+	tab_control(20)
+	draw_label(text_get("settingscontrolskeybinds") + ":", dx, dy + 10, fa_left, fa_middle, c_text_tertiary, a_text_tertiary, font_label) 
 	tab_next()
 	
-	if (!setting_collapse_controls_file)
+	tab_control_switch()
+	draw_button_collapse("file", collapse_map[?"file"], null, true, "settingscontrolsfile")
+	tab_next()
+	
+	if (collapse_map[?"file"])
 	{
+		tab_collapse_start()
+		
 		tab_control_keycontrol()
 		draw_keycontrol("settingskeynew", dx, dy, dw, setting_key_new, new_shortcut(ord("N"), true, false), action_setting_key_new)
 		tab_next(false)
@@ -37,17 +38,17 @@ function tab_settings_controls()
 		draw_keycontrol("settingskeyimport", dx, dy, dw, setting_key_import, new_shortcut(ord("I"), true, false), action_setting_key_import)
 		tab_next()
 		
-		draw_divide(dx, dy, dw)
-		dy += 8
+		tab_collapse_end(true)
 	}
 	
-	tab_control(28)
-	draw_button_collapse("settingscontrolsediting", !setting_collapse_controls_editing, action_collapse_controls_editing, false)
-	draw_label(text_get("settingscontrolsediting"), dx, dy + 14, fa_left, fa_middle, c_text_secondary, a_text_secondary, font_label)
+	tab_control_switch()
+	draw_button_collapse("edit", collapse_map[?"edit"], null, true, "settingscontrolsediting")
 	tab_next()
 	
-	if (!setting_collapse_controls_editing)
+	if (collapse_map[?"edit"])
 	{
+		tab_collapse_start()
+		
 		tab_control_keycontrol()
 		draw_keycontrol("settingskeyundo", dx, dy, dw, setting_key_undo, new_shortcut(ord("Z"), true, false), action_setting_key_undo)
 		tab_next(false)
@@ -76,17 +77,17 @@ function tab_settings_controls()
 		draw_keycontrol("settingskeyuveditor", dx, dy, dw, setting_key_uv_editor, new_shortcut(ord("E"), true, false), action_setting_key_uv_editor)
 		tab_next()
 		
-		draw_divide(dx, dy, dw)
-		dy += 8
+		tab_collapse_end(true)
 	}
 	
-	tab_control(28)
-	draw_button_collapse("settingscontrolstools", !setting_collapse_controls_tools, action_collapse_controls_tools, false)
-	draw_label(text_get("settingscontrolstools"), dx, dy + 14, fa_left, fa_middle, c_text_secondary, a_text_secondary, font_label)
+	tab_control_switch()
+	draw_button_collapse("tools", collapse_map[?"tools"], null, true, "settingscontrolstools")
 	tab_next()
 	
-	if (!setting_collapse_controls_tools)
+	if (collapse_map[?"tools"])
 	{
+		tab_collapse_start()
+		
 		tab_control_keycontrol()
 		draw_keycontrol("settingskeytoolselect", dx, dy, dw, setting_key_tool_select, new_shortcut(ord("W"), false, false), action_setting_key_tool_select)
 		tab_next(false)
@@ -123,17 +124,17 @@ function tab_settings_controls()
 		draw_keycontrol("settingskeysnap", dx, dy, dw, setting_key_snap, new_shortcut(ord("F"), false, false), action_setting_key_snap)
 		tab_next()
 		
-		draw_divide(dx, dy, dw)
-		dy += 8
+		tab_collapse_end(true)
 	}
 	
-	tab_control(28)
-	draw_button_collapse("settingscontrolsnavigation", !setting_collapse_controls_navigation, action_collapse_controls_navigation, false)
-	draw_label(text_get("settingscontrolsnavigation"), dx, dy + 14, fa_left, fa_middle, c_text_secondary, a_text_secondary, font_label)
+	tab_control_switch()
+	draw_button_collapse("camera", collapse_map[?"camera"], null, true, "settingscontrolscamera")
 	tab_next()
 	
-	if (!setting_collapse_controls_navigation)
+	if (collapse_map[?"camera"])
 	{
+		tab_collapse_start()
+		
 		tab_control_keycontrol()
 		draw_keycontrol("settingskeywalknavigation", dx, dy, dw, setting_key_walk_navigation, new_shortcut(ord("F"), false, true), action_setting_key_walk_navigation)
 		tab_next(false)
@@ -174,30 +175,26 @@ function tab_settings_controls()
 		draw_keycontrol("settingskeyslow", dx, dy, dw, setting_key_slow, new_shortcut(vk_lshift, false, false), action_setting_key_slow, true)
 		tab_next()
 		
-		draw_divide(dx, dy, dw)
-		dy += 8
+		tab_collapse_end(true)
 	}
-	dy += 8
 	
-	tab_control(36)
-	if (draw_button_primary("settingsrestoredefaults", dx, dy, dw, null, icons.RESET, fa_center))
+	// Look sensitivity
+	tab_control_dragger()
+	draw_dragger("settingslooksensitivity", dx, dy, dragger_width, setting_look_sensitivity, 0.01, 0, no_limit, 1, 0, tab.controls.tbx_look_sensitivity, action_setting_look_sensitivity)
+	tab_next()
+	
+	// Restore controls
+	tab_control_button_label()
+	if (draw_button_label("settingsrestoredefaults", floor(dx + dw/2), dy, null, icons.RESET, e_button.PRIMARY, null, e_anchor.CENTER))
 	{
 		if (question(text_get("questionrestoredefaults")))
 			action_controls_reset()
 	}
 	tab_next()
-	dy += 8
-	
-	// Look sensitivity
-	tab_control_meter()
-	draw_meter("settingslooksensitivity", dx, dy, dw, setting_look_sensitivity, 48, 0.25, 3, .75, .25, tab.controls.tbx_look_sensitivity, action_setting_look_sensitivity)
-	tab_next()
-	
-	dy += 8
 	
 	// Smooth camera
 	tab_control_switch()
-	draw_switch("settingssmoothcamera", dx, dy, setting_smooth_camera, action_setting_smooth_camera, false)
+	draw_switch("settingssmoothcamera", dx, dy, setting_smooth_camera, action_setting_smooth_camera)
 	tab_next()
 	
 	tab_control_togglebutton()

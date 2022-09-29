@@ -10,5 +10,9 @@ function textfield_group_reset()
 	textfield_axis = null
 	textfield_textbox = null
 	textfield_icon = null
+	textfield_mul = null
+	textfield_min = null
+	textfield_max = null
+	textfield_caption = null
 	textfield_amount = 0
 }

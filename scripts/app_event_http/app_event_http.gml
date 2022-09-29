@@ -2,9 +2,9 @@
 
 function app_event_http()
 {
-	if (async_load[?"id"] = http_snackbar_news && async_load[?"status"] < 1)
+	if (async_load[?"id"] = http_toast_news && async_load[?"status"] < 1)
 	{
-		http_snackbar_news = null
+		http_toast_news = null
 		if (async_load[?"status"] = 0 && async_load[?"http_status"] = http_ok)
 		{
 			log(async_load[?"result"])
@@ -26,13 +26,13 @@ function app_event_http()
 						button = newsmap[?"button"]
 						buttonurl = newsmap[?"buttonurl"]
 						
-						var sn = snackbar_news();
+						var sn = toast_news();
 						sn.label = name
 						sn.description = text
 						
-						sn.snackbar_action1 = open_url
-						sn.snackbar_action1_name = button
-						sn.snackbar_action1_value = buttonurl
+						sn.actions[|0] = open_url
+						sn.actions[|1] = button
+						sn.actions[|2] = buttonurl
 					}
 				}
 				ds_map_destroy(decodedmap)

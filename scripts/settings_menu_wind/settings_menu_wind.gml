@@ -3,7 +3,7 @@
 function settings_menu_wind()
 {
 	var capwid = text_caption_width("settingsmenuwindspeed", "settingsmenuwindstrength");
-	capwid = max(180, capwid + 32)
+	capwid = max(180, capwid + 48 + dragger_width)
 	
 	dx = content_x + 10
 	dy = content_y + 8

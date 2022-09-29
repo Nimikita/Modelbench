@@ -38,7 +38,7 @@ function draw_toolbar_button(name, xx, yy, buttonvalue, value, script)
 	
 	draw_box(xx, yy, width, height, false, c_accent_overlay, lerp(0, a_accent_overlay, microani_arr[e_microani.HOVER]))
 	
-	draw_label(name, xx + width/2, yy + 27, fa_center, fa_bottom, color, alpha)
+	draw_label(name, xx + width/2, yy + 23, fa_center, fa_bottom, color, alpha)
 	
 	dx += width + 16
 	

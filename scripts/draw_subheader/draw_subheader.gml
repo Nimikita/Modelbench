@@ -37,7 +37,7 @@ function draw_subheader(cat, xx, yy, w, h)
 	draw_image(spr_icons, iconframe, xx + 12, yy + h/2, 1, 1, color, alpha)
 	
 	draw_image(spr_chevron_ani, frame, xx + w - 11, yy + h/2, 1, 1, color, alpha)
-	draw_label(cap, xx + 26, yy + (h/2) - 1, fa_left, fa_middle, color, alpha)
+	draw_label(cap, xx + 26, yy + (h/2), fa_left, fa_middle, color, alpha)
 	
 	microani_update(mouseon, mouseon && mouse_left, cat.show)
 	

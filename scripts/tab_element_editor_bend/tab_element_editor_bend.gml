@@ -2,6 +2,8 @@
 
 function tab_element_editor_bend()
 {
+	context_menu_group_temp = e_context_group.BEND
+	
 	// Bend axes
 	var axis, axislen, axisname;
 	axislen = 0
@@ -19,16 +21,17 @@ function tab_element_editor_bend()
 		axis_edit = axis[i]
 		
 		tab_control_switch()
-		draw_button_collapse("elementeditorbendaxis" + axisname[i], !setting_collapse_bend_axis[axis_edit], action_collapse_bend_axis, !el_edit.value[e_value.BEND_AXIS_X + axis_edit])
-		draw_switch("elementeditorbendaxis" + axisname[i], dx, dy, el_edit.value[e_value.BEND_AXIS_X + axis_edit], action_el_bend_axis, false)
+		draw_button_collapse("bend_" + axisname[i], collapse_map[?"bend_" + axisname[i]], action_el_bend_axis, el_edit.value[e_value.BEND_AXIS_X + axis_edit], "elementeditorbendaxis" + axisname[i])
 		tab_next()
 		
-		if (setting_collapse_bend_axis[axis_edit] || !el_edit.value[e_value.BEND_AXIS_X + axis_edit])
+		if (!collapse_map[?"bend_" + axisname[i]] || !el_edit.value[e_value.BEND_AXIS_X + axis_edit])
 			continue
+		
+		tab_collapse_start()
 		
 		// Invert
 		tab_control_switch()
-		draw_switch("elementeditorbendinvert" + axisname[i], dx, dy, el_edit.value[e_value.BEND_INVERT_X + axis_edit], action_el_bend_invert, false)
+		draw_switch("elementeditorbendinvert" + axisname[i], dx, dy, el_edit.value[e_value.BEND_INVERT_X + axis_edit], action_el_bend_invert)
 		tab_next()
 		
 		// Range
@@ -41,13 +44,12 @@ function tab_element_editor_bend()
 		draw_meter("elementeditorbendangle" + axisname[i], dx, dy, dw, el_edit.value[e_value.BEND_ANGLE_X + axis_edit], 48, el_edit.value[e_value.BEND_X_MIN + axis_edit], el_edit.value[e_value.BEND_X_MAX + axis_edit], 0, 1, element_editor.bend.tbx_angle[axis_edit], action_el_bend_angle)
 		tab_next()
 		
-		draw_divide(dx, dy, dw)
-		dy += 8
+		tab_collapse_end(true)
 	}
 	
 	// Inherit bend angles
 	tab_control_switch()
-	draw_switch("elementeditorbendinheritangles", dx, dy, el_edit.value[e_value.INHERIT_BEND], action_el_inherit_bend, false, "elementeditorbendinheritangleshelp", !el_edit.value[e_value.BEND])
+	draw_switch("elementeditorbendinheritangles", dx, dy, el_edit.value[e_value.INHERIT_BEND], action_el_inherit_bend, "elementeditorbendinheritangleshelp", !el_edit.value[e_value.BEND])
 	tab_next()
 	
 	// Bend part
@@ -65,23 +67,23 @@ function tab_element_editor_bend()
 	
 	// Bend part
 	tab_control_menu()
-	draw_button_menu("elementeditorbendpart", e_menu.LIST, dx, dy, dw, 28, el_edit.value[e_value.BEND_PART], text_get(text), action_el_bend_part, !el_edit.value[e_value.BEND])
+	draw_button_menu("elementeditorbendpart", e_menu.LIST, dx, dy, dw, 24, el_edit.value[e_value.BEND_PART], text_get(text), action_el_bend_part, !el_edit.value[e_value.BEND])
 	tab_next()
 	
 	// Bend offset
-	tab_control(28)
-	draw_textfield_num("elementeditorbendoffset", dx, dy, 86, el_edit.value[e_value.BEND_OFFSET], 0.1, -no_limit, no_limit, 0, snap_min, element_editor.bend.tbx_offset, action_el_bend_offset, !el_edit.value[e_value.BEND])
+	tab_control_dragger()
+	draw_dragger("elementeditorbendoffset", dx, dy, dragger_width, el_edit.value[e_value.BEND_OFFSET], 0.1, -no_limit, no_limit, 0, snap_min, element_editor.bend.tbx_offset, action_el_bend_offset, null, true, !el_edit.value[e_value.BEND])
 	tab_next()
 	
 	// Bend size
 	tab_control_switch()
-	draw_switch("elementeditorbendcustomsize", dx, dy, el_edit.value[e_value.BEND_SIZE_CUSTOM], action_el_bend_size_custom, false, "elementeditorbendcustomsizehelp", !el_edit.value[e_value.BEND])
+	draw_switch("elementeditorbendcustomsize", dx, dy, el_edit.value[e_value.BEND_SIZE_CUSTOM], action_el_bend_size_custom, "elementeditorbendcustomsizehelp", !el_edit.value[e_value.BEND])
 	tab_next()
 	
 	if (el_edit.value[e_value.BEND_SIZE_CUSTOM])
 	{
-		tab_control(28)
-		draw_textfield_num("elementeditorbendsize", dx, dy, 86, el_edit.value[e_value.BEND_SIZE], 0.1, snap_min, no_limit, 4, snap_min, element_editor.bend.tbx_size, action_el_bend_size, !el_edit.value[e_value.BEND])
+		tab_control_dragger()
+		draw_dragger("elementeditorbendsize", dx, dy, dragger_width, el_edit.value[e_value.BEND_SIZE], 0.1, snap_min, no_limit, 4, snap_min, element_editor.bend.tbx_size, action_el_bend_size, null, true, !el_edit.value[e_value.BEND])
 		tab_next()
 	}
 }

@@ -20,7 +20,7 @@ function app_startup_interface_tabs()
 	with (assets)
 	{
 		// Model properties
-		model_properties = tab_add_category("modelproperties", icons.MODEL, tab_assets_model_properties, false)
+		model_properties = tab_add_category("modelproperties", icons.MODEL_SMALL, tab_assets_model_properties, false)
 		with (model_properties)
 		{
 			tbx_model_name = new_textbox(true, 0, "")
@@ -42,7 +42,7 @@ function app_startup_interface_tabs()
 		}
 		
 		// Textures
-		textures = tab_add_category("textures", icons.FILE_SMALL, tab_assets_textures, false)
+		textures = tab_add_category("textures", icons.TEXTURE_SMALL, tab_assets_textures, false)
 		with (textures)
 		{
 			preview = new_obj(obj_preview)
@@ -59,58 +59,40 @@ function app_startup_interface_tabs()
 		tbx_name = new_textbox(true, 0, "")
 		tbx_depth = new_textbox_ninteger()
 		
-		// Position
-		position = tab_add_category("position", icons.TRANSFORM_SMALL, tab_element_editor_position, false)
-		with (position)
+		transform = tab_add_category("transform", icons.TRANSFORM_SMALL, tab_element_editor_transform, false)
+		with (transform)
 		{
-			tbx_x = new_textbox_ndecimals()
-			tbx_y = new_textbox_ndecimals()
-			tbx_z = new_textbox_ndecimals()
+			// Position
+			tbx_pos_x = new_textbox_ndecimals()
+			tbx_pos_y = new_textbox_ndecimals()
+			tbx_pos_z = new_textbox_ndecimals()
 			
-			tbx_x.next_tbx = tbx_y
-			tbx_y.next_tbx = tbx_z
-			tbx_z.next_tbx = tbx_x
+			tbx_pos_x.next_tbx = tbx_pos_y
+			tbx_pos_y.next_tbx = tbx_pos_z
+			tbx_pos_z.next_tbx = tbx_pos_x
 			
-			copy = array(0, 0, 0)
-		}
-		
-		// Pivot offset
-		pivot_offset = tab_add_category("pivotoffset", icons.TRANSFORM_SMALL, tab_element_editor_offset, false)
-		with (pivot_offset)
-		{
-			tbx_x = new_textbox_ndecimals()
-			tbx_y = new_textbox_ndecimals()
-			tbx_z = new_textbox_ndecimals()
+			// Pivot offset
+			tbx_off_x = new_textbox_ndecimals()
+			tbx_off_y = new_textbox_ndecimals()
+			tbx_off_z = new_textbox_ndecimals()
 			
-			tbx_x.next_tbx = tbx_y
-			tbx_y.next_tbx = tbx_z
-			tbx_z.next_tbx = tbx_x
+			tbx_off_x.next_tbx = tbx_off_y
+			tbx_off_y.next_tbx = tbx_off_z
+			tbx_off_z.next_tbx = tbx_off_x
 			
-			copy = array(0, 0, 0)
-		}
-		
-		// Rotation
-		rotation = tab_add_category("rotation", icons.TRANSFORM_SMALL, tab_element_editor_rotation, false)
-		with (rotation)
-		{
-			tbx_x = new_textbox_ndecimals()
-			tbx_y = new_textbox_ndecimals()
-			tbx_z = new_textbox_ndecimals()
-			tbx_x.suffix = "°"
-			tbx_y.suffix = "°"
-			tbx_z.suffix = "°"
+			// Rotation
+			tbx_rot_x = new_textbox_ndecimals()
+			tbx_rot_y = new_textbox_ndecimals()
+			tbx_rot_z = new_textbox_ndecimals()
+			tbx_rot_x.suffix = "°"
+			tbx_rot_y.suffix = "°"
+			tbx_rot_z.suffix = "°"
 			
-			tbx_x.next_tbx = tbx_y
-			tbx_y.next_tbx = tbx_z
-			tbx_z.next_tbx = tbx_x
+			tbx_rot_x.next_tbx = tbx_rot_y
+			tbx_rot_y.next_tbx = tbx_rot_z
+			tbx_rot_z.next_tbx = tbx_rot_x
 			
-			copy = array(0, 0, 0)
-		}
-		
-		// Size
-		size = tab_add_category("size", icons.TRANSFORM_SMALL, tab_element_editor_size, false)
-		with (size)
-		{
+			// Size
 			tbx_width = new_textbox_ndecimals()
 			tbx_length = new_textbox_ndecimals()
 			tbx_height = new_textbox_ndecimals()
@@ -119,6 +101,46 @@ function app_startup_interface_tabs()
 			tbx_length.next_tbx = tbx_height
 			tbx_height.next_tbx = tbx_width
 			
+			// Scale
+			scale_all = false
+			tbx_sca_x = new_textbox_ndecimals()
+			tbx_sca_y = new_textbox_ndecimals()
+			tbx_sca_z = new_textbox_ndecimals()
+			
+			tbx_sca_x.next_tbx = tbx_sca_y
+			tbx_sca_y.next_tbx = tbx_sca_z
+			tbx_sca_z.next_tbx = tbx_sca_x
+		}
+		
+		// Position
+		/*
+		position = tab_add_category("position", icons.TRANSFORM_SMALL, tab_element_editor_position, false)
+		with (position)
+		{
+			
+			
+			copy = array(0, 0, 0)
+		}
+		
+		// Pivot offset
+		pivot_offset = tab_add_category("pivotoffset", icons.TRANSFORM_SMALL, tab_element_editor_offset, false)
+		with (pivot_offset)
+		{
+			
+			copy = array(0, 0, 0)
+		}
+		
+		// Rotation
+		rotation = tab_add_category("rotation", icons.TRANSFORM_SMALL, tab_element_editor_rotation, false)
+		with (rotation)
+		{
+			copy = array(0, 0, 0)
+		}
+		
+		// Size
+		size = tab_add_category("size", icons.TRANSFORM_SMALL, tab_element_editor_size, false)
+		with (size)
+		{
 			copy = array(8, 8, 8)
 		}
 		
@@ -126,19 +148,12 @@ function app_startup_interface_tabs()
 		scale = tab_add_category("scale", icons.TRANSFORM_SMALL, tab_element_editor_scale, false)
 		with (scale)
 		{
-			tbx_x = new_textbox_ndecimals()
-			tbx_y = new_textbox_ndecimals()
-			tbx_z = new_textbox_ndecimals()
-			
-			tbx_x.next_tbx = tbx_y
-			tbx_y.next_tbx = tbx_z
-			tbx_z.next_tbx = tbx_x
-			
 			copy = array(1, 1, 1)
 		}
+		*/
 		
 		// Bend
-		bend = tab_add_category("bend", icons.TRANSFORM_SMALL, tab_element_editor_bend, false)
+		bend = tab_add_category("bend", icons.BEND_SMALL, tab_element_editor_bend, false)
 		with (bend)
 		{
 			tbx_offset = new_textbox_ndecimals()
@@ -166,7 +181,7 @@ function app_startup_interface_tabs()
 		}
 		
 		// Material
-		material = tab_add_category("material", [icons.SPHERE_SHADING_SMALL, icons.SPHERE_SHADING_SMALL__DARK], tab_element_editor_material, false)
+		material = tab_add_category("material", [icons.SPHERE_MATERIAL_SMALL, icons.SPHERE_MATERIAL_SMALL__DARK], tab_element_editor_material, false)
 		with (material)
 		{
 			tbx_mix_amount = new_textbox_integer()
@@ -183,7 +198,7 @@ function app_startup_interface_tabs()
 			tbx_inflate = new_textbox_ndecimals()
 		
 		// Wind
-		wind = tab_add_category("wind", icons.WIND, tab_element_editor_wind, false)
+		wind = tab_add_category("wind", icons.WIND_SMALL, tab_element_editor_wind, false)
 		with (wind)
 		{
 			tbx_zmin = new_textbox_ndecimals()
@@ -227,14 +242,11 @@ function app_startup_interface_tabs()
 		tab_add_category("export", icons.FILE_EXPORT, tab_preview_export, false) 
 	}
 	
-	// Recent models
-	recent_models = new_tab(null, false, header_recent_models)
-	
-	// Export
-	export = new_tab(null, false, header_export_model)
+	// Export .obj
+	export = new_tab("right_secondary", false, header_export_model)
 	
 	// Settings
-	settings = new_tab(null, false, header_menu_panel)
+	settings = new_tab(setting_settings_location, false, null)
 	with (settings)
 	{
 		// General

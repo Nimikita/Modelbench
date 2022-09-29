@@ -7,8 +7,6 @@ function element_event_create()
 	save_id = save_id_create()
 	
 	name = ""
-	name_duplicate = false
-	name_empty = true
 	
 	element_type = TYPE_PART
 	type = "block"

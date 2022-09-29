@@ -24,7 +24,7 @@ function popup_about_draw()
 	textx += string_width_font(text_get("aboutversion", modelbench_version_full), font_value)
 	
 	draw_label(text_get("aboutreleasedate", modelbench_version_date), textx, dy + 98, fa_left, fa_bottom, c_text_secondary, a_text_secondary, font_value)
-	draw_label(text_get("aboutforversion", "Mine-imator 1.2.6+"), content_x + dw/2, dy + 98 + 19, fa_middle, fa_bottom, c_text_secondary, a_text_secondary, font_value)
+	draw_label(text_get("aboutforversion", "Mine-imator 2.0.0+"), content_x + dw/2, dy + 98 + 19, fa_middle, fa_bottom, c_text_secondary, a_text_secondary, font_value)
 	
 	dy += 128 + 48
 	dx = content_x + 64
@@ -77,6 +77,6 @@ function popup_about_draw()
 	}
 	
 	// Donate button
-	if (draw_button_secondary("aboutdonate", content_x + content_width - ((string_width_font(text_get("aboutdonate"), font_button) + 28 + 28) + 12), content_y + content_height - 36 - 8, null, null, icons.DONATE, fa_right))
-		open_url("https://www.paypal.me/BaileyKrueger0/5")
+	if (draw_button_label("aboutdonate", content_x + content_width - 12, content_y + content_height - 36 - 8, null, icons.DONATE, e_button.SECONDARY, null, e_anchor.RIGHT))
+		open_url("https://www.paypal.com/donate/?hosted_button_id=T6PJGYPVUN678")
 }

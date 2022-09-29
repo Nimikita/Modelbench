@@ -12,7 +12,10 @@ function model_load_part(map, root)
 		parent = other.id
 		
 		// Name
-		name = map[?"name"]
+		if (is_string(map[?"mb_name"]))
+			name = value_get_string(map[?"mb_name"], "")
+		else
+			name = value_get_string(map[?"name"], "")
 		
 		// Texture (optional)
 		if (is_string(map[?"texture"]))
@@ -43,7 +46,7 @@ function model_load_part(map, root)
 		locked = value_get_real(map[?"locked"], false)
 		
 		// Render depth
-		depth = value_get_real(map[?"depth"], 0)
+		value[e_value.DEPTH] = value_get_real(map[?"depth"], 0)
 		part_update_depth()
 		
 		// Color (optional)

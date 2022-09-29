@@ -146,9 +146,9 @@ function view_update_surface(view, cam)
 								case e_tool.MOVE: icon = icons.MOVE; break;
 								case e_tool.ROTATE: icon = icons.ROTATE; break;
 								case e_tool.SCALE: icon = icons.SCALE; break;
-								case e_tool.TRANSFORM: icon = icons.TRANSFORM; break;
+								case e_tool.TRANSFORM: icon = icons.MULTITRANSFORM; break;
 								case e_tool.BEND: icon = icons.BEND; break;
-								case e_tool.RESIZE: icon = icons.BOUNDARY_BOX; break;
+								case e_tool.RESIZE: icon = icons.TRANSFORM; break;
 							}
 							
 							if (icon != null)

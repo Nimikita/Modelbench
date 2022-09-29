@@ -8,6 +8,7 @@
 /// @arg valuetype
 /// @arg script
 /// @arg default]
+/// @desc Checks area for right-click, creates context menu
 
 function context_menu_area()
 {
@@ -20,11 +21,26 @@ function context_menu_area()
 	
 	if (app_mouse_box(xx, yy, wid, hei) && mouse_right_released)
 	{
+		// Quick shortcut for value reset
+		if (keyboard_check(vk_shift) && argument_count > 5)
+		{
+			if (argument[6] = e_context_type.NUMBER)
+				script_execute(argument[7], argument[8], false)
+			
+			if (argument[6] = e_context_type.COLOR)
+				script_execute(argument[7], argument[8])
+			
+			return 0
+		}
+		
 		context_menu_close()
+		app_mouse_clear()
 		
 		context_menu_name = name
 		context_menu_copy_axis_edit = axis_edit
+		context_menu_busy_prev = window_busy
 		window_busy = "contextmenu"
+		context_menu_group = context_menu_group_temp
 		
 		// Get current font
 		font = draw_get_font()
@@ -38,7 +54,7 @@ function context_menu_area()
 			context_menu_value_default = argument[8]
 		}
 		
-		context_menu_add_level(name, mouse_x, mouse_y)
+		context_menu_add_level(name, mouse_x + 1, mouse_y)
 		
 		if (font != draw_get_font())
 			draw_set_font(font)

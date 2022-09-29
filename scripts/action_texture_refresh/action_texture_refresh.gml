@@ -2,7 +2,7 @@
 
 function action_texture_refresh()
 {
-	var texobj = context_menu_value;
+	var texobj = list_item_value;
 	
 	tex_refresh(texobj)
 	

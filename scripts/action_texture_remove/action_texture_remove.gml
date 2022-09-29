@@ -3,7 +3,7 @@
 function action_texture_remove()
 {
 	var tex, hobj;
-	tex = context_menu_value
+	tex = list_item_value
 	hobj = null
 	
 	if (history_undo)

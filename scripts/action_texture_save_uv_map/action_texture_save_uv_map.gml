@@ -11,7 +11,7 @@ function action_texture_save_uv_map()
 	
 	log("Export UV map", fn)
 	
-	tex = context_menu_value
+	tex = list_item_value
 	surf = surface_create(tex.size[X], tex.size[Y])
 	
 	// Accent colors
@@ -66,5 +66,5 @@ function action_texture_save_uv_map()
 	surface_save(surf, fn)
 	surface_free(surf)
 	
-	snackbar_save_image(fn)
+	toast_save_image(fn)
 }

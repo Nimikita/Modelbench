@@ -14,6 +14,29 @@ function enums()
 		SCROLL
 	}
 	
+	// Buttons
+	enum e_button
+	{
+		PRIMARY,
+		SECONDARY,
+		TERTIARY,
+		TOOLBAR,
+		BIG,
+		
+		NO_TEXT,
+		TEXT,
+		CAPTION,
+		LABEL
+	}
+	
+	// Button anchor
+	enum e_anchor
+	{
+		LEFT,
+		CENTER,
+		RIGHT
+	}
+	
 	// Menus
 	enum e_menu
 	{
@@ -88,14 +111,6 @@ function enums()
 		FORMAT_111	   = 2
 	}
 	
-	enum e_snackbar
-	{
-		DEFAULT,
-		ERROR,
-		WARNING,
-		SUCCESS
-	}
-	
 	// Toasts
 	enum e_toast
 	{
@@ -103,6 +118,14 @@ function enums()
 		POSITIVE,
 		WARNING,
 		NEGATIVE
+	}
+	
+	// Input box types
+	enum e_inputbox
+	{
+		LEFT,
+		RIGHT,
+		BIG
 	}
 	
 	enum e_element
@@ -202,27 +225,38 @@ function enums()
 	// Values
 	enum e_value
 	{
+		// Transform
 		POS_X,
 		POS_Y,
 		POS_Z,
+		
+		OFFSET_X,
+		OFFSET_Y,
+		OFFSET_Z,
+		
 		ROT_X,
 		ROT_Y,
 		ROT_Z,
+		
+		WIDTH,
+		LENGTH,
+		HEIGHT,
+		
 		SCA_X,
 		SCA_Y,
 		SCA_Z,
+		BEND_LOCK,
 		
-		// Color
+		// Material
+		TEXTURE_OBJ,
 		INHERIT_COLOR,
-		OPACITY,
-		BRIGHTNESS,
 		BLEND_COLOR,
 		MIX_COLOR,
 		MIX_AMOUNT,
+		OPACITY,
+		BRIGHTNESS,
 		
 		// Bend
-		BEND,
-		BEND_LOCK,
 		BEND_OFFSET,
 		BEND_SIZE_CUSTOM,
 		BEND_SIZE,
@@ -244,7 +278,8 @@ function enums()
 		BEND_ANGLE_Z,
 		INHERIT_BEND,
 		
-		// Shape properties
+		// Appearance
+		INFLATE,
 		BEND_SHAPE,
 		TEX_MIRROR,
 		INVERT,
@@ -257,19 +292,6 @@ function enums()
 		// Shape UV
 		UV_X,
 		UV_Y,
-		FROM_X,
-		FROM_Y,
-		FROM_Z,
-		TO_X,
-		TO_Y,
-		TO_Z,
-		OFFSET_X,
-		OFFSET_Y,
-		OFFSET_Z,
-		WIDTH,
-		LENGTH,
-		HEIGHT,
-		INFLATE,
 		
 		// Wind
 		WIND_AXIS,
@@ -278,9 +300,19 @@ function enums()
 		WIND_ZMAX_ENABLE,
 		WIND_ZMAX,
 		
-		// Misc
+		// Mine-imator
 		OPEN_POSITION_TAB,
-		TEXTURE_OBJ,
+		DEPTH,
+		
+		// Non-editable
+		BEND,
+		FROM_X,
+		FROM_Y,
+		FROM_Z,
+		TO_X,
+		TO_Y,
+		TO_Z,
+		
 		amount
 	}
 	
@@ -309,6 +341,7 @@ function enums()
 		BELL,
 		BELL_SLASH,
 		BEND,
+		BEND_SMALL,
 		BEND_SHARP,
 		BETA,
 		BIRTHDAY,
@@ -501,6 +534,7 @@ function enums()
 		MIRROR_VERTICALLY,
 		MOBILE,
 		MODEL,
+		MODEL_SMALL,
 		MOON,
 		MOVE,
 		MOVIE,
@@ -628,6 +662,7 @@ function enums()
 		TEXT_COLOR,
 		TEXT_SMALL,
 		TEXTURE,
+		TEXTURE_SMALL,
 		TEXTURE_EXPORT,
 		TICK,
 		TOPIC,
@@ -662,6 +697,7 @@ function enums()
 		WAVE,
 		WEB,
 		WIND,
+		WIND_SMALL,
 		WORKBENCH,
 		WORLD,
 		WORLD_SMALL,

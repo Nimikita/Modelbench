@@ -30,6 +30,7 @@ function app_startup()
 	app_startup_lists()
 	app_startup_window()
 	app_startup_themes()
+	toasts_startup()
 	
 	json_startup()
 	settings_startup()
@@ -37,6 +38,7 @@ function app_startup()
 	camera_startup()
 	
 	app_startup_interface()
+	app_startup_collapse()
 	model_startup()
 	
 	if (dev_mode)

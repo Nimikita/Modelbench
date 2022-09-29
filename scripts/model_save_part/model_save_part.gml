@@ -2,10 +2,46 @@
 
 function model_save_part()
 {
-	json_save_var("name", json_string_encode(name))
+	if (ds_map_exists(save_name_count_map, name) || name = "")
+	{
+		var count, savename;
+		count = save_name_count_map[?name]
+		savename = ""
+		
+		if (name = "")
+		{
+			if (count = undefined)
+			{
+				save_name_count_map[?""] = 1
+				count = 1
+			}
+			else
+			{
+				save_name_count_map[?""] += 1
+				count += 1
+			}
+			
+			repeat (count)
+				savename += " "
+			
+			json_save_var("name", json_string_encode(savename))
+		}
+		else
+		{
+			json_save_var("name", json_string_encode(name + " (" + string(count) + ")"))
+			save_name_count_map[?name] += 1
+		}
+		
+		json_save_var("mb_name", json_string_encode(name))
+	}
+	else
+	{
+		json_save_var("name", json_string_encode(name))
+		save_name_count_map[?name] = 1
+	}
 	
-	if (depth != 0)
-		json_save_var("depth", depth)
+	if (value[e_value.DEPTH] != 0)
+		json_save_var("depth", value[e_value.DEPTH])
 	
 	model_save_texture()
 	

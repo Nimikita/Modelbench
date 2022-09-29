@@ -12,7 +12,7 @@ function app_startup_window()
 	
 	log("Windows startup")
 	
-	http_snackbar_news = null
+	http_toast_news = null
 	
 	window_width = 1
 	window_height = 1
@@ -98,6 +98,8 @@ function app_startup_window()
 	// Popups
 	popup = null
 	popup_ani = 0
+	popup_block_ani = 0
+	popup_block_ani_ease = "easeoutcirc"
 	popup_ani_type = ""
 	popup_switch_to = null
 	popup_switch_from = null

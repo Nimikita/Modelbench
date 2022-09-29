@@ -2,6 +2,9 @@
 
 function shortcut_bar_draw()
 {
+	if (!setting_show_shortcuts_bar)
+		return 0
+	
 	content_x = 0
 	content_y = window_height - (28 * shortcut_bar_lines)
 	content_width = window_width

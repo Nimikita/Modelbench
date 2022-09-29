@@ -7,9 +7,9 @@
 function action_el_depth_tree(el, nval, add, hobj)
 {
 	with (hobj)
-		history_save_var(el, el.depth, el.depth * add + nval)
+		history_save_var(el, el.value[e_value.DEPTH], el.value[e_value.DEPTH] * add + nval)
 	
-	el.depth = el.depth * add + nval
+	el.value[e_value.DEPTH] = el.value[e_value.DEPTH] * add + nval
 	with (el)
 		part_update_depth()
 	

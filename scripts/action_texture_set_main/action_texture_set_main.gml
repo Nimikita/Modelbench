@@ -8,7 +8,7 @@ function action_texture_set_main()
 	if (argument_count > 0)
 		tex = argument[0]
 	else
-		tex = context_menu_value
+		tex = list_item_value
 	
 	if (history_undo)
 	{

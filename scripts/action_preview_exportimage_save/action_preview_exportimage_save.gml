@@ -25,5 +25,5 @@ function action_preview_exportimage_save()
 	render_free()
 	surface_free(surf)
 	
-	snackbar_save_image(fn)
+	toast_save_image(fn)
 }

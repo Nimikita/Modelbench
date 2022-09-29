@@ -57,21 +57,22 @@ function model_reset()
 	for (var v = 0; v < e_value.amount; v++)
 		value[v] = element_value_default(v)
 	
-	// Clear snackbars from startup
-	with (obj_snackbar)
+	// Clear toasts from startup
+	var t;
+	with (obj_toast)
 	{
-		// Recover model
-		if (snackbar_action1_name = "startuprecovermodel")
-			snackbar_close(id)
+		t = id
+		with (app)
+		{
+			// Recover model
+			if (t.actions[|0] = "startuprecovermodel")
+				toast_close(t)
 		
-		// Tip
-		if (tip != null)
-			snackbar_close(id)
+			// Tip
+			//if (t.tip != null)
+			//	toast_close(t)
+		}
 	}
-	
-	// Close menu
-	//menu_panel_ani_type = "hide"
-	//menu_open = false
 	
 	log("Model reset")
 }

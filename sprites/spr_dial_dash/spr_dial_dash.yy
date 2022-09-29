@@ -2,20 +2,20 @@
   "bboxMode": 0,
   "collisionKind": 1,
   "type": 0,
-  "origin": 9,
+  "origin": 4,
   "preMultiplyAlpha": false,
   "edgeFiltering": false,
   "collisionTolerance": 0,
   "swfPrecision": 2.525,
-  "bbox_left": 0,
-  "bbox_right": 27,
-  "bbox_top": 0,
-  "bbox_bottom": 27,
+  "bbox_left": 72,
+  "bbox_right": 97,
+  "bbox_top": 72,
+  "bbox_bottom": 97,
   "HTile": false,
   "VTile": false,
   "For3D": false,
-  "width": 28,
-  "height": 28,
+  "width": 136,
+  "height": 136,
   "textureGroupId": {
     "name": "Default",
     "path": "texturegroups/Default",
@@ -24,9 +24,9 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"f39b521a-d5b4-4056-af0f-c369fa6abc47","path":"sprites/spr_dial_dash/spr_dial_dash.yy",},"LayerId":null,"resourceVersion":"1.0","name":"imported","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"f39b521a-d5b4-4056-af0f-c369fa6abc47","path":"sprites/spr_dial_dash/spr_dial_dash.yy",},"LayerId":{"name":"c97edbf3-a7cc-4f45-b8e6-020d353612ab","path":"sprites/spr_dial_dash/spr_dial_dash.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"spr_dial_dash","path":"sprites/spr_dial_dash/spr_dial_dash.yy",},"resourceVersion":"1.0","name":"f39b521a-d5b4-4056-af0f-c369fa6abc47","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"dfbf1eda-7742-4a77-b056-ad8ecb087c02","path":"sprites/spr_dial_dash/spr_dial_dash.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"dfbf1eda-7742-4a77-b056-ad8ecb087c02","path":"sprites/spr_dial_dash/spr_dial_dash.yy",},"LayerId":{"name":"a62d5a25-0ca7-4ee3-8656-100605fb3c05","path":"sprites/spr_dial_dash/spr_dial_dash.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"spr_dial_dash","path":"sprites/spr_dial_dash/spr_dial_dash.yy",},"resourceVersion":"1.0","name":"dfbf1eda-7742-4a77-b056-ad8ecb087c02","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
     "spriteId": {"name":"spr_dial_dash","path":"sprites/spr_dial_dash/spr_dial_dash.yy",},
@@ -41,10 +41,10 @@
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore`1","elementType":"MomentsEventKeyframe",},
     "tracks": [
       {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
-            {"id":"97d1f857-f1fe-4dfb-a921-c3f233dc5b25","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"f39b521a-d5b4-4056-af0f-c369fa6abc47","path":"sprites/spr_dial_dash/spr_dial_dash.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe`1","elementType":"SpriteFrameKeyframe",},
+            {"id":"0b8b6475-7768-479c-a7cc-c4a8b9e7842d","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"dfbf1eda-7742-4a77-b056-ad8ecb087c02","path":"sprites/spr_dial_dash/spr_dial_dash.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe`1","elementType":"SpriteFrameKeyframe",},
           ],"resourceVersion":"1.0","resourceType":"KeyframeStore`1","elementType":"SpriteFrameKeyframe",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack","modifiers":[],},
     ],
-    "visibleRange": {"x":0.0,"y":0.0,},
+    "visibleRange": null,
     "lockOrigin": false,
     "showBackdrop": true,
     "showBackdropImage": false,
@@ -54,8 +54,8 @@
     "backdropHeight": 1080,
     "backdropXOffset": 0.0,
     "backdropYOffset": 0.0,
-    "xorigin": 2,
-    "yorigin": 25,
+    "xorigin": 68,
+    "yorigin": 68,
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_dial_dash","path":"sprites/spr_dial_dash/spr_dial_dash.yy",},
@@ -65,7 +65,7 @@
     "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"c97edbf3-a7cc-4f45-b8e6-020d353612ab","tags":[],"resourceType":"GMImageLayer",},
+    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"a62d5a25-0ca7-4ee3-8656-100605fb3c05","tags":[],"resourceType":"GMImageLayer",},
   ],
   "nineSlice": null,
   "parent": {

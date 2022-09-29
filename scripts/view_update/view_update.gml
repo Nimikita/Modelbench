@@ -129,7 +129,7 @@ function view_update(view, cam)
 			if (!mouse_right)
 			{
 				window_busy = ""	
-				context_menu_area(content_x, content_y, content_width, content_height, "contextmenuviewport", view_cam, e_value_type.NONE, null, null)
+				context_menu_area(content_x, content_y, content_width, content_height, "contextmenuviewport", view_cam, e_context_type.NONE, null, null)
 			}
 		}
 		

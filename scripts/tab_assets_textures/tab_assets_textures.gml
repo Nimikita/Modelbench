@@ -14,7 +14,7 @@ function tab_assets_textures()
 	{
 		var tex = textures_list.item[|i];
 		
-		draw_list_item(tex, dx, dy + i * 32, dw, 32, tex.value = res_edit, 4)
+		list_item_draw(tex, dx, dy + i * 32, dw, 32, tex.value = res_edit, 4)
 		
 		if (!itemhover && app_mouse_box(dx, dy + i * 32, dw, 32))
 			itemhover = tex
@@ -42,8 +42,8 @@ function tab_assets_textures()
 	}
 	
 	// Add texture
-	tab_control(36)
-	if (draw_button_primary("assetsaddtexture", dx, dy, 0, null, icons.PLUS, fa_center))
+	tab_control_button_label()
+	if (draw_button_label("assetsaddtexture", floor(dx + dw/2), dy, null, icons.PLUS, e_button.PRIMARY, null, e_anchor.CENTER))
 	{
 		var fn = file_dialog_open_image();
 		

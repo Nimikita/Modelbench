@@ -27,7 +27,7 @@ function render_world(mode)
 	for (i = 0; i < ds_list_size(render_list); i++)
 	{
 		var part = render_list[|i];
-		if (part.depth >= 0)
+		if (part.value[e_value.DEPTH] >= 0)
 			break
 		with (part)
 			render_world_part()

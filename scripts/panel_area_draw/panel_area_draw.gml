@@ -2,14 +2,6 @@
 
 function panel_area_draw()
 {
-	// Set busy if menu is open
-	var busyprev = window_busy;
-	if (menu_panel_ani > 0)
-	{
-		busyprev = window_busy
-		window_busy = "menupanel"
-	}
-	
 	// Calculate area
 	panel_area_x = 0
 	panel_area_y = 0
@@ -20,11 +12,11 @@ function panel_area_draw()
 	tab_move_mouseon_position = 0
 	
 	// Adjust panel size for toolbar
-	panel_area_y += 36
-	panel_area_height -= 36
+	panel_area_y += toolbar_size
+	panel_area_height -= toolbar_size
 	
 	// Adjust panel height for shortcut bar
-	panel_area_height -= 28 * shortcut_bar_lines
+	panel_area_height -= (28 * shortcut_bar_lines * setting_show_shortcuts_bar)
 	
 	// Set size
 	with (obj_panel)
@@ -41,10 +33,12 @@ function panel_area_draw()
 	}
 	
 	// Stop panels overlapping
-	panel_map[?"left"].size_real -= max(0, panel_map[?"left_secondary"].size_real + panel_map[?"left"].size_real + panel_map[?"right"].size_real + panel_map[?"right_secondary"].size_real - panel_area_width)
-	panel_map[?"left_secondary"].size_real -= max(0, panel_map[?"left_secondary"].size_real + panel_map[?"right_secondary"].size_real + panel_map[?"right"].size_real - panel_area_width)
+	panel_map[?"left_secondary"].size_real -= max(0, panel_map[?"left"].size_real + panel_map[?"left_secondary"].size_real + panel_map[?"right_secondary"].size_real + panel_map[?"right"].size_real - panel_area_width)
+	panel_map[?"left"].size_real -= max(0, panel_map[?"left"].size_real + panel_map[?"right"].size_real + panel_map[?"right_secondary"].size_real - panel_area_width)
 	
 	// Set max size
+	panel_map[?"left"].size_real = min(panel_map[?"left"].size_real, panel_area_width)
+	panel_map[?"right"].size_real = min(panel_map[?"right"].size_real, panel_area_width)
 	panel_map[?"left_secondary"].size_real = min(panel_map[?"left_secondary"].size_real, panel_area_width)
 	panel_map[?"right_secondary"].size_real = min(panel_map[?"right_secondary"].size_real, panel_area_width)
 	
@@ -71,7 +65,7 @@ function panel_area_draw()
 				resizex = panel_area_x + panel_map[?"left"].size_real + panel_resize.size_real
 			
 			mouse_cursor = cr_size_we
-			panel_resize.size = max(288, snap(panel_resize_size + (mouse_x - mouse_click_x), sizesnap))
+			panel_resize.size = max(300, snap(panel_resize_size + (mouse_x - mouse_click_x), sizesnap))
 		}
 		else if (panel_resize = panel_map[?"right"] || panel_resize = panel_map[?"right_secondary"])
 		{
@@ -81,13 +75,16 @@ function panel_area_draw()
 				resizex = panel_area_x + panel_area_width - panel_map[?"right"].size_real - panel_resize.size_real
 			
 			mouse_cursor = cr_size_we
-			panel_resize.size = max(288, snap(panel_resize_size - (mouse_x - mouse_click_x), sizesnap))
+			panel_resize.size = max(300, snap(panel_resize_size - (mouse_x - mouse_click_x), sizesnap))
 		}
 		
 		tip_set(string(panel_resize.size) + "px", resizex, max(mouse_y, panel_area_y), 0, 0, false)
 		
 		if (!mouse_left)
+		{
+			panel_resize = null
 			window_busy = ""
+		}
 	}
 	
 	// Moving
@@ -156,6 +153,10 @@ function panel_area_draw()
 			window_busy = ""
 			tab_move_mouseon_panel_prev = null
 			
+			// Play 'open' animation
+			if (tab_move_mouseon_panel.tab_list_amount = 1)
+				tab_move_mouseon_panel.size_ani = 0
+			
 			with (obj_tab)
 				glow = 0
 			
@@ -166,8 +167,4 @@ function panel_area_draw()
 			}
 		}
 	}
-	
-	// Restore busy state
-	if (window_busy = "menupanel")
-		window_busy = busyprev
 }

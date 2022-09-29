@@ -9,11 +9,14 @@ function model_load_model(map)
 	// Mine-imator checks for model name, texture, and parts, Modelbench doesn't need do
 	
 	// Model name
-	model_name = value_get_string(map[?"name"], "")
-		
+	if (is_string(map[?"mb_name"]))
+		model_name = value_get_string(map[?"mb_name"], "")
+	else
+		model_name = value_get_string(map[?"name"], "")
+	
 	// Root texture
 	texture_name = value_get_string(map[?"texture"], null)
-		
+	
 	// Texture size
 	texture_size = value_get_point2D(map[?"texture_size"], point2D(16, 16))
 	texture_size = vec2(max(texture_size[X], texture_size[Y])) // Make square

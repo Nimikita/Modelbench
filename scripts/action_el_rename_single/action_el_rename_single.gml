@@ -39,8 +39,6 @@ function action_el_rename_single(newname)
 		}
 	}
 	
-	app_update_name_warning()
-	
 	if (history_redo || history_undo)
 		action_update_search()
 }

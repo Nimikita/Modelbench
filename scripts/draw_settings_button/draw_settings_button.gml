@@ -42,19 +42,8 @@ function draw_settings_button()
 	// Open menu
 	if (mouseon && mouse_left_released)
 	{
-		window_busy = "settingsmenu"
-		app_mouse_clear()
+		menu_settings_set(xx + ((width/2) * settings_menu_primary), yy + height + (2 * settings_menu_primary), name, 0)
 		
-		settings_menu_name = name
-		settings_menu_ani = 0
-		settings_menu_ani_type = "show"
-		
-		// Init
-		settings_menu_primary = primary
-		settings_menu_x = xx + ((width/2) * settings_menu_primary)
-		settings_menu_y = yy + height + (2 * settings_menu_primary)
-		
-		// Primary style
 		if (script)
 		{
 			settings_menu_script = script
@@ -97,32 +86,11 @@ function draw_settings_button()
 	}
 	else
 	{
-		var backgroundcolor, backgroundalpha;
-		backgroundcolor = c_overlay//merge_color(c_overlay, c_overlay, microani_arr[e_microani.ACTIVE])
-		backgroundalpha = lerp(0, a_overlay, microani_arr[e_microani.ACTIVE])
-	
-		backgroundalpha = lerp(backgroundalpha, 0, microani_arr[e_microani.HOVER])
-		
-		backgroundcolor = merge_color(backgroundcolor, c_accent_overlay, microani_arr[e_microani.PRESS])
-		backgroundalpha = lerp(backgroundalpha, a_accent_overlay, microani_arr[e_microani.PRESS])
-		
-		buttoncolor = merge_color(c_text_secondary, c_accent, min(1, microani_arr[e_microani.PRESS] + microani_arr[e_microani.ACTIVE]))
-		buttonalpha = lerp(a_text_secondary, 1, min(1, microani_arr[e_microani.PRESS] + microani_arr[e_microani.ACTIVE]))
-		
-		var prevalpha = draw_get_alpha();
-		draw_set_alpha(prevalpha * lerp(1, .5, microani_arr[e_microani.DISABLED]))
-		
-		// Button background
-		draw_box(xx, yy, width, height, false, backgroundcolor, backgroundalpha)
-		
-		// Icon
-		draw_image(spr_chevrons, chevrons.DOWN, xx + width/2, yy + height/2, 1 , 1, buttoncolor, buttonalpha)
-		
-		draw_set_alpha(prevalpha)
-		
+		draw_button_icon(name, xx, yy, width, height, menuactive, icons.CHEVRON_DOWN_TINY, null, disabled)
 		microani_update(mouseon, mouseclick, menuactive, disabled)
 	}
 	
 	// Accent accent hover outline
-	draw_box_hover(xx, yy, width, height, microani_arr[e_microani.HOVER])
+	if (primary)
+		draw_box_hover(xx, yy, width, height, microani_arr[e_microani.HOVER])
 }

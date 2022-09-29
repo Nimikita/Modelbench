@@ -34,7 +34,7 @@ function textbox_draw()
 	textnormal = c_text_main
 	textnormala = a_text_main * prevalpha
 	textsuffix = c_text_tertiary
-	textsuffixa = a_text_tertiary
+	textsuffixa = a_text_tertiary * prevalpha
 	highlight = c_accent
 	texthighlight = c_button_text
 	texthighlighta = a_button_text * prevalpha
@@ -74,7 +74,7 @@ function textbox_draw()
 	if (window_focus = string(tbx))
 	{
 		if (contextmenu)
-			context_menu_area(xx, yy, w, h, "contextmenutextbox", tbx, e_value_type.NONE, null, null)
+			context_menu_area(xx, yy, w, h, "contextmenutextbox", tbx, e_context_type.NONE, null, null)
 		
 		var keys, key_press, action;
 		textbox_isediting = true

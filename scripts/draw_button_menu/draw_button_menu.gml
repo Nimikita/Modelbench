@@ -1,4 +1,4 @@
-/// draw_button_menu(name, type, x, y, width, height, value, text, script, [disabled, [texture, [icon, [caption]]]])
+/// draw_button_menu(name, type, x, y, width, height, value, text, script|menuscript, [disabled, [texture, [icon, [caption, [texcolor, texalpha, [capwid]]]]]])
 /// @arg name
 /// @arg type
 /// @arg x
@@ -7,16 +7,19 @@
 /// @arg height
 /// @arg value
 /// @arg text
-/// @arg script
+/// @arg script|drawscript
 /// @arg [disabled
 /// @arg [texture
 /// @arg [icon
-/// @arg [caption]]]
+/// @arg [caption
+/// @arg [texcolor
+/// @arg texalpha
+/// @arg [capwid]]]]]
 
 function draw_button_menu()
 {
-	var name, type, xx, yy, wid, hei, value, text, script, tex, disabled, icon, caption;
-	var flip, mouseon;
+	var name, type, xx, yy, wid, hei, value, text, script, tex, disabled, icon, caption, texcolor, texalpha, capwid;
+	var flip, mouseon, cap, menuactive, menuhide, menuid, nameid;
 	name = argument[0]
 	type = argument[1]
 	xx = argument[2] 
@@ -47,36 +50,93 @@ function draw_button_menu()
 	else
 		caption = ""
 	
-	if (xx + wid < content_x || xx > content_x + content_width || yy + hei < content_y || yy > content_y + content_height)
-		return 0
+	if (argument_count > 13)
+	{
+		texcolor = argument[13]
+		texalpha = argument[14]
+		
+		if (texcolor = null)
+			texcolor = c_white
+		
+		if (texalpha = null)
+			texalpha = 1
+	}
+	else
+	{
+		texcolor = c_white
+		texalpha = 1
+	}
 	
-	flip = (yy + hei + hei * 4 > window_height)
-	
-	microani_set(name, null, false, false, false)
-	
-	var textcolor, textalpha;
-	textcolor = merge_color(c_text_secondary, c_text_tertiary, microani_arr[e_microani.DISABLED])
-	textalpha = lerp(a_text_secondary, a_text_tertiary, microani_arr[e_microani.DISABLED])
+	if (argument_count > 15)
+		capwid = argument[15]
+	else
+		capwid = null
 	
 	// Caption
-	if (dh > (hei + 20))
+	cap = text_get(name)
+	nameid = name
+	
+	// Check if menu is currently active
+	menuactive = false
+	menuhide = false
+	menuid = null
+	
+	for (var i = 0; i < ds_list_size(menu_list); i++)
 	{
-		draw_label(text_get(name), xx, yy + 16, fa_left, fa_bottom, textcolor, textalpha, font_label)
-		yy += 20
+		if (menu_list[|i].menu_name = nameid)
+		{
+			menuactive = true
+			menuhide = menu_list[|i].menu_ani_type = "hide"
+			menuid = menu_list[|i]
+		}
+	}
+	
+	flip = (yy + hei + hei * 8 > window_height)
+	
+	microani_set(nameid, null, false, false, false)
+	
+	var textcolor, textalpha, bordercolor, borderalpha, chevroncolor, chevronalpha, fadealpha, animation;
+	textcolor = merge_color(c_text_secondary, c_text_main, microani_arr[e_microani.HOVER])
+	textcolor = merge_color(textcolor, c_accent, microani_arr[e_microani.ACTIVE])
+	textcolor = merge_color(textcolor, c_text_tertiary, microani_arr[e_microani.DISABLED])
+	textalpha = lerp(a_text_secondary, a_text_main, microani_arr[e_microani.HOVER])
+	textalpha = lerp(textalpha, a_accent, microani_arr[e_microani.ACTIVE])
+	textalpha = lerp(textalpha, a_text_tertiary, microani_arr[e_microani.DISABLED])
+	fadealpha = microani_arr[e_microani.FADE]
+	animation = current_microani
+	
+	// Caption
+	if (capwid = null)
+	{
+		draw_label(string_limit(cap, dw), xx, yy - 3, fa_left, fa_top, textcolor, textalpha, font_label)
+		yy += (label_height + 8)
+	}
+	else if (capwid != null)
+	{
+		draw_label(cap, xx, yy + hei/2, fa_left, fa_middle, textcolor, textalpha, font_label)
+		wid -= capwid
+		xx += capwid
+	}
+	animation.fade.value = 1
+	
+	if (menuactive)
+	{
+		xx = lerp(xx, menuid.menu_x, menuid.menu_ani_ease)
+		wid = lerp(wid, menuid.menu_w, menuid.menu_ani_ease)
 	}
 	
 	// Button
-	var bordercolor, borderalpha;
 	bordercolor = merge_color(c_border, c_text_secondary, microani_arr[e_microani.HOVER])
-	borderalpha = lerp(a_border, a_text_secondary, microani_arr[e_microani.HOVER])
 	bordercolor = merge_color(bordercolor, c_accent, microani_arr[e_microani.PRESS])
+	bordercolor = merge_color(bordercolor, c_accent, microani_arr[e_microani.ACTIVE])
+	borderalpha = lerp(a_border, a_text_secondary, microani_arr[e_microani.HOVER])
 	borderalpha = lerp(borderalpha, a_accent, microani_arr[e_microani.PRESS])
+	borderalpha = lerp(borderalpha, a_accent, microani_arr[e_microani.ACTIVE])
 	
-	if (menu_name = name)
-		draw_box(xx, yy, wid, hei, false, c_level_middle, 1)
+	draw_box(xx, yy, wid, hei, false, c_level_top, draw_get_alpha())
+	draw_outline(xx, yy, wid, hei, 1, bordercolor, borderalpha * fadealpha, true)
 	
-	draw_outline(xx, yy, wid, hei, 1, bordercolor, borderalpha)
-	draw_box_hover(xx - 1, yy - 1, wid + 2, hei + 2, microani_arr[e_microani.HOVER])
+	draw_box_hover(xx, yy, wid, hei, microani_arr[e_microani.PRESS])
 	
 	// Mouse
 	mouseon = app_mouse_box(xx, yy, wid, hei) && !disabled && content_mouseon
@@ -85,66 +145,111 @@ function draw_button_menu()
 		mouse_cursor = cr_handpoint
 	
 	// Item
-	var item = list_add_item(text, null, caption, tex, icon, -1, null, false, false);
+	var item = list_item_add(text, null, caption, tex, icon, -1, null, false, false);
 	item.disabled = disabled
-	draw_list_item(item, xx, yy, wid, hei, false, 8)
+	
+	item.thumbnail_blend = texcolor
+	item.thumbnail_alpha = texalpha
+	
+	list_item_draw(item, xx, yy, wid, hei, false, null, null, false)
 	instance_destroy(item)
 	
-	// Arrow
-	draw_image(spr_arrow_up_down_ani, (microani_arr[e_microani.ACTIVE] * 15), xx + wid - hei / 2, yy + hei / 2, 1, 1, textcolor, textalpha)
+	// Chevron
+	chevroncolor = merge_color(c_text_tertiary, c_text_secondary, microani_arr[e_microani.HOVER])
+	chevroncolor = merge_color(chevroncolor, c_accent, microani_arr[e_microani.ACTIVE])
+	chevroncolor = merge_color(chevroncolor, c_text_tertiary, microani_arr[e_microani.DISABLED])
+	chevronalpha = lerp(a_text_tertiary, a_text_secondary, microani_arr[e_microani.HOVER])
+	chevronalpha = lerp(chevronalpha, a_accent, microani_arr[e_microani.ACTIVE])
+	chevronalpha = lerp(chevronalpha, a_text_tertiary, microani_arr[e_microani.DISABLED])
+	
+	draw_image(spr_icons, icons.CHEVRON_DOWN_TINY, xx + wid - 12, yy + hei / 2, 1, 1, chevroncolor, chevronalpha * (1 - microani_arr[e_microani.CUSTOM_LINEAR]))
+	draw_image(spr_icons, icons.CHEVRON_UP_TINY, xx + wid - 12, yy + hei / 2, 1, 1, chevroncolor, chevronalpha * microani_arr[e_microani.CUSTOM_LINEAR])
 	
 	// Disabled overlay
 	draw_box(xx, yy, wid, hei, false, c_overlay, a_overlay * microani_arr[e_microani.DISABLED])
 	
-	microani_update(mouseon, mouseon && mouse_left, (menu_name = name ? !flip : flip), disabled)
+	microani_update(mouseon, mouseon && mouse_left, (menuactive && !menuhide), disabled, ((menuactive && !menuhide) ? !flip : flip))
 	
 	// Update menu position
-	if (menu_name = name)
+	if (menuactive)
 	{
 		menu_x = xx
 		menu_y = yy
+	}
+	
+	// Quick, re-open!
+	if (mouseon && mouse_left_released && menuhide)
+	{
+		window_busy = "menu"
+		menuid.menu_ani_type = "show"
+		app_mouse_clear()
 	}
 	
 	// Check click
-	if (mouseon && mouse_left_released)
+	if (mouseon && mouse_left_released && !menuhide)
 	{
+		var m = null;
+		for (var i = 0; i < ds_list_size(menu_list); i++)
+		{
+			if (menu_list[|i].menu_name = nameid)
+			{
+				m = menu_list[|i]
+				break;
+			}
+		}
+		
+		if (m = null)
+			m = new_obj(obj_menu)
+		
 		window_busy = "menu"
-		window_focus = string(menu_scroll)
+		window_focus = ""//string(menu_scroll_vertical)
 		app_mouse_clear()
 		
-		menu_name = name
-		menu_type = type
-		menu_script = script
-		menu_value = value
-		menu_ani = 0
-		menu_ani_type = "show"
-		menu_flip = flip
-		menu_x = xx
-		menu_y = yy
-		menu_w = wid
-		menu_button_h = hei
-		menu_item_w = wid
-		menu_item_h = menu_button_h
-		menu_margin = 8
+		m.menu_name = nameid
+		m.menu_type = type
+		m.menu_script = script
+		m.menu_value = value
+		m.menu_ani = 0
+		m.menu_ani_type = "show"
+		m.menu_flip = flip
+		m.menu_x = xx
+		m.menu_x_start = xx
+		m.menu_y = yy
+		m.menu_w = wid
+		m.menu_w_start = wid
+		m.menu_button_h = hei
+		m.menu_item_w = wid
+		m.menu_item_h = m.menu_button_h
+		m.menu_margin = 0//8
+		m.menu_transition = null
+		m.menu_steps = 0
+		m.menu_floating = false
 		
-		if (!flip)
-			menu_top_y = yy - 2
+		m.content_x = content_x
+		m.content_width = content_width
 		
-		// Init
+		menu_current = m
+		
 		if (type = e_menu.LIST)
-			menu_list = list_init(menu_name)
+			m.menu_list = list_init(name)
 		
-		menu_amount = ds_list_size(menu_list.item)
-		menu_focus_selected()
+		m.menu_amount = m.menu_list = null ? 0 : ds_list_size(m.menu_list.item)
+		
+		with (m)
+			menu_focus_selected()
 		
 		// Flip
-		if (menu_flip)
-			menu_show_amount = floor((menu_y * 0.9) / menu_item_h)
+		if (m.menu_flip)
+			m.menu_show_amount = floor((m.menu_y * 0.9) / m.menu_item_h)
 		else
-			menu_show_amount = floor(((window_height - (menu_y + menu_button_h)) * 0.9) / menu_item_h)
+			m.menu_show_amount = floor(((window_height - (m.menu_y + m.menu_button_h)) * 0.9) / m.menu_item_h)
 		
+		current_microani = animation
+		
+		menu_popup = popup
 		return true
 	}
 	
+	current_microani = animation
 	return false
 }

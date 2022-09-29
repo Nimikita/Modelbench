@@ -1,36 +1,35 @@
-/// draw_switch(name, x, y, active, script, default, [tip, [disabled]])
+/// draw_switch(name, x, y, active, script, [tip, [disabled]])
 /// @arg name
 /// @arg x
 /// @arg y
 /// @arg active
 /// @arg script
-/// @arg default
 /// @arg [tip
 /// @arg [disabled]]
 
 function draw_switch()
 {
-	var name, xx, yy, active, script, def, tip, disabled;
-	var switchx, switchy, w, h, mouseon, pressed;
-	name = text_get(argument[0])
+	var name, xx, yy, active, script, tip, disabled;
+	var text, switchx, switchy, w, h, pressed, thumbgoal;
+	name = argument[0]
 	xx = argument[1]
 	yy = argument[2]
 	active = argument[3]
 	script = argument[4]
-	def = argument[5]
 	tip = ""
 	disabled = false
+	text = text_get(name)
 	
-	if (argument_count > 6 && argument[6] != "")
-		tip = text_get(argument[6])
+	if (argument_count > 5)
+		tip = argument[5]
 	
-	if (argument_count > 7)
-		disabled = argument[7]
+	if (argument_count > 6)
+		disabled = argument[6]
 	
-	switchx = (xx + dw - 24)
-	switchy = (yy + (28/2) - 8)
 	w = dw
-	h = 28
+	h = 24
+	switchx = (xx + dw - 22)
+	switchy = (yy + (h/2) - 7)
 	
 	if (xx + w < content_x || xx > content_x + content_width || yy + h < content_y || yy > content_y + content_height)
 		return 0
@@ -50,62 +49,53 @@ function draw_switch()
 	    mouse_cursor = cr_handpoint
 	}
 	
+	if (pressed)
+		thumbgoal = 0.5
+	else if (active)
+		thumbgoal = 1
+	else
+		thumbgoal = 0
+	
 	// Set micro animation before drawing
-	microani_set(argument[0], script, mouseon, mouseclick, active)
+	microani_set(name, script, mouseon, mouseclick, active, disabled, 1, 0, thumbgoal)
 	
 	// Draw background
-	var color, alpha;
-	if (setting_theme != theme_light)
-	{
-		color = c_text_tertiary
-		alpha = a_text_tertiary
-	}
-	else
-	{
-		color = c_text_secondary
-		alpha = a_text_secondary
-	}
+	var offcolor, offalpha, oncolor, onalpha, color, alpha;
+	offcolor = merge_color(c_text_secondary, c_text_main, microani_arr[e_microani.HOVER])
+	offcolor = merge_color(offcolor, c_accent, microani_arr[e_microani.PRESS])
+	offalpha = lerp(a_text_secondary, a_text_main, microani_arr[e_microani.HOVER])
+	offalpha = lerp(offalpha, a_accent, microani_arr[e_microani.PRESS])
 	
-	var backgroundcolor = merge_color(color, c_accent, microani_arr[e_microani.ACTIVE]);
-	var backgroundalpha = lerp(alpha, 1, microani_arr[e_microani.ACTIVE]);
-	draw_box(switchx, switchy, 24, 16, false, backgroundcolor, backgroundalpha)
+	oncolor = merge_color(c_accent, c_accent_hover, microani_arr[e_microani.HOVER])
+	oncolor = merge_color(oncolor, c_accent_pressed, microani_arr[e_microani.PRESS])
+	onalpha = lerp(a_accent, a_accent_hover, microani_arr[e_microani.HOVER])
+	onalpha = lerp(onalpha, a_accent_pressed, microani_arr[e_microani.PRESS])
+	
+	color = merge_color(offcolor, oncolor, microani_arr[e_microani.ACTIVE])
+	alpha = lerp(offalpha, onalpha, microani_arr[e_microani.ACTIVE])
+	
+	color = merge_color(color, c_text_tertiary, microani_arr[e_microani.DISABLED])
+	alpha = lerp(alpha, a_text_tertiary, microani_arr[e_microani.DISABLED])
+	
+	draw_box(switchx, switchy, 20, 14, false, color, alpha)
 	
 	// Draw button
-	var buttonx = switchx + 2 + (10 * microani_arr[e_microani.ACTIVE]);
-	var buttony = switchy + 2;
-	var buttoncolor = c_accent_overlay;
-	var buttonalpha = lerp(0, a_accent_overlay, microani_arr[e_microani.PRESS]);
-	draw_box(buttonx, buttony, 10, 12, false, c_white, 1)
-	draw_box(buttonx, buttony, 10, 12, false, buttoncolor, buttonalpha)
-	draw_box_bevel(buttonx, buttony, 10, 12, 1, true)
-	
-	// Disabled overlay
-	draw_box(switchx, switchy, 24, 16, false, c_level_middle, .5 * microani_arr[e_microani.DISABLED])
+	var buttonx, buttony;
+	buttonx = switchx + 2 + floor(8 * microani_arr[e_microani.GOAL_EASE])
+	buttony = switchy + 2
+	draw_box(buttonx, buttony, 8, 10, false, c_button_text, 1)
+	draw_box_bevel(buttonx, buttony, 8, 10, 1, setting_theme.name = "light")
 	
 	// Draw hover outline
-	draw_box_hover(switchx, switchy, 24, 16, microani_arr[e_microani.HOVER] * (1 - microani_arr[e_microani.DISABLED]))
+	draw_box_hover(switchx, switchy, 20, 14, microani_arr[e_microani.PRESS])
 	
 	// Label
 	draw_set_font(font_label)
-	draw_label(name, xx, yy + 14, fa_left, fa_middle, lerp(c_text_secondary, c_text_tertiary, microani_arr[e_microani.DISABLED]), lerp(a_text_secondary, a_text_tertiary, microani_arr[e_microani.DISABLED]))
+	draw_label(string_limit(text, w - 32), xx, yy + (h/2), fa_left, fa_middle, lerp(c_text_secondary, c_text_tertiary, microani_arr[e_microani.DISABLED]), lerp(a_text_secondary, a_text_tertiary, microani_arr[e_microani.DISABLED]))
 	
-	microani_update(mouseon, mouseclick, active, disabled)
+	microani_update(mouseon, mouseclick, active, disabled, 0, thumbgoal)
 	
-	if (tip != "")
-	{
-		mouseon = app_mouse_box(xx + string_width(name) + 8, yy + 4, 20, 20) && content_mouseon && !disabled
-		
-		microani_set(argument[0] + "help", null, mouseon, false, false)
-		buttoncolor = merge_color(c_text_tertiary, c_text_secondary, microani_arr[e_microani.HOVER])
-		buttonalpha = lerp(a_text_tertiary, a_text_secondary, microani_arr[e_microani.HOVER]) * lerp(1, .5, microani_arr[e_microani.DISABLED])
-		
-		draw_image(spr_icons, icons.HELP_CIRCLE, xx + string_width(name) + 10 + 8, yy + 14, 1, 1, buttoncolor, buttonalpha)
-		
-		if (!disabled)
-			tip_set(text_get(argument[0] + "help"), xx + string_width(name) + 8, yy + 4, 20, 20)
-		
-		microani_update(mouseon, false, false, disabled)
-	}
+	draw_help_circle(tip, xx + string_width(text) + 4, yy + (h/2) - 10, disabled)
 	
 	// Press
 	if (pressed && mouse_left_released)

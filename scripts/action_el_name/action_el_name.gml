@@ -28,7 +28,6 @@ function action_el_name(newname)
 	else
 	{
 		var hobj = history_save_var_start(action_el_name, true);
-		var namesuffix;
 		
 		with (el_edit)
 		{
@@ -43,21 +42,15 @@ function action_el_name(newname)
 			if (el_edit_list[|i] = el_edit)
 				continue
 			
-			if (newname != "")
-				namesuffix = newname + " (" + string(i + 1) + ")"
-			else
-				namesuffix = newname
-			
 			with (el_edit_list[|i])
 			{
 				with (hobj)
-					history_save_var(other.id, other.name, namesuffix)
+					history_save_var(other.id, other.name, newname)
 				
-				name = namesuffix
+				name = newname
 			}
 		}
 	}
 	
-	app_update_name_warning()
 	action_update_search()
 }

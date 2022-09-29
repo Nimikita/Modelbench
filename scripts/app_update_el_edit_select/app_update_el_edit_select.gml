@@ -4,8 +4,6 @@ function app_update_el_edit_select()
 {
 	with (app.element_editor)
 	{
-		pivot_offset.enabled = false
-		size.enabled = false
 		bend.enabled = false
 		appearance.enabled = false
 		wind.enabled = false
@@ -24,15 +22,12 @@ function app_update_el_edit_select()
 		}
 		else
 		{
-			app.element_editor.pivot_offset.enabled = true
-			app.element_editor.pivot_offset.enabled = true
-			app.element_editor.size.enabled = true
 			app.element_editor.appearance.enabled = true
 			app.element_editor.wind.enabled = (app.setting_feature_set = e_features.MIMODEL)
 		}
 	}
 	
-	with (app.element_editor.size)
+	with (app.element_editor.transform)
 	{
 		if (el_edit != null && el_edit.element_type = TYPE_SHAPE)
 		{

@@ -37,4 +37,9 @@ function action_controls_reset()
 	setting_key_reset = new_shortcut(ord("R"), false, false)
 	setting_key_fast = new_shortcut(vk_space, false, false)
 	setting_key_slow = new_shortcut(vk_lshift, false, false)
+	
+	setting_move_speed = 1
+	setting_look_sensitivity = 1
+	setting_fast_modifier = 3
+	setting_slow_modifier = 0.25
 }

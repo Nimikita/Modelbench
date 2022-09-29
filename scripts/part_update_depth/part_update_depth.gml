@@ -6,7 +6,7 @@ function part_update_depth()
 	
 	var pos;
 	for (pos = 0; pos < ds_list_size(render_list); pos++)
-		if (render_list[|pos].depth > depth)
+		if (render_list[|pos].value[e_value.DEPTH] > value[e_value.DEPTH])
 			break
 	
 	ds_list_insert(render_list, pos, id)

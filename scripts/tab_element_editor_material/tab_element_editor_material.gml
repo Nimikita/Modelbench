@@ -2,6 +2,8 @@
 
 function tab_element_editor_material()
 {
+	context_menu_group_temp = e_context_group.MATERIAL
+	
 	// Texture
 	var value, text, texture;
 	
@@ -18,25 +20,25 @@ function tab_element_editor_material()
 		texture = null
 	}
 	
-	tab_control_menu(28)
-	draw_button_menu("elementeditortexture", e_menu.LIST, dx, dy, dw, 28, value, text, action_el_texture, false, texture)
+	tab_control_menu(32)
+	draw_button_menu("elementeditortexture", e_menu.LIST, dx, dy, dw, 32, value, text, action_el_texture, false, texture)
 	tab_next()
 	
 	if (setting_feature_set = e_features.MIMODEL)
 	{
 		// Inherit color
 		tab_control_switch()
-		draw_switch("elementeditorinheritcolor", dx, dy, el_edit.value[e_value.INHERIT_COLOR], action_el_inherit_color, true, "elementeditorinheritcolorhelp")
+		draw_switch("elementeditorinheritcolor", dx, dy, el_edit.value[e_value.INHERIT_COLOR], action_el_inherit_color, "elementeditorinheritcolorhelp")
 		tab_next()
 		
 		// Blend color
 		tab_control_color()
-		draw_button_color("elementeditorblendcolor", dx, dy, el_edit.value[e_value.BLEND_COLOR], c_white, action_el_blend_color)
+		draw_button_color("elementeditorblendcolor", dx, dy, floor(dw/2), el_edit.value[e_value.BLEND_COLOR], c_white, false, action_el_blend_color)
 		tab_next()
 		
 		// Mix color
 		tab_control_color()
-		draw_button_color("elementeditormixcolor", dx, dy, el_edit.value[e_value.MIX_COLOR], c_black, action_el_mix_color)
+		draw_button_color("elementeditormixcolor", dx, dy, floor(dw/2), el_edit.value[e_value.MIX_COLOR], c_black, false, action_el_mix_color)
 		tab_next()
 		
 		// Mix amount

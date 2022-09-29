@@ -4,8 +4,8 @@
 		"language": "English",
 		"locale": "en-US",
         "translator": "Nimi",
-        "forversion": "1.1.3",
-        "lastchange": "2021.01.15"
+        "forversion": "1.2.0",
+        "lastchange": "2022.09.21"
     },
 	"startup/": {
 		"modeldetected": "Unsaved model detected",
@@ -17,6 +17,17 @@
 		"startfromscratch": "Start from scratch...",
 		"loadatemplate": "Load a template...",
 		"version": "v %1"
+	},
+	"colorpicker/": {
+		"r": "R",
+		"g": "G",
+		"b": "B",
+		"h": "H",
+		"s": "S",
+		"l": "L",
+		"hex": "Hex",
+		"rgb": "RGB",
+		"hsl": "HSL"
 	},
 	"recent/": {
 		"lastopened": "Last opened",
@@ -90,26 +101,10 @@
 		"savemodel": "Model saved successfully!",
 		"saveimage": "Image saved successfully!",
 		"openimage": "OPEN IMAGE",
-		"warning/": {
-			"samepartname": "Some parts share the same name.",
-			"emptypartname": "Some parts don't have a name.",
-			"emptymodelname": "This model hasn't been given a name.",
-			"savemodel": "The model may not load correctly in Mine-imator because of the following:"
-		},
 		"button/": {
 			"download": "DOWNLOAD NOW",
 			"update": "UPDATE",
 			"remindmelater": "REMIND ME LATER"
-		},
-		"tip/": {
-			"caption": "Tip #%1",
-			"next": "NEXT TIP",
-			"previous": "PREVIOUS TIP",
-			"1": "Try turning on Slow shape generation to increase performance with 3D planes!",
-			"2": "Having trouble finding something? Try right-clicking to show a menu with options.",
-			"3": "If the program feels slow, try disabling shape outlines and ambient occlusion!",
-			"4": "For the best looking bends, move your shapes with the pivot offset tool.",
-			"5": "'Refresh textures on focus' can be helpful for editing textures while modeling!"
 		}
 	},
 	"colorpicker/": {
@@ -124,8 +119,8 @@
 	"contextmenu/": {
 		"keycontrolreset": "Reset shortcut",
 		"copylink": "Copy link",
-		"combinescale": "Combine XYZ",
-		"seperatescale": "Seperate XYZ",
+		"scalecombine": "Combine XYZ",
+		"scaleseperate": "Seperate XYZ",
 		"centeraxis": "Center pivot axis",
 		"resetview": "Reset view",
 		"value/": {
@@ -136,15 +131,10 @@
 			"paste": "Paste value",
 			"reset": "Reset value"
 		},
-		"category/": {
-			"position": "position",
-			"pivotoffset": "pivot offset",
-			"rotation": "rotation",
-			"scale": "scale",
-			"size": "size",
-			"copy": "Copy all %1 values",
-			"paste": "Paste all %1 values",
-			"reset": "Reset all %1 values"
+		"group/": {
+			"copy": "Copy all values",
+			"paste": "Paste all values",
+			"reset": "Reset all values"
 		},
 		"textbox/": {
 			"cut": "Cut",
@@ -179,7 +169,38 @@
 	},
 	"toolbar/": {
 		"modeling": "MODELING",
-		"preview": "PREVIEW"
+		"preview": "PREVIEW",
+		"file": "File",
+		"file/": {
+			"new": "New model...",
+			"open": "Open model",
+			"recent": "Open recent...",
+			"save": "Save model",
+			"saveas": "Save model as...",
+			"import": "Import model...",
+			"exportobj": "Export model as .obj..."
+		},
+		"edit": "Edit",
+		"edit/": {
+			"undo": "Undo",
+			"redo": "Redo",
+			"selectall": "Select all",
+			"duplicate": "Duplicate elements",
+			"delete": "Delete elements",
+			"preferences": "Preferences..."
+		},
+		"view": "View",
+		"view/": {
+			"reset": "Reset work camera",
+			"shortcutsbar": "Show shortcuts bar",
+			"uveditor": "Show UV editor"
+		},
+		"help": "Help",
+		"help/": {
+			"about": "About Modelbench...",
+			"report": "Report a bug...",
+			"forums": "Visit the forums..."
+		}
 	},
 	"tooltip/": {
 		"showoptions": "Show options",
@@ -289,11 +310,12 @@
 	},
 	"settingsmenu/": {
 		"snap/": {
-			"move": "Size (Move)",
-			"rotate": "Size (Rotate)",
-			"scale": "Size (Scale)",
-			"uv": "Size (Size & UVs)",
-			"absolute": "Absolute snapping"
+			"move": "Move",
+			"rotate": "Rotate",
+			"scale": "Scale",
+			"uv": "Size & UVs",
+			"absolute": "Absolute snapping",
+			"absolutetip": "Snap values to a grid, instead of relative to the current value.",
 		},
 		"overlays/": {
 			"grid": "Grid",
@@ -342,6 +364,7 @@
 	"modelproperties": "MODEL PROPERTIES",
 	"elements": "ELEMENTS",
 	"textures": "TEXTURES",
+	"transform": "TRANSFORM",
 	"position": "POSITION",
 	"pivotoffset": "PIVOT OFFSET",
 	"rotation": "ROTATION",
@@ -361,7 +384,6 @@
 	"assets/": {
 		"newmodel": "New model",
 		"modelname": "Model name",
-		"emptymodelname": "Model name cannot be empty.",
 		"modellocation": "Model location",
 		"modelnotsaved": "Model not saved",
 		"openfolder": "Open folder",
@@ -380,35 +402,38 @@
 		"addtexture": "ADD TEXTURE",
 		"texturesize": "%1x%2 pixels",
 		"texturescale": "Scale",
-		"defaulttexture": "Default texture"
+		"defaulttexture": "default"
 	},
 	"elementeditor/": {
 		"partname": "Part name",
 		"shapename": "Shape name",
-		"emptypartname": "Part names cannot be empty.",
-		"samepartname": "Part names cannot be the same.",
 		"newpart": "New part",
 		"newshape": "New shape",
+		"position": "Position",
 		"position/": {
 			"x": "X",
 			"y": "Y",
 			"z": "Z"
 		},
+		"rotation": "Rotation",
 		"rotation/": {
 			"x": "X",
 			"y": "Y",
 			"z": "Z"
 		},
+		"offset": "Pivot offset",
 		"offset/": {
 			"x": "X",
 			"y": "Y",
 			"z": "Z"
 		},
+		"size": "Size",
 		"size/": {
 			"w": "W",
 			"l": "L",
 			"h": "H"
 		},
+		"scale": "Scale",
 		"scale/": {
 			"x": "X",
 			"y": "Y",
@@ -419,9 +444,9 @@
 			"lock": "Lock to bent half of parent",
 			"axis": "Enabled axes",
 			"axis/": {
-				"x": "Bend on X axis",
-				"y": "Bend on Y axis",
-				"z": "Bend on Z axis"
+				"x": "X axis",
+				"y": "Y axis",
+				"z": "Z axis"
 			},
 			"invert": "Inverted axes",
 			"invert/": {
@@ -431,8 +456,20 @@
 			},
 			"range/": {
 				"x": "Range",
+				"x/": {
+					"mininput": "Min",
+					"maxinput": "Max"
+				},
 				"y": "Range",
-				"z": "Range"
+				"y/": {
+					"mininput": "Min",
+					"maxinput": "Max"
+				},
+				"z": "Range",
+				"z/": {
+					"mininput": "Min",
+					"maxinput": "Max"
+				}
 			},
 			"angle/": {
 				"x": "Default angle",
@@ -549,11 +586,11 @@
 		"refreshtextureshelp": "Automatically refresh all model textures when the window is refocused.",
 		"adjustpivotresize": "Adjust pivot on resizing",
 		"adjustpivotresizehelp": "Adjust shape pivot based on size editing in the UV editor.",
-		"shortcuts": "Shortcuts",
+		"controlskeybinds": "Keybinds",
 		"controlsfile": "File",
-		"controlsediting": "Editing",
+		"controlsediting": "Edit",
 		"controlstools": "Tools",
-		"controlsnavigation": "Navigation",
+		"controlscamera": "Camera",
 		"key/": {
 			"new": "New model",
 			"newtemplate": "New model (template)",
@@ -602,7 +639,6 @@
 		"zisup": "Z is up",
 		"sharedtextureuvs": "Display shared texture UVs",
 		"sharedtextureuvshelp": "Displays shapes that share a texture in the UV editor.",
-		"startuptips": "Show startup tips",
 		"reducedmotion": "Reduced motion",
 		"restoredefaults": "RESTORE DEFAULTS",
 		"looksensitivity": "Look sensitivity",

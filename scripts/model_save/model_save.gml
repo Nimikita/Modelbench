@@ -31,11 +31,15 @@ function model_save()
 	log("save_folder", save_folder)
 	log("load_folder", load_folder)
 	
+	ds_map_clear(save_name_count_map)
+	
 	debug_timer_start()
 	
 	model_save_start(fn)
 	model_save_children()
 	model_save_done()
+	
+	ds_map_clear(save_name_count_map)
 	
 	// Export texture(s)
 	with (obj_texture)
@@ -51,7 +55,7 @@ function model_save()
 		if (!model_temporary && !model_create_wait)
 		{
 			recent_add_wait = true
-			snackbar_save_model()
+			toast_save_model()
 		}
 	}
 	

@@ -12,7 +12,7 @@ function action_el_depth(value, add)
 			{
 				with (save_id_find(save_var_save_id[t]))
 				{
-					depth = other.save_var_old_value[t]
+					value[e_value.DEPTH] = other.save_var_old_value[t]
 					part_update_depth()
 				}
 			}
@@ -26,7 +26,7 @@ function action_el_depth(value, add)
 			{
 				with (save_id_find(save_var_save_id[t]))
 				{
-					depth = other.save_var_new_value[t]
+					value[e_value.DEPTH] = other.save_var_new_value[t]
 					part_update_depth()
 				}
 			}

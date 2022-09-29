@@ -6,7 +6,7 @@ function window_draw_startup()
 	content_y = 0
 	content_width = window_width
 	content_height = window_height
-	content_mouseon = app_mouse_box(content_x, content_y, content_width, content_height) && !popup_mouseon && !snackbar_mouseon && !context_menu_mouseon
+	content_mouseon = app_mouse_box(content_x, content_y, content_width, content_height) && !popup_mouseon && !toast_mouseon && !context_menu_mouseon
 	
 	// Draw background
 	draw_clear_alpha(c_level_middle, 1)
@@ -46,7 +46,7 @@ function window_draw_startup()
 	// New model
 	draw_settings_button("startupnewmodeloptions", dx, dy, 24, 36, true)
 	dx -= newmodelwidth
-	draw_button_primary("startupnewmodel", dx, dy, newmodelwidth, model_create, icons.FILE)
+	draw_button_label("startupnewmodel", dx, dy, newmodelwidth, icons.FILE, model_create)
 	
 	if (recent_list_amount > 0)
 		dx -= 12 + browsewidth
@@ -54,7 +54,7 @@ function window_draw_startup()
 		dx = centerx 
 	
 	// Browse
-	draw_button_secondary("startupbrowse", dx, dy, browsewidth, model_load, icons.FOLDER)
+	draw_button_label("startupbrowse", dx, dy, browsewidth, icons.FOLDER, e_button.SECONDARY, model_load)
 	
 	// Show recent models
 	if (recent_list_amount > 0)

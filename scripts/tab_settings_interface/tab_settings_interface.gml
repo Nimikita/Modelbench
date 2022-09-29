@@ -20,10 +20,10 @@ function tab_settings_interface()
 	
 	for (var i = 0; i < 10; i++)
 	{
-		if (draw_accent_item(accentboxx, accentboxy, accentboxw, 48, i) && i = 9)
+		if (draw_button_accent(accentboxx, accentboxy, accentboxw, 48, i) && i = 9)
 		{
 			// Set to custom accent
-			popup_colorpicker_show("settingsaccentcolor", setting_accent_custom, setting_accent_custom, action_setting_accent_custom)
+			colorpicker_show("settingsaccentcolor", setting_accent_custom, setting_accent_custom, action_setting_accent_custom, accentboxx, accentboxy, accentboxw, 48)
 			update_interface_wait = true
 		}
 		
@@ -40,31 +40,26 @@ function tab_settings_interface()
 	dy += 5
 	
 	// Language
-	tab_control_menu(28)
-	draw_button_menu("settingslanguage", e_menu.LIST, dx, dy, dw - (24 + icon_button_offset), 28, setting_language_filename, text_get("filelanguage"), action_setting_language, false, null, null, text_get("filelocale"))
+	tab_control_menu()
+	draw_button_menu("settingslanguage", e_menu.LIST, dx, dy, dw - (24 + icon_button_offset), 24, setting_language_filename, text_get("filelanguage"), action_setting_language, false, null, null, text_get("filelocale"))
 	
-	if (draw_button_icon("settingsopenlanguagefolder", dx + dw - 24 + icon_button_offset, dy + 22, 24, 24, false, icons.FOLDER, null, null, "settingsopenlanguagefolder"))
+	if (draw_button_icon("settingsopenlanguagefolder", dx + dw - 24 + icon_button_offset, dy + 18, 24, 24, false, icons.FOLDER, null, false, "settingsopenlanguagefolder"))
 		open_url(languages_directory)
 	
 	tab_next()
 	
 	// Z is up
 	tab_control_switch()
-	draw_switch("settingszisup", dx, dy, setting_z_is_up, action_setting_z_is_up, false)
+	draw_switch("settingszisup", dx, dy, setting_z_is_up, action_setting_z_is_up)
 	tab_next()
 	
 	// Display shared texture UVs(UV editor)
 	tab_control_switch()
-	draw_switch("settingssharedtextureuvs", dx, dy, setting_shared_texture_uvs, action_setting_shared_texture_uvs, true, "settingssharedtextureuvshelp")
-	tab_next()
-	
-	// Startup tips
-	tab_control_switch()
-	draw_switch("settingsstartuptips", dx, dy, setting_show_startup_tips, action_setting_startup_tips, true)
+	draw_switch("settingssharedtextureuvs", dx, dy, setting_shared_texture_uvs, action_setting_shared_texture_uvs, "settingssharedtextureuvshelp")
 	tab_next()
 	
 	// Reduced motion
 	tab_control_switch()
-	draw_switch("settingsreducedmotion", dx, dy, setting_reduced_motion, action_setting_reduced_motion, false)
+	draw_switch("settingsreducedmotion", dx, dy, setting_reduced_motion, action_setting_reduced_motion)
 	tab_next()
 }

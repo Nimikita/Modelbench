@@ -13,12 +13,14 @@ function action_texture_replace()
 	}
 	else
 	{
-		texobj = context_menu_value;
+		texobj = list_item_value;
 		fn = ""
 	}
 	
 	if (!history_undo && !history_redo)
 	{
+		show_debug_message(list_item_value)
+		
 		with (texobj)
 		{
 			if (fn = "")

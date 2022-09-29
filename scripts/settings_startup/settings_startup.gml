@@ -24,6 +24,7 @@ function settings_startup()
 	setting_assets_location = "right"
 	setting_element_editor_location = "right_secondary"
 	setting_preview_location = "right"
+	setting_settings_location = "right_secondary"
 	setting_uv_editor_size = 0.5
 	
 	backup_next = 0
@@ -35,10 +36,6 @@ function settings_startup()
 	setting_adjust_pivot_resize = true
 	
 	action_controls_reset()
-	setting_move_speed = 0.7
-	setting_look_sensitivity = .75
-	setting_fast_modifier = 2.25
-	setting_slow_modifier = 0.25
 	setting_smooth_camera = false
 	setting_viewport_controls_middle = false
 	
@@ -49,7 +46,7 @@ function settings_startup()
 	setting_tip_show = true
 	setting_z_is_up = false
 	setting_shared_texture_uvs = true
-	setting_show_startup_tips = true
+	setting_show_shortcuts_bar = true
 	
 	setting_reduced_motion = false
 	
@@ -90,7 +87,6 @@ function settings_startup()
 	
 	// Misc settings
 	setting_hide_shapes = false
-	setting_combine_scale = false
 	
 	setting_collapse_backup_models = true
 	setting_collapse_controls_file = true

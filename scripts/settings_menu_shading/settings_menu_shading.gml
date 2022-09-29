@@ -12,12 +12,12 @@ function settings_menu_shading()
 	
 	// Modeling SSAO
 	tab_control_switch()
-	draw_switch("settingsmenushadingao", dx, dy, setting_shading_ao, action_setting_shading_ao, true)
+	draw_switch("settingsmenushadingao", dx, dy, setting_shading_ao, action_setting_shading_ao)
 	tab_next()
 	
 	// Modeling lighting
 	tab_control_switch()
-	draw_switch("settingsmenushadinglighting", dx, dy, setting_shading_lighting, action_setting_shading_lighting, true)
+	draw_switch("settingsmenushadinglighting", dx, dy, setting_shading_lighting, action_setting_shading_lighting)
 	tab_next()
 	
 	settings_menu_w = capwid

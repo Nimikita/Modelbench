@@ -11,10 +11,10 @@ function tab_preview_export()
 	tab_next()
 	
 	tab_control_switch()
-	draw_switch("previewincludebackground", dx, dy, setting_preview_background, action_setting_background, true)
+	draw_switch("previewincludebackground", dx, dy, setting_preview_background, action_setting_background)
 	tab_next()
 	
-	tab_control(28)
-	draw_button_primary("previewexportimage", dx, dy, dw, action_preview_exportimage_save, null, fa_center)
+	tab_control_button_label()
+	draw_button_label("previewexportimage", floor(dx + dw/2), dy, null, icons.TEXTURE_EXPORT, e_button.PRIMARY, action_preview_exportimage_save, e_anchor.CENTER)
 	tab_next()
 }

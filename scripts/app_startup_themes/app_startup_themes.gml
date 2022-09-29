@@ -52,8 +52,8 @@ function app_startup_themes()
 		level_top = hex_to_color("F7FAFC")
 		level_middle = hex_to_color("ECEFF1")
 		level_bottom = hex_to_color("D7DFE2")
-		viewport_top = hex_to_color("F0FFFF")
-		viewport_bottom = hex_to_color("B5E8F2")
+		viewport_top = hex_to_color("ACC5E5")
+		viewport_bottom = hex_to_color("E1F1FF")
 		
 		text_main = hex_to_color("0D1214")
 		text_secondary = text_main

@@ -2,5 +2,5 @@
 
 function tab_control_switch()
 {
-	tab_control(28)
+	tab_control(24)
 }

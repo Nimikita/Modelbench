@@ -8,7 +8,7 @@
 function draw_element_item()
 {
 	var element, yy, increment, search;
-	var itemx, itemy, itemw, itemh, movehover, itemhover, expandhover, lockhover, visiblehover, errorhover, itemvisible, xx, ww, linex, minw, mouseonlist;
+	var itemx, itemy, itemw, itemh, movehover, itemhover, expandhover, lockhover, visiblehover, itemvisible, xx, ww, linex, minw, mouseonlist, buttonsize;
 	var hideshapes;
 	element = argument[0]
 	yy = argument[1]
@@ -24,7 +24,8 @@ function draw_element_item()
 	itemx = dx + (24 * increment)
 	itemy = yy
 	itemw = dw - (24 * increment)
-	itemh = 28
+	itemh = 24
+	buttonsize = 16
 	movehover = app_mouse_box_busy(dx, itemy, dw, itemh, "elementmove")
 	itemhover = app_mouse_box(dx, itemy, dw, itemh) && content_mouseon 
 	expandhover = false
@@ -65,39 +66,24 @@ function draw_element_item()
 	}
 	
 	xx = itemx + itemw - 24
-	minw = 4 + 20 + 4 + 20 + 8 + string_width("...") + (8 + 20 + 4 + 20)
+	minw = 4 + buttonsize + 4 + 20 + 8 + string_width("...") + (8 + buttonsize + 4 + buttonsize)
 	
 	#region Right side icons
-	
-	if (element.element_type = TYPE_PART && (element.name_duplicate || element.name_empty))
-	{
-		errorhover = app_mouse_box(xx, itemy + 4, 20, 20)
 		
-		if (element.name_empty)
-			tip_set(text_get("elementeditoremptypartname"), xx, itemy + 4, 20, 20)
-		else if (element.name_duplicate)
-			tip_set(text_get("elementeditorsamepartname"), xx, itemy + 4, 20, 20)
-		
-		draw_image(spr_icons, icons.WARNING_TRIANGLE, xx + 10, itemy + 14, 1, 1, c_error, 1)
-		xx -= 24
-	}
-	else
-		errorhover = false
-	
 	// Visible
 	if (itemvisible)
 	{
 		if (itemhover || element.hidden)
 		{
-			if (draw_button_icon("assetselementhidden" + string(element), xx, itemy + 4, 20, 20, element.hidden, element.hidden ? icons.HIDDEN_SMALL : icons.VISIBLE_SMALL, null, window_busy = "elementselection", (element.hidden ? "tooltipshow" : "tooltiphide")))
+			if (draw_button_icon("assetselementhidden" + string(element), xx, itemy + 4, buttonsize, buttonsize, element.hidden, element.hidden ? icons.HIDDEN_SMALL : icons.VISIBLE_SMALL, null, window_busy = "elementselection", (element.hidden ? "tooltipshow" : "tooltiphide")))
 			{
 				element.hidden = !element.hidden
 				el_update_hidden_tree(false)
 			}
-			visiblehover = app_mouse_box(xx, itemy + 4, 20, 20)
+			visiblehover = app_mouse_box(xx, itemy + 4, buttonsize, buttonsize)
 		}
 		else if (element.tree_hidden)
-			draw_image(spr_icons, icons.DOT, xx + 10, itemy + 14, 1, 1, c_text_secondary, a_text_secondary)
+			draw_image(spr_icons, icons.DOT, xx + (buttonsize/2), itemy + 14, 1, 1, c_text_secondary, a_text_secondary)
 	}
 	
 	xx -= 24
@@ -107,15 +93,15 @@ function draw_element_item()
 	{
 		if (itemhover || element.locked)
 		{
-			if (draw_button_icon("assetselementlock" + string(element), xx, itemy + 4, 20, 20, element.locked, element.locked ? icons.LOCK_SMALL : icons.UNLOCK_SMALL, null, window_busy = "elementselection", (element.locked ? "tooltipunlock" : "tooltiplock")))
+			if (draw_button_icon("assetselementlock" + string(element), xx, itemy + 4, buttonsize, buttonsize, element.locked, element.locked ? icons.LOCK_SMALL : icons.UNLOCK_SMALL, null, window_busy = "elementselection", (element.locked ? "tooltipunlock" : "tooltiplock")))
 			{
 				element.locked = !element.locked
 				el_update_lock_tree(false)
 			}
-			lockhover = app_mouse_box(xx, itemy + 4, 20, 20)
+			lockhover = app_mouse_box(xx, itemy + 4, buttonsize, buttonsize)
 		}
 		else if (element.tree_locked)
-			draw_image(spr_icons, icons.DOT, xx + 10, itemy + 14, 1, 1, c_text_secondary, a_text_secondary)
+			draw_image(spr_icons, icons.DOT, xx + (buttonsize/2), itemy + 14, 1, 1, c_text_secondary, a_text_secondary)
 	}
 	
 	#endregion
@@ -131,13 +117,13 @@ function draw_element_item()
 	haschildren = haschildren && ((element.part_list != null && ds_list_size(element.part_list) > 0) || (!setting_hide_shapes && (element.shape_list != null && ds_list_size(element.shape_list) > 0)))
 	if (itemvisible && haschildren && !search)
 	{
-		if (draw_button_icon("assetspartshowchildren" + string(element), xx, itemy + 4, 20, 20, element.extend, null, null, window_busy = "elementselection", (element.extend ? "tooltipcollapse" : "tooltipexpand"), spr_arrow_small_ani))
+		if (draw_button_icon("assetspartshowchildren" + string(element), xx, itemy + 4, buttonsize, buttonsize, element.extend, null, null, window_busy = "elementselection", (element.extend ? "tooltipcollapse" : "tooltipexpand"), spr_chevron_ani))
 			action_el_extend(element)
 	}
-	expandhover = app_mouse_box(xx, itemy + 4, 20, 20)
+	expandhover = app_mouse_box(xx, itemy + 4, buttonsize, buttonsize)
 	
 	xx += 24
-	mouseonlist = (itemvisible && itemhover && !expandhover && !lockhover && !visiblehover && !errorhover)
+	mouseonlist = (itemvisible && itemhover && !expandhover && !lockhover && !visiblehover)
 	
 	// Element icon
 	if (itemvisible)
@@ -169,12 +155,6 @@ function draw_element_item()
 			iconalpha = a_text_tertiary
 		}
 		
-		if (element.name_duplicate || element.name_empty)
-		{
-			iconcolor = c_error
-			iconalpha = 1
-		}
-		
 		draw_image(spr_icons, icon, xx + 10, itemy + (itemh/2), 1, 1, iconcolor, iconalpha)
 	}
 	
@@ -199,7 +179,7 @@ function draw_element_item()
 	// Edit name
 	if (tab.elements.name_edit_element = element)
 	{
-		if (textbox_draw(tab.elements.tbx_name, xx, itemy + 6, itemw - (xx - itemx) - 52, itemh))
+		if (textbox_draw(tab.elements.tbx_name, xx, itemy + 4, itemw - (xx - itemx) - 52, itemh))
 		{
 			if (tab.elements.name_edit_element_single)
 				action_el_rename_single(tab.elements.tbx_name.text)
@@ -229,7 +209,7 @@ function draw_element_item()
 				labelname = text_get("assetsnewshape")
 		}
 		
-		if (element.name = "" || element.hidden || element.tree_hidden)
+		if (element.tree_hidden)
 		{
 			labelcolor = c_text_secondary
 			labelalpha = a_text_secondary
@@ -240,24 +220,24 @@ function draw_element_item()
 			labelalpha = a_text_main
 		}
 		
+		if (element.name = "")
+			labelcolor = c_text_tertiary
+		
 		if (element.selected || (mouseonlist && (mouse_left || mouse_left_released)))
 		{
 			labelcolor = c_accent
 			labelalpha = 1
 		}
 		
-		if (element.name_duplicate || element.name_empty)
-		{
-			labelcolor = c_error
-			labelalpha = 1
-		}
+		if (element.name = "")
+			labelalpha = a_text_tertiary
 		
 		labelshort = string_limit_font(labelname, itemw - (xx - itemx) - 52, font_value)
 		draw_label(labelshort, xx, itemy + (itemh/2), fa_left, fa_middle, labelcolor, labelalpha, font_value)
 		
 		// Preview name tooltip
 		if (string_width(labelname) > itemw - (xx - itemx) - 52)
-			tip_set(labelname, xx, itemy, string_width_font(labelshort, font_value), 28)
+			tip_set(labelname, xx, itemy, string_width_font(labelshort, font_value), itemh)
 		
 		// Edit name
 		if (labelshort != "...")
@@ -280,10 +260,10 @@ function draw_element_item()
 	
 	#endregion
 	
-	if (itemvisible && itemhover && !expandhover && !lockhover && !visiblehover && !errorhover)
+	if (itemvisible && itemhover && !expandhover && !lockhover && !visiblehover)
 	{
 		element.list_mouseon = true
-		context_menu_area(dx, itemy, dw, itemh, "contextmenuelement", element, e_value_type.NONE, null, null)
+		context_menu_area(dx, itemy, dw, itemh, "contextmenuelement", element, e_context_type.NONE, null, null)
 		
 		if (mouse_move > 5)
 		{
@@ -359,7 +339,7 @@ function draw_element_item()
 	}
 	
 	#region Continue hierarchy
-	dy += 28
+	dy += itemh
 	
 	if (element.element_type = TYPE_PART && element.extend && !search)
 	{
@@ -367,11 +347,11 @@ function draw_element_item()
 		if (element.shape_list != null && !setting_hide_shapes)
 		{
 			if (((content_x + content_width) - linex > 120))
-				draw_box(linex, itemy + itemh, 1, (28 * ds_list_size(element.shape_list)) - 13, false, c_border, a_border)
+				draw_box(linex, itemy + itemh, 1, (itemh * ds_list_size(element.shape_list)) - ((itemh/2) - 1), false, c_border, a_border)
 			
-			for(var i = 0; i < ds_list_size(element.shape_list); i++)
+			for (var i = 0; i < ds_list_size(element.shape_list); i++)
 			{
-				if ((itemy + itemh + (28 * i) > content_y) && (itemy + (28 * i) < content_y + content_height) && ((content_x + content_width) - linex > 120))
+				if ((itemy + itemh + (itemh * i) > content_y) && (itemy + (itemh * i) < content_y + content_height) && ((content_x + content_width) - linex > 120))
 					draw_box(linex + 1, dy + (itemh/2), 9, 1, false, c_border, a_border)
 				
 				draw_element_item(element.shape_list[|i], dy, increment + 1)

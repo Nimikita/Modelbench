@@ -16,7 +16,7 @@ function view_toolbar_draw(barx, bary, barw, barh)
 	if (program_mode != e_mode.MODELING)
 		return 0
 	
-	content_mouseon = app_mouse_box(dx, dy, dw, dh) && !popup_mouseon && !snackbar_mouseon && !context_menu_mouseon
+	content_mouseon = app_mouse_box(dx, dy, dw, dh) && !popup_mouseon && !toast_mouseon && !context_menu_mouseon
 	
 	if (dh > dw)
 		tip_force_right = true
@@ -27,7 +27,7 @@ function view_toolbar_draw(barx, bary, barw, barh)
 	
 	window_busy = ""
 	
-	if (app_mouse_box(dx - 80, dy - 80, dw + 160, dh + 160) && !popup_mouseon && !snackbar_mouseon && !context_menu_mouseon && menu_panel_ani = 0)
+	if (app_mouse_box(dx - 80, dy - 80, dw + 160, dh + 160) && !popup_mouseon && !toast_mouseon && !context_menu_mouseon)
 		toolset_alpha_goal = 1
 	else
 		toolset_alpha_goal = .25
@@ -43,52 +43,6 @@ function view_toolbar_draw(barx, bary, barw, barh)
 	
 	dy += 4
 	dx += 4
-	
-	// Add part
-	if (draw_button_icon("toolsetaddpart", dx, dy, 28, 28, false, icons.PART_ADD, null, false, "toolsetaddpart"))
-		action_element_create(e_element.PART)
-	
-	if (dw > dh)
-		dx += buttonsize
-	else
-		dy += buttonsize
-	
-	// Add block
-	if (draw_button_icon("toolsetaddblock", dx, dy, 28, 28, false, icons.CUBE_ADD, null, false, "toolsetaddblock"))
-		action_element_create(e_element.BLOCK)
-	
-	if (dw > dh)
-		dx += buttonsize
-	else
-		dy += buttonsize
-	
-	// Add plane
-	if (draw_button_icon("toolsetaddplane", dx, dy, 28, 28, false, icons.PLANE_ADD, null, false, "toolsetaddplane"))
-		action_element_create(e_element.PLANE)
-	
-	if (dw > dh)
-		dx += buttonsize
-	else
-		dy += buttonsize
-	
-	// Add plane (3d)
-	if (draw_button_icon("toolsetaddplane3d", dx, dy, 28, 28, false, icons.PLANE_3D_ADD, null, false, "toolsetaddplane3d"))
-		action_element_create(e_element.PLANE_3D)
-	
-	if (dw > dh)
-		dx += buttonsize
-	else
-		dy += buttonsize
-	
-	if (dw > dh)
-		draw_box(dx, dy, 1, 28, false, c_border, a_border)
-	else
-		draw_box(dx, dy, 28, 1, false, c_border, a_border)
-	
-	if (dw > dh)
-		dx += 4
-	else
-		dy += 4
 	
 	// Select-only tool
 	tip_set_shortcut(setting_key_tool_select)
@@ -132,7 +86,7 @@ function view_toolbar_draw(barx, bary, barw, barh)
 	
 	// Resize tool
 	tip_set_shortcut(setting_key_tool_resize)
-	if (draw_button_icon("toolsettoolresize", dx, dy, 28, 28, tool_selected = e_tool.RESIZE, icons.BOUNDARY_BOX, null, false, "toolsettoolresize"))
+	if (draw_button_icon("toolsettoolresize", dx, dy, 28, 28, tool_selected = e_tool.RESIZE, icons.TRANSFORM, null, false, "toolsettoolresize"))
 		tool_selected = e_tool.RESIZE
 	
 	if (dw > dh)
@@ -162,10 +116,57 @@ function view_toolbar_draw(barx, bary, barw, barh)
 	
 	// Transform tool(Position, rotate, scale)
 	tip_set_shortcut(setting_key_tool_transform)
-	if (draw_button_icon("toolsettooltransform", dx, dy, 28, 28, tool_selected = e_tool.TRANSFORM, icons.TRANSFORM, null, false, "toolsettooltransform"))
+	if (draw_button_icon("toolsettooltransform", dx, dy, 28, 28, tool_selected = e_tool.TRANSFORM, icons.MULTITRANSFORM, null, false, "toolsettooltransform"))
 		tool_selected = e_tool.TRANSFORM
 	
-	draw_set_alpha(1)
 	tip_set_shortcut(-1)
+	
+	if (dw > dh)
+		dx += buttonsize
+	else
+		dy += buttonsize
+	
+	if (dw > dh)
+		draw_box(dx, dy, 1, 28, false, c_border, a_border)
+	else
+		draw_box(dx, dy, 28, 1, false, c_border, a_border)
+	
+	if (dw > dh)
+		dx += 4
+	else
+		dy += 4
+	
+	// Add part
+	if (draw_button_icon("toolsetaddpart", dx, dy, 28, 28, false, icons.PART_ADD, null, false, "toolsetaddpart"))
+		action_element_create(e_element.PART)
+	
+	if (dw > dh)
+		dx += buttonsize
+	else
+		dy += buttonsize
+	
+	// Add block
+	if (draw_button_icon("toolsetaddblock", dx, dy, 28, 28, false, icons.CUBE_ADD, null, false, "toolsetaddblock"))
+		action_element_create(e_element.BLOCK)
+	
+	if (dw > dh)
+		dx += buttonsize
+	else
+		dy += buttonsize
+	
+	// Add plane
+	if (draw_button_icon("toolsetaddplane", dx, dy, 28, 28, false, icons.PLANE_ADD, null, false, "toolsetaddplane"))
+		action_element_create(e_element.PLANE)
+	
+	if (dw > dh)
+		dx += buttonsize
+	else
+		dy += buttonsize
+	
+	// Add plane (3d)
+	if (draw_button_icon("toolsetaddplane3d", dx, dy, 28, 28, false, icons.PLANE_3D_ADD, null, false, "toolsetaddplane3d"))
+		action_element_create(e_element.PLANE_3D)
+	
+	draw_set_alpha(1)
 	tip_force_right = false
 }

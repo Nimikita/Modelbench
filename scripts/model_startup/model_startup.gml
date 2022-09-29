@@ -3,13 +3,14 @@
 function model_startup()
 {
 	globalvar load_format, load_folder, save_folder, el_edit, el_edit_amount, res_edit,
-			  axis_edit, save_id_seed, el_edit_list;
+			  axis_edit, save_id_seed, el_edit_list, save_name_count_map;
 	
 	el_edit = null
 	el_edit_amount = 0
 	el_edit_list = ds_list_create()
 	res_edit = null
 	axis_edit = null
+	save_name_count_map = ds_map_create()
 	
 	save_id = "root"
 	save_id_seed = random_get_seed()
@@ -36,15 +37,9 @@ function model_startup()
 	model_parts = 0
 	model_elements = 0
 	
-	warning_empty_part_names = false
-	warning_same_part_names = false
-	
 	update_vbuffer_list = ds_list_create()
 	
 	// Recover model from previous session
 	if (file_exists_lib(temp_model_backup))
-		snackbar_recover_model()
-	
-	if (setting_show_startup_tips)
-		snackbar_tip()
+		toast_recover_model()
 }

@@ -7,13 +7,13 @@ function view_area_draw()
 	resizemouseon = false
 	
 	// Calculate area
-	view_area_x = panel_area_x + panel_map[?"left"].size_real + panel_map[?"left_secondary"].size_real
+	view_area_x = panel_area_x + panel_map[?"left"].size_real_ani + panel_map[?"left_secondary"].size_real_ani
 	view_area_y = panel_area_y + (panel_area_height * (1 - setting_uv_editor_size))
-	view_area_width = panel_area_width - panel_map[?"left"].size_real - panel_map[?"left_secondary"].size_real - panel_map[?"right_secondary"].size_real - panel_map[?"right"].size_real
+	view_area_width = panel_area_width - panel_map[?"left"].size_real_ani - panel_map[?"left_secondary"].size_real_ani - panel_map[?"right"].size_real_ani - panel_map[?"right_secondary"].size_real_ani
 	view_area_height = panel_area_height * setting_uv_editor_size
 	
 	// Check for resize
-	if (showuveditor && app_mouse_box(view_area_x, view_area_y - 6, view_area_width, 12) && !popup_mouseon && !snackbar_mouseon && !context_menu_mouseon)
+	if (showuveditor && app_mouse_box(view_area_x, view_area_y - 6, view_area_width, 12) && !popup_mouseon && !toast_mouseon && !context_menu_mouseon)
 	{
 		resizemouseon = true
 		mouse_cursor = cr_size_ns

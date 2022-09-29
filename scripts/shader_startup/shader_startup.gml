@@ -3,6 +3,14 @@
 function shader_startup()
 {
 	globalvar shader_map, shader_texture_surface, shader_texture_filter_linear, shader_texture_filter_mipmap;
+	globalvar shader_clip_x, shader_clip_y, shader_clip_width, shader_clip_height, shader_clip_active;
+	
+	// Clip
+	shader_clip_x = 0
+	shader_clip_y = 0
+	shader_clip_width = 0
+	shader_clip_height = 0
+	shader_clip_active = false
 	
 	// Init shaders
 	log("Shader init")
@@ -38,6 +46,7 @@ function shader_startup()
 		new_shader("shader_border")
 		new_shader("shader_alpha_fix")
 		new_shader("shader_alpha_test")
+		new_shader("shader_clip")
 		
 		with (obj_shader)
 		{
@@ -171,6 +180,12 @@ function shader_startup()
 		new_shader_uniform("uTexSize")
 		new_shader_uniform("uColor")
 		new_shader_uniform("uSize")
+	}
+	
+	with (shader_map[?shader_clip])
+	{
+		new_shader_uniform("uBox")
+		new_shader_uniform("uScreenSize")
 	}
 	
 	return true

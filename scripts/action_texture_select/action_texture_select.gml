@@ -19,9 +19,11 @@ function action_texture_select()
 		with (hobj)
 		{
 			save_var_old_value = save_id_get(res_edit)
-			save_var_new_value = (res_edit = listitem_value ? null : save_id_get(listitem_value))
+			save_var_new_value = (res_edit = list_item_script_value ? null : save_id_get(list_item_script_value))
 		}
 		
-		res_edit = (res_edit = listitem_value ? null : listitem_value)
+		res_edit = (res_edit = list_item_script_value ? null : list_item_script_value)
 	}
+	
+	textures_list.update = true
 }

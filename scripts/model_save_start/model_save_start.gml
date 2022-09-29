@@ -5,7 +5,16 @@ function model_save_start(fn)
 {
 	json_save_start(fn)
 	json_save_object_start()
-	json_save_var("name", json_string_encode(model_name))
+	
+	// Name can't be empty
+	if (model_name = "")
+	{
+		json_save_var("name", json_string_encode(" "))
+		json_save_var("name_mb", json_string_encode(""))
+	}
+	else
+		json_save_var("name", json_string_encode(model_name))
+	
 	model_save_texture()
 	
 	if (player_skin)

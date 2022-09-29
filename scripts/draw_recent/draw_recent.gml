@@ -18,7 +18,7 @@ function draw_recent(xx, yy, wid, hei, mode = recent_display_mode)
 	{
 		for (var i = 0; i < recent_list_amount; i++)
 		{
-			var hover = app_mouse_box(xx, recenty, wid, 44) && !popup_mouseon && !snackbar_mouseon && !context_menu_mouseon;
+			var hover = app_mouse_box(xx, recenty, wid, 44) && !popup_mouseon && !toast_mouseon && !context_menu_mouseon;
 			var mouseon = hover;
 			var item = recent_list[|i];
 			
@@ -119,7 +119,7 @@ function draw_recent(xx, yy, wid, hei, mode = recent_display_mode)
 		// Draw list
 		for (var i = liststart; i < recent_list_amount; i++)
 		{
-			var hover = app_mouse_box(xx, recenty, wid, 44) && !popup_mouseon && !snackbar_mouseon && !context_menu_mouseon;
+			var hover = app_mouse_box(xx, recenty, wid, 44) && !popup_mouseon && !toast_mouseon && !context_menu_mouseon;
 			mouseon = hover
 			
 			var item = recent_list_display[|i];

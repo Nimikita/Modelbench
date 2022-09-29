@@ -1,18 +1,28 @@
-/// draw_togglebutton(name, x, y)
+/// draw_togglebutton(name, x, y, [labels, [showcaption]])
 /// @arg name
 /// @arg x
 /// @arg y
+/// @arg [labels
+/// @arg [showcaption]]
 /// @desc Displays togglebutton options
 
 function draw_togglebutton()
 {
-	var name, xx, yy;
+	var name, xx, yy, labels, showcaption;
 	var h, w, buttonx, buttonh, buttoncount, buttonsize, mouseon, script, scriptvalue, axis;
 	name = argument[0]
 	xx = argument[1]
 	yy = argument[2]
+	labels = true
+	showcaption = true
 	
-	h = 52
+	if (argument_count > 3)
+		labels = argument[3]
+	
+	if (argument_count > 4)
+		showcaption = argument[4]
+	
+	h = 32 + (label_height + 8)
 	w = dw
 	
 	if (xx + w < content_x || xx > content_x + content_width || yy + h < content_y || yy > content_y + content_height)
@@ -21,23 +31,45 @@ function draw_togglebutton()
 		return 0
 	}
 	
+	// Label
+	if (showcaption)
+	{
+		draw_set_font(font_label)
+		draw_label(string_limit(text_get(name), dw), xx, yy - 3, fa_left, fa_top, c_text_secondary, a_text_secondary)
+		yy += (label_height + 8)
+	}
+	
 	buttonx = xx
-	buttonh = 28
+	buttonh = 32
 	
 	buttoncount = array_length(togglebutton_name)
-	buttonsize = round(w/buttoncount)
+	buttonsize = w/buttoncount
 	mouseon = false
 	script = null
 	scriptvalue = null
 	axis = X
 	
-	draw_label(text_get(name), xx, yy + 16, fa_left, fa_bottom, c_text_secondary, a_text_secondary, font_label)
-	yy += 24
-	
-	draw_outline(xx, yy, w, buttonh, 1, c_border, a_border)
-	
+	// Draw frame
+	draw_box(xx, yy, w, buttonh, false, c_level_top, draw_get_alpha())
+	draw_outline(xx, yy, w, buttonh, 1, c_border, a_border, true)
 	for (var i = 0; i < buttoncount; i++)
 	{	
+		if (i > 0)
+			draw_box(buttonx, yy + 1, 1, buttonh - 2, false, c_border, a_border)
+		
+		buttonx += buttonsize
+	}
+	buttonx = xx
+	
+	// Draw combo buttons
+	var boxwid;
+	for (var i = 0; i < buttoncount; i++)
+	{	
+		boxwid = buttonsize
+		
+		if (i < (buttoncount - 1))
+			boxwid += 1
+		
 		mouseon = false
 		
 		if (app_mouse_box(buttonx, yy, buttonsize, buttonh) && content_mouseon)
@@ -49,50 +81,61 @@ function draw_togglebutton()
 		microani_set(name + togglebutton_name[i], null, mouseon, mouseon && mouse_left, togglebutton_active[i])
 		
 		// Draw base button
-		var backgroundcolor, backgroundalpha;
-		backgroundcolor = merge_color(c_overlay, c_accent_overlay, microani_arr[e_microani.PRESS])
-		backgroundalpha = lerp(0, a_overlay, min(1.0, microani_arr[e_microani.HOVER] + microani_arr[e_microani.ACTIVE]))
-		backgroundalpha = lerp(backgroundalpha, a_accent_overlay, microani_arr[e_microani.PRESS])
-		draw_box(buttonx, yy, buttonsize, buttonh, false, backgroundcolor, backgroundalpha)
+		var focus, backcolor, backalpha, linecolor, linealpha, contentcolor, contentalpha;
+		focus = max(microani_arr[e_microani.PRESS], microani_arr[e_microani.ACTIVE])
 		
-		var labelcolor, labelalpha;
+		backcolor = merge_color(c_overlay, c_accent_overlay, focus)
+		backalpha = lerp(0, a_overlay, microani_arr[e_microani.HOVER])
+		backalpha = lerp(backalpha, a_accent_overlay, focus)
+		backalpha = lerp(backalpha, 0, microani_arr[e_microani.DISABLED])
+		
+		contentcolor = merge_color(c_text_secondary, c_text_main, microani_arr[e_microani.HOVER])
+		contentcolor = merge_color(contentcolor, c_accent, focus)
+		contentalpha = lerp(a_text_secondary, a_text_main, microani_arr[e_microani.HOVER])
+		contentalpha = lerp(contentalpha, 1, focus)
+		
+		linecolor = merge_color(c_border, c_text_tertiary, microani_arr[e_microani.HOVER])
+		linecolor = merge_color(linecolor, c_accent, focus)
+		linealpha = lerp(0, a_text_tertiary, microani_arr[e_microani.HOVER])
+		linealpha = lerp(linealpha, a_accent, focus)
+		
+		draw_box(buttonx, yy, boxwid, buttonh, false, backcolor, backalpha)
+		
 		var icon = togglebutton_icon[i];
 		
 		var buttonname, totalwidth, startx;
-		buttonname = text_get(togglebutton_name[i])
-		totalwidth = string_width_font(buttonname, font_button) + (icon = null ? 0 : 24 + 8)
-		startx = snap(buttonx + (buttonsize/2) - (totalwidth/2), 2)
+		draw_set_font(font_button)
+		buttonname = string_limit((labels ? string(text_get(togglebutton_name[i])) : ""), boxwid - 16)
+		totalwidth = (labels ? string_width(buttonname) : 0) + (icon = null ? 0 : 24 + 8)
+		startx = floor(buttonx + (boxwid/2) - (totalwidth/2))
 		
-		if (buttonname = "")
+		if (buttonname = "" || !labels)
 		{
-			totalwidth = 20
-			startx = snap(buttonx + (buttonsize/2) - (totalwidth/2), 2)
-			
-			labelcolor = merge_color(c_text_secondary, c_accent, microani_arr[e_microani.ACTIVE])
-			labelalpha = lerp(a_text_secondary, 1, microani_arr[e_microani.ACTIVE])
-		}
-		else
-		{
-			labelcolor = merge_color(c_accent, c_accent_hover, microani_arr[e_microani.HOVER])
-			labelcolor = merge_color(labelcolor, c_accent_pressed, min(1.0, microani_arr[e_microani.PRESS] + microani_arr[e_microani.ACTIVE]))
-			labelalpha = lerp(1, a_accent_hover, microani_arr[e_microani.HOVER])
-			labelalpha = lerp(labelalpha, a_accent_pressed, min(1.0, microani_arr[e_microani.PRESS] + microani_arr[e_microani.ACTIVE]))
+			totalwidth = 24
+			startx = floor(buttonx + (boxwid/2) - (totalwidth/2))
 		}
 		
 		// Icon
 		if (icon != null)
 		{
-			draw_image(spr_icons, icon, startx + 10, yy + (buttonh/2), 1, 1, labelcolor, labelalpha)
-			startx += 20 + 8
+			draw_image(spr_icons, icon, startx + 12, yy + (buttonh/2), 1, 1, contentcolor, contentalpha)
+			startx += 24 + 8
 		}
 		
 		// Text
-		draw_label(buttonname, startx, yy + (buttonh/2), fa_left, fa_middle, labelcolor, labelalpha, font_button)
+		if (labels)
+		{
+			draw_set_font(font_button)
+			draw_label(buttonname, startx, yy + (buttonh/2), fa_left, fa_middle, contentcolor, contentalpha)
+		}
 		
-		if (i > 0)
-			draw_box(buttonx, yy + 4, 1, buttonh - 8, false, c_border, a_border)
+		// Outline
+		draw_outline(buttonx, yy, boxwid, buttonh, 1, c_level_middle, max(focus, microani_arr[e_microani.HOVER]), true)
+		draw_outline(buttonx, yy, boxwid, buttonh, 1, linecolor, linealpha, true)
 		
-		microani_update(mouseon, mouseon && mouse_left, togglebutton_active[i])
+		draw_box_hover(buttonx, yy, boxwid, buttonh, microani_arr[e_microani.PRESS])
+		
+		microani_update(mouseon && !mouse_left, mouseon && mouse_left, togglebutton_active[i])
 		
 		// Execute script with value
 		if (mouseon && mouse_left_released)
@@ -107,24 +150,8 @@ function draw_togglebutton()
 		
 		buttonx += buttonsize
 	}
-	buttonx = xx
 	
-	// Repeat drawing for hover
-	for (var i = 0; i < buttoncount; i++)
-	{
-		mouseon = false
-		
-		if (app_mouse_box(buttonx, yy, buttonsize, buttonh) && content_mouseon)
-			mouseon = true
-		
-		if (mouseon)
-			mouse_cursor = cr_handpoint
-		
-		microani_set(name + togglebutton_name[i], null, mouseon, mouseon && mouse_left, togglebutton_active[i])
-		
-		draw_box_hover(buttonx, yy, buttonsize, buttonh, microani_arr[e_microani.HOVER])
-		buttonx += buttonsize
-	}
+	buttonx = xx
 	
 	// Execute script
 	if (script != null)

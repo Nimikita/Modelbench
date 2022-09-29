@@ -3,7 +3,7 @@
 function settings_menu_overlays()
 {
 	var capwid = text_caption_width("settingsmenuoverlaysgrid", "settingsmenuoverlaysgizmos", "settingsmenuoverlayshighlights", "settingsmenuoverlaysoutlines", "settingsmenuoverlaysoutlineopacity");
-	capwid = max(180, capwid + 32)
+	capwid = max(180, capwid + 48 + dragger_width)
 	
 	dx = content_x + 10
 	dy = content_y + 8
@@ -11,19 +11,19 @@ function settings_menu_overlays()
 	dh = content_height - 16
 	
 	tab_control_switch()
-	draw_switch("settingsmenuoverlaysgrid", dx, dy, setting_overlays_grid, action_setting_overlays_grid, true)
+	draw_switch("settingsmenuoverlaysgrid", dx, dy, setting_overlays_grid, action_setting_overlays_grid)
 	tab_next()
 	
 	tab_control_switch()
-	draw_switch("settingsmenuoverlaysgizmos", dx, dy, setting_overlays_gizmos, action_setting_overlays_gizmos, true)
+	draw_switch("settingsmenuoverlaysgizmos", dx, dy, setting_overlays_gizmos, action_setting_overlays_gizmos)
 	tab_next()
 	
 	tab_control_switch()
-	draw_switch("settingsmenuoverlayshighlights", dx, dy, setting_overlays_highlights, action_setting_overlays_highlights, true)
+	draw_switch("settingsmenuoverlayshighlights", dx, dy, setting_overlays_highlights, action_setting_overlays_highlights)
 	tab_next()
 	
 	tab_control_switch()
-	draw_switch("settingsmenuoverlaysoutlines", dx, dy, setting_overlays_outlines, action_setting_overlays_outlines, true)
+	draw_switch("settingsmenuoverlaysoutlines", dx, dy, setting_overlays_outlines, action_setting_overlays_outlines)
 	tab_next()
 	
 	tab_control_meter()

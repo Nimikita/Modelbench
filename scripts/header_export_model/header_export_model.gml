@@ -2,8 +2,6 @@
 
 function header_export_model()
 {
-	header_menu_panel()
-	
 	draw_image(spr_icons, icons.WARNING_DIAMOND, dx + dw/2, dy, 1, 1, c_warning, 1)
 	dy += 12 + 8
 	
@@ -25,26 +23,26 @@ function header_export_model()
 		text = "exportmodeseperateshapes"
 	
 	tab_control_menu()
-	draw_button_menu("exportmode", e_menu.LIST, dx, dy, dw, 28, export_mode, text_get(text), action_export_mode)
+	draw_button_menu("exportmode", e_menu.LIST, dx, dy, dw, 24, export_mode, text_get(text), action_export_mode)
 	tab_next()
 	
 	tab_control_checkbox()
-	draw_switch("exportselectiononly", dx, dy, export_selection_only, action_export_selection_only, false)
+	draw_switch("exportselectiononly", dx, dy, export_selection_only, action_export_selection_only)
 	tab_next()
 	
 	tab_control_checkbox()
-	draw_switch("exportincludehidden", dx, dy, export_include_hidden, action_export_include_hidden, false)
+	draw_switch("exportincludehidden", dx, dy, export_include_hidden, action_export_include_hidden)
 	tab_next()
 	
 	tab_control_switch()
-	draw_switch("exportunparentparts", dx, dy, export_unparent_parts, action_export_unparent_parts, false, "exportunparentpartshelp")
+	draw_switch("exportunparentparts", dx, dy, export_unparent_parts, action_export_unparent_parts, "exportunparentpartshelp")
 	tab_next()
 	
 	tab_control_switch()
-	draw_switch("exportcombinelocked", dx, dy, export_combine_locked, action_export_combine_locked, false, "", export_mode != e_export.SEPERATE_PARTS)
+	draw_switch("exportcombinelocked", dx, dy, export_combine_locked, action_export_combine_locked, "", export_mode != e_export.SEPERATE_PARTS)
 	tab_next()
 	
-	tab_control(28)
-	draw_button_primary("exportobj", dx, dy, dw, export_start, null, fa_center)
+	tab_control_button_label()
+	draw_button_label("exportobj", floor(dx + dw/2), dy, null, null, e_button.PRIMARY, export_start, e_anchor.CENTER)
 	tab_next()
 }

@@ -3,12 +3,12 @@
 function tab_assets_elements()
 {
 	// Element search
-	tab_control(28)
-	draw_textfield("assetssearchelements", dx, dy, dw, 28, tab.elements.tbx_search.text, tab.elements.tbx_search, action_search, text_get("assetssearchelementscaption"), "none")
+	tab_control(24)
+	draw_textfield("assetssearchelements", dx, dy, dw, 24, tab.elements.tbx_search, action_search, text_get("assetssearchelementscaption"), "none")
 	tab_next()
 	
 	tab_control_switch()
-	draw_switch("assetshideshapes", dx, dy, setting_hide_shapes, action_setting_hide_shapes, false)
+	draw_switch("assetshideshapes", dx, dy, setting_hide_shapes, action_setting_hide_shapes)
 	tab_next()
 	
 	// Check selection release

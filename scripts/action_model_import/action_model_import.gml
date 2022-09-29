@@ -48,5 +48,4 @@ function action_model_import()
 			el_update_part()
 	}
 	textures_list.update = true
-	app_update_name_warning()
 }

@@ -1,4 +1,4 @@
-/// draw_wheel(name, x, y, color, value, min, max, default, snap, limit, textbox, script, [radius, sprite])
+/// draw_wheel(name, x, y, color, value, min, max, default, snap, textbox, script, [radius, sprite])
 /// @arg name
 /// @arg x
 /// @arg y
@@ -8,7 +8,6 @@
 /// @arg max
 /// @arg default
 /// @arg snap
-/// @arg limit
 /// @arg textbox
 /// @arg script
 /// @arg [radius
@@ -16,7 +15,7 @@
 
 function draw_wheel()
 {
-	var name, xx, yy, color, value, modval, minval, maxval, def, snapval, limit, tbx, script, rad, sprite;
+	var name, xx, yy, color, value, modval, minval, maxval, def, snapval, tbx, script, rad, sprite;
 	var capwid, text, labelx, labely, labelw, labeltextw;
 	name = argument[0]
 	xx = argument[1]
@@ -27,14 +26,13 @@ function draw_wheel()
 	maxval = argument[6]
 	def = argument[7]
 	snapval = argument[8]
-	limit = argument[9]
-	tbx = argument[10]
-	script = argument[11]
+	tbx = argument[9]
+	script = argument[10]
 	
-	if (argument_count > 12)
+	if (argument_count > 11)
 	{
-		rad = argument[12]
-		sprite = argument[13]
+		rad = argument[11]
+		sprite = argument[12]
 	}
 	else
 	{
@@ -45,27 +43,28 @@ function draw_wheel()
 	if (xx + rad < content_x || xx - rad > content_x + content_width || yy + rad < content_y || yy - rad > content_y + content_height)
 		return 0
 	
-	context_menu_area(xx - rad, yy - rad, rad * 2, rad * 2, "contextmenuvalue", value, e_value_type.NUMBER, script, def)
+	context_menu_area(xx - rad, yy - rad, rad * 2, rad * 2, "contextmenuvalue", value, e_context_type.NUMBER, script, def)
+	
+	draw_set_font(font_label)
 	
 	modval = mod_fix(value, 360)
-	capwid = string_width_font(text_get(name) + ":", font_label) + 5
-	if (limit)
-		text = string_decimals(modval) + tbx.suffix
-	else
-		text = string_decimals(value) + tbx.suffix
+	capwid = string_width(text_get(name) + ":") + 5
+	text = string_decimals(value) + tbx.suffix
+	
+	draw_set_font(font_digits)
 	
 	labelw = rad
-	labeltextw = capwid + string_width_font(text, font_value)
+	labeltextw = capwid + string_width(text)
 	labelx = xx - (labeltextw/2) + capwid
 	
 	labely = yy + 36
 	
 	// Background
-	draw_image(sprite, 0, xx, yy, 1, 1, c_text_secondary, a_text_secondary)
+	draw_image(sprite, 0, xx, yy, 1, 1, c_border, a_border)
 	
 	// Bar
 	gpu_set_tex_filter(true)
-	draw_image(spr_dial_dash, 0, xx, yy, .5, .5, color, 1, value - 45)
+	draw_image(spr_dial_dash, 0, xx, yy, .5, .5, color, 1, value + 45)
 	gpu_set_tex_filter(false)
 	
 	// Dragging
@@ -89,7 +88,7 @@ function draw_wheel()
 	}
 	
 	// Wheel click
-	if (app_mouse_box(xx - rad - 10, yy - rad - 10, rad * 2 + 20, rad * 2 + 20) && content_mouseon)
+	if (app_mouse_box(xx - rad, yy - rad, rad * 2, rad * 2) && content_mouseon)
 	{
 		mouse_cursor = cr_handpoint
 		
@@ -100,29 +99,6 @@ function draw_wheel()
 			window_focus = name
 			window_busy = name
 			wheel_drag_value = newval
-		}
-	}
-	
-	// Textbox
-	draw_label(text_get(name) + ":", xx - (labeltextw/2), labely, fa_left, fa_middle, c_text_secondary, a_text_secondary, font_label)
-	draw_set_font(font_value)
-	if (window_focus = string(tbx))
-	{
-		if (textbox_draw(tbx, labelx, labely - 8, labeltextw, 18))
-			script_execute(script, clamp(string_get_real(tbx.text, 0), minval, maxval), false)
-	}
-	else
-		draw_label(text, labelx, labely, fa_left, fa_middle, c_text_main, a_text_main, font_value)
-	
-	// Textbox click
-	if (app_mouse_box(labelx - capwid, labely - 8, labeltextw, 16))
-	{
-		mouse_cursor = cr_handpoint
-		
-		if (mouse_left_pressed)
-		{
-			tbx.text = string_decimals(value)
-			window_focus = string(tbx)
 		}
 	}
 }

@@ -1,11 +1,11 @@
-/// draw_accent_item(x, y, width, height, index)
+/// draw_button_accent(x, y, width, height, index)
 /// @arg x
 /// @arg y
 /// @arg width
 /// @arg height
 /// @arg index
 
-function draw_accent_item(xx, yy, width, height, index)
+function draw_button_accent(xx, yy, width, height, index)
 {
 	var mouseon, mouseclick, accent;
 	width = floor(width)
@@ -26,6 +26,7 @@ function draw_accent_item(xx, yy, width, height, index)
 		mouse_cursor = cr_handpoint
 	
 	microani_set("accentlistitem" + string(index), null, mouseon, mouseclick, setting_accent = index, 0.5)
+	microani_update(mouseon, mouseclick, setting_accent = index)
 	
 	if (accent != null)
 	{
@@ -52,16 +53,8 @@ function draw_accent_item(xx, yy, width, height, index)
 	if (mouseon && mouse_left_released)
 	{
 		setting_accent = index
-		
-		if (index < 9)
-		{	
-			if (popup = popup_colorpicker && popup_colorpicker.value_name = "settingsaccentcolor")
-				popup_close()
-			update_interface_wait = true
-		}
+		update_interface_wait = true
 		
 		return true
 	}
-	
-	microani_update(mouseon, mouseclick, setting_accent = index)
 }

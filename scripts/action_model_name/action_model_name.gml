@@ -24,5 +24,4 @@ function action_model_name(name)
 	}
 	
 	assets.model_properties.tbx_model_name.text = model_name
-	app_update_name_warning()
 }
