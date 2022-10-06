@@ -208,18 +208,13 @@ function uv_editor_draw(viewx, viewy, vieww, viewh)
 				
 				for (var j = 0; j <= ceil(boxw/texw); j++)
 				{
-					var alpha = 0.125
-					
-					if (xrepeat = texx || yrepeat = texy)
-						alpha = 0.25
-					
 					if (xrepeat = texx && yrepeat = texy)
 					{
 						xrepeat += texw
 						continue
 					}
 					
-					draw_texture(uv_editor_tex, boxx + xrepeat, boxy + yrepeat, zoom, zoom, c_white, alpha * percent(maxrepeat, 15, 10))
+					draw_texture(uv_editor_tex, boxx + xrepeat, boxy + yrepeat, zoom, zoom, c_white, 0.125 * percent(maxrepeat, 15, 10))
 					xrepeat += texw
 				}
 				
@@ -235,6 +230,8 @@ function uv_editor_draw(viewx, viewy, vieww, viewh)
 	draw_line_ext(boxx, texy, boxx + boxw, texy, c_border, a_border)
 	draw_line_ext(boxx, texy + texh + 1, boxx + boxw, texy + texh + 1, c_border, a_border)
 	
+	gpu_set_blendmode_ext(bm_inv_dest_color, bm_inv_src_color)
+	
 	// Pixel outline(zoom required multiplied by texscale for bigger textures)
 	var snapval = (setting_snap ? max(setting_snap_size_uv, .125) : 1);
 	if (zoom * texscale > 5)
@@ -247,28 +244,30 @@ function uv_editor_draw(viewx, viewy, vieww, viewh)
 			for (var i = texscale; i < texture_width(uv_editor_tex); i += texscale)
 			{
 				if (texx + floor(i * zoom) > boxx && texx + floor(i * zoom) < boxx + boxw)
-					draw_line_ext(texx + floor(i * zoom), texy, texx + floor(i * zoom), texy + texh, c_border, 0.2 * alpha)
+					draw_line_ext(texx + floor(i * zoom) + 1, texy, texx + floor(i * zoom) + 1, texy + texh, merge_color(c_black, c_white, 0.03 * alpha), 1)
 			}
 			
 			for (var i = texscale; i < texture_height(uv_editor_tex); i += texscale)
 			{
 				if (texy + floor(i * zoom) > boxy && texy + floor(i * zoom) < boxy + boxh)
-					draw_line_ext(texx, texy + floor(i * zoom), texx + texw, texy + floor(i * zoom), c_border, 0.2 * alpha)
+					draw_line_ext(texx, texy + floor(i * zoom) + 1, texx + texw, texy + floor(i * zoom) + 1, merge_color(c_black, c_white, 0.03 * alpha), 1)
 			}
 		}
 		
 		for (var i = (texscale * snapval); i < texture_width(uv_editor_tex); i += (texscale * snapval))
 		{
 			if (texx + floor(i * zoom) > boxx && texx + floor(i * zoom) < boxx + boxw)
-				draw_line_ext(texx + floor(i * zoom), texy, texx + floor(i * zoom), texy + texh, c_border, 0.075 * alpha)
+				draw_line_ext(texx + floor(i * zoom) + 1, texy, texx + floor(i * zoom) + 1, texy + texh, merge_color(c_black, c_white, 0.15 * alpha), 1)
 		}
 		
 		for (var i = (texscale * snapval); i < texture_height(uv_editor_tex); i += (texscale * snapval))
 		{
 			if (texy + floor(i * zoom) > boxy && texy + floor(i * zoom) < boxy + boxh)
-				draw_line_ext(texx, texy + floor(i * zoom), texx + texw, texy + floor(i * zoom), c_border, 0.075 * alpha)
+				draw_line_ext(texx, texy + floor(i * zoom) + 1, texx + texw, texy + floor(i * zoom) + 1, merge_color(c_black, c_white, 0.15 * alpha), 1)
 		}
 	}
+	
+	gpu_set_blendmode(bm_normal)
 	
 	// Text
 	/*
@@ -300,11 +299,11 @@ function uv_editor_draw(viewx, viewy, vieww, viewh)
 		
 		if (type = "block")
 		{
-			draw_box(texx + (shapeuv[X] - shapesize[Y]), texy + shapeuv[Y], shapesize[Y] + shapesize[X] + shapesize[Y] + shapesize[X], shapesize[Z], false, c_text_main, .2)
-			draw_box(texx + shapeuv[X], texy + shapeuv[Y] - shapesize[Y], shapesize[X] * 2, shapesize[Y], false, c_text_main, .2)
+			draw_box(texx + (shapeuv[X] - shapesize[Y]), texy + shapeuv[Y], shapesize[Y] + shapesize[X] + shapesize[Y] + shapesize[X], shapesize[Z], false, c_accent_pressed, .1)
+			draw_box(texx + shapeuv[X], texy + shapeuv[Y] - shapesize[Y], shapesize[X] * 2, shapesize[Y], false, c_accent_pressed, .1)
 		}
 		else
-			draw_box(texx + shapeuv[X], texy + shapeuv[Y], shapesize[X], shapesize[Z], false, c_text_main, .2)
+			draw_box(texx + shapeuv[X], texy + shapeuv[Y], shapesize[X], shapesize[Z], false, c_accent_pressed, .1)
 	}
 	
 	// Stop drawing if we aren't editing any shapes

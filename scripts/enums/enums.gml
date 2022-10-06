@@ -547,6 +547,7 @@ function enums()
 		NOTE_SMALL,
 		OVERLAYS,
 		PALETTE,
+		PAN,
 		PART,
 		PART_ADD,
 		PART_IMPORT,
@@ -701,6 +702,7 @@ function enums()
 		WORKBENCH,
 		WORLD,
 		WORLD_SMALL,
-		YOUTUBE
+		YOUTUBE,
+		ZOOM
 	}
 }

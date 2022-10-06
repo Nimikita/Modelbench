@@ -47,6 +47,7 @@ function shader_startup()
 		new_shader("shader_alpha_fix")
 		new_shader("shader_alpha_test")
 		new_shader("shader_clip")
+		new_shader("shader_ground")
 		
 		with (obj_shader)
 		{
@@ -83,6 +84,7 @@ function shader_startup()
 		new_shader_uniform("uBrightness")
 		new_shader_uniform("uLightColor")
 		new_shader_uniform("uAmbientColor")
+		new_shader_uniform("uCameraDirection")
 	}
 	
 	with (shader_map[?shader_sky])
@@ -186,6 +188,14 @@ function shader_startup()
 	{
 		new_shader_uniform("uBox")
 		new_shader_uniform("uScreenSize")
+	}
+	
+	with (shader_map[?shader_ground])
+	{
+		new_shader_uniform("uFade")
+		new_shader_uniform("uFadeColor")
+		new_shader_uniform("uFadeStart")
+		new_shader_uniform("uFadeEnd")
 	}
 	
 	return true

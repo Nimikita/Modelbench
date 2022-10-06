@@ -100,21 +100,12 @@
 		"newupdatedesc": "%1 is available to download.",
 		"savemodel": "Model saved successfully!",
 		"saveimage": "Image saved successfully!",
-		"openimage": "OPEN IMAGE",
+		"openimage": "Open image",
 		"button/": {
-			"download": "DOWNLOAD NOW",
-			"update": "UPDATE",
-			"remindmelater": "REMIND ME LATER"
+			"download": "Download now",
+			"update": "Update",
+			"remindmelater": "Remind me later"
 		}
-	},
-	"colorpicker/": {
-		"r": "R",
-		"g": "G",
-		"b": "B",
-		"h": "H",
-		"s": "S",
-		"v": "V",
-		"hex": "Hex"
 	},
 	"contextmenu/": {
 		"keycontrolreset": "Reset shortcut",
@@ -123,6 +114,11 @@
 		"scaleseperate": "Seperate XYZ",
 		"centeraxis": "Center pivot axis",
 		"resetview": "Reset view",
+		"move": "Move to...",
+		"left": "Left",
+		"right": "Right",
+		"bottom": "Bottom",
+		"top": "Top",
 		"value/": {
 			"on": "On",
 			"off": "Off",
@@ -236,6 +232,8 @@
 		"shadedmode": "Shaded mode",
 		"texturedmode": "Textured mode",
 		"walknav": "Toggle walk navigation",
+		"zoom": "Zoom",
+		"pan": "Pan",
 		"blockybendingenable": "Enable blocky bending",
 		"blockybendingdisable": "Disable blocky bending",
 		"uveditor/": {
@@ -280,8 +278,7 @@
 		{
 			"size": "Size",
 			"mode": "Mode",
-			"mode/":
-			{
+			"mode/": {
 				"absolute": "Absolute",
 				"local": "Local"
 			}
@@ -315,7 +312,7 @@
 			"scale": "Scale",
 			"uv": "Size & UVs",
 			"absolute": "Absolute snapping",
-			"absolutetip": "Snap values to a grid, instead of relative to the current value.",
+			"absolutetip": "Snap values to a grid, instead of relative to the current value."
 		},
 		"overlays/": {
 			"grid": "Grid",
@@ -399,7 +396,7 @@
 		"movebelow": "Move below %1",
 		"parentto": "Parent to %1",
 		"roottexture": "Root texture",
-		"addtexture": "ADD TEXTURE",
+		"addtexture": "Add texture",
 		"texturesize": "%1x%2 pixels",
 		"texturescale": "Scale",
 		"defaulttexture": "default"
@@ -541,11 +538,11 @@
 			"1024": "1024px"
 		},
 		"includebackground": "Include background",
-		"exportimage": "EXPORT IMAGE"
+		"exportimage": "Export image"
 	},
 	"openmodel/": {
 		"recentmodels": "Recent models",
-		"browse": "BROWSE..."
+		"browse": "Browse..."
 	},
 	"export/": {
 		"disclaimer": "Blend color, Mix color, Opacity, Brightness, Invert, Face camera, Hover, Hide Front, Hide Back, Wind, and Render depth settings are not supported!",
@@ -561,7 +558,7 @@
 			"seperateparts": "Parts as objects",
 			"seperateshapes": "Shapes as objects"
 		},
-		"obj": "EXPORT OBJ",
+		"obj": "Export .obj",
 		"stage/": {
 			"total": "Exporting model OBJ...",
 			"done": "(%1% Done)",
@@ -629,9 +626,9 @@
 		},
 		"theme": "Theme",
 		"theme/": {
-			"light": "LIGHT",
-			"dark": "DARK",
-			"darker": "DARKER"
+			"light": "Light",
+			"dark": "Dark",
+			"darker": "Darker"
 		},
 		"accentcolor": "Accent color",
 		"language": "Language",
@@ -640,12 +637,11 @@
 		"sharedtextureuvs": "Display shared texture UVs",
 		"sharedtextureuvshelp": "Displays shapes that share a texture in the UV editor.",
 		"reducedmotion": "Reduced motion",
-		"restoredefaults": "RESTORE DEFAULTS",
+		"restoredefaults": "Restore defaults",
 		"looksensitivity": "Look sensitivity",
-		"smoothcamera": "Smooth camera",
 		"viewportmousecontrols": "Viewport mouse controls",
-		"viewportmousecontrolsleft": "LEFT CLICK",
-		"viewportmousecontrolsmiddle": "MIDDLE CLICK"
+		"viewportmousecontrolsleft": "Left click",
+		"viewportmousecontrolsmiddle": "Middle click"
 	},
 	"about/": {
 		"version": "Version %1",
@@ -656,7 +652,7 @@
 		"uibranding": "UI & BRANDING",
 		"specialthanks": "SPECIAL THANKS",
 		"betatesting": "BETA TESTING",
-		"donate": "DONATE"
+		"donate": "Donate"
 	},
 	"shortcut/": {
 		"select": "Select",

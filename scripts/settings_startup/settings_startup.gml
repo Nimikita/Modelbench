@@ -36,7 +36,6 @@ function settings_startup()
 	setting_adjust_pivot_resize = true
 	
 	action_controls_reset()
-	setting_smooth_camera = false
 	setting_viewport_controls_middle = false
 	
 	setting_theme = theme_light
@@ -101,6 +100,7 @@ function settings_startup()
 	// UV editor
 	setting_show_uv_editor = false
 	setting_uv_editor_size = 0.5
+	setting_uv_editor_location = "left"
 	
 	// Snap
 	setting_snap = false

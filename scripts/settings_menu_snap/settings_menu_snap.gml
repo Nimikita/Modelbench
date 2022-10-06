@@ -35,5 +35,4 @@ function settings_menu_snap()
 	
 	settings_menu_w = capwid
 	settings_menu_h = dy - content_y 
-	toolbar_viewport_alpha_goal = 1
 }

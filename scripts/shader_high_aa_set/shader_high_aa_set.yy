@@ -3,7 +3,7 @@
   "isCompatibility": false,
   "parent": {
     "name": "Set",
-    "path": "folders/Scripts/Render/Shaders/Set.yy",
+    "path": "folders/Render/Shaders/Set.yy",
   },
   "resourceVersion": "1.0",
   "name": "shader_high_aa_set",

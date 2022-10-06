@@ -8,6 +8,7 @@ function action_group_reset()
 	switch (group)
 	{
 		case e_context_group.POSITION: vid = e_value.POS_X; size = 3; break;
+		case e_context_group.PIVOT_OFFSET: vid = e_value.OFFSET_X; size = 3; break;
 		case e_context_group.ROTATION: vid = e_value.ROT_X; size = 3; break;
 		case e_context_group.SIZE: vid = e_value.WIDTH; size = 3; break;
 		case e_context_group.SCALE: vid = e_value.SCA_X; size = 3; break;

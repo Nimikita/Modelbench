@@ -82,7 +82,6 @@ function settings_load()
 		
 		setting_look_sensitivity = value_get_real(controlsmap[?"look_sensitivity"], setting_look_sensitivity)
 		
-		setting_smooth_camera = value_get_real(controlsmap[?"smooth_camera"], setting_smooth_camera)
 		setting_viewport_controls_middle = value_get_real(controlsmap[?"viewport_controls_middle"], setting_viewport_controls_middle)
 	}
 	
@@ -124,6 +123,7 @@ function settings_load()
 		
 		setting_show_uv_editor = value_get_real(interfacemap[?"show_uv_editor"], setting_show_uv_editor)
 		setting_uv_editor_size = value_get_real(interfacemap[?"uv_editor_size"], setting_uv_editor_size)
+		setting_uv_editor_location = value_get_string(interfacemap[?"uv_editor_location"], setting_uv_editor_location)
 		
 		setting_adjust_pivot_resize = value_get_real(interfacemap[?"adjust_pivot_resize"], setting_adjust_pivot_resize)
 		setting_show_shortcuts_bar = value_get_real(interfacemap[?"show_shortcuts_bar"], setting_show_shortcuts_bar)

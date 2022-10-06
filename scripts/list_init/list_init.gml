@@ -120,7 +120,7 @@ function list_init(name)
 			if (context_menu_group != null && context_menu_group = e_context_group.SCALE)
 			{
 				var text = (element_editor.transform.scale_all ? "contextmenuseperatescale" : "contextmenucombinescale");
-				list_item_add(text_get(text), null, "", null, icons.SCALE, null, action_category_combine_scale, true)
+				list_item_add(text_get(text), null, "", null, icons.SCALE, null, action_group_combine_scale, true)
 			}
 			
 			// Offset centering
@@ -178,18 +178,18 @@ function list_init(name)
 		
 		case "contextmenutexture":
 		{
-			list_item_add(text_get("contextmenutexturesetmain"), null, "", null, icons.STAR, null, action_texture_set_main, true)
+			list_item_add(text_get("contextmenutexturesetmain"), context_menu_value, "", null, icons.STAR, null, action_texture_set_main, true)
 			list_item_last.disabled = (context_menu_value = app.res)
 			
-			list_item_add(text_get("contextmenutextureremove"), null, "", null, icons.DELETE, null, action_texture_remove, false)
+			list_item_add(text_get("contextmenutextureremove"), context_menu_value, "", null, icons.DELETE, null, action_texture_remove, false)
 			list_item_last.disabled = (context_menu_value = app.res)
 			
-			list_item_add(text_get("contextmenutexturereplace"), null, "", null, icons.REPLACE, null, action_texture_replace, false)
+			list_item_add(text_get("contextmenutexturereplace"), context_menu_value, "", null, icons.REPLACE, null, action_texture_replace, false)
 			
-			list_item_add(text_get("contextmenutexturerefresh"), null, "", null, icons.REFRESH, null, action_texture_refresh, false)
+			list_item_add(text_get("contextmenutexturerefresh"), context_menu_value, "", null, icons.REFRESH, null, action_texture_refresh, false)
 			list_item_last.disabled = (context_menu_value.filepath = "")
 			
-			list_item_add(text_get("contextmenutexturesaveuvmap"), null, "", null, icons.TEXTURE, null, action_texture_save_uv_map, false)
+			list_item_add(text_get("contextmenutexturesaveuvmap"), context_menu_value, "", null, icons.TEXTURE, null, action_texture_save_uv_map, false)
 			break
 		}
 		
@@ -239,7 +239,7 @@ function list_init(name)
 		{
 			if (context_menu_value = view_cam_viewport)
 			{
-				list_item_add(text_get("contextmenuelementadd"), null, "", null, icons.PLUS, icons.CHEVRON_RIGHT, null, true)
+				list_item_add(text_get("contextmenuelementadd"), null, "", null, icons.PLUS, icons.CHEVRON_RIGHT_TINY, null, true)
 				list_item_last.context_menu_name = "contextmenuviewportaddelement"
 				
 				list_item_add(text_get("contextmenuelementrename"), null, text_control_name(setting_key_rename), null, icons.RENAME, null, action_el_rename_start, false)
@@ -254,7 +254,30 @@ function list_init(name)
 				list_item_add(text_get("contextmenuviewportselectall"), null, text_control_name(setting_key_select_all), null, icons.SELECT_ALL, null, action_el_select_all, true)
 			}
 			
-			list_item_add(text_get("contextmenuresetview"), null, "", null, icons.RESET, null, camera_reset_context_menu)
+			if (setting_show_uv_editor)
+			{
+				list_item_add(text_get("contextmenumove"), null, "", null, icons.ELLIPSIS_VERTICAL, icons.CHEVRON_RIGHT_TINY, null, true)
+				list_item_last.context_menu_name = "contextmenuviewportmove"
+			}
+			
+			list_item_add(text_get("contextmenuresetview"), null, "", null, icons.RESET, null, camera_reset_context_menu, !setting_show_uv_editor)
+		
+			break
+		}
+		
+		case "contextmenuviewportmove":
+		{
+			list_item_add(text_get("contextmenuleft"), "right", "", null, null, null, uv_editor_move)
+			list_item_last.toggled = (setting_uv_editor_location = "right")
+			
+			list_item_add(text_get("contextmenuright"), "left", "", null, null, null, uv_editor_move)
+			list_item_last.toggled = (setting_uv_editor_location = "left")
+			
+			list_item_add(text_get("contextmenubottom"), "top", "", null, null, null, uv_editor_move)
+			list_item_last.toggled = (setting_uv_editor_location = "top")
+			
+			list_item_add(text_get("contextmenutop"), "bottom", "", null, null, null, uv_editor_move)
+			list_item_last.toggled = (setting_uv_editor_location = "bottom")
 			
 			break
 		}
@@ -277,7 +300,27 @@ function list_init(name)
 		
 		case "contextmenuuveditor":
 		{
+			list_item_add(text_get("contextmenumove"), null, "", null, icons.ELLIPSIS_VERTICAL, icons.CHEVRON_RIGHT_TINY, null)
+			list_item_last.context_menu_name = "contextmenuuveditormove"
+			
 			list_item_add(text_get("contextmenuresetview"), null, "", null, icons.RESET, null, uv_editor_reset_view)
+			break
+		}
+		
+		case "contextmenuuveditormove":
+		{
+			list_item_add(text_get("contextmenuleft"), "left", "", null, null, null, uv_editor_move)
+			list_item_last.toggled = (setting_uv_editor_location = "left")
+			
+			list_item_add(text_get("contextmenuright"), "right", "", null, null, null, uv_editor_move)
+			list_item_last.toggled = (setting_uv_editor_location = "right")
+			
+			list_item_add(text_get("contextmenubottom"), "bottom", "", null, null, null, uv_editor_move)
+			list_item_last.toggled = (setting_uv_editor_location = "bottom")
+			
+			list_item_add(text_get("contextmenutop"), "top", "", null, null, null, uv_editor_move)
+			list_item_last.toggled = (setting_uv_editor_location = "top")
+			
 			break
 		}
 		

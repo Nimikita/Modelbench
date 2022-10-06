@@ -55,7 +55,7 @@ function app_update_mouse()
 	window_scroll_focus_prev = window_scroll_focus
 	window_scroll_focus = ""
 	
-	// Double click
+	#region Double click
 	if (mouse_still = 0)
 	{
 		mouse_click_count = 0
@@ -89,4 +89,6 @@ function app_update_mouse()
 	
 	if (mouse_left_pressed && mouse_click_count = 0)
 		mouse_click_count++
+		
+	#endregion
 }

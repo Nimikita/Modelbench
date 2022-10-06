@@ -97,6 +97,8 @@ function view_update(view, cam)
 		if ((setting_viewport_controls_middle && mouse_middle) && keyboard_check(vk_shift))
 		{
 			window_busy = "viewpancamera"
+			view_click_x = display_mouse_get_x()
+			view_click_y = display_mouse_get_y()
 			window_focus = string(view)
 		}
 	}
@@ -110,6 +112,23 @@ function view_update(view, cam)
 		{
 			if (mouse_wheel <> 0)
 				view_cam.zoom_goal = clamp(view_cam.zoom_goal * (1 + 0.25 * mouse_wheel), cam_near, cam_far)
+		}
+	}
+	
+	if (window_busy = "viewzoom")
+	{
+		mouse_cursor = cr_none
+		
+		view_cam.zoom += (display_mouse_get_y() - view_click_y) / 2
+		view_cam.zoom = clamp(view_cam.zoom, cam_near, cam_far)
+		view_cam.zoom_goal = view_cam.zoom
+		
+		display_mouse_set(view_click_x, view_click_y)
+		
+		if (mouse_left_released)
+		{
+			app_mouse_clear()
+			window_busy = ""
 		}
 	}
 	
@@ -147,6 +166,8 @@ function view_update(view, cam)
 			
 			if ((!setting_viewport_controls_middle && mouse_left) && mouse_move > 5 && keyboard_check(vk_shift))
 			{
+				view_click_x = display_mouse_get_x()
+				view_click_y = display_mouse_get_y()
 				window_busy = "viewpancamera"
 				window_focus = string(view)
 			}
@@ -178,7 +199,6 @@ function view_update(view, cam)
 		if (window_busy = "viewmovecamera" || window_busy = "viewmovecameratoggle")
 		{
 			mouse_cursor = cr_none
-			
 			camera_control_move(cam, view_click_x, view_click_y)
 			
 			if (!mouse_right && window_busy = "viewmovecamera")
@@ -187,7 +207,7 @@ function view_update(view, cam)
 				window_busy = ""
 			}
 			
-			if (mouse_left_pressed || mouse_right_pressed && window_busy = "viewmovecameratoggle")
+			if ((mouse_left_released || mouse_right_released) && window_busy = "viewmovecameratoggle")
 			{
 				app_mouse_clear()
 				camera_set_focus()
@@ -196,8 +216,9 @@ function view_update(view, cam)
 		}
 		
 		// Pan camera
-		if (window_busy = "viewpancamera")
+		if (window_busy = "viewpancamera" || window_busy = "viewpan")
 		{
+			mouse_cursor = cr_none
 			camera_control_pan()
 			
 			if (setting_viewport_controls_middle ? !mouse_middle : !mouse_left)
@@ -205,23 +226,6 @@ function view_update(view, cam)
 				camera_set_focus()
 				window_busy = ""
 			}
-		}
-		
-		// Smoothen angles
-		if ((view_cam.angle_off_xy != 0 || view_cam.angle_off_z != 0) && fps > 30 && setting_smooth_camera) // Doesn't like low FPS
-		{
-			view_cam.angle_off_xy -= view_cam.angle_off_xy / (4 / delta)
-			view_cam.angle_off_z -= view_cam.angle_off_z / (4 / delta)
-			
-			view_cam.angle_xy += view_cam.angle_off_xy
-			view_cam.angle_z += view_cam.angle_off_z
-			view_cam.angle_z = clamp(view_cam.angle_z, -89.9, 89.9)
-			
-			view_cam.angle_look_xy += view_cam.angle_off_xy
-			view_cam.angle_look_z -= view_cam.angle_off_z
-			view_cam.angle_look_z = clamp(view_cam.angle_look_z, -89.9, 89.9)
-			
-			camera_set_from()
 		}
 	}
 }

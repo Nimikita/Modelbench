@@ -106,6 +106,8 @@ function value_animation() constructor
 		value_offset = val
 		value_ani_offset = val
 		value_ani_offset_ease = val
+		
+		value_goal = val
 	}
 	
 	static update = function(spd)
@@ -127,11 +129,13 @@ function value_animation() constructor
 		}
 		else
 		{
-			if (value != value_prev)
+			if (value != value_prev && (value_ani_linear = value_goal))
 			{
 				value_base = value_ani_linear
 				value_prev = value
 				value_ani_offset = 0.0
+				
+				value_goal = value
 				
 				if (!value)
 					value_offset = -value_base

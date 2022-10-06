@@ -56,6 +56,10 @@ function camera_control_move(cam, lockx, locky)
 	view_cam.from[Y] += yd * spdm
 	view_cam.from[Z] += zd * spdm
 	
+	view_cam.focus[X] += xd * spdm
+	view_cam.focus[Y] += yd * spdm
+	view_cam.focus[Z] += zd * spdm
+	
 	// Reset
 	if (keyboard_check_pressed(setting_key_reset[e_shortcut.KEY]))
 		camera_reset()

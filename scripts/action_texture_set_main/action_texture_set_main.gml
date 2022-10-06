@@ -27,7 +27,7 @@ function action_texture_set_main()
 		with (hobj)
 			history_save_var(other.id, save_id_get(other.res), save_id_get(tex))
 		
-		res = tex
+		app.res = tex
 	}
 	
 	with (app)

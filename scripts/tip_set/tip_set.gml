@@ -65,8 +65,19 @@ function tip_set()
 			tip_y = yy + floor(tip_y) + h + 6
 			
 			tip_right = false
+			tip_left = false
 			
-			if (tip_force_right)
+			if (tip_force_left)
+			{
+				tip_left = true
+				tip_arrow_x = xx - 14
+				tip_arrow_y = yy + floor(h/2)
+				tip_arrow_yscale = 1
+				
+				tip_x = xx - (tip_w + 14)
+				tip_y = yy + floor(h/2 - tip_h/2)
+			}
+			else if (tip_force_right)
 			{
 				tip_right = true
 				tip_arrow_x = xx + w + 14

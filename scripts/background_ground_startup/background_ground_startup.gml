@@ -16,8 +16,8 @@ function background_ground_startup()
 	// Axis divide line
 	background_ground_axis_vbuffer = vbuffer_start()
 	vertex_add(vec3(0), vec3(0), vec2(0))
-	vertex_add(point3D(-16 * 8, 0, 0), vec3(0), vec2(0))
-	vertex_add(point3D(16 * 8, 0, 0), vec3(0), vec2(0))
+	vertex_add(point3D(-25 * 8, 0, 0), vec3(0), vec2(0))
+	vertex_add(point3D(25 * 8, 0, 0), vec3(0), vec2(0))
 	vbuffer_done(null, false)
 	
 	// Ground arrow
@@ -60,30 +60,102 @@ function background_ground_startup()
 	
 	// Grid ground
 	vertex_rgb = c_black
-	background_ground_vbuffer = vbuffer_start()
+	background_ground_vbuffer_light = vbuffer_start()
 	vertex_add(vec3(0), vec3(0), vec2(0))
 	
-	vertex_rgb = c_dkgray
+	vertex_rgb = c_white
 	
-	for (var i = -16; i < 17; i++)
+	for (var i = -25; i < 26; i++)
 	{
 		if (i = 0)
 			continue
 		
-		vertex_add(point3D(-16 * 8, i * 8, 0), vec3(0), vec2(0))
-		vertex_add(point3D(16 * 8, i * 8, 0), vec3(0), vec2(0))
+		if (mod_fix(i, 5) = 0)
+			continue
+		
+		vertex_add(point3D(-25 * 8, i * 8, 0), vec3(0), vec2(0))
+		vertex_add(point3D(25 * 8, i * 8, 0), vec3(0), vec2(0))
 	}
 	
-	for (var i = -16; i < 17; i++)
+	for (var i = -25; i < 26; i++)
 	{
 		if (i = 0)
 			continue
 		
-		vertex_add(point3D(i * 8, -16 * 8, 0), vec3(0), vec2(0))
-		vertex_add(point3D(i * 8, 16 * 8, 0), vec3(0), vec2(0))
+		if (mod_fix(i, 5) = 0)
+			continue
+		
+		vertex_add(point3D(i * 8, -25 * 8, 0), vec3(0), vec2(0))
+		vertex_add(point3D(i * 8, 25 * 8, 0), vec3(0), vec2(0))
 	}
 	
 	vbuffer_done(null, false)
+	
+	
+	
+	background_ground_vbuffer = vbuffer_start()
+	vertex_add(vec3(0), vec3(0), vec2(0))
+	
+	vertex_rgb = c_white
+	
+	for (var i = -25; i < 26; i++)
+	{
+		if (i = 0)
+			continue
+		
+		if (mod_fix(i, 5) != 0)
+			continue
+		
+		vertex_add(point3D(-25 * 8, i * 8, 0), vec3(0), vec2(0))
+		vertex_add(point3D(25 * 8, i * 8, 0), vec3(0), vec2(0))
+	}
+	
+	for (var i = -25; i < 26; i++)
+	{
+		if (i = 0)
+			continue
+		
+		if (mod_fix(i, 5) != 0)
+			continue
+		
+		vertex_add(point3D(i * 8, -25 * 8, 0), vec3(0), vec2(0))
+		vertex_add(point3D(i * 8, 25 * 8, 0), vec3(0), vec2(0))
+	}
+	
+	vbuffer_done(null, false)
+	
+	
+	background_ground_vbuffer_pixel = vbuffer_start()
+	vertex_add(vec3(0), vec3(0), vec2(0))
+	
+	vertex_rgb = c_white
+	
+	for (var i = -25; i < 25; i += 1/8)
+	{
+		if (i = 0)
+			continue
+		
+		if (frac(i) = 0)
+			continue
+		
+		vertex_add(point3D(-25 * 8, i * 8, 0), vec3(0), vec2(0))
+		vertex_add(point3D(25 * 8, i * 8, 0), vec3(0), vec2(0))
+	}
+	
+	for (var i = -25; i < 25; i += 1/8)
+	{
+		if (i = 0)
+			continue
+		
+		if (frac(i) = 0)
+			continue
+		
+		vertex_add(point3D(i * 8, -25 * 8, 0), vec3(0), vec2(0))
+		vertex_add(point3D(i * 8, 25 * 8, 0), vec3(0), vec2(0))
+	}
+	
+	vbuffer_done(null, false)
+	
 	
 	vertex_rgb = c_white
 }

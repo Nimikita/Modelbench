@@ -5,7 +5,7 @@ uniform vec4 uMixColor;
 uniform float uBrightness;
 uniform vec4 uHighlightColor;
 
-uniform vec3 uCameraPosition;
+uniform vec3 uCameraDirection;
 uniform vec4 uAmbientColor;
 uniform vec4 uLightColor;
 
@@ -22,12 +22,32 @@ void main()
 	baseColor.rgb = mix(baseColor.rgb, uMixColor.rgb, uMixColor.a); // Mix
 	baseColor.rgb = mix(baseColor.rgb, uHighlightColor.rgb, uHighlightColor.a); // Highlight
 	
-	// Diffuse factor
-	float dif = max(0.0, dot(normalize(vNormal), normalize(uCameraPosition)));	
-	dif = clamp(dif, 0.0, 1.0);
+	// Lighting
+	float dif;
+	vec3 light;
 	
-	vec3 light = mix(((dif * uLightColor.rgb) + uAmbientColor.rgb), vec3(1.0), uBrightness);
-	light = clamp(light, 0.0, 1.0);
+	// Light 1 (Right)
+	dif = clamp(max(0.0, dot(normalize(vNormal), cross(uCameraDirection, vec3(0.0, 0.0, 1.0)))), 0.0, 1.0);	
+	light += (dif * uLightColor.rgb * .125);
+	
+	// Light 2 (Left)
+	dif = clamp(max(0.0, dot(normalize(vNormal), cross(uCameraDirection, vec3(0.0, 0.0, -1.0)))), 0.0, 1.0);	
+	light += (dif * uLightColor.rgb * .35);
+	
+	// Light 3 (From camera)
+	dif = clamp(max(0.0, dot(normalize(vNormal), uCameraDirection)), 0.0, 1.0);	
+	light += (dif * dif * uLightColor.rgb);
+	
+	// Light 4 (Top)
+	dif = clamp(max(0.0, dot(normalize(vNormal), vec3(0.0, 0.0, 1.0))), 0.0, 1.0);	
+	light += (dif * uLightColor.rgb * .8);
+	
+	// Light 5 (Bottom)
+	dif = clamp(max(0.0, dot(normalize(vNormal), vec3(0.0, 0.0, -1.0))), 0.0, 1.0);	
+	light += (dif * uLightColor.rgb * .4);
+	
+	light = mix((light + uAmbientColor.rgb), vec3(1.0), vec3(uBrightness));
+	light = clamp(light, vec3(0.0), vec3(1.0));
 	
 	gl_FragColor = vec4(baseColor.rgb * light, baseColor.a);
 	

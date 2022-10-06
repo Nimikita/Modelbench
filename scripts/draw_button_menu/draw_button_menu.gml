@@ -221,7 +221,6 @@ function draw_button_menu()
 		m.menu_item_w = wid
 		m.menu_item_h = m.menu_button_h
 		m.menu_margin = 0//8
-		m.menu_transition = null
 		m.menu_steps = 0
 		m.menu_floating = false
 		
@@ -231,7 +230,10 @@ function draw_button_menu()
 		menu_current = m
 		
 		if (type = e_menu.LIST)
+		{
 			m.menu_list = list_init(name)
+			m.menu_list.show_ticks = false
+		}
 		
 		m.menu_amount = m.menu_list = null ? 0 : ds_list_size(m.menu_list.item)
 		

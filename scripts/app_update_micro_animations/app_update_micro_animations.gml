@@ -33,13 +33,13 @@ function app_update_micro_animations()
 	// Viewport toolbars
 	if (setting_reduced_motion)
 	{
-		toolset_alpha = toolset_alpha_goal
-		toolbar_viewport_alpha = toolbar_viewport_alpha_goal
+		toolbar_tools_alpha = toolbar_tools_alpha_goal
+		toolbar_nav_alpha = toolbar_nav_alpha_goal
 	}
 	else
 	{
-		toolset_alpha += (toolset_alpha_goal - toolset_alpha) / max(1, 4 / delta)
-		toolbar_viewport_alpha += (toolbar_viewport_alpha_goal - toolbar_viewport_alpha) / max(1, 4 / delta)
+		toolbar_tools_alpha += (toolbar_tools_alpha_goal - toolbar_tools_alpha) / max(1, 4 / delta)
+		toolbar_nav_alpha += (toolbar_nav_alpha_goal - toolbar_nav_alpha) / max(1, 4 / delta)
 	}
 	
 	// Component animations

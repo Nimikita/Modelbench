@@ -92,8 +92,8 @@ function app_startup_window()
 	tip_text_array = 0
 	tip_force_right = false
 	tip_right = false
-	//tip_force_left = false
-	//tip_left = false
+	tip_force_left = false
+	tip_left = false
 	
 	// Popups
 	popup = null

@@ -4,14 +4,13 @@ function app_startup_interface_toolset()
 {
 	tool_selected = e_tool.SELECT
 	
-	toolset_alpha = .25
-	toolset_alpha_goal = toolset_alpha
+	toolbar_tools_alpha = .25
+	toolbar_tools_alpha_goal = toolbar_tools_alpha
+	
+	toolbar_nav_alpha = .25
+	toolbar_nav_alpha_goal = toolbar_nav_alpha
 	
 	// Viewport toolbar
-	toolbar_viewport_width = 0
-	toolbar_viewport_alpha = .25
-	toolbar_viewport_alpha_goal = toolbar_viewport_alpha
-	
 	tbx_snap_size_position = new_textbox_decimals()
 	tbx_snap_size_rotation = new_textbox_decimals()
 	tbx_snap_size_rotation.suffix = "°"

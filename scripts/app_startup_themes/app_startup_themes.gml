@@ -106,8 +106,8 @@ function app_startup_themes()
 		level_top = hex_to_color("37444A")
 		level_middle = hex_to_color("2B373D")
 		level_bottom = hex_to_color("18242A")
-		viewport_top = hex_to_color("2B373D")
-		viewport_bottom = hex_to_color("839096")
+		viewport_top = hex_to_color("5E6B72")
+		viewport_bottom = hex_to_color("333E47")
 		
 		text_main = hex_to_color("FFFFFF")
 		text_secondary = text_main
@@ -160,8 +160,8 @@ function app_startup_themes()
 		level_top = hex_to_color("1C1C1C")
 		level_middle = hex_to_color("101010")
 		level_bottom = hex_to_color("050505")
-		viewport_top = hex_to_color("484848")
-		viewport_bottom = hex_to_color("2B2B2B")
+		viewport_top = hex_to_color("363638")
+		viewport_bottom = hex_to_color("232324")
 		
 		text_main = hex_to_color("FFFFFF")
 		text_secondary = text_main

@@ -8,6 +8,7 @@ function list_new()
 	list.update = false
 	list.get_name = false
 	list.toggled = false
+	list.show_ticks = true
 	
 	return list
 }

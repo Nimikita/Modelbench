@@ -59,7 +59,6 @@ function settings_save()
 		
 		json_save_var("look_sensitivity", setting_look_sensitivity)
 		
-		json_save_var_bool("smooth_camera", setting_smooth_camera)
 		json_save_var_bool("viewport_controls_middle", setting_viewport_controls_middle)
 	
 	json_save_object_done()
@@ -84,6 +83,7 @@ function settings_save()
 		
 		json_save_var_bool("show_uv_editor", setting_show_uv_editor)
 		json_save_var("uv_editor_size", setting_uv_editor_size)
+		json_save_var("uv_editor_location", setting_uv_editor_location)
 		
 		json_save_var_bool("adjust_pivot_resize", setting_adjust_pivot_resize)
 		json_save_var_bool("show_shortcuts_bar", setting_show_shortcuts_bar)

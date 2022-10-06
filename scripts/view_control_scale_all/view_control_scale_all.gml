@@ -69,7 +69,7 @@ function view_control_scale_all(view, mat, radius)
 	if (view_control_edit != e_control.SCA_XYZ)
 	{
 		for (var i = 0; i < 10; i++)
-			draw_circle_ext(drawcoord[X], drawcoord[Y], (radius * 2) + (i * .5), true, c_black, alpha)
+			draw_circle_ext(drawcoord[X], drawcoord[Y], (radius * 2) + (i * .5), true, 64, c_black, alpha)
 	}
 	else
 	{

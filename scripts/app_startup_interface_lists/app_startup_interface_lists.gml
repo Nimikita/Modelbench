@@ -10,4 +10,5 @@ function app_startup_interface_lists()
 	list_item_script_value = null
 	
 	textures_list = list_new()
+	textures_list.show_ticks = false
 }

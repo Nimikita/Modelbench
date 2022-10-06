@@ -56,14 +56,7 @@ function action_element_create(argument0)
 			if (spawn_type = e_element.PART || (spawn_type > e_element.PART && el_edit = null))
 			{
 				el = new_element(e_element.PART)
-				
-				// Try prevent duplicate/empty names when creating a new part
-				var namecount = 0;
-				with (obj_model_element)
-					if (element_type = e_element.PART && string_get_name(name) = text_get("assetsnewpart"))
-						namecount++
-				
-				el.name = text_get("assetsnewpart") + (namecount > 0 ? " (" + string(namecount + 1) + ")" : "")
+				el.name = text_get("assetsnewpart")
 				
 				with (hobj)
 				{

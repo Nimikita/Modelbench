@@ -3,11 +3,13 @@
 function camera_control_pan()
 {
 	var mx, my, move;
-	mx = -((mouse_x - mouse_previous_x) / 8) * (.075 * (view_cam.zoom/50))
-	my = ((mouse_y - mouse_previous_y) / 8) * (.075 * (view_cam.zoom/50))
-	move = 4 * setting_move_speed
+	mx = -((display_mouse_get_x() - view_click_x) * .0625)
+	my = ((display_mouse_get_y() - view_click_y) * .0625)
+	display_mouse_set(view_click_x, view_click_y)
 	
-	app_mouse_wrap(content_x, content_y, content_width, content_height)
+	move = setting_move_speed
+	
+	//app_mouse_wrap(content_x, content_y, content_width, content_height)
 	
 	// Create matrix
 	var mat = matrix_create(vec3(0, 0, 0), vec3(view_cam.angle_look_z, 0, view_cam.angle_look_xy + 90), vec3(1));
@@ -17,5 +19,7 @@ function camera_control_pan()
 	view_cam.from[Y] += vert[Y]
 	view_cam.from[Z] += vert[Z]
 	
-	camera_set_angle()
+	view_cam.focus[X] += vert[X]
+	view_cam.focus[Y] += vert[Y]
+	view_cam.focus[Z] += vert[Z]
 }

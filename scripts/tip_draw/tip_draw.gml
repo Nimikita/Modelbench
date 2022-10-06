@@ -26,8 +26,8 @@ function tip_draw()
 	
 	// Arrow
 	render_set_culling(false)
-	draw_image(spr_tooltip_arrow, 0, tip_arrow_x, tip_arrow_y, 1, tip_arrow_yscale, c_level_middle, 1, tip_right * 90)
-	draw_image(spr_tooltip_arrow, 1, tip_arrow_x, tip_arrow_y, 1, tip_arrow_yscale, c_border, a_border, tip_right * 90)
+	draw_image(spr_tooltip_arrow, 0, tip_arrow_x, tip_arrow_y, 1, tip_arrow_yscale, c_level_middle, 1, (tip_right * 90) + (tip_left * -90))
+	draw_image(spr_tooltip_arrow, 1, tip_arrow_x, tip_arrow_y, 1, tip_arrow_yscale, c_border, a_border, (tip_right * 90) + (tip_left * -90))
 	render_set_culling(true)
 	
 	// Text

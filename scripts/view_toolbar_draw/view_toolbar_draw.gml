@@ -28,13 +28,13 @@ function view_toolbar_draw(barx, bary, barw, barh)
 	window_busy = ""
 	
 	if (app_mouse_box(dx - 80, dy - 80, dw + 160, dh + 160) && !popup_mouseon && !toast_mouseon && !context_menu_mouseon)
-		toolset_alpha_goal = 1
+		toolbar_tools_alpha_goal = 1
 	else
-		toolset_alpha_goal = .25
+		toolbar_tools_alpha_goal = .65
 	
 	window_busy = busy
 	
-	draw_set_alpha(toolset_alpha)
+	draw_set_alpha(toolbar_tools_alpha)
 	
 	// Background
 	draw_box(dx, dy, dw, dh, false, c_level_middle, 1)

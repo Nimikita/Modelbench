@@ -199,7 +199,7 @@ function list_item_draw()
 	}
 	
 	// Toggled tick
-	if (item.list != null && (item.toggled || toggled))
+	if (item.list != null && item.list.show_ticks && (item.toggled || toggled))
 	{
 		rightp += 4
 		

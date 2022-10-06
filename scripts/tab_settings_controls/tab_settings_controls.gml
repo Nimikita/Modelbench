@@ -192,11 +192,6 @@ function tab_settings_controls()
 	}
 	tab_next()
 	
-	// Smooth camera
-	tab_control_switch()
-	draw_switch("settingssmoothcamera", dx, dy, setting_smooth_camera, action_setting_smooth_camera)
-	tab_next()
-	
 	tab_control_togglebutton()
 	togglebutton_add("settingsviewportmousecontrolsleft", null, false, setting_viewport_controls_middle = false, action_setting_viewport_controls_middle)
 	togglebutton_add("settingsviewportmousecontrolsmiddle", null, true, setting_viewport_controls_middle = true, action_setting_viewport_controls_middle)

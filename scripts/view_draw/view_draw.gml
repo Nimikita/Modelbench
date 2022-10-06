@@ -28,7 +28,6 @@ function view_draw(view)
 	content_mouseon = (view.mouseon && !popup_mouseon && !toast_mouseon && !context_menu_mouseon)
 	content_view = view
 	
-	draw_gradient(content_x, content_y + content_height, content_width, shadow_size, c_black, shadow_alpha, shadow_alpha, 0, 0)
 	draw_box(boxx, boxy, boxw, boxh, false, c_level_middle, 1)
 	
 	// Caption
@@ -38,29 +37,12 @@ function view_draw(view)
 	captionw = boxw
 	captionh = 32
 	
-	//clip_begin(boxx, boxy, boxw, 32)
-	
 	// Buttons
 	var disable = program_mode != e_mode.MODELING;
 	dw = 24
 	dh = 24
-	dx = boxx + boxw - (dw + padding)
+	dx = boxx + boxw
 	dy = boxy + padding
-	
-	// Walk navigation toggle
-	tip_set_shortcut(setting_key_walk_navigation)
-	if (draw_button_icon("toolwalknav", dx, dy, dw, dh, window_busy = "viewmovecameratoggle", icons.WALK, null, false, "tooltipwalknav"))
-	{
-		window_focus = string(content_view)
-		window_busy = "viewmovecameratoggle"
-		view_click_x = display_mouse_get_x()
-		view_click_y = display_mouse_get_y()
-	}
-	tip_set_shortcut(-1)
-	
-	// Divider
-	dx -= 4
-	draw_box(dx, dy, 1, dh, false, c_border, a_border)
 	
 	// Textured rendering
 	dx -= 16 + 4
@@ -196,7 +178,7 @@ function view_draw(view)
 	// Mouse on
 	view.mouseon = app_mouse_box(boxx, boxy, boxw, boxh)
 	
-	// Toolset toolbar
+	// Floating toolbars
 	var toolbarx, toolbary, toolbarwid, toolbarhei;
 	toolbarx = boxx + 16
 	toolbary = boxy + captionh + 16
@@ -213,6 +195,15 @@ function view_draw(view)
 		view.mouseon = false
 	
 	view_toolbar_draw(toolbarx, toolbary, toolbarwid, toolbarhei)
+	
+	// Navigation
+	toolbarx = boxx + boxw - (16 + 36)
+	toolbarhei = 4 + (28 * 3) + (8) + 4
+	
+	if (app_mouse_box(toolbarx, toolbary, toolbarwid, toolbarhei))
+		view.mouseon = false
+	
+	view_toolbar_nav_draw(toolbarx, toolbary, toolbarwid, toolbarhei)
 	
 	// Viewport toolbar
 	draw_gradient(boxx, boxy + captionh, boxw, shadow_size, c_black, shadow_alpha, shadow_alpha, 0, 0)

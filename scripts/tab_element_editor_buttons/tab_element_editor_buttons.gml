@@ -18,7 +18,7 @@ function tab_element_editor_buttons()
 		if (element_editor.transform.scale_all)
 			draw_set_alpha(1)
 		
-		draw_button_icon(name + "link", bx, by, 24, 24, element_editor.transform.scale_all, icons.LINK, action_category_combine_scale, false, element_editor.transform.scale_all ? "contextmenuscaleseparate" : "contextmenuscalecombine")
+		draw_button_icon(name + "link", bx, by, 24, 24, element_editor.transform.scale_all, icons.LINK, action_group_combine_scale, false, element_editor.transform.scale_all ? "contextmenuscaleseparate" : "contextmenuscalecombine")
 		bx -= 28
 		
 		draw_set_alpha(alpha)
