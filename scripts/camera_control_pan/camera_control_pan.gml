@@ -9,8 +9,6 @@ function camera_control_pan()
 	
 	move = setting_move_speed
 	
-	//app_mouse_wrap(content_x, content_y, content_width, content_height)
-	
 	// Create matrix
 	var mat = matrix_create(vec3(0, 0, 0), vec3(view_cam.angle_look_z, 0, view_cam.angle_look_xy + 90), vec3(1));
 	var vert = vec3_mul_matrix(vec3(mx * move, 0, my * move), mat);

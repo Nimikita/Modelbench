@@ -16,7 +16,7 @@ function action_el_move()
 			}
 			
 			// Reparent to old parents
-			for (var i = element_amount - 1; i >= 0; i--)
+			for (var i = 0; i < element_amount; i++)
 			{
 				var el = save_id_find(element_save_id[i]);
 				el.parent = save_id_find(element_old_par_save_id[i])
