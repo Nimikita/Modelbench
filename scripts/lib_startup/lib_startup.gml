@@ -22,7 +22,7 @@ function lib_startup()
 	globalvar file_copy_temp, lib_directory_create, lib_directory_exists, lib_directory_delete;
 	globalvar lib_window_maximize, lib_window_set_focus;
 	globalvar lib_file_dnd_get_enabled, lib_file_dnd_set_enabled, lib_file_dnd_get_files, lib_file_dnd_set_files, lib_file_dnd_get_handle,
-			  lib_file_dnd_set_handle, lib_file_dnd_reset_files;
+			  lib_file_dnd_set_handle;
 	
 	// File library
 	log("External library", pathfile)
@@ -50,7 +50,6 @@ function lib_startup()
 	lib_file_dnd_set_files = external_define(pathfilednd, "file_dnd_set_files", dll_cdecl, ty_real, 3, ty_string, ty_real, ty_real)
 	lib_file_dnd_get_handle = external_define(pathfilednd, "file_dnd_get_hwnd", dll_cdecl, ty_string, 0)
 	lib_file_dnd_set_handle = external_define(pathfilednd, "file_dnd_set_hwnd", dll_cdecl, ty_real, 1, ty_string)
-	lib_file_dnd_reset_files = external_define(pathfilednd, "file_dnd_reset_files", dll_cdecl, ty_real, 0)
 	
 	// Check for crashes
 	if (startup_last_crash && !dev_mode && model_startup_fn = "")
