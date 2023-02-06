@@ -4,7 +4,7 @@
 function macros()
 {
 	// Debug
-	#macro dev_mode						true
+	#macro dev_mode						false
 	#macro debug_export_normals			false
 	
 	// Versions

@@ -9,33 +9,34 @@ function window_draw_startup()
 	content_mouseon = app_mouse_box(content_x, content_y, content_width, content_height) && !popup_mouseon && !toast_mouseon && !context_menu_mouseon
 	
 	// Draw background
+	var headersize = 144;
 	draw_clear_alpha(c_level_middle, 1)
-	draw_box(0, 0, window_width, 192, false, c_overlay, a_overlay)
+	draw_pattern(0, headersize, window_width, window_height - headersize)
 	
-	var pattern = (setting_theme = theme_light ? 0 : 1);
-	draw_image(spr_startup_left, pattern, 0, 0)
-	draw_image(spr_startup_right, pattern, window_width, 0)
+	// Header
+	draw_box(0, 0, window_width, headersize, false, c_level_top, 1)
+	draw_divide(0, headersize, window_width)
 	
 	// Logo
-	draw_sprite(spr_logo, 0, window_width / 2, 96)
+	draw_sprite(spr_logo, 0, window_width / 2, headersize/2)
 	
 	// Version
-	draw_button_text(text_get("startupversion", modelbench_version_full), (window_width / 2) + 245, 130, popup_show, popup_about)
+	draw_button_text(text_get("startupversion", modelbench_version_full), (window_width / 2) + 259, floor((headersize/2) + (sprite_get_height(spr_logo)/2)) + 3, popup_switch, popup_about)
 	
-	dy = 240
-	dw = min(window_width - 48, 996)
+	dy = headersize + 48
+	dw = min(window_width - 48, 1008)
 	
-	// No recent models text
-	if (recent_list_amount = 0)
+	// No recent projects text
+	if (ds_list_size(recent_list) = 0)
 	{
-		draw_label(text_get("recentnone"), window_width / 2, dy, fa_center, fa_middle, c_text_tertiary, a_text_tertiary, font_startup)
+		draw_label(text_get("recentnone"), window_width / 2, dy, fa_center, fa_middle, c_accent, 1, font_heading_big)
 		dy += 48
 	}
 	
 	// Draw buttons
 	var newmodelwidth, browsewidth, centerx;
-	newmodelwidth = string_width_font(text_get("startupnewmodel"), font_button) + (28 * 2)
-	browsewidth = string_width_font(text_get("startupbrowse"), font_button) + (28 * 2)
+	newmodelwidth = string_width_font(text_get("startupnewmodel"), font_button) + 52
+	browsewidth = string_width_font(text_get("startupbrowse"), font_button) + 52
 	centerx = round((window_width / 2) - ((browsewidth + 24 + newmodelwidth + 24) / 2))
 	
 	if (recent_list_amount > 0)
@@ -44,9 +45,9 @@ function window_draw_startup()
 		dx = centerx + (browsewidth + 24 + newmodelwidth)
 	
 	// New model
-	draw_settings_button("startupnewmodeloptions", dx, dy, 24, 36, true)
+	draw_settings_button("startupnewmodeloptions", dx, dy, 24, 32, true)
 	dx -= newmodelwidth
-	draw_button_label("startupnewmodel", dx, dy, newmodelwidth, icons.FILE, model_create)
+	draw_button_label("startupnewmodel", dx, dy, null, icons.FILE, e_button.PRIMARY, model_create)
 	
 	if (recent_list_amount > 0)
 		dx -= 12 + browsewidth

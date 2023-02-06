@@ -53,7 +53,7 @@ function draw_settings_button()
 		{
 			settings_menu_list = list_init(settings_menu_name)
 			settings_menu_amount = ds_list_size(settings_menu_list.item)
-			settings_menu_w = settings_menu_list.width
+			settings_menu_w = settings_menu_list.width + 8
 			
 			if ((settings_menu_x + (settings_menu_w/2)) > window_width)
 				settings_menu_x += window_width - (settings_menu_x + (settings_menu_w/2))

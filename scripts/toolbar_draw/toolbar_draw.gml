@@ -37,7 +37,7 @@ function toolbar_draw()
 	toolbar_draw_button("toolbarhelp", dx, dy, capwid)
 	dx += capwid + padding
 	
-	/*
+	
 	var boxx, boxy, boxw, boxh;
 	boxx = 0
 	boxy = 0
@@ -51,6 +51,7 @@ function toolbar_draw()
 	content_height = boxh
 	content_mouseon = app_mouse_box(content_x, content_y, content_width, content_height)
 	
+	/*
 	dx = boxx + 4
 	dy = boxy
 	
@@ -64,6 +65,7 @@ function toolbar_draw()
 	draw_button_icon("toolbarundo", dx, dy, 28, 28, false, icons.UNDO, action_toolbar_undo, history_pos = history_amount, "tooltipundo")
 	dx += 28 + 4
 	draw_button_icon("toolbarredo", dx, dy, 28, 28, false, icons.REDO, action_toolbar_redo, history_pos = 0, "tooltipredo")
+	*/
 	
 	// Program mode buttons
 	draw_set_font(font_button)
@@ -83,6 +85,7 @@ function toolbar_draw()
 	dx = boxw - (28 + 4)
 	
 	// Modeling buttons
+	/*
 	if (program_mode = e_mode.MODELING)
 	{
 		// Toggle UV editor
@@ -90,7 +93,8 @@ function toolbar_draw()
 		draw_button_icon("toolbaruveditor", dx, dy, 28, 28, setting_show_uv_editor, icons.TEXTURE, action_toolbar_show_uv_editor, false, (setting_show_uv_editor ? "tooltipuveditorhide" : "tooltipuveditorshow"))
 		tip_set_shortcut(-1)
 	}
-	else if (program_mode = e_mode.PREVIEW)
-		draw_button_icon("toolbarguides", dx, dy, 28, 28, setting_preview_guides, icons.LETTERBOX, action_toolbar_preview_guides, false, (setting_preview_guides ? "tooltipguideshide" : "tooltipguidesshow"))
 	*/
+	
+	if (program_mode = e_mode.PREVIEW)
+		draw_button_icon("toolbarguides", dx, dy, 28, 28, setting_preview_guides, icons.LETTERBOX, action_toolbar_preview_guides, false, (setting_preview_guides ? "tooltipguideshide" : "tooltipguidesshow"))
 }

@@ -35,7 +35,7 @@ function view_draw(view)
 	captionx = boxx + 12
 	captiony = boxy + padding
 	captionw = boxw
-	captionh = 32
+	captionh = (program_mode = e_mode.MODELING ? 32 : 0)
 	
 	// Buttons
 	var disable = program_mode != e_mode.MODELING;
@@ -206,6 +206,9 @@ function view_draw(view)
 	view_toolbar_nav_draw(toolbarx, toolbary, toolbarwid, toolbarhei)
 	
 	// Viewport toolbar
-	draw_gradient(boxx, boxy + captionh, boxw, shadow_size, c_black, shadow_alpha, shadow_alpha, 0, 0)
-	draw_box(boxx, boxy + captionh - 1, boxw, 1, false, c_border, a_border)
+	if (program_mode = e_mode.MODELING)
+	{
+		draw_gradient(boxx, boxy + captionh, boxw, shadow_size, c_black, shadow_alpha, shadow_alpha, 0, 0)
+		draw_box(boxx, boxy + captionh - 1, boxw, 1, false, c_border, a_border)
+	}
 }

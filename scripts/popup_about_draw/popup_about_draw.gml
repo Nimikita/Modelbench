@@ -33,13 +33,13 @@ function popup_about_draw()
 	dy += 12
 	draw_label(text_get("aboutdevelopment"), dx, dy, fa_left, fa_bottom, c_text_tertiary, a_text_tertiary, font_subheading)
 	dy += 26
-	draw_button_text("Nimi", dx, dy, open_url, "https://twitter.com/NimiKitamura", "https://twitter.com/NimiKitamura", font_label)
+	draw_label("Nimi", dx, dy, fa_left, fa_bottom, c_text_secondary, a_text_secondary, font_label)
 	
 	// UI/Branding
 	dy += 34
 	draw_label(text_get("aboutuibranding"), dx, dy, fa_left, fa_bottom, c_text_tertiary, a_text_tertiary, font_subheading)
 	dy += 26
-	draw_button_text("Voxy", dx, dy, open_url, "https://twitter.com/voxybuns", "https://twitter.com/voxybuns", font_label)
+	draw_label("Voxy", dx, dy, fa_left, fa_bottom, c_text_secondary, a_text_secondary, font_label)
 	
 	// Beta testing
 	dy += 34
@@ -59,7 +59,7 @@ function popup_about_draw()
 	dy += 12
 	draw_label(text_get("aboutspecialthanks"), dx, dy, fa_left, fa_bottom, c_text_tertiary, a_text_tertiary, font_subheading)
 	dy += 26
-	draw_button_text("David", dx, dy, open_url, "https://twitter.com/stuffbydavidn", "https://twitter.com/stuffbydavidn", font_label)
+	draw_button_text("David", dx, dy, open_url, "https://www.stuffbydavid.com", "https://www.stuffbydavid.com", font_label)
 	
 	dy += 19
 	
@@ -75,8 +75,4 @@ function popup_about_draw()
 			dy = content_y + 176 + 38
 		}
 	}
-	
-	// Donate button
-	if (draw_button_label("aboutdonate", content_x + content_width - 12, content_y + content_height - 36 - 8, null, icons.DONATE, e_button.SECONDARY, null, e_anchor.RIGHT))
-		open_url("https://www.paypal.com/donate/?hosted_button_id=T6PJGYPVUN678")
 }

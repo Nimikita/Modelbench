@@ -5,14 +5,14 @@
 		"locale": "en-US",
         "translator": "Nimi",
         "forversion": "1.2.0",
-        "lastchange": "2022.09.21"
+        "lastchange": "2023.02.05"
     },
 	"startup/": {
 		"modeldetected": "Unsaved model detected",
 		"modeldetecteddesc": "An unsaved model was found from a previous Modelbench session.",
-		"recovermodel": "RECOVER...",
-		"browse": "BROWSE...",
-		"newmodel": "NEW MODEL",
+		"recovermodel": "Recover...",
+		"browse": "Browse...",
+		"newmodel": "New model",
 		"recentmodels": "Recent models",
 		"startfromscratch": "Start from scratch...",
 		"loadatemplate": "Load a template...",
@@ -651,8 +651,7 @@
 		"development": "DEVELOPMENT",
 		"uibranding": "UI & BRANDING",
 		"specialthanks": "SPECIAL THANKS",
-		"betatesting": "BETA TESTING",
-		"donate": "Donate"
+		"betatesting": "BETA TESTING"
 	},
 	"shortcut/": {
 		"select": "Select",
