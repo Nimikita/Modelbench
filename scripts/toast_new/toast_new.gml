@@ -7,7 +7,6 @@ function toast_new(variant, text)
 	var toast, type
 	toast = new_obj(obj_toast);
 	ds_list_add(toast_list, toast)
-	toast_amount++
 	
 	switch (variant)
 	{

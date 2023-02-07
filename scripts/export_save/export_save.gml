@@ -9,13 +9,18 @@ function export_save()
 	if (export_stage = "generation" && ds_list_size(update_vbuffer_list) = 0)
 		export_stage = "compile"
 	
+	var curtime, time;
+	time = 0
+	
 	// Compile all unique position and UV data into lists
 	if (export_stage = "compile")
 	{
 		var pos, uv, normal, vertex, duplicate;
 		
-		repeat (1)
+		while (time < 16)
 		{
+			curtime = current_time
+			
 			with (export_shapes[|export_compile_done])
 			{
 				// Vertex data not tracked
@@ -25,7 +30,7 @@ function export_save()
 				shape_position_string = ""
 				shape_uv_string = ""
 				
-				for (var v = 3; v < ds_list_size(shape_export_vertex_list); v++)
+				for (var v = 0; v < ds_list_size(shape_export_vertex_list); v++)
 				{
 					vertex = shape_export_vertex_list[|v]
 					
@@ -156,24 +161,33 @@ function export_save()
 				
 				return 0
 			}
+			
+			time += current_time - curtime
 		}
 	}
 	
 	// Write face data
 	if (export_stage = "face")
 	{
-		repeat (1)
+		while (time < 16)
 		{
+			curtime = current_time
+			
 			var element = export_elements[|export_face_done];
 			
 			with (element)
 				export_save_element()
 			
 			export_face_done++
-		}
+			
+			time += current_time - curtime
 		
-		if (export_face_done = ds_list_size(export_elements))
-			export_stage = "finish"
+			if (export_face_done = ds_list_size(export_elements))
+			{
+				export_stage = "finish"
+				break
+			}
+		}
 	}
 	
 	if (export_stage = "finish")

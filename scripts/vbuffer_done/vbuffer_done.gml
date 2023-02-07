@@ -22,7 +22,8 @@ function vbuffer_done()
 	if (tangents)
 		vbuffer = vbuffer_generate_tangents(vbuffer)
 	
-	vertex_freeze(vbuffer)
+	if (vbuffer_freeze)
+		vertex_freeze(vbuffer)
 	
 	return vbuffer
 }

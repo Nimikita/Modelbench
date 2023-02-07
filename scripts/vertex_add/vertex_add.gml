@@ -19,7 +19,7 @@ function vertex_add()
 		yy = pos[@ Y]
 		zz = pos[@ Z]
 		
-		vertex_position_3d(vbuffer_current, xx, yy, pos[@ Z])
+		vertex_position_3d(vbuffer_current, xx, yy, zz)
 		vertex_normal(vbuffer_current, normal[@ X], normal[@ Y], normal[@ Z])
 		vertex_color(vbuffer_current, vertex_rgb, vertex_alpha)
 		vertex_texcoord(vbuffer_current, texcoord[@ X], texcoord[@ Y])

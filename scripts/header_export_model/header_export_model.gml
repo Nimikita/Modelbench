@@ -2,6 +2,7 @@
 
 function header_export_model()
 {
+	dy += 8
 	draw_image(spr_icons, icons.WARNING_DIAMOND, dx + dw/2, dy, 1, 1, c_warning, 1)
 	dy += 12 + 8
 	

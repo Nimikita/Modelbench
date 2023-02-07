@@ -2,6 +2,8 @@
 
 function export_save_element()
 {
+	var vertex;
+	
 	if (element_type = TYPE_PART)
 	{
 		var definepart = true;
@@ -68,7 +70,7 @@ function export_save_element()
 		// Triangles
 		if (isbent)
 		{
-			for (var j = 3; j < ds_list_size(shape_export_vertex_list); j += 3)
+			for (var j = 0; j < ds_list_size(shape_export_vertex_list); j += 3)
 			{
 				file_text_write_string(app.export_file, "f ")
 				
@@ -90,10 +92,12 @@ function export_save_element()
 		{
 			var v = 0;
 			
-			for (var j = 3; j < ds_list_size(shape_export_vertex_list); j += 6)
+			// Advanced by 6 vertices (2 triangles)
+			for (var j = 0; j < ds_list_size(shape_export_vertex_list); j += 6)
 			{
 				file_text_write_string(app.export_file, "f ")
 				
+				// Only use 4 vertices(0, 1, 2, 4) out of every 6
 				for (var k = 0; k < 4; k++)
 				{
 					v = k

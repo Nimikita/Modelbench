@@ -15,21 +15,39 @@ function app_update_shape_vbuffer()
 		update_vbuffer = false
 	}
 	
+	var curtime, time = 0;
+	
 	for (var i = 0; i < ds_list_size(app.update_vbuffer_list); i++)
 	{
+		curtime = current_time
+		
 		if (export_stage != "")
 		{
 			export_shape = app.update_vbuffer_list[|i]
 			export_generation_done++
 		}
 		
+		vbuffer_freeze = false
+		
 		with (app.update_vbuffer_list[|i])
 			shape_update_vbuffer()
+		
+		// Read vbuffer for export
+		if (export_stage != "")
+		{
+			with (app.update_vbuffer_list[|i])
+				export_read_vbuffer()
+		}
+		
+		vertex_freeze(app.update_vbuffer_list[|i].shape_vbuffer)
+		vbuffer_freeze = true
 		
 		ds_list_delete(app.update_vbuffer_list, i)
 		i--
 		
-		if (app.setting_slow_generation || export_stage != "")
+		time += (current_time - curtime)
+		
+		if ((app.setting_slow_generation || export_stage != "") && time > 16)
 			break
 	}
 }
