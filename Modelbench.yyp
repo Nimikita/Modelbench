@@ -565,7 +565,6 @@
     {"id":{"name":"settings_load","path":"scripts/settings_load/settings_load.yy",},"order":5,},
     {"id":{"name":"toast_save_model","path":"scripts/toast_save_model/toast_save_model.yy",},"order":1,},
     {"id":{"name":"menu_event_destroy","path":"scripts/menu_event_destroy/menu_event_destroy.yy",},"order":5,},
-    {"id":{"name":"toast_recover_model","path":"scripts/toast_recover_model/toast_recover_model.yy",},"order":5,},
     {"id":{"name":"toast_news","path":"scripts/toast_news/toast_news.yy",},"order":7,},
     {"id":{"name":"toast_save_image","path":"scripts/toast_save_image/toast_save_image.yy",},"order":9,},
     {"id":{"name":"toast_delete","path":"scripts/toast_delete/toast_delete.yy",},"order":3,},

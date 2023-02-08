@@ -23,8 +23,28 @@ function window_draw_startup()
 	// Version
 	draw_button_text(text_get("startupversion", modelbench_version_full), (window_width / 2) + 259, floor((headersize/2) + (sprite_get_height(spr_logo)/2)) + 3, popup_switch, popup_about)
 	
-	dy = headersize + 48
+	dy = headersize
 	dw = min(window_width - 48, 1008)
+	
+	// Recover model
+	if (model_recover_show)
+	{
+		dy += 8
+		
+		dx = (window_width/2) - (dw/2)
+		draw_outline(dx, dy, dw, 128, 1, c_accent, a_accent)
+		draw_dropshadow(dx, dy, dw, 128, c_black, 1)
+		
+		draw_label(text_get("startupmodeldetected"), dx + 16, dy + 16, fa_left, fa_top, c_accent, a_accent, font_heading_big)
+		
+		draw_label(text_get("startupmodeldetecteddesc"), dx + 16, dy + 64, fa_left, fa_top, c_text_main, a_text_main, font_value)
+		
+		draw_button_label("startuprecovermodel", dx + dw - 16, (dy + 128) - (32 + 16), null, null, e_button.PRIMARY, model_recover, fa_right)
+		
+		dy += 128 + 8
+	}
+	
+	dy += 48
 	
 	// No recent projects text
 	if (ds_list_size(recent_list) = 0)

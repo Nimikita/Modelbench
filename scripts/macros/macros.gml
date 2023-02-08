@@ -8,7 +8,7 @@ function macros()
 	#macro debug_export_normals			false
 	
 	// Versions
-	#macro modelbench_version			"1.2.0"
+	#macro modelbench_version			"1.1.5"
 	#macro modelbench_version_full		modelbench_version + ""
 	#macro modelbench_version_extra		""
 	#macro modelbench_version_date		"??.??.2022"

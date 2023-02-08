@@ -9,8 +9,8 @@
     },
 	"startup/": {
 		"modeldetected": "Unsaved model detected",
-		"modeldetecteddesc": "An unsaved model was found from a previous Modelbench session.",
-		"recovermodel": "Recover...",
+		"modeldetecteddesc": "A backup was found for an unsaved model in a previous Modelbench session. Do you want to load it?",
+		"recovermodel": "Recover model...",
 		"browse": "Browse...",
 		"newmodel": "New model",
 		"recentmodels": "Recent models",

@@ -2,7 +2,7 @@
 
 function header_export_model()
 {
-	dy += 8
+	dy += 12
 	draw_image(spr_icons, icons.WARNING_DIAMOND, dx + dw/2, dy, 1, 1, c_warning, 1)
 	dy += 12 + 8
 	
@@ -12,7 +12,7 @@ function header_export_model()
 		disclaimer += "\n\n" + text_get("exportdisclaimer3dplanes")
 	
 	draw_label(disclaimer, dx, dy, fa_left, fa_top, c_text_secondary, a_text_secondary, font_value, -1, dw)
-	dy += (string_height_ext(disclaimer, -1, dw) + 32)
+	dy += (string_height_ext(disclaimer, -1, dw) + 12)
 	
 	var text = "";
 	

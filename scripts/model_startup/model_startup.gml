@@ -39,7 +39,5 @@ function model_startup()
 	
 	update_vbuffer_list = ds_list_create()
 	
-	// Recover model from previous session
-	if (file_exists_lib(temp_model_backup))
-		toast_recover_model()
+	model_recover_show = file_exists_lib(temp_model_backup)
 }

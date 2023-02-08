@@ -57,22 +57,5 @@ function model_reset()
 	for (var v = 0; v < e_value.amount; v++)
 		value[v] = element_value_default(v)
 	
-	// Clear toasts from startup
-	var t;
-	with (obj_toast)
-	{
-		t = id
-		with (app)
-		{
-			// Recover model
-			if (t.actions[|0] = "startuprecovermodel")
-				toast_close(t)
-		
-			// Tip
-			//if (t.tip != null)
-			//	toast_close(t)
-		}
-	}
-	
 	log("Model reset")
 }

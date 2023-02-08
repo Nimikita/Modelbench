@@ -4,7 +4,7 @@
   "name": "Windows",
   "option_windows_display_name": "Modelbench",
   "option_windows_executable_name": "${project_name}",
-  "option_windows_version": "1.2.0.0",
+  "option_windows_version": "1.1.5.0",
   "option_windows_company_info": "",
   "option_windows_product_info": "",
   "option_windows_copyright_info": "",
