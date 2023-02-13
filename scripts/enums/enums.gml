@@ -259,6 +259,7 @@ function enums()
 		// Bend
 		BEND_OFFSET,
 		BEND_SIZE_CUSTOM,
+		BEND_END_OFFSET,
 		BEND_SIZE,
 		BEND_PART,
 		BEND_AXIS_X,
@@ -484,6 +485,7 @@ function enums()
 		IGNORE,
 		IMAGE,
 		IMAGE_EXPORT,
+		IMAGE_EXPORT_SMALL,
 		INFO,
 		ITALICS,
 		INTERNAL,

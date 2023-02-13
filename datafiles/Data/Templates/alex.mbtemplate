@@ -11,7 +11,8 @@
 				"offset": 6,
 				"size": 10,
 				"part": "upper",
-				"axis": [ "x", "y", "z" ]
+				"axis": [ "x", "y", "z" ],
+				"end_offset": 6
 			},
 			"shapes": [
 				{
@@ -24,9 +25,9 @@
 					"type": "block",
 					"from": [ -4, -6, -2 ],
 					"to": [ 4, 6, 2 ],
+					"uv": [ 20, 36 ],
 					"inflate": 0.25,
-					"position": [ 0, 6, 0 ],
-					"uv": [ 20, 36 ]
+					"position": [ 0, 6, 0 ]
 				}
 			],
 			"parts": [
@@ -50,9 +51,9 @@
 									"type": "block",
 									"from": [ -4, -4, -4 ],
 									"to": [ 4, 4, 4 ],
+									"uv": [ 40, 8 ],
 									"inflate": 0.5,
-									"position": [ 0, 4, 0 ],
-									"uv": [ 40, 8 ]
+									"position": [ 0, 4, 0 ]
 								}
 							]
 						}
@@ -66,7 +67,8 @@
 						"part": "lower",
 						"axis": "x",
 						"direction_min": 0,
-						"invert": true
+						"invert": true,
+						"end_offset": 6
 					},
 					"shapes": [
 						{
@@ -79,9 +81,9 @@
 							"type": "block",
 							"from": [ -1.5, -6, -2 ],
 							"to": [ 1.5, 6, 2 ],
+							"uv": [ 44, 36 ],
 							"inflate": 0.25,
-							"position": [ 0, -4, 0 ],
-							"uv": [ 44, 36 ]
+							"position": [ 0, -4, 0 ]
 						}
 					]
 				},
@@ -93,7 +95,8 @@
 						"part": "lower",
 						"axis": "x",
 						"direction_min": 0,
-						"invert": true
+						"invert": true,
+						"end_offset": 6
 					},
 					"shapes": [
 						{
@@ -106,9 +109,9 @@
 							"type": "block",
 							"from": [ -1.5, -6, -2 ],
 							"to": [ 1.5, 6, 2 ],
+							"uv": [ 52, 52 ],
 							"inflate": 0.25,
-							"position": [ 0, -4, 0 ],
-							"uv": [ 52, 52 ]
+							"position": [ 0, -4, 0 ]
 						}
 					]
 				}
@@ -121,7 +124,8 @@
 				"offset": -6,
 				"part": "lower",
 				"axis": "x",
-				"direction_min": 0
+				"direction_min": 0,
+				"end_offset": 6
 			},
 			"shapes": [
 				{
@@ -134,9 +138,9 @@
 					"type": "block",
 					"from": [ -2, -6, -2 ],
 					"to": [ 2, 6, 2 ],
+					"uv": [ 4, 36 ],
 					"inflate": 0.25,
-					"position": [ 0, -6, 0 ],
-					"uv": [ 4, 36 ]
+					"position": [ 0, -6, 0 ]
 				}
 			]
 		},
@@ -147,7 +151,8 @@
 				"offset": -6,
 				"part": "lower",
 				"axis": "x",
-				"direction_min": 0
+				"direction_min": 0,
+				"end_offset": 6
 			},
 			"shapes": [
 				{
@@ -160,9 +165,9 @@
 					"type": "block",
 					"from": [ -2, -6, -2 ],
 					"to": [ 2, 6, 2 ],
+					"uv": [ 4, 52 ],
 					"inflate": 0.25,
-					"position": [ 0, -6, 0 ],
-					"uv": [ 4, 52 ]
+					"position": [ 0, -6, 0 ]
 				}
 			]
 		}

@@ -26,13 +26,13 @@ function app_event_http()
 						button = newsmap[?"button"]
 						buttonurl = newsmap[?"buttonurl"]
 						
-						var sn = toast_news();
-						sn.label = name
-						sn.description = text
+						var sb = toast_news();
+						sb.text = text
 						
-						sn.actions[|0] = open_url
-						sn.actions[|1] = button
-						sn.actions[|2] = buttonurl
+						sb.actions[|0] = "snackbarbuttondownload"
+						sb.actions[|1] = open_url
+						sb.actions[|2] = buttonurl
+						sb.dismiss_time = no_limit
 					}
 				}
 				ds_map_destroy(decodedmap)

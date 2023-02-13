@@ -75,6 +75,11 @@ function tab_element_editor_bend()
 	draw_dragger("elementeditorbendoffset", dx, dy, dragger_width, el_edit.value[e_value.BEND_OFFSET], 0.1, -no_limit, no_limit, 0, snap_min, element_editor.bend.tbx_offset, action_el_bend_offset, null, true, !el_edit.value[e_value.BEND])
 	tab_next()
 	
+	// Bend end offset
+	tab_control_dragger()
+	draw_dragger("elementeditorbendendoffset", dx, dy, dragger_width, el_edit.value[e_value.BEND_END_OFFSET], 0.1, snap_min, no_limit, 0, snap_min, element_editor.bend.tbx_end_offset, action_el_bend_end_offset, null, true, !el_edit.value[e_value.BEND], "elementeditorbendendoffsethelp")
+	tab_next()
+	
 	// Bend size
 	tab_control_switch()
 	draw_switch("elementeditorbendcustomsize", dx, dy, el_edit.value[e_value.BEND_SIZE_CUSTOM], action_el_bend_size_custom, "elementeditorbendcustomsizehelp", !el_edit.value[e_value.BEND])

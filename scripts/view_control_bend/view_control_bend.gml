@@ -51,16 +51,39 @@ function view_control_bend(view)
 	
 	#endregion
 	
+	if (el_edit.value[e_value.BEND_END_OFFSET] > 0)
+	{
+		var endoff, end3d, end2d, enderr;
+		endoff = (el_edit.value[e_value.BEND_END_OFFSET] * negate(el_edit.bend_part = e_part.LOWER || el_edit.bend_part = e_part.BACK || el_edit.bend_part = e_part.LEFT))
+		
+		// End offset test
+		var bendmatrix;
+		with (el_edit)
+			bendmatrix = matrix_create(model_part_get_offset_pos(el_edit, endoff), vec3(0), vec3(1))
+	
+		bendmatrix = matrix_multiply(bendmatrix, matrix_create(model_part_get_offset_pos(el_edit), angle, vec3(1)))
+	
+		end3d = matrix_position(matrix_multiply(bendmatrix, el_edit.matrix_parent))
+		end2d = point3D_project(end3d, view_proj_matrix, render_width, render_height)
+		enderr = point3D_project_error
+		
+		end2d = vec2_mul(end2d, 2)
+		
+		if (!enderr)
+			draw_image(spr_circle_18, 0, end2d[X], end2d[Y], 2, 2, c_bend, 1)
+	}
+	
+	
 	#region Draw bend region indicator
 	
 	render_set_culling(false)
 	
 	// Connecting lines
 	if (!offseterr && !unbenterr)
-		draw_line_width_color(offset2d[X], offset2d[Y], unbent2d[X], unbent2d[Y], 6, merge_color(c_level_middle, c_bend, .5), c_level_middle)
+		draw_line_width_color(offset2d[X], offset2d[Y], unbent2d[X], unbent2d[Y], 6, c_level_middle, c_level_middle)
 	
 	if (!offseterr && !benterr)
-		draw_line_width_color(offset2d[X], offset2d[Y], bent2d[X], bent2d[Y], 6, merge_color(c_bend, c_level_middle, .5), c_bend)
+		draw_line_width_color(offset2d[X], offset2d[Y], bent2d[X], bent2d[Y], 6, c_level_middle, c_level_middle)
 	
 	render_set_culling(true)
 	
@@ -149,7 +172,7 @@ function view_control_bend(view)
 			view.control_mouseon = e_control.BEND_SIZE
 			draw_image(spr_circle_22, 0, bent2d[X], bent2d[Y], 2, 2, c_hover, a_hover)
 		}
-		draw_image(spr_circle_18, 0, bent2d[X], bent2d[Y], 2, 2, c_bend, el_edit.value[e_value.BEND_SIZE_CUSTOM] ? 1 : .75)
+		draw_image(spr_circle_18, 0, bent2d[X], bent2d[Y], 2, 2, c_level_middle, el_edit.value[e_value.BEND_SIZE_CUSTOM] ? 1 : .75)
 		
 	}
 	

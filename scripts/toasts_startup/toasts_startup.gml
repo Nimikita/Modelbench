@@ -9,4 +9,6 @@ function toasts_startup()
 	toast_script_value = null
 	toast_mouseon = false
 	toast_last = null
+	
+	http_toast_news = http_get(link_news)
 }

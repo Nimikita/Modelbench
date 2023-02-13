@@ -157,6 +157,7 @@ function app_startup_interface_tabs()
 		with (bend)
 		{
 			tbx_offset = new_textbox_ndecimals()
+			tbx_end_offset = new_textbox_ndecimals()
 			tbx_size = new_textbox_decimals()
 			
 			tbx_min[0] = new_textbox_ndecimals()
@@ -239,7 +240,7 @@ function app_startup_interface_tabs()
 		}
 		
 		// Export
-		tab_add_category("export", icons.FILE_EXPORT, tab_preview_export, false) 
+		tab_add_category("export", icons.IMAGE_EXPORT_SMALL, tab_preview_export, false) 
 	}
 	
 	// Export .obj

@@ -15,6 +15,6 @@ function tab_preview_export()
 	tab_next()
 	
 	tab_control_button_label()
-	draw_button_label("previewexportimage", floor(dx + dw/2), dy, null, icons.TEXTURE_EXPORT, e_button.PRIMARY, action_preview_exportimage_save, e_anchor.CENTER)
+	draw_button_label("previewexportimage", floor(dx + dw/2), dy, null, icons.IMAGE_EXPORT, e_button.PRIMARY, action_preview_exportimage_save, e_anchor.CENTER)
 	tab_next()
 }

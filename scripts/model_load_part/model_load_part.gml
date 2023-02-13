@@ -99,6 +99,14 @@ function model_load_part(map, root)
 			}
 			value[e_value.BEND_OFFSET] = bendmap[?"offset"]
 			
+			// End offset
+			end_offset = value_get_real(bendmap[?"end_offset"], null)
+			
+			if (end_offset != null)
+				value[e_value.BEND_END_OFFSET] = end_offset
+			else
+				value[e_value.BEND_END_OFFSET] = 0
+			
 			// Size
 			bend_size = value_get_real(bendmap[?"size"], null)
 			
@@ -302,6 +310,7 @@ function model_load_part(map, root)
 		{
 			value[e_value.BEND] = false
 			value[e_value.BEND_OFFSET] = 0
+			value[e_value.BEND_END_OFFSET] = 0
 			
 			value[e_value.BEND_SIZE_CUSTOM] = false
 			value[e_value.BEND_SIZE] = 4

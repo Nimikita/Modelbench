@@ -57,5 +57,14 @@ function model_reset()
 	for (var v = 0; v < e_value.amount; v++)
 		value[v] = element_value_default(v)
 	
+	// Clear toasts
+	var t;
+	with (obj_toast) 
+	{
+		t = id
+		with (app)
+			toast_close(t)
+	}
+	
 	log("Model reset")
 }

@@ -5,18 +5,14 @@ function model_save_bend()
 	if (!value[e_value.BEND] || (!value[e_value.BEND_AXIS_X] && !value[e_value.BEND_AXIS_Y] && !value[e_value.BEND_AXIS_Z]))
 		return 0
 	
-	var part, dirmin, dirmax, axis, axisenablearray, axisarray, axismin, axismax, invertarray, anglearray;
-	axis = null
-	axisenablearray = array(false, false, false)
-	axisarray = array()
-	axismin = array()
-	axismax = array()
-	invertarray = array()
-	anglearray = array()
+	var part;
 	
 	json_save_object_start("bend")
 	
 	json_save_var("offset", value[e_value.BEND_OFFSET])
+	
+	if (value[e_value.BEND_END_OFFSET] != 0)
+		json_save_var("end_offset", value[e_value.BEND_END_OFFSET])
 	
 	if (value[e_value.BEND_SIZE_CUSTOM])
 		json_save_var("size", value[e_value.BEND_SIZE])
@@ -36,89 +32,67 @@ function model_save_bend()
 	
 	json_save_var("part", part)
 	
-	// the FUN part
+	var axisstring, bendindex, bendaxis, bendinvert, bendmin, bendmax, benddefault, bendflip;
+	axisstring = ["x", "z", "y"]
+	bendindex = []
+	bendaxis = []
+	bendinvert = []
+	bendmin = []
+	bendmax = []
+	benddefault = []
+	bendflip = (value[e_value.BEND_AXIS_Y] && value[e_value.BEND_AXIS_Z])
+	
+	// Get values
 	for (var i = X; i <= Z; i++)
 	{
-		if (value[e_value.BEND_AXIS_X + i])
-			axis = array_add(axis, i)
+		var axis = ((i != X && bendflip) ? (i = Y ? Z : Y) : i);
 		
-		axisenablearray[i] = value[e_value.BEND_AXIS_X + i]
+		if (value[e_value.BEND_AXIS_X + axis])
+		{
+			bendindex = array_add(bendindex, axisstring[axis])
+			bendaxis = array_add(bendaxis, value[e_value.BEND_AXIS_X + axis])
+			bendinvert = array_add(bendinvert, value[e_value.BEND_INVERT_X + axis])
+			bendmin = array_add(bendmin, value[e_value.BEND_X_MIN + axis])
+			bendmax = array_add(bendmax, value[e_value.BEND_X_MAX + axis])
+			benddefault = array_add(benddefault, value[e_value.BEND_ANGLE_X + axis])
+		}
 	}
 	
-	var axisedit = X;
-	var axisstring = array("x", "y", "z");
-	if (array_length(axis) > 1)
+	// Multi-axis?
+	if (array_length(bendindex) > 1)
 	{
-		for (var i = 0; i < array_length(axis); i++)
-		{
-			axisedit = axis[i]
-			
-			// Don't flip "y" and "z" positions for axis array
-			if (!(axisenablearray[Y] && axisenablearray[Z]))
-			{
-				if (axisedit = Y)
-					axisedit = Z
-				else if (axisedit = Z)
-					axisedit = Y
-			}
-			
-			axisarray = array_add(axisarray, axisstring[axisedit])
-			
-			// Only flip values Y and Z are enabled.
-			if (axisenablearray[Y] && axisenablearray[Z])
-			{
-				if (axisedit = Y)
-					axisedit = Z
-				else if (axisedit = Z)
-					axisedit = Y
-			}
-			
-			axismin = array_add(axismin, value[e_value.BEND_X_MIN + axisedit])
-			axismax = array_add(axismax, value[e_value.BEND_X_MAX + axisedit])
-			invertarray = array_add(invertarray, value[e_value.BEND_INVERT_X + axisedit])
-			anglearray = array_add(anglearray, value[e_value.BEND_ANGLE_X + axisedit])
-		}
+		json_save_var("axis", bendindex)
 		
-		json_save_var("axis", axisarray)
+		if (!array_compare_value(bendmin, -180))
+			json_save_var("direction_min", bendmin)
 		
-		if (!array_compare_value(axismin, -180))
-			json_save_var("direction_min", axismin)
+		if (!array_compare_value(bendmax, 180))
+			json_save_var("direction_max", bendmax)
 		
-		if (!array_compare_value(axismax, 180))
-			json_save_var("direction_max", axismax)
+		if (!array_compare_value(bendinvert, false))
+			json_save_array_bool("invert", bendinvert)
 		
-		if (!array_compare_value(invertarray, false))
-			json_save_array_bool("invert", invertarray)
-		
-		if (!array_compare_value(anglearray, 0))
-			json_save_var("angle", anglearray)
+		if (!array_compare_value(benddefault, 0))
+			json_save_var("angle", benddefault)
 	}
-	else
+	else // Single axis
 	{
-		// Bend axis
-		if (axis[0] = Y)
-			json_save_var("axis", "z")
-		else if (axis[0] = Z)
-			json_save_var("axis", "y")
-		else
-			json_save_var("axis", "x")
+		json_save_var("axis", bendindex[0])
 		
 		// Bend direction
-		var dirmin = value[e_value.BEND_X_MIN + axis[0]];
-		if (dirmin != -180)
-			json_save_var("direction_min", dirmin)
+		if (bendmin[0] != -180)
+			json_save_var("direction_min", bendmin[0])
 		
-		var dirmax = value[e_value.BEND_X_MAX + axis[0]];
-		if (dirmax != 180)
-			json_save_var("direction_max", dirmax)
+		if (bendmax[0] != 180)
+			json_save_var("direction_max", bendmax[0])
 		
 		// Invert
-		if (value[e_value.BEND_INVERT_X + axis[0]] = true)
-			json_save_var_bool("invert", value[e_value.BEND_INVERT_X + axis[0]])
+		if (bendinvert[0] = true)
+			json_save_var_bool("invert", bendinvert[0])
 		
 		// Angle
-		if (value[e_value.BEND_ANGLE_X + axis[0]] != 0)
-			json_save_var("angle", value[e_value.BEND_ANGLE_X + axis[0]])
+		if (benddefault[0] != 0)
+			json_save_var("angle", benddefault[0])
 	}
 	
 	json_save_object_done()
