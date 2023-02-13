@@ -242,7 +242,7 @@ function model_load_part(map, root)
 			
 			// Invert bend angle
 			bend_invert = vec3(false)
-			if (is_real(bendmap[?"invert"]) && array_length(axis) = 1) // Single
+			if ((is_real(bendmap[?"invert"]) || is_bool(bendmap[?"invert"])) && array_length(axis) = 1) // Single
 			{
 				bend_invert[axis[0]] = bendmap[?"invert"]
 			}

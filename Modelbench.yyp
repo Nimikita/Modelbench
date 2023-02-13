@@ -103,6 +103,7 @@
     {"id":{"name":"action_el_opacity","path":"scripts/action_el_opacity/action_el_opacity.yy",},"order":11,},
     {"id":{"name":"action_el_brightness","path":"scripts/action_el_brightness/action_el_brightness.yy",},"order":13,},
     {"id":{"name":"action_el_depth","path":"scripts/action_el_depth/action_el_depth.yy",},"order":1,},
+    {"id":{"name":"ds_list_create_array","path":"scripts/ds_list_create_array/ds_list_create_array.yy",},"order":6,},
     {"id":{"name":"action_el_depth_tree","path":"scripts/action_el_depth_tree/action_el_depth_tree.yy",},"order":3,},
     {"id":{"name":"action_el_open_position_tab","path":"scripts/action_el_open_position_tab/action_el_open_position_tab.yy",},"order":5,},
     {"id":{"name":"action_el_wind_axis","path":"scripts/action_el_wind_axis/action_el_wind_axis.yy",},"order":1,},
