@@ -98,6 +98,7 @@ function draw_meter(name, xx, yy, wid, value, valuewid, minval, maxval, def, sna
 		if (!mouse_left)
 		{
 			window_busy = ""
+			window_focus = ""
 			app_mouse_clear()
 		}
 	}

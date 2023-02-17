@@ -36,33 +36,33 @@ function app_update_keyboard()
 	if (keyboard_check_pressed(vk_f12))
 		debug_info = !debug_info
 	
-	if (window_busy = "" && !textbox_isediting)
+	if (window_state = "" && window_busy = "" && !textbox_isediting)
 	{
-		if (app_check_shortcut(setting_key_new))
+		if (keybinds[e_keybind.MODEL_NEW].pressed)
 			model_create()
 		
-		if (app_check_shortcut(setting_key_new_template))
+		if (keybinds[e_keybind.MODEL_NEW_TEMPLATE].pressed)
 			model_create_template()
 		
-		if (app_check_shortcut(setting_key_open))
+		if (keybinds[e_keybind.MODEL_OPEN].pressed)
 			model_load()
 		
-		if (app_check_shortcut(setting_key_save))
+		if (keybinds[e_keybind.MODEL_SAVE].pressed)
 			model_save()
 		
-		if (app_check_shortcut(setting_key_save_as))
+		if (keybinds[e_keybind.MODEL_SAVE_AS].pressed)
 			model_save_as()
 		
-		if (app_check_shortcut(setting_key_import))
+		if (keybinds[e_keybind.MODEL_IMPORT].pressed)
 			action_model_import()
 		
-		if (app_check_shortcut(setting_key_undo))
+		if (keybinds[e_keybind.UNDO].pressed)
 			action_toolbar_undo()
 		
-		if (app_check_shortcut(setting_key_redo))
+		if (keybinds[e_keybind.REDO].pressed)
 			action_toolbar_redo()
 		
-		if (app_check_shortcut(setting_key_walk_navigation))
+		if (keybinds[e_keybind.CAM_WALK].pressed)
 		{
 			window_focus = string(content_view)
 			window_busy = "viewmovecameratoggle"
@@ -72,16 +72,16 @@ function app_update_keyboard()
 		
 		if (program_mode = e_mode.MODELING)
 		{
-			if (app_check_shortcut(setting_key_rename))
+			if (keybinds[e_keybind.RENAME].pressed)
 				action_el_rename_start()
 			
-			if (app_check_shortcut(setting_key_delete))
+			if (keybinds[e_keybind.ELEMENT_DELETE].pressed)
 				action_el_remove()
 			
-			if (app_check_shortcut(setting_key_duplicate))
+			if (keybinds[e_keybind.ELEMENT_DUPLICATE].pressed)
 				action_el_duplicate()
 			
-			if (app_check_shortcut(setting_key_select_all))
+			if (keybinds[e_keybind.SELECT_ALL].pressed)
 			{
 				if (el_edit)
 					action_el_deselect_all()
@@ -89,36 +89,36 @@ function app_update_keyboard()
 					action_el_select_all()
 			}
 			
-			if (app_check_shortcut(setting_key_uv_editor))
+			if (keybinds[e_keybind.UV_EDITOR].pressed)
 				action_toolbar_show_uv_editor(!setting_show_uv_editor)
 			
 			// Switch tools
-			if (app_check_shortcut(setting_key_tool_select))
+			if (keybinds[e_keybind.TOOL_SELECT].pressed)
 				tool_selected = e_tool.SELECT
 			
-			if (app_check_shortcut(setting_key_tool_pivot))
+			if (keybinds[e_keybind.TOOL_PIVOT].pressed)
 				tool_selected = e_tool.PIVOT
 			
-			if (app_check_shortcut(setting_key_tool_move))
+			if (keybinds[e_keybind.TOOL_MOVE].pressed)
 				tool_selected = e_tool.MOVE
 			
-			if (app_check_shortcut(setting_key_tool_rotate))
+			if (keybinds[e_keybind.TOOL_ROTATE].pressed)
 				tool_selected = e_tool.ROTATE
 			
-			if (app_check_shortcut(setting_key_tool_scale))
+			if (keybinds[e_keybind.TOOL_SCALE].pressed)
 				tool_selected = e_tool.SCALE
 			
-			if (app_check_shortcut(setting_key_tool_transform))
+			if (keybinds[e_keybind.TOOL_TRANSFORM].pressed)
 				tool_selected = e_tool.TRANSFORM
 			
-			if (app_check_shortcut(setting_key_tool_bend))
+			if (keybinds[e_keybind.TOOL_BEND].pressed)
 				tool_selected = e_tool.BEND
 			
-			if (app_check_shortcut(setting_key_tool_resize))
+			if (keybinds[e_keybind.TOOL_RESIZE].pressed)
 				tool_selected = e_tool.RESIZE
 			
 			// Toggle snapping
-			if (app_check_shortcut(setting_key_snap))
+			if (keybinds[e_keybind.SNAP].pressed)
 				action_setting_snap(!setting_snap)
 		}
 	}

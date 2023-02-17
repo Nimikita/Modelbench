@@ -41,11 +41,11 @@ function draw_button_icon()
 		if (argument[10] != null)
 			sprite = argument[10]
 	
-	if (tip != "")
-		tip_set(text_get(tip), xx, yy, wid, hei)
-	
 	if (xx + wid < content_x || xx > content_x + content_width || yy + hei < content_y || yy > content_y + content_height)
 		return 0
+	
+	if (tip != "")
+		tip_set(text_get(tip), xx, yy, wid, hei)
 	
 	mouseon = (content_mouseon && !disabled && app_mouse_box(xx, yy, wid, hei))
 	animated = (sprite != spr_icons && sprite != null && icon = null && sprite_get_number(sprite) > 1)

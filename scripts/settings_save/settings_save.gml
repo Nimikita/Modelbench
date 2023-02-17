@@ -22,43 +22,15 @@ function settings_save()
 	
 	json_save_object_start("controls")
 		
-		json_save_var("key_new", setting_key_new)
-		json_save_var("key_new_template", setting_key_new_template)
-		json_save_var("key_open", setting_key_open)
-		json_save_var("key_save", setting_key_save)
-		json_save_var("key_save_as", setting_key_save_as)
-		json_save_var("key_import", setting_key_import)
-		json_save_var("key_undo", setting_key_undo)
-		json_save_var("key_redo", setting_key_redo)
-		json_save_var("key_rename", setting_key_rename)
-		json_save_var("key_delete", setting_key_delete)
-		json_save_var("key_duplicate", setting_key_duplicate)
-		json_save_var("key_select_all", setting_key_select_all)
-		json_save_var("key_uv_editor", setting_key_uv_editor)
+		var obj;
 		
-		json_save_var("key_tool_select", setting_key_tool_select)
-		json_save_var("key_tool_pivot", setting_key_tool_pivot)
-		json_save_var("key_tool_move", setting_key_tool_move)
-		json_save_var("key_tool_rotate", setting_key_tool_rotate)
-		json_save_var("key_tool_scale", setting_key_tool_scale)
-		json_save_var("key_tool_transform", setting_key_tool_transform)
-		json_save_var("key_tool_bend", setting_key_tool_bend)
-		json_save_var("key_tool_resize", setting_key_tool_resize)
-		json_save_var("key_snap", setting_key_snap)
-		
-		json_save_var("key_walk_navigation", setting_key_walk_navigation)
-		json_save_var("key_forward", setting_key_forward)
-		json_save_var("key_back", setting_key_back)
-		json_save_var("key_left", setting_key_left)
-		json_save_var("key_right", setting_key_right)
-		json_save_var("key_ascend", setting_key_ascend)
-		json_save_var("key_descend", setting_key_descend)
-		json_save_var("key_reset", setting_key_reset)
-		json_save_var("key_fast", setting_key_fast)
-		json_save_var("key_slow", setting_key_slow)
+		for (var i = 0; i < e_keybind.amount; i++)
+		{
+			obj = keybinds[i]
+			json_save_var(obj.name, obj.keybind)
+		}
 		
 		json_save_var("look_sensitivity", setting_look_sensitivity)
-		
 		json_save_var_bool("viewport_controls_middle", setting_viewport_controls_middle)
 	
 	json_save_object_done()

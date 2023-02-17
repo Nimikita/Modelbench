@@ -27,10 +27,10 @@ function preview_draw(preview, xx, yy, width, height)
 	// Add shortcuts
 	if (mouseon || window_busy = "previewrotate" || window_busy = "previewmove")
 	{
-		shortcut_bar_add(null, e_mouse.LEFT_DRAG, "panview")
-		
 		if (window_scroll_focus_prev = string(preview))
-			shortcut_bar_add(null, e_mouse.SCROLL, "zoom")
+			shortcut_bar_state = "previewzoom"
+		else
+			shortcut_bar_state = "preview"
 	}
 	
 	// Dragging controls

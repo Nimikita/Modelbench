@@ -10,6 +10,7 @@ function app_event_step()
 	
 	app_update_mouse()
 	
+	app_update_keybinds()
 	app_update_keyboard()
 	
 	app_update_previews()

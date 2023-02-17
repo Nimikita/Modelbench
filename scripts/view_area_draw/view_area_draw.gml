@@ -71,7 +71,7 @@ function view_area_draw()
 		else if (setting_uv_editor_location = "right")
 		{
 			var wid = (viewwid);
-			view_area_x = panel_area_x + round(wid * (1 - setting_uv_editor_size))
+			view_area_x = panel_area_x + panel_map[?"left"].size_real_ani + panel_map[?"left_secondary"].size_real_ani + round(wid * (1 - setting_uv_editor_size))
 			view_area_width = ceil(wid * (setting_uv_editor_size))
 			
 			view_area_y = panel_area_y
@@ -133,7 +133,7 @@ function view_area_draw()
 			
 			var wid = (viewwid);
 			
-			view_area_x = panel_area_x
+			view_area_x = panel_area_x + panel_map[?"left"].size_real_ani + panel_map[?"left_secondary"].size_real_ani
 			view_area_y = panel_area_y
 			view_area_width = round((1 - setting_uv_editor_size) * wid)
 			view_area_height = panel_area_height
@@ -161,9 +161,5 @@ function view_area_draw()
 	
 	// Add shortcut
 	if (resizemouseon || window_busy = "uveditorresize")
-	{
-		// Add shortcut
-		ds_list_clear(shortcut_bar_list)
-		shortcut_bar_add(null, e_mouse.LEFT_DRAG, "resizearea")
-	}
+		shortcut_bar_state = "uveditorresize"
 }

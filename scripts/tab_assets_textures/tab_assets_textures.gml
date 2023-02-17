@@ -27,11 +27,9 @@ function tab_assets_textures()
 	if (itemhover != null)
 	{
 		if (itemhover.value = res_edit)
-			shortcut_bar_add(null, e_mouse.LEFT_CLICK, "deselect")
+			shortcut_bar_state = "contextmenutexturedeselect"
 		else
-			shortcut_bar_add(null, e_mouse.LEFT_CLICK, "select")
-		
-		shortcut_bar_add(null, e_mouse.RIGHT_CLICK, "contextmenutexture")
+			shortcut_bar_state = "contextmenutextureselect"
 	}
 	
 	if (res_edit != null)

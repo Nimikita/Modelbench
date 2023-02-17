@@ -125,17 +125,8 @@ function tab_assets_elements()
 	if (tab.elements.element_hover != null)
 	{
 		if (tab.elements.element_hover.selected)
-		{
-			shortcut_bar_add(new_shortcut("", true, false), e_mouse.LEFT_CLICK, "deselect")
-			shortcut_bar_add(null, e_mouse.LEFT_DRAG, "moveselection")
-		}
+			shortcut_bar_state = "elementhoverselected"
 		else
-		{
-			shortcut_bar_add(null, e_mouse.LEFT_CLICK, "select")
-			shortcut_bar_add(new_shortcut("", false, true), e_mouse.LEFT_CLICK, "selectadd")
-			shortcut_bar_add(null, e_mouse.LEFT_DRAG, "groupselect")
-		}
-		
-		shortcut_bar_add(null, e_mouse.RIGHT_CLICK, "contextmenuelement")
+			shortcut_bar_state = "elementhovered"
 	}
 }

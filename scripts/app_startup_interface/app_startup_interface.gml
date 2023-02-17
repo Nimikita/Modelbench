@@ -4,6 +4,7 @@ function app_startup_interface()
 {
 	window_maximize()
 	
+	app_startup_shortcut_bar()
 	app_startup_interface_menus()
 	app_startup_interface_settings_menus()
 	app_startup_interface_popups()

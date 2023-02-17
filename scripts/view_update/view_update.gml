@@ -11,62 +11,13 @@ function view_update(view, cam)
 	if (view.control_mouseon_last != null || window_busy = "rendercontrol")
 	{
 		if (window_busy = "rendercontrol")
-		{
-			shortcut_bar_add(new_shortcut("", false, true), e_mouse.LEFT_DRAG, "transformslower")
-			shortcut_bar_add(new_shortcut("", true, false), e_mouse.LEFT_DRAG, "snap")
-			
-			if (view_control_edit >= e_control.RESIZE_XP && view_control_edit <= e_control.RESIZE_ZN)
-				shortcut_bar_add(new_shortcut(vk_alt, false, false), e_mouse.LEFT_DRAG, "resizeaxis")
-		}
+			shortcut_bar_state = "rendercontrolhover"
 		else
-		{
-			shortcut_bar_add(null, e_mouse.LEFT_DRAG, "transform")
-			shortcut_bar_add(new_shortcut("", false, true), e_mouse.RIGHT_CLICK, "reset")
-		}
-	}
-	
-	if (view.control_mouseon_last = null && (content_mouseon || window_busy = "viewclick" || window_busy = "viewrightclick" || window_busy = "viewrotatecamera" || window_busy = "viewpancamera"))
-	{
-		if (program_mode = e_mode.MODELING)
-		{
-			shortcut_bar_add(null, e_mouse.LEFT_CLICK, "select")
-			shortcut_bar_add(new_shortcut("", true, false), e_mouse.LEFT_CLICK, "selectshape")
-		}
-		
-		if (!setting_viewport_controls_middle)
-		{
-			shortcut_bar_add(null, e_mouse.LEFT_DRAG, "orbitview")
-			shortcut_bar_add(new_shortcut("", false, true), e_mouse.LEFT_DRAG, "panview")
-		}
-		else
-		{
-			shortcut_bar_add(null, e_mouse.MIDDLE_DRAG, "orbitview")
-			shortcut_bar_add(new_shortcut("", false, true), e_mouse.MIDDLE_DRAG, "panview")
-		}
-		
-		shortcut_bar_add(null, e_mouse.SCROLL, "zoom")
-		
-		if (program_mode = e_mode.MODELING)
-			shortcut_bar_add(null, e_mouse.RIGHT_CLICK, "contextmenuviewport")
-		
-		shortcut_bar_add(null, e_mouse.RIGHT_DRAG, "walknavigation")
+			shortcut_bar_state = "rendercontrol"
 	}
 	
 	if (window_busy = "viewmovecamera" || window_busy = "viewmovecameratoggle")
-	{
-		shortcut_bar_add(setting_key_forward, null, "moveforward")
-		shortcut_bar_add(setting_key_left, null, "moveleft")
-		shortcut_bar_add(setting_key_back, null, "moveback")
-		shortcut_bar_add(setting_key_right, null, "moveright")
-		
-		shortcut_bar_add(setting_key_ascend, null, "moveascend")
-		shortcut_bar_add(setting_key_descend, null, "movedescend")
-		
-		shortcut_bar_add(setting_key_fast, null, "movefast")
-		shortcut_bar_add(setting_key_slow, null, "moveslow")
-		
-		shortcut_bar_add(setting_key_reset, null, "movereset")
-	}
+		shortcut_bar_state = "cameramove"
 	
 	// Click
 	if (view.control_mouseon_last = null && content_mouseon && window_busy = "")
@@ -200,6 +151,8 @@ function view_update(view, cam)
 		{
 			mouse_cursor = cr_none
 			camera_control_move(cam, view_click_x, view_click_y)
+			
+			shortcut_bar_state = "cameramove"
 			
 			if (!mouse_right && window_busy = "viewmovecamera")
 			{

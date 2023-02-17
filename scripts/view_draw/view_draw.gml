@@ -37,6 +37,8 @@ function view_draw(view)
 	captionw = boxw
 	captionh = (program_mode = e_mode.MODELING ? 32 : 0)
 	
+	content_height = captionh
+	
 	// Buttons
 	var disable = program_mode != e_mode.MODELING;
 	dw = 24
@@ -93,9 +95,8 @@ function view_draw(view)
 	draw_settings_button("snapsettings", dx, dy, 16, dh, false, settings_menu_snap, disable)
 	
 	dx -= dw
-	tip_set_shortcut(setting_key_snap)
+	tip_set_keybind(e_keybind.SNAP)
 	draw_button_icon("toolsetsnap", dx, dy, dw, dh, setting_snap, icons.MAGNET, action_setting_snap, disable, setting_snap ? "tooltipsnapdisable" : "tooltipsnapenable")
-	tip_set_shortcut(-1)
 	
 	content_y = boxy + captionh
 	content_height = boxh - captionh
@@ -138,6 +139,9 @@ function view_draw(view)
 		content_width = ceil(content_width)
 		content_height = ceil(content_height)
 		content_mouseon = (app_mouse_box(content_x, content_y, content_width, content_height) && view.mouseon && !popup_mouseon && !toast_mouseon && !context_menu_mouseon)
+		
+		if (content_mouseon)
+			shortcut_bar_state = "viewport"
 		
 		// Preview transparency
 		if (program_mode = e_mode.PREVIEW)
@@ -198,6 +202,7 @@ function view_draw(view)
 	
 	// Navigation
 	toolbarx = boxx + boxw - (16 + 36)
+	toolbarwid = 36
 	toolbarhei = 4 + (28 * 3) + (8) + 4
 	
 	if (app_mouse_box(toolbarx, toolbary, toolbarwid, toolbarhei))

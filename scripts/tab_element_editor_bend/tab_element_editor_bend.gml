@@ -4,6 +4,8 @@ function tab_element_editor_bend()
 {
 	context_menu_group_temp = e_context_group.BEND
 	
+	var snapval = (dragger_snap ? setting_snap_size_rotation : snap_min);
+	
 	// Bend axes
 	var axis, axislen, axisname;
 	axislen = 0
@@ -41,7 +43,7 @@ function tab_element_editor_bend()
 		
 		// Angle
 		tab_control_meter()
-		draw_meter("elementeditorbendangle" + axisname[i], dx, dy, dw, el_edit.value[e_value.BEND_ANGLE_X + axis_edit], 48, el_edit.value[e_value.BEND_X_MIN + axis_edit], el_edit.value[e_value.BEND_X_MAX + axis_edit], 0, 1, element_editor.bend.tbx_angle[axis_edit], action_el_bend_angle)
+		draw_meter("elementeditorbendangle" + axisname[i], dx, dy, dw, el_edit.value[e_value.BEND_ANGLE_X + axis_edit], 48, el_edit.value[e_value.BEND_X_MIN + axis_edit], el_edit.value[e_value.BEND_X_MAX + axis_edit], 0, snapval, element_editor.bend.tbx_angle[axis_edit], action_el_bend_angle)
 		tab_next()
 		
 		tab_collapse_end(true)
@@ -77,7 +79,7 @@ function tab_element_editor_bend()
 	
 	// Bend end offset
 	tab_control_dragger()
-	draw_dragger("elementeditorbendendoffset", dx, dy, dragger_width, el_edit.value[e_value.BEND_END_OFFSET], 0.1, snap_min, no_limit, 0, snap_min, element_editor.bend.tbx_end_offset, action_el_bend_end_offset, null, true, !el_edit.value[e_value.BEND], "elementeditorbendendoffsethelp")
+	draw_dragger("elementeditorbendendoffset", dx, dy, dragger_width, el_edit.value[e_value.BEND_END_OFFSET], 0.1, snap_min, no_limit, 0, snap_min, element_editor.bend.tbx_end_offset, action_el_bend_end_offset, null, true, !el_edit.value[e_value.BEND])
 	tab_next()
 	
 	// Bend size

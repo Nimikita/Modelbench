@@ -14,29 +14,13 @@ function tab_settings_controls()
 	{
 		tab_collapse_start()
 		
-		tab_control_keycontrol()
-		draw_keycontrol("settingskeynew", dx, dy, dw, setting_key_new, new_shortcut(ord("N"), true, false), action_setting_key_new)
-		tab_next(false)
-		
-		tab_control_keycontrol()
-		draw_keycontrol("settingskeynewtemplate", dx, dy, dw, setting_key_new_template, new_shortcut(ord("N"), true, true), action_setting_key_new_template)
-		tab_next(false)
-		
-		tab_control_keycontrol()
-		draw_keycontrol("settingskeyopen", dx, dy, dw, setting_key_open, new_shortcut(ord("O"), true, false), action_setting_key_open)
-		tab_next(false)
-		
-		tab_control_keycontrol()
-		draw_keycontrol("settingskeysave", dx, dy, dw, setting_key_save, new_shortcut(ord("S"), true, false), action_setting_key_save)
-		tab_next(false)
-		
-		tab_control_keycontrol()
-		draw_keycontrol("settingskeysaveas", dx, dy, dw, setting_key_save_as, new_shortcut(ord("S"), true, true), action_setting_key_save_as)
-		tab_next(false)
-		
-		tab_control_keycontrol()
-		draw_keycontrol("settingskeyimport", dx, dy, dw, setting_key_import, new_shortcut(ord("I"), true, false), action_setting_key_import)
-		tab_next()
+		draw_keybind(e_keybind.MODEL_NEW, dx, dy)
+		draw_keybind(e_keybind.MODEL_NEW_TEMPLATE, dx, dy)
+		draw_keybind(e_keybind.MODEL_OPEN, dx, dy)
+		draw_keybind(e_keybind.MODEL_SAVE, dx, dy)
+		draw_keybind(e_keybind.MODEL_SAVE_AS, dx, dy)
+		draw_keybind(e_keybind.MODEL_IMPORT, dx, dy)
+		dy += 8
 		
 		tab_collapse_end(true)
 	}
@@ -49,33 +33,14 @@ function tab_settings_controls()
 	{
 		tab_collapse_start()
 		
-		tab_control_keycontrol()
-		draw_keycontrol("settingskeyundo", dx, dy, dw, setting_key_undo, new_shortcut(ord("Z"), true, false), action_setting_key_undo)
-		tab_next(false)
-		
-		tab_control_keycontrol()
-		draw_keycontrol("settingskeyredo", dx, dy, dw, setting_key_redo, new_shortcut(ord("Y"), true, false), action_setting_key_redo)
-		tab_next(false)
-		
-		tab_control_keycontrol()
-		draw_keycontrol("settingskeyrename", dx, dy, dw, setting_key_rename, new_shortcut(vk_f2, false, false), action_setting_key_rename)
-		tab_next(false)
-		
-		tab_control_keycontrol()
-		draw_keycontrol("settingskeydelete", dx, dy, dw, setting_key_delete, new_shortcut(vk_delete, false, false), action_setting_key_delete)
-		tab_next(false)
-		
-		tab_control_keycontrol()
-		draw_keycontrol("settingskeyduplicate", dx, dy, dw, setting_key_duplicate, new_shortcut(ord("D"), true, false), action_setting_key_duplicate)
-		tab_next(false)
-		
-		tab_control_keycontrol()
-		draw_keycontrol("settingskeyselectall", dx, dy, dw, setting_key_select_all, new_shortcut(ord("A"), true, false), action_setting_key_select_all)
-		tab_next(false)
-		
-		tab_control_keycontrol()
-		draw_keycontrol("settingskeyuveditor", dx, dy, dw, setting_key_uv_editor, new_shortcut(ord("E"), true, false), action_setting_key_uv_editor)
-		tab_next()
+		draw_keybind(e_keybind.UNDO, dx, dy)
+		draw_keybind(e_keybind.REDO, dx, dy)
+		draw_keybind(e_keybind.RENAME, dx, dy)
+		draw_keybind(e_keybind.ELEMENT_DELETE, dx, dy)
+		draw_keybind(e_keybind.ELEMENT_DUPLICATE, dx, dy)
+		draw_keybind(e_keybind.SELECT_ALL, dx, dy)
+		draw_keybind(e_keybind.UV_EDITOR, dx, dy)
+		dy += 8
 		
 		tab_collapse_end(true)
 	}
@@ -88,41 +53,16 @@ function tab_settings_controls()
 	{
 		tab_collapse_start()
 		
-		tab_control_keycontrol()
-		draw_keycontrol("settingskeytoolselect", dx, dy, dw, setting_key_tool_select, new_shortcut(ord("W"), false, false), action_setting_key_tool_select)
-		tab_next(false)
-		
-		tab_control_keycontrol()
-		draw_keycontrol("settingskeytoolpivot", dx, dy, dw, setting_key_tool_pivot, new_shortcut(ord("Q"), false, false), action_setting_key_tool_pivot)
-		tab_next(false)
-		
-		tab_control_keycontrol()
-		draw_keycontrol("settingskeytoolmove", dx, dy, dw, setting_key_tool_move, new_shortcut(ord("G"), false, false), action_setting_key_tool_move)
-		tab_next(false)
-		
-		tab_control_keycontrol()
-		draw_keycontrol("settingskeytoolrotate", dx, dy, dw, setting_key_tool_rotate, new_shortcut(ord("R"), false, false), action_setting_key_tool_rotate)
-		tab_next(false)
-		
-		tab_control_keycontrol()
-		draw_keycontrol("settingskeytoolresize", dx, dy, dw, setting_key_tool_resize, new_shortcut(ord("Z"), false, false), action_setting_key_tool_resize)
-		tab_next(false)
-		
-		tab_control_keycontrol()
-		draw_keycontrol("settingskeytoolscale", dx, dy, dw, setting_key_tool_scale, new_shortcut(ord("S"), false, false), action_setting_key_tool_scale)
-		tab_next(false)
-		
-		tab_control_keycontrol()
-		draw_keycontrol("settingskeytoolbend", dx, dy, dw, setting_key_tool_bend, new_shortcut(ord("B"), false, false), action_setting_key_tool_bend)
-		tab_next(false)
-		
-		tab_control_keycontrol()
-		draw_keycontrol("settingskeytooltransform", dx, dy, dw, setting_key_tool_transform, new_shortcut(ord("T"), false, false), action_setting_key_tool_transform)
-		tab_next(false)
-		
-		tab_control_keycontrol()
-		draw_keycontrol("settingskeysnap", dx, dy, dw, setting_key_snap, new_shortcut(ord("F"), false, false), action_setting_key_snap)
-		tab_next()
+		draw_keybind(e_keybind.TOOL_SELECT, dx, dy)
+		draw_keybind(e_keybind.TOOL_MOVE, dx, dy)
+		draw_keybind(e_keybind.TOOL_PIVOT, dx, dy)
+		draw_keybind(e_keybind.TOOL_ROTATE, dx, dy)
+		draw_keybind(e_keybind.TOOL_RESIZE, dx, dy)
+		draw_keybind(e_keybind.TOOL_SCALE, dx, dy)
+		draw_keybind(e_keybind.TOOL_BEND, dx, dy)
+		draw_keybind(e_keybind.TOOL_TRANSFORM, dx, dy)
+		draw_keybind(e_keybind.SNAP, dx, dy)
+		dy += 8
 		
 		tab_collapse_end(true)
 	}
@@ -135,45 +75,17 @@ function tab_settings_controls()
 	{
 		tab_collapse_start()
 		
-		tab_control_keycontrol()
-		draw_keycontrol("settingskeywalknavigation", dx, dy, dw, setting_key_walk_navigation, new_shortcut(ord("F"), false, true), action_setting_key_walk_navigation)
-		tab_next(false)
-		
-		tab_control_keycontrol()
-		draw_keycontrol("settingskeyforward", dx, dy, dw, setting_key_forward, new_shortcut(ord("W"), false, false), action_setting_key_forward, true)
-		tab_next(false)
-		
-		tab_control_keycontrol()
-		draw_keycontrol("settingskeyback", dx, dy, dw, setting_key_back, new_shortcut(ord("S"), false, false), action_setting_key_back, true)
-		tab_next(false)
-		
-		tab_control_keycontrol()
-		draw_keycontrol("settingskeyleft", dx, dy, dw, setting_key_left, new_shortcut(ord("A"), false, false), action_setting_key_left, true)
-		tab_next(false)
-		
-		tab_control_keycontrol()
-		draw_keycontrol("settingskeyright", dx, dy, dw, setting_key_right, new_shortcut(ord("D"), false, false), action_setting_key_right, true)
-		tab_next(false)
-		
-		tab_control_keycontrol()
-		draw_keycontrol("settingskeyascend", dx, dy, dw, setting_key_ascend, new_shortcut(ord("E"), false, false), action_setting_key_ascend, true)
-		tab_next(false)
-		
-		tab_control_keycontrol()
-		draw_keycontrol("settingskeydescend", dx, dy, dw, setting_key_descend, new_shortcut(ord("Q"), false, false), action_setting_key_descend, true)
-		tab_next(false)
-		
-		tab_control_keycontrol()
-		draw_keycontrol("settingskeyreset", dx, dy, dw, setting_key_reset, new_shortcut(ord("R"), false, false), action_setting_key_reset, true)
-		tab_next(false)
-		
-		tab_control_keycontrol()
-		draw_keycontrol("settingskeyfast", dx, dy, dw, setting_key_fast, new_shortcut(vk_space, false, false), action_setting_key_fast, true)
-		tab_next(false)
-		
-		tab_control_keycontrol()
-		draw_keycontrol("settingskeyslow", dx, dy, dw, setting_key_slow, new_shortcut(vk_lshift, false, false), action_setting_key_slow, true)
-		tab_next()
+		draw_keybind(e_keybind.CAM_WALK, dx, dy)
+		draw_keybind(e_keybind.CAM_FORWARD, dx, dy)
+		draw_keybind(e_keybind.CAM_BACK, dx, dy)
+		draw_keybind(e_keybind.CAM_LEFT, dx, dy)
+		draw_keybind(e_keybind.CAM_RIGHT, dx, dy)
+		draw_keybind(e_keybind.CAM_ASCEND, dx, dy)
+		draw_keybind(e_keybind.CAM_DESCEND, dx, dy)
+		draw_keybind(e_keybind.CAM_RESET, dx, dy)
+		draw_keybind(e_keybind.CAM_FAST, dx, dy)
+		draw_keybind(e_keybind.CAM_SLOW, dx, dy)
+		dy += 8
 		
 		tab_collapse_end(true)
 	}

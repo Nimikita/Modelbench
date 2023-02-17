@@ -24,9 +24,9 @@ function tip_set()
 		return 0
 	
 	if (checkmouse)
-		showtip = setting_tip_show && app_mouse_box(xx, yy, w, h) && content_mouseon
+		showtip = app_mouse_box(xx, yy, w, h) && content_mouseon
 	else
-		showtip = setting_tip_show
+		showtip = true
 	
 	if (showtip)
 	{
@@ -34,13 +34,18 @@ function tip_set()
 		{
 			tip_text = text
 			
-			if (tip_shortcut_shortcut != -1)
+			if (tip_keybind != null)
 			{
-				tip_shortcut_draw = true
-				tip_text += "\n" + text_get("tooltipshortcut", text_control_name(tip_shortcut_shortcut))
+				tip_keybind_draw = true
+				tip_text_keybind = text_control_name(tip_keybind)
 			}
 			else
-				tip_shortcut_draw = false
+			{
+				tip_keybind_draw = false
+				tip_text_keybind = ""
+			}
+			
+			var fontprev = draw_get_font();
 			
 			draw_set_font(font_caption)
 			
@@ -52,11 +57,12 @@ function tip_set()
 			// Break tip apart based on wrap lines
 			tip_text_array = string_line_array(tip_text_wrap)
 			
+			tip_w = string_width(tip_text_wrap) + (tip_text_keybind = "" ? 0 : string_width(tip_text_keybind) + 12)
 			tip_h = 7 * (array_length(tip_text_array) - 1)
 			tip_h += 8 * array_length(tip_text_array)
 			
 			// Add padding
-			tip_w = string_width(tip_text_wrap) + (8 * 2)
+			tip_w += (8 * 2)
 			tip_h += (8 * 2)
 			
 			tip_x = 0
@@ -66,6 +72,8 @@ function tip_set()
 			
 			tip_right = false
 			tip_left = false
+			tip_arrow = 0
+			tip_arrow_xscale = 1
 			
 			if (tip_force_left)
 			{
@@ -95,11 +103,19 @@ function tip_set()
 				
 				// Move to right
 				if (tip_x < 0)
-					tip_x += (tip_w/2) - 8
+				{
+					tip_x += (tip_w/2)
+					tip_arrow = 1
+				}
 				
 				// Move to left
 				if (tip_x + tip_w > window_width)
-					tip_x -= (tip_w/2) - 8
+				{
+					tip_x -= (tip_w/2)
+					tip_arrow = 1
+					tip_arrow_xscale = -1
+					tip_arrow_x -= 1
+				}
 				
 				// Move to top right
 				if (tip_y + tip_h > window_height)
@@ -128,12 +144,17 @@ function tip_set()
 			tip_y = floor(tip_y)
 			tip_w = floor(tip_w)
 			tip_h = floor(tip_h)
+			
+			draw_set_font(fontprev)
 		}
 		
 		tip_show = true
 		tip_box_x = xx
 		tip_box_y = yy
 	}
+	
+	if (tip_keybind != null)
+		tip_keybind = null
 	
 	tip_wrap = true
 }

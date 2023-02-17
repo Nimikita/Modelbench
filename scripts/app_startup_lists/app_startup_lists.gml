@@ -26,21 +26,20 @@ function app_startup_lists()
 	scenery_list = ds_list_create()
 	preview_scenery_load()
 	
-	// Beta testers
+	// Special thanks
 	special_thanks_list = ds_list_create()
 	ds_list_add(special_thanks_list,
+		"9redwoods",
+		"Alpha Toostrr",
 		"AnxiousCynic",
-		"Aronan",
-		"Emunator",
-		"Espresso",
-		"Ezcha",
+		"Cade [CaZaKoJa]",
+		"Jnick",
+		"Jossamations",
 		"KeepOnChucking",
-		"Marvin",
-		"Mike",
 		"Rollo",
 		"SKIBBZ",
-		"TheTanJames",
 		"UpgradedMoon",
-		"Vash"
+		"Vash",
+		"__Mine__"
 	)
 }

@@ -35,8 +35,9 @@ function settings_startup()
 	setting_refresh_textures = false
 	setting_adjust_pivot_resize = true
 	
-	action_controls_reset()
 	setting_viewport_controls_middle = false
+	
+	action_controls_reset()
 	
 	setting_theme = theme_light
 	setting_accent = 6

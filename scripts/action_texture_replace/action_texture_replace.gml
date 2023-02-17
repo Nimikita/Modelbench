@@ -11,16 +11,12 @@ function action_texture_replace()
 		texobj = argument[0]
 		fn = argument[1]
 	}
-	else
-	{
-		texobj = list_item_value;
+	
+	if (fn = undefined)
 		fn = ""
-	}
 	
 	if (!history_undo && !history_redo)
 	{
-		show_debug_message(list_item_value)
-		
 		with (texobj)
 		{
 			if (fn = "")

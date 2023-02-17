@@ -44,45 +44,17 @@ function settings_load()
 	var controlsmap = map[?"controls"];
 	if (ds_map_valid(controlsmap) && load_format >= e_settings.FORMAT_111)
 	{
-		setting_key_new = value_get_array(controlsmap[?"key_new"], setting_key_new)
-		setting_key_new_template = value_get_array(controlsmap[?"key_new_template"], setting_key_new_template)
-		setting_key_open = value_get_array(controlsmap[?"key_open"], setting_key_open)
-		setting_key_save = value_get_array(controlsmap[?"key_save"], setting_key_save)
-		setting_key_save_as = value_get_array(controlsmap[?"key_save_as"], setting_key_save_as)
-		setting_key_import = value_get_array(controlsmap[?"key_import"], setting_key_import)
-		
-		setting_key_undo = value_get_array(controlsmap[?"key_undo"], setting_key_undo)
-		setting_key_redo = value_get_array(controlsmap[?"key_redo"], setting_key_redo)
-		setting_key_rename = value_get_array(controlsmap[?"key_rename"], setting_key_rename)
-		setting_key_delete = value_get_array(controlsmap[?"key_delete"], setting_key_delete)
-		setting_key_duplicate = value_get_array(controlsmap[?"key_duplicate"], setting_key_duplicate)
-		setting_key_select_all = value_get_array(controlsmap[?"key_select_all"], setting_key_select_all)
-		setting_key_uv_editor = value_get_array(controlsmap[?"key_uv_editor"], setting_key_uv_editor)
-		
-		setting_key_tool_select = value_get_array(controlsmap[?"key_tool_select"], setting_key_tool_select)
-		setting_key_tool_pivot = value_get_array(controlsmap[?"key_tool_pivot"], setting_key_tool_pivot)
-		setting_key_tool_move = value_get_array(controlsmap[?"key_tool_move"], setting_key_tool_move)
-		setting_key_tool_rotate = value_get_array(controlsmap[?"key_tool_rotate"], setting_key_tool_rotate)
-		setting_key_tool_scale = value_get_array(controlsmap[?"key_tool_scale"], setting_key_tool_scale)
-		setting_key_tool_transform = value_get_array(controlsmap[?"key_tool_transform"], setting_key_tool_transform)
-		setting_key_tool_bend = value_get_array(controlsmap[?"key_tool_bend"], setting_key_tool_bend)
-		setting_key_tool_resize = value_get_array(controlsmap[?"key_tool_resize"], setting_key_tool_resize)
-		setting_key_snap = value_get_array(controlsmap[?"key_snap"], setting_key_snap)
-		
-		setting_key_walk_navigation = value_get_array(controlsmap[?"key_walk_navigation"], setting_key_walk_navigation)
-		setting_key_forward = value_get_array(controlsmap[?"key_forward"], setting_key_forward)
-		setting_key_back = value_get_array(controlsmap[?"key_back"], setting_key_back)
-		setting_key_left = value_get_array(controlsmap[?"key_left"], setting_key_left)
-		setting_key_right = value_get_array(controlsmap[?"key_right"], setting_key_right)
-		setting_key_ascend = value_get_array(controlsmap[?"key_ascend"], setting_key_ascend)
-		setting_key_descend = value_get_array(controlsmap[?"key_descend"], setting_key_descend)
-		setting_key_reset = value_get_array(controlsmap[?"key_reset"], setting_key_reset)
-		setting_key_fast = value_get_array(controlsmap[?"key_fast"], setting_key_fast)
-		setting_key_slow = value_get_array(controlsmap[?"key_slow"], setting_key_slow)
+		var obj;
+		for (var i = 0; i < e_keybind.amount; i++)
+		{
+			obj = keybinds[i]
+			obj.keybind = value_get_array(controlsmap[?obj.name], obj.keybind)
+		}
 		
 		setting_look_sensitivity = value_get_real(controlsmap[?"look_sensitivity"], setting_look_sensitivity)
-		
 		setting_viewport_controls_middle = value_get_real(controlsmap[?"viewport_controls_middle"], setting_viewport_controls_middle)
+		
+		keybinds_update_match()
 	}
 	
 	// Interface

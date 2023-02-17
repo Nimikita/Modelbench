@@ -3,14 +3,15 @@
 
 function enums()
 {
+	// Mouse controls
 	enum e_mouse
 	{
-		LEFT_CLICK,
-		MIDDLE_CLICK,
-		RIGHT_CLICK,
-		LEFT_DRAG,
-		MIDDLE_DRAG,
-		RIGHT_DRAG,
+		CLICK_LEFT,
+		CLICK_MIDDLE,
+		CLICK_RIGHT,
+		DRAG_LEFT,
+		DRAG_MIDDLE,
+		DRAG_RIGHT,
 		SCROLL
 	}
 	
@@ -198,6 +199,9 @@ function enums()
 		SCA_X,
 		SCA_Y,
 		SCA_Z,
+		SCA_XY,
+		SCA_XZ,
+		SCA_YZ,
 		SCA_XYZ,
 		
 		PIVOT_X,

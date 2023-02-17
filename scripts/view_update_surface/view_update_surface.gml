@@ -167,17 +167,9 @@ function view_update_surface(view, cam)
 						
 						if (window_busy = "rendercontrol")
 						{
-							// XYZ scale control tooltip
-							if (view_control_edit = e_control.SCA_XYZ)
-							{
-								var zup = setting_z_is_up;
-								var scalearr = point3D(el_edit.value[e_value.SCA_X], el_edit.value[e_value.SCA_Y + zup], el_edit.value[e_value.SCA_Z - zup]);
-								
-								tip_set(text_get("tooltipxyz", scalearr[X], scalearr[Y], scalearr[Z]), mouse_click_x, mouse_click_y, 0, 0, false)
-							}
 							
-							// Single value control tooltip
-							if (view_control_edit != e_control.SCA_XYZ)
+							// Value control tooltip
+							if (view_control_edit != null)
 							{
 								var tipstr, value, zup;
 								tipstr = ""
@@ -188,7 +180,7 @@ function view_update_surface(view, cam)
 									value = point3D(el_edit.value[e_value.OFFSET_X], el_edit.value[e_value.OFFSET_Y + zup], el_edit.value[e_value.OFFSET_Z - zup])
 								else if (view_control_edit >= e_control.POS_X && view_control_edit <= e_control.POS_PAN) // Position
 									value = point3D(el_edit.value[e_value.POS_X], el_edit.value[e_value.POS_Y + zup], el_edit.value[e_value.POS_Z - zup])
-								else if (view_control_edit >= e_control.SCA_X && view_control_edit <= e_control.SCA_Z) // Scale
+								else if (view_control_edit >= e_control.SCA_X && view_control_edit <= e_control.SCA_XYZ) // Scale
 									value = point3D(el_edit.value[e_value.SCA_X], el_edit.value[e_value.SCA_Y + zup], el_edit.value[e_value.SCA_Z - zup])
 								else if (view_control_edit >= e_control.RESIZE_XP && view_control_edit <= e_control.RESIZE_ZN) // Size
 								{
@@ -218,7 +210,8 @@ function view_update_surface(view, cam)
 										tipstr = text_get("tooltipanglexyz", value[X], value[Y], value[Z])
 									}
 								}
-								else
+								
+								if (tipstr = "")
 									tipstr = text_get("tooltipxyz", value[X], value[Y], value[Z])
 								
 								tip_force_right = true

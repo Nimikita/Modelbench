@@ -19,6 +19,6 @@ function camera_control_rotate(cam, lockx, locky)
 	view_cam.angle_look_z = clamp(view_cam.angle_look_z, -89.9, 89.9)
 	camera_set_from()
 	
-	if (keyboard_check_pressed(setting_key_reset[e_shortcut.KEY]))
+	if (keybinds[e_keybind.CAM_RESET].pressed)
 		camera_reset()
 }

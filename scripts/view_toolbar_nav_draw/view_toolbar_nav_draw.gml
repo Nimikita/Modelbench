@@ -45,7 +45,7 @@ function view_toolbar_nav_draw(barx, bary, barw, barh)
 	dx += 4
 	
 	// Walk navigation toggle
-	tip_set_shortcut(setting_key_walk_navigation)
+	tip_set_keybind(e_keybind.CAM_WALK)
 	if (draw_button_icon("toolwalknav", dx, dy, 28, 28, window_busy = "viewmovecameratoggle", icons.WALK, null, false, "tooltipwalknav"))
 	{
 		window_focus = string(content_view)
@@ -53,7 +53,6 @@ function view_toolbar_nav_draw(barx, bary, barw, barh)
 		view_click_x = display_mouse_get_x()
 		view_click_y = display_mouse_get_y()
 	}
-	tip_set_shortcut(-1)
 	
 	if (dw > dh)
 		dx += buttonsize

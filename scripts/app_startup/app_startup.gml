@@ -33,6 +33,7 @@ function app_startup()
 	toasts_startup()
 	
 	json_startup()
+	app_startup_keybinds()
 	settings_startup()
 	render_startup()
 	camera_startup()

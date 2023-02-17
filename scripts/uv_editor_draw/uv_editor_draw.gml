@@ -38,21 +38,14 @@ function uv_editor_draw(viewx, viewy, vieww, viewh)
 	// Add shortcuts
 	if (content_mouseon || window_busy = "uveditormove")
 	{
+		shortcut_bar_state = "uveditor"
+		
 		if (uv_editor_xy_mouseon)
-			shortcut_bar_add(null, e_mouse.LEFT_DRAG, "uveditoredituvs")
+			shortcut_bar_state = "uveditorxy"
 		else if (uv_editor_wh_mouseon)
-			shortcut_bar_add(null, e_mouse.LEFT_DRAG, "uveditoreditwidthheight")
+			shortcut_bar_state = "uveditorwh"
 		else if(uv_editor_length_mouseon)
-			shortcut_bar_add(null, e_mouse.LEFT_DRAG, "uveditoreditlength")
-		else
-			shortcut_bar_add(null, e_mouse.LEFT_DRAG, "panview")
-		
-		if (el_edit != null && el_edit.element_type = TYPE_SHAPE)
-			shortcut_bar_add(new_shortcut("", true, false), e_mouse.LEFT_DRAG, "uveditorboxuvs")
-		
-		shortcut_bar_add(null, e_mouse.SCROLL, "zoom")
-		
-		shortcut_bar_add(null, e_mouse.RIGHT_CLICK, "contextmenuuveditor")
+			shortcut_bar_state = "uveditorlength"
 	}
 	
 	// Context menu

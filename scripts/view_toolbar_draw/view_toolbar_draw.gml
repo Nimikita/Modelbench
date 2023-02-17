@@ -45,7 +45,7 @@ function view_toolbar_draw(barx, bary, barw, barh)
 	dx += 4
 	
 	// Select-only tool
-	tip_set_shortcut(setting_key_tool_select)
+	tip_set_keybind(e_keybind.TOOL_SELECT)
 	if (draw_button_icon("toolsettoolselect", dx, dy, 28, 28, tool_selected = e_tool.SELECT, icons.SELECT, null, false, "toolsettoolselect"))
 		tool_selected = e_tool.SELECT
 	
@@ -55,7 +55,7 @@ function view_toolbar_draw(barx, bary, barw, barh)
 		dy += buttonsize
 	
 	// Position tool
-	tip_set_shortcut(setting_key_tool_move)
+	tip_set_keybind(e_keybind.TOOL_MOVE)
 	if (draw_button_icon("toolsettoolmove", dx, dy, 28, 28, tool_selected = e_tool.MOVE, icons.MOVE, null, false, "toolsettoolmove"))
 		tool_selected = e_tool.MOVE
 	
@@ -65,7 +65,7 @@ function view_toolbar_draw(barx, bary, barw, barh)
 		dy += buttonsize
 	
 	// Pivot tool
-	tip_set_shortcut(setting_key_tool_pivot)
+	tip_set_keybind(e_keybind.TOOL_PIVOT)
 	if (draw_button_icon("toolsettoolpivot", dx, dy, 28, 28, tool_selected = e_tool.PIVOT, icons.PIVOT, null, false, "toolsettoolpivot"))
 		tool_selected = e_tool.PIVOT
 	
@@ -75,7 +75,7 @@ function view_toolbar_draw(barx, bary, barw, barh)
 		dy += buttonsize
 	
 	// Rotate tool
-	tip_set_shortcut(setting_key_tool_rotate)
+	tip_set_keybind(e_keybind.TOOL_ROTATE)
 	if (draw_button_icon("toolsettoolrotate", dx, dy, 28, 28, tool_selected = e_tool.ROTATE, icons.ROTATE, null, false, "toolsettoolrotate"))
 		tool_selected = e_tool.ROTATE
 	
@@ -85,7 +85,7 @@ function view_toolbar_draw(barx, bary, barw, barh)
 		dy += buttonsize
 	
 	// Resize tool
-	tip_set_shortcut(setting_key_tool_resize)
+	tip_set_keybind(e_keybind.TOOL_RESIZE)
 	if (draw_button_icon("toolsettoolresize", dx, dy, 28, 28, tool_selected = e_tool.RESIZE, icons.TRANSFORM, null, false, "toolsettoolresize"))
 		tool_selected = e_tool.RESIZE
 	
@@ -95,7 +95,7 @@ function view_toolbar_draw(barx, bary, barw, barh)
 		dy += buttonsize
 	
 	// Scale tool
-	tip_set_shortcut(setting_key_tool_scale)
+	tip_set_keybind(e_keybind.TOOL_SCALE)
 	if (draw_button_icon("toolsettoolscale", dx, dy, 28, 28, tool_selected = e_tool.SCALE, icons.SCALE, null, false, "toolsettoolscale"))
 		tool_selected = e_tool.SCALE
 	
@@ -105,7 +105,7 @@ function view_toolbar_draw(barx, bary, barw, barh)
 		dy += buttonsize
 	
 	// Bend tool
-	tip_set_shortcut(setting_key_tool_bend)
+	tip_set_keybind(e_keybind.TOOL_BEND)
 	if (draw_button_icon("toolsettoolbend", dx, dy, 28, 28, tool_selected = e_tool.BEND, icons.BEND, null, false, "toolsettoolbend"))
 		tool_selected = e_tool.BEND
 	
@@ -115,11 +115,9 @@ function view_toolbar_draw(barx, bary, barw, barh)
 		dy += buttonsize
 	
 	// Transform tool(Position, rotate, scale)
-	tip_set_shortcut(setting_key_tool_transform)
+	tip_set_keybind(e_keybind.TOOL_TRANSFORM)
 	if (draw_button_icon("toolsettooltransform", dx, dy, 28, 28, tool_selected = e_tool.TRANSFORM, icons.MULTITRANSFORM, null, false, "toolsettooltransform"))
 		tool_selected = e_tool.TRANSFORM
-	
-	tip_set_shortcut(-1)
 	
 	if (dw > dh)
 		dx += buttonsize

@@ -193,9 +193,9 @@ function list_init(name)
 			break
 		}
 		
-		case "contextmenukeycontrol":
+		case "keybind":
 		{
-			list_item_add(text_get("contextmenukeycontrolreset"), null, "", null, icons.RESET, null, action_keycontrol, true)
+			list_item_add(text_get("contextmenurestorekeybind"), null, "", null, icons.RESET, null, keybind_restore, true)
 			break
 		}
 		
@@ -205,16 +205,16 @@ function list_init(name)
 			list_item_last.context_menu_name = "contextmenuaddelement"
 			list_item_last.disabled = (context_menu_value.element_type = TYPE_SHAPE)
 			
-			list_item_add(text_get("contextmenuelementrename"), null, text_control_name(setting_key_rename), null, icons.RENAME, null, action_el_rename_start, false)
+			list_item_add(text_get("contextmenuelementrename"), null, text_control_name(keybinds[e_keybind.RENAME].keybind), null, icons.RENAME, null, action_el_rename_start, false)
 			list_item_last.disabled = (el_edit = null)
 			
-			list_item_add(text_get("contextmenuelementduplicate"), null, text_control_name(setting_key_duplicate), null, icons.DUPLICATE, null, action_el_duplicate, false)
+			list_item_add(text_get("contextmenuelementduplicate"), null, text_control_name(keybinds[e_keybind.ELEMENT_DUPLICATE].keybind), null, icons.DUPLICATE, null, action_el_duplicate, false)
 			list_item_last.disabled = (el_edit = null)
 			
-			list_item_add(text_get("contextmenuelementdelete"), null, text_control_name(setting_key_delete), null, icons.DELETE, null, action_el_remove, false)
+			list_item_add(text_get("contextmenuelementdelete"), null, text_control_name(keybinds[e_keybind.ELEMENT_DELETE].keybind), null, icons.DELETE, null, action_el_remove, false)
 			list_item_last.disabled = (el_edit = null)
 			
-			list_item_add(text_get("contextmenuviewportselectall"), null, text_control_name(setting_key_select_all), null, icons.SELECT_ALL, null, action_el_select_all, true)
+			list_item_add(text_get("contextmenuviewportselectall"), null, text_control_name(keybinds[e_keybind.SELECT_ALL].keybind), null, icons.SELECT_ALL, null, action_el_select_all, true)
 			list_item_add(text_get("contextmenuelementexpandall"), null, "", null, icons.MINIMIZE, null, action_expand_all, false)
 			list_item_add(text_get("contextmenuelementcollapseall"), null, "", null, icons.MAXIMIZE, null, action_collapse_all, false)
 			break
@@ -242,16 +242,16 @@ function list_init(name)
 				list_item_add(text_get("contextmenuelementadd"), null, "", null, icons.PLUS, icons.CHEVRON_RIGHT_TINY, null, true)
 				list_item_last.context_menu_name = "contextmenuviewportaddelement"
 				
-				list_item_add(text_get("contextmenuelementrename"), null, text_control_name(setting_key_rename), null, icons.RENAME, null, action_el_rename_start, false)
+				list_item_add(text_get("contextmenuelementrename"), null, text_control_name(keybinds[e_keybind.RENAME].keybind), null, icons.RENAME, null, action_el_rename_start, false)
 				list_item_last.disabled = (el_edit = null)
 				
-				list_item_add(text_get("contextmenuelementduplicate"), null, text_control_name(setting_key_duplicate), null, icons.DUPLICATE, null, action_el_duplicate, false)
+				list_item_add(text_get("contextmenuelementduplicate"), null, text_control_name(keybinds[e_keybind.ELEMENT_DUPLICATE].keybind), null, icons.DUPLICATE, null, action_el_duplicate, false)
 				list_item_last.disabled = (el_edit = null)
 				
-				list_item_add(text_get("contextmenuelementdelete"), null, text_control_name(setting_key_delete), null, icons.DELETE, null, action_el_remove, false)
+				list_item_add(text_get("contextmenuelementdelete"), null, text_control_name(keybinds[e_keybind.ELEMENT_DELETE].keybind), null, icons.DELETE, null, action_el_remove, false)
 				list_item_last.disabled = (el_edit = null)
 				
-				list_item_add(text_get("contextmenuviewportselectall"), null, text_control_name(setting_key_select_all), null, icons.SELECT_ALL, null, action_el_select_all, true)
+				list_item_add(text_get("contextmenuviewportselectall"), null, text_control_name(keybinds[e_keybind.SELECT_ALL].keybind), null, icons.SELECT_ALL, null, action_el_select_all, true)
 			}
 			
 			if (setting_show_uv_editor)
@@ -327,16 +327,16 @@ function list_init(name)
 		// File menu
 		case "toolbarfile":
 		{
-			list_item_add(text_get("toolbarfilenew"), undefined, text_control_name(setting_key_new), null, icons.FILE, null, model_create)
-			list_item_add(text_get("toolbarfileopen"), undefined, text_control_name(setting_key_open), null, icons.FOLDER, null, model_load)
+			list_item_add(text_get("toolbarfilenew"), undefined, text_control_name(keybinds[e_keybind.MODEL_NEW].keybind), null, icons.FILE, null, model_create)
+			list_item_add(text_get("toolbarfileopen"), undefined, text_control_name(keybinds[e_keybind.MODEL_NEW].keybind), null, icons.FOLDER, null, model_load)
 			list_item_add(text_get("toolbarfilerecent"), undefined, "", null, icons.FOLDER_RECENTS, icons.CHEVRON_RIGHT_TINY, null)
 			list_item_last.context_menu_name = "toolbarfilerecent"
 			list_item_last.disabled = (ds_list_size(recent_list) = 0)
 			
-			list_item_add(text_get("toolbarfilesave"), undefined, text_control_name(setting_key_save), null, icons.SAVE, null, model_save, true)
-			list_item_add(text_get("toolbarfilesaveas"), undefined, text_control_name(setting_key_save_as), null, icons.SAVE_AS, null, model_save_as)
+			list_item_add(text_get("toolbarfilesave"), undefined, text_control_name(keybinds[e_keybind.MODEL_SAVE].keybind), null, icons.SAVE, null, model_save, true)
+			list_item_add(text_get("toolbarfilesaveas"), undefined, text_control_name(keybinds[e_keybind.MODEL_SAVE_AS].keybind), null, icons.SAVE_AS, null, model_save_as)
 			
-			list_item_add(text_get("toolbarfileimport"), undefined, text_control_name(setting_key_import), null, icons.ASSET_IMPORT, null, action_model_import, true)
+			list_item_add(text_get("toolbarfileimport"), undefined, text_control_name(keybinds[e_keybind.MODEL_IMPORT].keybind), null, icons.ASSET_IMPORT, null, action_model_import, true)
 			
 			list_item_add(text_get("toolbarfileexportobj"), export, "", null, icons.FILE_OBJ, null, export.show ? tab_close : tab_show, true)
 			
@@ -359,19 +359,19 @@ function list_init(name)
 		// Edit menu
 		case "toolbaredit":
 		{
-			list_item_add(text_get("toolbareditundo"), null, text_control_name(setting_key_undo), null, icons.UNDO, null, action_toolbar_undo)
+			list_item_add(text_get("toolbareditundo"), null, text_control_name(keybinds[e_keybind.UNDO].keybind), null, icons.UNDO, null, action_toolbar_undo)
 			list_item_last.disabled = (history_pos = history_amount)
 			
-			list_item_add(text_get("toolbareditredo"), null, text_control_name(setting_key_redo), null, icons.REDO, null, action_toolbar_redo)
+			list_item_add(text_get("toolbareditredo"), null, text_control_name(keybinds[e_keybind.REDO].keybind), null, icons.REDO, null, action_toolbar_redo)
 			list_item_last.disabled = (history_pos = 0)
 			
-			list_item_add(text_get("toolbareditselectall"), null, text_control_name(setting_key_select_all), null, icons.SELECT_ALL, null, action_el_select_all, true)
+			list_item_add(text_get("toolbareditselectall"), null, text_control_name(keybinds[e_keybind.SELECT_ALL].keybind), null, icons.SELECT_ALL, null, action_el_select_all, true)
 			list_item_last.disabled = (ds_list_size(part_list) = 0)
 			
-			list_item_add(text_get("toolbareditduplicate"), null, text_control_name(setting_key_duplicate), null, icons.DUPLICATE, null, action_el_duplicate, true)
+			list_item_add(text_get("toolbareditduplicate"), null, text_control_name(keybinds[e_keybind.ELEMENT_DUPLICATE].keybind), null, icons.DUPLICATE, null, action_el_duplicate, true)
 			list_item_last.disabled = (el_edit = null)
 			
-			list_item_add(text_get("toolbareditdelete"), null, text_control_name(setting_key_delete), null, icons.DELETE, null, action_el_remove)
+			list_item_add(text_get("toolbareditdelete"), null, text_control_name(keybinds[e_keybind.ELEMENT_DELETE].keybind), null, icons.DELETE, null, action_el_remove)
 			list_item_last.disabled = (el_edit = null)
 			
 			list_item_add(text_get("toolbareditpreferences"), settings, "", null, icons.SETTINGS, null, settings.show ? tab_close : tab_show, true)
@@ -388,7 +388,7 @@ function list_init(name)
 			list_item_add(text_get("toolbarviewshortcutsbar"), null, "", null, icons.KEYBOARD, null, action_setting_shortcuts_bar, true)
 			list_item_last.toggled = setting_show_shortcuts_bar
 			
-			list_item_add(text_get("toolbarviewuveditor"), !setting_show_uv_editor, text_control_name(setting_key_uv_editor), null, icons.TEXTURE, null, action_toolbar_show_uv_editor, true)
+			list_item_add(text_get("toolbarviewuveditor"), !setting_show_uv_editor, text_control_name(keybinds[e_keybind.UV_EDITOR].keybind), null, icons.TEXTURE, null, action_toolbar_show_uv_editor, true)
 			list_item_last.toggled = setting_show_uv_editor
 			break
 		}

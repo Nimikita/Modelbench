@@ -4,8 +4,8 @@
 		"language": "English",
 		"locale": "en-US",
         "translator": "Nimi",
-        "forversion": "1.2.0",
-        "lastchange": "2023.02.05"
+        "forversion": "1.1.5",
+        "lastchange": "2023.02.16"
     },
 	"startup/": {
 		"modeldetected": "Unsaved model detected",
@@ -254,8 +254,9 @@
 			"underwater": "Underwater",
 			"the_end": "The End",
 			"nether": "Nether",
-			"soulsand_valley": "Nether (Soulsand valley)"
-		}
+			"soulsand_valley": "Nether (Soul Sand Valley)"
+		},
+		"editkeybind": "Edit keybind"
 	},
 	"toolset/": {
 		"add/": {
@@ -493,12 +494,12 @@
 		"texture": "Texture",
 		"inherittexture": "Inherit texture",
 		"inheritcolor": "Inherit parent color",
-		"inheritcolorhelp": "Inherit color options including opacity and brightness.",
+		"inheritcolorhelp": "Inherit color options including opacity and emissive.",
 		"blendcolor": "Blend color",
 		"mixcolor": "Mix color",
 		"mixamount": "Mix amount",
 		"opacity": "Opacity",
-		"brightness": "Brightness",
+		"brightness": "Emissive",
 		"inflate": "Inflate",
 		"bend": "Bend",
 		"mirrortexture": "Mirror texture",
@@ -590,18 +591,20 @@
 		"controlstools": "Tools",
 		"controlscamera": "Camera",
 		"key/": {
-			"new": "New model",
-			"newtemplate": "New model (template)",
-			"open": "Open model",
-			"save": "Save model",
-			"saveas": "Save model as",
-			"import": "Import model",
+			"model/": {
+				"new": "New model",
+				"newtemplate": "New model (template)",
+				"open": "Open model",
+				"save": "Save model",
+				"saveas": "Save model as",
+				"import": "Import model"
+			},
 			"undo": "Undo",
 			"redo": "Redo",
 			"rename": "Rename",
 			"delete": "Delete",
 			"duplicate": "Duplicate",
-			"selectall": "Select all",
+			"select": "Select all",
 			"uveditor": "Toggle UV editor",
 			"tool/": {
 				"select": "Select tool",
@@ -614,16 +617,18 @@
 				"resize": "Resize tool"
 			},
 			"snap": "Toggle snapping",
-			"walknavigation": "Walk navigation",
-			"forward": "Forward",
-            "back": "Back",
-            "left": "Left",
-            "right": "Right",
-            "ascend": "Ascend",
-            "descend": "Descend",
-            "reset": "Reset",
-            "fast": "Faster",
-            "slow": "Slower"
+			"cam/": {
+				"walk": "Walk navigation",
+				"forward": "Forward",
+				"back": "Back",
+				"left": "Left",
+				"right": "Right",
+				"ascend": "Ascend",
+				"descend": "Descend",
+				"reset": "Reset",
+				"fast": "Faster",
+				"slow": "Slower"
+			}
 		},
 		"theme": "Theme",
 		"theme/": {
@@ -661,9 +666,9 @@
 		"deselect": "Deselect",
 		"groupselect": "Group select",
 		"moveselection": "Move selection",
-		"orbitview": "Orbit view",
-		"panview": "Pan view",
-		"walknavigation": "Walk navigation",
+		"orbit": "Orbit view",
+		"pan": "Pan view",
+		"walk": "Walk navigation",
 		"zoom": "Zoom",
 		"transform": "Transform",
 		"transformslower": "Transform (Slow)",
@@ -684,16 +689,13 @@
 			"editwidthheight": "Edit width/height",
 			"boxuvs": "Set box UVs"
 		},
-		"move/": {
-			"forward": "Forward",
-            "back": "Back",
-            "left": "Left",
-            "right": "Right",
-            "ascend": "Ascend",
-            "descend": "Descend",
-            "reset": "Reset",
-            "fast": "Faster",
-            "slow": "Slower"
-		}
+		"forward": "Forward",
+		"back": "Back",
+		"left": "Left",
+		"right": "Right",
+		"ascend": "Ascend",
+		"descend": "Descend",
+		"faster": "Faster",
+		"slower": "Slower"
 	}
 }

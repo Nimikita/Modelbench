@@ -89,9 +89,8 @@ function toolbar_draw()
 	if (program_mode = e_mode.MODELING)
 	{
 		// Toggle UV editor
-		tip_set_shortcut(setting_key_uv_editor)
+		tip_set_keybind(e_keybind.UV_EDITOR)
 		draw_button_icon("toolbaruveditor", dx, dy, 28, 28, setting_show_uv_editor, icons.TEXTURE, action_toolbar_show_uv_editor, false, (setting_show_uv_editor ? "tooltipuveditorhide" : "tooltipuveditorshow"))
-		tip_set_shortcut(-1)
 	}
 	*/
 	

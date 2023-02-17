@@ -75,8 +75,10 @@ function app_startup_window()
 	tip_alpha = 0
 	tip_text = ""
 	tip_text_wrap = ""
-	tip_x = 0
-	tip_y = 0
+	tip_final_x = -1
+	tip_final_y = -1
+	tip_arrow_final_x = -1
+	tip_arrow_final_y = -1
 	tip_w = 0
 	tip_h = 0
 	tip_box_x = 0
@@ -84,16 +86,16 @@ function app_startup_window()
 	tip_location_x = 0
 	tip_location_y = 0
 	tip_wrap = true
-	tip_shortcut_shortcut = -1
-	tip_shortcut_draw = false
+	tip_keybind = null
+	tip_keybind_draw = false
 	tip_arrow_x = 0
 	tip_arrow_y = 0
 	tip_arrow_yscale = 1
-	tip_text_array = 0
+	tip_text_array = array()
 	tip_force_right = false
 	tip_right = false
-	tip_force_left = false
 	tip_left = false
+	tip_force_left = false
 	
 	// Popups
 	popup = null
