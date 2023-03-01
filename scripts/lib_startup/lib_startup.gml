@@ -5,19 +5,9 @@ function lib_startup()
 	log("External library init")
 	
 	var pathfile, pathwindow, pathfilednd;
-	
-	if (is_32bit)
-	{
-		pathfile = "Data\\file_x32.dll"
-		pathwindow = "Data\\window_x32.dll"
-		pathfilednd = "Data\\filedropper_x32.dll"
-	}
-	else
-	{
-		pathfile = "Data\\file.dll"
-		pathwindow = "Data\\window.dll"
-		pathfilednd = "Data\\filedropper.dll"
-	}
+	pathfile = "Data\\file.dll"
+	pathwindow = "Data\\window.dll"
+	pathfilednd = "Data\\filedropper.dll"
 	
 	if (!file_exists(pathfile))
 		return missing_file(pathfile)

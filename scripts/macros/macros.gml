@@ -13,7 +13,6 @@ function macros()
 	#macro modelbench_version_extra		""
 	#macro modelbench_version_date		"02.28.2023"
 	#macro gm_runtime					GM_runtime_version
-	#macro is_32bit						true
 	
 	// File formats
 	#macro settings_format				e_settings.FORMAT_111
