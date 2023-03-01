@@ -129,7 +129,7 @@ function el_update_part()
 		
 		// Parent is a body part and we're locked to bended half
 		if (lock_bend && other.bend_part != null)
-			matrix_parent = matrix_multiply(model_part_get_bend_matrix(parent, parent.bend_default_angle, point3D(0, 0, 0)), matrix_parent)
+			matrix_parent = matrix_multiply(model_part_get_bend_matrix(parent, array_copy_1d(parent.bend_default_angle), point3D(0, 0, 0)), matrix_parent)
 	}
 	else
 		matrix_parent = MAT_IDENTITY

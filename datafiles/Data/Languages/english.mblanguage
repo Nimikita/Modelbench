@@ -5,7 +5,7 @@
 		"locale": "en-US",
         "translator": "Nimi",
         "forversion": "1.1.5",
-        "lastchange": "2023.02.16"
+        "lastchange": "2023.02.25"
     },
 	"startup/": {
 		"modeldetected": "Unsaved model detected",
@@ -24,10 +24,10 @@
 		"b": "B",
 		"h": "H",
 		"s": "S",
-		"l": "L",
+		"v": "V",
 		"hex": "Hex",
 		"rgb": "RGB",
-		"hsl": "HSL"
+		"hsv": "HSV"
 	},
 	"recent/": {
 		"lastopened": "Last opened",

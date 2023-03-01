@@ -7,7 +7,7 @@ function tab_element_editor_rotation()
 	draw_label(text_get("elementeditorrotation"), dx, dy + 12, fa_left, fa_middle, c_text_secondary, a_text_secondary, font_label)
 	dy += 26
 	
-	var snapval = (dragger_snap ? setting_snap_size_rotation : 0.1);
+	var snapval = (dragger_snap ? setting_snap_size_rotation : snap_min);
 	
 	tab_control_wheel()
 	

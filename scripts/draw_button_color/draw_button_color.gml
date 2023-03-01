@@ -1,14 +1,14 @@
-/// draw_button_color(name, x, y, w, color, default, hslmode, script)
+/// draw_button_color(name, x, y, w, color, default, hsvmode, script)
 /// @arg name
 /// @arg x
 /// @arg y
 /// @arg w
 /// @arg color
 /// @arg default
-/// @arg hslmode
+/// @arg hsvmode
 /// @arg script
 
-function draw_button_color(name, xx, yy, w, color, def, hslmode, script)
+function draw_button_color(name, xx, yy, w, color, def, hsvmode, script)
 {
 	var textx, textw, h, mouseon, mouseclick, active;
 	textx = xx
@@ -70,7 +70,7 @@ function draw_button_color(name, xx, yy, w, color, def, hslmode, script)
 	{
 		colorpicker_show(name, color, def, script, xx, yy, w, h)
 		
-		if (hslmode)
-			colorpicker.mode = "hsl"
+		if (hsvmode)
+			colorpicker.mode = "hsv"
 	}
 }

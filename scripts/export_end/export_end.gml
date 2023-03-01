@@ -25,6 +25,9 @@ function export_end()
 	
 	with (obj_model_element)
 	{
+		if (element_type = TYPE_PART)
+			continue
+		
 		if (invert != value[e_value.INVERT])
 			update_vbuffer = true
 		

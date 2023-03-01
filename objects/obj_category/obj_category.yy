@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMObject",
+  "resourceVersion": "1.0",
+  "name": "obj_category",
   "spriteId": null,
   "solid": false,
   "visible": false,
@@ -25,8 +28,4 @@
     "name": "Interface",
     "path": "folders/Objects/App/Interface.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "obj_category",
-  "tags": [],
-  "resourceType": "GMObject",
 }

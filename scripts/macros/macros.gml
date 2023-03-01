@@ -9,11 +9,12 @@ function macros()
 	
 	// Versions
 	#macro modelbench_version			"1.1.5"
-	#macro modelbench_version_full		modelbench_version + " Alpha 2"
+	#macro modelbench_version_full		modelbench_version + ""
 	#macro modelbench_version_extra		""
-	#macro modelbench_version_date		"02.16.2022"
+	#macro modelbench_version_date		"02.28.2023"
 	#macro gm_runtime					GM_runtime_version
-
+	#macro is_32bit						true
+	
 	// File formats
 	#macro settings_format				e_settings.FORMAT_111
 	

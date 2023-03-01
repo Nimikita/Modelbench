@@ -103,7 +103,7 @@ function panel_draw(panel)
 				tabtitle[t] = tab_get_title(tab)
 				
 				draw_set_font(sel ? font_label : font_value)
-				tabw[t] = string_width(tabtitle[t])
+				tabw[t] = string_width(tabtitle[t]) + 8
 				
 				if (tab.closeable)
 					tabw[t] += 36

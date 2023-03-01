@@ -70,7 +70,7 @@ function colorpicker_draw()
 	
 	tab_control_button_label()
 	togglebutton_add("colorpickerrgb", null, "rgb", colorpicker.mode = "rgb", colorpicker_set_mode)
-	togglebutton_add("colorpickerhsl", null, "hsl", colorpicker.mode = "hsl", colorpicker_set_mode)
+	togglebutton_add("colorpickerhsv", null, "hsv", colorpicker.mode = "hsv", colorpicker_set_mode)
 	togglebutton_add("colorpickerhex", null, "hex", colorpicker.mode = "hex", colorpicker_set_mode)
 	draw_togglebutton("colorpickermode", dx, dy, true, false)
 	tab_next()
@@ -89,13 +89,13 @@ function colorpicker_draw()
 			colorpicker_update(null, make_color_rgb(colorpicker.red, colorpicker.green, colorpicker.blue), true)
 		}
 	}
-	else if (colorpicker.mode = "hsl")
+	else if (colorpicker.mode = "hsv")
 	{
-		// HSL
+		// HSV
 		textfield_group_add("colorpickerh", floor(color_get_hue(colorpicker.color)), floor(color_get_hue(colorpicker.def)), colorpicker_hue, X, colorpicker.tbx_hue)
 		textfield_group_add("colorpickers", floor(color_get_saturation(colorpicker.color)), floor(color_get_saturation(colorpicker.def)), colorpicker_saturation, X, colorpicker.tbx_saturation)
-		textfield_group_add("colorpickerl", floor(color_get_value(colorpicker.color)), floor(color_get_value(colorpicker.def)), colorpicker_brightness, X, colorpicker.tbx_brightness)
-		var update = draw_textfield_group("colorpickerhsl", dx, dy, 176, 1, 0, 255, 1, false, false, 0, true, false);
+		textfield_group_add("colorpickerv", floor(color_get_value(colorpicker.color)), floor(color_get_value(colorpicker.def)), colorpicker_brightness, X, colorpicker.tbx_brightness)
+		var update = draw_textfield_group("colorpickerhsv", dx, dy, 176, 1, 0, 255, 1, false, false, 0, true, false);
 		if (update = colorpicker.tbx_hue)
 		{
 			colorpicker.hue = min(255, string_get_real(colorpicker.tbx_hue.text, 0))

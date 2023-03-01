@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMObject",
+  "resourceVersion": "1.0",
+  "name": "obj_data",
   "spriteId": null,
   "solid": false,
   "visible": false,
@@ -25,8 +28,4 @@
     "name": "App",
     "path": "folders/Objects/App.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "obj_data",
-  "tags": [],
-  "resourceType": "GMObject",
 }

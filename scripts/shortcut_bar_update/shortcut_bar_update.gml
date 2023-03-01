@@ -16,7 +16,7 @@ function shortcut_bar_update()
 			shortcut_bar_add(null, e_mouse.DRAG_LEFT, "uveditoreditlength")
 		
 		if (shortcut_bar_state = "uveditor")
-			shortcut_bar_add(null, e_mouse.DRAG_LEFT, "panview")
+			shortcut_bar_add(null, e_mouse.DRAG_LEFT, "pan")
 		
 		if (string_contains(shortcut_bar_state, "uveditor"))
 		{
@@ -104,7 +104,7 @@ function shortcut_bar_update()
 		
 		if (string_contains(shortcut_bar_state, "preview"))
 		{
-			shortcut_bar_add(null, e_mouse.DRAG_LEFT, "panview")
+			shortcut_bar_add(null, e_mouse.DRAG_LEFT, "pan")
 			
 			if (shortcut_bar_state = "previewzoom")
 				shortcut_bar_add(null, e_mouse.SCROLL, "zoom")

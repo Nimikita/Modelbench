@@ -1,12 +1,11 @@
 {
+  "resourceType": "GMScript",
+  "resourceVersion": "1.0",
+  "name": "action_group_combine_scale",
   "isDnD": false,
   "isCompatibility": false,
   "parent": {
     "name": "Context menu",
     "path": "folders/Scripts/App/Interface/Context menu.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "action_group_combine_scale",
-  "tags": [],
-  "resourceType": "GMScript",
 }

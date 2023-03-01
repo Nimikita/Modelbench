@@ -39,7 +39,9 @@ function app_update_shape_vbuffer()
 				export_read_vbuffer()
 		}
 		
-		vertex_freeze(app.update_vbuffer_list[|i].shape_vbuffer)
+		if (app.update_vbuffer_list[|i].shape_vbuffer != null)
+			vertex_freeze(app.update_vbuffer_list[|i].shape_vbuffer)
+		
 		vbuffer_freeze = true
 		
 		ds_list_delete(app.update_vbuffer_list, i)

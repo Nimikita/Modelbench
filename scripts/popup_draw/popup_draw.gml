@@ -67,7 +67,6 @@ function popup_draw()
 		popup_block_ani_ease = "easeincirc"
 	}
 	
-	//show_debug_message(popup_ani)
 	draw_set_alpha(ease("easeoutcirc", popup_ani))
 	
 	if (window_busy = "popupmove")

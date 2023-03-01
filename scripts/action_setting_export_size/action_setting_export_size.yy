@@ -1,12 +1,11 @@
 {
+  "resourceType": "GMScript",
+  "resourceVersion": "1.0",
+  "name": "action_setting_export_size",
   "isDnD": false,
   "isCompatibility": false,
   "parent": {
     "name": "Export",
     "path": "folders/Scripts/App/Actions/Preview/Export.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "action_setting_export_size",
-  "tags": [],
-  "resourceType": "GMScript",
 }

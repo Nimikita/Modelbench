@@ -34,7 +34,7 @@ function textbox_draw()
 	textnormal = c_text_main
 	textnormala = a_text_main * prevalpha
 	textsuffix = c_text_tertiary
-	textsuffixa = a_text_tertiary * prevalpha
+	textsuffixa = a_text_tertiary
 	highlight = c_accent
 	texthighlight = c_button_text
 	texthighlighta = a_button_text * prevalpha
@@ -70,6 +70,9 @@ function textbox_draw()
 	inserttext = ""
 	lineheight = string_height(" ")
 	mouseover = (content_mouseon && app_mouse_box(xx, yy, w, h))
+	
+	if (!mouse_left && ((window_busy = string(tbx) + "tbxrelease") || (window_busy = string(tbx) + "click")))
+		window_busy = ""
 	
 	if (window_focus = string(tbx))
 	{
@@ -603,7 +606,7 @@ function textbox_draw()
 		}
 		
 		// Handle selecting
-		if (!mouse_left && ((window_busy = string(tbx) + "tbxrelease") || (window_busy = string(tbx) + "click")))
+		if (!mouse_left && (window_busy = string(tbx) + "click"))
 			window_busy = ""
 		
 		if (!mouse_left && (window_busy = string(tbx)))

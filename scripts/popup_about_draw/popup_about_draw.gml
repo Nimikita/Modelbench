@@ -24,7 +24,7 @@ function popup_about_draw()
 	textx += string_width_font(text_get("aboutversion", modelbench_version_full), font_value)
 	
 	draw_label(text_get("aboutreleasedate", modelbench_version_date), textx, dy + 98, fa_left, fa_bottom, c_text_secondary, a_text_secondary, font_value)
-	draw_label(text_get("aboutforversion", "Mine-imator 2.0.0+"), content_x + dw/2, dy + 98 + 19, fa_middle, fa_bottom, c_text_secondary, a_text_secondary, font_value)
+	draw_label(text_get("aboutforversion", "Mine-imator 2.0+"), content_x + dw/2, dy + 98 + 19, fa_middle, fa_bottom, c_text_secondary, a_text_secondary, font_value)
 	
 	dy += 128 + 48
 	dx = content_x + 64

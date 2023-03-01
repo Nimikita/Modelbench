@@ -1,4 +1,7 @@
 {
+  "resourceType": "GMObject",
+  "resourceVersion": "1.0",
+  "name": "obj_model",
   "spriteId": null,
   "solid": false,
   "visible": false,
@@ -25,8 +28,4 @@
     "name": "Model",
     "path": "folders/Objects/Model.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "obj_model",
-  "tags": [],
-  "resourceType": "GMObject",
 }
